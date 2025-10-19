@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarot of the Day</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="site-header">
+    <div class="lang-switcher" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-divider">|</span>
+      <button type="button" class="lang-btn" data-lang="th">TH</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1 data-i18n="title">Tarot of the Day</h1>
+      <p class="subtitle" data-i18n="subtitle">Discover what the cards whisper about your journey.</p>
+
+      <div class="cta-group">
+        <a class="btn" href="daily.html" data-i18n="start">Start Daily Reading</a>
+        <a class="btn secondary" href="onecard.html" data-i18n="onecard">1-Card Question</a>
+        <button class="btn ghost" type="button" data-i18n="weekly" disabled>Weekly Spread (Coming Soon)</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2025 Tarot Project by KiR</footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

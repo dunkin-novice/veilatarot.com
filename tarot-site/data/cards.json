@@ -1,0 +1,1406 @@
+[
+  {
+    "id": 1,
+    "name": "The Fool",
+    "orientation": "upright",
+    "th_meaning": "ไพ่คนโง่สะท้อนถึงการเริ่มต้นใหม่ที่เต็มไปด้วยศรัทธาและหัวใจที่กล้าก้าวสู่สิ่งไม่รู้จัก จงเชื่อในพลังของการเดินทาง เพราะทุกก้าวคือบทเรียนของจิตวิญญาณ",
+    "en_meaning": "The Fool's card represents a brave leap into the unknown",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 2,
+    "name": "The Fool",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่คนโง่กลับหัว หมายถึงความกลัวและความลังเลที่กำลังฉุดรั้งคุณไว้ จงระวังการตัดสินใจโดยไม่ไตร่ตรอง และฟังเสียงหัวใจที่แท้จริงของตน",
+    "en_meaning": "The hesitant Fool's card reflects a restraining fear or a reckless action that overlooks consequences.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 3,
+    "name": "The Magician",
+    "orientation": "upright",
+    "th_meaning": "ไพ่มายากลสะท้อนถึงพลังแห่งการสร้างสรรค์และการเปลี่ยนฝันให้เป็นจริง ด้วยความตั้งใจ ศรัทธา และความเชื่อมั่นในพรสวรรค์ของตนเอง",
+    "en_meaning": "The card of the creative Magician indicates the power of manifestation and the use of skills to turn imagination into reality.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 4,
+    "name": "The Magician",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่มายากลกลับหัว พลังภายในอาจถูกใช้ในทางที่ไม่สร้างสรรค์ หรือศักยภาพที่ยังหลับใหล จงหวนกลับมาเชื่อในเจตนาบริสุทธิ์ของตนเองอีกครั้ง",
+    "en_meaning": "The card of the lost Magician reflects unused potential or the deceptive and fruitless use of one's talents.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 5,
+    "name": "The High Priestess",
+    "orientation": "upright",
+    "th_meaning": "ไพ่นักบวชหญิงเผยถึงสัญชาตญาณอันลึกซึ้งและความจริงที่ซ่อนอยู่ใต้ความเงียบสงบ จงไว้วางใจในเสียงภายใน เพราะมันคือแสงแห่งปัญญาที่แท้จริง",
+    "en_meaning": "The card of the all-knowing High Priestess reveals deep intuition and the truth hidden beneath a calm surface.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 6,
+    "name": "The High Priestess",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่นักบวชหญิงกลับหัว หมายถึงความสับสนและการไม่ฟังเสียงในใจ ถึงเวลาปลดปล่อยความสงสัย และเชื่อมั่นในพลังภายในอีกครั้ง",
+    "en_meaning": "The card of the confused High Priestess signifies a block from one's inner voice",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 7,
+    "name": "The Empress",
+    "orientation": "upright",
+    "th_meaning": "ไพ่จักรพรรดินีเปล่งประกายด้วยพลังแห่งความอุดมสมบูรณ์ ความเมตตา และความรักที่โอบอุ้มทุกสิ่ง จงเปิดหัวใจให้ความงอกงามได้ผลิบาน",
+    "en_meaning": "The card of the nurturing Empress signifies abundance",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 8,
+    "name": "The Empress",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่จักรพรรดินีกลับหัว หมายถึงการละเลยความต้องการของตนเองจากการทุ่มเทเพื่อผู้อื่นมากเกินไป ถึงเวลาฟังเสียงหัวใจและดูแลตัวเองด้วยความรักเช่นกัน",
+    "en_meaning": "The card of the withered Empress indicates a state of stagnation or neglecting one's own needs by over-caring for others.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 9,
+    "name": "The Emperor",
+    "orientation": "upright",
+    "th_meaning": "ไพ่จักรพรรดิสะท้อนถึงพลังแห่งความมั่นคงและภาวะผู้นำ คุณสามารถสร้างระเบียบและความชัดเจนให้ชีวิตได้ด้วยสติและปัญญา",
+    "en_meaning": "The card of the powerful Emperor represents leadership",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 10,
+    "name": "The Emperor",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่จักรพรรดิกลับหัว หมายถึงการยึดติดในอำนาจหรือการควบคุมมากเกินไป จงเรียนรู้ที่จะนำด้วยความเข้าใจ ไม่ใช่ความกลัว",
+    "en_meaning": "The card of the tyrannical Emperor reflects an abuse of power or a rigid adherence to rules that lacks flexibility.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 11,
+    "name": "The Hierophant",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ฮีโรแฟนต์เป็นสัญลักษณ์แห่งศรัทธาและภูมิปัญญาโบราณ สื่อถึงการเรียนรู้จากผู้นำทางจิตวิญญาณและการยึดมั่นในหลักแห่งความดีงาม",
+    "en_meaning": "The Hierophant embodies faith and sacred tradition — learning through wisdom passed down and respect for structure.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 12,
+    "name": "The Hierophant",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ฮีโรแฟนต์กลับหัว หมายถึงการตั้งคำถามต่อความเชื่อเก่า ถึงเวลาสร้างหนทางแห่งศรัทธาที่สอดคล้องกับหัวใจของคุณเอง",
+    "en_meaning": "The card of the challenger of tradition reflects a questioning of old beliefs or breaking free from restrictive frameworks.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 13,
+    "name": "The Lovers",
+    "orientation": "upright",
+    "th_meaning": "ไพ่คนรักสะท้อนถึงการเชื่อมโยงอย่างลึกซึ้งและการเลือกด้วยหัวใจ เส้นทางแห่งความรักและความสามัคคีกำลังผลิบานอย่างงดงาม",
+    "en_meaning": "The card of the bonded Lovers represents harmony",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 14,
+    "name": "The Lovers",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่คนรักกลับหัว หมายถึงความไม่ลงรอยหรือการตัดสินใจที่เกิดจากความกลัวแทนที่จะมาจากความรัก ถึงเวลาทบทวนสิ่งที่หัวใจต้องการจริงๆ",
+    "en_meaning": "The card of the distant Lovers signifies inner conflict",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 15,
+    "name": "The Chariot",
+    "orientation": "upright",
+    "th_meaning": "ไพ่รถศึกบ่งบอกถึงพลังแห่งการควบคุมและความมุ่งมั่น คุณกำลังขับเคลื่อนชีวิตไปข้างหน้าด้วยความตั้งใจแน่วแน่และหัวใจที่กล้าแกร่ง",
+    "en_meaning": "The card of the determined knight indicates control over opposing forces to charge towards a goal with unwavering intention.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 16,
+    "name": "The Chariot",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่รถศึกกลับหัว หมายถึงการสูญเสียทิศทางหรือแรงผลักดัน จงหยุดพักเพื่อฟังหัวใจ แล้วคุณจะพบเส้นทางอีกครั้ง",
+    "en_meaning": "The card of the directionless chariot reflects a lack of control or aggression without a clear purpose.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 17,
+    "name": "Strength",
+    "orientation": "upright",
+    "th_meaning": "ไพ่พลังใจสะท้อนถึงความกล้าหาญที่มาจากความอ่อนโยนภายใน คุณแข็งแกร่งเพราะรู้จักให้อภัยและเข้าใจ ไม่ใช่เพราะต้องต่อสู้",
+    "en_meaning": "The card of the strong maiden shows true courage",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 18,
+    "name": "Strength",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่พลังใจกลับหัว หมายถึงความสงสัยในคุณค่าและพลังของตนเอง จงโอบกอดหัวใจที่กลัว และจำไว้ว่าความอ่อนโยนคือพลังที่แท้จริง",
+    "en_meaning": "The card of weakened strength signifies self-doubt or letting fear and raw instinct take over.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 19,
+    "name": "The Hermit",
+    "orientation": "upright",
+    "th_meaning": "ไพ่นักพรตสะท้อนถึงการค้นหาปัญญาภายในและการพักใจเพื่อรับฟังเสียงแห่งความจริง จงใช้เวลาอยู่กับตัวเองเพื่อค้นพบแสงนำทางในใจ",
+    "en_meaning": "The card of the seeking hermit indicates an inward journey to find answers and the light of wisdom in solitude.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 20,
+    "name": "The Hermit",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่นักพรตกลับหัว หมายถึงการแยกตัวมากเกินไปหรือการปิดใจต่อคำแนะนำ จงเปิดรับแสงแห่งมิตรภาพเพื่อให้สมดุลกับความสันโดษ",
+    "en_meaning": "The card of the lonely hermit reflects excessive isolation or a refusal to listen to guidance from others.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 21,
+    "name": "Wheel of Fortune",
+    "orientation": "upright",
+    "th_meaning": "ไพ่วงล้อโชคชะตาหมุนไปพร้อมจังหวะแห่งชีวิต สื่อถึงการเปลี่ยนแปลงและโอกาสใหม่ที่กำลังปรากฏ จงเปิดใจรับสิ่งที่จักรวาลนำมา",
+    "en_meaning": "The card of the spinning Wheel of Fortune signifies change",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 22,
+    "name": "Wheel of Fortune",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่วงล้อโชคชะตากลับหัว หมายถึงการต่อต้านการเปลี่ยนแปลงหรือความรู้สึกว่าโชคไม่เข้าข้าง จงปล่อยให้เวลานำทาง แล้วโชคจะกลับมาอีกครั้ง",
+    "en_meaning": "The card of the stuck Wheel of Fortune reflects resistance to change or a feeling that luck is not on your side.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 23,
+    "name": "Justice",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ยุติธรรมสะท้อนถึงความเที่ยงตรงและความสมดุล ผลลัพธ์จะเป็นไปตามการกระทำของคุณ จงเลือกด้วยสติและความซื่อสัตย์ต่อหัวใจ",
+    "en_meaning": "The card of unwavering Justice represents balance",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 24,
+    "name": "Justice",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ยุติธรรมกลับหัว หมายถึงการหลีกเลี่ยงความรับผิดชอบหรือการตัดสินที่ไม่ยุติธรรม ถึงเวลามองความจริงอย่างซื่อตรงอีกครั้ง",
+    "en_meaning": "The card of biased Justice signifies unfairness",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 25,
+    "name": "The Hanged Man",
+    "orientation": "upright",
+    "th_meaning": "ไพ่คนถูกแขวนสะท้อนถึงการหยุดเพื่อมองโลกจากมุมใหม่ และการยอมสละบางสิ่งเพื่อเติบโตในทางจิตวิญญาณ",
+    "en_meaning": "The card of the sacrificed Hanged Man indicates a pause to see the world from a new perspective",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 26,
+    "name": "The Hanged Man",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่คนถูกแขวนกลับหัว หมายถึงการต่อต้านการปล่อยวางหรือการเสียสละที่สูญเปล่า จงเรียนรู้ที่จะยอมรับจังหวะแห่งการรอคอย",
+    "en_meaning": "The card of the struggling Hanged Man reflects an unnecessary sacrifice or a pointless delay that yields no benefit.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 27,
+    "name": "Death",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ยมทูตสะท้อนถึงการเปลี่ยนผ่านอันยิ่งใหญ่ สิ่งเก่ากำลังสิ้นสุดเพื่อเปิดทางให้สิ่งใหม่เริ่มต้น จงต้อนรับการเกิดใหม่ด้วยหัวใจที่สงบ",
+    "en_meaning": "The card of Death and great transformation signifies the end of one thing to make way for something new to begin.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 28,
+    "name": "Death",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ยมทูตกลับหัว หมายถึงการกลัวที่จะปล่อยวางหรือการยื้อสิ่งที่ถึงเวลาจบ ถึงเวลายอมรับวัฏจักรแห่งชีวิตด้วยศรัทธา",
+    "en_meaning": "The card of a prolonged ending reflects a fear of letting go and resistance to the natural cycle of change.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 29,
+    "name": "Temperance",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เทมเพอแรนซ์เปล่งพลังแห่งความสมดุลและการผสานสิ่งต่างๆ อย่างกลมกลืน ความสงบและปัญญาจะเกิดขึ้นเมื่อคุณวางใจ",
+    "en_meaning": "The card of the goddess of balance represents the harmonious blending of differences",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 30,
+    "name": "Temperance",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เทมเพอแรนซ์กลับหัว หมายถึงความสุดโต่งหรือความไม่สมดุลภายใน จงกลับมาหายใจลึกๆ แล้วสร้างความกลมกลืนอีกครั้ง",
+    "en_meaning": "The card of lost balance signifies extremism",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 31,
+    "name": "The Devil",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ปิศาจสะท้อนถึงพันธนาการจากความกลัวหรือความยึดติดทางวัตถุ ถึงเวลามองเห็นสิ่งที่ผูกมัดและเริ่มปลดปล่อยตัวเอง",
+    "en_meaning": "The card of the devil of bondage indicates being trapped by materialism",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 32,
+    "name": "The Devil",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ปิศาจกลับหัว หมายถึงการตื่นรู้และการปลดปล่อยตนเองจากพันธนาการเก่าๆ แสงแห่งอิสรภาพกำลังส่องมาถึงคุณ",
+    "en_meaning": "The card of breaking free from chains reflects the awareness and process of liberating oneself from past bondages.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 33,
+    "name": "The Tower",
+    "orientation": "upright",
+    "th_meaning": "ไพ่หอคอยสะท้อนถึงการเปลี่ยนแปลงอย่างฉับพลัน การพังทลายของสิ่งเดิมเพื่อสร้างรากฐานที่แท้จริง จงยอมรับการปล่อยวางนี้ด้วยหัวใจที่เข้มแข็ง",
+    "en_meaning": "The card of the crumbling Tower represents sudden change and the destruction of old beliefs to build a new foundation.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 34,
+    "name": "The Tower",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่หอคอยกลับหัว หมายถึงความกลัวที่จะให้สิ่งเก่าพังทลาย แม้รู้ว่ามันไม่มั่นคง จงเชื่อว่าการสิ้นสุดคือจุดเริ่มต้นของการฟื้นฟู",
+    "en_meaning": "The card of the shaken Tower reflects resistance to change or the fear of letting an unstable structure collapse.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 35,
+    "name": "The Star",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดวงดาวเปล่งแสงแห่งความหวังและการเยียวยา จงเชื่อว่าหลังคืนมืดจะมีแสงใหม่เสมอ หัวใจคุณกำลังได้รับการฟื้นคืน",
+    "en_meaning": "The Star shines with hope and renewal — a gentle reminder that healing begins when you believe again.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 36,
+    "name": "The Star",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดวงดาวกลับหัว หมายถึงความสิ้นหวังหรือการหลงลืมคุณค่าในตนเอง ถึงเวลาจุดประกายศรัทธาอีกครั้งและกลับมารักตัวเอง",
+    "en_meaning": "The card of the faded Star reflects a sense of hopelessness",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 37,
+    "name": "The Moon",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดวงจันทร์สะท้อนถึงความลึกลับของจิตใต้สำนึก ความฝัน และสัญญาณจากสัญชาตญาณ จงฟังสิ่งที่เงียบแต่นำพาความจริงมาสู่คุณ",
+    "en_meaning": "The card of the Moon",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 38,
+    "name": "The Moon",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดวงจันทร์กลับหัว หมายถึงความสับสนที่เริ่มคลี่คลาย หรือการปลดปล่อยความกลัวที่ซ่อนอยู่ในใจ แสงแห่งความจริงกำลังเผยออกมา",
+    "en_meaning": "The card of the revealing Moon indicates that confusion is beginning to clear or that hidden fears are being released.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 39,
+    "name": "The Sun",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดวงอาทิตย์เปล่งแสงแห่งความสุข ความสำเร็จ และความชัดเจน ทุกสิ่งเริ่มส่องสว่างด้วยพลังแห่งชีวิตใหม่",
+    "en_meaning": "The card of the radiant Sun signifies success",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 40,
+    "name": "The Sun",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดวงอาทิตย์กลับหัว หมายถึงความหม่นหมองชั่วคราวหรือความสำเร็จที่ยังมาไม่ถึง จงรักษาความเชื่อไว้ เพราะแสงจะกลับมาอีกครั้ง",
+    "en_meaning": "The card of the dimmed Sun reflects temporary pessimism or success that has not yet fully arrived.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 41,
+    "name": "Judgement",
+    "orientation": "upright",
+    "th_meaning": "ไพ่การตัดสินเปล่งพลังแห่งการตื่นรู้และการให้อภัย เป็นเวลาที่คุณจะได้ประเมินชีวิต ยกโทษให้ตนเอง และเริ่มต้นใหม่ด้วยหัวใจบริสุทธิ์",
+    "en_meaning": "The card of the heavenly call and awakening indicates self-reflection",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 42,
+    "name": "Judgement",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่การตัดสินกลับหัว หมายถึงการจมอยู่กับความผิดพลาดเก่า ๆ และไม่ยอมปล่อยให้ตนเองเติบโต ถึงเวลาปลดปล่อยอดีตและยอมรับการให้อภัย",
+    "en_meaning": "The card of harsh self-judgment signifies dwelling on past mistakes and refusing to let oneself move on.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 43,
+    "name": "The World",
+    "orientation": "upright",
+    "th_meaning": "ไพ่โลกสะท้อนถึงการสิ้นสุดวัฏจักรอย่างงดงาม ความสำเร็จและความรู้สึกเป็นหนึ่งเดียวกับจักรวาล ทุกสิ่งเชื่อมโยงกันด้วยความสมบูรณ์",
+    "en_meaning": "The card of the complete World represents the beautiful conclusion of a cycle",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 44,
+    "name": "The World",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่โลกกลับหัว หมายถึงการเดินทางที่ยังไม่จบ หรือความรู้สึกว่ายังขาดบางสิ่ง จงอดทน เพราะเส้นทางนี้ยังคงนำคุณไปสู่ความสมบูรณ์",
+    "en_meaning": "The card of the incomplete World reflects a journey not yet finished or a sense of something missing from an achievement.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 45,
+    "name": "Ace of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้หนึ่งสะท้อนถึงประกายแห่งแรงบันดาลใจและการเริ่มต้นใหม่ พลังแห่งการสร้างสรรค์กำลังลุกโชนอยู่ในใจคุณ",
+    "en_meaning": "The card of sparking creativity signifies new inspiration",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 46,
+    "name": "Ace of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้หนึ่งกลับหัว หมายถึงไฟแห่งแรงบันดาลใจที่มอดลง หรือพลังที่ยังไม่ถูกใช้ จงหวนกลับมาจุดไฟในใจอีกครั้ง",
+    "en_meaning": "The card of fading inspiration reflects a lack of direction or blocked creativity that remains unused.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 47,
+    "name": "Two of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้สองสะท้อนถึงการวางแผนและการตัดสินใจที่ชัดเจน คุณกำลังก้าวออกจากขอบเขตเดิมเพื่อขยายโลกของคุณ",
+    "en_meaning": "The card of planning and foresight indicates deciding on a path and preparing to expand one's horizons.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 48,
+    "name": "Two of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้สองกลับหัว หมายถึงความลังเลและการกลัวที่จะเปลี่ยนแปลง จงกล้าเผชิญสิ่งใหม่ แม้จะไม่รู้ว่าปลายทางคือที่ใด",
+    "en_meaning": "The card of a stalled plan reflects hesitation or confining oneself to a safe zone",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 49,
+    "name": "Three of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้สามสะท้อนถึงผลลัพธ์ของการวางแผนที่กำลังเริ่มผลิบาน คุณกำลังมองเห็นโอกาสใหม่ที่รออยู่ข้างหน้า",
+    "en_meaning": "The card of awaiting progress shows that the results of planning are emerging and distant growth opportunities are visible.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 50,
+    "name": "Three of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้สามกลับหัว หมายถึงการรอคอยที่ล่าช้าหรือความผิดหวังจากแผนที่ไม่เป็นไปตามคาด จงเชื่อว่าเวลาเหมาะสมจะมาถึง",
+    "en_meaning": "The card of delayed opportunities signifies disappointment from unexpected setbacks or an inability to see a way forward.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 51,
+    "name": "Four of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้สี่สะท้อนถึงการเฉลิมฉลอง ความสำเร็จ และความสุขในบ้านหรือชุมชนของคุณ เป็นช่วงเวลาแห่งความมั่นคงและความยินดี",
+    "en_meaning": "The card of celebration and stability indicates initial success and the joy of returning home or to a warm community.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 52,
+    "name": "Four of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้สี่กลับหัว หมายถึงความไม่กลมเกลียวหรือความรู้สึกห่างเหินในความสัมพันธ์ จงสร้างพื้นที่แห่งความเข้าใจขึ้นใหม่",
+    "en_meaning": "The card of a shaky relationship reflects discord at home or a feeling of alienation from a once-close group.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 53,
+    "name": "Five of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้ห้าสะท้อนถึงการแข่งขันและความขัดแย้งที่ช่วยให้เติบโต จงมองความท้าทายเป็นเวทีแห่งการเรียนรู้",
+    "en_meaning": "The card of conflict and competition represents a clash of opinions that can lead to growth and new solutions.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 54,
+    "name": "Five of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้ห้ากลับหัว หมายถึงการหลีกเลี่ยงการเผชิญหน้า หรือความสับสนในใจที่ยังไม่ได้รับการคลี่คลาย จงเผชิญมันด้วยสติ",
+    "en_meaning": "The card of inner conflict reflects the avoidance of confrontation or internal turmoil and confusion.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 55,
+    "name": "Six of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้หกสะท้อนถึงชัยชนะและการยอมรับ คุณกำลังได้รับผลแห่งความพยายามและคำชื่นชมจากผู้คนรอบข้าง",
+    "en_meaning": "The card of victory and recognition signifies success that is being applauded and a sense of pride in one's accomplishments.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 56,
+    "name": "Six of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้หกกลับหัว หมายถึงความสำเร็จที่ไม่มั่นคง หรือการไม่ได้รับการยอมรับอย่างที่คาดหวัง จงภูมิใจในความพยายามของตนแม้ยังไม่เห็นผลเต็มที่",
+    "en_meaning": "The card of a questionable victory reflects unsustainable success or a lack of recognition from others as hoped.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 57,
+    "name": "Seven of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้เจ็ดสะท้อนถึงความกล้าที่จะยืนหยัดเพื่อสิ่งที่เชื่อ ถึงแม้จะมีอุปสรรคแต่คุณพร้อมจะปกป้องจุดยืนด้วยหัวใจเด็ดเดี่ยว",
+    "en_meaning": "The card of defending one's position indicates facing challenges and the courage to fight for one's beliefs.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 58,
+    "name": "Seven of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้เจ็ดกลับหัว หมายถึงความเหนื่อยล้าและการสูญเสียความเชื่อมั่น ถึงเวลาให้หัวใจได้พักและฟื้นพลังใหม่",
+    "en_meaning": "The card of surrender and exhaustion reflects a feeling of being overwhelmed or losing confidence in one's own stance.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 59,
+    "name": "Eight of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้แปดเปี่ยมด้วยพลังแห่งความเร็วและการเคลื่อนไหว ข่าวดีหรือโอกาสใหม่กำลังมาถึงอย่างฉับพลัน",
+    "en_meaning": "The card of speed and movement signifies news arriving quickly or sudden",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 60,
+    "name": "Eight of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้แปดกลับหัว หมายถึงการล่าช้าหรืออุปสรรคที่ขัดขวางแผน จงอดทนและปรับจังหวะเพื่อรอเวลาที่เหมาะสม",
+    "en_meaning": "The card of delays and obstacles reflects miscommunication or plans coming to an abrupt halt.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 61,
+    "name": "Nine of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้เก้าสะท้อนถึงความอดทนและการเตรียมพร้อมรับมือกับบททดสอบสุดท้ายก่อนถึงชัยชนะ จงยืนหยัดด้วยหัวใจที่มั่นคง",
+    "en_meaning": "The card of perseverance and vigilance shows readiness to face the final obstacle before reaching the finish line.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 62,
+    "name": "Nine of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้เก้ากลับหัว หมายถึงความเหนื่อยล้าและความกลัวที่จะก้าวต่อไป จงให้เวลาตัวเองพัก แล้วคุณจะพบพลังอีกครั้ง",
+    "en_meaning": "The card of exhaustion and paranoia reflects a long",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 63,
+    "name": "Ten of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ไม้สิบสะท้อนถึงภาระและความรับผิดชอบที่หนักหนา แม้เหน็ดเหนื่อยแต่คุณกำลังเข้าใกล้เส้นชัย อย่าลืมแบ่งเบาภาระเมื่อจำเป็น",
+    "en_meaning": "The card of heavy burdens indicates shouldering too much responsibility",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 64,
+    "name": "Ten of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ไม้สิบกลับหัว หมายถึงการเรียนรู้ที่จะปล่อยวางและแบ่งปันความรับผิดชอบ จงปลดภาระที่ไม่จำเป็นออกจากใจ",
+    "en_meaning": "The card of releasing a heavy burden reflects learning to let go or sharing responsibilities with others.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 65,
+    "name": "Page of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่มหาดเล็กไม้สะท้อนถึงความกระตือรือร้นและแรงบันดาลใจใหม่ คุณพร้อมจะออกเดินทางสู่สิ่งที่ไม่รู้จักด้วยหัวใจเปิดกว้าง",
+    "en_meaning": "The card of the adventurous page represents discovering new inspirations and an enthusiasm for learning.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 66,
+    "name": "Page of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่มหาดเล็กไม้กลับหัว หมายถึงความลังเลหรือแรงบันดาลใจที่ยังไม่จุดติด จงกล้าที่จะเริ่มแม้เพียงก้าวเล็ก ๆ",
+    "en_meaning": "The card of the hesitant page reflects creative ideas yet to be started or uncertainty about which path to take.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 67,
+    "name": "Knight of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่อัศวินไม้สะท้อนถึงพลังและความกล้าที่จะลงมือทำ ความฝันของคุณพร้อมถูกขับเคลื่อนด้วยไฟแห่งความเชื่อมั่น",
+    "en_meaning": "The card of the energetic knight shows the courage to act on one's passions and a journey filled with confidence.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 68,
+    "name": "Knight of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่อัศวินไม้กลับหัว หมายถึงการหุนหันพลันแล่นและการขาดการไตร่ตรอง จงใช้พลังนี้อย่างมีสติ เพื่อไม่ให้หลงทาง",
+    "en_meaning": "The card of the impulsive knight reflects actions without forethought or energy expended fruitlessly.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 69,
+    "name": "Queen of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชินีไม้เปล่งประกายด้วยเสน่ห์และความมั่นใจ คุณเป็นแรงบันดาลใจให้ผู้คนรอบข้างผ่านความอบอุ่นและพลังในใจ",
+    "en_meaning": "The card of the radiant and confident queen indicates charismatic leadership and the ability to inspire others.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 70,
+    "name": "Queen of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชินีไม้กลับหัว หมายถึงความมั่นใจที่กลายเป็นความเย่อหยิ่ง หรือการบงการมากเกินไป จงกลับมานำด้วยความรักและเมตตา",
+    "en_meaning": "The card of the demanding queen reflects confidence that has turned into arrogance or excessive control over others' lives.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 71,
+    "name": "King of Wands",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชาไม้สะท้อนถึงวิสัยทัศน์และภาวะผู้นำที่กล้าหาญ คุณมองเห็นภาพใหญ่และพร้อมจะสร้างอนาคตด้วยความเชื่อมั่น",
+    "en_meaning": "The card of the visionary king represents bold leadership and the ability to see the bigger picture to create a future.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 72,
+    "name": "King of Wands",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชาไม้กลับหัว หมายถึงการขาดทิศทางหรือความมุ่งมั่นที่ลดลง จงกลับมาจุดไฟในใจและย้ำถึงเหตุผลที่คุณเริ่มต้น",
+    "en_meaning": "The card of the visionless king reflects hasty decisions or a lack of commitment to follow through on set goals.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 73,
+    "name": "Ace of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยหนึ่งสะท้อนถึงการเริ่มต้นใหม่ทางหัวใจ ความรักและความสุขกำลังหลั่งไหลเข้ามาในชีวิตคุณอย่างอ่อนโยน",
+    "en_meaning": "The card of overflowing love signifies a new emotional beginning",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 74,
+    "name": "Ace of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยหนึ่งกลับหัว หมายถึงหัวใจที่ปิดกั้นหรือความกลัวที่จะรัก จงปล่อยให้อารมณ์ได้ไหลอย่างเป็นอิสระอีกครั้ง",
+    "en_meaning": "The card of blocked emotions reflects feelings left unexpressed or a fear of opening up to love and happiness.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 75,
+    "name": "Two of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยสองสะท้อนถึงการเชื่อมโยงของสองหัวใจ ความรักและความเข้าใจที่เท่าเทียมกันกำลังงอกงามอย่างงดงาม",
+    "en_meaning": "The card of emotional connection indicates a harmonious partnership",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 76,
+    "name": "Two of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยสองกลับหัว หมายถึงความไม่สมดุลในความสัมพันธ์ หรือความเข้าใจที่คลาดเคลื่อน จงเปิดใจพูดจากันด้วยความจริงใจ",
+    "en_meaning": "The card of imbalanced relationships reflects miscommunication or feelings that are not equally reciprocated.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 77,
+    "name": "Three of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยสามสะท้อนถึงมิตรภาพและการเฉลิมฉลอง ความสุขจากการร่วมมือและการแบ่งปันความยินดีกำลังอบอวล",
+    "en_meaning": "The card of friendship and celebration represents joy from collaboration and sharing happiness with those around you.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 78,
+    "name": "Three of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยสามกลับหัว หมายถึงความขัดแย้งในกลุ่มหรือความรู้สึกโดดเดี่ยว ถึงเวลาสื่อสารด้วยหัวใจเพื่อฟื้นความสัมพันธ์",
+    "en_meaning": "The card of conflict within a group reflects gossip or a feeling of isolation even when surrounded by people.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 79,
+    "name": "Four of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยสี่สะท้อนถึงความเฉยเมยและการมองข้ามโอกาสเพราะมัวแต่จมอยู่กับอารมณ์ของตนเอง จงเงยหน้าขึ้นมองสิ่งใหม่ที่จักรวาลมอบให้",
+    "en_meaning": "The card of apathy and contemplation signifies overlooking offered opportunities while being absorbed in one's own feelings.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 80,
+    "name": "Four of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยสี่กลับหัว หมายถึงการเปิดใจรับสิ่งใหม่และการเห็นคุณค่าของโอกาสที่เคยมองข้าม แรงบันดาลใจกำลังหวนคืน",
+    "en_meaning": "The card of opening up to the new reflects breaking free from boredom and seeing the value in once-ignored opportunities.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 81,
+    "name": "Five of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยห้าสะท้อนถึงความเศร้าและความผิดหวังจากการสูญเสีย จงเรียนรู้ที่จะมองเห็นสิ่งที่ยังเหลืออยู่และให้โอกาสหัวใจได้เยียวยา",
+    "en_meaning": "The card of sorrow and disappointment indicates dwelling on loss",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 82,
+    "name": "Five of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยห้ากลับหัว หมายถึงการเริ่มเยียวยาและยอมรับสิ่งที่ผ่านไป ความหวังกำลังผลิบานอีกครั้งในใจคุณ",
+    "en_meaning": "The card of healing and letting go reflects accepting loss and beginning to see hope once again.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 83,
+    "name": "Six of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยหกสะท้อนถึงความทรงจำอันอบอุ่นและความสุขในวัยเยาว์ การกลับมาของมิตรภาพเก่าหรือสิ่งดีงามจากอดีตกำลังแตะหัวใจคุณ",
+    "en_meaning": "The card of innocent memories signifies nostalgia",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 84,
+    "name": "Six of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยหกกลับหัว หมายถึงการยึดติดกับอดีตหรือความทรงจำที่ขวางกั้นการเติบโต จงปล่อยวางและก้าวสู่ปัจจุบันด้วยหัวใจเบา",
+    "en_meaning": "The card of being stuck in the past reflects idealizing history or refusing to let go of old stories to move forward.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 85,
+    "name": "Seven of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยเจ็ดสะท้อนถึงจินตนาการและตัวเลือกมากมาย แต่บางสิ่งอาจเป็นเพียงภาพลวงตา จงฟังหัวใจเพื่อเลือกทางที่แท้จริง",
+    "en_meaning": "The card of choices and imagination indicates many dreams and opportunities",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 86,
+    "name": "Seven of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยเจ็ดกลับหัว หมายถึงการมองเห็นเส้นทางที่ชัดเจน คุณได้ปลดเปื้องหมอกแห่งจินตนาการและเลือกด้วยสติปัญญา",
+    "en_meaning": "The card of choosing a clear path reflects breaking free from fantasy and making a decision on a realistic course of action.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 87,
+    "name": "Eight of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยแปดสะท้อนถึงการจากลาที่มาพร้อมการเติบโต คุณกำลังก้าวออกจากสิ่งที่ไม่เติมเต็มเพื่อค้นหาความหมายลึกซึ้งกว่าเดิม",
+    "en_meaning": "The card of walking away represents the decision to leave behind what is no longer fulfilling to search for deeper meaning.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 88,
+    "name": "Eight of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยแปดกลับหัว หมายถึงความลังเลที่จะปล่อยวางสิ่งที่ไม่ดีต่อใจ ถึงเวลาปลดพันธะเก่าและเดินสู่เส้นทางใหม่",
+    "en_meaning": "The card of hesitating to leave reflects the fear of moving on from a situation",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 89,
+    "name": "Nine of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยเก้าสะท้อนถึงความพึงพอใจและความสุขที่เกิดจากการได้ในสิ่งที่ใจปรารถนา จงชื่นชมช่วงเวลาแห่งความสมหวังนี้",
+    "en_meaning": "The card of wishes fulfilled signifies emotional contentment",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 90,
+    "name": "Nine of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยเก้ากลับหัว หมายถึงความรู้สึกว่างเปล่าท่ามกลางความสำเร็จภายนอก จงมองหาความสุขที่แท้จริงจากภายใน",
+    "en_meaning": "The card of unfulfilled wishes reflects getting what you want but still feeling empty",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 91,
+    "name": "Ten of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ถ้วยสิบเปล่งประกายด้วยพลังแห่งความสุขและความกลมเกลียวในครอบครัว ความรักและความสงบกำลังเติมเต็มหัวใจคุณ",
+    "en_meaning": "The card of complete family happiness indicates deep bonds and the peace that comes from harmonious love.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 92,
+    "name": "Ten of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ถ้วยสิบกลับหัว หมายถึงความขัดแย้งหรือความไม่เข้าใจกันในบ้าน จงเปิดใจและฟังกันด้วยความรักเพื่อคืนความสงบ",
+    "en_meaning": "The card of missing family happiness reflects conflict or the image of a perfect family that is empty inside.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 93,
+    "name": "Page of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่มหาดเล็กถ้วยสะท้อนถึงหัวใจที่เปิดรับและความอ่อนโยนในการสื่อสาร คุณอาจได้รับข่าวดีหรือแรงบันดาลใจทางอารมณ์",
+    "en_meaning": "The card of the creative-hearted page represents being open to emotional messages and curiosity about feelings.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 94,
+    "name": "Page of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่มหาดเล็กถ้วยกลับหัว หมายถึงการปิดกั้นความรู้สึกหรือความไม่มั่นคงภายใน จงกล้าเปิดใจและยอมรับอารมณ์ที่แท้จริง",
+    "en_meaning": "The card of the heart-blocked page reflects emotional insecurity or avoiding confrontation with true feelings.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 95,
+    "name": "Knight of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่อัศวินถ้วยสะท้อนถึงการเดินตามเสียงหัวใจและความโรแมนติกในวิญญาณ คุณกำลังเคลื่อนไหวด้วยความรักที่จริงใจ",
+    "en_meaning": "The card of the charming and romantic knight indicates following the heart's voice and expressing love sincerely.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 96,
+    "name": "Knight of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่อัศวินถ้วยกลับหัว หมายถึงความรักที่เพ้อฝันเกินจริงหรืออารมณ์ที่ไม่มั่นคง จงแยกแยะความฝันกับความจริงให้ชัดเจน",
+    "en_meaning": "The card of the moody knight reflects a love that is overly idealistic or emotions that are unpredictably volatile.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 97,
+    "name": "Queen of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชินีถ้วยสะท้อนถึงความเมตตาและการเข้าใจผู้อื่นอย่างลึกซึ้ง คุณใช้หัวใจนำทางและเยียวยาผู้อื่นด้วยความอ่อนโยน",
+    "en_meaning": "The card of the compassionate queen represents empathy for others and using intuition to guide with love.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 98,
+    "name": "Queen of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชินีถ้วยกลับหัว หมายถึงความอ่อนไหวที่เกินพอดีหรือการดูดซับพลังลบ จงตั้งขอบเขตแห่งหัวใจเพื่อปกป้องพลังของคุณ",
+    "en_meaning": "The card of the emotionally fragile queen reflects letting feelings take over or absorbing negative energy from others.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 99,
+    "name": "King of Cups",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชาถ้วยสะท้อนถึงความสมดุลทางอารมณ์และการตัดสินใจด้วยเมตตา คุณควบคุมหัวใจได้อย่างสงบและมั่นคง",
+    "en_meaning": "The card of the emotionally balanced king indicates emotional maturity and making decisions with compassion and wisdom.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 100,
+    "name": "King of Cups",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชาถ้วยกลับหัว หมายถึงการปิดกั้นอารมณ์หรือการใช้อารมณ์เพื่อควบคุมสถานการณ์ จงซื่อสัตย์ต่อความรู้สึกที่แท้จริง",
+    "en_meaning": "The card of the cold and repressive king reflects emotional suppression or using emotions to manipulate situations.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 101,
+    "name": "Ace of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบหนึ่งเปล่งพลังแห่งความคิดที่ชัดเจนและการตัดสินใจที่เฉียบขาด ความจริงกำลังเปิดเผยต่อสายตาคุณ",
+    "en_meaning": "The card of sharp intellect signifies clarity",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 102,
+    "name": "Ace of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบหนึ่งกลับหัว หมายถึงความคิดที่สับสนหรือมุมมองที่บิดเบี้ยว จงสงบนิ่งและมองสิ่งต่าง ๆ ด้วยใจที่เป็นกลาง",
+    "en_meaning": "The card of confused thought reflects a poor decision or a distorted perception of reality.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 103,
+    "name": "Two of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบสองสะท้อนถึงช่วงเวลาแห่งการตัดสินใจที่ยาก คุณอาจกำลังปิดกั้นหัวใจเพราะกลัวความจริง จงเชื่อในสัญชาตญาณของตน",
+    "en_meaning": "The card of a crossroads needing a decision indicates a stalemate and blocking oneself off to find a solution.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 104,
+    "name": "Two of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบสองกลับหัว หมายถึงความวุ่นวายในใจและการถูกสถานการณ์บีบให้เลือก จงหยุดหายใจลึก ๆ แล้วฟังเสียงภายใน",
+    "en_meaning": "The card of a forced decision reflects inner turmoil or being compelled by circumstances to make a choice.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 105,
+    "name": "Three of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบสามสะท้อนถึงความเจ็บปวดที่สอนให้เติบโต แม้หัวใจจะสลาย แต่ความจริงกำลังปลดปล่อยคุณจากพันธนาการเดิม",
+    "en_meaning": "The card of heartbreaking pain represents a harsh truth",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 106,
+    "name": "Three of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบสามกลับหัว หมายถึงบาดแผลเก่าที่ยังไม่หายดี ถึงเวลาปล่อยวางความเศร้าและเปิดใจสู่การเยียวยา",
+    "en_meaning": "The card of lingering pain reflects a refusal to let go of sorrow or the act of reopening one's own emotional wounds.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 107,
+    "name": "Four of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบสี่สะท้อนถึงการพักผ่อนและการฟื้นฟูพลังใจ จงให้เวลาตัวเองหยุดนิ่งเพื่อเตรียมพร้อมสำหรับวันใหม่ที่สดใส",
+    "en_meaning": "The card of truce and mental recovery signifies the need to rest",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 108,
+    "name": "Four of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบสี่กลับหัว หมายถึงความเหนื่อยล้าหรือการหยุดชะงักที่ยืดเยื้อ จงฟังร่างกายและใจของคุณก่อนที่พลังจะหมด",
+    "en_meaning": "The card of exhaustion and stagnation reflects burnout from accumulated stress or being forced into a period of recovery.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 109,
+    "name": "Five of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบห้าสะท้อนถึงชัยชนะที่อาจทำให้หัวใจว่างเปล่า จงถามตนเองว่าผลลัพธ์นี้คุ้มค่ากับสิ่งที่เสียไปหรือไม่",
+    "en_meaning": "The card of an empty victory indicates winning at the cost of conflict and loss",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 110,
+    "name": "Five of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบห้ากลับหัว หมายถึงการเลือกความสงบแทนชัยชนะ คุณกำลังเรียนรู้ว่าบางการต่อสู้ไม่จำเป็นต้องชนะ",
+    "en_meaning": "The card of retreating for peace reflects the realization that some victories aren't worth the cost",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 111,
+    "name": "Six of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบหกสะท้อนถึงการเดินทางออกจากความวุ่นวายสู่ความสงบ คุณกำลังก้าวผ่านความเจ็บปวดไปยังฟากฝั่งแห่งความหวัง",
+    "en_meaning": "The card of journeying to tranquility represents a transition from turmoil to a better",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 112,
+    "name": "Six of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบหกกลับหัว หมายถึงการยังติดอยู่ในอดีตหรืออุปสรรคที่ขัดขวางการเริ่มต้นใหม่ จงเชื่อว่าความสงบยังคงรออยู่ข้างหน้า",
+    "en_meaning": "The card of a troubled journey reflects the feeling of being unable to escape old problems or facing obstacles in a new start.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 113,
+    "name": "Seven of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบเจ็ดสะท้อนถึงกลยุทธ์และการตัดสินใจอย่างชาญฉลาด จงใช้ปัญญาในการเดินเกมและปกป้องความจริงของคุณ",
+    "en_meaning": "The card of strategy and escape indicates acting with cunning or choosing to walk away from a certain situation.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 114,
+    "name": "Seven of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบเจ็ดกลับหัว หมายถึงความลับที่ถูกเปิดเผยหรือการตัดสินใจเผชิญหน้ากับสิ่งที่หนีมา จงซื่อสัตย์กับหัวใจของคุณเอง",
+    "en_meaning": "The card of confronting the truth reflects a secret being exposed or choosing to face what one has been running from.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 115,
+    "name": "Eight of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบแปดสะท้อนถึงการจำกัดตนเองด้วยความกลัวหรือความคิดลบ จงรู้ว่าโซ่ตรวนนี้สร้างขึ้นจากใจ และคุณสามารถปลดมันได้",
+    "en_meaning": "The card of self-imposed restriction represents feeling trapped",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 116,
+    "name": "Eight of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบแปดกลับหัว หมายถึงการมองเห็นทางออกและอิสรภาพทางความคิด คุณกำลังค่อย ๆ ปลดพันธนาการของตนเอง",
+    "en_meaning": "The card of liberating one's thoughts reflects seeing a way out of limitations and discovering one's own intellectual freedom.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 117,
+    "name": "Nine of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบเก้าสะท้อนถึงความวิตกและความกลัวที่เกิดจากจินตนาการมากกว่าความจริง จงปลอบโยนหัวใจและมองโลกด้วยความเมตตา",
+    "en_meaning": "The card of anxiety and fear signifies stress born from negative thoughts",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 118,
+    "name": "Nine of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบเก้ากลับหัว หมายถึงการตื่นจากฝันร้ายและการเผชิญหน้ากับความกลัว คุณกำลังเริ่มเห็นว่ามันไม่ได้เลวร้ายอย่างที่คิด",
+    "en_meaning": "The card of escaping a nightmare reflects facing one's fears and realizing that worries are not as bad as imagined.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 119,
+    "name": "Ten of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ดาบสิบสะท้อนถึงการสิ้นสุดที่เจ็บปวดแต่หลีกเลี่ยงไม่ได้ แสงแห่งรุ่งอรุณใหม่กำลังรออยู่หลังความมืดมิดนี้",
+    "en_meaning": "The card of a painful ending indicates an unavoidable conclusion",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 120,
+    "name": "Ten of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ดาบสิบกลับหัว หมายถึงการเริ่มฟื้นตัวจากบาดแผลในใจและความพ่ายแพ้ ความหวังใหม่กำลังงอกงามขึ้นอีกครั้ง",
+    "en_meaning": "The card of recovering from defeat reflects surviving a terrible situation and beginning the process of emotional healing.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 121,
+    "name": "Page of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่มหาดเล็กดาบสะท้อนถึงความใฝ่รู้และสติปัญญาอันแหลมคม คุณกำลังสังเกตและเรียนรู้โลกด้วยใจที่เปิดรับ",
+    "en_meaning": "The card of the curious and observant page represents a thirst for knowledge and seeking truth with a sharp eye.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 122,
+    "name": "Page of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่มหาดเล็กดาบกลับหัว หมายถึงการใช้คำพูดโดยไม่คิดหรือการสื่อสารที่สร้างบาดแผล จงฟังให้มากกว่าพูดในตอนนี้",
+    "en_meaning": "The card of the prying page reflects hurtful words or communication that lacks careful consideration.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 123,
+    "name": "Knight of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่อัศวินดาบสะท้อนถึงความมุ่งมั่นและการลงมือทำอย่างรวดเร็ว คุณกำลังขับเคลื่อนด้วยจิตใจที่แน่วแน่และเป้าหมายชัดเจน",
+    "en_meaning": "The card of the ambitious and determined knight indicates charging toward a goal with speed and mental clarity.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 124,
+    "name": "Knight of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่อัศวินดาบกลับหัว หมายถึงความเร่งรีบที่ขาดสติหรือคำพูดที่อาจสร้างความขัดแย้ง จงใช้พลังนี้ด้วยความสงบและรอบคอบ",
+    "en_meaning": "The card of the reckless and aggressive knight reflects thoughtless actions and words that may create unnecessary enemies.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 125,
+    "name": "Queen of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชินีดาบสะท้อนถึงสติปัญญาและความเป็นอิสระ คุณมองเห็นความจริงอย่างชัดเจนและตัดสิ่งที่ไม่จำเป็นออกจากชีวิต",
+    "en_meaning": "The card of the sharp and independent queen represents using intellect to cut through nonsense and see the truth with honesty.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 126,
+    "name": "Queen of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชินีดาบกลับหัว หมายถึงความเย็นชาและการวิจารณ์ที่รุนแรง จงเติมความเมตตาให้คำพูดและเปิดใจต่อความเข้าใจใหม่",
+    "en_meaning": "The card of the cold and critical queen reflects logic devoid of compassion or bitterness from past experiences.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 127,
+    "name": "King of Swords",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชาดาบสะท้อนถึงปัญญาและความยุติธรรม คุณใช้เหตุผลและความจริงนำทางอย่างมั่นคงและสง่างาม",
+    "en_meaning": "The card of the wise and authoritative king indicates making decisions with justice and using reason to create clarity.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 128,
+    "name": "King of Swords",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชาดาบกลับหัว หมายถึงการใช้ปัญญาเพื่อควบคุมหรือสื่อสารอย่างเย็นชา จงกลับมาสู่การพูดด้วยความจริงใจและเมตตา",
+    "en_meaning": "The card of the abusive king reflects cold communication or the use of intellect for control and manipulation.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 129,
+    "name": "Ace of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญหนึ่งสะท้อนถึงโอกาสใหม่ที่มั่นคงและจับต้องได้ ความมั่งคั่งกำลังเริ่มต้นจากเมล็ดเล็ก ๆ แห่งความพยายาม จงดูแลมันด้วยความตั้งใจ",
+    "en_meaning": "The card of tangible opportunity signifies the start of a stable new venture and receiving a gift from the material world.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 130,
+    "name": "Ace of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญหนึ่งกลับหัว หมายถึงโอกาสที่หลุดลอยหรือการจัดการทรัพยากรที่ไม่รอบคอบ จงทบทวนพื้นฐานเพื่อเริ่มต้นใหม่อย่างมั่นคง",
+    "en_meaning": "The card of a missed opportunity reflects poor financial planning or overlooking a valuable chance that has arrived.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 131,
+    "name": "Two of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญสองสะท้อนถึงความสามารถในการปรับตัวและรักษาสมดุลท่ามกลางการเปลี่ยนแปลง คุณจัดการสิ่งต่าง ๆ ได้ด้วยความยืดหยุ่นและสติ",
+    "en_meaning": "The card of adaptation and balance indicates juggling multiple priorities and adapting to changing circumstances.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 132,
+    "name": "Two of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญสองกลับหัว หมายถึงความวุ่นวายจากการจัดการที่เกินกำลัง จงเรียงลำดับความสำคัญและให้เวลาแก่สิ่งที่มีคุณค่าที่สุด",
+    "en_meaning": "The card of life imbalance reflects poor management or the chaos that comes from trying to do too much at once.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 133,
+    "name": "Three of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญสามสะท้อนถึงการทำงานร่วมกันอย่างกลมกลืน ความสำเร็จเกิดขึ้นเมื่อคุณแบ่งปันทักษะและร่วมสร้างสิ่งงดงามกับผู้อื่น",
+    "en_meaning": "The card of teamwork and collaboration represents recognition for one's skills and creating quality work through cooperation.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 134,
+    "name": "Three of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญสามกลับหัว หมายถึงการขาดการประสานงานหรือการไม่ฟังกันในทีม จงเปิดใจสื่อสารและเรียนรู้จากกันและกัน",
+    "en_meaning": "The card of poor teamwork reflects a lack of communication or working in isolation without listening to others' input.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 135,
+    "name": "Four of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญสี่สะท้อนถึงความมั่นคงและการรักษาสิ่งที่มีอยู่ แต่เตือนว่าการยึดติดมากเกินไปอาจปิดกั้นการไหลของพลังใหม่ จงเรียนรู้ที่จะไว้ใจชีวิต",
+    "en_meaning": "The card of conservation and security indicates holding on to what one has",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 136,
+    "name": "Four of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญสี่กลับหัว หมายถึงการเปิดใจให้กับการให้และการรับ ปล่อยวางการควบคุมเพื่อเปิดทางให้ความอุดมสมบูรณ์กลับมา",
+    "en_meaning": "The card of fear of loss reflects opening up to giving and receiving",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 137,
+    "name": "Five of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญห้าสะท้อนถึงช่วงเวลาแห่งความยากลำบากและความโดดเดี่ยว แต่แม้ในความหนาวเย็นยังมีแสงแห่งความช่วยเหลือ จงอย่าหมดศรัทธา",
+    "en_meaning": "The card of hardship and abandonment signifies feeling isolated or facing a period of scarcity.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 138,
+    "name": "Five of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญห้ากลับหัว หมายถึงการฟื้นตัวและการมองเห็นความหวังใหม่หลังความมืดมิด คุณกำลังได้รับพลังแห่งการเยียวยาและการสนับสนุน",
+    "en_meaning": "The card of recovery from hardship reflects seeing the light and finding help after a dark period.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 139,
+    "name": "Six of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญหกสะท้อนถึงการให้และการรับอย่างสมดุล ความเอื้อเฟื้อของคุณสร้างพลังแห่งความเจริญรุ่งเรืองที่หมุนเวียนไม่สิ้นสุด",
+    "en_meaning": "The card of generosity and giving indicates a balance between giving and receiving",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 140,
+    "name": "Six of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญหกกลับหัว หมายถึงการให้ที่แฝงเงื่อนไขหรือความไม่เท่าเทียม จงให้ด้วยใจบริสุทธิ์และปล่อยวางความคาดหวัง",
+    "en_meaning": "The card of giving with strings attached reflects uncomfortable debts or an imbalance in sharing.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 141,
+    "name": "Seven of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญเจ็ดสะท้อนถึงการหยุดพักเพื่อประเมินผลและรอคอยผลลัพธ์แห่งความพยายาม ผลที่ดีต้องใช้เวลา จงเชื่อในสิ่งที่คุณปลูกไว้",
+    "en_meaning": "The card of assessment and patience indicates pausing to review progress and waiting for the results of one's investment.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 142,
+    "name": "Seven of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญเจ็ดกลับหัว หมายถึงความผิดหวังจากสิ่งที่ไม่เป็นไปตามหวัง แต่บทเรียนที่ได้มีค่ามากกว่าผลลัพธ์ จงเรียนรู้แล้วเริ่มใหม่",
+    "en_meaning": "The card of wasted investment reflects disappointment in the outcome or effort spent on something fruitless.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 143,
+    "name": "Eight of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญแปดสะท้อนถึงความขยันและการพัฒนาทักษะ คุณกำลังสั่งสมความชำนาญทีละน้อยจนกลายเป็นความสำเร็จยิ่งใหญ่",
+    "en_meaning": "The card of craftsmanship and skill development indicates dedication to one's work and attention to detail to create mastery.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 144,
+    "name": "Eight of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญแปดกลับหัว หมายถึงการละเลยคุณภาพหรือความสมบูรณ์แบบที่ไม่จำเป็น จงหาจุดสมดุลระหว่างความพยายามกับความสุข",
+    "en_meaning": "The card of flawed perfectionism reflects a lack of attention in one's work or focusing on results while neglecting quality.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 145,
+    "name": "Nine of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญเก้าสะท้อนถึงความสำเร็จที่มาจากแรงกายแรงใจของคุณเอง ความสง่างามและอิสรภาพทางใจคือรางวัลของความพากเพียร",
+    "en_meaning": "The card of success and independence signifies comfort earned through one's own efforts and enjoying the fruits of labor.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 146,
+    "name": "Nine of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญเก้ากลับหัว หมายถึงความเหน็ดเหนื่อยจากการทำงานหนักโดยไม่หยุดพัก หรือความโดดเดี่ยวกลางความมั่งคั่ง จงหาความสุขเล็ก ๆ ให้หัวใจได้พัก",
+    "en_meaning": "The card of success at a cost reflects working so hard there is no time for rest",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 147,
+    "name": "Ten of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่เหรียญสิบสะท้อนถึงความมั่งคั่งที่ยั่งยืนและสายสัมพันธ์ของครอบครัว คุณกำลังสร้างรากฐานที่จะส่งต่อความสุขสู่คนรุ่นถัดไป",
+    "en_meaning": "The card of legacy and lasting wealth indicates a stable foundation and happiness that is passed down through the family.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 148,
+    "name": "Ten of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่เหรียญสิบกลับหัว หมายถึงปัญหาทางการเงินในครอบครัวหรือความรู้สึกไม่เป็นส่วนหนึ่งของสิ่งที่สืบทอด จงสร้างคุณค่าของตัวเองอย่างภาคภูมิ",
+    "en_meaning": "The card of unstable wealth reflects family financial troubles or a feeling of not belonging to the legacy.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 149,
+    "name": "Page of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่มหาดเล็กเหรียญสะท้อนถึงความตั้งใจเรียนรู้และความกระตือรือร้นในการสร้างอนาคต คุณกำลังวางรากฐานแห่งความสำเร็จด้วยมือของตนเอง",
+    "en_meaning": "The card of the practical student represents planning for the future and an eagerness to learn new",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 150,
+    "name": "Page of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่มหาดเล็กเหรียญกลับหัว หมายถึงการฝันโดยไม่ลงมือทำหรือการละเลยโอกาสในการเติบโต จงเชื่อในพลังของการเริ่มต้นเล็ก ๆ",
+    "en_meaning": "The card of the inactive student reflects daydreaming without a plan or neglecting opportunities for learning and growth.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 151,
+    "name": "Knight of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่อัศวินเหรียญสะท้อนถึงความขยันและความรับผิดชอบ คุณกำลังสร้างอนาคตที่มั่นคงทีละก้าวด้วยความพากเพียรและศรัทธาในเป้าหมาย",
+    "en_meaning": "The card of the responsible and diligent knight indicates working steadfastly to build long-term security.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 152,
+    "name": "Knight of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่อัศวินเหรียญกลับหัว หมายถึงการติดอยู่ในกิจวัตรเดิมหรือการทำงานโดยไร้แรงบันดาลใจ จงเติมไฟแห่งความรักในสิ่งที่ทำอีกครั้ง",
+    "en_meaning": "The card of the rigid and dull knight reflects hard work without joy",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 153,
+    "name": "Queen of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชินีเหรียญสะท้อนถึงความโอบอ้อมอารีและการดูแลอย่างอบอุ่น คุณสร้างพื้นที่ปลอดภัยให้ผู้อื่นและบริหารทรัพยากรอย่างมีปัญญา",
+    "en_meaning": "The card of the nurturing and caring queen represents creating a warm environment and managing resources wisely.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 154,
+    "name": "Queen of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชินีเหรียญกลับหัว หมายถึงการให้ความสำคัญกับสิ่งภายนอกมากเกินไปจนละเลยความต้องการในใจ จงหาสมดุลระหว่างวัตถุและจิตใจ",
+    "en_meaning": "The card of the materialistic queen reflects prioritizing external security to the point of neglecting emotional needs.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 155,
+    "name": "King of Pentacles",
+    "orientation": "upright",
+    "th_meaning": "ไพ่ราชาเหรียญสะท้อนถึงความมั่งคั่ง ความสำเร็จ และภาวะผู้นำที่มั่นคง คุณเป็นแรงบันดาลใจให้ผู้อื่นผ่านความเอื้ออารีและปัญญา",
+    "en_meaning": "The card of the wealthy and successful king indicates security born from effort and generous leadership.",
+    "position": "general",
+    "conclusion_template": ""
+  },
+  {
+    "id": 156,
+    "name": "King of Pentacles",
+    "orientation": "reversed",
+    "th_meaning": "เมื่อไพ่ราชาเหรียญกลับหัว หมายถึงการยึดติดกับวัตถุหรือการตัดสินใจที่ขาดสติ จงใช้ความมั่งคั่งอย่างมีสติและแบ่งปันเพื่อสร้างคุณค่าที่แท้จริง",
+    "en_meaning": "The card of the greedy and selfish king reflects an obsession with materialism or poor business judgment.",
+    "position": "general",
+    "conclusion_template": ""
+  }
+]
