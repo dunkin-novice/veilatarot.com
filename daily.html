@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Daily Tarot Reading | veilatarot.com</title>
+  <meta name="description" content="Draw a three-card tarot spread with bilingual English and Thai interpretations at veilatarot.com." />
+  <base href="https://veilatarot.com/" />
+  <link rel="canonical" href="https://veilatarot.com/daily.html" />
+  <link rel="alternate" hreflang="en" href="https://veilatarot.com/daily.html" />
+  <link rel="alternate" hreflang="th" href="https://veilatarot.com/daily.html?lang=th" />
+  <link rel="sitemap" type="application/xml" href="https://veilatarot.com/sitemap.xml" />
+  <meta property="og:title" content="Your Daily Tarot Reading" />
+  <meta property="og:description" content="Draw a three-card tarot spread with bilingual English and Thai interpretations at veilatarot.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://veilatarot.com/daily.html" />
+  <meta property="og:site_name" content="Tarot of the Day" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="th_TH" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Your Daily Tarot Reading" />
+  <meta name="twitter:description" content="Draw a three-card tarot spread with bilingual English and Thai interpretations at veilatarot.com." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://veilatarot.com/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="site-header reading-header">
+    <a class="back-link" href="https://veilatarot.com/index.html">&#8592; Home</a>
+    <div class="lang-switcher" aria-label="Language switcher">
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+      <span class="lang-divider">|</span>
+      <button type="button" class="lang-btn" data-lang="th">TH</button>
+    </div>
+  </header>
+
+  <main class="reading">
+    <h1 class="reading-title" data-i18n="title">Tarot of the Day</h1>
+    <p class="reading-subtitle" data-i18n="subtitle">Discover what the cards whisper about your journey.</p>
+
+    <button id="draw-btn" class="btn primary" type="button" data-i18n="draw">Draw 3 Cards</button>
+
+    <section id="cards-container" class="cards-container" aria-live="polite"></section>
+    <section id="conclusion" class="conclusion" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">© 2025 Tarot Project</footer>
+
+  <script src="https://veilatarot.com/script.js" defer></script>
+</body>
+</html>
