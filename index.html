@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Veila — A Celtic Cross Reading</title>
+<meta name="description" content="A quiet, considered Celtic Cross tarot reading. Ten cards, ten positions." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink: #0a0a0c;
+  --ink-2: #111218;
+  --panel: #13141a;
+  --rule: #2a2823;
+  --ivory: #ebe4d4;
+  --ivory-dim: #b9b3a4;
+  --ivory-mute: #6c6a63;
+  --gold: #b89968;
+  --gold-dim: #7a6645;
+  --crimson: #8a3a3a;
+  --serif: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --card-w: 92px;
+  --card-h: 152px;
+  --card-radius: 4px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern", "liga";
+  min-height: 100vh;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(184,153,104,0.04) 0%, transparent 55%),
+    var(--ink);
+  background-attachment: fixed;
+}
+
+/* ====== AD SLOTS ====== */
+.ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ivory-mute);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px dashed rgba(184,153,104,0.18);
+  background: rgba(255,255,255,0.01);
+  margin: 0 auto;
+}
+.ad-slot::before { content: "Advertisement"; opacity: 0.55; }
+
+#ad-top {
+  width: 728px;
+  height: 90px;
+  max-width: calc(100% - 32px);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+#ad-sidebar {
+  width: 300px;
+  height: 250px;
+  position: sticky;
+  top: 24px;
+}
+
+#ad-bottom {
+  width: 100%;
+  max-width: 970px;
+  min-height: 90px;
+  margin: 64px auto 48px;
+}
+
+@media (max-width: 768px) {
+  #ad-top { width: 320px; height: 50px; }
+  #ad-sidebar { display: none; }
+  #ad-bottom { min-height: 100px; max-width: calc(100% - 32px); }
+}
+
+/* ====== HEADER ====== */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: 22px 32px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory);
+}
+.brand .dot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin: 0 8px 4px;
+  vertical-align: middle;
+}
+.brand-sub {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  font-weight: 400;
+}
+.nav-meta {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+
+/* ====== MAIN LAYOUT ====== */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 56px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; gap: 0; }
+}
+
+main { min-width: 0; }
+aside.rail { padding-top: 24px; }
+@media (max-width: 1024px) { aside.rail { display: none; } }
+
+/* ====== LANDING ====== */
+.landing {
+  min-height: calc(100vh - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  gap: 36px;
+}
+.landing .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+}
+.landing h1 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(56px, 8vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  color: var(--ivory);
+  max-width: 14ch;
+}
+.landing h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+}
+.landing .lede {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ivory-dim);
+  max-width: 52ch;
+}
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--gold-dim);
+}
+.divider-ornament .line {
+  width: 64px;
+  height: 1px;
+  background: var(--gold-dim);
+}
+.divider-ornament .mark {
+  width: 6px; height: 6px;
+  transform: rotate(45deg);
+  border: 1px solid var(--gold);
+}
+
+.cta-btn {
+  background: transparent;
+  color: var(--ivory);
+  border: 1px solid var(--gold);
+  padding: 18px 44px;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
+  position: relative;
+}
+.cta-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+  letter-spacing: 0.38em;
+}
+.cta-btn.ghost {
+  border-color: var(--rule);
+  color: var(--ivory-dim);
+  padding: 14px 32px;
+  font-size: 10px;
+}
+.cta-btn.ghost:hover {
+  background: transparent;
+  border-color: var(--gold);
+  color: var(--ivory);
+}
+
+.landing-meta {
+  display: flex;
+  gap: 48px;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+.landing-meta span strong {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ivory-dim);
+  margin-top: 6px;
+}
+
+/* ====== READING HEADER ====== */
+.reading-header {
+  text-align: center;
+  padding: 48px 24px 24px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 40px;
+}
+.reading-header .step {
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.reading-header h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.01em;
+  color: var(--ivory);
+  margin-bottom: 16px;
+}
+.reading-header p {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 17px;
+  max-width: 50ch;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.progress-track {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 28px;
+}
+.progress-track .tick {
+  width: 14px; height: 1px;
+  background: var(--rule);
+  transition: background 0.4s ease;
+}
+.progress-track .tick.on { background: var(--gold); }
+
+/* ====== CELTIC CROSS ====== */
+.spread-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 60px;
+}
+.spread {
+  --gap-x: 28px;
+  --gap-y: 22px;
+  display: grid;
+  grid-template-columns: var(--card-w) var(--card-w) var(--card-w) 36px var(--card-w);
+  grid-template-rows: var(--card-h) var(--card-h) var(--card-h) var(--card-h);
+  column-gap: var(--gap-x);
+  row-gap: var(--gap-y);
+  position: relative;
+}
+
+/* Cross positions */
+.pos-5  { grid-column: 2; grid-row: 1; } /* Above */
+.pos-3  { grid-column: 1; grid-row: 2; } /* Past */
+.pos-1  { grid-column: 2; grid-row: 2; } /* Present */
+.pos-4  { grid-column: 3; grid-row: 2; } /* Future */
+.pos-6  { grid-column: 2; grid-row: 3; } /* Below */
+.pos-2  { grid-column: 2; grid-row: 2; transform: rotate(90deg) translateX(0); z-index: 3; } /* Crossing */
+
+/* Staff (right column) - top to bottom: 10, 9, 8, 7 */
+.pos-10 { grid-column: 5; grid-row: 1; }
+.pos-9  { grid-column: 5; grid-row: 2; }
+.pos-8  { grid-column: 5; grid-row: 3; }
+.pos-7  { grid-column: 5; grid-row: 4; }
+
+/* ====== CARD ====== */
+.card-slot {
+  width: var(--card-w);
+  height: var(--card-h);
+  perspective: 1000px;
+  position: relative;
+}
+.card-slot.crossing { width: var(--card-h); height: var(--card-w); }
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.9s cubic-bezier(.4,.0,.2,1);
+  cursor: pointer;
+}
+.card.placed { }
+.card.flipped .face-back { opacity: 0; }
+.card.flipped .face-front { opacity: 1; }
+.face { transition: opacity 0.6s ease; }
+.face-front { opacity: 0; }
+.face-back { opacity: 1; }
+
+.face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+/* Card Back */
+.face-back {
+  background: #14151c;
+  border: 1px solid var(--gold-dim);
+  padding: 6px;
+}
+.face-back .inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(184,153,104,0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.face-back .inner::before,
+.face-back .inner::after {
+  content: "";
+  position: absolute;
+  width: 8px; height: 8px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+.face-back .inner::before { top: 8px; left: 50%; margin-left: -4px; }
+.face-back .inner::after  { bottom: 8px; left: 50%; margin-left: -4px; }
+.face-back svg { color: var(--gold); opacity: 0.85; }
+
+/* Card Front */
+.face-front {
+  background: var(--ivory);
+  color: var(--ink);
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gold-dim);
+}
+.face-front.reversed .art { transform: scaleY(-1); }
+.face-front .position-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11px;
+  color: var(--gold-dim);
+  text-align: center;
+  margin-bottom: 4px;
+}
+.face-front .art {
+  flex: 1;
+  border: 1px solid rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  font-family: var(--serif);
+  color: var(--ink);
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 6px, rgba(184,153,104,0.07) 6px 7px);
+}
+.face-front .art .glyph {
+  font-size: 22px;
+  letter-spacing: 0.05em;
+}
+.face-front .art .roman {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+}
+.face-front .name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-top: 6px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.face-front .reversed-mark {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--crimson);
+  margin-top: 3px;
+}
+
+/* Position label below card */
+.position-label {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -36px;
+  text-align: center;
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  pointer-events: none;
+  line-height: 1.4;
+}
+.position-label .num {
+  display: block;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 2px;
+}
+.card-slot.crossing .position-label {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(50%);
+  left: calc(100% + 16px);
+  right: auto;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.card-slot.active .card:not(.flipped) {
+  animation: breathe 2.4s ease-in-out infinite;
+}
+@keyframes breathe {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 0 rgba(184,153,104,0); }
+  50% { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(184,153,104,0.08); }
+}
+.card-slot.crossing.active .card:not(.flipped) {
+  animation: breathe-h 2.4s ease-in-out infinite;
+}
+@keyframes breathe-h {
+  0%, 100% { transform: rotate(90deg) translateY(0); }
+  50% { transform: rotate(90deg) translateY(-3px); }
+}
+
+/* ====== READ-OUTS (after flip) ====== */
+.readout-section {
+  border-top: 1px solid var(--rule);
+  padding-top: 56px;
+  margin-top: 80px;
+}
+.readout-section .section-label {
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.readout-section h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-bottom: 48px;
+}
+
+.readout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.readout {
+  border-top: 1px solid var(--rule);
+  padding: 28px 8px;
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 32px;
+  align-items: start;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.readout:last-child { border-bottom: 1px solid var(--rule); }
+.readout:hover { background: rgba(184,153,104,0.025); }
+.readout .num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  color: var(--gold);
+  line-height: 1;
+}
+.readout .body .position-name {
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin-bottom: 8px;
+}
+.readout .body h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.005em;
+  color: var(--ivory);
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+.readout .body h4 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  font-size: 16px;
+  margin-left: 8px;
+  letter-spacing: 0.04em;
+}
+.readout .body .keywords {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ivory-dim);
+  margin-bottom: 14px;
+}
+.readout .body .interp {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ivory-dim);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, margin-top 0.3s ease;
+}
+.readout.expanded .interp {
+  max-height: 600px;
+}
+.readout .expand-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11px;
+  color: var(--ivory-mute);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  align-self: center;
+  white-space: nowrap;
+}
+.readout.expanded .expand-mark::before { content: "Close"; }
+.readout:not(.expanded) .expand-mark::before { content: "Read +"; }
+
+/* ====== RESET ====== */
+.reset-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 56px 24px 0;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 40px 32px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+footer .fineprint {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--ivory-mute);
+  margin-bottom: 10px;
+}
+
+/* ====== STATES ====== */
+.is-hidden { display: none !important; }
+
+/* ====== HINT BANNER ====== */
+.hint-bar {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold);
+  padding: 14px 24px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--ink-2);
+  letter-spacing: 0.02em;
+}
+.hint-bar .count {
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 1px solid var(--rule);
+}
+
+/* ====== MOBILE STACK ====== */
+@media (max-width: 720px) {
+  :root {
+    --card-w: 82px;
+    --card-h: 136px;
+  }
+  .spread {
+    grid-template-columns: var(--card-w) var(--card-w) var(--card-w);
+    grid-template-rows: var(--card-h) var(--card-h) var(--card-h) 28px var(--card-w) 28px var(--card-w) 28px var(--card-w) 28px var(--card-w);
+    column-gap: 18px;
+    row-gap: 18px;
+  }
+  .pos-5 { grid-column: 2; grid-row: 1; }
+  .pos-3 { grid-column: 1; grid-row: 2; }
+  .pos-1 { grid-column: 2; grid-row: 2; }
+  .pos-4 { grid-column: 3; grid-row: 2; }
+  .pos-6 { grid-column: 2; grid-row: 3; }
+  .pos-2 { grid-column: 2; grid-row: 2; }
+  /* Staff: stack horizontally on mobile */
+  .pos-7  { grid-column: 1; grid-row: 5; }
+  .pos-8  { grid-column: 2; grid-row: 5; }
+  .pos-9  { grid-column: 3; grid-row: 5; }
+  .pos-10 { grid-column: 2; grid-row: 7; }
+
+  .card-slot.crossing .position-label {
+    top: auto; bottom: -36px; left: 0; right: 0;
+    transform: none;
+    text-align: center;
+    white-space: normal;
+  }
+  .readout { grid-template-columns: 48px 1fr; gap: 16px; }
+  .readout .expand-mark { grid-column: 1 / -1; text-align: right; margin-top: -8px; }
+  .readout .body h4 { font-size: 22px; }
+  .readout .num { font-size: 28px; }
+  .site-header { padding: 18px 20px; flex-wrap: wrap; gap: 8px; }
+  .layout { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">Veila<span class="dot"></span><span class="brand-sub">A Tarot Practice</span></div>
+  <div class="nav-meta">Celtic Cross · 10 Cards</div>
+</header>
+
+<div id="ad-top" class="ad-slot" aria-label="Top advertisement"></div>
+
+<div class="layout">
+  <main>
+
+    <!-- ====== LANDING ====== -->
+    <section id="landing" class="landing">
+      <div class="eyebrow">A Quiet Reading</div>
+      <h1>Ten cards.<br/>One <em>question</em>.</h1>
+      <div class="divider-ornament">
+        <span class="line"></span>
+        <span class="mark"></span>
+        <span class="line"></span>
+      </div>
+      <p class="lede">
+        Hold a question in mind — clear, honest, unrushed. When you are ready, draw your Celtic Cross. The cards are tools; the meaning is yours.
+      </p>
+      <button class="cta-btn" id="begin-btn">Draw Your Cards</button>
+      <div class="landing-meta">
+        <span>The Spread<strong>Celtic Cross</strong></span>
+        <span>The Deck<strong>Rider–Waite, 78</strong></span>
+        <span>The Practice<strong>Once daily</strong></span>
+      </div>
+    </section>
+
+    <!-- ====== READING ====== -->
+    <section id="reading" class="is-hidden">
+      <div class="reading-header">
+        <div class="step">The Spread is Laid</div>
+        <h2>Your Celtic Cross</h2>
+        <p>Each card is placed face-down. Tap to turn one over. Take them in the order they call to you.</p>
+        <div class="progress-track" id="progress-track"></div>
+      </div>
+
+      <div id="hint-bar" class="hint-bar">
+        Tap a card to reveal it. <span class="count" id="flip-count">0 of 10 revealed</span>
+      </div>
+
+      <div class="spread-wrap">
+        <div class="spread" id="spread"></div>
+      </div>
+
+      <!-- Readouts populate after all 10 are flipped -->
+      <section id="readout-section" class="readout-section is-hidden">
+        <div class="section-label">The Reading</div>
+        <h3>Notes from the Spread</h3>
+        <div class="readout-list" id="readout-list"></div>
+      </section>
+
+      <div class="reset-row" id="reset-row">
+        <button class="cta-btn ghost" id="reveal-all-btn">Reveal All</button>
+        <button class="cta-btn" id="reset-btn">Read Again</button>
+      </div>
+
+      <div id="ad-bottom" class="ad-slot" aria-label="Bottom advertisement"></div>
+
+    </section>
+
+  </main>
+
+  <aside class="rail">
+    <div id="ad-sidebar" class="ad-slot" aria-label="Sidebar advertisement"></div>
+  </aside>
+</div>
+
+<footer>
+  <div class="fineprint">For reflection, not prediction.</div>
+  <div>veilatarot.com · © MMXXVI</div>
+</footer>
+
+<script>
+/* ========================================================================
+   TAROT DATA — 78 cards, abridged but real meanings.
+   Replace with your supplied JSON; shape: name, arcana, suit, number,
+   keywords, upright, reversed.
+   ======================================================================== */
+const DECK = [
+  // ===== MAJOR ARCANA =====
+  { name: "The Fool", arcana: "major", suit: null, number: 0, roman: "0",
+    keywords: "Beginnings, innocence, leap of faith",
+    upright: "A threshold moment. You stand at an edge with little in your pack but instinct. The card asks you to begin before you feel ready — to trust the road more than the map.",
+    reversed: "Recklessness, or the refusal to begin. The leap is being taken without looking, or not taken at all from fear of looking foolish." },
+  { name: "The Magician", arcana: "major", suit: null, number: 1, roman: "I",
+    keywords: "Will, manifestation, focused power",
+    upright: "Every tool you need is already on the table. The question is no longer capability but intention — what, exactly, are you choosing to make real?",
+    reversed: "Scattered will. Talent without aim, or aim turned to manipulation. The power is present but pointed in the wrong direction." },
+  { name: "The High Priestess", arcana: "major", suit: null, number: 2, roman: "II",
+    keywords: "Intuition, the unseen, inner knowing",
+    upright: "Something beneath the surface knows the answer already. This card counsels stillness — the kind of listening that words interrupt.",
+    reversed: "Disconnection from intuition. Drowning the inner voice in noise, or mistaking secrecy for wisdom." },
+  { name: "The Empress", arcana: "major", suit: null, number: 3, roman: "III",
+    keywords: "Abundance, creation, embodied life",
+    upright: "A season of fertility — in work, relationship, or the body itself. Things take root. Tend them with patience, not pressure.",
+    reversed: "Creative block, or smothering care. What was nourishment becomes overgrowth." },
+  { name: "The Emperor", arcana: "major", suit: null, number: 4, roman: "IV",
+    keywords: "Structure, authority, sovereignty",
+    upright: "Order is being established. The card asks you to set boundaries you can actually defend, and to lead in the places that are yours to lead.",
+    reversed: "Rigidity or tyranny. Control mistaken for security; a structure that no longer serves the life inside it." },
+  { name: "The Hierophant", arcana: "major", suit: null, number: 5, roman: "V",
+    keywords: "Tradition, teaching, shared meaning",
+    upright: "Wisdom inherited rather than invented. Look to lineage — a teacher, an institution, an old practice — for ground beneath your feet.",
+    reversed: "Dogma. The rules have outlived the reasons for them. Time to question what you were taught was non-negotiable." },
+  { name: "The Lovers", arcana: "major", suit: null, number: 6, roman: "VI",
+    keywords: "Union, choice, values",
+    upright: "Not merely romance — a meeting of values. A choice that asks you to declare what, and whom, you belong to.",
+    reversed: "Misalignment. A bond that contradicts your principles, or a choice avoided so long it is making itself." },
+  { name: "The Chariot", arcana: "major", suit: null, number: 7, roman: "VII",
+    keywords: "Drive, discipline, victory through will",
+    upright: "Forward motion through harnessed opposites. You hold reins in both hands; momentum belongs to whoever can keep them taut.",
+    reversed: "Direction lost. Force without aim, or aim without force. The wheels are turning but no one is steering." },
+  { name: "Strength", arcana: "major", suit: null, number: 8, roman: "VIII",
+    keywords: "Courage, gentle power, mastery",
+    upright: "True strength is quiet. The lion is not slain; it is befriended. Soft answers and steady hands move what brute force cannot.",
+    reversed: "Self-doubt, or strength turned harsh. Power used to dominate the self rather than steward it." },
+  { name: "The Hermit", arcana: "major", suit: null, number: 9, roman: "IX",
+    keywords: "Solitude, inner light, the long path",
+    upright: "Withdraw — not in defeat, but to hear. The lantern only works in the dark. Some answers require the silence of stepping away.",
+    reversed: "Isolation. Solitude turned to exile. The retreat has become a hiding place." },
+  { name: "Wheel of Fortune", arcana: "major", suit: null, number: 10, roman: "X",
+    keywords: "Cycles, turning, fate",
+    upright: "The wheel turns. What rose will fall; what fell will rise. Meet the change with grace; resistance only lengthens the descent.",
+    reversed: "Stuck on the wheel. The same patterns, the same lessons. Time to ask what you keep choosing." },
+  { name: "Justice", arcana: "major", suit: null, number: 11, roman: "XI",
+    keywords: "Truth, accountability, balance",
+    upright: "The scales are honest. Causes and consequences are catching up — for better. Speak truthfully; choose the harder, cleaner thing.",
+    reversed: "Avoidance of accountability. A reckoning postponed becomes a reckoning compounded." },
+  { name: "The Hanged Man", arcana: "major", suit: null, number: 12, roman: "XII",
+    keywords: "Surrender, perspective, suspension",
+    upright: "A pause that looks like defeat is actually a vantage. Turn the world over and see what falls out of its pockets.",
+    reversed: "Stalling. Sacrifice without insight. Hanging there out of habit, not revelation." },
+  { name: "Death", arcana: "major", suit: null, number: 13, roman: "XIII",
+    keywords: "Ending, transformation, threshold",
+    upright: "Something is over. Refusing the ending will not undo it. Let it close so the next thing can begin its proper opening.",
+    reversed: "Resistance to change. Clinging to what has already left. The funeral postponed indefinitely." },
+  { name: "Temperance", arcana: "major", suit: null, number: 14, roman: "XIV",
+    keywords: "Balance, alchemy, patience",
+    upright: "Two things mixing into a third. Patience is the active ingredient. Do not rush what is becoming.",
+    reversed: "Imbalance, excess. Pouring too fast, or refusing to pour at all." },
+  { name: "The Devil", arcana: "major", suit: null, number: 15, roman: "XV",
+    keywords: "Attachment, shadow, the chain",
+    upright: "What grips you, you helped build. The chains are loose. The card is not about evil but about the comfort of the cage.",
+    reversed: "Beginning to see the lock. The first loosening. A door cracked open." },
+  { name: "The Tower", arcana: "major", suit: null, number: 16, roman: "XVI",
+    keywords: "Sudden change, revelation, collapse",
+    upright: "A structure built on a false foundation comes down. Painful, necessary, fast. What survives is what was real.",
+    reversed: "Disaster narrowly avoided, or one delayed. The fissures are widening; the collapse is choosing its hour." },
+  { name: "The Star", arcana: "major", suit: null, number: 17, roman: "XVII",
+    keywords: "Hope, renewal, quiet faith",
+    upright: "After the storm, water on dry earth. A soft, unspectacular hope returns. Trust it.",
+    reversed: "Discouragement. Faith withdrawn just before the dawn it was waiting for." },
+  { name: "The Moon", arcana: "major", suit: null, number: 18, roman: "XVIII",
+    keywords: "Illusion, dream, the unconscious",
+    upright: "Not all is what it seems. Walk the road but do not trust the shapes by the side of it. Old fears wear new costumes.",
+    reversed: "The fog lifts. What was distorted is named. Be gentle with what you find." },
+  { name: "The Sun", arcana: "major", suit: null, number: 19, roman: "XIX",
+    keywords: "Clarity, vitality, joy without apology",
+    upright: "A clean, uncomplicated good. Permission to enjoy the thing you have without bracing for its loss.",
+    reversed: "Joy dimmed, but not extinguished. A reminder to look up." },
+  { name: "Judgement", arcana: "major", suit: null, number: 20, roman: "XX",
+    keywords: "Reckoning, awakening, call",
+    upright: "Something is calling you back to yourself. An old chapter wants to be re-read with new eyes and finally closed properly.",
+    reversed: "Ignoring the call. Self-criticism mistaken for self-knowledge." },
+  { name: "The World", arcana: "major", suit: null, number: 21, roman: "XXI",
+    keywords: "Completion, integration, arrival",
+    upright: "A long arc closes. You are not the same person who began. Pause here and feel it before moving on.",
+    reversed: "Almost there. A loose thread keeping the ending from settling. Find it; tie it." },
+
+  // ===== WANDS — fire, will, vocation =====
+  { name: "Ace of Wands", arcana: "minor", suit: "wands", number: 1, roman: "I",
+    keywords: "Spark, initiative, creative fire",
+    upright: "A new fire wants kindling. The first urge is real — protect it from your own committee.",
+    reversed: "Delay, hesitation, a spark not yet caught." },
+  { name: "Two of Wands", arcana: "minor", suit: "wands", number: 2, roman: "II",
+    keywords: "Plans, dominion, the view from here",
+    upright: "You hold the world in one hand and a question in the other. Choose your horizon before you choose your route.",
+    reversed: "Fear of the wider world. Comfort confused with safety." },
+  { name: "Three of Wands", arcana: "minor", suit: "wands", number: 3, roman: "III",
+    keywords: "Expansion, ships coming in, foresight",
+    upright: "What you sent out is on its way back. Stand at the cliff and watch — but keep the work going.",
+    reversed: "Delays in return. Patience is being asked of you, not given to you." },
+  { name: "Four of Wands", arcana: "minor", suit: "wands", number: 4, roman: "IV",
+    keywords: "Celebration, threshold, belonging",
+    upright: "A milestone earned. Mark it. Gather people. Joy uncelebrated tends to wander off.",
+    reversed: "A celebration with reservations. Belonging not yet felt." },
+  { name: "Five of Wands", arcana: "minor", suit: "wands", number: 5, roman: "V",
+    keywords: "Competition, friction, productive disorder",
+    upright: "Disagreement is doing real work here. Don't smooth it too quickly; the friction is shaping something.",
+    reversed: "Petty conflict. Energy spent on the wrong battles." },
+  { name: "Six of Wands", arcana: "minor", suit: "wands", number: 6, roman: "VI",
+    keywords: "Recognition, victory, return",
+    upright: "Public acknowledgment. Receive it without shrinking; you did the work that earned it.",
+    reversed: "Recognition delayed or hollow. Praise that doesn't quite fit." },
+  { name: "Seven of Wands", arcana: "minor", suit: "wands", number: 7, roman: "VII",
+    keywords: "Defense, conviction, holding ground",
+    upright: "Hold the position. You're high on the slope; the climb is what makes it defensible.",
+    reversed: "Overwhelm. Defending too many fronts at once. Choose which hill matters." },
+  { name: "Eight of Wands", arcana: "minor", suit: "wands", number: 8, roman: "VIII",
+    keywords: "Speed, message in flight, momentum",
+    upright: "Things move quickly now. Answer the calls; ride the air while it's moving.",
+    reversed: "Delays, miscommunication. The arrows scatter." },
+  { name: "Nine of Wands", arcana: "minor", suit: "wands", number: 9, roman: "IX",
+    keywords: "Resilience, the last watch, weary courage",
+    upright: "Tired, bandaged, but standing. You are closer than the exhaustion lets you see.",
+    reversed: "Paranoia. Defending against an enemy that already left." },
+  { name: "Ten of Wands", arcana: "minor", suit: "wands", number: 10, roman: "X",
+    keywords: "Burden, over-responsibility, the last mile",
+    upright: "Too much in the arms. Some of it isn't yours to carry. Put down what you picked up out of habit.",
+    reversed: "Beginning to set the load down. Relief, slowly." },
+  { name: "Page of Wands", arcana: "minor", suit: "wands", number: 11, roman: "Pg",
+    keywords: "Curiosity, fresh enthusiasm, messenger",
+    upright: "A new interest, person, or letter. Follow the curiosity; it knows something you don't yet.",
+    reversed: "Flightiness, gossip, a spark that won't catch." },
+  { name: "Knight of Wands", arcana: "minor", suit: "wands", number: 12, roman: "Kn",
+    keywords: "Charge, passion in motion, the gallop",
+    upright: "Action — bold, hot, fast. Wonderful if aimed; ruinous if not.",
+    reversed: "Recklessness. Pace without direction." },
+  { name: "Queen of Wands", arcana: "minor", suit: "wands", number: 13, roman: "Qn",
+    keywords: "Warmth, magnetism, sovereign fire",
+    upright: "Confidence that draws people without asking. Lead from your own heat, not from performance.",
+    reversed: "Jealousy. Heat turned sharp." },
+  { name: "King of Wands", arcana: "minor", suit: "wands", number: 14, roman: "Kg",
+    keywords: "Vision, command, the seasoned founder",
+    upright: "Long-game leadership. Vision plus the patience to wait for the right move.",
+    reversed: "Impulse. Tyranny of charisma." },
+
+  // ===== CUPS — water, feeling, relationship =====
+  { name: "Ace of Cups", arcana: "minor", suit: "cups", number: 1, roman: "I",
+    keywords: "Open heart, new feeling, grace",
+    upright: "A vessel filling. Love, art, tenderness — something soft is being offered. Receive it.",
+    reversed: "Closed heart. Feeling cut off from the spring." },
+  { name: "Two of Cups", arcana: "minor", suit: "cups", number: 2, roman: "II",
+    keywords: "Mutuality, recognition, alliance",
+    upright: "Two people seeing each other. A pact, friendship, romance — built on real exchange.",
+    reversed: "Imbalance. One pouring; the other receiving without return." },
+  { name: "Three of Cups", arcana: "minor", suit: "cups", number: 3, roman: "III",
+    keywords: "Friendship, celebration, chorus",
+    upright: "Your people, gathered. Joy in company. Pour the wine.",
+    reversed: "Excess; the party that's begun to consume its participants." },
+  { name: "Four of Cups", arcana: "minor", suit: "cups", number: 4, roman: "IV",
+    keywords: "Apathy, looking past the offered cup",
+    upright: "Boredom. A gift is being held out and you haven't looked up. Look up.",
+    reversed: "Beginning to notice. Re-engagement." },
+  { name: "Five of Cups", arcana: "minor", suit: "cups", number: 5, roman: "V",
+    keywords: "Grief, focus on loss, the spilled wine",
+    upright: "Three cups are down; two are still standing. The grief is real. So is what remains.",
+    reversed: "Lifting the eyes. Forgiveness, slowly arriving." },
+  { name: "Six of Cups", arcana: "minor", suit: "cups", number: 6, roman: "VI",
+    keywords: "Memory, innocence, return",
+    upright: "Childhood, nostalgia, or someone from before. Tenderness for what once was.",
+    reversed: "Stuck in the past. Memory used as a place to hide." },
+  { name: "Seven of Cups", arcana: "minor", suit: "cups", number: 7, roman: "VII",
+    keywords: "Choice, fantasy, the menu",
+    upright: "Many options, several illusory. Sort the cup from the steam.",
+    reversed: "Clarity returning. The fog choosing one shape." },
+  { name: "Eight of Cups", arcana: "minor", suit: "cups", number: 8, roman: "VIII",
+    keywords: "Walking away, deeper search",
+    upright: "Leaving what was almost enough. Not failure — direction. The next thing requires this departure.",
+    reversed: "Hesitation at the threshold. Going, returning, going again." },
+  { name: "Nine of Cups", arcana: "minor", suit: "cups", number: 9, roman: "IX",
+    keywords: "Wish, satisfaction, contentment",
+    upright: "The thing you asked for, granted. Notice it. Receive it as more than a transaction.",
+    reversed: "Wish granted but unsatisfying. The cup was the wrong shape." },
+  { name: "Ten of Cups", arcana: "minor", suit: "cups", number: 10, roman: "X",
+    keywords: "Family, harmony, the long love",
+    upright: "Emotional home. Whatever family means to you — chosen or given — it is in good order.",
+    reversed: "Discord at the table. The picture and the reality diverging." },
+  { name: "Page of Cups", arcana: "minor", suit: "cups", number: 11, roman: "Pg",
+    keywords: "Imagination, the fish in the cup, message",
+    upright: "An unlikely feeling arrives. Stay curious about your own surprise.",
+    reversed: "Moodiness; creativity blocked by self-criticism." },
+  { name: "Knight of Cups", arcana: "minor", suit: "cups", number: 12, roman: "Kn",
+    keywords: "Romance, offering, the slow approach",
+    upright: "An invitation arrives, gently. Whether you accept depends on whether you trust the giver.",
+    reversed: "False charm. An invitation dressed up to hide its cost." },
+  { name: "Queen of Cups", arcana: "minor", suit: "cups", number: 13, roman: "Qn",
+    keywords: "Empathy, deep waters, attunement",
+    upright: "Compassion held without losing yourself in it. Feel without drowning.",
+    reversed: "Overwhelmed by others' feelings. Boundary worn thin." },
+  { name: "King of Cups", arcana: "minor", suit: "cups", number: 14, roman: "Kg",
+    keywords: "Composure, emotional mastery, calm on rough water",
+    upright: "Feeling all of it and still steering. The kind of presence others borrow strength from.",
+    reversed: "Repression dressed up as composure." },
+
+  // ===== SWORDS — air, mind, conflict =====
+  { name: "Ace of Swords", arcana: "minor", suit: "swords", number: 1, roman: "I",
+    keywords: "Clarity, breakthrough, the named thing",
+    upright: "A truth arrives whole. Speak it cleanly. The clarity is the gift; how you wield it is the test.",
+    reversed: "Confusion. A truth half-named, used to cut more than to clarify." },
+  { name: "Two of Swords", arcana: "minor", suit: "swords", number: 2, roman: "II",
+    keywords: "Stalemate, avoidance, the blindfold",
+    upright: "A choice avoided is still a choice. The blindfold isn't protecting you; it's just hiding the table.",
+    reversed: "Lifting the blindfold. Information you'd rather not see, finally seen." },
+  { name: "Three of Swords", arcana: "minor", suit: "swords", number: 3, roman: "III",
+    keywords: "Heartbreak, painful clarity",
+    upright: "Grief in plain weather. The pain is the honest response — don't apologize for it.",
+    reversed: "Healing. The wound closing, slowly. Forgiveness — of self, possibly." },
+  { name: "Four of Swords", arcana: "minor", suit: "swords", number: 4, roman: "IV",
+    keywords: "Rest, retreat, recovery",
+    upright: "Lay down the sword. Sleep is not surrender. Healing requires stillness you keep deferring.",
+    reversed: "Restlessness. Trying to rest while still in the fight." },
+  { name: "Five of Swords", arcana: "minor", suit: "swords", number: 5, roman: "V",
+    keywords: "Hollow victory, conflict, cost",
+    upright: "You can win and lose at once. Ask whether the win is worth what it leaves on the field.",
+    reversed: "Mending after conflict. The hand offered first." },
+  { name: "Six of Swords", arcana: "minor", suit: "swords", number: 6, roman: "VI",
+    keywords: "Passage, quieter waters, leaving",
+    upright: "Moving from rough water toward calm. You are not who you were on the other shore.",
+    reversed: "Resistance to the crossing. Holding the rudder against the current." },
+  { name: "Seven of Swords", arcana: "minor", suit: "swords", number: 7, roman: "VII",
+    keywords: "Strategy, deception, the quiet exit",
+    upright: "Cunning may serve you. Or it may serve someone else — at your expense. Notice which way the swords are leaving.",
+    reversed: "Confession. The hidden brought to the table." },
+  { name: "Eight of Swords", arcana: "minor", suit: "swords", number: 8, roman: "VIII",
+    keywords: "Restriction, self-bound",
+    upright: "The bindings are looser than they feel. Look at your feet — the ground is open.",
+    reversed: "Liberation. The realization that the cage was unlocked all along." },
+  { name: "Nine of Swords", arcana: "minor", suit: "swords", number: 9, roman: "IX",
+    keywords: "Anxiety, the 3 a.m. mind",
+    upright: "The worry is louder than the situation warrants. Real, but amplified. Daylight will halve it.",
+    reversed: "Worry receding. Naming the fear out loud and watching it shrink." },
+  { name: "Ten of Swords", arcana: "minor", suit: "swords", number: 10, roman: "X",
+    keywords: "Ending, rock bottom, dawn behind it",
+    upright: "Something has fully ended. The relief is permitted. The sun is rising in the same frame.",
+    reversed: "Recovery beginning. Standing up from the field." },
+  { name: "Page of Swords", arcana: "minor", suit: "swords", number: 11, roman: "Pg",
+    keywords: "Inquiry, sharp curiosity, vigilance",
+    upright: "A question someone hasn't been brave enough to ask. You might be the one to ask it.",
+    reversed: "Suspicion. Curiosity turned to scanning for threat." },
+  { name: "Knight of Swords", arcana: "minor", suit: "swords", number: 12, roman: "Kn",
+    keywords: "Charge, intellect in flight, urgency",
+    upright: "Move with conviction. Just check that the cause is actually yours before you ride.",
+    reversed: "Impatience. Rushing past nuance to win the argument." },
+  { name: "Queen of Swords", arcana: "minor", suit: "swords", number: 13, roman: "Qn",
+    keywords: "Clarity, discernment, honesty",
+    upright: "Truth without cruelty. A clean line, kindly drawn.",
+    reversed: "Coldness. The blade used to keep people out rather than keep clarity in." },
+  { name: "King of Swords", arcana: "minor", suit: "swords", number: 14, roman: "Kg",
+    keywords: "Judgment, law, principled authority",
+    upright: "Decision-making at its most exacting. Lead with reason, but remember reason answers to values.",
+    reversed: "Authoritarianism. Logic used to overrule what the heart already knew." },
+
+  // ===== PENTACLES — earth, body, craft, money =====
+  { name: "Ace of Pentacles", arcana: "minor", suit: "pentacles", number: 1, roman: "I",
+    keywords: "Opportunity, seed, grounded beginning",
+    upright: "A real, tangible opening. Take it seriously; it has the bones of something durable.",
+    reversed: "Hesitation about an opportunity. Or one that looks solid but isn't." },
+  { name: "Two of Pentacles", arcana: "minor", suit: "pentacles", number: 2, roman: "II",
+    keywords: "Juggling, adaptation, the dance",
+    upright: "Many demands at once. You can keep them aloft, but only if you stay light.",
+    reversed: "Dropping a ball. Time to put one down on purpose." },
+  { name: "Three of Pentacles", arcana: "minor", suit: "pentacles", number: 3, roman: "III",
+    keywords: "Collaboration, craft, the apprenticeship",
+    upright: "Skill meeting skill. Your work belongs in a room with others' work. Build together.",
+    reversed: "Mismatched standards. Collaboration without shared craft." },
+  { name: "Four of Pentacles", arcana: "minor", suit: "pentacles", number: 4, roman: "IV",
+    keywords: "Holding, security, the closed fist",
+    upright: "Safety achieved. Now: is the grip protecting the thing or strangling it?",
+    reversed: "Loosening the grip. Generosity, beginning." },
+  { name: "Five of Pentacles", arcana: "minor", suit: "pentacles", number: 5, roman: "V",
+    keywords: "Hardship, exclusion, the cold outside",
+    upright: "A lean season. Resources or warmth feel scarce — but the lit window is closer than you think.",
+    reversed: "Recovery. Coming in from the cold." },
+  { name: "Six of Pentacles", arcana: "minor", suit: "pentacles", number: 6, roman: "VI",
+    keywords: "Giving, receiving, the scale",
+    upright: "Exchange. Ask whether you are giving freely or buying control; whether you are receiving freely or owing a debt.",
+    reversed: "Unhealthy exchange. Debt disguised as gift." },
+  { name: "Seven of Pentacles", arcana: "minor", suit: "pentacles", number: 7, roman: "VII",
+    keywords: "Assessment, patience, the slow crop",
+    upright: "Pause and look at what you've grown. Is it the harvest you intended? Adjust now, not later.",
+    reversed: "Impatience. Pulling the crop up to check the roots." },
+  { name: "Eight of Pentacles", arcana: "minor", suit: "pentacles", number: 8, roman: "VIII",
+    keywords: "Mastery, devoted practice",
+    upright: "The unglamorous repetition that turns talent into craft. Stay at the bench.",
+    reversed: "Going through the motions. Practice without presence." },
+  { name: "Nine of Pentacles", arcana: "minor", suit: "pentacles", number: 9, roman: "IX",
+    keywords: "Self-made comfort, independent ease",
+    upright: "The garden you built, on your own terms. Enjoy it without apology.",
+    reversed: "Comfort that has become isolation. Garden walls too high." },
+  { name: "Ten of Pentacles", arcana: "minor", suit: "pentacles", number: 10, roman: "X",
+    keywords: "Legacy, family wealth, the long house",
+    upright: "What you build outlasts you. A long arc of stability — financial, relational, or both.",
+    reversed: "Inheritance tangled. Family or financial structures in need of repair." },
+  { name: "Page of Pentacles", arcana: "minor", suit: "pentacles", number: 11, roman: "Pg",
+    keywords: "Study, beginner's eye, the new coin",
+    upright: "A new skill, study, or financial project worth its patience.",
+    reversed: "Procrastination. The book unopened on the desk." },
+  { name: "Knight of Pentacles", arcana: "minor", suit: "pentacles", number: 12, roman: "Kn",
+    keywords: "Steadiness, the slow horse, reliability",
+    upright: "Progress that looks like nothing until you compare two months. Keep going.",
+    reversed: "Stagnation. Steadiness become stuckness." },
+  { name: "Queen of Pentacles", arcana: "minor", suit: "pentacles", number: 13, roman: "Qn",
+    keywords: "Nurture, abundance, practical care",
+    upright: "Resources stewarded with warmth. The kind of care that includes the bills.",
+    reversed: "Burnout from over-giving. Resources spent on the wrong altar." },
+  { name: "King of Pentacles", arcana: "minor", suit: "pentacles", number: 14, roman: "Kg",
+    keywords: "Provision, the seasoned hand, kingdom",
+    upright: "Long-built abundance. Generous because you can afford to be.",
+    reversed: "Wealth that controls its holder. Generosity replaced with gatekeeping." }
+];
+
+/* ========================================================================
+   POSITIONS — the Celtic Cross
+   ======================================================================== */
+const POSITIONS = [
+  { n: 1,  short: "The Present",        long: "What covers you — the present situation, the heart of the matter" },
+  { n: 2,  short: "The Challenge",      long: "What crosses you — the obstacle, the tension, the thing pulling against the present" },
+  { n: 3,  short: "The Past",           long: "What lies behind — recent events still shaping the room" },
+  { n: 4,  short: "The Future",         long: "What lies before — what is approaching in the near term" },
+  { n: 5,  short: "Above · Conscious",  long: "What crowns you — your stated aim, what you are aware of wanting" },
+  { n: 6,  short: "Below · Unconscious",long: "What is beneath — the root, the felt thing under the spoken thing" },
+  { n: 7,  short: "Advice",             long: "How you are meeting this — your stance, what you bring to it" },
+  { n: 8,  short: "External Influences",long: "The room around you — others, environment, circumstance" },
+  { n: 9,  short: "Hopes & Fears",      long: "What you long for and what you dread (often the same thing in two costumes)" },
+  { n: 10, short: "Outcome",            long: "Where this is tending, if all else holds its course" }
+];
+
+/* ========================================================================
+   STATE
+   ======================================================================== */
+let drawn = []; // [{card, position, reversed, flipped}]
+let flippedCount = 0;
+
+/* ========================================================================
+   UTIL — shuffle + draw 10
+   ======================================================================== */
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function drawSpread() {
+  const shuffled = shuffle(DECK).slice(0, 10);
+  return shuffled.map((card, i) => ({
+    card,
+    position: POSITIONS[i],
+    reversed: Math.random() < 0.32,
+    flipped: false
+  }));
+}
+
+/* ========================================================================
+   RENDER — spread of face-down cards
+   ======================================================================== */
+function renderSpread() {
+  const spread = document.getElementById('spread');
+  spread.innerHTML = '';
+
+  drawn.forEach((d, idx) => {
+    const slot = document.createElement('div');
+    slot.className = 'card-slot pos-' + d.position.n + (d.position.n === 2 ? ' crossing' : '');
+    slot.setAttribute('data-screen-label', 'Position ' + d.position.n);
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.idx = idx;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', 'Card at position ' + d.position.n + ', ' + d.position.short + '. Tap to reveal.');
+
+    // back
+    const back = document.createElement('div');
+    back.className = 'face face-back';
+    back.innerHTML = `
+      <div class="inner">
+        <svg width="36" height="56" viewBox="0 0 36 56" fill="none" stroke="currentColor" stroke-width="0.8">
+          <path d="M18 6 L30 28 L18 50 L6 28 Z" />
+          <circle cx="18" cy="28" r="6" />
+          <path d="M18 22 L18 34 M12 28 L24 28" stroke-width="0.5"/>
+        </svg>
+      </div>
+    `;
+    card.appendChild(back);
+
+    // front
+    const front = document.createElement('div');
+    front.className = 'face face-front' + (d.reversed ? ' reversed' : '');
+    front.innerHTML = `
+      <div class="position-num">${toRoman(d.position.n)}</div>
+      <div class="art">
+        <div class="roman">${d.card.roman}</div>
+        <div class="glyph">${suitGlyph(d.card)}</div>
+      </div>
+      <div class="name">${d.card.name}</div>
+      ${d.reversed ? '<div class="reversed-mark">Reversed</div>' : ''}
+    `;
+    card.appendChild(front);
+
+    // position label
+    const label = document.createElement('div');
+    label.className = 'position-label';
+    label.innerHTML = `<span class="num">${toRoman(d.position.n)}</span>${d.position.short}`;
+    slot.appendChild(label);
+
+    slot.appendChild(card);
+    spread.appendChild(slot);
+
+    // animate placement
+    setTimeout(() => card.classList.add('placed'), 120 + idx * 80);
+
+    // tap to flip
+    const flip = () => {
+      if (d.flipped) return;
+      d.flipped = true;
+      card.classList.add('flipped');
+      flippedCount++;
+      updateProgress();
+      if (flippedCount === 10) onAllFlipped();
+    };
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    });
+  });
+
+  // mark first unfllipped as active
+  setTimeout(updateActive, 900);
+}
+
+function updateActive() {
+  document.querySelectorAll('.card-slot').forEach(s => s.classList.remove('active'));
+  const next = drawn.findIndex(d => !d.flipped);
+  if (next === -1) return;
+  const slots = document.querySelectorAll('.card-slot');
+  if (slots[next]) slots[next].classList.add('active');
+}
+
+function updateProgress() {
+  document.getElementById('flip-count').textContent = flippedCount + ' of 10 revealed';
+  const track = document.getElementById('progress-track');
+  track.innerHTML = '';
+  for (let i = 0; i < 10; i++) {
+    const t = document.createElement('span');
+    t.className = 'tick' + (i < flippedCount ? ' on' : '');
+    track.appendChild(t);
+  }
+  updateActive();
+}
+
+function suitGlyph(card) {
+  if (card.arcana === 'major') return '✦';
+  switch (card.suit) {
+    case 'wands':     return '𓍢'; // staff-like
+    case 'cups':      return '◡';
+    case 'swords':    return '✢';
+    case 'pentacles': return '✪';
+    default: return '✦';
+  }
+}
+function toRoman(n) {
+  const map = [['X',10],['IX',9],['V',5],['IV',4],['I',1]];
+  let s = ''; let v = n;
+  for (const [r, val] of map) {
+    while (v >= val) { s += r; v -= val; }
+  }
+  return s;
+}
+
+/* ========================================================================
+   ON ALL FLIPPED — render readouts
+   ======================================================================== */
+function onAllFlipped() {
+  setTimeout(() => {
+    document.getElementById('hint-bar').classList.add('is-hidden');
+    const section = document.getElementById('readout-section');
+    section.classList.remove('is-hidden');
+    const list = document.getElementById('readout-list');
+    list.innerHTML = '';
+
+    drawn.forEach((d) => {
+      const row = document.createElement('div');
+      row.className = 'readout';
+      row.setAttribute('data-screen-label', 'Readout ' + d.position.n);
+
+      const orientation = d.reversed ? 'Reversed' : 'Upright';
+      const interp = d.reversed ? d.card.reversed : d.card.upright;
+
+      row.innerHTML = `
+        <div class="num">${toRoman(d.position.n)}</div>
+        <div class="body">
+          <div class="position-name">${d.position.short}</div>
+          <h4>${d.card.name}<em>· ${orientation}</em></h4>
+          <div class="keywords">${d.card.keywords}</div>
+          <div class="interp">
+            <p style="margin-bottom:14px;"><span style="font-family:var(--serif); font-style:italic; color:var(--ivory-mute);">${d.position.long}.</span></p>
+            <p>${interp}</p>
+          </div>
+        </div>
+        <div class="expand-mark"></div>
+      `;
+      row.addEventListener('click', () => row.classList.toggle('expanded'));
+      list.appendChild(row);
+    });
+
+    // smooth into view
+    setTimeout(() => {
+      section.scrollTo?.({ top: 0, behavior: 'smooth' });
+      section.getBoundingClientRect();
+    }, 100);
+
+  }, 600);
+}
+
+/* ========================================================================
+   ACTIONS
+   ======================================================================== */
+function beginReading() {
+  drawn = drawSpread();
+  flippedCount = 0;
+  document.getElementById('landing').classList.add('is-hidden');
+  document.getElementById('reading').classList.remove('is-hidden');
+  document.getElementById('hint-bar').classList.remove('is-hidden');
+  document.getElementById('readout-section').classList.add('is-hidden');
+  renderSpread();
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+function revealAll() {
+  drawn.forEach((d, idx) => {
+    if (d.flipped) return;
+    setTimeout(() => {
+      const card = document.querySelector('.card[data-idx="'+idx+'"]');
+      if (card && !d.flipped) {
+        d.flipped = true;
+        card.classList.add('flipped');
+        flippedCount++;
+        updateProgress();
+        if (flippedCount === 10) onAllFlipped();
+      }
+    }, idx * 140);
+  });
+}
+function reset() {
+  document.getElementById('reading').classList.add('is-hidden');
+  document.getElementById('landing').classList.remove('is-hidden');
+  drawn = [];
+  flippedCount = 0;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('begin-btn').addEventListener('click', beginReading);
+document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
+document.getElementById('reset-btn').addEventListener('click', reset);
+
+/* keyboard: Esc to reset */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !document.getElementById('reading').classList.contains('is-hidden')) {
+    // optional: reset();
+  }
+});
+</script>
+</body>
+</html>
