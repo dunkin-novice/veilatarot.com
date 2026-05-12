@@ -641,6 +641,153 @@ footer .fineprint {
 /* ====== STATES ====== */
 .is-hidden { display: none !important; }
 
+/* ====== SELECTION SCREEN ====== */
+.selection-header {
+  text-align: center;
+  padding: 48px 24px 24px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 32px;
+}
+.selection-header .step {
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.selection-header h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.01em;
+  color: var(--ivory);
+  margin-bottom: 16px;
+}
+.selection-header p {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 17px;
+  max-width: 52ch;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+.selection-counter {
+  margin-top: 26px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ivory-mute);
+  letter-spacing: 0.02em;
+}
+.selection-counter .count {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  color: var(--gold);
+  font-size: 22px;
+  margin: 0 4px;
+}
+
+.scatter-wrap {
+  padding: 8px 0 24px;
+}
+.scatter {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  height: clamp(520px, 60vh, 620px);
+  margin: 0 auto;
+}
+
+.pick-card {
+  --rot: 0deg;
+  position: absolute;
+  width: clamp(48px, 5.4vw, 64px);
+  height: clamp(78px, 9vw, 104px);
+  border-radius: var(--card-radius);
+  background: #14151c;
+  border: 1px solid var(--gold-dim);
+  padding: 4px;
+  cursor: pointer;
+  transform: translate(-50%, -50%) rotate(var(--rot));
+  transition: transform 0.45s cubic-bezier(.4,0,.2,1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease,
+              opacity 0.5s ease;
+  will-change: transform;
+}
+.pick-card .inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(184,153,104,0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.pick-card .inner::before,
+.pick-card .inner::after {
+  content: "";
+  position: absolute;
+  width: 5px; height: 5px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+.pick-card .inner::before { top: 5px; left: 50%; margin-left: -2.5px; }
+.pick-card .inner::after  { bottom: 5px; left: 50%; margin-left: -2.5px; }
+.pick-card .inner svg { color: var(--gold); opacity: 0.85; }
+
+.pick-card:hover {
+  transform: translate(-50%, calc(-50% - 8px)) rotate(var(--rot));
+  z-index: 60;
+}
+.pick-card.selected {
+  transform: translate(-50%, calc(-50% - 14px)) rotate(var(--rot));
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 18px 28px rgba(184,153,104,0.18);
+  z-index: 50;
+}
+.pick-card.selected .pick-order { opacity: 1; }
+
+.pick-order {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.continue-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 24px 40px;
+  flex-wrap: wrap;
+}
+.cta-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: var(--rule);
+  color: var(--ivory-mute);
+  pointer-events: none;
+  letter-spacing: 0.32em;
+}
+.cta-btn[disabled]:hover { background: transparent; }
+
+@media (max-width: 720px) {
+  .scatter { height: clamp(640px, 78vh, 820px); max-width: calc(100% - 16px); }
+  .selection-header { padding: 32px 20px 20px; }
+}
+
 /* ====== HINT BANNER ====== */
 .hint-bar {
   text-align: center;
@@ -734,6 +881,27 @@ footer .fineprint {
         <span>The Spread<strong>Celtic Cross</strong></span>
         <span>The Deck<strong>Rider–Waite, 78</strong></span>
         <span>The Practice<strong>Once daily</strong></span>
+      </div>
+    </section>
+
+    <!-- ====== SELECTION ====== -->
+    <section id="selection" class="is-hidden">
+      <div class="selection-header">
+        <div class="step">Choose Your Cards</div>
+        <h2>The Deck is Spread</h2>
+        <p>Seventy-eight cards lie face-down on the table. Take your time. Choose ten — let them call to you. Tap again to set one back.</p>
+        <div class="selection-counter">
+          <span class="count" id="pick-count">0</span> of 10 chosen
+        </div>
+      </div>
+
+      <div class="scatter-wrap">
+        <div class="scatter" id="scatter"></div>
+      </div>
+
+      <div class="continue-row">
+        <button class="cta-btn ghost" id="reshuffle-btn">Reshuffle</button>
+        <button class="cta-btn" id="continue-btn" disabled>Lay the Spread</button>
       </div>
     </section>
 
@@ -1135,7 +1303,7 @@ let drawn = []; // [{card, position, reversed, flipped}]
 let flippedCount = 0;
 
 /* ========================================================================
-   UTIL — shuffle + draw 10
+   UTIL — shuffle
    ======================================================================== */
 function shuffle(arr) {
   const a = arr.slice();
@@ -1144,15 +1312,6 @@ function shuffle(arr) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
-}
-function drawSpread() {
-  const shuffled = shuffle(DECK).slice(0, 10);
-  return shuffled.map((card, i) => ({
-    card,
-    position: POSITIONS[i],
-    reversed: Math.random() < 0.32,
-    flipped: false
-  }));
 }
 
 /* ========================================================================
@@ -1318,12 +1477,125 @@ function onAllFlipped() {
 }
 
 /* ========================================================================
+   SELECTION — 78 face-down cards, user picks 10
+   ======================================================================== */
+let deckOrder = []; // current shuffle of the full 78
+let picks = [];     // indices into deckOrder, in selection order
+
+function generateScatterPositions(n) {
+  const isMobile = window.matchMedia('(max-width: 720px)').matches;
+  const cols = isMobile ? 8 : 13;
+  const rows = Math.ceil(n / cols);
+  const marginX = isMobile ? 7 : 5;
+  const marginY = isMobile ? 5 : 6;
+  const innerW = 100 - marginX * 2;
+  const innerH = 100 - marginY * 2;
+  const cellW = innerW / cols;
+  const cellH = innerH / rows;
+  const positions = [];
+  for (let i = 0; i < n; i++) {
+    const r = Math.floor(i / cols);
+    const c = i % cols;
+    const jitterX = (Math.random() - 0.5) * cellW * 0.55;
+    const jitterY = (Math.random() - 0.5) * cellH * 0.45;
+    positions.push({
+      x: marginX + c * cellW + cellW / 2 + jitterX,
+      y: marginY + r * cellH + cellH / 2 + jitterY,
+      rot: (Math.random() - 0.5) * 28
+    });
+  }
+  return positions;
+}
+
+function renderScatter() {
+  const scatter = document.getElementById('scatter');
+  scatter.innerHTML = '';
+  const N = DECK.length;
+  const positions = generateScatterPositions(N);
+
+  for (let i = 0; i < N; i++) {
+    const pos = positions[i];
+    const c = document.createElement('div');
+    c.className = 'pick-card';
+    c.dataset.idx = i;
+    c.style.left = pos.x + '%';
+    c.style.top = pos.y + '%';
+    c.style.setProperty('--rot', pos.rot + 'deg');
+    c.setAttribute('role', 'button');
+    c.setAttribute('tabindex', '0');
+    c.setAttribute('aria-label', 'Card. Tap to choose.');
+    c.innerHTML = `
+      <div class="inner">
+        <svg width="22" height="34" viewBox="0 0 36 56" fill="none" stroke="currentColor" stroke-width="0.8">
+          <path d="M18 6 L30 28 L18 50 L6 28 Z" />
+          <circle cx="18" cy="28" r="6" />
+          <path d="M18 22 L18 34 M12 28 L24 28" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <span class="pick-order"></span>
+    `;
+    const togglePick = () => {
+      const idx = picks.indexOf(i);
+      if (idx >= 0) {
+        picks.splice(idx, 1);
+        c.classList.remove('selected');
+      } else if (picks.length < 10) {
+        picks.push(i);
+        c.classList.add('selected');
+      }
+      refreshPickOrders();
+      updatePickCount();
+    };
+    c.addEventListener('click', togglePick);
+    c.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePick(); }
+    });
+    scatter.appendChild(c);
+  }
+}
+
+function refreshPickOrders() {
+  document.querySelectorAll('.pick-card').forEach((c) => {
+    const i = parseInt(c.dataset.idx, 10);
+    const order = picks.indexOf(i);
+    const lbl = c.querySelector('.pick-order');
+    if (lbl) lbl.textContent = order >= 0 ? String(order + 1) : '';
+  });
+}
+
+function updatePickCount() {
+  document.getElementById('pick-count').textContent = picks.length;
+  const btn = document.getElementById('continue-btn');
+  if (picks.length === 10) btn.removeAttribute('disabled');
+  else btn.setAttribute('disabled', '');
+}
+
+/* ========================================================================
    ACTIONS
    ======================================================================== */
-function beginReading() {
-  drawn = drawSpread();
+function beginSelection() {
+  deckOrder = shuffle(DECK);
+  picks = [];
+  drawn = [];
   flippedCount = 0;
   document.getElementById('landing').classList.add('is-hidden');
+  document.getElementById('reading').classList.add('is-hidden');
+  document.getElementById('selection').classList.remove('is-hidden');
+  renderScatter();
+  updatePickCount();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function confirmSelection() {
+  if (picks.length !== 10) return;
+  drawn = picks.map((slotIdx, pos) => ({
+    card: deckOrder[slotIdx],
+    position: POSITIONS[pos],
+    reversed: Math.random() < 0.32,
+    flipped: false
+  }));
+  flippedCount = 0;
+  document.getElementById('selection').classList.add('is-hidden');
   document.getElementById('reading').classList.remove('is-hidden');
   document.getElementById('hint-bar').classList.remove('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
@@ -1331,6 +1603,7 @@ function beginReading() {
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
+
 function revealAll() {
   drawn.forEach((d, idx) => {
     if (d.flipped) return;
@@ -1346,15 +1619,21 @@ function revealAll() {
     }, idx * 140);
   });
 }
+
 function reset() {
   document.getElementById('reading').classList.add('is-hidden');
+  document.getElementById('selection').classList.add('is-hidden');
   document.getElementById('landing').classList.remove('is-hidden');
   drawn = [];
+  picks = [];
+  deckOrder = [];
   flippedCount = 0;
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-document.getElementById('begin-btn').addEventListener('click', beginReading);
+document.getElementById('begin-btn').addEventListener('click', beginSelection);
+document.getElementById('continue-btn').addEventListener('click', confirmSelection);
+document.getElementById('reshuffle-btn').addEventListener('click', beginSelection);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
 document.getElementById('reset-btn').addEventListener('click', reset);
 
