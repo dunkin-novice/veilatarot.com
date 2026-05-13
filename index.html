@@ -8,7 +8,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2823470980745945"
+     crossorigin="anonymous"></script>
 
 <style>
 :root {
@@ -22,8 +25,8 @@
   --gold: #b89968;
   --gold-dim: #7a6645;
   --crimson: #8a3a3a;
-  --serif: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: "Cormorant Garamond", "IBM Plex Sans Thai", "Garamond", "Times New Roman", serif;
+  --sans: "Inter", "IBM Plex Sans Thai", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --card-w: 92px;
   --card-h: 152px;
   --card-radius: 4px;
@@ -131,6 +134,36 @@ body {
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ivory-mute);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--ivory-mute);
+  transition: color 0.3s ease;
+}
+.lang-toggle button:hover { color: var(--ivory); }
+.lang-toggle button.active { color: var(--gold); }
+.lang-toggle .sep { color: var(--rule); }
+.header-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 /* ====== MAIN LAYOUT ====== */
@@ -607,8 +640,7 @@ aside.rail { padding-top: 24px; }
   align-self: center;
   white-space: nowrap;
 }
-.readout.expanded .expand-mark::before { content: "Close"; }
-.readout:not(.expanded) .expand-mark::before { content: "Read +"; }
+/* expand-mark text is set imperatively via i18n (T.readMore / T.readClose) */
 
 /* ====== RESET ====== */
 .reset-row {
@@ -855,8 +887,15 @@ footer .fineprint {
 <body>
 
 <header class="site-header">
-  <div class="brand">Veila<span class="dot"></span><span class="brand-sub">A Tarot Practice</span></div>
-  <div class="nav-meta">Celtic Cross · 10 Cards</div>
+  <div class="brand">Veila<span class="dot"></span><span class="brand-sub" data-i18n="brandSub">A Tarot Practice</span></div>
+  <div class="header-right">
+    <div class="nav-meta" data-i18n="navMeta">Celtic Cross · 10 Cards</div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <span class="sep">·</span>
+      <button type="button" data-lang="th">TH</button>
+    </div>
+  </div>
 </header>
 
 <div id="ad-top" class="ad-slot" aria-label="Top advertisement"></div>
@@ -866,32 +905,32 @@ footer .fineprint {
 
     <!-- ====== LANDING ====== -->
     <section id="landing" class="landing">
-      <div class="eyebrow">A Quiet Reading</div>
-      <h1>Ten cards.<br/>One <em>question</em>.</h1>
+      <div class="eyebrow" data-i18n="eyebrow">A Quiet Reading</div>
+      <h1 data-i18n-html="landingH1">Ten cards.<br/>One <em>question</em>.</h1>
       <div class="divider-ornament">
         <span class="line"></span>
         <span class="mark"></span>
         <span class="line"></span>
       </div>
-      <p class="lede">
+      <p class="lede" data-i18n="lede">
         Hold a question in mind — clear, honest, unrushed. When you are ready, draw your Celtic Cross. The cards are tools; the meaning is yours.
       </p>
-      <button class="cta-btn" id="begin-btn">Draw Your Cards</button>
+      <button class="cta-btn" id="begin-btn" data-i18n="beginBtn">Draw Your Cards</button>
       <div class="landing-meta">
-        <span>The Spread<strong>Celtic Cross</strong></span>
-        <span>The Deck<strong>Rider–Waite, 78</strong></span>
-        <span>The Practice<strong>Once daily</strong></span>
+        <span><span data-i18n="metaSpreadLabel">The Spread</span><strong data-i18n="metaSpreadVal">Celtic Cross</strong></span>
+        <span><span data-i18n="metaDeckLabel">The Deck</span><strong data-i18n="metaDeckVal">Rider–Waite, 78</strong></span>
+        <span><span data-i18n="metaPracticeLabel">The Practice</span><strong data-i18n="metaPracticeVal">Once daily</strong></span>
       </div>
     </section>
 
     <!-- ====== SELECTION ====== -->
     <section id="selection" class="is-hidden">
       <div class="selection-header">
-        <div class="step">Choose Your Cards</div>
-        <h2>The Deck is Spread</h2>
-        <p>Seventy-eight cards lie face-down on the table. Take your time. Choose ten — let them call to you. Tap again to set one back.</p>
-        <div class="selection-counter">
-          <span class="count" id="pick-count">0</span> of 10 chosen
+        <div class="step" data-i18n="selStep">Choose Your Cards</div>
+        <h2 data-i18n="selH2">The Deck is Spread</h2>
+        <p data-i18n="selP">Seventy-eight cards lie face-down on the table. Take your time. Choose ten — let them call to you. Tap again to set one back.</p>
+        <div class="selection-counter" id="selection-counter">
+          <span class="count" id="pick-count">0</span> <span data-i18n="selCounterSuffix">of 10 chosen</span>
         </div>
       </div>
 
@@ -900,22 +939,23 @@ footer .fineprint {
       </div>
 
       <div class="continue-row">
-        <button class="cta-btn ghost" id="reshuffle-btn">Reshuffle</button>
-        <button class="cta-btn" id="continue-btn" disabled>Lay the Spread</button>
+        <button class="cta-btn ghost" id="reshuffle-btn" data-i18n="reshuffleBtn">Reshuffle</button>
+        <button class="cta-btn" id="continue-btn" data-i18n="continueBtn" disabled>Lay the Spread</button>
       </div>
     </section>
 
     <!-- ====== READING ====== -->
     <section id="reading" class="is-hidden">
       <div class="reading-header">
-        <div class="step">The Spread is Laid</div>
-        <h2>Your Celtic Cross</h2>
-        <p>Each card is placed face-down. Tap to turn one over. Take them in the order they call to you.</p>
+        <div class="step" data-i18n="readStep">The Spread is Laid</div>
+        <h2 data-i18n="readH2">Your Celtic Cross</h2>
+        <p data-i18n="readP">Each card is placed face-down. Tap to turn one over. Take them in the order they call to you.</p>
         <div class="progress-track" id="progress-track"></div>
       </div>
 
       <div id="hint-bar" class="hint-bar">
-        Tap a card to reveal it. <span class="count" id="flip-count">0 of 10 revealed</span>
+        <span data-i18n="hintTap">Tap a card to reveal it.</span>
+        <span class="count"><span id="flip-count">0</span><span data-i18n="flipCountSuffix"> of 10 revealed</span></span>
       </div>
 
       <div class="spread-wrap">
@@ -924,14 +964,14 @@ footer .fineprint {
 
       <!-- Readouts populate after all 10 are flipped -->
       <section id="readout-section" class="readout-section is-hidden">
-        <div class="section-label">The Reading</div>
-        <h3>Notes from the Spread</h3>
+        <div class="section-label" data-i18n="readoutLabel">The Reading</div>
+        <h3 data-i18n="readoutH3">Notes from the Spread</h3>
         <div class="readout-list" id="readout-list"></div>
       </section>
 
       <div class="reset-row" id="reset-row">
-        <button class="cta-btn ghost" id="reveal-all-btn">Reveal All</button>
-        <button class="cta-btn" id="reset-btn">Read Again</button>
+        <button class="cta-btn ghost" id="reveal-all-btn" data-i18n="revealAllBtn">Reveal All</button>
+        <button class="cta-btn" id="reset-btn" data-i18n="resetBtn">Read Again</button>
       </div>
 
       <div id="ad-bottom" class="ad-slot" aria-label="Bottom advertisement"></div>
@@ -946,355 +986,140 @@ footer .fineprint {
 </div>
 
 <footer>
-  <div class="fineprint">For reflection, not prediction.</div>
-  <div>veilatarot.com · © MMXXVI</div>
+  <div class="fineprint" data-i18n="footerFineprint">For reflection, not prediction.</div>
+  <div data-i18n="footerCopy">veilatarot.com · © MMXXVI</div>
 </footer>
 
 <script>
 /* ========================================================================
-   TAROT DATA — 78 cards, abridged but real meanings.
-   Replace with your supplied JSON; shape: name, arcana, suit, number,
-   keywords, upright, reversed.
+   STRINGS — bilingual UI + position metadata
    ======================================================================== */
-const DECK = [
-  // ===== MAJOR ARCANA =====
-  { name: "The Fool", arcana: "major", suit: null, number: 0, roman: "0",
-    keywords: "Beginnings, innocence, leap of faith",
-    upright: "A threshold moment. You stand at an edge with little in your pack but instinct. The card asks you to begin before you feel ready — to trust the road more than the map.",
-    reversed: "Recklessness, or the refusal to begin. The leap is being taken without looking, or not taken at all from fear of looking foolish." },
-  { name: "The Magician", arcana: "major", suit: null, number: 1, roman: "I",
-    keywords: "Will, manifestation, focused power",
-    upright: "Every tool you need is already on the table. The question is no longer capability but intention — what, exactly, are you choosing to make real?",
-    reversed: "Scattered will. Talent without aim, or aim turned to manipulation. The power is present but pointed in the wrong direction." },
-  { name: "The High Priestess", arcana: "major", suit: null, number: 2, roman: "II",
-    keywords: "Intuition, the unseen, inner knowing",
-    upright: "Something beneath the surface knows the answer already. This card counsels stillness — the kind of listening that words interrupt.",
-    reversed: "Disconnection from intuition. Drowning the inner voice in noise, or mistaking secrecy for wisdom." },
-  { name: "The Empress", arcana: "major", suit: null, number: 3, roman: "III",
-    keywords: "Abundance, creation, embodied life",
-    upright: "A season of fertility — in work, relationship, or the body itself. Things take root. Tend them with patience, not pressure.",
-    reversed: "Creative block, or smothering care. What was nourishment becomes overgrowth." },
-  { name: "The Emperor", arcana: "major", suit: null, number: 4, roman: "IV",
-    keywords: "Structure, authority, sovereignty",
-    upright: "Order is being established. The card asks you to set boundaries you can actually defend, and to lead in the places that are yours to lead.",
-    reversed: "Rigidity or tyranny. Control mistaken for security; a structure that no longer serves the life inside it." },
-  { name: "The Hierophant", arcana: "major", suit: null, number: 5, roman: "V",
-    keywords: "Tradition, teaching, shared meaning",
-    upright: "Wisdom inherited rather than invented. Look to lineage — a teacher, an institution, an old practice — for ground beneath your feet.",
-    reversed: "Dogma. The rules have outlived the reasons for them. Time to question what you were taught was non-negotiable." },
-  { name: "The Lovers", arcana: "major", suit: null, number: 6, roman: "VI",
-    keywords: "Union, choice, values",
-    upright: "Not merely romance — a meeting of values. A choice that asks you to declare what, and whom, you belong to.",
-    reversed: "Misalignment. A bond that contradicts your principles, or a choice avoided so long it is making itself." },
-  { name: "The Chariot", arcana: "major", suit: null, number: 7, roman: "VII",
-    keywords: "Drive, discipline, victory through will",
-    upright: "Forward motion through harnessed opposites. You hold reins in both hands; momentum belongs to whoever can keep them taut.",
-    reversed: "Direction lost. Force without aim, or aim without force. The wheels are turning but no one is steering." },
-  { name: "Strength", arcana: "major", suit: null, number: 8, roman: "VIII",
-    keywords: "Courage, gentle power, mastery",
-    upright: "True strength is quiet. The lion is not slain; it is befriended. Soft answers and steady hands move what brute force cannot.",
-    reversed: "Self-doubt, or strength turned harsh. Power used to dominate the self rather than steward it." },
-  { name: "The Hermit", arcana: "major", suit: null, number: 9, roman: "IX",
-    keywords: "Solitude, inner light, the long path",
-    upright: "Withdraw — not in defeat, but to hear. The lantern only works in the dark. Some answers require the silence of stepping away.",
-    reversed: "Isolation. Solitude turned to exile. The retreat has become a hiding place." },
-  { name: "Wheel of Fortune", arcana: "major", suit: null, number: 10, roman: "X",
-    keywords: "Cycles, turning, fate",
-    upright: "The wheel turns. What rose will fall; what fell will rise. Meet the change with grace; resistance only lengthens the descent.",
-    reversed: "Stuck on the wheel. The same patterns, the same lessons. Time to ask what you keep choosing." },
-  { name: "Justice", arcana: "major", suit: null, number: 11, roman: "XI",
-    keywords: "Truth, accountability, balance",
-    upright: "The scales are honest. Causes and consequences are catching up — for better. Speak truthfully; choose the harder, cleaner thing.",
-    reversed: "Avoidance of accountability. A reckoning postponed becomes a reckoning compounded." },
-  { name: "The Hanged Man", arcana: "major", suit: null, number: 12, roman: "XII",
-    keywords: "Surrender, perspective, suspension",
-    upright: "A pause that looks like defeat is actually a vantage. Turn the world over and see what falls out of its pockets.",
-    reversed: "Stalling. Sacrifice without insight. Hanging there out of habit, not revelation." },
-  { name: "Death", arcana: "major", suit: null, number: 13, roman: "XIII",
-    keywords: "Ending, transformation, threshold",
-    upright: "Something is over. Refusing the ending will not undo it. Let it close so the next thing can begin its proper opening.",
-    reversed: "Resistance to change. Clinging to what has already left. The funeral postponed indefinitely." },
-  { name: "Temperance", arcana: "major", suit: null, number: 14, roman: "XIV",
-    keywords: "Balance, alchemy, patience",
-    upright: "Two things mixing into a third. Patience is the active ingredient. Do not rush what is becoming.",
-    reversed: "Imbalance, excess. Pouring too fast, or refusing to pour at all." },
-  { name: "The Devil", arcana: "major", suit: null, number: 15, roman: "XV",
-    keywords: "Attachment, shadow, the chain",
-    upright: "What grips you, you helped build. The chains are loose. The card is not about evil but about the comfort of the cage.",
-    reversed: "Beginning to see the lock. The first loosening. A door cracked open." },
-  { name: "The Tower", arcana: "major", suit: null, number: 16, roman: "XVI",
-    keywords: "Sudden change, revelation, collapse",
-    upright: "A structure built on a false foundation comes down. Painful, necessary, fast. What survives is what was real.",
-    reversed: "Disaster narrowly avoided, or one delayed. The fissures are widening; the collapse is choosing its hour." },
-  { name: "The Star", arcana: "major", suit: null, number: 17, roman: "XVII",
-    keywords: "Hope, renewal, quiet faith",
-    upright: "After the storm, water on dry earth. A soft, unspectacular hope returns. Trust it.",
-    reversed: "Discouragement. Faith withdrawn just before the dawn it was waiting for." },
-  { name: "The Moon", arcana: "major", suit: null, number: 18, roman: "XVIII",
-    keywords: "Illusion, dream, the unconscious",
-    upright: "Not all is what it seems. Walk the road but do not trust the shapes by the side of it. Old fears wear new costumes.",
-    reversed: "The fog lifts. What was distorted is named. Be gentle with what you find." },
-  { name: "The Sun", arcana: "major", suit: null, number: 19, roman: "XIX",
-    keywords: "Clarity, vitality, joy without apology",
-    upright: "A clean, uncomplicated good. Permission to enjoy the thing you have without bracing for its loss.",
-    reversed: "Joy dimmed, but not extinguished. A reminder to look up." },
-  { name: "Judgement", arcana: "major", suit: null, number: 20, roman: "XX",
-    keywords: "Reckoning, awakening, call",
-    upright: "Something is calling you back to yourself. An old chapter wants to be re-read with new eyes and finally closed properly.",
-    reversed: "Ignoring the call. Self-criticism mistaken for self-knowledge." },
-  { name: "The World", arcana: "major", suit: null, number: 21, roman: "XXI",
-    keywords: "Completion, integration, arrival",
-    upright: "A long arc closes. You are not the same person who began. Pause here and feel it before moving on.",
-    reversed: "Almost there. A loose thread keeping the ending from settling. Find it; tie it." },
+const T = {
+  en: {
+    brandSub: 'A Tarot Practice',
+    navMeta: 'Celtic Cross · 10 Cards',
+    eyebrow: 'A Quiet Reading',
+    landingH1: 'Ten cards.<br>One <em>question</em>.',
+    lede: 'Hold a question in mind — clear, honest, unrushed. When you are ready, draw your Celtic Cross. The cards are tools; the meaning is yours.',
+    beginBtn: 'Draw Your Cards',
+    metaSpreadLabel: 'The Spread',
+    metaSpreadVal: 'Celtic Cross',
+    metaDeckLabel: 'The Deck',
+    metaDeckVal: 'Rider–Waite, 78',
+    metaPracticeLabel: 'The Practice',
+    metaPracticeVal: 'Once daily',
+    selStep: 'Choose Your Cards',
+    selH2: 'The Deck is Spread',
+    selP: 'Seventy-eight cards lie face-down on the table. Take your time. Choose ten — let them call to you. Tap again to set one back.',
+    selCounterSuffix: ' of 10 chosen',
+    reshuffleBtn: 'Reshuffle',
+    continueBtn: 'Lay the Spread',
+    readStep: 'The Spread is Laid',
+    readH2: 'Your Celtic Cross',
+    readP: 'Each card is placed face-down. Tap to turn one over. Take them in the order they call to you.',
+    hintTap: 'Tap a card to reveal it.',
+    flipCountSuffix: ' of 10 revealed',
+    revealAllBtn: 'Reveal All',
+    resetBtn: 'Read Again',
+    readoutLabel: 'The Reading',
+    readoutH3: 'Notes from the Spread',
+    readMore: 'Read +',
+    readClose: 'Close',
+    reversed: 'Reversed',
+    upright: 'Upright',
+    footerFineprint: 'For reflection, not prediction.',
+    footerCopy: 'veilatarot.com · © MMXXVI',
+    loadingDeck: 'Drawing the deck…',
+  },
+  th: {
+    brandSub: 'การทำสมาธิกับไพ่',
+    navMeta: 'Celtic Cross · 10 ใบ',
+    eyebrow: 'บทอ่านอันเงียบสงบ',
+    landingH1: 'ไพ่สิบใบ<br>คำถามหนึ่ง<em>ข้อ</em>',
+    lede: 'ตั้งคำถามไว้ในใจ — ชัดเจน ซื่อตรง ไม่เร่งรีบ เมื่อพร้อม จงเปิดไพ่เซลติกครอสของคุณ ไพ่คือเครื่องมือ ความหมายเป็นของคุณ',
+    beginBtn: 'เปิดไพ่ของคุณ',
+    metaSpreadLabel: 'ผังการอ่าน',
+    metaSpreadVal: 'Celtic Cross',
+    metaDeckLabel: 'สำรับไพ่',
+    metaDeckVal: 'Rider–Waite, 78 ใบ',
+    metaPracticeLabel: 'ความถี่',
+    metaPracticeVal: 'วันละหนึ่งครั้ง',
+    selStep: 'เลือกไพ่ของคุณ',
+    selH2: 'ไพ่แผ่กระจายบนโต๊ะ',
+    selP: 'ไพ่เจ็ดสิบแปดใบคว่ำหน้าวางอยู่บนโต๊ะ ค่อยๆ เลือก สิบใบ — ปล่อยให้ไพ่เรียกหาคุณ แตะอีกครั้งเพื่อยกเลิก',
+    selCounterSuffix: ' จาก 10 ใบ',
+    reshuffleBtn: 'สับใหม่',
+    continueBtn: 'วางไพ่',
+    readStep: 'ไพ่ถูกวางไว้แล้ว',
+    readH2: 'เซลติกครอสของคุณ',
+    readP: 'ไพ่แต่ละใบคว่ำหน้าอยู่ แตะเพื่อเปิด พลิกตามลำดับที่ไพ่เรียกหาคุณ',
+    hintTap: 'แตะไพ่เพื่อเปิด',
+    flipCountSuffix: ' จาก 10 ใบ',
+    revealAllBtn: 'เปิดทั้งหมด',
+    resetBtn: 'อ่านอีกครั้ง',
+    readoutLabel: 'บทอ่าน',
+    readoutH3: 'บันทึกจากการอ่าน',
+    readMore: 'อ่าน +',
+    readClose: 'ปิด',
+    reversed: 'กลับหัว',
+    upright: 'ตั้งตรง',
+    footerFineprint: 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์',
+    footerCopy: 'veilatarot.com · © MMXXVI',
+    loadingDeck: 'กำลังเตรียมสำรับไพ่…',
+  }
+};
 
-  // ===== WANDS — fire, will, vocation =====
-  { name: "Ace of Wands", arcana: "minor", suit: "wands", number: 1, roman: "I",
-    keywords: "Spark, initiative, creative fire",
-    upright: "A new fire wants kindling. The first urge is real — protect it from your own committee.",
-    reversed: "Delay, hesitation, a spark not yet caught." },
-  { name: "Two of Wands", arcana: "minor", suit: "wands", number: 2, roman: "II",
-    keywords: "Plans, dominion, the view from here",
-    upright: "You hold the world in one hand and a question in the other. Choose your horizon before you choose your route.",
-    reversed: "Fear of the wider world. Comfort confused with safety." },
-  { name: "Three of Wands", arcana: "minor", suit: "wands", number: 3, roman: "III",
-    keywords: "Expansion, ships coming in, foresight",
-    upright: "What you sent out is on its way back. Stand at the cliff and watch — but keep the work going.",
-    reversed: "Delays in return. Patience is being asked of you, not given to you." },
-  { name: "Four of Wands", arcana: "minor", suit: "wands", number: 4, roman: "IV",
-    keywords: "Celebration, threshold, belonging",
-    upright: "A milestone earned. Mark it. Gather people. Joy uncelebrated tends to wander off.",
-    reversed: "A celebration with reservations. Belonging not yet felt." },
-  { name: "Five of Wands", arcana: "minor", suit: "wands", number: 5, roman: "V",
-    keywords: "Competition, friction, productive disorder",
-    upright: "Disagreement is doing real work here. Don't smooth it too quickly; the friction is shaping something.",
-    reversed: "Petty conflict. Energy spent on the wrong battles." },
-  { name: "Six of Wands", arcana: "minor", suit: "wands", number: 6, roman: "VI",
-    keywords: "Recognition, victory, return",
-    upright: "Public acknowledgment. Receive it without shrinking; you did the work that earned it.",
-    reversed: "Recognition delayed or hollow. Praise that doesn't quite fit." },
-  { name: "Seven of Wands", arcana: "minor", suit: "wands", number: 7, roman: "VII",
-    keywords: "Defense, conviction, holding ground",
-    upright: "Hold the position. You're high on the slope; the climb is what makes it defensible.",
-    reversed: "Overwhelm. Defending too many fronts at once. Choose which hill matters." },
-  { name: "Eight of Wands", arcana: "minor", suit: "wands", number: 8, roman: "VIII",
-    keywords: "Speed, message in flight, momentum",
-    upright: "Things move quickly now. Answer the calls; ride the air while it's moving.",
-    reversed: "Delays, miscommunication. The arrows scatter." },
-  { name: "Nine of Wands", arcana: "minor", suit: "wands", number: 9, roman: "IX",
-    keywords: "Resilience, the last watch, weary courage",
-    upright: "Tired, bandaged, but standing. You are closer than the exhaustion lets you see.",
-    reversed: "Paranoia. Defending against an enemy that already left." },
-  { name: "Ten of Wands", arcana: "minor", suit: "wands", number: 10, roman: "X",
-    keywords: "Burden, over-responsibility, the last mile",
-    upright: "Too much in the arms. Some of it isn't yours to carry. Put down what you picked up out of habit.",
-    reversed: "Beginning to set the load down. Relief, slowly." },
-  { name: "Page of Wands", arcana: "minor", suit: "wands", number: 11, roman: "Pg",
-    keywords: "Curiosity, fresh enthusiasm, messenger",
-    upright: "A new interest, person, or letter. Follow the curiosity; it knows something you don't yet.",
-    reversed: "Flightiness, gossip, a spark that won't catch." },
-  { name: "Knight of Wands", arcana: "minor", suit: "wands", number: 12, roman: "Kn",
-    keywords: "Charge, passion in motion, the gallop",
-    upright: "Action — bold, hot, fast. Wonderful if aimed; ruinous if not.",
-    reversed: "Recklessness. Pace without direction." },
-  { name: "Queen of Wands", arcana: "minor", suit: "wands", number: 13, roman: "Qn",
-    keywords: "Warmth, magnetism, sovereign fire",
-    upright: "Confidence that draws people without asking. Lead from your own heat, not from performance.",
-    reversed: "Jealousy. Heat turned sharp." },
-  { name: "King of Wands", arcana: "minor", suit: "wands", number: 14, roman: "Kg",
-    keywords: "Vision, command, the seasoned founder",
-    upright: "Long-game leadership. Vision plus the patience to wait for the right move.",
-    reversed: "Impulse. Tyranny of charisma." },
-
-  // ===== CUPS — water, feeling, relationship =====
-  { name: "Ace of Cups", arcana: "minor", suit: "cups", number: 1, roman: "I",
-    keywords: "Open heart, new feeling, grace",
-    upright: "A vessel filling. Love, art, tenderness — something soft is being offered. Receive it.",
-    reversed: "Closed heart. Feeling cut off from the spring." },
-  { name: "Two of Cups", arcana: "minor", suit: "cups", number: 2, roman: "II",
-    keywords: "Mutuality, recognition, alliance",
-    upright: "Two people seeing each other. A pact, friendship, romance — built on real exchange.",
-    reversed: "Imbalance. One pouring; the other receiving without return." },
-  { name: "Three of Cups", arcana: "minor", suit: "cups", number: 3, roman: "III",
-    keywords: "Friendship, celebration, chorus",
-    upright: "Your people, gathered. Joy in company. Pour the wine.",
-    reversed: "Excess; the party that's begun to consume its participants." },
-  { name: "Four of Cups", arcana: "minor", suit: "cups", number: 4, roman: "IV",
-    keywords: "Apathy, looking past the offered cup",
-    upright: "Boredom. A gift is being held out and you haven't looked up. Look up.",
-    reversed: "Beginning to notice. Re-engagement." },
-  { name: "Five of Cups", arcana: "minor", suit: "cups", number: 5, roman: "V",
-    keywords: "Grief, focus on loss, the spilled wine",
-    upright: "Three cups are down; two are still standing. The grief is real. So is what remains.",
-    reversed: "Lifting the eyes. Forgiveness, slowly arriving." },
-  { name: "Six of Cups", arcana: "minor", suit: "cups", number: 6, roman: "VI",
-    keywords: "Memory, innocence, return",
-    upright: "Childhood, nostalgia, or someone from before. Tenderness for what once was.",
-    reversed: "Stuck in the past. Memory used as a place to hide." },
-  { name: "Seven of Cups", arcana: "minor", suit: "cups", number: 7, roman: "VII",
-    keywords: "Choice, fantasy, the menu",
-    upright: "Many options, several illusory. Sort the cup from the steam.",
-    reversed: "Clarity returning. The fog choosing one shape." },
-  { name: "Eight of Cups", arcana: "minor", suit: "cups", number: 8, roman: "VIII",
-    keywords: "Walking away, deeper search",
-    upright: "Leaving what was almost enough. Not failure — direction. The next thing requires this departure.",
-    reversed: "Hesitation at the threshold. Going, returning, going again." },
-  { name: "Nine of Cups", arcana: "minor", suit: "cups", number: 9, roman: "IX",
-    keywords: "Wish, satisfaction, contentment",
-    upright: "The thing you asked for, granted. Notice it. Receive it as more than a transaction.",
-    reversed: "Wish granted but unsatisfying. The cup was the wrong shape." },
-  { name: "Ten of Cups", arcana: "minor", suit: "cups", number: 10, roman: "X",
-    keywords: "Family, harmony, the long love",
-    upright: "Emotional home. Whatever family means to you — chosen or given — it is in good order.",
-    reversed: "Discord at the table. The picture and the reality diverging." },
-  { name: "Page of Cups", arcana: "minor", suit: "cups", number: 11, roman: "Pg",
-    keywords: "Imagination, the fish in the cup, message",
-    upright: "An unlikely feeling arrives. Stay curious about your own surprise.",
-    reversed: "Moodiness; creativity blocked by self-criticism." },
-  { name: "Knight of Cups", arcana: "minor", suit: "cups", number: 12, roman: "Kn",
-    keywords: "Romance, offering, the slow approach",
-    upright: "An invitation arrives, gently. Whether you accept depends on whether you trust the giver.",
-    reversed: "False charm. An invitation dressed up to hide its cost." },
-  { name: "Queen of Cups", arcana: "minor", suit: "cups", number: 13, roman: "Qn",
-    keywords: "Empathy, deep waters, attunement",
-    upright: "Compassion held without losing yourself in it. Feel without drowning.",
-    reversed: "Overwhelmed by others' feelings. Boundary worn thin." },
-  { name: "King of Cups", arcana: "minor", suit: "cups", number: 14, roman: "Kg",
-    keywords: "Composure, emotional mastery, calm on rough water",
-    upright: "Feeling all of it and still steering. The kind of presence others borrow strength from.",
-    reversed: "Repression dressed up as composure." },
-
-  // ===== SWORDS — air, mind, conflict =====
-  { name: "Ace of Swords", arcana: "minor", suit: "swords", number: 1, roman: "I",
-    keywords: "Clarity, breakthrough, the named thing",
-    upright: "A truth arrives whole. Speak it cleanly. The clarity is the gift; how you wield it is the test.",
-    reversed: "Confusion. A truth half-named, used to cut more than to clarify." },
-  { name: "Two of Swords", arcana: "minor", suit: "swords", number: 2, roman: "II",
-    keywords: "Stalemate, avoidance, the blindfold",
-    upright: "A choice avoided is still a choice. The blindfold isn't protecting you; it's just hiding the table.",
-    reversed: "Lifting the blindfold. Information you'd rather not see, finally seen." },
-  { name: "Three of Swords", arcana: "minor", suit: "swords", number: 3, roman: "III",
-    keywords: "Heartbreak, painful clarity",
-    upright: "Grief in plain weather. The pain is the honest response — don't apologize for it.",
-    reversed: "Healing. The wound closing, slowly. Forgiveness — of self, possibly." },
-  { name: "Four of Swords", arcana: "minor", suit: "swords", number: 4, roman: "IV",
-    keywords: "Rest, retreat, recovery",
-    upright: "Lay down the sword. Sleep is not surrender. Healing requires stillness you keep deferring.",
-    reversed: "Restlessness. Trying to rest while still in the fight." },
-  { name: "Five of Swords", arcana: "minor", suit: "swords", number: 5, roman: "V",
-    keywords: "Hollow victory, conflict, cost",
-    upright: "You can win and lose at once. Ask whether the win is worth what it leaves on the field.",
-    reversed: "Mending after conflict. The hand offered first." },
-  { name: "Six of Swords", arcana: "minor", suit: "swords", number: 6, roman: "VI",
-    keywords: "Passage, quieter waters, leaving",
-    upright: "Moving from rough water toward calm. You are not who you were on the other shore.",
-    reversed: "Resistance to the crossing. Holding the rudder against the current." },
-  { name: "Seven of Swords", arcana: "minor", suit: "swords", number: 7, roman: "VII",
-    keywords: "Strategy, deception, the quiet exit",
-    upright: "Cunning may serve you. Or it may serve someone else — at your expense. Notice which way the swords are leaving.",
-    reversed: "Confession. The hidden brought to the table." },
-  { name: "Eight of Swords", arcana: "minor", suit: "swords", number: 8, roman: "VIII",
-    keywords: "Restriction, self-bound",
-    upright: "The bindings are looser than they feel. Look at your feet — the ground is open.",
-    reversed: "Liberation. The realization that the cage was unlocked all along." },
-  { name: "Nine of Swords", arcana: "minor", suit: "swords", number: 9, roman: "IX",
-    keywords: "Anxiety, the 3 a.m. mind",
-    upright: "The worry is louder than the situation warrants. Real, but amplified. Daylight will halve it.",
-    reversed: "Worry receding. Naming the fear out loud and watching it shrink." },
-  { name: "Ten of Swords", arcana: "minor", suit: "swords", number: 10, roman: "X",
-    keywords: "Ending, rock bottom, dawn behind it",
-    upright: "Something has fully ended. The relief is permitted. The sun is rising in the same frame.",
-    reversed: "Recovery beginning. Standing up from the field." },
-  { name: "Page of Swords", arcana: "minor", suit: "swords", number: 11, roman: "Pg",
-    keywords: "Inquiry, sharp curiosity, vigilance",
-    upright: "A question someone hasn't been brave enough to ask. You might be the one to ask it.",
-    reversed: "Suspicion. Curiosity turned to scanning for threat." },
-  { name: "Knight of Swords", arcana: "minor", suit: "swords", number: 12, roman: "Kn",
-    keywords: "Charge, intellect in flight, urgency",
-    upright: "Move with conviction. Just check that the cause is actually yours before you ride.",
-    reversed: "Impatience. Rushing past nuance to win the argument." },
-  { name: "Queen of Swords", arcana: "minor", suit: "swords", number: 13, roman: "Qn",
-    keywords: "Clarity, discernment, honesty",
-    upright: "Truth without cruelty. A clean line, kindly drawn.",
-    reversed: "Coldness. The blade used to keep people out rather than keep clarity in." },
-  { name: "King of Swords", arcana: "minor", suit: "swords", number: 14, roman: "Kg",
-    keywords: "Judgment, law, principled authority",
-    upright: "Decision-making at its most exacting. Lead with reason, but remember reason answers to values.",
-    reversed: "Authoritarianism. Logic used to overrule what the heart already knew." },
-
-  // ===== PENTACLES — earth, body, craft, money =====
-  { name: "Ace of Pentacles", arcana: "minor", suit: "pentacles", number: 1, roman: "I",
-    keywords: "Opportunity, seed, grounded beginning",
-    upright: "A real, tangible opening. Take it seriously; it has the bones of something durable.",
-    reversed: "Hesitation about an opportunity. Or one that looks solid but isn't." },
-  { name: "Two of Pentacles", arcana: "minor", suit: "pentacles", number: 2, roman: "II",
-    keywords: "Juggling, adaptation, the dance",
-    upright: "Many demands at once. You can keep them aloft, but only if you stay light.",
-    reversed: "Dropping a ball. Time to put one down on purpose." },
-  { name: "Three of Pentacles", arcana: "minor", suit: "pentacles", number: 3, roman: "III",
-    keywords: "Collaboration, craft, the apprenticeship",
-    upright: "Skill meeting skill. Your work belongs in a room with others' work. Build together.",
-    reversed: "Mismatched standards. Collaboration without shared craft." },
-  { name: "Four of Pentacles", arcana: "minor", suit: "pentacles", number: 4, roman: "IV",
-    keywords: "Holding, security, the closed fist",
-    upright: "Safety achieved. Now: is the grip protecting the thing or strangling it?",
-    reversed: "Loosening the grip. Generosity, beginning." },
-  { name: "Five of Pentacles", arcana: "minor", suit: "pentacles", number: 5, roman: "V",
-    keywords: "Hardship, exclusion, the cold outside",
-    upright: "A lean season. Resources or warmth feel scarce — but the lit window is closer than you think.",
-    reversed: "Recovery. Coming in from the cold." },
-  { name: "Six of Pentacles", arcana: "minor", suit: "pentacles", number: 6, roman: "VI",
-    keywords: "Giving, receiving, the scale",
-    upright: "Exchange. Ask whether you are giving freely or buying control; whether you are receiving freely or owing a debt.",
-    reversed: "Unhealthy exchange. Debt disguised as gift." },
-  { name: "Seven of Pentacles", arcana: "minor", suit: "pentacles", number: 7, roman: "VII",
-    keywords: "Assessment, patience, the slow crop",
-    upright: "Pause and look at what you've grown. Is it the harvest you intended? Adjust now, not later.",
-    reversed: "Impatience. Pulling the crop up to check the roots." },
-  { name: "Eight of Pentacles", arcana: "minor", suit: "pentacles", number: 8, roman: "VIII",
-    keywords: "Mastery, devoted practice",
-    upright: "The unglamorous repetition that turns talent into craft. Stay at the bench.",
-    reversed: "Going through the motions. Practice without presence." },
-  { name: "Nine of Pentacles", arcana: "minor", suit: "pentacles", number: 9, roman: "IX",
-    keywords: "Self-made comfort, independent ease",
-    upright: "The garden you built, on your own terms. Enjoy it without apology.",
-    reversed: "Comfort that has become isolation. Garden walls too high." },
-  { name: "Ten of Pentacles", arcana: "minor", suit: "pentacles", number: 10, roman: "X",
-    keywords: "Legacy, family wealth, the long house",
-    upright: "What you build outlasts you. A long arc of stability — financial, relational, or both.",
-    reversed: "Inheritance tangled. Family or financial structures in need of repair." },
-  { name: "Page of Pentacles", arcana: "minor", suit: "pentacles", number: 11, roman: "Pg",
-    keywords: "Study, beginner's eye, the new coin",
-    upright: "A new skill, study, or financial project worth its patience.",
-    reversed: "Procrastination. The book unopened on the desk." },
-  { name: "Knight of Pentacles", arcana: "minor", suit: "pentacles", number: 12, roman: "Kn",
-    keywords: "Steadiness, the slow horse, reliability",
-    upright: "Progress that looks like nothing until you compare two months. Keep going.",
-    reversed: "Stagnation. Steadiness become stuckness." },
-  { name: "Queen of Pentacles", arcana: "minor", suit: "pentacles", number: 13, roman: "Qn",
-    keywords: "Nurture, abundance, practical care",
-    upright: "Resources stewarded with warmth. The kind of care that includes the bills.",
-    reversed: "Burnout from over-giving. Resources spent on the wrong altar." },
-  { name: "King of Pentacles", arcana: "minor", suit: "pentacles", number: 14, roman: "Kg",
-    keywords: "Provision, the seasoned hand, kingdom",
-    upright: "Long-built abundance. Generous because you can afford to be.",
-    reversed: "Wealth that controls its holder. Generosity replaced with gatekeeping." }
+/* ========================================================================
+   POSITIONS — the Celtic Cross, bilingual, mapped to cards.json position keys
+   ======================================================================== */
+const POSITIONS = [
+  { n: 1,  key: 'present',
+    short: { en: 'The Present',          th: 'ปัจจุบัน' },
+    long:  { en: 'What covers you — the present situation, the heart of the matter',
+             th: 'สิ่งที่ปกคลุมคุณ — สถานการณ์ปัจจุบัน ใจกลางของเรื่องราว' } },
+  { n: 2,  key: 'challenge',
+    short: { en: 'The Challenge',        th: 'อุปสรรค' },
+    long:  { en: 'What crosses you — the obstacle, the tension, the thing pulling against the present',
+             th: 'สิ่งที่ขวางคุณ — แรงต้านและความตึงเครียดที่ดึงไปคนละทิศ' } },
+  { n: 3,  key: 'past',
+    short: { en: 'The Past',             th: 'อดีต' },
+    long:  { en: 'What lies behind — recent events still shaping the room',
+             th: 'สิ่งที่อยู่ด้านหลัง — เหตุการณ์ที่ยังคงส่งผลต่อปัจจุบัน' } },
+  { n: 4,  key: 'future',
+    short: { en: 'The Future',           th: 'อนาคต' },
+    long:  { en: 'What lies before — what is approaching in the near term',
+             th: 'สิ่งที่อยู่ข้างหน้า — สิ่งที่กำลังจะมาถึงในระยะใกล้' } },
+  { n: 5,  key: 'above',
+    short: { en: 'Above · Conscious',    th: 'เบื้องบน · จิตสำนึก' },
+    long:  { en: 'What crowns you — your stated aim, what you are aware of wanting',
+             th: 'สิ่งที่อยู่เหนือศีรษะ — เป้าหมายที่คุณประกาศไว้ สิ่งที่คุณรู้ว่าต้องการ' } },
+  { n: 6,  key: 'below',
+    short: { en: 'Below · Unconscious',  th: 'เบื้องล่าง · จิตใต้สำนึก' },
+    long:  { en: 'What is beneath — the root, the felt thing under the spoken thing',
+             th: 'สิ่งที่อยู่ใต้พื้น — รากเหง้า ความรู้สึกที่ซ่อนอยู่ใต้คำพูด' } },
+  { n: 7,  key: 'self',
+    short: { en: 'Advice · Self',        th: 'คำชี้แนะ · ตัวคุณ' },
+    long:  { en: 'How you are meeting this — your stance, what you bring to it',
+             th: 'ท่าทีที่คุณเผชิญสถานการณ์ — สิ่งที่คุณนำติดตัวมาด้วย' } },
+  { n: 8,  key: 'environment',
+    short: { en: 'External Influences',  th: 'ปัจจัยภายนอก' },
+    long:  { en: 'The room around you — others, environment, circumstance',
+             th: 'ห้องรอบตัวคุณ — ผู้คน สภาพแวดล้อม สถานการณ์' } },
+  { n: 9,  key: 'hopes_fears',
+    short: { en: 'Hopes & Fears',        th: 'ความหวังและความกลัว' },
+    long:  { en: 'What you long for and what you dread (often the same thing in two costumes)',
+             th: 'สิ่งที่คุณปรารถนาและสิ่งที่คุณหวาดหวั่น (บางครั้งคือสิ่งเดียวกันในเครื่องแต่งกายต่างกัน)' } },
+  { n: 10, key: 'outcome',
+    short: { en: 'Outcome',              th: 'ผลลัพธ์' },
+    long:  { en: 'Where this is tending, if all else holds its course',
+             th: 'ทิศทางที่เรื่องนี้กำลังนำไป หากทุกอย่างคงดำเนินเช่นเดิม' } }
 ];
 
 /* ========================================================================
-   POSITIONS — the Celtic Cross
+   DECK — loaded from cards.json (78 cards, bilingual, position-specific)
    ======================================================================== */
-const POSITIONS = [
-  { n: 1,  short: "The Present",        long: "What covers you — the present situation, the heart of the matter" },
-  { n: 2,  short: "The Challenge",      long: "What crosses you — the obstacle, the tension, the thing pulling against the present" },
-  { n: 3,  short: "The Past",           long: "What lies behind — recent events still shaping the room" },
-  { n: 4,  short: "The Future",         long: "What lies before — what is approaching in the near term" },
-  { n: 5,  short: "Above · Conscious",  long: "What crowns you — your stated aim, what you are aware of wanting" },
-  { n: 6,  short: "Below · Unconscious",long: "What is beneath — the root, the felt thing under the spoken thing" },
-  { n: 7,  short: "Advice",             long: "How you are meeting this — your stance, what you bring to it" },
-  { n: 8,  short: "External Influences",long: "The room around you — others, environment, circumstance" },
-  { n: 9,  short: "Hopes & Fears",      long: "What you long for and what you dread (often the same thing in two costumes)" },
-  { n: 10, short: "Outcome",            long: "Where this is tending, if all else holds its course" }
-];
+let DECK = [];
+let lang = (typeof localStorage !== 'undefined' && localStorage.getItem('veila-lang')) || 'en';
 
 /* ========================================================================
    STATE
@@ -1331,7 +1156,7 @@ function renderSpread() {
     card.dataset.idx = idx;
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
-    card.setAttribute('aria-label', 'Card at position ' + d.position.n + ', ' + d.position.short + '. Tap to reveal.');
+    card.setAttribute('aria-label', 'Card at position ' + d.position.n + ', ' + d.position.short[lang] + '. Tap to reveal.');
 
     // back
     const back = document.createElement('div');
@@ -1356,15 +1181,18 @@ function renderSpread() {
         <div class="roman">${d.card.roman}</div>
         <div class="glyph">${suitGlyph(d.card)}</div>
       </div>
-      <div class="name">${d.card.name}</div>
-      ${d.reversed ? '<div class="reversed-mark">Reversed</div>' : ''}
+      <div class="name">${d.card.name[lang]}</div>
+      ${d.reversed ? `<div class="reversed-mark">${T[lang].reversed}</div>` : ''}
     `;
     card.appendChild(front);
+
+    // restore flipped state (e.g., after language toggle mid-reading)
+    if (d.flipped) card.classList.add('flipped');
 
     // position label
     const label = document.createElement('div');
     label.className = 'position-label';
-    label.innerHTML = `<span class="num">${toRoman(d.position.n)}</span>${d.position.short}`;
+    label.innerHTML = `<span class="num">${toRoman(d.position.n)}</span>${d.position.short[lang]}`;
     slot.appendChild(label);
 
     slot.appendChild(card);
@@ -1401,7 +1229,7 @@ function updateActive() {
 }
 
 function updateProgress() {
-  document.getElementById('flip-count').textContent = flippedCount + ' of 10 revealed';
+  document.getElementById('flip-count').textContent = String(flippedCount);
   const track = document.getElementById('progress-track');
   track.innerHTML = '';
   for (let i = 0; i < 10; i++) {
@@ -1434,45 +1262,63 @@ function toRoman(n) {
 /* ========================================================================
    ON ALL FLIPPED — render readouts
    ======================================================================== */
+function renderReadouts() {
+  const section = document.getElementById('readout-section');
+  section.classList.remove('is-hidden');
+  const list = document.getElementById('readout-list');
+  // preserve which rows are expanded across language toggles
+  const expandedPositions = new Set(
+    Array.from(list.querySelectorAll('.readout.expanded'))
+      .map((r) => r.getAttribute('data-position-n'))
+  );
+  list.innerHTML = '';
+
+  drawn.forEach((d) => {
+    const row = document.createElement('div');
+    row.className = 'readout';
+    row.setAttribute('data-screen-label', 'Readout ' + d.position.n);
+    row.setAttribute('data-position-n', String(d.position.n));
+    if (expandedPositions.has(String(d.position.n))) row.classList.add('expanded');
+
+    const orient = d.reversed ? 'reversed' : 'upright';
+    const orientLabel = d.reversed ? T[lang].reversed : T[lang].upright;
+    const cell = d.card[orient] || {};
+    const cc = (cell.celtic_cross && cell.celtic_cross[d.position.key]) || {};
+    const interp = cc[lang] || (cell.standalone && cell.standalone[lang]) || '';
+    const keywords = (cell.keywords && cell.keywords[lang]) || '';
+    const markLabel = row.classList.contains('expanded') ? T[lang].readClose : T[lang].readMore;
+
+    row.innerHTML = `
+      <div class="num">${toRoman(d.position.n)}</div>
+      <div class="body">
+        <div class="position-name">${d.position.short[lang]}</div>
+        <h4>${d.card.name[lang]}<em>· ${orientLabel}</em></h4>
+        <div class="keywords">${keywords}</div>
+        <div class="interp">
+          <p style="margin-bottom:14px;"><span style="font-family:var(--serif); font-style:italic; color:var(--ivory-mute);">${d.position.long[lang]}.</span></p>
+          <p>${interp}</p>
+        </div>
+      </div>
+      <div class="expand-mark">${markLabel}</div>
+    `;
+    row.addEventListener('click', () => {
+      row.classList.toggle('expanded');
+      const mark = row.querySelector('.expand-mark');
+      if (mark) mark.textContent = row.classList.contains('expanded') ? T[lang].readClose : T[lang].readMore;
+    });
+    list.appendChild(row);
+  });
+}
+
 function onAllFlipped() {
   setTimeout(() => {
     document.getElementById('hint-bar').classList.add('is-hidden');
+    renderReadouts();
     const section = document.getElementById('readout-section');
-    section.classList.remove('is-hidden');
-    const list = document.getElementById('readout-list');
-    list.innerHTML = '';
-
-    drawn.forEach((d) => {
-      const row = document.createElement('div');
-      row.className = 'readout';
-      row.setAttribute('data-screen-label', 'Readout ' + d.position.n);
-
-      const orientation = d.reversed ? 'Reversed' : 'Upright';
-      const interp = d.reversed ? d.card.reversed : d.card.upright;
-
-      row.innerHTML = `
-        <div class="num">${toRoman(d.position.n)}</div>
-        <div class="body">
-          <div class="position-name">${d.position.short}</div>
-          <h4>${d.card.name}<em>· ${orientation}</em></h4>
-          <div class="keywords">${d.card.keywords}</div>
-          <div class="interp">
-            <p style="margin-bottom:14px;"><span style="font-family:var(--serif); font-style:italic; color:var(--ivory-mute);">${d.position.long}.</span></p>
-            <p>${interp}</p>
-          </div>
-        </div>
-        <div class="expand-mark"></div>
-      `;
-      row.addEventListener('click', () => row.classList.toggle('expanded'));
-      list.appendChild(row);
-    });
-
-    // smooth into view
     setTimeout(() => {
       section.scrollTo?.({ top: 0, behavior: 'smooth' });
       section.getBoundingClientRect();
     }, 100);
-
   }, 600);
 }
 
@@ -1574,6 +1420,10 @@ function updatePickCount() {
    ACTIONS
    ======================================================================== */
 function beginSelection() {
+  if (!DECK || DECK.length === 0) {
+    loadDeck().then(() => { if (DECK.length) beginSelection(); });
+    return;
+  }
   deckOrder = shuffle(DECK);
   picks = [];
   drawn = [];
@@ -1631,18 +1481,78 @@ function reset() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/* ========================================================================
+   LANGUAGE — apply T strings to data-i18n elements, persist choice
+   ======================================================================== */
+function applyLang() {
+  document.documentElement.lang = lang;
+  const dict = T[lang] || T.en;
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('.lang-toggle button').forEach((b) => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  document.title = lang === 'th'
+    ? 'Veila — บทอ่านเซลติกครอส'
+    : 'Veila — A Celtic Cross Reading';
+  // re-render any visible dynamic content
+  if (!document.getElementById('reading').classList.contains('is-hidden') && drawn.length === 10) {
+    const spread = document.getElementById('spread');
+    if (spread && spread.children.length) renderSpread();
+    if (!document.getElementById('readout-section').classList.contains('is-hidden')) {
+      renderReadouts();
+    }
+  }
+}
+
+function setLang(next) {
+  if (next === lang) return;
+  if (!T[next]) return;
+  lang = next;
+  try { localStorage.setItem('veila-lang', lang); } catch (e) {}
+  applyLang();
+}
+
+document.querySelectorAll('.lang-toggle button').forEach((b) => {
+  b.addEventListener('click', () => setLang(b.dataset.lang));
+});
+
+/* ========================================================================
+   BOOT — fetch deck, then wire up actions
+   ======================================================================== */
+function loadDeck() {
+  const begin = document.getElementById('begin-btn');
+  const original = begin.textContent;
+  begin.disabled = true;
+  begin.textContent = T[lang].loadingDeck;
+  return fetch('./cards.json', { cache: 'force-cache' })
+    .then((r) => r.json())
+    .then((data) => {
+      DECK = data;
+    })
+    .catch((err) => {
+      console.error('Failed to load cards.json', err);
+    })
+    .finally(() => {
+      begin.disabled = false;
+      begin.textContent = T[lang].beginBtn;
+    });
+}
+
+applyLang();
+loadDeck();
+
 document.getElementById('begin-btn').addEventListener('click', beginSelection);
 document.getElementById('continue-btn').addEventListener('click', confirmSelection);
 document.getElementById('reshuffle-btn').addEventListener('click', beginSelection);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
 document.getElementById('reset-btn').addEventListener('click', reset);
-
-/* keyboard: Esc to reset */
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !document.getElementById('reading').classList.contains('is-hidden')) {
-    // optional: reset();
-  }
-});
 </script>
 </body>
 </html>
