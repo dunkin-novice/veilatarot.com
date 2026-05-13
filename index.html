@@ -803,28 +803,48 @@ footer .fineprint {
   position: relative;
   width: 100%;
   max-width: 1180px;
-  height: clamp(520px, 60vh, 620px);
+  height: clamp(640px, 78vh, 760px);
   margin: 0 auto;
 }
 
-.pick-card {
-  --rot: 0deg;
+/* Empty dock slots — the ten reserved spots at the bottom of the table */
+.dock-ghost {
   position: absolute;
   width: clamp(48px, 5.4vw, 64px);
   height: clamp(78px, 9vw, 104px);
   border-radius: var(--card-radius);
+  border: 1px dashed rgba(184,153,104,0.18);
+  background: rgba(255,255,255,0.012);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pick-card {
+  position: absolute;
+  width: clamp(48px, 5.4vw, 64px);
+  height: clamp(78px, 9vw, 104px);
+  cursor: pointer;
+  z-index: 1;
+  transition:
+    left 0.85s cubic-bezier(.4,0,.2,1),
+    top 0.85s cubic-bezier(.4,0,.2,1),
+    transform 0.85s cubic-bezier(.4,0,.2,1),
+    opacity 0.5s ease;
+  will-change: transform, left, top;
+}
+.pick-card .card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--card-radius);
   background: #14151c;
   border: 1px solid var(--gold-dim);
   padding: 4px;
-  cursor: pointer;
-  transform: translate(-50%, -50%) rotate(var(--rot));
-  transition: transform 0.45s cubic-bezier(.4,0,.2,1),
-              box-shadow 0.4s ease,
-              border-color 0.3s ease,
-              opacity 0.5s ease;
-  will-change: transform;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.pick-card .inner {
+.pick-card .card-body .inner {
   width: 100%;
   height: 100%;
   border: 1px solid rgba(184,153,104,0.32);
@@ -833,27 +853,24 @@ footer .fineprint {
   justify-content: center;
   position: relative;
 }
-.pick-card .inner::before,
-.pick-card .inner::after {
+.pick-card .card-body .inner::before,
+.pick-card .card-body .inner::after {
   content: "";
   position: absolute;
   width: 5px; height: 5px;
   border: 1px solid var(--gold);
   transform: rotate(45deg);
 }
-.pick-card .inner::before { top: 5px; left: 50%; margin-left: -2.5px; }
-.pick-card .inner::after  { bottom: 5px; left: 50%; margin-left: -2.5px; }
-.pick-card .inner svg { color: var(--gold); opacity: 0.85; }
+.pick-card .card-body .inner::before { top: 5px; left: 50%; margin-left: -2.5px; }
+.pick-card .card-body .inner::after  { bottom: 5px; left: 50%; margin-left: -2.5px; }
+.pick-card .card-body .inner svg { color: var(--gold); opacity: 0.85; }
 
-.pick-card:hover {
-  transform: translate(-50%, calc(-50% - 8px)) rotate(var(--rot));
-  z-index: 60;
-}
-.pick-card.selected {
-  transform: translate(-50%, calc(-50% - 14px)) rotate(var(--rot));
+.pick-card:hover { z-index: 60; }
+.pick-card:hover .card-body { transform: translateY(-8px); }
+.pick-card.selected { z-index: 50; }
+.pick-card.selected .card-body {
   border-color: var(--gold);
   box-shadow: 0 0 0 1px var(--gold), 0 18px 28px rgba(184,153,104,0.18);
-  z-index: 50;
 }
 .pick-card.selected .pick-order { opacity: 1; }
 
@@ -891,7 +908,7 @@ footer .fineprint {
 .cta-btn[disabled]:hover { background: transparent; }
 
 @media (max-width: 720px) {
-  .scatter { height: clamp(640px, 78vh, 820px); max-width: calc(100% - 16px); }
+  .scatter { height: clamp(720px, 88vh, 880px); max-width: calc(100% - 16px); }
   .selection-header { padding: 32px 20px 20px; }
 }
 
@@ -1002,8 +1019,8 @@ footer .fineprint {
     <section id="selection" class="is-hidden">
       <div class="selection-header">
         <div class="step" data-i18n="selStep">Choose Your Cards</div>
-        <h2 data-i18n="selH2">The Deck is Spread</h2>
-        <p data-i18n="selP">Seventy-eight cards lie face-down on the table. Take your time. Choose ten — let them call to you. Tap again to set one back.</p>
+        <h2 data-i18n="selH2">Select 10 cards from the table</h2>
+        <p data-i18n="selP">Use your left hand to choose.</p>
         <div class="selection-counter" id="selection-counter">
           <span class="count" id="pick-count">0</span> <span data-i18n="selCounterSuffix">of 10 chosen</span>
         </div>
@@ -1084,8 +1101,8 @@ const T = {
     metaPracticeLabel: 'The Practice',
     metaPracticeVal: 'Once daily',
     selStep: 'Choose Your Cards',
-    selH2: 'The Deck is Spread',
-    selP: 'Seventy-eight cards lie face-down on the table. Take your time. Choose ten — let them call to you. Tap again to set one back.',
+    selH2: 'Select 10 cards from the table',
+    selP: 'Use your left hand to choose.',
     selCounterSuffix: ' of 10 chosen',
     reshuffleBtn: 'Reshuffle',
     continueBtn: 'Lay the Spread',
@@ -1120,8 +1137,8 @@ const T = {
     metaPracticeLabel: 'ความถี่',
     metaPracticeVal: 'วันละหนึ่งครั้ง',
     selStep: 'เลือกไพ่ของคุณ',
-    selH2: 'ไพ่แผ่กระจายบนโต๊ะ',
-    selP: 'ไพ่เจ็ดสิบแปดใบคว่ำหน้าวางอยู่บนโต๊ะ ค่อยๆ เลือก สิบใบ — ปล่อยให้ไพ่เรียกหาคุณ แตะอีกครั้งเพื่อยกเลิก',
+    selH2: 'เลือกไพ่ 10 ใบ จากบนโต๊ะ',
+    selP: 'ใช้มือซ้ายในการเลือก',
     selCounterSuffix: ' จาก 10 ใบ',
     reshuffleBtn: 'สับใหม่',
     continueBtn: 'วางไพ่',
@@ -1398,54 +1415,85 @@ function onAllFlipped() {
 }
 
 /* ========================================================================
-   SELECTION — 78 face-down cards, user picks 10
+   SELECTION — table of unpicked cards + side dock of picked cards
    ======================================================================== */
-let deckOrder = []; // current shuffle of the full 78
-let picks = [];     // indices into deckOrder, in selection order
+let picks = [];       // array of card objects in pick order
+let tableState = [];  // [{card, x, y, rot}] for unpicked cards on the table
+let cardEls = new Map(); // card.id -> HTMLElement (stable across pick/deselect/shuffle)
 
-function generateScatterPositions(n) {
-  const isMobile = window.matchMedia('(max-width: 720px)').matches;
-  const cols = isMobile ? 8 : 13;
-  const rows = Math.ceil(n / cols);
-  const marginX = isMobile ? 7 : 5;
-  const marginY = isMobile ? 5 : 6;
-  const innerW = 100 - marginX * 2;
-  const innerH = 100 - marginY * 2;
-  const cellW = innerW / cols;
+function isSelectionMobile() {
+  return window.matchMedia('(max-width: 720px)').matches;
+}
+
+function tableZone() {
+  const isMobile = isSelectionMobile();
+  return {
+    cols: isMobile ? 8 : 13,
+    marginX: isMobile ? 7 : 5,
+    topY: 4,
+    bottomY: isMobile ? 70 : 72
+  };
+}
+
+function generateTablePositions(count) {
+  const z = tableZone();
+  const rows = Math.max(1, Math.ceil(count / z.cols));
+  const innerW = 100 - z.marginX * 2;
+  const innerH = z.bottomY - z.topY;
+  const cellW = innerW / z.cols;
   const cellH = innerH / rows;
   const positions = [];
-  for (let i = 0; i < n; i++) {
-    const r = Math.floor(i / cols);
-    const c = i % cols;
+  for (let i = 0; i < count; i++) {
+    const r = Math.floor(i / z.cols);
+    const c = i % z.cols;
     const jitterX = (Math.random() - 0.5) * cellW * 0.55;
     const jitterY = (Math.random() - 0.5) * cellH * 0.45;
     positions.push({
-      x: marginX + c * cellW + cellW / 2 + jitterX,
-      y: marginY + r * cellH + cellH / 2 + jitterY,
+      x: z.marginX + c * cellW + cellW / 2 + jitterX,
+      y: z.topY + r * cellH + cellH / 2 + jitterY,
       rot: (Math.random() - 0.5) * 28
     });
+  }
+  // shuffle so adjacency isn't grid order
+  for (let i = positions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [positions[i], positions[j]] = [positions[j], positions[i]];
   }
   return positions;
 }
 
-function renderScatter() {
-  const scatter = document.getElementById('scatter');
-  scatter.innerHTML = '';
-  const N = DECK.length;
-  const positions = generateScatterPositions(N);
+function randomTablePosition() {
+  const z = tableZone();
+  return {
+    x: z.marginX + Math.random() * (100 - z.marginX * 2),
+    y: z.topY + Math.random() * (z.bottomY - z.topY),
+    rot: (Math.random() - 0.5) * 28
+  };
+}
 
-  for (let i = 0; i < N; i++) {
-    const pos = positions[i];
-    const c = document.createElement('div');
-    c.className = 'pick-card';
-    c.dataset.idx = i;
-    c.style.left = pos.x + '%';
-    c.style.top = pos.y + '%';
-    c.style.setProperty('--rot', pos.rot + 'deg');
-    c.setAttribute('role', 'button');
-    c.setAttribute('tabindex', '0');
-    c.setAttribute('aria-label', 'Card. Tap to choose.');
-    c.innerHTML = `
+function dockSlotPosition(idx) {
+  const isMobile = isSelectionMobile();
+  const marginX = isMobile ? 4 : 6;
+  const dockW = 100 - marginX * 2;
+  const slotW = dockW / 10;
+  return { x: marginX + slotW * (idx + 0.5), y: isMobile ? 90 : 88, rot: 0 };
+}
+
+function placeEl(el, pos) {
+  el.style.left = pos.x + '%';
+  el.style.top = pos.y + '%';
+  el.style.transform = `translate(-50%, -50%) rotate(${pos.rot}deg)`;
+}
+
+function createCardElement(card) {
+  const el = document.createElement('div');
+  el.className = 'pick-card';
+  el.dataset.id = card.id;
+  el.setAttribute('role', 'button');
+  el.setAttribute('tabindex', '0');
+  el.setAttribute('aria-label', 'Card. Tap to choose.');
+  el.innerHTML = `
+    <div class="card-body">
       <div class="inner">
         <svg width="22" height="34" viewBox="0 0 36 56" fill="none" stroke="currentColor" stroke-width="0.8">
           <path d="M18 6 L30 28 L18 50 L6 28 Z" />
@@ -1453,35 +1501,116 @@ function renderScatter() {
           <path d="M18 22 L18 34 M12 28 L24 28" stroke-width="0.5"/>
         </svg>
       </div>
-      <span class="pick-order"></span>
-    `;
-    const togglePick = () => {
-      const idx = picks.indexOf(i);
-      if (idx >= 0) {
-        picks.splice(idx, 1);
-        c.classList.remove('selected');
-      } else if (picks.length < 10) {
-        picks.push(i);
-        c.classList.add('selected');
-      }
-      refreshPickOrders();
-      updatePickCount();
-    };
-    c.addEventListener('click', togglePick);
-    c.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePick(); }
-    });
-    scatter.appendChild(c);
+    </div>
+    <span class="pick-order"></span>
+  `;
+  const onTap = () => handleCardClick(card);
+  el.addEventListener('click', onTap);
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onTap(); }
+  });
+  return el;
+}
+
+function renderDockOrder() {
+  picks.forEach((c, i) => {
+    const el = cardEls.get(c.id);
+    if (!el) return;
+    const lbl = el.querySelector('.pick-order');
+    if (lbl) lbl.textContent = String(i + 1);
+  });
+}
+
+function renderInitialSelection() {
+  const scatter = document.getElementById('scatter');
+  scatter.innerHTML = '';
+  cardEls = new Map();
+  picks = [];
+  tableState = [];
+
+  // Reserved dock outlines so the user can see "ten slots to fill"
+  for (let i = 0; i < 10; i++) {
+    const ghost = document.createElement('div');
+    ghost.className = 'dock-ghost';
+    const pos = dockSlotPosition(i);
+    ghost.style.left = pos.x + '%';
+    ghost.style.top = pos.y + '%';
+    scatter.appendChild(ghost);
+  }
+
+  const positions = generateTablePositions(DECK.length);
+  DECK.forEach((card, i) => {
+    const pos = positions[i];
+    const el = createCardElement(card);
+    placeEl(el, pos);
+    cardEls.set(card.id, el);
+    scatter.appendChild(el);
+    tableState.push({ card, ...pos });
+  });
+}
+
+function handleCardClick(card) {
+  const inPicks = picks.findIndex(p => p.id === card.id);
+  if (inPicks >= 0) {
+    deselectCard(card);
+  } else if (picks.length < 10) {
+    selectCard(card);
   }
 }
 
-function refreshPickOrders() {
-  document.querySelectorAll('.pick-card').forEach((c) => {
-    const i = parseInt(c.dataset.idx, 10);
-    const order = picks.indexOf(i);
-    const lbl = c.querySelector('.pick-order');
-    if (lbl) lbl.textContent = order >= 0 ? String(order + 1) : '';
+function selectCard(card) {
+  const tIdx = tableState.findIndex(t => t.card.id === card.id);
+  if (tIdx < 0) return;
+  tableState.splice(tIdx, 1);
+  picks.push(card);
+  const el = cardEls.get(card.id);
+  if (el) {
+    el.classList.add('selected');
+    placeEl(el, dockSlotPosition(picks.length - 1));
+  }
+  renderDockOrder();
+  updatePickCount();
+}
+
+function deselectCard(card) {
+  const pIdx = picks.findIndex(p => p.id === card.id);
+  if (pIdx < 0) return;
+  picks.splice(pIdx, 1);
+  const pos = randomTablePosition();
+  tableState.push({ card, ...pos });
+  const el = cardEls.get(card.id);
+  if (el) {
+    el.classList.remove('selected');
+    const lbl = el.querySelector('.pick-order');
+    if (lbl) lbl.textContent = '';
+    placeEl(el, pos);
+  }
+  // shift remaining picks left to fill the gap
+  picks.forEach((c, i) => {
+    const e = cardEls.get(c.id);
+    if (e) placeEl(e, dockSlotPosition(i));
   });
+  renderDockOrder();
+  updatePickCount();
+}
+
+function reshuffleTable() {
+  if (tableState.length === 0) return;
+  const positions = generateTablePositions(tableState.length);
+  tableState.forEach((t, i) => {
+    const p = positions[i];
+    t.x = p.x; t.y = p.y; t.rot = p.rot;
+    const el = cardEls.get(t.card.id);
+    if (!el) return;
+    el.style.transitionDelay = (Math.random() * 0.3).toFixed(2) + 's';
+    placeEl(el, p);
+  });
+  setTimeout(() => {
+    tableState.forEach(t => {
+      const el = cardEls.get(t.card.id);
+      if (el) el.style.transitionDelay = '';
+    });
+  }, 1500);
 }
 
 function updatePickCount() {
@@ -1499,22 +1628,20 @@ function beginSelection() {
     loadDeck().then(() => { if (DECK.length) beginSelection(); });
     return;
   }
-  deckOrder = shuffle(DECK);
-  picks = [];
   drawn = [];
   flippedCount = 0;
   document.getElementById('landing').classList.add('is-hidden');
   document.getElementById('reading').classList.add('is-hidden');
   document.getElementById('selection').classList.remove('is-hidden');
-  renderScatter();
+  renderInitialSelection();
   updatePickCount();
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function confirmSelection() {
   if (picks.length !== 10) return;
-  drawn = picks.map((slotIdx, pos) => ({
-    card: deckOrder[slotIdx],
+  drawn = picks.map((card, pos) => ({
+    card,
     position: POSITIONS[pos],
     reversed: Math.random() < 0.32,
     flipped: false
@@ -1551,8 +1678,11 @@ function reset() {
   document.getElementById('landing').classList.remove('is-hidden');
   drawn = [];
   picks = [];
-  deckOrder = [];
+  tableState = [];
+  cardEls = new Map();
   flippedCount = 0;
+  const scatter = document.getElementById('scatter');
+  if (scatter) scatter.innerHTML = '';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1625,7 +1755,7 @@ loadDeck();
 
 document.getElementById('begin-btn').addEventListener('click', beginSelection);
 document.getElementById('continue-btn').addEventListener('click', confirmSelection);
-document.getElementById('reshuffle-btn').addEventListener('click', beginSelection);
+document.getElementById('reshuffle-btn').addEventListener('click', reshuffleTable);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
 document.getElementById('reset-btn').addEventListener('click', reset);
 document.getElementById('brand-home').addEventListener('click', (e) => {
