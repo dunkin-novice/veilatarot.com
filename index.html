@@ -367,6 +367,14 @@ aside.rail { padding-top: 24px; }
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ivory-mute);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 720px) {
+  .landing-meta { gap: 24px 28px; font-size: 9px; letter-spacing: 0.24em; }
+  .landing-meta span strong { font-size: 15px; }
+  .landing { padding: 56px 20px 40px; gap: 28px; min-height: calc(100vh - 200px); }
+  .landing .lede { font-size: 17px; }
 }
 .landing-meta span strong {
   display: block;
@@ -992,8 +1000,30 @@ footer .fineprint {
 .cta-btn[disabled]:hover { background: transparent; }
 
 @media (max-width: 720px) {
-  .scatter { height: clamp(720px, 88vh, 880px); max-width: calc(100% - 16px); }
-  .selection-header { padding: 32px 20px 20px; }
+  /* Tighter selection: smaller cards so 8 fit per row cleanly,
+     scatter not absurdly tall, header trimmer. */
+  .scatter {
+    height: clamp(560px, 72vh, 680px);
+    max-width: calc(100% - 12px);
+  }
+  .pick-card,
+  .dock-ghost {
+    width: 42px;
+    height: 66px;
+  }
+  .pick-card .card-body .inner::before,
+  .pick-card .card-body .inner::after {
+    width: 4px; height: 4px;
+    margin-left: -2px;
+  }
+  .pick-card .card-body .inner::before { top: 4px; }
+  .pick-card .card-body .inner::after  { bottom: 4px; }
+  .pick-card .card-body .inner svg { width: 18px; height: 28px; }
+  .pick-order { top: -14px; font-size: 12px; }
+  .selection-header { padding: 28px 18px 16px; margin-bottom: 18px; }
+  .selection-header h2 { margin-bottom: 12px; }
+  .selection-counter { margin-top: 18px; font-size: 15px; }
+  .continue-row { padding: 16px 16px 28px; gap: 12px; }
 }
 
 /* ====== HINT BANNER ====== */
@@ -1019,6 +1049,16 @@ footer .fineprint {
   margin-left: 14px;
   padding-left: 14px;
   border-left: 1px solid var(--rule);
+}
+@media (max-width: 720px) {
+  .hint-bar { padding: 12px 16px; font-size: 14px; line-height: 1.45; }
+  .hint-bar .count {
+    display: block;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    margin-top: 6px;
+  }
 }
 
 /* ====== MOBILE STACK ====== */
@@ -1055,8 +1095,21 @@ footer .fineprint {
   .readout .expand-mark { grid-column: 1 / -1; text-align: right; margin-top: -8px; }
   .readout .body h4 { font-size: 22px; }
   .readout .num { font-size: 28px; }
-  .site-header { padding: 18px 20px; flex-wrap: wrap; gap: 8px; }
-  .layout { padding: 0 16px; }
+  .site-header {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    align-items: center;
+  }
+  .brand { font-size: 17px; letter-spacing: 0.12em; }
+  .brand .brand-sub { display: none; }
+  .header-right { gap: 14px; }
+  .nav-meta { font-size: 9px; letter-spacing: 0.22em; }
+  .lang-toggle { font-size: 11px; letter-spacing: 0.18em; }
+  .layout { padding: 0 12px; }
+  .reading-header { padding: 32px 16px 18px; margin-bottom: 28px; }
+  .reading-header p { font-size: 15px; line-height: 1.5; }
+  .spread-wrap { padding: 16px 0 40px; }
 }
 </style>
 </head>
