@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Veila — A Celtic Cross Tarot Reading</title>
-<meta name="description" content="Veila is a quiet, considered Celtic Cross tarot reading. Choose ten cards from a deck of seventy-eight and let each unfold a position-specific reading — in English or Thai." />
+<title>Veila — A Bilingual Celtic Cross Tarot Reading</title>
+<meta name="description" content="A quiet Celtic Cross tarot reading — choose ten cards, each unfolding a position-specific meaning. Bilingual EN/TH. For reflection, not prediction." />
 <meta name="keywords" content="tarot, celtic cross, tarot reading, free tarot, online tarot, rider waite, ไพ่ทาโรต์, เซลติกครอส" />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -22,8 +22,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Veila" />
-<meta property="og:title" content="Veila — A Celtic Cross Tarot Reading" />
-<meta property="og:description" content="A quiet, considered Celtic Cross tarot reading. Ten cards, ten positions, one question. Free, bilingual, ad-supported." />
+<meta property="og:title" content="Veila — A Bilingual Celtic Cross Tarot Reading" />
+<meta property="og:description" content="Choose ten cards from a 78-card Rider–Waite deck; each unfolds a position-specific reading. English or Thai. For reflection, not prediction." />
 <meta property="og:url" content="https://veilatarot.com/" />
 <meta property="og:image" content="https://veilatarot.com/og.png" />
 <meta property="og:image:width" content="1200" />
@@ -34,8 +34,8 @@
 
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Veila — A Celtic Cross Tarot Reading" />
-<meta name="twitter:description" content="A quiet, considered Celtic Cross tarot reading. Ten cards, ten positions, one question." />
+<meta name="twitter:title" content="Veila — A Bilingual Celtic Cross Tarot Reading" />
+<meta name="twitter:description" content="Choose ten cards from a 78-card deck; each unfolds a position-specific reading. English or Thai." />
 <meta name="twitter:image" content="https://veilatarot.com/og.png" />
 <meta name="twitter:image:alt" content="Veila — A Celtic Cross Reading" />
 
@@ -72,7 +72,7 @@
       "url": "https://veilatarot.com/",
       "name": "Veila",
       "description": "A quiet, considered Celtic Cross tarot reading.",
-      "inLanguage": ["en", "th"]
+      "inLanguage": ["en-US", "th-TH"]
     },
     {
       "@type": "WebApplication",
@@ -82,7 +82,7 @@
       "operatingSystem": "Any (web)",
       "browserRequirements": "Requires JavaScript",
       "isAccessibleForFree": true,
-      "inLanguage": ["en", "th"],
+      "inLanguage": ["en-US", "th-TH"],
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -131,50 +131,6 @@ body {
     radial-gradient(ellipse at 50% 0%, rgba(184,153,104,0.04) 0%, transparent 55%),
     var(--ink);
   background-attachment: fixed;
-}
-
-/* ====== AD SLOTS ====== */
-.ad-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ivory-mute);
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  border: 1px dashed rgba(184,153,104,0.18);
-  background: rgba(255,255,255,0.01);
-  margin: 0 auto;
-}
-.ad-slot::before { content: "Advertisement"; opacity: 0.55; }
-
-#ad-top {
-  width: 728px;
-  height: 90px;
-  max-width: calc(100% - 32px);
-  margin-top: 18px;
-  margin-bottom: 8px;
-}
-
-#ad-sidebar {
-  width: 300px;
-  height: 250px;
-  position: sticky;
-  top: 24px;
-}
-
-#ad-bottom {
-  width: 100%;
-  max-width: 970px;
-  min-height: 90px;
-  margin: 64px auto 48px;
-}
-
-@media (max-width: 768px) {
-  #ad-top { width: 320px; height: 50px; }
-  #ad-sidebar { display: none; }
-  #ad-bottom { min-height: 100px; max-width: calc(100% - 32px); }
 }
 
 /* ====== HEADER ====== */
@@ -254,21 +210,11 @@ body {
 
 /* ====== MAIN LAYOUT ====== */
 .layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 56px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 32px;
-  align-items: start;
 }
-@media (max-width: 1024px) {
-  .layout { grid-template-columns: 1fr; gap: 0; }
-}
-
 main { min-width: 0; }
-aside.rail { padding-top: 24px; }
-@media (max-width: 1024px) { aside.rail { display: none; } }
 
 /* ====== LANDING ====== */
 .landing {
@@ -1115,6 +1061,15 @@ footer .fineprint {
 </head>
 <body>
 
+<noscript>
+  <div style="max-width:640px;margin:80px auto;padding:0 24px;text-align:center;font-family:'Cormorant Garamond',Garamond,serif;color:#ebe4d4;">
+    <h1 style="font-weight:300;font-size:56px;line-height:1;margin-bottom:18px;letter-spacing:-0.01em;">Veila</h1>
+    <p style="font-style:italic;color:#b9b3a4;font-size:18px;line-height:1.55;margin-bottom:24px;">A quiet, considered Celtic Cross tarot reading. Ten cards drawn from a 78-card Rider–Waite deck, each unfolding a position-specific reading.</p>
+    <p style="font-size:14px;color:#6c6a63;letter-spacing:0.04em;">The ten Celtic Cross positions: Present, Challenge, Past, Future, Above (conscious aim), Below (subconscious), Self (your stance), External Influences, Hopes &amp; Fears, and Outcome.</p>
+    <p style="font-size:13px;color:#6c6a63;margin-top:32px;">This experience requires JavaScript. Please enable JavaScript to begin a reading.</p>
+  </div>
+</noscript>
+
 <header class="site-header">
   <a class="brand" href="/" id="brand-home" aria-label="Veila — return to landing">Veila<span class="dot"></span><span class="brand-sub" data-i18n="brandSub">A Tarot Practice</span></a>
   <div class="header-right">
@@ -1126,8 +1081,6 @@ footer .fineprint {
     </div>
   </div>
 </header>
-
-<div id="ad-top" class="ad-slot" aria-label="Top advertisement"></div>
 
 <div class="layout">
   <main>
@@ -1203,15 +1156,9 @@ footer .fineprint {
         <button class="cta-btn danger" id="reset-btn" data-i18n="resetBtn">Read Again</button>
       </div>
 
-      <div id="ad-bottom" class="ad-slot" aria-label="Bottom advertisement"></div>
-
     </section>
 
   </main>
-
-  <aside class="rail">
-    <div id="ad-sidebar" class="ad-slot" aria-label="Sidebar advertisement"></div>
-  </aside>
 </div>
 
 <footer>
