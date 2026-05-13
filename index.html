@@ -743,12 +743,18 @@ aside.rail { padding-top: 24px; }
 
 /* ====== CONFIRM DIALOG ====== */
 dialog.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
   border: 1px solid var(--gold-dim);
   background: var(--ink-2);
   color: var(--ivory);
   padding: 0;
   max-width: 440px;
   width: calc(100% - 32px);
+  max-height: calc(100vh - 32px);
   border-radius: 4px;
   box-shadow: 0 24px 80px rgba(0,0,0,0.5);
 }
