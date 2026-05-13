@@ -112,7 +112,12 @@ body {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ivory);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
+.brand:hover { color: var(--gold); }
+.brand:hover .dot { background: var(--ivory); }
 .brand .dot {
   display: inline-block;
   width: 4px; height: 4px;
@@ -887,7 +892,7 @@ footer .fineprint {
 <body>
 
 <header class="site-header">
-  <div class="brand">Veila<span class="dot"></span><span class="brand-sub" data-i18n="brandSub">A Tarot Practice</span></div>
+  <a class="brand" href="/" id="brand-home" aria-label="Veila — return to landing">Veila<span class="dot"></span><span class="brand-sub" data-i18n="brandSub">A Tarot Practice</span></a>
   <div class="header-right">
     <div class="nav-meta" data-i18n="navMeta">Celtic Cross · 10 Cards</div>
     <div class="lang-toggle" role="group" aria-label="Language">
@@ -1553,6 +1558,10 @@ document.getElementById('continue-btn').addEventListener('click', confirmSelecti
 document.getElementById('reshuffle-btn').addEventListener('click', beginSelection);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
 document.getElementById('reset-btn').addEventListener('click', reset);
+document.getElementById('brand-home').addEventListener('click', (e) => {
+  e.preventDefault();
+  reset();
+});
 </script>
 </body>
 </html>
