@@ -3,8 +3,46 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Veila — A Celtic Cross Reading</title>
-<meta name="description" content="A quiet, considered Celtic Cross tarot reading. Ten cards, ten positions." />
+<title>Veila — A Celtic Cross Tarot Reading</title>
+<meta name="description" content="Veila is a quiet, considered Celtic Cross tarot reading. Choose ten cards from a deck of seventy-eight and let each unfold a position-specific reading — in English or Thai." />
+<meta name="keywords" content="tarot, celtic cross, tarot reading, free tarot, online tarot, rider waite, ไพ่ทาโรต์, เซลติกครอส" />
+<meta name="author" content="Veila Tarot" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#0a0a0c" />
+<meta name="color-scheme" content="dark" />
+<meta name="application-name" content="Veila" />
+<meta name="apple-mobile-web-app-title" content="Veila" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no" />
+
+<link rel="canonical" href="https://veilatarot.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Veila" />
+<meta property="og:title" content="Veila — A Celtic Cross Tarot Reading" />
+<meta property="og:description" content="A quiet, considered Celtic Cross tarot reading. Ten cards, ten positions, one question. Free, bilingual, ad-supported." />
+<meta property="og:url" content="https://veilatarot.com/" />
+<meta property="og:image" content="https://veilatarot.com/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Veila — A Celtic Cross Reading" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="th_TH" />
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Veila — A Celtic Cross Tarot Reading" />
+<meta name="twitter:description" content="A quiet, considered Celtic Cross tarot reading. Ten cards, ten positions, one question." />
+<meta name="twitter:image" content="https://veilatarot.com/og.png" />
+<meta name="twitter:image:alt" content="Veila — A Celtic Cross Reading" />
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/manifest.webmanifest" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +50,38 @@
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2823470980745945"
      crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://veilatarot.com/#website",
+      "url": "https://veilatarot.com/",
+      "name": "Veila",
+      "description": "A quiet, considered Celtic Cross tarot reading.",
+      "inLanguage": ["en", "th"]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Veila Tarot",
+      "url": "https://veilatarot.com/",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Any (web)",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "inLanguage": ["en", "th"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Free, bilingual Celtic Cross tarot reading. Choose ten cards from a deck of seventy-eight and let each unfold a position-specific reading."
+    }
+  ]
+}
+</script>
 
 <style>
 :root {
@@ -1504,8 +1574,8 @@ function applyLang() {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
   document.title = lang === 'th'
-    ? 'Veila — บทอ่านเซลติกครอส'
-    : 'Veila — A Celtic Cross Reading';
+    ? 'Veila — บทอ่านไพ่ทาโรต์เซลติกครอส'
+    : 'Veila — A Celtic Cross Tarot Reading';
   // re-render any visible dynamic content
   if (!document.getElementById('reading').classList.contains('is-hidden') && drawn.length === 10) {
     const spread = document.getElementById('spread');
