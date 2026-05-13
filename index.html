@@ -721,8 +721,75 @@ aside.rail { padding-top: 24px; }
 .reset-row {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 48px;
   padding: 56px 24px 0;
+  flex-wrap: wrap;
+}
+@media (max-width: 720px) {
+  .reset-row { gap: 24px; padding-top: 40px; }
+}
+
+/* Danger variant — used for the destructive 'Read Again' control so it can't
+   be visually confused with 'Reveal All' sitting next to it. */
+.cta-btn.danger {
+  border-color: rgba(138, 58, 58, 0.55);
+  color: var(--ivory-dim);
+}
+.cta-btn.danger:hover {
+  background: rgba(138, 58, 58, 0.18);
+  border-color: var(--crimson);
+  color: var(--ivory);
+}
+
+/* ====== CONFIRM DIALOG ====== */
+dialog.modal {
+  border: 1px solid var(--gold-dim);
+  background: var(--ink-2);
+  color: var(--ivory);
+  padding: 0;
+  max-width: 440px;
+  width: calc(100% - 32px);
+  border-radius: 4px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+}
+dialog.modal::backdrop {
+  background: rgba(10,10,12,0.78);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+dialog.modal .modal-inner {
+  padding: 36px 32px 28px;
+  text-align: center;
+}
+dialog.modal h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: -0.005em;
+  color: var(--ivory);
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+dialog.modal p {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+dialog.modal .modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+dialog.modal .modal-actions .cta-btn {
+  padding: 14px 30px;
+  font-size: 10px;
 }
 
 /* ====== FOOTER ====== */
@@ -998,7 +1065,7 @@ footer .fineprint {
     <!-- ====== LANDING ====== -->
     <section id="landing" class="landing">
       <div class="eyebrow" data-i18n="eyebrow">A Quiet Reading</div>
-      <h1 data-i18n-html="landingH1">Ten cards.<br/>One <em>question</em>.</h1>
+      <h1 data-i18n-html="landingH1">Ten cards.<br/>A <em>chapter</em> of a life.</h1>
       <div class="divider-ornament">
         <span class="line"></span>
         <span class="mark"></span>
@@ -1032,7 +1099,7 @@ footer .fineprint {
 
       <div class="continue-row">
         <button class="cta-btn ghost" id="reshuffle-btn" data-i18n="reshuffleBtn">Reshuffle</button>
-        <button class="cta-btn" id="continue-btn" data-i18n="continueBtn" disabled>Lay the Spread</button>
+        <button class="cta-btn" id="continue-btn" data-i18n="continueBtn" disabled>Read the cards</button>
       </div>
     </section>
 
@@ -1063,7 +1130,7 @@ footer .fineprint {
 
       <div class="reset-row" id="reset-row">
         <button class="cta-btn ghost" id="reveal-all-btn" data-i18n="revealAllBtn">Reveal All</button>
-        <button class="cta-btn" id="reset-btn" data-i18n="resetBtn">Read Again</button>
+        <button class="cta-btn danger" id="reset-btn" data-i18n="resetBtn">Read Again</button>
       </div>
 
       <div id="ad-bottom" class="ad-slot" aria-label="Bottom advertisement"></div>
@@ -1082,6 +1149,17 @@ footer .fineprint {
   <div data-i18n="footerCopy">veilatarot.com · © MMXXVI</div>
 </footer>
 
+<dialog class="modal" id="confirm-reset" aria-labelledby="confirm-reset-title">
+  <div class="modal-inner">
+    <h3 id="confirm-reset-title" data-i18n="confirmResetTitle">Leave this reading?</h3>
+    <p data-i18n="confirmResetBody">Your ten cards will be set aside. Begin a new one?</p>
+    <div class="modal-actions">
+      <button type="button" class="cta-btn ghost" id="confirm-reset-cancel" data-i18n="confirmResetCancel">Stay</button>
+      <button type="button" class="cta-btn danger" id="confirm-reset-ok" data-i18n="confirmResetOk">Yes, read again</button>
+    </div>
+  </div>
+</dialog>
+
 <script>
 /* ========================================================================
    STRINGS — bilingual UI + position metadata
@@ -1091,7 +1169,7 @@ const T = {
     brandSub: 'A Tarot Practice',
     navMeta: 'Celtic Cross · 10 Cards',
     eyebrow: 'A Quiet Reading',
-    landingH1: 'Ten cards.<br>One <em>question</em>.',
+    landingH1: 'Ten cards.<br>A <em>chapter</em> of a life.',
     lede: 'Hold a question in mind — clear, honest, unrushed. When you are ready, draw your Celtic Cross. The cards are tools; the meaning is yours.',
     beginBtn: 'Draw Your Cards',
     metaSpreadLabel: 'The Spread',
@@ -1105,7 +1183,7 @@ const T = {
     selP: 'Use your left hand to choose.',
     selCounterSuffix: ' of 10 chosen',
     reshuffleBtn: 'Reshuffle',
-    continueBtn: 'Lay the Spread',
+    continueBtn: 'Read the cards',
     readStep: 'The Spread is Laid',
     readH2: 'Your Celtic Cross',
     readP: 'Each card is placed face-down. Tap to turn one over. Take them in the order they call to you.',
@@ -1113,6 +1191,10 @@ const T = {
     flipCountSuffix: ' of 10 revealed',
     revealAllBtn: 'Reveal All',
     resetBtn: 'Read Again',
+    confirmResetTitle: 'Leave this reading?',
+    confirmResetBody: 'Your ten cards will be set aside. Begin a new one?',
+    confirmResetCancel: 'Stay',
+    confirmResetOk: 'Yes, read again',
     readoutLabel: 'The Reading',
     readoutH3: 'Notes from the Spread',
     readMore: 'Read +',
@@ -1127,7 +1209,7 @@ const T = {
     brandSub: 'การทำสมาธิกับไพ่',
     navMeta: 'Celtic Cross · 10 ใบ',
     eyebrow: 'บทอ่านอันเงียบสงบ',
-    landingH1: 'ไพ่สิบใบ<br>คำถามหนึ่ง<em>ข้อ</em>',
+    landingH1: 'ไพ่สิบใบ<br><em>บทหนึ่ง</em>ของชีวิต',
     lede: 'ตั้งคำถามไว้ในใจ — ชัดเจน ซื่อตรง ไม่เร่งรีบ เมื่อพร้อม จงเปิดไพ่เซลติกครอสของคุณ ไพ่คือเครื่องมือ ความหมายเป็นของคุณ',
     beginBtn: 'เปิดไพ่ของคุณ',
     metaSpreadLabel: 'ผังการอ่าน',
@@ -1141,7 +1223,7 @@ const T = {
     selP: 'ใช้มือซ้ายในการเลือก',
     selCounterSuffix: ' จาก 10 ใบ',
     reshuffleBtn: 'สับใหม่',
-    continueBtn: 'วางไพ่',
+    continueBtn: 'อ่านไพ่',
     readStep: 'ไพ่ถูกวางไว้แล้ว',
     readH2: 'เซลติกครอสของคุณ',
     readP: 'ไพ่แต่ละใบคว่ำหน้าอยู่ แตะเพื่อเปิด พลิกตามลำดับที่ไพ่เรียกหาคุณ',
@@ -1149,6 +1231,10 @@ const T = {
     flipCountSuffix: ' จาก 10 ใบ',
     revealAllBtn: 'เปิดทั้งหมด',
     resetBtn: 'อ่านอีกครั้ง',
+    confirmResetTitle: 'ออกจากบทอ่านนี้?',
+    confirmResetBody: 'ไพ่ทั้งสิบใบของคุณจะถูกวางลง เริ่มอ่านใหม่หรือไม่?',
+    confirmResetCancel: 'อยู่ต่อ',
+    confirmResetOk: 'อ่านใหม่',
     readoutLabel: 'บทอ่าน',
     readoutH3: 'บันทึกจากการอ่าน',
     readMore: 'อ่าน +',
@@ -1757,10 +1843,35 @@ document.getElementById('begin-btn').addEventListener('click', beginSelection);
 document.getElementById('continue-btn').addEventListener('click', confirmSelection);
 document.getElementById('reshuffle-btn').addEventListener('click', reshuffleTable);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
-document.getElementById('reset-btn').addEventListener('click', reset);
+
+const confirmResetDialog = document.getElementById('confirm-reset');
+function askConfirmReset() {
+  if (typeof confirmResetDialog.showModal === 'function') {
+    confirmResetDialog.showModal();
+  } else {
+    if (confirm(T[lang].confirmResetTitle)) reset();
+  }
+}
+document.getElementById('reset-btn').addEventListener('click', askConfirmReset);
+document.getElementById('confirm-reset-cancel').addEventListener('click', () => confirmResetDialog.close());
+document.getElementById('confirm-reset-ok').addEventListener('click', () => {
+  confirmResetDialog.close();
+  reset();
+});
+// click on the backdrop closes the dialog (cancel)
+confirmResetDialog.addEventListener('click', (e) => {
+  if (e.target === confirmResetDialog) confirmResetDialog.close();
+});
+
 document.getElementById('brand-home').addEventListener('click', (e) => {
   e.preventDefault();
-  reset();
+  // if a reading is open, confirm before discarding; otherwise just go home
+  const readingOpen = !document.getElementById('reading').classList.contains('is-hidden');
+  if (readingOpen && drawn.length === 10) {
+    askConfirmReset();
+  } else {
+    reset();
+  }
 });
 </script>
 </body>
