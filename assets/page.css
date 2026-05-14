@@ -448,6 +448,179 @@ footer .footer-nav .sep {
   color: inherit;
 }
 
+/* ====== BREADCRUMB ====== */
+.breadcrumb {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin-bottom: 24px;
+  text-align: center;
+  line-height: 1.6;
+}
+.breadcrumb a {
+  color: var(--ivory-mute);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb .bc-sep {
+  margin: 0 8px;
+  color: var(--rule);
+}
+.breadcrumb .bc-current { color: var(--gold); }
+
+/* ====== RELATED CARDS MODULE (card page) ====== */
+.related-cards {
+  margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px solid var(--rule);
+}
+.related-cards h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 20px;
+  color: var(--ivory);
+}
+.related-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.related-cards-grid a {
+  display: block;
+  padding: 14px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--ivory-dim);
+  text-align: center;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.related-cards-grid a:hover {
+  border-color: var(--gold);
+  color: var(--ivory);
+}
+.related-cards-grid .rc-rom {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.related-cards-grid .rc-name {
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+/* ====== EXPLORE RELATED READINGS MODULE ====== */
+.related-readings {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--rule);
+}
+.related-readings h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 10px;
+  color: var(--ivory);
+}
+.related-readings .related-lede {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.related-grid a {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--ivory-dim);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.related-grid a:hover {
+  border-color: var(--gold);
+  color: var(--ivory);
+}
+.related-grid .rl-label {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.related-grid .rl-name {
+  font-family: var(--serif);
+  font-size: 16px;
+}
+
+/* ====== HUB PAGE LIST ====== */
+.hub-card-list {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+}
+.hub-card-list li {
+  margin-bottom: 8px;
+}
+.hub-card-list a {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.hub-card-list a:hover {
+  border-color: var(--gold);
+}
+.hub-card-list .hcl-rom {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.1;
+}
+.hub-card-list .hcl-name {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+.hub-card-list .hcl-kw {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.hub-page section + section { margin-top: 56px; }
+.hub-page section.hub-cards h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: -0.005em;
+  color: var(--ivory);
+  margin: 56px 0 0;
+}
+
 @media (max-width: 720px) {
   .site-header { padding: 14px 16px; gap: 8px 14px; }
   .brand { font-size: 17px; letter-spacing: 0.12em; }
@@ -462,4 +635,11 @@ footer .footer-nav .sep {
   .card-page .cc-pos-label { font-size: 17px; }
   .adjacent-nav { grid-template-columns: 1fr; }
   .adjacent-nav .adj.next { text-align: left; }
+  .related-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr; }
+  .breadcrumb { font-size: 9px; letter-spacing: 0.18em; }
+  .breadcrumb .bc-sep { margin: 0 5px; }
+  .hub-card-list a { grid-template-columns: 44px 1fr; padding: 14px 14px; gap: 14px; }
+  .hub-card-list .hcl-rom { font-size: 18px; }
+  .hub-card-list .hcl-name { font-size: 17px; }
 }
