@@ -600,7 +600,8 @@ def breadcrumb_jsonld(crumbs):
 
 def render_head_block(title, desc, canonical, en_path, th_path,
                       og_image='https://veilatarot.com/og.png',
-                      og_type='article', lang='en', extra_jsonld=None):
+                      og_type='article', lang='en', extra_jsonld=None,
+                      include_share=False):
     """Common <head> contents minus the surrounding <head></head>."""
     og_locale = 'en_US' if lang == 'en' else 'th_TH'
     og_locale_alt = 'th_TH' if lang == 'en' else 'en_US'
@@ -663,6 +664,8 @@ def render_head_block(title, desc, canonical, en_path, th_path,
 
 <script src="/assets/analytics.js" defer></script>
 '''
+    if include_share:
+        head += '<script src="/assets/share.js" defer></script>\n'
     for block in jsonld_blocks:
         head += f'\n<script type="application/ld+json">\n{json.dumps(block, ensure_ascii=False, indent=2)}\n</script>\n'
     return head
@@ -917,8 +920,108 @@ def render_card(card, prev_card, next_card, lang):
     head = render_head_block(
         title=title, desc=desc, canonical=canonical,
         en_path=en_path, th_path=th_path, lang=lang,
-        extra_jsonld=[article_jsonld, crumbs_jsonld]
+        extra_jsonld=[article_jsonld, crumbs_jsonld],
+        include_share=True,
     )
+
+    # ----- Share-this-card block ---------------------------------------------
+    if lang == 'th':
+        share_lede = 'บันทึกใบนี้เก็บไว้เป็นภาพ — สำหรับใคร่ครวญในวันอื่น'
+        share_btn_label = 'บันทึกเป็นภาพ'
+        share_sheet_eyebrow = 'บันทึกไพ่'
+        share_download = 'ดาวน์โหลด'
+        share_native = 'แชร์'
+        share_copylink = 'คัดลอกลิงก์'
+        share_copied = 'คัดลอกแล้ว'
+        share_close = 'ปิด'
+        share_rendering = 'กำลังสร้าง…'
+        share_upright_label = 'ตั้งตรง'
+        share_reversed_label = 'กลับหัว'
+    else:
+        share_lede = 'Save this card as an image — for a quieter moment.'
+        share_btn_label = 'Save as image'
+        share_sheet_eyebrow = 'Save this card'
+        share_download = 'Download'
+        share_native = 'Share'
+        share_copylink = 'Copy link'
+        share_copied = 'Copied'
+        share_close = 'Close'
+        share_rendering = 'Rendering…'
+        share_upright_label = 'Upright'
+        share_reversed_label = 'Reversed'
+
+    card_data = {
+        'id': card.get('id'),
+        'lang': lang,
+        'name': name,
+        'roman': card.get('roman') or '',
+        'arcana': card.get('arcana') or '',
+        'suit': card.get('suit'),
+        'eyebrow': label,
+        'pageUrl': page_url,
+        'upright': {'keywords': up_kw, 'text': up_text, 'label': share_upright_label},
+        'reversed': {'keywords': rev_kw, 'text': rev_text, 'label': share_reversed_label},
+        'labels': {
+            'sheetEyebrow': share_sheet_eyebrow,
+            'download': share_download,
+            'share': share_native,
+            'copyLink': share_copylink,
+            'copied': share_copied,
+            'close': share_close,
+            'rendering': share_rendering,
+        },
+    }
+    card_data_json = json.dumps(card_data, ensure_ascii=False)
+
+    share_section_html = f'''  <aside class="share-card" aria-label="{escape(share_btn_label, quote=True)}">
+    <p class="share-card-lede">{escape(share_lede)}</p>
+    <button type="button" class="cta-btn ghost veila-share-btn">{escape(share_btn_label)}</button>
+  </aside>'''
+
+    share_filename_slug = (card.get('id') or 'card').replace('_', '-')
+    share_inline_script = f'''<script id="veila-card-data" type="application/json">{card_data_json}</script>
+<script>
+(function() {{
+  function init() {{
+    var node = document.getElementById('veila-card-data');
+    var btn = document.querySelector('.veila-share-btn');
+    if (!node || !btn || !window.veilaShare) return;
+    var data;
+    try {{ data = JSON.parse(node.textContent); }} catch (e) {{ return; }}
+    btn.addEventListener('click', function() {{
+      var orientation = data.upright.label;
+      var excerpt = data.upright.text || data.upright.keywords;
+      window.veilaShare.shareCard({{
+        lang: data.lang,
+        eyebrow: data.eyebrow,
+        name: data.name,
+        orientation: orientation,
+        excerpt: excerpt,
+        pageUrl: data.pageUrl,
+        filename: 'veila-{share_filename_slug}-' + data.lang + '.png',
+        sheetEyebrow: data.labels.sheetEyebrow,
+        downloadLabel: data.labels.download,
+        shareLabel: data.labels.share,
+        copyLinkLabel: data.labels.copyLink,
+        copiedLabel: data.labels.copied,
+        closeLabel: data.labels.close,
+        renderingLabel: data.labels.rendering,
+        shareTitle: data.name,
+        shareText: data.name + ' — ' + data.eyebrow,
+        events: {{
+          exported: 'card_share_exported',
+          native: 'card_share_native',
+          linkCopied: 'card_share_link_copied'
+        }},
+        eventParams: {{ card_id: data.id, lang: data.lang }}
+      }});
+    }});
+  }}
+  if (window.veilaShare) init();
+  else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+}})();
+</script>'''
 
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -973,6 +1076,8 @@ def render_card(card, prev_card, next_card, lang):
 
 {explore_html}
 
+{share_section_html}
+
   <div class="cta-row">
     <a href="/" class="cta-btn">{escape(t['cta_main'])}</a>
     <a href="{link_celtic}" class="cta-btn ghost">{escape(t['cta_about'])}</a>
@@ -981,6 +1086,8 @@ def render_card(card, prev_card, next_card, lang):
 </main>
 
 {render_footer(lang)}
+
+{share_inline_script}
 
 </body>
 </html>

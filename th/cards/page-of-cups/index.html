@@ -56,6 +56,7 @@
 </script>
 
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/share.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -292,6 +293,11 @@
     </div>
   </aside>
 
+  <aside class="share-card" aria-label="บันทึกเป็นภาพ">
+    <p class="share-card-lede">บันทึกใบนี้เก็บไว้เป็นภาพ — สำหรับใคร่ครวญในวันอื่น</p>
+    <button type="button" class="cta-btn ghost veila-share-btn">บันทึกเป็นภาพ</button>
+  </aside>
+
   <div class="cta-row">
     <a href="/" class="cta-btn">เริ่มอ่านไพ่</a>
     <a href="/th/celtic-cross-tarot/" class="cta-btn ghost">เกี่ยวกับผังการอ่าน</a>
@@ -311,6 +317,50 @@
   </nav>
   <div>veilatarot.com · © MMXXVI</div>
 </footer>
+
+<script id="veila-card-data" type="application/json">{"id": "47-page-of-cups", "lang": "th", "name": "เด็กถ้วย", "roman": "Pg", "arcana": "minor", "suit": "cups", "eyebrow": "ไพ่ชุดไมเนอร์ · ถ้วย", "pageUrl": "https://veilatarot.com/th/cards/page-of-cups/", "upright": {"keywords": "ข่าวดีเรื่องความรัก, จินตนาการ, สัญชาตญาณ, ความอ่อนโยน, ความคิดสร้างสรรค์", "text": "มีเรื่องน่ารักๆ หรือไอเดียแปลกใหม่กำลังผุดขึ้นมาให้ใจเต้นแรง! เปิดใจรับความประหลาดใจที่จักรวาลส่งมาหน่อยนะ แม้จะดูติงต๊องไปบ้างแต่มันจะนำโชคมาให้", "label": "ตั้งตรง"}, "reversed": {"keywords": "อารมณ์อ่อนไหวเกินเหตุ, ข่าวร้าย, ความรักไม่สมหวัง, จินตนาการเพ้อเจ้อ, ทำตัวเป็นเด็ก", "text": "ดราม่ามาเต็ม! ช่วงนี้คุณอ่อนไหวง่าย ร้องไห้เก่ง หรือน้อยใจจนคนรอบข้างทำตัวไม่ถูก ตั้งสติหน่อย อย่าเพิ่งเชื่อข่าวลือหรือคิดมากไปเอง", "label": "กลับหัว"}, "labels": {"sheetEyebrow": "บันทึกไพ่", "download": "ดาวน์โหลด", "share": "แชร์", "copyLink": "คัดลอกลิงก์", "copied": "คัดลอกแล้ว", "close": "ปิด", "rendering": "กำลังสร้าง…"}}</script>
+<script>
+(function() {
+  function init() {
+    var node = document.getElementById('veila-card-data');
+    var btn = document.querySelector('.veila-share-btn');
+    if (!node || !btn || !window.veilaShare) return;
+    var data;
+    try { data = JSON.parse(node.textContent); } catch (e) { return; }
+    btn.addEventListener('click', function() {
+      var orientation = data.upright.label;
+      var excerpt = data.upright.text || data.upright.keywords;
+      window.veilaShare.shareCard({
+        lang: data.lang,
+        eyebrow: data.eyebrow,
+        name: data.name,
+        orientation: orientation,
+        excerpt: excerpt,
+        pageUrl: data.pageUrl,
+        filename: 'veila-47-page-of-cups-' + data.lang + '.png',
+        sheetEyebrow: data.labels.sheetEyebrow,
+        downloadLabel: data.labels.download,
+        shareLabel: data.labels.share,
+        copyLinkLabel: data.labels.copyLink,
+        copiedLabel: data.labels.copied,
+        closeLabel: data.labels.close,
+        renderingLabel: data.labels.rendering,
+        shareTitle: data.name,
+        shareText: data.name + ' — ' + data.eyebrow,
+        events: {
+          exported: 'card_share_exported',
+          native: 'card_share_native',
+          linkCopied: 'card_share_link_copied'
+        },
+        eventParams: { card_id: data.id, lang: data.lang }
+      });
+    });
+  }
+  if (window.veilaShare) init();
+  else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 
 </body>
 </html>
