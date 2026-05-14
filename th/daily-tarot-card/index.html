@@ -36,6 +36,7 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="alternate" type="application/rss+xml" title="Veila Tarot — Feed" href="/feed.xml" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,6 +55,8 @@
   gtag('js', new Date());
   gtag('config', 'G-NQWWZ3HT2S');
 </script>
+
+<script src="/assets/analytics.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -109,10 +112,13 @@
 
 <footer>
   <div class="fineprint">เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์</div>
+  <div class="last-updated">ปรับปรุงล่าสุด · 14 พฤษภาคม 2026</div>
   <nav class="footer-nav">
     <a href="/th/celtic-cross-tarot/">คู่มือเซลติกครอส</a>
     <span class="sep">·</span>
     <a href="/th/daily-tarot-card/">ไพ่ประจำวัน</a>
+    <span class="sep">·</span>
+    <a href="/th/all-tarot-pages/">ทุกหน้า</a>
   </nav>
   <div>veilatarot.com · © MMXXVI</div>
 </footer>
@@ -148,6 +154,15 @@
         '<div class="orientation">' + (reversed ? 'กลับหัว' : 'ตั้งตรง') + '</div>' +
         '<div class="keywords">' + keywords + '</div>' +
         '<div class="interp">' + interp + '</div>';
+      if (window.veilaFire) {
+        window.veilaFire('daily_card_viewed', {
+          lang: LANG,
+          card_id: card.id,
+          card_name: card.name.en,
+          reversed: !!reversed,
+          date_seed: seed
+        });
+      }
     })
     .catch(function (err) {
       console.error('Failed to load daily card', err);

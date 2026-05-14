@@ -308,6 +308,15 @@ footer .fineprint {
   color: var(--ivory-mute);
   margin-bottom: 10px;
 }
+footer .last-updated {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-mute);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin-bottom: 12px;
+}
 footer .footer-nav {
   margin: 12px 0 14px;
 }
@@ -619,6 +628,35 @@ footer .footer-nav .sep {
   letter-spacing: -0.005em;
   color: var(--ivory);
   margin: 56px 0 0;
+}
+
+/* ====== HTML SITEMAP (/all-tarot-pages/) ====== */
+.all-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 16px;
+}
+.all-list li {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--rule);
+}
+.all-list a {
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 17px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.all-list a:hover { color: var(--gold); }
+.all-list.cols {
+  columns: 2;
+  column-gap: 36px;
+}
+.all-list.cols li {
+  break-inside: avoid;
+}
+@media (max-width: 720px) {
+  .all-list.cols { columns: 1; }
 }
 
 @media (max-width: 720px) {

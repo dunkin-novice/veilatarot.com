@@ -44,6 +44,7 @@
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="alternate" type="application/rss+xml" title="Veila Tarot — Feed" href="/feed.xml" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +63,8 @@
   gtag('config', 'G-NQWWZ3HT2S');
 </script>
 
+<script src="/assets/analytics.js" defer></script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,7 +75,15 @@
       "url": "https://veilatarot.com/",
       "name": "Veila",
       "description": "A quiet, considered Celtic Cross tarot reading.",
-      "inLanguage": ["en-US", "th-TH"]
+      "inLanguage": ["en-US", "th-TH"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.google.com/search?q={search_term_string}+site%3Aveilatarot.com"
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "WebApplication",
@@ -1176,10 +1187,13 @@ footer .footer-nav .sep {
 
 <footer>
   <div class="fineprint" data-i18n="footerFineprint">For reflection, not prediction.</div>
+  <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 14 May 2026</div>
   <nav class="footer-nav">
     <a href="/celtic-cross-tarot/" data-href-en="/celtic-cross-tarot/" data-href-th="/th/celtic-cross-tarot/" data-i18n="navCelticCross">Celtic Cross Guide</a>
     <span class="sep">·</span>
     <a href="/daily-tarot-card/" data-href-en="/daily-tarot-card/" data-href-th="/th/daily-tarot-card/" data-i18n="navDailyCard">Daily Tarot Card</a>
+    <span class="sep">·</span>
+    <a href="/all-tarot-pages/" data-href-en="/all-tarot-pages/" data-href-th="/th/all-tarot-pages/" data-i18n="navAllPages">All Pages</a>
   </nav>
   <div data-i18n="footerCopy">veilatarot.com · © MMXXVI</div>
 </footer>
@@ -1238,8 +1252,10 @@ const T = {
     upright: 'Upright',
     footerFineprint: 'For reflection, not prediction.',
     footerCopy: 'veilatarot.com · © MMXXVI',
+    footerLastUpdated: 'Last updated · 14 May 2026',
     navCelticCross: 'Celtic Cross Guide',
     navDailyCard: 'Daily Tarot Card',
+    navAllPages: 'All Pages',
     loadingDeck: 'Drawing the deck…',
   },
   th: {
@@ -1280,8 +1296,10 @@ const T = {
     upright: 'ตั้งตรง',
     footerFineprint: 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์',
     footerCopy: 'veilatarot.com · © MMXXVI',
+    footerLastUpdated: 'ปรับปรุงล่าสุด · 14 พฤษภาคม 2026',
     navCelticCross: 'คู่มือเซลติกครอส',
     navDailyCard: 'ไพ่ประจำวัน',
+    navAllPages: 'ทุกหน้า',
     loadingDeck: 'กำลังเตรียมสำรับไพ่…',
   }
 };
@@ -1522,6 +1540,16 @@ function renderReadouts() {
       row.classList.toggle('expanded');
       const mark = row.querySelector('.expand-mark');
       if (mark) mark.textContent = row.classList.contains('expanded') ? T[lang].readClose : T[lang].readMore;
+      if (row.classList.contains('expanded') && window.veilaFire) {
+        window.veilaFire('card_expanded', {
+          lang: lang,
+          card_id: d.card.id,
+          card_name: d.card.name.en,
+          position_n: d.position.n,
+          position_key: d.position.key,
+          reversed: !!d.reversed
+        });
+      }
     });
     list.appendChild(row);
   });
@@ -1536,6 +1564,10 @@ function onAllFlipped() {
       section.scrollTo?.({ top: 0, behavior: 'smooth' });
       section.getBoundingClientRect();
     }, 100);
+    if (window.veilaFire) {
+      const reversedCount = drawn.filter(d => d.reversed).length;
+      window.veilaFire('spread_completed', { lang: lang, reversed_count: reversedCount });
+    }
   }, 600);
 }
 
@@ -1779,6 +1811,9 @@ function confirmSelection() {
   renderSpread();
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'instant' });
+  if (window.veilaFire) {
+    window.veilaFire('reading_started', { lang: lang, deck_size: DECK.length, picks: 10 });
+  }
 }
 
 function revealAll() {
@@ -1848,9 +1883,13 @@ function applyLang() {
 function setLang(next) {
   if (next === lang) return;
   if (!T[next]) return;
+  const from = lang;
   lang = next;
   try { localStorage.setItem('veila-lang', lang); } catch (e) {}
   applyLang();
+  if (window.veilaFire) {
+    window.veilaFire('language_switched', { from_lang: from, to_lang: next, method: 'inline', source_page: '/' });
+  }
 }
 
 document.querySelectorAll('.lang-toggle button').forEach((b) => {
