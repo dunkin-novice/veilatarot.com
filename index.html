@@ -782,6 +782,19 @@ footer .fineprint {
   color: var(--ivory-mute);
   margin-bottom: 10px;
 }
+footer .footer-nav {
+  margin: 12px 0 14px;
+}
+footer .footer-nav a {
+  color: var(--ivory-mute);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer .footer-nav a:hover { color: var(--gold); }
+footer .footer-nav .sep {
+  color: var(--rule);
+  margin: 0 12px;
+}
 
 /* ====== STATES ====== */
 .is-hidden { display: none !important; }
@@ -1163,6 +1176,11 @@ footer .fineprint {
 
 <footer>
   <div class="fineprint" data-i18n="footerFineprint">For reflection, not prediction.</div>
+  <nav class="footer-nav">
+    <a href="/celtic-cross-tarot/" data-href-en="/celtic-cross-tarot/" data-href-th="/th/celtic-cross-tarot/" data-i18n="navCelticCross">Celtic Cross Guide</a>
+    <span class="sep">·</span>
+    <a href="/daily-tarot-card/" data-href-en="/daily-tarot-card/" data-href-th="/th/daily-tarot-card/" data-i18n="navDailyCard">Daily Tarot Card</a>
+  </nav>
   <div data-i18n="footerCopy">veilatarot.com · © MMXXVI</div>
 </footer>
 
@@ -1220,6 +1238,8 @@ const T = {
     upright: 'Upright',
     footerFineprint: 'For reflection, not prediction.',
     footerCopy: 'veilatarot.com · © MMXXVI',
+    navCelticCross: 'Celtic Cross Guide',
+    navDailyCard: 'Daily Tarot Card',
     loadingDeck: 'Drawing the deck…',
   },
   th: {
@@ -1260,6 +1280,8 @@ const T = {
     upright: 'ตั้งตรง',
     footerFineprint: 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์',
     footerCopy: 'veilatarot.com · © MMXXVI',
+    navCelticCross: 'คู่มือเซลติกครอส',
+    navDailyCard: 'ไพ่ประจำวัน',
     loadingDeck: 'กำลังเตรียมสำรับไพ่…',
   }
 };
@@ -1802,6 +1824,10 @@ function applyLang() {
   document.querySelectorAll('[data-i18n-html]').forEach((el) => {
     const key = el.getAttribute('data-i18n-html');
     if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-href-en]').forEach((a) => {
+    const next = a.getAttribute('data-href-' + lang);
+    if (next) a.setAttribute('href', next);
   });
   document.querySelectorAll('.lang-toggle button').forEach((b) => {
     b.classList.toggle('active', b.dataset.lang === lang);
