@@ -99,7 +99,360 @@ STATIC_URLS = [
     ('/th/daily-tarot-card/',   '0.7', 'daily'),
     ('/all-tarot-pages/',       '0.5', 'monthly'),
     ('/th/all-tarot-pages/',    '0.4', 'monthly'),
+    ('/th/about/',              '0.6', 'monthly'),
+    ('/th/faq/',                '0.6', 'monthly'),
 ]
+
+# ---------------------------------------------------------------------------
+# TH EMOTIONAL SCENARIO PAGES
+# ---------------------------------------------------------------------------
+# 10 curated Thai emotional scenarios. Each maps to a 3-card spread,
+# an editorial framing, and 5-6 relevant card slugs (linking targets).
+# Hand-curated — not generated. These should not feel like AI listicles.
+
+TH_SCENARIOS = [
+    {
+        'slug': 'kao-kid-kab-rao',
+        'category': 'love',
+        'title': 'เขาคิดยังไงกับเรา',
+        'eyebrow': 'สำหรับเรื่องของหัวใจ',
+        'lede': 'เมื่อเขาเงียบ ความเงียบนั้นอาจสะท้อนสิ่งที่อยู่ในใจเขา หรืออาจสะท้อนความกลัวในใจเราเอง ไพ่ช่วยเราแยกสองอย่างออกจากกัน',
+        'intro_q': 'ก่อนเปิดไพ่ ตั้งคำถามให้เฉพาะเจาะจง ไม่ใช่ "เขารักเราไหม" แต่เป็น "อะไรอยู่ระหว่างเรากับเขาตอนนี้ที่ฉันยังไม่ได้พูด" ไพ่ที่ออกมาจะตอบคำถามที่สองได้คมกว่าคำถามแรก',
+        'spread': [
+            ('เขามองเราอย่างไร', 'ภาพที่เขาถือไว้ในใจเกี่ยวกับคุณ — ไม่ใช่สิ่งที่เขาพูดออกมา'),
+            ('เรามองเขาอย่างไร', 'ภาพที่คุณถือไว้ในใจเกี่ยวกับเขา — ซึ่งบางทีไม่ตรงกับเขาในความจริง'),
+            ('ระยะห่างระหว่างเรา', 'ช่องว่างที่ต้องเรียกชื่อ ก่อนจะข้ามไปหรือถอยกลับ'),
+        ],
+        'framework': 'สามใบนี้พูดคุยกันได้สามทาง ถ้าไพ่ของเขาและของคุณคล้ายกัน แปลว่าคุณสองคนกำลังเดินบนถนนเดียวกัน ถ้าต่างกันมาก แปลว่าคุณกำลังเล่าเรื่องคนละเรื่อง และใบที่สามจะบอกว่าช่องว่างนั้นเล็กหรือใหญ่ ปลายเปิดหรือปิดแล้ว ใบที่สามคือใบสำคัญที่สุด — เพราะมันเป็นใบเดียวที่คุณเปลี่ยนแปลงได้',
+        'cards': ['the-lovers', 'two-of-cups', 'knight-of-cups', 'page-of-cups', 'the-high-priestess', 'the-moon'],
+    },
+    {
+        'slug': 'kao-ja-glab-ma',
+        'category': 'love',
+        'title': 'เขาจะกลับมาไหม',
+        'eyebrow': 'สำหรับการรอ',
+        'lede': 'คำถามนี้บอกมากกว่าคำตอบ การที่คุณยังถามอยู่ — บ่อยครั้งคือไพ่ใบแรกที่คุณเปิดให้ตัวเองโดยไม่รู้ตัว',
+        'intro_q': 'แทนที่จะถามว่า "เขาจะกลับมาไหม" ลองถามว่า "ถ้าเขากลับมา ฉันจะกลับเป็นคนเดิมไหม" คำถามที่สองมักจะตอบทั้งสองคำถามพร้อมกัน',
+        'spread': [
+            ('ความรู้สึกของเขาตอนนี้', 'สิ่งที่เขาแบกอยู่จริงๆ ไม่ใช่สิ่งที่เขาเลือกจะแสดง'),
+            ('สิ่งที่ขวางการกลับมา', 'อุปสรรคที่อยู่ระหว่างทาง — ของเขา ของคุณ หรือของเงื่อนเวลา'),
+            ('ทิศทางที่เป็นไปได้', 'แนวโน้มถ้าทุกอย่างคงดำเนินเช่นเดิม'),
+        ],
+        'framework': 'ไพ่ใบที่หนึ่งบอกอุณหภูมิในใจเขา ไม่ใช่คำสัญญา ใบที่สองคือสิ่งที่คุณควรสังเกตที่สุด เพราะถ้าอุปสรรคนั้นมาจากคุณ — คุณคือคนที่ปลดล็อกได้ ใบที่สามเป็นแนวโน้ม ไม่ใช่คำพยากรณ์ ถ้าใบที่สามดูปิด ไพ่ไม่ได้บอกว่าทุกอย่างจบ — มันบอกว่าถ้าคุณไม่เปลี่ยนอะไรเลย ทุกอย่างจะอยู่อย่างนี้',
+        'cards': ['six-of-cups', 'wheel-of-fortune', 'eight-of-cups', 'the-hanged-man', 'judgement', 'the-moon'],
+    },
+    {
+        'slug': 'khon-kuy-jing-jai',
+        'category': 'love',
+        'title': 'คนคุยจริงใจไหม',
+        'eyebrow': 'สำหรับช่วงต้นของความสัมพันธ์',
+        'lede': 'ในช่วงคุย คำที่เขาพูดมีน้ำหนักน้อยกว่าจังหวะที่เขาตอบ ความสม่ำเสมอที่เขาให้ และพื้นที่ที่เขาเปิดให้คุณถาม ไพ่ช่วยอ่านจังหวะ ไม่ใช่คำ',
+        'intro_q': 'ก่อนเปิดไพ่ ลองนึกถึงสามครั้งล่าสุดที่คุณรู้สึก "บางอย่างไม่ตรง" แล้วถามไพ่ว่า "สามครั้งนั้นกำลังบอกอะไรฉัน"',
+        'spread': [
+            ('ความตั้งใจของเขา', 'สิ่งที่เขามาหาคุณเพื่อ — รู้ตัวหรือไม่ก็ตาม'),
+            ('ความจริงเบื้องหลัง', 'สิ่งที่เขาไม่ได้พูดออกมา แต่กำลังเล่าด้วยการกระทำ'),
+            ('สิ่งที่คุณต้องระวัง', 'จุดที่คุณกำลังเชื่อในสิ่งที่อยากเชื่อ มากกว่าสิ่งที่เห็น'),
+        ],
+        'framework': 'ไพ่ในคำถามนี้มักพูดถึงสองอย่างพร้อมกัน — เขา และคุณ ใบแรกคือเขา ใบที่สองคือสิ่งที่เขาส่งสัญญาณโดยไม่รู้ตัว ใบที่สามคือกระจกที่หันมาทางคุณ — ถามคุณว่าคุณกำลังอ่านสัญญาณนั้นตามที่มันเป็น หรือตามที่คุณหวังจะเป็น',
+        'cards': ['seven-of-swords', 'the-moon', 'two-of-pentacles', 'knight-of-cups', 'page-of-swords', 'the-devil'],
+    },
+    {
+        'slug': 'khwam-samphan-pai-tor',
+        'category': 'love',
+        'title': 'ความสัมพันธ์นี้ควรไปต่อไหม',
+        'eyebrow': 'สำหรับจุดเปลี่ยน',
+        'lede': 'คำถามนี้มักไม่ใช่คำถาม — มันคือคำตอบที่กำลังหาเหตุผลให้ตัวเอง ไพ่ช่วยให้คำตอบนั้นชัดเจนพอจะยอมรับ',
+        'intro_q': 'ลองถามตัวเองสั้นๆ ก่อน: "ถ้าฉันรู้แน่ๆ ว่าจะไม่มีอะไรเปลี่ยน ฉันจะยังอยากอยู่ในนี้ไหม" ไพ่จะตอบคำถามที่ใหญ่กว่านั้นได้ ก็ต่อเมื่อคุณตอบคำถามเล็กก่อน',
+        'spread': [
+            ('สถานะของเราตอนนี้', 'สภาพจริงของความสัมพันธ์ — เลิกแต่งหน้าให้มัน'),
+            ('ความเป็นไปได้ที่จะเติบโต', 'สิ่งที่ความสัมพันธ์นี้ยังเก็บไว้ให้คุณ ถ้าทั้งสองคนเลือกที่จะอยู่'),
+            ('สิ่งที่จะต้องปล่อย', 'ราคาของการไปต่อ — สิ่งที่หนึ่งหรือทั้งคู่ต้องวางลง'),
+        ],
+        'framework': 'สามใบนี้ทำงานเป็นกระจกสามบาน ถ้าคุณรู้สึกว่าไพ่แต่ละใบไม่ตรงกับใจ — มันอาจตรงกว่าที่คุณยอมรับ ไพ่ไม่ตัดสิน "ควร" หรือ "ไม่ควร" แต่มันเรียกชื่อสิ่งที่อยู่บนโต๊ะ การตัดสินใจยังคงเป็นของคุณเสมอ',
+        'cards': ['the-lovers', 'two-of-cups', 'three-of-swords', 'the-tower', 'death', 'the-hanged-man'],
+    },
+    {
+        'slug': 'kao-yang-kid-thueng-rao',
+        'category': 'love',
+        'title': 'เขายังคิดถึงเราไหม',
+        'eyebrow': 'สำหรับใจที่ยังค้าง',
+        'lede': 'คำถามนี้ฟังดูเกี่ยวกับเขา แต่จริงๆ มันถามว่า "ฉันยังคิดถึงเขาอยู่ และฉันจะทำยังไงกับสิ่งนั้น" ไพ่ตอบทั้งสองคำถามได้',
+        'intro_q': 'ก่อนเปิดไพ่ สังเกตว่าคำถาม "เขายังคิดถึงเราไหม" เกิดขึ้นบ่อยแค่ไหนในสัปดาห์ที่ผ่านมา ความถี่นั้นคือใบไพ่ใบแรกที่คุณเปิดให้ตัวเอง',
+        'spread': [
+            ('ความทรงจำของเขา', 'ที่ที่คุณยังอยู่ในความคิดของเขา หรือที่ที่คุณจางไปแล้ว'),
+            ('ปัจจุบันของเขา', 'สิ่งที่เขากำลังเดินอยู่ — ที่อาจเปิดหรือปิดประตูสู่อดีต'),
+            ('ช่องทางที่เปิดอยู่', 'สิ่งที่ยังเป็นไปได้ระหว่างคุณกับเขา ถ้ามี'),
+        ],
+        'framework': 'ไพ่ในคำถามนี้มักบอกว่า "คิดถึง" กับ "อยากกลับมา" เป็นคนละเรื่อง คนเราคิดถึงคนหลายคนพร้อมกันได้ การคิดถึงไม่ใช่คำตอบ เป็นแค่ข้อมูล ไพ่ใบที่สามคือสิ่งที่สำคัญที่สุด — เพราะมันบอกคุณว่าควรเปิดประตูทิ้งไว้ หรือควรเดินไปจากมันได้แล้ว',
+        'cards': ['six-of-cups', 'the-hanged-man', 'four-of-cups', 'eight-of-cups', 'the-moon', 'three-of-cups'],
+    },
+    {
+        'slug': 'rao-thak-kao-mai',
+        'category': 'love',
+        'title': 'เราควรทักเขาไหม',
+        'eyebrow': 'สำหรับการตัดสินใจส่งข้อความ',
+        'lede': 'คำถามนี้ดูเล็ก แต่ใหญ่กว่าที่มันบอก ทักหรือไม่ทักไม่ใช่เรื่องของข้อความ มันเป็นเรื่องของเจตนา และไพ่ตอบเรื่องเจตนาได้ดีมาก',
+        'intro_q': 'ลองถามตัวเองก่อน: "ฉันอยากทักเขาเพื่ออะไร" ถ้าคำตอบคือ "เพื่อให้เขารู้สึกบางอย่าง" ไพ่จะออกแบบหนึ่ง ถ้าคำตอบคือ "เพื่อให้ใจตัวเองรู้สึกบางอย่าง" ไพ่จะออกแบบที่ต่างกัน',
+        'spread': [
+            ('เจตนาที่แท้จริงของคุณ', 'สิ่งที่อยู่ใต้ความอยากส่งข้อความ'),
+            ('สิ่งที่เขาจะรู้สึก', 'การตอบรับที่เป็นไปได้ — ไม่ใช่คำที่เขาจะส่งกลับ แต่ความรู้สึกที่ขึ้นในใจเขา'),
+            ('สิ่งที่จะเกิดขึ้นถ้าคุณทำ', 'ผลลัพธ์ในระยะสัปดาห์ ไม่ใช่ระยะปีหน้า'),
+        ],
+        'framework': 'ใบแรกคือใบสำคัญที่สุด เพราะมันบอกว่าการกระทำนี้ดูแลคุณ หรือกำลังหนีบางอย่างในตัวคุณ ใบที่สองพูดถึงเขาในวันที่เขาเปิดข้อความ ใบที่สามคือผลพลอย ถ้าใบแรกแย่ ใบที่สองและสามจะดูดีแค่ไหนก็ไม่สำคัญ',
+        'cards': ['the-magician', 'the-fool', 'two-of-pentacles', 'eight-of-cups', 'the-hermit', 'page-of-cups'],
+    },
+    {
+        'slug': 'ror-rue-por',
+        'category': 'love',
+        'title': 'ควรรอหรือควรพอ',
+        'eyebrow': 'สำหรับใจที่ยังไม่ตัดสินใจ',
+        'lede': 'คำถามนี้มีสองคำตอบที่ถูกทั้งคู่ การรออาจเป็นความรัก หรืออาจเป็นความกลัวที่ไม่ยอมเปลี่ยนชื่อ ไพ่ช่วยแยกสองอย่างนี้',
+        'intro_q': 'ลองสมมติว่าคำตอบคือ "ควรพอ" คุณจะรู้สึกยังไง โล่งหรือร้าว ความรู้สึกที่ขึ้นมาก่อนคือคำตอบที่ซื่อสัตย์ที่สุดของคุณ ไพ่จะมายืนยันหรือสะท้อนเหตุผลให้',
+        'spread': [
+            ('สิ่งที่ยังเหลืออยู่', 'คุณค่าที่ยังมีในการรอ — ถ้ามี'),
+            ('ราคาของการรอ', 'สิ่งที่คุณกำลังเสียไปทุกวันที่เลือกรอ'),
+            ('สิ่งที่เปิดถ้าคุณพอ', 'พื้นที่ที่จะเกิดขึ้นในใจ ในเวลา และในชีวิตคุณ ถ้าคุณวางลง'),
+        ],
+        'framework': 'คำถาม "รอหรือพอ" บ่อยครั้งไม่ใช่คำถามสองทางเลือก แต่เป็นคำถามว่า "ฉันยังเหลือพลังพอที่จะรออีกเท่าไหร่" ถ้าใบแรกดูเบาบาง และใบที่สองหนัก แสดงว่าคุณรู้คำตอบอยู่แล้ว ไพ่แค่ช่วยให้คุณมองมันได้โดยไม่กลัว',
+        'cards': ['the-hanged-man', 'eight-of-cups', 'the-tower', 'justice', 'four-of-cups', 'two-of-swords'],
+    },
+    {
+        'slug': 'rak-son-arai',
+        'category': 'love',
+        'title': 'รักครั้งนี้สอนอะไรเรา',
+        'eyebrow': 'สำหรับการมองย้อนหลัง',
+        'lede': 'หลังความสัมพันธ์จบ ไพ่ไม่ตอบว่าใครผิด แต่มันช่วยให้คุณเห็นว่าคุณเป็นคนแบบไหนตอนอยู่ในความสัมพันธ์นั้น และคุณกำลังกลายเป็นคนแบบไหนหลังจากมัน',
+        'intro_q': 'ก่อนเปิดไพ่ ลองถามตัวเอง: "ถ้าฉันรู้ตั้งแต่วันแรกว่ามันจะจบแบบนี้ — ฉันจะยังเข้าไปไหม" คำตอบของคุณจะบอกว่าคุณกำลังมองอดีตด้วยมุมไหน',
+        'spread': [
+            ('บทเรียนเรื่องตัวคุณ', 'สิ่งที่ความสัมพันธ์นี้สอนคุณเกี่ยวกับตัวเอง — ที่คนภายนอกสอนไม่ได้'),
+            ('บทเรียนเรื่องการรัก', 'รูปแบบการรักที่คุณนำเข้ามา และที่คุณเรียนรู้ใหม่'),
+            ('สิ่งที่ติดตัวคุณไป', 'พลังหรือบาดแผลที่จะกลายเป็นส่วนหนึ่งของคุณในรักครั้งหน้า'),
+        ],
+        'framework': 'ใบที่สำคัญที่สุดในผังนี้คือใบที่สาม เพราะมันบอกว่าคุณจะเข้าสู่ความสัมพันธ์ครั้งต่อไปด้วยตัวเองแบบไหน บาดแผลที่ไม่ได้เรียกชื่อจะกลายเป็นพฤติกรรม — บาดแผลที่เรียกชื่อแล้วจะกลายเป็นเข็มทิศ',
+        'cards': ['the-hermit', 'strength', 'judgement', 'the-star', 'death', 'temperance'],
+    },
+    {
+        'slug': 'ngan-nee-chai-mai',
+        'category': 'career',
+        'title': 'งานนี้ใช่ทางของเราไหม',
+        'eyebrow': 'สำหรับการงานและอาชีพ',
+        'lede': 'งานที่ใช่ไม่จำเป็นต้องเป็นงานที่สนุกทุกวัน แต่ต้องเป็นงานที่คุณรู้สึกว่าตัวเองเติบโตช้าๆ และมันไม่กินคุณกลับ ไพ่ช่วยอ่านสองความรู้สึกนี้',
+        'intro_q': 'ก่อนเปิดไพ่ ลองถามตัวเอง: "ถ้าฉันลาออกพรุ่งนี้และไม่บอกใคร ฉันจะคิดถึงอะไรของงานนี้บ้าง" คำตอบนั้นคือไพ่ใบเงาที่ออกมาก่อนคุณเปิดจริง',
+        'spread': [
+            ('ตัวคุณในงานนี้', 'สภาพของคุณตอนนี้ในบริบทของงาน — ไม่ใช่ภาพที่คุณโพสต์ออกไป'),
+            ('สิ่งที่งานนี้ขอจากคุณ', 'ราคาที่งานนี้กำลังเก็บ — เวลา พลัง ความเป็นคุณ'),
+            ('ทิศทางในระยะยาว', 'แนวโน้มของความสัมพันธ์ระหว่างคุณกับงานในอีกหนึ่งถึงสามปี'),
+        ],
+        'framework': 'งานที่ใช่ในระยะยาวมักให้ในด้านที่งานที่ดูสนุกในระยะสั้นให้ไม่ได้ — มันให้ฝีมือ ให้คนรอบตัวที่มีคุณภาพ ให้พลังกลับเย็นๆ ใบที่สามจะบอกว่างานนี้อยู่ในประเภทไหน ถ้าใบที่สองหนักกว่าใบที่สามเสมอ คุณอาจกำลังจ่ายแพงกว่าที่ได้รับ',
+        'cards': ['the-hermit', 'eight-of-pentacles', 'three-of-pentacles', 'knight-of-pentacles', 'wheel-of-fortune', 'the-emperor'],
+    },
+    {
+        'slug': 'plian-ngan-mai',
+        'category': 'career',
+        'title': 'ควรเปลี่ยนงานไหม',
+        'eyebrow': 'สำหรับจุดเปลี่ยนในอาชีพ',
+        'lede': 'การเปลี่ยนงานไม่ใช่การหนี แต่ก็ไม่ใช่การก้าวเสมอไป ไพ่ช่วยแยกสองอย่างนี้ออกจากกัน เพราะมันสำคัญมากในระยะห้าปีข้างหน้า',
+        'intro_q': 'ลองถามตัวเอง: "ฉันอยากเปลี่ยนงาน เพราะอยากไปสู่อะไร หรือเพราะอยากหนีจากอะไร" คำถามนี้ไม่ได้บอกว่าทางไหนถูก แต่บอกว่าคุณควรใช้ไพ่อ่านยังไง',
+        'spread': [
+            ('สิ่งที่คุณเก็บไว้ในงานนี้', 'คุณค่าที่ยังมีถ้าคุณเลือกอยู่ — รวมทั้งสิ่งที่ดูธรรมดาแต่หาที่อื่นยาก'),
+            ('สิ่งที่ตัวคุณต้องการต่อไป', 'พลังหรือทักษะที่ตัวคุณในอีกห้าปีกำลังต้องการให้คุณเริ่มสะสมตั้งแต่วันนี้'),
+            ('ราคาของการเปลี่ยน', 'สิ่งที่คุณจะวางลงเมื่อย้าย — อาจเป็นความปลอดภัย ความคุ้นเคย หรือบางความสัมพันธ์'),
+        ],
+        'framework': 'ไพ่ในคำถามนี้ทำงานได้ดีที่สุดเมื่อคุณยอมให้ใบที่สองเป็นใบนำ ไม่ใช่ใบแรก เพราะใบที่สองคือเสียงของตัวคุณในอนาคต ถ้าใบที่สองชัดเจน คุณรู้คำตอบแล้ว ใบที่หนึ่งและสามแค่บอกราคา',
+        'cards': ['eight-of-cups', 'the-tower', 'the-chariot', 'knight-of-wands', 'king-of-pentacles', 'two-of-pentacles'],
+    },
+]
+
+
+def render_scenario(scenario):
+    """Render a /th/scenarios/<slug>/ page."""
+    slug = scenario['slug']
+    title = scenario['title']
+    canonical = f'/th/scenarios/{slug}/'
+    page_url = f'https://veilatarot.com{canonical}'
+    by_id_map = deck_by_id()
+    # Build card link list from card slugs
+    cards = []
+    for sl in scenario['cards']:
+        for c in DECK:
+            if card_slug(c) == sl:
+                cards.append(c)
+                break
+
+    desc = (scenario['lede'][:120] + '… บทใคร่ครวญสำหรับ ' + title.lower()
+            + ' ผังสามใบและไพ่ที่มักปรากฏ จาก Veila ไพ่ทาโรต์เพื่อการใคร่ครวญ')
+    # tighten if too long
+    if len(desc) > 175:
+        desc = scenario['lede'][:140] + '… จาก Veila'
+
+    meta_title = f'{title} — บทใคร่ครวญด้วยไพ่ทาโรต์ | Veila'
+
+    category_hub = ('/th/tarot-love-readings/' if scenario['category'] == 'love'
+                    else '/th/career-tarot-reading/')
+    category_label = ('ไพ่เพื่อความรัก' if scenario['category'] == 'love'
+                      else 'ไพ่เพื่อการงาน')
+
+    crumbs = [
+        home_crumb('th'),
+        (category_label, f'https://veilatarot.com{category_hub}'),
+        (title, page_url),
+    ]
+    article_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": meta_title,
+        "description": desc,
+        "image": "https://veilatarot.com/og.png",
+        "inLanguage": "th-TH",
+        "datePublished": BUILD_DATE,
+        "dateModified": BUILD_DATE,
+        "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
+        "mainEntityOfPage": page_url
+    }
+    crumbs_jsonld = breadcrumb_jsonld(crumbs)
+
+    # head_block expects en_path + th_path. For TH-only pages we omit
+    # the hreflang en alternate entirely to avoid pointing at a 404.
+    head = _render_head_block_th_only(
+        title=meta_title, desc=desc,
+        canonical=canonical, th_path=canonical,
+        extra_jsonld=[article_jsonld, crumbs_jsonld]
+    )
+
+    spread_items = '\n'.join(
+        f'      <li><strong>{escape(name)}</strong>{escape(meaning)}</li>'
+        for name, meaning in scenario['spread']
+    )
+
+    related_links = '\n'.join(
+        f'        <a href="{card_path(c, "th")}">'
+        f'<div class="rc-rom">{c["roman"]}</div>'
+        f'<div class="rc-name">{escape(c["name"]["th"])}</div>'
+        f'</a>'
+        for c in cards
+    )
+
+    return f'''<!DOCTYPE html>
+<html lang="th">
+<head>
+{head}</head>
+<body>
+
+{render_header(canonical, canonical, 'th')}
+
+<main class="article scenario-page">
+  {render_breadcrumb_html(crumbs)}
+  <div class="eyebrow">{escape(scenario['eyebrow'])}</div>
+  <h1 class="title">{escape(title)}</h1>
+  <p class="lede">{escape(scenario['lede'])}</p>
+
+  <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
+
+  <h2>คำถามที่ควรถามใจก่อน</h2>
+  <p>{escape(scenario['intro_q'])}</p>
+
+  <h2>ผังการอ่านสามใบ</h2>
+  <ol class="positions">
+{spread_items}
+  </ol>
+
+  <h2>กรอบการตีความ</h2>
+  <p>{escape(scenario['framework'])}</p>
+
+  <aside class="related-cards">
+    <h2>ไพ่ที่มักปรากฏในคำถามนี้</h2>
+    <div class="related-cards-grid">
+{related_links}
+    </div>
+  </aside>
+
+  <section class="scenario-disclaimer">
+    <p>นี่คือบทใคร่ครวญ ไม่ใช่คำพยากรณ์ ไพ่คือเครื่องมือสะท้อนสิ่งที่คุณรู้อยู่แล้วในใจ ความหมายเป็นของคุณ</p>
+  </section>
+
+  <div class="cta-row">
+    <a href="/" class="cta-btn">เปิดเซลติกครอสเต็ม</a>
+    <a href="/th/daily-tarot-card/" class="cta-btn ghost">ไพ่ประจำวัน</a>
+    <a href="{category_hub}" class="cta-btn ghost">{escape(category_label)}</a>
+  </div>
+</main>
+
+{render_footer('th')}
+
+</body>
+</html>
+'''
+
+
+def _render_head_block_th_only(title, desc, canonical, th_path, extra_jsonld=None):
+    """Head block for TH-only pages — no en hreflang alternate."""
+    jsonld_blocks = extra_jsonld or []
+    head = f'''<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{escape(title)}</title>
+<meta name="description" content="{escape(desc, quote=True)}" />
+<meta name="author" content="Veila Tarot" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#0a0a0c" />
+<meta name="color-scheme" content="dark" />
+
+<link rel="canonical" href="https://veilatarot.com{canonical}" />
+<link rel="alternate" hreflang="th" href="https://veilatarot.com{th_path}" />
+
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Veila" />
+<meta property="og:title" content="{escape(title, quote=True)}" />
+<meta property="og:description" content="{escape(desc, quote=True)}" />
+<meta property="og:url" content="https://veilatarot.com{canonical}" />
+<meta property="og:image" content="https://veilatarot.com/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="th_TH" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{escape(title, quote=True)}" />
+<meta name="twitter:description" content="{escape(desc, quote=True)}" />
+<meta name="twitter:image" content="https://veilatarot.com/og.png" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="alternate" type="application/rss+xml" title="Veila Tarot — Feed" href="/feed.xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/page.css" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2823470980745945"
+     crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-2823470980745945">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQWWZ3HT2S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-NQWWZ3HT2S');
+</script>
+
+<script src="/assets/analytics.js" defer></script>
+'''
+    for block in jsonld_blocks:
+        head += f'\n<script type="application/ld+json">\n{json.dumps(block, ensure_ascii=False, indent=2)}\n</script>\n'
+    return head
+
+
+def scenarios_for_card(card):
+    """Return up to 3 scenario slugs whose 'cards' list contains this card."""
+    sl = card_slug(card)
+    hits = [s for s in TH_SCENARIOS if sl in s['cards']]
+    return hits[:3]
+
+
+# Long-form date for visible "Last updated" footer line.
 
 # Long-form date for visible "Last updated" footer line.
 BUILD_DATE_LONG_EN = '14 May 2026'
@@ -453,6 +806,55 @@ def card_i18n(lang, name):
     }
 
 
+def render_intent_sections_th(card, name):
+    """Three new Thai intent sections per TH card page: love, career, finance.
+    Pulls from cards.json (upright + reversed each have love/career/finance
+    populated by scripts/regen-cards-json.py)."""
+    up = card.get('upright') or {}
+    rev = card.get('reversed') or {}
+
+    def pair(key, heading):
+        up_text = (up.get(key) or {}).get('th') or ''
+        rev_text = (rev.get(key) or {}).get('th') or ''
+        if not up_text and not rev_text:
+            return ''
+        return f'''  <section class="intent-block">
+    <h2>{escape(name)} ใน{escape(heading)}</h2>
+    <h3>ตั้งตรง</h3>
+    <p>{escape(up_text)}</p>
+    <h3>กลับหัว</h3>
+    <p>{escape(rev_text)}</p>
+  </section>'''
+
+    out = [
+        pair('love', 'ความรัก'),
+        pair('career', 'การงาน'),
+        pair('finance', 'การเงิน'),
+    ]
+    return '\n\n'.join(b for b in out if b)
+
+
+def render_scenario_links_th(card):
+    """If the card appears in any TH_SCENARIOS, add a 'related scenarios' block."""
+    hits = scenarios_for_card(card)
+    if not hits:
+        return ''
+    items = '\n'.join(
+        f'      <a href="/th/scenarios/{s["slug"]}/">'
+        f'<div class="rl-label">สถานการณ์</div>'
+        f'<div class="rl-name">{escape(s["title"])}</div>'
+        f'</a>'
+        for s in hits
+    )
+    return f'''  <aside class="related-readings scenarios">
+    <h2>คำถามที่ไพ่ใบนี้มักปรากฏ</h2>
+    <p class="related-lede">บทใคร่ครวญที่ใช้ไพ่ใบนี้บ่อย</p>
+    <div class="related-grid">
+{items}
+    </div>
+  </aside>'''
+
+
 def render_card(card, prev_card, next_card, lang):
     sl = card_slug(card)
     name = card['name'][lang]
@@ -551,6 +953,10 @@ def render_card(card, prev_card, next_card, lang):
 {cc_html}
     </div>
   </section>
+
+{render_intent_sections_th(card, name) if lang == 'th' else ''}
+
+{render_scenario_links_th(card) if lang == 'th' else ''}
 
   <nav class="adjacent-nav" aria-label="{escape(t['adj_aria'], quote=True)}">
     <a class="adj prev" href="{prev_url}">
@@ -947,6 +1353,34 @@ def render_hub(slug, lang):
 {items}
     </ol>
   </section>'''
+        # On the TH hubs, append a section linking to the relevant scenario pages.
+        if lang == 'th':
+            topical_to_scenario = {'love': 'love', 'career': 'career'}
+            target_cat = topical_to_scenario.get(spec['topical_key'])
+            if target_cat:
+                hub_scenarios = [s for s in TH_SCENARIOS if s['category'] == target_cat]
+                if hub_scenarios:
+                    scen_h2 = ('คำถามที่คนถามด้วยไพ่' if target_cat == 'love'
+                               else 'คำถามเรื่องการงานที่คนถามด้วยไพ่')
+                    scen_lede = ('บทใคร่ครวญสั้นๆ พร้อมผังการอ่านสามใบสำหรับสถานการณ์ที่พบบ่อย'
+                                 if target_cat == 'love'
+                                 else 'บทใคร่ครวญสำหรับจุดเปลี่ยนในการงาน')
+                    scen_items = '\n'.join(
+                        f'      <a href="/th/scenarios/{s["slug"]}/">'
+                        f'<div class="rl-label">สถานการณ์</div>'
+                        f'<div class="rl-name">{escape(s["title"])}</div>'
+                        f'</a>'
+                        for s in hub_scenarios
+                    )
+                    body_html += f'''
+
+  <aside class="related-readings scenarios">
+    <h2>{escape(scen_h2)}</h2>
+    <p class="related-lede">{escape(scen_lede)}</p>
+    <div class="related-grid">
+{scen_items}
+    </div>
+  </aside>'''
     else:
         # Generic card listing (Major Arcana, four suit hubs)
         cards = [c for c in DECK if spec['card_filter'](c)]
@@ -1002,6 +1436,16 @@ def render_hub(slug, lang):
 # ---------------------------------------------------------------------------
 # HTML SITEMAP — /all-tarot-pages/
 # ---------------------------------------------------------------------------
+
+def _render_scenarios_section_th(list_block_fn):
+    """The 10 TH emotional scenarios as a sub-section on /th/all-tarot-pages/."""
+    items = [(f'/th/scenarios/{s["slug"]}/', s['title']) for s in TH_SCENARIOS]
+    return f'''
+  <section>
+    <h2>บทใคร่ครวญ — สถานการณ์ทางอารมณ์</h2>
+{list_block_fn(items)}
+  </section>'''
+
 
 def render_all_tarot_pages(lang):
     deck = sorted(DECK, key=lambda c: c['id'])
@@ -1171,8 +1615,12 @@ def render_all_tarot_pages(lang):
     <h2>{escape(meta['sec_utility'])}</h2>
 {list_block([
     (canonical, meta['utility_self']),
-])}
-  </section>'''
+] + ([
+    ('/th/about/', 'เกี่ยวกับ Veila'),
+    ('/th/faq/', 'คำถามที่พบบ่อย'),
+] if lang == 'th' else []))}
+  </section>
+{(_render_scenarios_section_th(list_block) if lang == 'th' else '')}'''
 
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
@@ -1210,6 +1658,12 @@ def build_feed():
         ('/all-tarot-pages/',
          'All Veila Tarot Pages — Site Index',
          'A directory of every page on Veila Tarot, grouped by area.'),
+        ('/th/about/',
+         'เกี่ยวกับ Veila — ไพ่ทาโรต์เพื่อการใคร่ครวญ',
+         'ปรัชญาของ Veila — บทอ่านไพ่ทาโรต์เซลติกครอสเพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์'),
+        ('/th/faq/',
+         'คำถามที่พบบ่อย — ไพ่ทาโรต์เบื้องต้น',
+         'คำตอบสำหรับคำถามที่คนเริ่มดูไพ่ทาโรต์มักถาม เช่น ไพ่ทาโรต์คืออะไร ต่างจากไพ่ยิปซีไหม ไพ่กลับหัวคืออะไร'),
     ]
     for slug in HUB_SLUGS:
         spec = HUB_DEFS[slug]
@@ -1270,6 +1724,9 @@ def build_sitemap(card_slugs):
     for sl in card_slugs:
         out.append(url_block(f'/cards/{sl}/', '0.6', 'monthly'))
         out.append(url_block(f'/th/cards/{sl}/', '0.5', 'monthly'))
+    # TH emotional scenarios
+    for s in TH_SCENARIOS:
+        out.append(url_block(f'/th/scenarios/{s["slug"]}/', '0.6', 'monthly'))
     out.append('</urlset>')
     return '\n'.join(out) + '\n'
 
@@ -1313,6 +1770,16 @@ def main():
             out_dir.mkdir(parents=True, exist_ok=True)
             (out_dir / 'index.html').write_text(render_hub(slug, lang), encoding='utf-8')
 
+    # TH emotional scenario pages
+    scenarios_dir = ROOT / 'th' / 'scenarios'
+    if scenarios_dir.exists():
+        shutil.rmtree(scenarios_dir)
+    print(f'Scenarios: writing {len(TH_SCENARIOS)} TH pages...')
+    for s in TH_SCENARIOS:
+        out_dir = scenarios_dir / s['slug']
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / 'index.html').write_text(render_scenario(s), encoding='utf-8')
+
     # HTML sitemap (/all-tarot-pages/)
     for lang in LANGS:
         out_dir = (ROOT if lang == 'en' else ROOT / 'th') / 'all-tarot-pages'
@@ -1325,9 +1792,10 @@ def main():
     # XML sitemap
     (ROOT / 'sitemap.xml').write_text(build_sitemap(slugs), encoding='utf-8')
 
-    total_urls = len(STATIC_URLS) + 2 * len(HUB_SLUGS) + 2 * n
+    total_urls = len(STATIC_URLS) + 2 * len(HUB_SLUGS) + 2 * n + len(TH_SCENARIOS)
     print(f'  cards: {n * 2}')
     print(f'  hubs:  {len(HUB_SLUGS) * 2}')
+    print(f'  scenarios: {len(TH_SCENARIOS)}')
     print(f'  all-tarot-pages: 2')
     print(f'  feed.xml + sitemap.xml')
     print(f'  sitemap URLs: {total_urls}')
