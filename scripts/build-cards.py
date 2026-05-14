@@ -97,7 +97,15 @@ STATIC_URLS = [
     ('/th/celtic-cross-tarot/', '0.7', 'monthly'),
     ('/daily-tarot-card/',      '0.8', 'daily'),
     ('/th/daily-tarot-card/',   '0.7', 'daily'),
+    ('/all-tarot-pages/',       '0.5', 'monthly'),
+    ('/th/all-tarot-pages/',    '0.4', 'monthly'),
 ]
+
+# Long-form date for visible "Last updated" footer line.
+BUILD_DATE_LONG_EN = '14 May 2026'
+BUILD_DATE_LONG_TH = '14 พฤษภาคม 2026'
+# RFC 822 for RSS pubDate / lastBuildDate
+BUILD_DATE_RFC822 = 'Wed, 14 May 2026 00:00:00 +0000'
 
 HUB_SLUGS = [
     'major-arcana', 'minor-arcana',
@@ -280,6 +288,7 @@ def render_head_block(title, desc, canonical, en_path, th_path,
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 <link rel="manifest" href="/manifest.webmanifest" />
+<link rel="alternate" type="application/rss+xml" title="Veila Tarot — Feed" href="/feed.xml" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -298,6 +307,8 @@ def render_head_block(title, desc, canonical, en_path, th_path,
   gtag('js', new Date());
   gtag('config', 'G-NQWWZ3HT2S');
 </script>
+
+<script src="/assets/analytics.js" defer></script>
 '''
     for block in jsonld_blocks:
         head += f'\n<script type="application/ld+json">\n{json.dumps(block, ensure_ascii=False, indent=2)}\n</script>\n'
@@ -326,18 +337,25 @@ def render_header(en_path, th_path, lang):
 def render_footer(lang):
     if lang == 'en':
         link_celtic, link_daily = '/celtic-cross-tarot/', '/daily-tarot-card/'
-        nav_celtic, nav_daily = 'Celtic Cross Guide', 'Daily Tarot Card'
+        link_index = '/all-tarot-pages/'
+        nav_celtic, nav_daily, nav_index = 'Celtic Cross Guide', 'Daily Tarot Card', 'All Pages'
         fineprint = 'For reflection, not prediction.'
+        last_updated = f'Last updated · {BUILD_DATE_LONG_EN}'
     else:
         link_celtic, link_daily = '/th/celtic-cross-tarot/', '/th/daily-tarot-card/'
-        nav_celtic, nav_daily = 'คู่มือเซลติกครอส', 'ไพ่ประจำวัน'
+        link_index = '/th/all-tarot-pages/'
+        nav_celtic, nav_daily, nav_index = 'คู่มือเซลติกครอส', 'ไพ่ประจำวัน', 'ทุกหน้า'
         fineprint = 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์'
+        last_updated = f'ปรับปรุงล่าสุด · {BUILD_DATE_LONG_TH}'
     return f'''<footer>
   <div class="fineprint">{escape(fineprint)}</div>
+  <div class="last-updated">{escape(last_updated)}</div>
   <nav class="footer-nav">
     <a href="{link_celtic}">{escape(nav_celtic)}</a>
     <span class="sep">·</span>
     <a href="{link_daily}">{escape(nav_daily)}</a>
+    <span class="sep">·</span>
+    <a href="{link_index}">{escape(nav_index)}</a>
   </nav>
   <div>veilatarot.com · © MMXXVI</div>
 </footer>'''
@@ -982,6 +1000,253 @@ def render_hub(slug, lang):
 '''
 
 # ---------------------------------------------------------------------------
+# HTML SITEMAP — /all-tarot-pages/
+# ---------------------------------------------------------------------------
+
+def render_all_tarot_pages(lang):
+    deck = sorted(DECK, key=lambda c: c['id'])
+    majors = [c for c in deck if c['arcana'] == 'major']
+    suits = {
+        s: [c for c in deck if c.get('suit') == s]
+        for s in ('wands', 'cups', 'swords', 'pentacles')
+    }
+    if lang == 'en':
+        meta = {
+            'title': 'All Veila Tarot Pages — Site Index | Veila',
+            'desc':  'A complete directory of every page on Veila Tarot — hubs, the Celtic Cross guide, daily card, and all 78 card meaning pages.',
+            'eyebrow': 'Site Index',
+            'h1_html': 'All <em>Veila Tarot</em> Pages',
+            'lede': 'A directory of everything on the site, grouped by area. Use this as a fast index when you know roughly what you are after.',
+            'sec_practice': 'The Practice',
+            'sec_hubs': 'Hubs',
+            'sec_topical': 'Topical Reading Guides',
+            'sec_major': 'Major Arcana — 22 Cards',
+            'sec_minor': 'Minor Arcana — by Suit',
+            'sec_utility': 'Utility',
+            'utility_self': 'All Pages (this page)',
+            'practice_begin': 'Begin a Celtic Cross Reading',
+            'practice_daily': "Today's Daily Card",
+            'practice_guide': 'The Celtic Cross — A Beginner\'s Guide',
+            'hub_major':      'The Major Arcana — 22 Trumps',
+            'hub_minor':      'The Minor Arcana — Overview',
+            'hub_cups':       'The Suit of Cups (14)',
+            'hub_swords':     'The Suit of Swords (14)',
+            'hub_wands':      'The Suit of Wands (14)',
+            'hub_pentacles':  'The Suit of Pentacles (14)',
+            'hub_love':       'Tarot for Love & Relationships',
+            'hub_career':     'Tarot for Career & Calling',
+            'hub_yesno':      'Yes/No Tarot Readings',
+        }
+        link_prefix = ''
+    else:
+        meta = {
+            'title': 'ทุกหน้าของ Veila Tarot — สารบัญเว็บไซต์ | Veila',
+            'desc':  'สารบัญทุกหน้าใน Veila Tarot — ฮับเนื้อหา คู่มือเซลติกครอส ไพ่ประจำวัน และหน้าความหมายไพ่ทั้ง 78 ใบ',
+            'eyebrow': 'สารบัญเว็บไซต์',
+            'h1_html': 'ทุกหน้าของ <em>Veila Tarot</em>',
+            'lede': 'สารบัญทุกอย่างบนเว็บไซต์ จัดกลุ่มตามหมวด ใช้เป็นดัชนีอย่างรวดเร็วเมื่อรู้คร่าวๆ ว่ากำลังหาอะไร',
+            'sec_practice': 'การฝึกปฏิบัติ',
+            'sec_hubs': 'ฮับเนื้อหา',
+            'sec_topical': 'คู่มือการอ่านตามหัวข้อ',
+            'sec_major': 'ไพ่ชุดเมเจอร์ — 22 ใบ',
+            'sec_minor': 'ไพ่ชุดไมเนอร์ — แยกตามชุด',
+            'sec_utility': 'ยูทิลิตี',
+            'utility_self': 'ทุกหน้า (หน้านี้)',
+            'practice_begin': 'เริ่มอ่านเซลติกครอส',
+            'practice_daily': 'ไพ่ประจำวันนี้',
+            'practice_guide': 'เซลติกครอส — คู่มือสำหรับผู้เริ่มต้น',
+            'hub_major':      'ไพ่ชุดเมเจอร์ — 22 ทรัมป์',
+            'hub_minor':      'ไพ่ชุดไมเนอร์ — ภาพรวม',
+            'hub_cups':       'ไพ่ชุดถ้วย (14)',
+            'hub_swords':     'ไพ่ชุดดาบ (14)',
+            'hub_wands':      'ไพ่ชุดไม้เท้า (14)',
+            'hub_pentacles':  'ไพ่ชุดเหรียญ (14)',
+            'hub_love':       'ไพ่ทาโรต์เพื่อความรัก',
+            'hub_career':     'ไพ่ทาโรต์เพื่อการงาน',
+            'hub_yesno':      'ไพ่ทาโรต์ใช่/ไม่ใช่',
+        }
+        link_prefix = '/th'
+
+    def L(p):
+        # Always use TH-prefixed link when lang=th
+        return f'{link_prefix}{p}'
+
+    def list_block(items):
+        # items: list of (href, label) -> <ul class="all-list">
+        lis = '\n'.join(
+            f'      <li><a href="{href}">{escape(label)}</a></li>'
+            for href, label in items
+        )
+        return f'    <ul class="all-list">\n{lis}\n    </ul>'
+
+    def card_grid(cards):
+        lis = '\n'.join(
+            f'      <li><a href="{L(card_path(c, "en"))}">{escape(c["name"][lang])}</a></li>'
+            for c in cards
+        )
+        return f'    <ul class="all-list cols">\n{lis}\n    </ul>'
+
+    en_path = hub_path('all-tarot-pages', 'en')
+    th_path_url = hub_path('all-tarot-pages', 'th')
+    canonical = en_path if lang == 'en' else th_path_url
+
+    crumbs = [
+        home_crumb(lang),
+        (('Site Index' if lang == 'en' else 'สารบัญเว็บไซต์'),
+         f'https://veilatarot.com{canonical}'),
+    ]
+    article_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": meta['title'],
+        "description": meta['desc'],
+        "image": "https://veilatarot.com/og.png",
+        "inLanguage": 'en-US' if lang == 'en' else 'th-TH',
+        "datePublished": BUILD_DATE,
+        "dateModified": BUILD_DATE,
+        "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
+        "mainEntityOfPage": f"https://veilatarot.com{canonical}"
+    }
+    head = render_head_block(
+        title=meta['title'], desc=meta['desc'],
+        canonical=canonical, en_path=en_path, th_path=th_path_url, lang=lang,
+        extra_jsonld=[article_jsonld, breadcrumb_jsonld(crumbs)]
+    )
+
+    body = f'''  {render_breadcrumb_html(crumbs)}
+  <div class="eyebrow">{escape(meta['eyebrow'])}</div>
+  <h1 class="title">{meta['h1_html']}</h1>
+  <p class="lede">{escape(meta['lede'])}</p>
+
+  <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
+
+  <section>
+    <h2>{escape(meta['sec_practice'])}</h2>
+{list_block([
+    (L('/'), meta['practice_begin']),
+    (L('/daily-tarot-card/'), meta['practice_daily']),
+    (L('/celtic-cross-tarot/'), meta['practice_guide']),
+])}
+  </section>
+
+  <section>
+    <h2>{escape(meta['sec_hubs'])}</h2>
+{list_block([
+    (L('/major-arcana/'), meta['hub_major']),
+    (L('/minor-arcana/'), meta['hub_minor']),
+    (L('/cups-tarot-meanings/'), meta['hub_cups']),
+    (L('/swords-tarot-meanings/'), meta['hub_swords']),
+    (L('/wands-tarot-meanings/'), meta['hub_wands']),
+    (L('/pentacles-tarot-meanings/'), meta['hub_pentacles']),
+])}
+  </section>
+
+  <section>
+    <h2>{escape(meta['sec_topical'])}</h2>
+{list_block([
+    (L('/tarot-love-readings/'), meta['hub_love']),
+    (L('/career-tarot-reading/'), meta['hub_career']),
+    (L('/yes-no-tarot/'), meta['hub_yesno']),
+])}
+  </section>
+
+  <section>
+    <h2>{escape(meta['sec_major'])}</h2>
+{card_grid(majors)}
+  </section>
+
+  <section>
+    <h2>{escape(meta['sec_minor'])}</h2>
+    <h3>{escape(meta['hub_wands'])}</h3>
+{card_grid(suits['wands'])}
+    <h3>{escape(meta['hub_cups'])}</h3>
+{card_grid(suits['cups'])}
+    <h3>{escape(meta['hub_swords'])}</h3>
+{card_grid(suits['swords'])}
+    <h3>{escape(meta['hub_pentacles'])}</h3>
+{card_grid(suits['pentacles'])}
+  </section>
+
+  <section>
+    <h2>{escape(meta['sec_utility'])}</h2>
+{list_block([
+    (canonical, meta['utility_self']),
+])}
+  </section>'''
+
+    return f'''<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+{head}</head>
+<body>
+
+{render_header(en_path, th_path_url, lang)}
+
+<main class="article">
+{body}
+</main>
+
+{render_footer(lang)}
+
+</body>
+</html>
+'''
+
+# ---------------------------------------------------------------------------
+# RSS FEED — /feed.xml
+# ---------------------------------------------------------------------------
+
+def build_feed():
+    """RSS 2.0 feed of the homepage + 5 standalone evergreens + all 9 hubs."""
+    items_data = [
+        ('/', 'Veila Tarot — Begin a Celtic Cross Reading',
+         'A quiet bilingual Celtic Cross tarot reading.'),
+        ('/celtic-cross-tarot/',
+         "The Celtic Cross Tarot Spread — A Beginner's Guide",
+         "The most enduring ten-card tarot spread. History, position meanings, and how to read it."),
+        ('/daily-tarot-card/',
+         'Daily Tarot Card — A One-Card Practice',
+         'One tarot card drawn fresh each day. A small, considered practice for reflection.'),
+        ('/all-tarot-pages/',
+         'All Veila Tarot Pages — Site Index',
+         'A directory of every page on Veila Tarot, grouped by area.'),
+    ]
+    for slug in HUB_SLUGS:
+        spec = HUB_DEFS[slug]
+        items_data.append((
+            f'/{slug}/',
+            spec['meta']['en']['title'],
+            spec['meta']['en']['desc'],
+        ))
+
+    items_xml = []
+    for path, title, desc in items_data:
+        url = f'https://veilatarot.com{path}'
+        items_xml.append(
+            f'    <item>\n'
+            f'      <title>{escape(title)}</title>\n'
+            f'      <link>{url}</link>\n'
+            f'      <description>{escape(desc)}</description>\n'
+            f'      <pubDate>{BUILD_DATE_RFC822}</pubDate>\n'
+            f'      <guid isPermaLink="true">{url}</guid>\n'
+            f'    </item>'
+        )
+
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Veila Tarot</title>
+    <link>https://veilatarot.com/</link>
+    <description>A quiet bilingual Celtic Cross tarot reading.</description>
+    <language>en</language>
+    <lastBuildDate>{BUILD_DATE_RFC822}</lastBuildDate>
+    <atom:link href="https://veilatarot.com/feed.xml" rel="self" type="application/rss+xml" />
+{chr(10).join(items_xml)}
+  </channel>
+</rss>
+'''
+
+# ---------------------------------------------------------------------------
 # SITEMAP
 # ---------------------------------------------------------------------------
 
@@ -1020,7 +1285,7 @@ def main():
     for path in [ROOT / 'cards', ROOT / 'th' / 'cards']:
         if path.exists():
             shutil.rmtree(path)
-    for slug in HUB_SLUGS:
+    for slug in HUB_SLUGS + ['all-tarot-pages']:
         for path in [ROOT / slug, ROOT / 'th' / slug]:
             if path.exists():
                 shutil.rmtree(path)
@@ -1048,12 +1313,23 @@ def main():
             out_dir.mkdir(parents=True, exist_ok=True)
             (out_dir / 'index.html').write_text(render_hub(slug, lang), encoding='utf-8')
 
-    # Sitemap
+    # HTML sitemap (/all-tarot-pages/)
+    for lang in LANGS:
+        out_dir = (ROOT if lang == 'en' else ROOT / 'th') / 'all-tarot-pages'
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / 'index.html').write_text(render_all_tarot_pages(lang), encoding='utf-8')
+
+    # RSS feed
+    (ROOT / 'feed.xml').write_text(build_feed(), encoding='utf-8')
+
+    # XML sitemap
     (ROOT / 'sitemap.xml').write_text(build_sitemap(slugs), encoding='utf-8')
 
     total_urls = len(STATIC_URLS) + 2 * len(HUB_SLUGS) + 2 * n
     print(f'  cards: {n * 2}')
     print(f'  hubs:  {len(HUB_SLUGS) * 2}')
+    print(f'  all-tarot-pages: 2')
+    print(f'  feed.xml + sitemap.xml')
     print(f'  sitemap URLs: {total_urls}')
 
 
