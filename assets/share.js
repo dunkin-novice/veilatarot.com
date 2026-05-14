@@ -95,6 +95,18 @@
   border-radius: 4px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.45);
   display: block;
+  /* iOS Safari: long-press on the preview image triggers Save to Photos.
+     Allow that gesture by NOT setting -webkit-user-select / callout to none. */
+  -webkit-touch-callout: default;
+}
+.veila-share-sheet .vss-press-hint {
+  font-family: "Cormorant Garamond", "IBM Plex Sans Thai", serif;
+  font-style: italic;
+  color: #b9b3a4;
+  font-size: 14px;
+  line-height: 1.45;
+  text-align: center;
+  margin: -10px 4px 16px;
 }
 .veila-share-sheet .vss-loading {
   font-family: "Cormorant Garamond", "IBM Plex Sans Thai", serif;
@@ -405,9 +417,11 @@
     // Divider
     drawDivider(ctx, W / 2, 470, 220, 9);
 
-    // Five key positions
-    const startY = 600;
-    const blockH = 220;
+    // Five key positions. Layout math: startY + 5*blockH must finish above
+    // the footer (which begins ~H-230). 560 + 5*232 = 1720, plus ~164 of
+    // snippet text below the last card name → ends near 1718 with room.
+    const startY = 560;
+    const blockH = 232;
     const leftX = 96;
     const numWidth = 96;
 
@@ -420,39 +434,47 @@
       ctx.textAlign = 'center';
       ctx.fillText(pos.roman + '.', leftX + numWidth / 2, y);
 
-      // Position label (above card name, mute small caps) — left-aligned
-      // with the card name. drawTracked uses centerX, so account for half the
-      // measured tracked width.
-      ctx.fillStyle = '#6c6a63';
-      ctx.font = '500 18px "Inter", "IBM Plex Sans Thai", sans-serif';
-      ctx.textAlign = 'center';
-      const labelText = (pos.label || '').toUpperCase();
-      const labelWidth = ctx.measureText(labelText).width
-                       + Math.max(0, labelText.length - 1) * 4;
-      drawTracked(
-        ctx, labelText,
-        leftX + numWidth + 10 + labelWidth / 2, y - 42, 18, 4
-      );
+      // Position label (above card name). Thai script gains visible gaps
+      // when letter-spacing is applied, so for Thai we draw without
+      // tracking and without uppercasing.
+      ctx.fillStyle = '#b89968';
+      ctx.font = isThai
+        ? '500 20px "IBM Plex Sans Thai", sans-serif'
+        : '600 18px "Inter", sans-serif';
+      const labelX = leftX + numWidth + 10;
+      if (isThai) {
+        ctx.textAlign = 'left';
+        ctx.fillText(pos.label || '', labelX, y - 42);
+      } else {
+        const labelText = (pos.label || '').toUpperCase();
+        const labelWidth = ctx.measureText(labelText).width
+                         + Math.max(0, labelText.length - 1) * 4;
+        ctx.textAlign = 'center';
+        drawTracked(
+          ctx, labelText,
+          labelX + labelWidth / 2, y - 42, 18, 4
+        );
+      }
 
       // Card name (ivory serif)
       ctx.fillStyle = '#ebe4d4';
       ctx.textAlign = 'left';
       ctx.font = isThai
-        ? '400 40px "IBM Plex Sans Thai", serif'
-        : '400 44px "Cormorant Garamond", serif';
+        ? '500 40px "IBM Plex Sans Thai", serif'
+        : '500 44px "Cormorant Garamond", serif';
       const cardLine = pos.cardName + (pos.reversed
         ? (isThai ? ' · กลับหัว' : ' · Reversed')
         : '');
       ctx.fillText(cardLine, leftX + numWidth + 10, y);
 
-      // Snippet (1-2 lines, ivory-dim)
-      ctx.fillStyle = '#b9b3a4';
+      // Snippet (up to 3 lines, lifted ivory for readability on mobile)
+      ctx.fillStyle = '#d3ccba';
       ctx.font = isThai
-        ? '300 26px "IBM Plex Sans Thai", serif'
-        : '300 28px "Cormorant Garamond", serif';
+        ? '400 28px "IBM Plex Sans Thai", serif'
+        : '400 30px "Cormorant Garamond", serif';
       const snipX = leftX + numWidth + 10;
       const snipMaxW = W - snipX - 80;
-      drawWrappedLeft(ctx, pos.snippet || '', snipX, y + 48, snipMaxW, 36, 2);
+      drawWrappedLeft(ctx, pos.snippet || '', snipX, y + 50, snipMaxW, 38, 3);
     });
 
     // Footer fineprint
@@ -518,6 +540,7 @@
                 data-action="close">×</button>
         <div class="vss-eyebrow">${opts.sheetEyebrow || ''}</div>
         <div class="vss-preview"><div class="vss-loading">${opts.renderingLabel || 'Rendering…'}</div></div>
+        <div class="vss-press-hint" hidden></div>
         <div class="vss-actions"></div>
       </div>
     `;
@@ -541,6 +564,12 @@
       actions.innerHTML = '';
       const canShareFiles = !!(navigator.canShare
         && navigator.canShare({ files: [file] }));
+      // iOS Safari ignores the anchor[download] attribute for blob URLs and
+      // opens a new tab instead of saving. We hide the Download button there
+      // entirely and rely on native Share + the long-press hint above the
+      // preview image. Desktop and Android keep the Download button.
+      const showDownload = !isIOS();
+
       // Native Share first (most common mobile path) — promoted as primary
       if (canShareFiles) {
         const btn = document.createElement('button');
@@ -550,12 +579,14 @@
         btn.textContent = opts.shareLabel || 'Share';
         actions.appendChild(btn);
       }
-      const dl = document.createElement('button');
-      dl.type = 'button';
-      dl.className = canShareFiles ? 'vss-action' : 'vss-action vss-action-primary';
-      dl.dataset.action = 'download';
-      dl.textContent = opts.downloadLabel || 'Download';
-      actions.appendChild(dl);
+      if (showDownload) {
+        const dl = document.createElement('button');
+        dl.type = 'button';
+        dl.className = canShareFiles ? 'vss-action' : 'vss-action vss-action-primary';
+        dl.dataset.action = 'download';
+        dl.textContent = opts.downloadLabel || 'Download';
+        actions.appendChild(dl);
+      }
 
       const cp = document.createElement('button');
       cp.type = 'button';
@@ -575,9 +606,16 @@
           break;
         case 'download': {
           if (!objectUrl) return;
+          // Most desktop + Android browsers honour the download attribute
+          // and write a file. iOS Safari ignores it on cross-origin/blob
+          // URLs and opens the blob in a new tab — in that case the
+          // press-hint above the actions is already showing, telling
+          // the user to long-press the preview to save to Photos.
           const a = document.createElement('a');
           a.href = objectUrl;
           a.download = opts.filename || 'veila.png';
+          a.rel = 'noopener';
+          a.target = '_blank';
           document.body.appendChild(a);
           a.click();
           a.remove();
@@ -617,6 +655,13 @@
       }
     });
 
+    function isIOS() {
+      const ua = navigator.userAgent || '';
+      // iPad on iOS 13+ reports as Mac — check touch points to disambiguate.
+      return /iPad|iPhone|iPod/.test(ua)
+        || (ua.indexOf('Mac') !== -1 && (navigator.maxTouchPoints || 0) > 1);
+    }
+
     return {
       close,
       async setBlob(b) {
@@ -625,6 +670,15 @@
         file = new File([b], opts.filename || 'veila.png', { type: 'image/png' });
         const preview = sheet.querySelector('.vss-preview');
         preview.innerHTML = `<img src="${objectUrl}" alt="" />`;
+        // On iOS, anchor[download] is unreliable for blobs — surface the
+        // long-press hint so users have a guaranteed save path.
+        if (isIOS() && opts.pressHint) {
+          const hint = sheet.querySelector('.vss-press-hint');
+          if (hint) {
+            hint.textContent = opts.pressHint;
+            hint.hidden = false;
+          }
+        }
         renderActions();
       }
     };
