@@ -56,6 +56,7 @@
 </script>
 
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/share.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -285,6 +286,11 @@
     </div>
   </aside>
 
+  <aside class="share-card" aria-label="บันทึกเป็นภาพ">
+    <p class="share-card-lede">บันทึกใบนี้เก็บไว้เป็นภาพ — สำหรับใคร่ครวญในวันอื่น</p>
+    <button type="button" class="cta-btn ghost veila-share-btn">บันทึกเป็นภาพ</button>
+  </aside>
+
   <div class="cta-row">
     <a href="/" class="cta-btn">เริ่มอ่านไพ่</a>
     <a href="/th/celtic-cross-tarot/" class="cta-btn ghost">เกี่ยวกับผังการอ่าน</a>
@@ -304,6 +310,50 @@
   </nav>
   <div>veilatarot.com · © MMXXVI</div>
 </footer>
+
+<script id="veila-card-data" type="application/json">{"id": "29-seven-of-wands", "lang": "th", "name": "เจ็ดไม้เท้า", "roman": "VII", "arcana": "minor", "suit": "wands", "eyebrow": "ไพ่ชุดไมเนอร์ · ไม้เท้า", "pageUrl": "https://veilatarot.com/th/cards/seven-of-wands/", "upright": {"keywords": "การป้องกัน, การยืนหยัด, ความกล้าหาญ, การท้าทาย, การรักษาสถานะ", "text": "เหมือนมีคนจ้องจะเล่นงานหรือแย่งชิงซีนคุณอยู่รอบด้าน! แต่อย่าได้แคร์ คุณยืนอยู่ในจุดที่สูงกว่าและได้เปรียบกว่า แค่ต้องใจแข็งและยืนหยัดให้มั่น ใครก็ทำอะไรไม่ได้", "label": "ตั้งตรง"}, "reversed": {"keywords": "ยอมแพ้, รับมือไม่ไหว, หมดแรง, ถูกรุมเร้า, สูญเสียความมั่นใจ", "text": "โดนรุมกินโต๊ะ! คุณรู้สึกเหมือนถูกต้อนจนมุม ปัญหาประดังเข้ามาจนรับมือไม่ทัน อยากจะโยนผ้าขาวยอมแพ้ให้รู้แล้วรู้รอด", "label": "กลับหัว"}, "labels": {"sheetEyebrow": "บันทึกไพ่", "download": "ดาวน์โหลด", "share": "แชร์", "copyLink": "คัดลอกลิงก์", "copied": "คัดลอกแล้ว", "close": "ปิด", "rendering": "กำลังสร้าง…"}}</script>
+<script>
+(function() {
+  function init() {
+    var node = document.getElementById('veila-card-data');
+    var btn = document.querySelector('.veila-share-btn');
+    if (!node || !btn || !window.veilaShare) return;
+    var data;
+    try { data = JSON.parse(node.textContent); } catch (e) { return; }
+    btn.addEventListener('click', function() {
+      var orientation = data.upright.label;
+      var excerpt = data.upright.text || data.upright.keywords;
+      window.veilaShare.shareCard({
+        lang: data.lang,
+        eyebrow: data.eyebrow,
+        name: data.name,
+        orientation: orientation,
+        excerpt: excerpt,
+        pageUrl: data.pageUrl,
+        filename: 'veila-29-seven-of-wands-' + data.lang + '.png',
+        sheetEyebrow: data.labels.sheetEyebrow,
+        downloadLabel: data.labels.download,
+        shareLabel: data.labels.share,
+        copyLinkLabel: data.labels.copyLink,
+        copiedLabel: data.labels.copied,
+        closeLabel: data.labels.close,
+        renderingLabel: data.labels.rendering,
+        shareTitle: data.name,
+        shareText: data.name + ' — ' + data.eyebrow,
+        events: {
+          exported: 'card_share_exported',
+          native: 'card_share_native',
+          linkCopied: 'card_share_link_copied'
+        },
+        eventParams: { card_id: data.id, lang: data.lang }
+      });
+    });
+  }
+  if (window.veilaShare) init();
+  else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 
 </body>
 </html>

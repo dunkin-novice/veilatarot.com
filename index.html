@@ -64,6 +64,7 @@
 </script>
 
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/share.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -1173,6 +1174,10 @@ footer .footer-nav .sep {
         <div class="section-label" data-i18n="readoutLabel">The Reading</div>
         <h3 data-i18n="readoutH3">Notes from the Spread</h3>
         <div class="readout-list" id="readout-list"></div>
+        <aside class="share-reading" aria-label="Save your reading">
+          <p class="share-reading-lede" data-i18n="shareReadingLede">Keep this reading as an image — five key cards, for a quieter moment.</p>
+          <button type="button" class="cta-btn ghost" id="share-reading-btn" data-i18n="shareReadingBtn">Save this reading</button>
+        </aside>
       </section>
 
       <div class="reset-row" id="reset-row">
@@ -1250,6 +1255,18 @@ const T = {
     readClose: 'Close',
     reversed: 'Reversed',
     upright: 'Upright',
+    shareReadingLede: 'Keep this reading as an image — five key cards, for a quieter moment.',
+    shareReadingBtn: 'Save this reading',
+    shareReadingEyebrow: 'Save this reading',
+    shareReadingTitle: 'Your Celtic Cross',
+    shareReadingSubtitle: 'A quiet reading, ten cards drawn.',
+    shareReadingFineprint: 'For reflection, not prediction.',
+    shareDownload: 'Download',
+    shareNative: 'Share',
+    shareCopyLink: 'Copy link',
+    shareCopied: 'Copied',
+    shareClose: 'Close',
+    shareRendering: 'Rendering…',
     footerFineprint: 'For reflection, not prediction.',
     footerCopy: 'veilatarot.com · © MMXXVI',
     footerLastUpdated: 'Last updated · 14 May 2026',
@@ -1294,6 +1311,18 @@ const T = {
     readClose: 'ปิด',
     reversed: 'กลับหัว',
     upright: 'ตั้งตรง',
+    shareReadingLede: 'บันทึกบทอ่านนี้เป็นภาพ — ห้าใบสำคัญ ไว้ใคร่ครวญในวันอื่น',
+    shareReadingBtn: 'บันทึกบทอ่านนี้',
+    shareReadingEyebrow: 'บันทึกบทอ่าน',
+    shareReadingTitle: 'เซลติกครอสของคุณ',
+    shareReadingSubtitle: 'บทอ่านอันเงียบสงบ ไพ่สิบใบที่ถูกเลือก',
+    shareReadingFineprint: 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์',
+    shareDownload: 'ดาวน์โหลด',
+    shareNative: 'แชร์',
+    shareCopyLink: 'คัดลอกลิงก์',
+    shareCopied: 'คัดลอกแล้ว',
+    shareClose: 'ปิด',
+    shareRendering: 'กำลังสร้าง…',
     footerFineprint: 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์',
     footerCopy: 'veilatarot.com · © MMXXVI',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 14 พฤษภาคม 2026',
@@ -1552,6 +1581,75 @@ function renderReadouts() {
       }
     });
     list.appendChild(row);
+  });
+}
+
+/* ========================================================================
+   SHARE READING — 1080×1920 image of the 5 key positions
+   Positions used: 1 Present, 2 Challenge, 4 Future, 7 Self/Advice, 10 Outcome
+   ======================================================================== */
+const READING_SHARE_POSITIONS = [1, 2, 4, 7, 10];
+
+function trimSentence(text, maxChars) {
+  if (!text) return '';
+  text = String(text).replace(/\s+/g, ' ').trim();
+  if (text.length <= maxChars) return text;
+  const cut = text.slice(0, maxChars);
+  const stop = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('. '));
+  if (stop > maxChars * 0.5) return cut.slice(0, stop + 1);
+  const space = cut.lastIndexOf(' ');
+  return (space > 0 ? cut.slice(0, space) : cut).trim() + '…';
+}
+
+function shareReading() {
+  if (!window.veilaShare || !drawn.length) return;
+  const byN = {};
+  drawn.forEach(d => { byN[d.position.n] = d; });
+  const positions = READING_SHARE_POSITIONS.map(n => {
+    const d = byN[n];
+    if (!d) return null;
+    const orient = d.reversed ? 'reversed' : 'upright';
+    const orientLabel = d.reversed ? T[lang].reversed : T[lang].upright;
+    const cell = d.card[orient] || {};
+    const cc = (cell.celtic_cross && cell.celtic_cross[d.position.key]) || {};
+    const snippet = cc[lang] || (cell.standalone && cell.standalone[lang]) || '';
+    return {
+      roman: toRoman(d.position.n),
+      label: d.position.short[lang],
+      cardName: d.card.name[lang],
+      reversed: !!d.reversed,
+      orientationLabel: orientLabel,
+      snippet: trimSentence(snippet, 220)
+    };
+  }).filter(Boolean);
+
+  window.veilaShare.shareReading({
+    lang: lang,
+    eyebrow: T[lang].shareReadingEyebrow,
+    title: T[lang].shareReadingTitle,
+    subtitle: T[lang].shareReadingSubtitle,
+    positions: positions,
+    fineprint: T[lang].shareReadingFineprint,
+    pageUrl: location.origin + '/',
+    filename: 'veila-reading-' + lang + '.png',
+    sheetEyebrow: T[lang].shareReadingEyebrow,
+    downloadLabel: T[lang].shareDownload,
+    shareLabel: T[lang].shareNative,
+    copyLinkLabel: T[lang].shareCopyLink,
+    copiedLabel: T[lang].shareCopied,
+    closeLabel: T[lang].shareClose,
+    renderingLabel: T[lang].shareRendering,
+    shareTitle: T[lang].shareReadingTitle,
+    shareText: T[lang].shareReadingTitle + ' — veilatarot.com',
+    events: {
+      exported: 'reading_share_exported',
+      native: 'reading_share_native',
+      linkCopied: 'reading_share_link_copied'
+    },
+    eventParams: {
+      lang: lang,
+      reversed_count: drawn.filter(d => d.reversed).length
+    }
   });
 }
 
@@ -1925,6 +2023,7 @@ document.getElementById('begin-btn').addEventListener('click', beginSelection);
 document.getElementById('continue-btn').addEventListener('click', confirmSelection);
 document.getElementById('reshuffle-btn').addEventListener('click', reshuffleTable);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
+document.getElementById('share-reading-btn').addEventListener('click', shareReading);
 
 const confirmResetDialog = document.getElementById('confirm-reset');
 function askConfirmReset() {

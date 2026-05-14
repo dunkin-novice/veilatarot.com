@@ -56,6 +56,7 @@
 </script>
 
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/share.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -291,6 +292,11 @@
     </div>
   </aside>
 
+  <aside class="share-card" aria-label="บันทึกเป็นภาพ">
+    <p class="share-card-lede">บันทึกใบนี้เก็บไว้เป็นภาพ — สำหรับใคร่ครวญในวันอื่น</p>
+    <button type="button" class="cta-btn ghost veila-share-btn">บันทึกเป็นภาพ</button>
+  </aside>
+
   <div class="cta-row">
     <a href="/" class="cta-btn">เริ่มอ่านไพ่</a>
     <a href="/th/celtic-cross-tarot/" class="cta-btn ghost">เกี่ยวกับผังการอ่าน</a>
@@ -310,6 +316,50 @@
   </nav>
   <div>veilatarot.com · © MMXXVI</div>
 </footer>
+
+<script id="veila-card-data" type="application/json">{"id": "34-knight-of-wands", "lang": "th", "name": "อัศวินไม้เท้า", "roman": "Kn", "arcana": "minor", "suit": "wands", "eyebrow": "ไพ่ชุดไมเนอร์ · ไม้เท้า", "pageUrl": "https://veilatarot.com/th/cards/knight-of-wands/", "upright": {"keywords": "การลงมือทำ, ความเร่าร้อน, การผจญภัย, ความกล้าหาญ, ความใจร้อน", "text": "เครื่องติดแล้ว! คุณกำลังพุ่งทะยานไปข้างหน้าด้วยความเร็วสูง พลังงานล้นเหลือพร้อมลุยทุกด่าน แต่อย่าลืมดูทิศทางให้ดีก่อนจะเหยียบคันเร่งมิดไมล์", "label": "ตั้งตรง"}, "reversed": {"keywords": "ความบ้าบิ่น, ใจร้อนเกินเหตุ, ไม่มีทิศทาง, หมดพลัง, โครงการล้มเหลว", "text": "รีบไปไหน? คุณกำลังวิ่งพล่านเหมือนหนูติดจั่น ใช้พลังงานเยอะแต่ไม่ได้เนื้องานสักอย่าง ใจเย็นลงหน่อยและตั้งสติก่อน การพุ่งชนทุกอย่างตอนนี้มีแต่จะเจ็บตัวฟรี", "label": "กลับหัว"}, "labels": {"sheetEyebrow": "บันทึกไพ่", "download": "ดาวน์โหลด", "share": "แชร์", "copyLink": "คัดลอกลิงก์", "copied": "คัดลอกแล้ว", "close": "ปิด", "rendering": "กำลังสร้าง…"}}</script>
+<script>
+(function() {
+  function init() {
+    var node = document.getElementById('veila-card-data');
+    var btn = document.querySelector('.veila-share-btn');
+    if (!node || !btn || !window.veilaShare) return;
+    var data;
+    try { data = JSON.parse(node.textContent); } catch (e) { return; }
+    btn.addEventListener('click', function() {
+      var orientation = data.upright.label;
+      var excerpt = data.upright.text || data.upright.keywords;
+      window.veilaShare.shareCard({
+        lang: data.lang,
+        eyebrow: data.eyebrow,
+        name: data.name,
+        orientation: orientation,
+        excerpt: excerpt,
+        pageUrl: data.pageUrl,
+        filename: 'veila-34-knight-of-wands-' + data.lang + '.png',
+        sheetEyebrow: data.labels.sheetEyebrow,
+        downloadLabel: data.labels.download,
+        shareLabel: data.labels.share,
+        copyLinkLabel: data.labels.copyLink,
+        copiedLabel: data.labels.copied,
+        closeLabel: data.labels.close,
+        renderingLabel: data.labels.rendering,
+        shareTitle: data.name,
+        shareText: data.name + ' — ' + data.eyebrow,
+        events: {
+          exported: 'card_share_exported',
+          native: 'card_share_native',
+          linkCopied: 'card_share_link_copied'
+        },
+        eventParams: { card_id: data.id, lang: data.lang }
+      });
+    });
+  }
+  if (window.veilaShare) init();
+  else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 
 </body>
 </html>

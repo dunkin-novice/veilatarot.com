@@ -56,6 +56,7 @@
 </script>
 
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/share.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -285,6 +286,11 @@
     </div>
   </aside>
 
+  <aside class="share-card" aria-label="บันทึกเป็นภาพ">
+    <p class="share-card-lede">บันทึกใบนี้เก็บไว้เป็นภาพ — สำหรับใคร่ครวญในวันอื่น</p>
+    <button type="button" class="cta-btn ghost veila-share-btn">บันทึกเป็นภาพ</button>
+  </aside>
+
   <div class="cta-row">
     <a href="/" class="cta-btn">เริ่มอ่านไพ่</a>
     <a href="/th/celtic-cross-tarot/" class="cta-btn ghost">เกี่ยวกับผังการอ่าน</a>
@@ -304,6 +310,50 @@
   </nav>
   <div>veilatarot.com · © MMXXVI</div>
 </footer>
+
+<script id="veila-card-data" type="application/json">{"id": "60-ten-of-swords", "lang": "th", "name": "สิบดาบ", "roman": "X", "arcana": "minor", "suit": "swords", "eyebrow": "ไพ่ชุดไมเนอร์ · ดาบ", "pageUrl": "https://veilatarot.com/th/cards/ten-of-swords/", "upright": {"keywords": "จุดจบที่หลีกเลี่ยงไม่ได้, การยอมจำนน, ฟ้าหลังฝน, ความเจ็บปวดครั้งสุดท้าย, การล้มเลิก", "text": "นอนพักเถอะ ไม่ต้องสู้แล้ว ยอมรับความจริงว่ามันจบแล้ว การฝืนลุกตอนนี้มีแต่จะเจ็บแผล ปล่อยวางแล้วรอเวลาฟื้นตัวดีกว่า", "label": "ตั้งตรง"}, "reversed": {"keywords": "การฟื้นฟู, รอดตาย, ฟ้าหลังฝน, พ้นเคราะห์, เริ่มต้นใหม่จากศูนย์", "text": "พายุผ่านไปแล้ว! คุณกำลังค่อยๆ ลุกขึ้นยืนปัดฝุ่นออกจากตัว แม้จะยังรู้สึกอ่อนเพลียและขาสั่นอยู่บ้าง แต่แสงสว่างรำไรที่ปลายฟ้าบอกให้รู้ว่าคุณรอดแล้ว", "label": "กลับหัว"}, "labels": {"sheetEyebrow": "บันทึกไพ่", "download": "ดาวน์โหลด", "share": "แชร์", "copyLink": "คัดลอกลิงก์", "copied": "คัดลอกแล้ว", "close": "ปิด", "rendering": "กำลังสร้าง…"}}</script>
+<script>
+(function() {
+  function init() {
+    var node = document.getElementById('veila-card-data');
+    var btn = document.querySelector('.veila-share-btn');
+    if (!node || !btn || !window.veilaShare) return;
+    var data;
+    try { data = JSON.parse(node.textContent); } catch (e) { return; }
+    btn.addEventListener('click', function() {
+      var orientation = data.upright.label;
+      var excerpt = data.upright.text || data.upright.keywords;
+      window.veilaShare.shareCard({
+        lang: data.lang,
+        eyebrow: data.eyebrow,
+        name: data.name,
+        orientation: orientation,
+        excerpt: excerpt,
+        pageUrl: data.pageUrl,
+        filename: 'veila-60-ten-of-swords-' + data.lang + '.png',
+        sheetEyebrow: data.labels.sheetEyebrow,
+        downloadLabel: data.labels.download,
+        shareLabel: data.labels.share,
+        copyLinkLabel: data.labels.copyLink,
+        copiedLabel: data.labels.copied,
+        closeLabel: data.labels.close,
+        renderingLabel: data.labels.rendering,
+        shareTitle: data.name,
+        shareText: data.name + ' — ' + data.eyebrow,
+        events: {
+          exported: 'card_share_exported',
+          native: 'card_share_native',
+          linkCopied: 'card_share_link_copied'
+        },
+        eventParams: { card_id: data.id, lang: data.lang }
+      });
+    });
+  }
+  if (window.veilaShare) init();
+  else if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 
 </body>
 </html>
