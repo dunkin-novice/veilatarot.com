@@ -322,14 +322,42 @@ footer {
   text-transform: uppercase;
   color: var(--ivory-mute);
 }
-footer .fineprint {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  text-transform: none;
-  color: var(--ivory-mute);
-  margin-bottom: 10px;
+/* The repeated philosophy line "For reflection, not prediction." /
+   "เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์" is hidden in the repeated footer.
+   The phrase is still preserved in About/FAQ copy and in the share image
+   fineprint, but no longer appears on every article footer. */
+footer .fineprint { display: none; }
+
+/* THAI TYPOGRAPHY: strip uppercasing/letter-spacing on Thai pages — Thai
+   does not have case, and tracking inserts visible gaps between glyphs
+   (the "อุปสรรค" problem). Also force the IBM Plex Sans Thai family on
+   label-style elements that fall back unevenly otherwise. */
+html[lang="th"] .eyebrow,
+html[lang="th"] .lang-toggle,
+html[lang="th"] .breadcrumb,
+html[lang="th"] .cta-btn,
+html[lang="th"] .daily-card .label,
+html[lang="th"] .daily-card .orientation,
+html[lang="th"] .card-page .cc-pair h3,
+html[lang="th"] .card-page .intent-block h3,
+html[lang="th"] .scenario-page .positions li strong,
+html[lang="th"] .related-grid .rl-label,
+html[lang="th"] .adjacent-nav .adj .dir,
+html[lang="th"] footer,
+html[lang="th"] footer .footer-nav,
+html[lang="th"] footer .last-updated {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+html[lang="th"] .eyebrow,
+html[lang="th"] .breadcrumb,
+html[lang="th"] .daily-card .label,
+html[lang="th"] footer,
+html[lang="th"] .card-page .cc-pair h3,
+html[lang="th"] .related-grid .rl-label,
+html[lang="th"] .adjacent-nav .adj .dir {
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-weight: 500;
 }
 footer .last-updated {
   font-family: var(--serif);
