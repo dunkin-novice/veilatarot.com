@@ -47,8 +47,8 @@
   border-radius: 4px 4px 0 0;
   width: 100%;
   max-width: 480px;
-  max-height: 92vh;
-  padding: 24px 22px 28px;
+  max-height: 94vh;
+  padding: 18px 18px max(20px, env(safe-area-inset-bottom));
   pointer-events: auto;
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(.4,0,.2,1);
@@ -82,15 +82,18 @@
   margin: 4px 0 16px;
 }
 .veila-share-sheet .vss-preview {
-  margin: 4px 0 22px;
+  margin: 4px 0 14px;
   display: flex;
   justify-content: center;
-  min-height: 240px;
+  min-height: 180px;
   align-items: center;
 }
 .veila-share-sheet .vss-preview img {
   max-width: 100%;
-  max-height: 58vh;
+  /* Mobile-first cap so the three action buttons + hint sit inside the
+     94vh sheet without scrolling on a 667-tall phone. The desktop
+     media query below lifts this back to 58vh. */
+  max-height: 42vh;
   border: 1px solid #7a6645;
   border-radius: 4px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.45);
@@ -149,11 +152,15 @@
   .veila-share-sheet { align-items: center; }
   .veila-share-sheet .vss-body {
     max-width: 520px;
+    max-height: 92vh;
+    padding: 24px 22px 28px;
     border-radius: 4px;
     border: 1px solid #7a6645;
     transform: translateY(24px);
   }
   .veila-share-sheet.vss-open .vss-body { transform: translateY(0); }
+  .veila-share-sheet .vss-preview { margin: 4px 0 22px; min-height: 240px; }
+  .veila-share-sheet .vss-preview img { max-height: 58vh; }
 }
 `;
   if (!document.querySelector('style[data-veila-share]')) {

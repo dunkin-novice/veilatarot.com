@@ -329,10 +329,38 @@ main { min-width: 0; }
   justify-content: center;
 }
 @media (max-width: 720px) {
-  .landing-meta { gap: 24px 28px; font-size: 9px; letter-spacing: 0.24em; }
-  .landing-meta span strong { font-size: 15px; }
-  .landing { padding: 56px 20px 40px; gap: 28px; min-height: calc(100vh - 200px); }
-  .landing .lede { font-size: 17px; }
+  /* Above-the-fold optimization v1: tighten the landing so the CTA is
+     visible on common mobile heights (375×667 / 390×844 / 412×915).
+     Strategy: drop min-height, halve top padding, shrink gap, smaller h1
+     floor, tighter lede. Trust signals stay below the CTA — visible on
+     844/915, one short scroll on 667. */
+  .landing {
+    padding: 20px 20px 28px;
+    gap: 16px;
+    min-height: 0;
+  }
+  .landing h1 {
+    font-size: clamp(40px, 9.5vw, 56px);
+    line-height: 1.02;
+    max-width: 12ch;
+  }
+  .landing .eyebrow { font-size: 10px; letter-spacing: 0.36em; }
+  .landing .lede {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 38ch;
+  }
+  .landing-meta {
+    gap: 16px 24px;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    margin-top: 4px;
+  }
+  .landing-meta span strong { font-size: 13px; margin-top: 4px; }
+  /* Slightly smaller CTA on phones — still tappable (44px+ hit area) */
+  .landing .cta-btn { padding: 15px 36px; }
+  /* Tighter divider ornament — gives the headline more presence */
+  .landing .divider-ornament .line { width: 40px; }
 }
 .landing-meta span strong {
   display: block;
@@ -1018,6 +1046,10 @@ html[lang="th"] footer {
   padding: 24px 24px 40px;
   flex-wrap: wrap;
 }
+/* Mini count chip — hidden on desktop (the large counter in the
+   selection-header already shows it). On mobile we surface it inside the
+   sticky action bar so the user sees count + CTA together. */
+.continue-row .pick-count-mini { display: none; }
 .cta-btn[disabled] {
   opacity: 0.35;
   cursor: not-allowed;
@@ -1054,10 +1086,89 @@ html[lang="th"] footer {
     min-width: 22px;
     padding: 2px 7px;
   }
-  .selection-header { padding: 28px 18px 16px; margin-bottom: 18px; }
-  .selection-header h2 { margin-bottom: 12px; }
-  .selection-counter { margin-top: 18px; font-size: 15px; }
-  .continue-row { padding: 16px 16px 28px; gap: 12px; }
+  .selection-header { padding: 20px 18px 12px; margin-bottom: 14px; }
+  .selection-header h2 { margin-bottom: 10px; font-size: clamp(26px, 6vw, 36px); }
+  .selection-header p { font-size: 15px; }
+  .selection-counter { margin-top: 14px; font-size: 14px; }
+  /* Scatter gets bottom padding equal to the sticky action bar so the
+     dock-ghost row of picked cards is never hidden behind the bar. */
+  .scatter-wrap { padding: 8px 0 96px; }
+  /* Sticky action bar at the bottom: count + Reshuffle + Lay-the-Spread,
+     always within thumb reach. Backdrop blur preserves the editorial feel. */
+  .continue-row {
+    position: sticky;
+    bottom: 0;
+    z-index: 30;
+    padding: 12px 12px max(12px, env(safe-area-inset-bottom));
+    gap: 10px;
+    background: rgba(10,10,12,0.92);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--gold-dim);
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .continue-row .pick-count-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    flex: 0 0 auto;
+    padding-right: 4px;
+  }
+  .continue-row .pick-count-mini .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--gold);
+  }
+  .continue-row .pick-count-mini .num .sep,
+  .continue-row .pick-count-mini .num .of {
+    color: var(--ivory-mute);
+    font-style: normal;
+    font-size: 16px;
+    margin-left: 1px;
+  }
+  .continue-row .pick-count-mini .lbl {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ivory-mute);
+    margin-top: 4px;
+  }
+  .continue-row #reshuffle-btn {
+    padding: 11px 14px;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    flex: 0 0 auto;
+  }
+  .continue-row #continue-btn {
+    padding: 14px 16px;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    flex: 1 1 auto;
+  }
+  /* Make the disabled state obvious — and the enabled state more so by
+     adding a subtle glow when the user has chosen all ten. */
+  .continue-row #continue-btn[disabled] {
+    background: rgba(184,153,104,0.04);
+    border-color: var(--rule);
+    color: var(--ivory-mute);
+    opacity: 1;
+  }
+  .continue-row.is-ready #continue-btn {
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold), 0 8px 24px rgba(184,153,104,0.28);
+    animation: cta-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes cta-pulse {
+    0%, 100% { box-shadow: 0 0 0 1px var(--gold), 0 6px 18px rgba(184,153,104,0.18); }
+    50%      { box-shadow: 0 0 0 1px var(--gold), 0 10px 28px rgba(184,153,104,0.40); }
+  }
 }
 
 /* ====== HINT BANNER ====== */
@@ -1135,20 +1246,32 @@ html[lang="th"] footer {
   .readout .num { font-size: 28px; }
   .readout .body .interp { font-size: 15px; }
   .site-header {
-    padding: 14px 16px;
+    padding: 10px 14px;
     flex-wrap: wrap;
-    gap: 6px 12px;
+    gap: 4px 10px;
     align-items: center;
   }
   .brand { font-size: 17px; letter-spacing: 0.12em; }
   .brand .brand-sub { display: none; }
-  .header-right { gap: 14px; }
+  .header-right { gap: 12px; }
   .nav-meta { font-size: 9px; letter-spacing: 0.22em; }
   .lang-toggle { font-size: 11px; letter-spacing: 0.18em; }
   .layout { padding: 0 12px; }
-  .reading-header { padding: 32px 16px 18px; margin-bottom: 28px; }
-  .reading-header p { font-size: 15px; line-height: 1.5; }
-  .spread-wrap { padding: 16px 0 40px; }
+  .reading-header {
+    padding: 18px 16px 10px;
+    margin-bottom: 16px;
+  }
+  .reading-header .step { margin-bottom: 10px; }
+  .reading-header h2 { margin-bottom: 8px; }
+  .reading-header p { font-size: 14.5px; line-height: 1.45; }
+  .reading-header .progress-track { margin-top: 14px; }
+  .spread-wrap { padding: 8px 0 24px; }
+  .reset-row { padding: 24px 16px 0; }
+  /* The readout-section's 80px desktop margin compresses on mobile so
+     the spread → reading transition feels immediate after scrollIntoView. */
+  .readout-section { margin-top: 32px; padding-top: 32px; }
+  .readout-section h3 { font-size: 28px; margin-bottom: 8px; }
+  .readout-section .readout-lede { margin-bottom: 24px; font-size: 14.5px; }
 }
 </style>
 </head>
@@ -1214,6 +1337,10 @@ html[lang="th"] footer {
       </div>
 
       <div class="continue-row">
+        <div class="pick-count-mini" aria-hidden="true">
+          <span class="num"><span id="pick-count-mini">0</span><span class="sep">/</span><span class="of">10</span></span>
+          <span class="lbl" data-i18n="pickCountMiniLabel">chosen</span>
+        </div>
         <button class="cta-btn ghost" id="reshuffle-btn" data-i18n="reshuffleBtn">Reshuffle</button>
         <button class="cta-btn" id="continue-btn" data-i18n="continueBtn" disabled>Read the cards</button>
       </div>
@@ -1304,6 +1431,7 @@ const T = {
     selH2: 'Select 10 cards from the table',
     selP: 'Use your left hand to choose.',
     selCounterSuffix: ' of 10 chosen',
+    pickCountMiniLabel: 'chosen',
     reshuffleBtn: 'Reshuffle',
     continueBtn: 'Read the cards',
     readStep: 'The Spread is Laid',
@@ -1362,6 +1490,7 @@ const T = {
     selH2: 'เลือกไพ่ 10 ใบ จากบนโต๊ะ',
     selP: 'ใช้มือซ้ายในการเลือก',
     selCounterSuffix: ' จาก 10 ใบ',
+    pickCountMiniLabel: 'เลือกแล้ว',
     reshuffleBtn: 'สับใหม่',
     continueBtn: 'อ่านไพ่',
     readStep: 'ไพ่ถูกวางไว้แล้ว',
@@ -1920,10 +2049,19 @@ function reshuffleTable() {
 }
 
 function updatePickCount() {
-  document.getElementById('pick-count').textContent = picks.length;
+  const count = picks.length;
+  document.getElementById('pick-count').textContent = count;
+  const mini = document.getElementById('pick-count-mini');
+  if (mini) mini.textContent = count;
   const btn = document.getElementById('continue-btn');
-  if (picks.length === 10) btn.removeAttribute('disabled');
-  else btn.setAttribute('disabled', '');
+  const row = document.querySelector('.continue-row');
+  if (count === 10) {
+    btn.removeAttribute('disabled');
+    if (row) row.classList.add('is-ready');
+  } else {
+    btn.setAttribute('disabled', '');
+    if (row) row.classList.remove('is-ready');
+  }
 }
 
 /* ========================================================================
