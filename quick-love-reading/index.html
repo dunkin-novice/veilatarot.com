@@ -228,6 +228,78 @@ main { min-width: 0; }
 .divider-ornament .line { width: 64px; height: 1px; background: var(--gold-dim); }
 .divider-ornament .mark { width: 6px; height: 6px; transform: rotate(45deg); border: 1px solid var(--gold); }
 
+/* ====== QUESTION PRESETS (intro) ====== */
+.question-presets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  max-width: 560px;
+  width: 100%;
+}
+.qp-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+.qp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.qp-chip {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: var(--ivory-dim);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.qp-chip:hover { border-color: var(--gold-dim); color: var(--ivory); }
+.qp-chip:focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
+.qp-chip.selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 500;
+}
+html[lang="th"] .qp-label {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 12px;
+}
+html[lang="th"] .qp-chip {
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 14px;
+}
+
+/* ====== USER QUESTION line (after Shuffle & Draw) ====== */
+.user-question {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--ivory);
+  max-width: 36ch;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+html[lang="th"] .user-question {
+  font-family: "IBM Plex Sans Thai", var(--serif);
+  font-style: normal;
+  font-weight: 500;
+}
+
 /* ====== CTA BUTTON ====== */
 .cta-btn {
   background: transparent;
@@ -659,12 +731,35 @@ html[lang="th"] footer {
   .lang-toggle { font-size: 11px; letter-spacing: 0.18em; }
   .layout { padding: 0 12px; }
 
-  .intro { padding: 28px 18px 32px; gap: 18px; }
-  .intro h1 { font-size: clamp(42px, 10vw, 60px); line-height: 1.02; max-width: 13ch; }
-  .intro .lede { font-size: 16px; line-height: 1.5; max-width: 36ch; }
+  .intro { padding: 20px 18px 28px; gap: 14px; }
+  .intro h1 { font-size: clamp(38px, 9vw, 52px); line-height: 1.02; max-width: 13ch; }
+  .intro .lede { font-size: 15px; line-height: 1.5; max-width: 34ch; }
   .intro .pos-trail { font-size: 9px; letter-spacing: 0.22em; }
   .intro .pos-trail span { margin: 0 5px; }
-  .intro .cta-btn { padding: 15px 36px; }
+  .intro .cta-btn { padding: 14px 32px; }
+
+  /* Chips: 2-column grid on mobile so 6 chips collapse to 3 rows total,
+     keeping the Shuffle & Draw CTA above the fold even on iPhone SE. */
+  .question-presets { gap: 8px; max-width: 100%; }
+  .qp-label { font-size: 9px; letter-spacing: 0.28em; }
+  html[lang="th"] .qp-label { font-size: 11px; }
+  .qp-chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    width: 100%;
+  }
+  .qp-chip {
+    font-size: 11.5px;
+    padding: 8px 10px;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    min-height: 38px;
+  }
+  html[lang="th"] .qp-chip { font-size: 12.5px; padding: 8px 10px; }
+
+  .user-question { font-size: 18px; line-height: 1.4; max-width: 30ch; }
 
   .reading-header { padding: 18px 14px 4px; }
   .reading-header .step { margin-bottom: 10px; }
@@ -729,6 +824,19 @@ html[lang="th"] footer {
       <h1 data-i18n-html="introH1">Three cards for the <em>space between</em> you.</h1>
       <div class="divider-ornament"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
       <p class="lede" data-i18n="lede">For when a question of the heart needs more than a moment but less than an hour. Take a breath. Hold the question. The cards reflect — they don't predict.</p>
+
+      <section class="question-presets" aria-labelledby="qp-label">
+        <div class="qp-label" id="qp-label" data-i18n="qpLabel">Choose a question (optional)</div>
+        <div class="qp-chips" role="group" aria-label="Preset reflective questions">
+          <button type="button" class="qp-chip" data-key="their-energy"   aria-pressed="false" data-i18n="qpTheirEnergy">What is their energy toward me?</button>
+          <button type="button" class="qp-chip" data-key="honest"          aria-pressed="false" data-i18n="qpHonest">Is this connection honest?</button>
+          <button type="button" class="qp-chip" data-key="reach-out"       aria-pressed="false" data-i18n="qpReachOut">Should I reach out?</button>
+          <button type="button" class="qp-chip" data-key="direction"       aria-pressed="false" data-i18n="qpDirection">Where is this connection going?</button>
+          <button type="button" class="qp-chip" data-key="still-thinking"  aria-pressed="false" data-i18n="qpStillThinking">Are they still thinking of me?</button>
+          <button type="button" class="qp-chip" data-key="wait-or-let-go"  aria-pressed="false" data-i18n="qpWaitOrLetGo">Should I wait or let go?</button>
+        </div>
+      </section>
+
       <button class="cta-btn" id="start-btn" data-i18n="startBtn">Shuffle &amp; Draw</button>
       <p class="pos-trail" data-i18n-html="posTrail">Their energy <span>·</span> Your energy <span>·</span> Between you</p>
     </section>
@@ -737,6 +845,7 @@ html[lang="th"] footer {
     <section id="reading" class="is-hidden">
       <div class="reading-header">
         <div class="step" data-i18n="readStep">Three Cards Drawn</div>
+        <p class="user-question" id="user-question" hidden></p>
         <p class="question-line" data-i18n="readSub">Three cards are placed face-down. Tap each in turn.</p>
       </div>
 
@@ -799,6 +908,13 @@ const T = {
     lede: "For when a question of the heart needs more than a moment but less than an hour. Take a breath. Hold the question. The cards reflect — they don't predict.",
     startBtn: 'Shuffle & Draw',
     posTrail: 'Their energy <span>·</span> Your energy <span>·</span> Between you',
+    qpLabel: 'Choose a question (optional)',
+    qpTheirEnergy: 'What is their energy toward me?',
+    qpHonest: 'Is this connection honest?',
+    qpReachOut: 'Should I reach out?',
+    qpDirection: 'Where is this connection going?',
+    qpStillThinking: 'Are they still thinking of me?',
+    qpWaitOrLetGo: 'Should I wait or let go?',
     readStep: 'Three Cards Drawn',
     readSub: 'Three cards are placed face-down. Tap each in turn.',
     hintTap: 'Tap each card to reveal it. Your reading appears below.',
@@ -839,6 +955,13 @@ const T = {
     lede: 'สำหรับคำถามของหัวใจที่ต้องการมากกว่าหนึ่งช่วงเวลา แต่ไม่ใช่ทั้งชั่วโมง สูดหายใจ ตั้งคำถามไว้ในใจ ไพ่สะท้อน — ไม่ใช่พยากรณ์',
     startBtn: 'สับและจั่วไพ่',
     posTrail: 'พลังของเขา <span>·</span> พลังของคุณ <span>·</span> สิ่งที่อยู่ระหว่างกัน',
+    qpLabel: 'เลือกคำถาม (ไม่จำเป็น)',
+    qpTheirEnergy: 'เขาคิดยังไงกับเรา',
+    qpHonest: 'คนคุยจริงใจไหม',
+    qpReachOut: 'ควรทักไปไหม',
+    qpDirection: 'ความสัมพันธ์นี้กำลังไปทางไหน',
+    qpStillThinking: 'เขายังคิดถึงเราไหม',
+    qpWaitOrLetGo: 'ควรรอหรือควรพอ',
     readStep: 'จั่วไพ่สามใบแล้ว',
     readSub: 'ไพ่สามใบถูกวางคว่ำหน้าไว้ แตะทีละใบเพื่อเปิด',
     hintTap: 'แตะไพ่แต่ละใบเพื่อเปิด บทอ่านจะปรากฏด้านล่าง',
@@ -897,12 +1020,31 @@ const POSITIONS = [
 ];
 
 /* ========================================================================
+   PRESET QUESTIONS — 6 reflective love questions, EN/TH.
+   No free-text input in v1. User can also skip — reading still works.
+   ======================================================================== */
+const PRESETS = [
+  { key: 'their-energy',   en: 'What is their energy toward me?',  th: 'เขาคิดยังไงกับเรา' },
+  { key: 'honest',         en: 'Is this connection honest?',        th: 'คนคุยจริงใจไหม' },
+  { key: 'reach-out',      en: 'Should I reach out?',               th: 'ควรทักไปไหม' },
+  { key: 'direction',      en: 'Where is this connection going?',   th: 'ความสัมพันธ์นี้กำลังไปทางไหน' },
+  { key: 'still-thinking', en: 'Are they still thinking of me?',    th: 'เขายังคิดถึงเราไหม' },
+  { key: 'wait-or-let-go', en: 'Should I wait or let go?',          th: 'ควรรอหรือควรพอ' }
+];
+function getPreset(key) { return PRESETS.find(p => p.key === key) || null; }
+function getPresetText(key, l) {
+  const p = getPreset(key);
+  return p ? (p[l] || p.en) : '';
+}
+
+/* ========================================================================
    STATE
    ======================================================================== */
 let DECK = [];
 let lang = (typeof localStorage !== 'undefined' && localStorage.getItem('veila-lang')) || 'en';
 let drawn = []; // [{card, position, reversed, flipped}]
 let flippedCount = 0;
+let selectedQuestionKey = null;
 
 /* ========================================================================
    UTIL
@@ -1079,7 +1221,8 @@ function onAllFlipped() {
       window.veilaFire('love_reading_completed', {
         lang: lang,
         reversed_count: drawn.filter(d => d.reversed).length,
-        card_ids: drawn.map(d => d.card.id).join(',')
+        card_ids: drawn.map(d => d.card.id).join(','),
+        question_key: selectedQuestionKey || ''
       });
     }
   }, 500);
@@ -1117,11 +1260,14 @@ function shareLoveReading() {
     };
   });
 
+  const questionText = selectedQuestionKey ? getPresetText(selectedQuestionKey, lang) : '';
+
   window.veilaShare.shareLoveReading({
     lang: lang,
     eyebrow: T[lang].shareSheetEyebrow,
     title: T[lang].shareTitle,
     subtitle: T[lang].shareSubtitle,
+    question: questionText,
     positions: positions,
     fineprint: T[lang].shareFineprint,
     pageUrl: location.origin + '/quick-love-reading/',
@@ -1144,7 +1290,8 @@ function shareLoveReading() {
     eventParams: {
       lang: lang,
       reversed_count: drawn.filter(d => d.reversed).length,
-      card_ids: drawn.map(d => d.card.id).join(',')
+      card_ids: drawn.map(d => d.card.id).join(','),
+      question_key: selectedQuestionKey || ''
     }
   });
 }
@@ -1152,6 +1299,20 @@ function shareLoveReading() {
 /* ========================================================================
    ACTIONS
    ======================================================================== */
+function syncUserQuestion() {
+  const el = document.getElementById('user-question');
+  if (!el) return;
+  if (selectedQuestionKey) {
+    const text = getPresetText(selectedQuestionKey, lang);
+    // Italicised quotation marks differ by lang — keep ASCII for portability.
+    el.textContent = '"' + text + '"';
+    el.hidden = false;
+  } else {
+    el.textContent = '';
+    el.hidden = true;
+  }
+}
+
 function startReading() {
   if (!DECK.length) { loadDeck().then(() => { if (DECK.length) startReading(); }); return; }
   const shuffled = shuffle(DECK).slice(0, 3);
@@ -1167,11 +1328,15 @@ function startReading() {
   document.getElementById('hint-bar').classList.remove('is-hidden');
   document.getElementById('pre-readout-actions').classList.remove('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
+  syncUserQuestion();
   renderSpread();
   updateFlipUI();
   window.scrollTo({ top: 0, behavior: 'instant' });
   if (window.veilaFire) {
-    window.veilaFire('love_reading_started', { lang: lang });
+    window.veilaFire('love_reading_started', {
+      lang: lang,
+      question_key: selectedQuestionKey || ''
+    });
   }
 }
 
@@ -1225,6 +1390,7 @@ function applyLang() {
     ? 'บทอ่านไพ่ความรัก — ไพ่ทาโรต์สามใบ | Veila'
     : 'Quick Love Reading — A 3-Card Tarot Reflection | Veila';
   // re-render visible dynamic content with new language
+  syncUserQuestion();
   if (!document.getElementById('reading').classList.contains('is-hidden') && drawn.length === 3) {
     renderSpread();
     if (!document.getElementById('readout-section').classList.contains('is-hidden')) {
@@ -1247,6 +1413,39 @@ function setLang(next) {
 
 document.querySelectorAll('.lang-toggle button').forEach((b) => {
   b.addEventListener('click', () => setLang(b.dataset.lang));
+});
+
+/* ========================================================================
+   QUESTION CHIPS — tap one to select, tap same chip again to deselect.
+   Skipping is allowed; the reading runs either way.
+   ======================================================================== */
+function syncChipSelection() {
+  document.querySelectorAll('.qp-chip').forEach((b) => {
+    const on = b.dataset.key === selectedQuestionKey;
+    b.classList.toggle('selected', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+document.querySelectorAll('.qp-chip').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.key;
+    if (selectedQuestionKey === key) {
+      // toggle off — no analytics for deselect
+      selectedQuestionKey = null;
+      syncChipSelection();
+      return;
+    }
+    selectedQuestionKey = key;
+    syncChipSelection();
+    const preset = getPreset(key);
+    if (window.veilaFire && preset) {
+      window.veilaFire('love_question_selected', {
+        lang: lang,
+        question_key: key,
+        question_text: preset[lang] || preset.en
+      });
+    }
+  });
 });
 
 /* ========================================================================

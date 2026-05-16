@@ -757,24 +757,58 @@
       : '300 96px "Cormorant Garamond", serif';
     ctx.fillText(opts.title, W / 2, 320);
 
-    // Subtitle — three positions in one line. Thai is drawn directly
-    // (no canvas letter-spacing — the "อุปสรรค" stretched-glyph problem).
-    ctx.fillStyle = '#b9b3a4';
-    if (isThai) {
-      ctx.font = 'italic 300 30px "IBM Plex Sans Thai", serif';
-      ctx.fillText(opts.subtitle || '', W / 2, 388);
+    // Question (optional) — drawn at the subtitle slot if present, with the
+    // position trail kept as a smaller line beneath. When no question is
+    // selected, the position trail occupies the subtitle slot exactly as
+    // before (preserves the v1 layout).
+    const hasQuestion = !!(opts.question && String(opts.question).trim());
+    let dividerY = 470;
+    let blocksStartY = 620;
+
+    if (hasQuestion) {
+      // Big italic question — autofit so long EN strings still fit.
+      ctx.fillStyle = '#ebe4d4';
+      let qSize = isThai ? 42 : 48;
+      const qSet = (s) => ctx.font = isThai
+        ? `italic 500 ${s}px "IBM Plex Sans Thai", serif`
+        : `italic 400 ${s}px "Cormorant Garamond", serif`;
+      qSet(qSize);
+      const qText = String(opts.question).trim();
+      while (ctx.measureText(qText).width > W - 160 && qSize > 28) {
+        qSize -= 2; qSet(qSize);
+      }
+      ctx.fillText(qText, W / 2, 396);
+
+      // Position trail as a quieter sub-line beneath the question.
+      ctx.fillStyle = '#b9b3a4';
+      ctx.font = isThai
+        ? '300 26px "IBM Plex Sans Thai", serif'
+        : 'italic 300 28px "Cormorant Garamond", serif';
+      ctx.fillText(opts.subtitle || '', W / 2, 450);
+
+      dividerY = 520;
+      blocksStartY = 660;
     } else {
-      ctx.font = 'italic 300 34px "Cormorant Garamond", serif';
-      ctx.fillText(opts.subtitle || '', W / 2, 388);
+      // Subtitle — three positions in one line. Thai is drawn directly
+      // (no canvas letter-spacing — the "อุปสรรค" stretched-glyph problem).
+      ctx.fillStyle = '#b9b3a4';
+      if (isThai) {
+        ctx.font = 'italic 300 30px "IBM Plex Sans Thai", serif';
+        ctx.fillText(opts.subtitle || '', W / 2, 388);
+      } else {
+        ctx.font = 'italic 300 34px "Cormorant Garamond", serif';
+        ctx.fillText(opts.subtitle || '', W / 2, 388);
+      }
     }
 
     // Divider
-    drawDivider(ctx, W / 2, 470, 240, 9);
+    drawDivider(ctx, W / 2, dividerY, 240, 9);
 
     // Three position blocks. 5-block Celtic spends ~232/block; we have
     // only 3 blocks to fill, so each gets ~360px and the snippets get
-    // more visual air.
-    const startY = 620;
+    // more visual air. When a question is present, the whole block stack
+    // shifts down 40px (still leaves ~86px above the footer).
+    const startY = blocksStartY;
     const blockH = 360;
     const leftX = 96;
     const numWidth = 96;
