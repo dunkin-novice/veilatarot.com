@@ -237,6 +237,60 @@ ol.positions li {
   color: var(--ivory);
 }
 
+/* ====== QUICK ANSWER (AEO/answer-engine block) ======
+   A small lifted panel near the top of dedicated pages that gives a
+   40–80 word direct answer to the page's headline question. The deeper
+   article follows below. Single-Q on a single page, so no FAQPage
+   schema — the visible HTML carries the answer for AEO/snippets. */
+.quick-answer {
+  margin: 32px 0 40px;
+  padding: 22px 26px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(184, 153, 104, 0.04);
+  border-radius: 4px;
+}
+.quick-answer .qa-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.quick-answer h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0 0 12px;
+  color: var(--ivory);
+  letter-spacing: 0;
+}
+.quick-answer p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ivory-dim);
+  margin-bottom: 10px;
+}
+.quick-answer p:last-child { margin-bottom: 0; }
+.quick-answer p strong { color: var(--ivory); font-weight: 500; }
+.quick-answer .qa-deep {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--gold-dim);
+  padding-bottom: 1px;
+}
+.quick-answer .qa-deep:hover { color: var(--ivory); border-bottom-color: var(--gold); }
+@media (max-width: 720px) {
+  .quick-answer { margin: 22px 0 30px; padding: 18px 18px; }
+  .quick-answer h2 { font-size: 19px; }
+  .quick-answer p { font-size: 15px; line-height: 1.65; }
+}
+
 /* ====== SHARE BLOCKS (card page + reading) ====== */
 .share-card,
 .share-reading {
