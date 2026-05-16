@@ -283,6 +283,140 @@ html[lang="th"] .qp-chip {
   font-size: 14px;
 }
 
+/* ====== RETURN PANEL (Daily Reflection Loop) ======
+   Shown only when the user has a prior reading stored locally and the
+   most-recent entry's date is earlier than today's local date. Quiet,
+   journal-like, no streaks or scores. */
+.return-card {
+  align-self: stretch;
+  max-width: 540px;
+  margin: 0 auto;
+  border: 1px solid var(--gold-dim);
+  background: rgba(184, 153, 104, 0.04);
+  border-radius: 4px;
+  padding: 22px 24px 22px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.return-card .rc-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.return-card .rc-question {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ivory);
+}
+.return-card .rc-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.return-card .rc-cards li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ivory-dim);
+}
+.return-card .rc-cards .rc-pos {
+  flex: 0 0 88px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+.return-card .rc-cards .rc-card-name {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ivory);
+}
+.return-card .rc-cards .rc-card-name .rc-rev {
+  font-style: italic;
+  color: var(--crimson);
+  font-size: 13px;
+  margin-left: 4px;
+}
+.return-card .rc-cards .rc-card-name .rc-roman {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  margin-right: 6px;
+  font-size: 13px;
+}
+.return-card .rc-prompt {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+.return-card #rc-cta {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+html[lang="th"] .return-card .rc-label {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+}
+html[lang="th"] .return-card .rc-cards .rc-pos {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 11px;
+}
+html[lang="th"] .return-card .rc-question {
+  font-family: "IBM Plex Sans Thai", var(--serif);
+  font-style: normal;
+  font-weight: 500;
+}
+html[lang="th"] .return-card .rc-prompt {
+  font-family: "IBM Plex Sans Thai", var(--serif);
+  font-style: normal;
+  font-size: 15px;
+}
+
+/* ====== REFLECTION SAVED (after readout) ====== */
+.reflection-saved {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 14.5px;
+  line-height: 1.45;
+  margin: 0 auto 14px;
+  padding: 8px 14px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  background: rgba(184, 153, 104, 0.04);
+  max-width: 100%;
+}
+.reflection-saved .rs-mark { color: var(--gold); font-style: normal; font-weight: 600; font-size: 13px; }
+html[lang="th"] .reflection-saved {
+  font-family: "IBM Plex Sans Thai", var(--serif);
+  font-style: normal;
+  font-size: 14px;
+}
+
 /* ====== USER QUESTION line (after Shuffle & Draw) ====== */
 .user-question {
   font-family: var(--serif);
@@ -761,6 +895,17 @@ html[lang="th"] footer {
 
   .user-question { font-size: 18px; line-height: 1.4; max-width: 30ch; }
 
+  .return-card { padding: 16px 16px 18px; gap: 10px; }
+  .return-card .rc-question { font-size: 17px; }
+  .return-card .rc-cards li { font-size: 12px; gap: 8px; }
+  .return-card .rc-cards .rc-pos { flex: 0 0 80px; font-size: 8.5px; }
+  .return-card .rc-cards .rc-card-name { font-size: 14px; }
+  .return-card .rc-cards .rc-card-name .rc-roman { font-size: 12px; }
+  .return-card .rc-prompt { font-size: 14px; }
+  .return-card #rc-cta { align-self: stretch; text-align: center; }
+
+  .reflection-saved { font-size: 13.5px; padding: 7px 12px; }
+
   .reading-header { padding: 18px 14px 4px; }
   .reading-header .step { margin-bottom: 10px; }
   .reading-header .question-line { font-size: 15px; line-height: 1.45; }
@@ -820,6 +965,18 @@ html[lang="th"] footer {
 
     <!-- ====== INTRO ====== -->
     <section id="intro" class="intro">
+
+      <!-- Daily reflection loop: shown only when localStorage has a prior
+           entry from an earlier local date. Quiet, journal-like, no
+           streaks or scores. -->
+      <aside id="return-card" class="return-card is-hidden" aria-labelledby="rc-label">
+        <div class="rc-label" id="rc-label" data-i18n="rcLabel">Last time you asked…</div>
+        <div class="rc-question" id="rc-question">—</div>
+        <ul class="rc-cards" id="rc-cards"></ul>
+        <p class="rc-prompt" data-i18n="rcPrompt">Notice what feels different today.</p>
+        <button type="button" class="cta-btn ghost" id="rc-cta" data-i18n="rcCta">Pull today's reflection</button>
+      </aside>
+
       <div class="eyebrow" data-i18n="eyebrow">A Quiet Reading · 3 Cards</div>
       <h1 data-i18n-html="introH1">Three cards for the <em>space between</em> you.</h1>
       <div class="divider-ornament"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
@@ -869,6 +1026,10 @@ html[lang="th"] footer {
         <div class="readout-list" id="readout-list"></div>
 
         <aside class="share-block">
+          <div class="reflection-saved" id="reflection-saved" hidden>
+            <span class="rs-mark" aria-hidden="true">✓</span>
+            <span class="rs-text" data-i18n="reflectionSaved">Reflection saved to this device. Return tomorrow to notice what shifts.</span>
+          </div>
           <p class="share-lede" data-i18n="shareLede">Keep this reading as an image — three cards, for a quieter moment.</p>
           <button type="button" class="cta-btn ghost" id="share-btn" data-i18n="shareBtn">Save this reading</button>
         </aside>
@@ -925,6 +1086,15 @@ const T = {
     readoutLede: 'Read each card in turn — what they bring, what you bring, what sits in the space between. These are reflections, not predictions.',
     shareLede: 'Keep this reading as an image — three cards, for a quieter moment.',
     shareBtn: 'Save this reading',
+    reflectionSaved: 'Reflection saved to this device. Return tomorrow to notice what shifts.',
+    rcLabel: 'Last time you asked…',
+    rcPrompt: 'Notice what feels different today.',
+    rcCta: "Pull today's reflection",
+    rcNoQuestion: 'A quiet reading',
+    rcReversedSuffix: ' · Reversed',
+    posThem: 'Their Energy',
+    posYou: 'Your Energy',
+    posBetween: 'Between You',
     restartBtn: 'Draw again',
     ccBtn: 'Try Celtic Cross',
     reversed: 'Reversed',
@@ -972,6 +1142,15 @@ const T = {
     readoutLede: 'อ่านไพ่ทีละใบ — สิ่งที่อีกฝ่ายนำมา สิ่งที่คุณนำมา และสิ่งที่อยู่ในพื้นที่ระหว่างกัน นี่คือการสะท้อน ไม่ใช่การพยากรณ์',
     shareLede: 'บันทึกบทอ่านนี้เป็นภาพ — ไพ่สามใบ ไว้ใคร่ครวญในวันอื่น',
     shareBtn: 'บันทึกบทอ่านนี้',
+    reflectionSaved: 'บันทึกบทใคร่ครวญแล้วในเครื่องนี้ กลับมาวันพรุ่งนี้เพื่อสังเกตว่าอะไรเปลี่ยนไป',
+    rcLabel: 'ครั้งก่อนคุณถามว่า…',
+    rcPrompt: 'ลองสังเกตว่าวันนี้ความรู้สึกเปลี่ยนไปอย่างไร',
+    rcCta: 'เปิดบทใคร่ครวญของวันนี้',
+    rcNoQuestion: 'บทอ่านอันเงียบสงบ',
+    rcReversedSuffix: ' · กลับหัว',
+    posThem: 'พลังของเขา',
+    posYou: 'พลังของคุณ',
+    posBetween: 'สิ่งที่อยู่ระหว่างกัน',
     restartBtn: 'จั่วใหม่',
     ccBtn: 'ลองเซลติกครอส',
     reversed: 'กลับหัว',
@@ -1018,6 +1197,90 @@ const POSITIONS = [
     long:  { en: 'The space between — the present shape of what exists between you both.',
              th: 'พื้นที่ตรงกลาง — รูปร่างปัจจุบันของสิ่งที่อยู่ระหว่างคุณทั้งสอง' } }
 ];
+
+/* ========================================================================
+   DAILY REFLECTION LOOP — local-only history (no backend, no accounts)
+   ========================================================================
+   localStorage key: veila-love-history
+   Schema: Array (most-recent first), capped at 7 entries.
+   Each entry:
+     {
+       date:           "YYYY-MM-DD" (local date),
+       ts:             Number (Date.now() at save),
+       question_key:   String or '' (preset key, '' if skipped),
+       question_text:  String or '' (text in lang at save time),
+       lang:           "en" | "th",
+       cards: [
+         { id, name_en, name_th, roman, reversed: Boolean, position_key }
+       ]
+     }
+   "Return panel" trigger: hist[0] exists AND hist[0].date != today (local).
+   Trims silently on any save; safe to call from any browser context.
+   ========================================================================
+   */
+const HISTORY_KEY = 'veila-love-history';
+const HISTORY_MAX = 7;
+
+function localDateStr(d) {
+  d = d || new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + day;
+}
+
+function loadHistory() {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    if (!raw) return [];
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? arr : [];
+  } catch (e) { return []; }
+}
+
+function saveHistory(hist) {
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(hist.slice(0, HISTORY_MAX)));
+  } catch (e) { /* quota / private mode — silent */ }
+}
+
+function saveReadingToHistory() {
+  if (!drawn.length || drawn.length !== 3) return null;
+  const entry = {
+    date: localDateStr(),
+    ts: Date.now(),
+    question_key: selectedQuestionKey || '',
+    question_text: selectedQuestionKey ? getPresetText(selectedQuestionKey, lang) : '',
+    lang: lang,
+    cards: drawn.map(d => ({
+      id: d.card.id,
+      name_en: d.card.name.en,
+      name_th: d.card.name.th,
+      roman: d.card.roman,
+      reversed: !!d.reversed,
+      position_key: d.position.key
+    }))
+  };
+  const hist = loadHistory();
+  hist.unshift(entry);
+  saveHistory(hist);
+  return entry;
+}
+
+function returnEntryIfAny() {
+  const hist = loadHistory();
+  if (!hist.length) return null;
+  const latest = hist[0];
+  if (latest.date === localDateStr()) return null; // same local day
+  return latest;
+}
+
+function daysSince(dateStr) {
+  if (!dateStr) return 0;
+  const then = new Date(dateStr + 'T00:00:00').getTime();
+  const now = new Date(localDateStr() + 'T00:00:00').getTime();
+  return Math.max(0, Math.round((now - then) / 86400000));
+}
 
 /* ========================================================================
    PRESET QUESTIONS — 6 reflective love questions, EN/TH.
@@ -1217,6 +1480,23 @@ function onAllFlipped() {
     setTimeout(() => {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 250);
+
+    // Persist this reading locally and show the quiet "Reflection saved"
+    // confirmation inside the share-block. No backend, no notifications.
+    const saved = saveReadingToHistory();
+    if (saved) {
+      const badge = document.getElementById('reflection-saved');
+      if (badge) badge.hidden = false;
+      if (window.veilaFire) {
+        window.veilaFire('reflection_saved', {
+          lang: lang,
+          question_key: saved.question_key || '',
+          reversed_count: saved.cards.filter(c => c.reversed).length,
+          history_size: loadHistory().length
+        });
+      }
+    }
+
     if (window.veilaFire) {
       window.veilaFire('love_reading_completed', {
         lang: lang,
@@ -1328,6 +1608,8 @@ function startReading() {
   document.getElementById('hint-bar').classList.remove('is-hidden');
   document.getElementById('pre-readout-actions').classList.remove('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
+  const __rs = document.getElementById('reflection-saved');
+  if (__rs) __rs.hidden = true;
   syncUserQuestion();
   renderSpread();
   updateFlipUI();
@@ -1362,6 +1644,9 @@ function restart() {
   document.getElementById('reading').classList.add('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
   document.getElementById('intro').classList.remove('is-hidden');
+  // Re-evaluate the return panel: if the user just completed today, the
+  // panel hides; otherwise it stays visible.
+  renderReturnPanel();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1391,6 +1676,7 @@ function applyLang() {
     : 'Quick Love Reading — A 3-Card Tarot Reflection | Veila';
   // re-render visible dynamic content with new language
   syncUserQuestion();
+  renderReturnPanel();
   if (!document.getElementById('reading').classList.contains('is-hidden') && drawn.length === 3) {
     renderSpread();
     if (!document.getElementById('readout-section').classList.contains('is-hidden')) {
@@ -1414,6 +1700,88 @@ function setLang(next) {
 document.querySelectorAll('.lang-toggle button').forEach((b) => {
   b.addEventListener('click', () => setLang(b.dataset.lang));
 });
+
+/* ========================================================================
+   RETURN PANEL — renders only if a prior reading exists from a past
+   local date. Refreshed on every applyLang() so labels follow the
+   current language even if the original reading was logged in the other.
+   ======================================================================== */
+const POSITION_LABEL_KEY = { them: 'posThem', you: 'posYou', between: 'posBetween' };
+
+function renderReturnPanel() {
+  const panel = document.getElementById('return-card');
+  if (!panel) return;
+  const entry = returnEntryIfAny();
+  if (!entry) { panel.classList.add('is-hidden'); return; }
+
+  // Question line: previous question (in saved lang's text) OR a quiet
+  // fallback when the user skipped the chip last time.
+  const qEl = document.getElementById('rc-question');
+  if (qEl) {
+    if (entry.question_text) {
+      qEl.textContent = '"' + entry.question_text + '"';
+      qEl.style.color = '';
+    } else {
+      qEl.textContent = T[lang].rcNoQuestion;
+      qEl.style.color = 'var(--ivory-mute)';
+    }
+  }
+
+  // 3-card list — position label + roman + name in current lang
+  const list = document.getElementById('rc-cards');
+  if (list) {
+    list.innerHTML = '';
+    entry.cards.forEach((c) => {
+      const li = document.createElement('li');
+      const posLabel = T[lang][POSITION_LABEL_KEY[c.position_key]] || '';
+      const cardName = (lang === 'th' ? c.name_th : c.name_en) || c.name_en || '';
+      const revSuffix = c.reversed
+        ? '<span class="rc-rev">' + T[lang].rcReversedSuffix.replace(/^\s·\s/, '· ') + '</span>'
+        : '';
+      li.innerHTML =
+        '<span class="rc-pos">' + posLabel + '</span>' +
+        '<span class="rc-card-name"><span class="rc-roman">' + (c.roman || '') + '</span>' +
+        cardName + revSuffix + '</span>';
+      list.appendChild(li);
+    });
+  }
+
+  // Show the panel — but only fire reflection_return_viewed once per
+  // page load (analytics throttle via the dataset flag).
+  if (panel.classList.contains('is-hidden')) {
+    panel.classList.remove('is-hidden');
+  }
+  if (!panel.dataset.fired && window.veilaFire) {
+    panel.dataset.fired = '1';
+    window.veilaFire('reflection_return_viewed', {
+      lang: lang,
+      previous_date: entry.date,
+      previous_question_key: entry.question_key || '',
+      days_since: daysSince(entry.date),
+      history_size: loadHistory().length
+    });
+  }
+}
+
+const rcCta = document.getElementById('rc-cta');
+if (rcCta) {
+  rcCta.addEventListener('click', () => {
+    const entry = returnEntryIfAny();
+    if (entry && entry.question_key) {
+      selectedQuestionKey = entry.question_key;
+      syncChipSelection();
+    }
+    if (window.veilaFire) {
+      window.veilaFire('reflection_repeat_started', {
+        lang: lang,
+        previous_question_key: entry ? (entry.question_key || '') : '',
+        previous_date: entry ? entry.date : '',
+        days_since: entry ? daysSince(entry.date) : 0
+      });
+    }
+    startReading();
+  });
+}
 
 /* ========================================================================
    QUESTION CHIPS — tap one to select, tap same chip again to deselect.
@@ -1468,6 +1836,7 @@ function loadDeck() {
 
 applyLang();
 loadDeck();
+renderReturnPanel();
 
 document.getElementById('start-btn').addEventListener('click', startReading);
 document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
