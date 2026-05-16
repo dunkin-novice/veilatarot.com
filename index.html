@@ -1061,6 +1061,34 @@ html[lang="th"] footer {
 }
 .cta-btn[disabled]:hover { background: transparent; }
 
+/* ====== CTA PAIR (landing: Celtic Cross + Quick Love Reading) ====== */
+.cta-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.cta-pair .cta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.cta-pair .cta-sub {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+html[lang="th"] .cta-pair .cta-sub {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 12px;
+  color: var(--ivory-mute);
+}
+
 @media (max-width: 720px) {
   /* Tighter selection: smaller cards so 8 fit per row cleanly,
      scatter not absurdly tall, header trimmer. */
@@ -1314,7 +1342,16 @@ html[lang="th"] footer {
       <p class="lede" data-i18n="lede">
         Hold a question in mind — clear, honest, unrushed. When you are ready, draw your Celtic Cross. The cards are tools; the meaning is yours.
       </p>
-      <button class="cta-btn" id="begin-btn" data-i18n="beginBtn">Draw Your Cards</button>
+      <div class="cta-pair">
+        <div class="cta-item">
+          <button class="cta-btn" id="begin-btn" data-i18n="beginBtn">Draw Your Cards</button>
+          <div class="cta-sub" data-i18n="beginSub">Celtic Cross · 10 cards · deep reflection</div>
+        </div>
+        <div class="cta-item">
+          <a class="cta-btn ghost" href="/quick-love-reading/" id="quick-love-link" data-i18n="quickLoveBtn">Quick Love Reading</a>
+          <div class="cta-sub" data-i18n="quickLoveSub">3 cards · for a question of the heart</div>
+        </div>
+      </div>
       <div class="landing-meta">
         <span><span data-i18n="metaSpreadLabel">The Spread</span><strong data-i18n="metaSpreadVal">Celtic Cross</strong></span>
         <span><span data-i18n="metaDeckLabel">The Deck</span><strong data-i18n="metaDeckVal">Rider–Waite, 78</strong></span>
@@ -1422,6 +1459,9 @@ const T = {
     landingH1: 'Ten cards.<br>A <em>chapter</em> of a life.',
     lede: 'Hold a question in mind — clear, honest, unrushed. When you are ready, draw your Celtic Cross. The cards are tools; the meaning is yours.',
     beginBtn: 'Draw Your Cards',
+    beginSub: 'Celtic Cross · 10 cards · deep reflection',
+    quickLoveBtn: 'Quick Love Reading',
+    quickLoveSub: '3 cards · for a question of the heart',
     metaSpreadLabel: 'The Spread',
     metaSpreadVal: 'Celtic Cross',
     metaDeckLabel: 'The Deck',
@@ -1481,6 +1521,9 @@ const T = {
     landingH1: 'ไพ่สิบใบ<br><em>บทหนึ่ง</em>ของชีวิต',
     lede: 'ตั้งคำถามไว้ในใจ — ชัดเจน ซื่อตรง ไม่เร่งรีบ เมื่อพร้อม จงเปิดไพ่เซลติกครอสของคุณ ไพ่คือเครื่องมือ ความหมายเป็นของคุณ',
     beginBtn: 'เปิดไพ่ของคุณ',
+    beginSub: 'เซลติกครอส · 10 ใบ · สำหรับใคร่ครวญลึก',
+    quickLoveBtn: 'บทอ่านไพ่ความรัก',
+    quickLoveSub: 'ไพ่ 3 ใบ · สำหรับคำถามของหัวใจ',
     metaSpreadLabel: 'ผังการอ่าน',
     metaSpreadVal: 'Celtic Cross',
     metaDeckLabel: 'สำรับไพ่',

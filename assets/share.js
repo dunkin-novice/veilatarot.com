@@ -724,5 +724,145 @@
     return sheet;
   }
 
-  window.veilaShare = { shareCard, shareReading };
+  // ============================================================
+  // Love-reading image — 1080 × 1920 (Instagram Story)
+  // Three positions: Their energy / Your energy / Between you.
+  // Lighter, more breathable layout than the 5-block Celtic Cross.
+  // ============================================================
+  async function renderLoveReadingCanvas(opts) {
+    const W = 1080, H = 1920;
+    const isThai = opts.lang === 'th';
+    await fontsReady();
+
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'center';
+
+    paintBackground(ctx, W, H, 1100);
+
+    // Eyebrow
+    ctx.fillStyle = '#b89968';
+    ctx.font = '500 22px "Inter", "IBM Plex Sans Thai", sans-serif';
+    drawTracked(ctx, (opts.eyebrow || '').toUpperCase(), W / 2, 200, 22, 7);
+
+    // Title
+    ctx.fillStyle = '#ebe4d4';
+    ctx.font = isThai
+      ? '300 78px "IBM Plex Sans Thai", serif'
+      : '300 96px "Cormorant Garamond", serif';
+    ctx.fillText(opts.title, W / 2, 320);
+
+    // Subtitle — three positions in one line. Thai is drawn directly
+    // (no canvas letter-spacing — the "อุปสรรค" stretched-glyph problem).
+    ctx.fillStyle = '#b9b3a4';
+    if (isThai) {
+      ctx.font = 'italic 300 30px "IBM Plex Sans Thai", serif';
+      ctx.fillText(opts.subtitle || '', W / 2, 388);
+    } else {
+      ctx.font = 'italic 300 34px "Cormorant Garamond", serif';
+      ctx.fillText(opts.subtitle || '', W / 2, 388);
+    }
+
+    // Divider
+    drawDivider(ctx, W / 2, 470, 240, 9);
+
+    // Three position blocks. 5-block Celtic spends ~232/block; we have
+    // only 3 blocks to fill, so each gets ~360px and the snippets get
+    // more visual air.
+    const startY = 620;
+    const blockH = 360;
+    const leftX = 96;
+    const numWidth = 96;
+
+    opts.positions.forEach((pos, i) => {
+      const y = startY + i * blockH;
+
+      // Position numeral
+      ctx.fillStyle = '#b89968';
+      ctx.font = 'italic 400 48px "Cormorant Garamond", "IBM Plex Sans Thai", serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(pos.roman + '.', leftX + numWidth / 2, y);
+
+      // Position label (above card name)
+      ctx.fillStyle = '#b89968';
+      ctx.font = isThai
+        ? '500 22px "IBM Plex Sans Thai", sans-serif'
+        : '600 20px "Inter", sans-serif';
+      const labelX = leftX + numWidth + 12;
+      if (isThai) {
+        ctx.textAlign = 'left';
+        ctx.fillText(pos.label || '', labelX, y - 48);
+      } else {
+        const labelText = (pos.label || '').toUpperCase();
+        const labelWidth = ctx.measureText(labelText).width
+                         + Math.max(0, labelText.length - 1) * 4;
+        ctx.textAlign = 'center';
+        drawTracked(ctx, labelText, labelX + labelWidth / 2, y - 48, 20, 4);
+      }
+
+      // Card name
+      ctx.fillStyle = '#ebe4d4';
+      ctx.textAlign = 'left';
+      ctx.font = isThai
+        ? '500 44px "IBM Plex Sans Thai", serif'
+        : '500 50px "Cormorant Garamond", serif';
+      const cardLine = pos.cardName + (pos.reversed
+        ? (isThai ? ' · กลับหัว' : ' · Reversed')
+        : '');
+      ctx.fillText(cardLine, labelX, y);
+
+      // Snippet — up to 4 lines, lifted ivory
+      ctx.fillStyle = '#d3ccba';
+      ctx.font = isThai
+        ? '400 30px "IBM Plex Sans Thai", serif'
+        : '400 32px "Cormorant Garamond", serif';
+      const snipX = labelX;
+      const snipMaxW = W - snipX - 80;
+      drawWrappedLeft(ctx, pos.snippet || '', snipX, y + 56, snipMaxW, 42, 4);
+    });
+
+    // Fineprint
+    ctx.fillStyle = '#b9b3a4';
+    ctx.font = isThai
+      ? 'italic 300 30px "IBM Plex Sans Thai", serif'
+      : 'italic 300 32px "Cormorant Garamond", serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(opts.fineprint || '', W / 2, H - 230);
+
+    // Brand wordmark
+    ctx.fillStyle = '#ebe4d4';
+    ctx.font = '400 32px "Cormorant Garamond", "IBM Plex Sans Thai", serif';
+    drawTracked(ctx, 'VEILA', W / 2, H - 150, 32, 20);
+
+    ctx.fillStyle = '#b89968';
+    ctx.beginPath();
+    ctx.arc(W / 2, H - 124, 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = '#6c6a63';
+    ctx.font = '400 18px "Inter", "IBM Plex Sans Thai", sans-serif';
+    drawTracked(ctx, 'VEILATAROT.COM', W / 2, H - 80, 18, 5);
+
+    return canvas;
+  }
+
+  async function shareLoveReading(opts) {
+    const sheet = openSheet(opts);
+    try {
+      const canvas = await renderLoveReadingCanvas(opts);
+      const blob = await canvasToBlob(canvas);
+      sheet.setBlob(blob);
+    } catch (err) {
+      console.error('share love reading render failed', err);
+      sheet.close();
+    }
+    return sheet;
+  }
+
+  window.veilaShare = { shareCard, shareReading, shareLoveReading };
 })();
