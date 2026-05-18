@@ -989,6 +989,7 @@ html[lang="th"] .sel-counter .sel-next {
   padding: 36px 24px 0;
   flex-wrap: wrap;
 }
+.actions-row.try-another-row { padding-top: 18px; }
 
 /* ====== FOOTER ====== */
 footer {
@@ -1377,6 +1378,10 @@ html[lang="th"] footer {
           <p class="share-lede" data-i18n="shareLede">Keep this reading as an image — three cards, for a quieter moment.</p>
           <button type="button" class="cta-btn ghost" id="share-btn" data-i18n="shareBtn">Save this reading</button>
         </aside>
+
+        <div class="actions-row try-another-row">
+          <button type="button" class="cta-btn ghost" id="try-another-btn" data-i18n="tryAnotherBtn">Try another spread</button>
+        </div>
       </section>
 
       <div class="actions-row" id="reset-row">
@@ -1457,6 +1462,7 @@ const T = {
     posBetween: 'Between You',
     restartBtn: 'Draw again',
     ccBtn: 'Try Celtic Cross',
+    tryAnotherBtn: 'Try another spread',
     reversed: 'Reversed',
     upright: 'Upright',
     footerLastUpdated: 'Last updated · 16 May 2026',
@@ -1529,6 +1535,7 @@ const T = {
     posBetween: 'สิ่งที่อยู่ระหว่างกัน',
     restartBtn: 'จั่วใหม่',
     ccBtn: 'ลองเซลติกครอส',
+    tryAnotherBtn: 'ลองรูปแบบอื่น',
     reversed: 'กลับหัว',
     upright: 'ตั้งตรง',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 16 พฤษภาคม 2026',
@@ -2628,6 +2635,24 @@ renderReturnPanel();
 document.getElementById('start-btn').addEventListener('click', enterSelection);
 document.getElementById('share-btn').addEventListener('click', shareLoveReading);
 document.getElementById('restart-btn').addEventListener('click', restart);
+
+// Try another spread — return to the selection screen while preserving the
+// currently selected question chip. Does NOT touch veila-love-history, the
+// return panel, or selectedMode (user can re-pick a different mode there).
+document.getElementById('try-another-btn').addEventListener('click', () => {
+  const previousMode = selectedMode;
+  if (window.veilaFire) {
+    window.veilaFire('love_try_another_spread_clicked', {
+      lang: lang,
+      question_key: selectedQuestionKey || '',
+      previous_spread_mode: previousMode
+    });
+  }
+  // enterSelection() resets selectedPicks/drawn/flippedCount, hides reading +
+  // intro, shows selection, re-renders scatter + mode chips, and fires
+  // love_card_selection_started — exactly the desired second-reading entry.
+  enterSelection();
+});
 
 // Manual-selection screen controls
 document.getElementById('sel-restart-btn').addEventListener('click', () => {
