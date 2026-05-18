@@ -991,6 +991,48 @@ html[lang="th"] .sel-counter .sel-next {
 }
 .actions-row.try-another-row { padding-top: 18px; }
 
+/* ====== EXPLORE CLUSTER (intro footer) ====== */
+.love-cluster {
+  border-top: 1px solid var(--rule);
+  margin: 56px auto 0;
+  padding-top: 36px;
+  max-width: 520px;
+  text-align: left;
+}
+.love-cluster .lc-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin: 0 0 22px;
+  text-align: center;
+}
+.love-cluster .lc-group { margin-top: 22px; }
+.love-cluster .lc-group h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--ivory);
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+.love-cluster ul { list-style: none; padding: 0; margin: 0; }
+.love-cluster li { margin: 6px 0; font-family: var(--serif); font-size: 16px; line-height: 1.5; }
+.love-cluster a {
+  color: var(--ivory-dim);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--rule);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.love-cluster a:hover { color: var(--ivory); border-bottom-color: var(--gold); }
+html[lang="th"] .love-cluster .lc-label { letter-spacing: 0; text-transform: none; }
+@media (max-width: 720px) {
+  .love-cluster { margin-top: 44px; padding-top: 28px; }
+  .love-cluster .lc-group h3 { font-size: 17px; }
+  .love-cluster li { font-size: 15.5px; }
+}
+
 /* ====== FOOTER ====== */
 footer {
   border-top: 1px solid var(--rule);
@@ -1307,6 +1349,27 @@ html[lang="th"] footer {
 
       <button class="cta-btn" id="start-btn" data-i18n="startBtn">Choose 3 cards</button>
       <p class="pos-trail" data-i18n-html="posTrail">Your energy <span>·</span> Their energy <span>·</span> Between you</p>
+
+      <aside class="love-cluster" aria-labelledby="lc-label">
+        <h2 class="lc-label" id="lc-label" data-i18n="lcLabel">Explore more love readings</h2>
+        <div class="lc-group">
+          <h3 data-i18n="lcSpreadsH3">Spreads to try</h3>
+          <ul>
+            <li><a href="/quick-love-reading/emotional-arc/" data-i18n="lcSpreadArc">Emotional Arc — what shaped this, what is unfolding, what is changing</a></li>
+            <li><a href="/quick-love-reading/clarity/" data-i18n="lcSpreadClarity">Clarity — what you know, what you avoid, what needs honesty</a></li>
+            <li><a href="/quick-love-reading/reconnection/" data-i18n="lcSpreadRecon">Reconnection — what still exists, what creates distance, what invites reconnection</a></li>
+          </ul>
+        </div>
+        <div class="lc-group">
+          <h3 data-i18n="lcQuestionsH3">Questions to sit with</h3>
+          <ul>
+            <li><a href="/love-readings/does-he-miss-me/" data-i18n="lcQ1">Does he miss me?</a></li>
+            <li><a href="/love-readings/why-did-they-pull-away/" data-i18n="lcQ2">Why did they pull away?</a></li>
+            <li><a href="/love-readings/should-i-reach-out/" data-i18n="lcQ3">Should I reach out?</a></li>
+            <li><a href="/love-readings/what-changed-between-us/" data-i18n="lcQ4">What changed between us?</a></li>
+          </ul>
+        </div>
+      </aside>
     </section>
 
     <!-- ====== MANUAL CARD SELECTION ====== -->
@@ -1418,6 +1481,16 @@ const T = {
     lede: "For when a question of the heart needs more than a moment but less than an hour. Take a breath. Hold the question. The cards reflect — they don't predict.",
     startBtn: 'Choose 3 cards',
     posTrail: 'Your energy <span>·</span> Their energy <span>·</span> Between you',
+    lcLabel: 'Explore more love readings',
+    lcSpreadsH3: 'Spreads to try',
+    lcSpreadArc: 'Emotional Arc — what shaped this, what is unfolding, what is changing',
+    lcSpreadClarity: 'Clarity — what you know, what you avoid, what needs honesty',
+    lcSpreadRecon: 'Reconnection — what still exists, what creates distance, what invites reconnection',
+    lcQuestionsH3: 'Questions to sit with',
+    lcQ1: 'Does he miss me?',
+    lcQ2: 'Why did they pull away?',
+    lcQ3: 'Should I reach out?',
+    lcQ4: 'What changed between us?',
     selStep: 'Choose 3 Cards',
     selSub: 'Hold the question in mind. Tap three cards in the order they call to you.',
     selCountSuffix: 'of 3 chosen',
@@ -1491,6 +1564,16 @@ const T = {
     lede: 'สำหรับคำถามของหัวใจที่ต้องการมากกว่าหนึ่งช่วงเวลา แต่ไม่ใช่ทั้งชั่วโมง สูดหายใจ ตั้งคำถามไว้ในใจ ไพ่สะท้อน — ไม่ใช่พยากรณ์',
     startBtn: 'เลือกไพ่ 3 ใบ',
     posTrail: 'พลังของคุณ <span>·</span> พลังของเขา <span>·</span> สิ่งที่อยู่ระหว่างกัน',
+    lcLabel: 'บทอ่านความรักอื่นๆ',
+    lcSpreadsH3: 'บทอ่านที่น่าลอง',
+    lcSpreadArc: 'ห้วงอารมณ์ — สิ่งที่ก่อตัวขึ้น สิ่งที่กำลังเกิด สิ่งที่กำลังเปลี่ยน',
+    lcSpreadClarity: 'ความชัดเจน — สิ่งที่คุณรู้ สิ่งที่คุณหลีกเลี่ยง สิ่งที่ต้องการความซื่อตรง',
+    lcSpreadRecon: 'เชื่อมโยงใหม่ — สิ่งที่ยังคงอยู่ สิ่งที่สร้างระยะ สิ่งที่เชื้อเชิญให้กลับมา',
+    lcQuestionsH3: 'คำถามที่ชวนใคร่ครวญ',
+    lcQ1: 'เขาคิดถึงเราไหม',
+    lcQ2: 'ทำไมเขาถึงห่างไป',
+    lcQ3: 'ควรทักไปไหม',
+    lcQ4: 'อะไรเปลี่ยนไประหว่างเรา',
     selStep: 'เลือกไพ่ 3 ใบ',
     selSub: 'ตั้งคำถามไว้ในใจ แตะไพ่สามใบตามลำดับที่ไพ่เรียกหาคุณ',
     selCountSuffix: 'จาก 3 ใบ',
