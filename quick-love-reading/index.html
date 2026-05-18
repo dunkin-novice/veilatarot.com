@@ -2628,6 +2628,25 @@ function loadDeck() {
     });
 }
 
+// ?mode=<key> preselect — landing pages link in with a chosen spread.
+// Strip the param so a refresh inside the app keeps user state, not the
+// inbound URL.
+(function preselectModeFromQuery() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const inbound = params.get('mode');
+    if (inbound && SPREAD_MODES[inbound]) {
+      selectedMode = inbound;
+    }
+    if (params.has('mode')) {
+      params.delete('mode');
+      const q = params.toString();
+      const newUrl = window.location.pathname + (q ? '?' + q : '') + window.location.hash;
+      window.history.replaceState(null, '', newUrl);
+    }
+  } catch (e) { /* no-op */ }
+})();
+
 applyLang();
 loadDeck();
 renderReturnPanel();
