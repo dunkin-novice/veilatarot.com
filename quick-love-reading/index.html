@@ -631,6 +631,57 @@ html[lang="th"] .user-question {
   50%      { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(184,153,104,0.08); }
 }
 
+/* ====== SPREAD MODE PICKER (selection screen) ====== */
+.mode-picker {
+  margin: 14px auto 0;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.mp-label {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+.mp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.mp-chip {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--ivory-dim);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.mp-chip:hover { border-color: var(--gold-dim); color: var(--ivory); }
+.mp-chip:focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; }
+.mp-chip.selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+  font-weight: 500;
+}
+html[lang="th"] .mp-label {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 11px;
+}
+html[lang="th"] .mp-chip { font-family: "IBM Plex Sans Thai", var(--sans); font-size: 12.5px; }
+
 /* ====== MANUAL SELECTION (78-card scatter) ====== */
 .sel-counter {
   margin-top: 14px;
@@ -1056,6 +1107,14 @@ html[lang="th"] footer {
 
   .reflection-saved { font-size: 13.5px; padding: 7px 12px; }
 
+  /* Mode picker — slightly tighter, still fits 4 chips on iPhone SE */
+  .mode-picker { margin-top: 10px; gap: 6px; }
+  .mp-label { font-size: 9px; letter-spacing: 0.28em; }
+  html[lang="th"] .mp-label { font-size: 10.5px; }
+  .mp-chips { gap: 5px; }
+  .mp-chip { font-size: 10.5px; padding: 5px 11px; }
+  html[lang="th"] .mp-chip { font-size: 11.5px; padding: 5px 11px; }
+
   /* Manual selection scatter — denser, sticky action bar */
   .sel-counter { gap: 8px; margin-top: 10px; }
   .sel-counter .sel-count-num { font-size: 15px; }
@@ -1255,6 +1314,14 @@ html[lang="th"] footer {
         <div class="step" data-i18n="selStep">Choose 3 Cards</div>
         <p class="user-question" id="sel-user-question" hidden></p>
         <p class="question-line" data-i18n="selSub">Hold the question in mind. Tap three cards in the order they call to you.</p>
+
+        <section class="mode-picker" aria-labelledby="mp-label">
+          <div class="mp-label" id="mp-label" data-i18n="spreadLabel">Spread</div>
+          <div class="mp-chips" id="mode-chips" role="group" aria-label="Spread mode">
+            <!-- chips injected by JS so labels follow SPREAD_MODES + lang -->
+          </div>
+        </section>
+
         <div class="sel-counter" aria-live="polite">
           <span class="sel-count-num"><span id="sel-count">0</span> <span data-i18n="selCountSuffix">of 3 chosen</span></span>
           <span class="sel-next" id="sel-next-label" data-i18n="selNextYou">Next: Your energy</span>
@@ -1350,12 +1417,18 @@ const T = {
     selSub: 'Hold the question in mind. Tap three cards in the order they call to you.',
     selCountSuffix: 'of 3 chosen',
     selCountMiniLbl: 'chosen',
+    selNextPrefix: 'Next: ',
     selNextYou: 'Next: Your energy',
     selNextThem: 'Next: Their energy',
     selNextBetween: 'Next: Between you',
     selReady: 'Ready to reveal',
     selRestartBtn: 'Start over',
     selRevealBtn: 'Reveal my love reading',
+    spreadLabel: 'Spread',
+    mode_connection: 'Connection',
+    mode_emotionalArc: 'Emotional Arc',
+    mode_clarity: 'Clarity',
+    mode_reconnection: 'Reconnection',
     qpLabel: 'Choose a question (optional)',
     qpTheirEnergy: 'What is their energy toward me?',
     qpHonest: 'Is this connection honest?',
@@ -1416,12 +1489,18 @@ const T = {
     selSub: 'ตั้งคำถามไว้ในใจ แตะไพ่สามใบตามลำดับที่ไพ่เรียกหาคุณ',
     selCountSuffix: 'จาก 3 ใบ',
     selCountMiniLbl: 'เลือกแล้ว',
+    selNextPrefix: 'ต่อไป: ',
     selNextYou: 'ต่อไป: พลังของคุณ',
     selNextThem: 'ต่อไป: พลังของเขา',
     selNextBetween: 'ต่อไป: สิ่งที่อยู่ระหว่างกัน',
     selReady: 'พร้อมเปิดไพ่',
     selRestartBtn: 'เริ่มใหม่',
     selRevealBtn: 'เปิดบทอ่านของฉัน',
+    spreadLabel: 'รูปแบบบทอ่าน',
+    mode_connection: 'เชื่อมโยง',
+    mode_emotionalArc: 'ห้วงอารมณ์',
+    mode_clarity: 'ความชัดเจน',
+    mode_reconnection: 'เชื่อมโยงใหม่',
     qpLabel: 'เลือกคำถาม (ไม่จำเป็น)',
     qpTheirEnergy: 'เขาคิดยังไงกับเรา',
     qpHonest: 'คนคุยจริงใจไหม',
@@ -1473,31 +1552,108 @@ const T = {
 };
 
 /* ========================================================================
-   POSITIONS — 3-card love spread.
-   Order = pick order: pick #1 → "you", pick #2 → "them", pick #3 → "between".
-   Each position maps to an existing cards.json celtic_cross key so we
-   reuse the existing position-aware interpretation text. Semantic mapping:
-     you     → self        (your stance / what you bring)
-     them    → environment (the external influence / what they bring)
-     between → present     (the heart of the matter / the space between)
-   Saved Daily Reflection entries store position_key, so older entries
-   continue to resolve their labels via T[lang].posThem/posYou/posBetween
-   independent of this array's order.
+   SPREAD MODES — 4 alternate 3-card structures.
+   Each position carries a `cc` key into cards.json's celtic_cross.* slot
+   so we reuse existing position-aware interpretation text without
+   touching card data. Pick order maps 1:1 to position order within the
+   chosen mode.
+
+   Saved Daily Reflection entries store `position_key`, so even older
+   entries (pre-mode) resolve their labels correctly by looking up the
+   entry's spread_mode (defaulting to 'connection') and matching by key.
    ======================================================================== */
-const POSITIONS = [
-  { n: 1, key: 'you', cc: 'self',
-    short: { en: 'Your Energy',      th: 'พลังของคุณ' },
-    long:  { en: 'What you bring — your stance, what you carry into this dynamic.',
-             th: 'สิ่งที่คุณนำเข้ามา — ท่าทีของคุณ สิ่งที่คุณถือไว้' } },
-  { n: 2, key: 'them', cc: 'environment',
-    short: { en: 'Their Energy',     th: 'พลังของเขา' },
-    long:  { en: 'What they bring to this — their energy, attention, intent in the moment.',
-             th: 'สิ่งที่อีกฝ่ายนำมา — พลัง ความสนใจ ความตั้งใจในช่วงนี้' } },
-  { n: 3, key: 'between', cc: 'present',
-    short: { en: 'Between You',      th: 'สิ่งที่อยู่ระหว่างกัน' },
-    long:  { en: 'The space between — the present shape of what exists between you both.',
-             th: 'พื้นที่ตรงกลาง — รูปร่างปัจจุบันของสิ่งที่อยู่ระหว่างคุณทั้งสอง' } }
-];
+const SPREAD_MODES = {
+  connection: {
+    label: { en: 'Connection', th: 'เชื่อมโยง' },
+    blurb: { en: 'You, them, the space between.',
+             th: 'คุณ เขา และพื้นที่ระหว่างกัน' },
+    positions: [
+      { n: 1, key: 'you', cc: 'self',
+        short: { en: 'Your Energy', th: 'พลังของคุณ' },
+        long:  { en: 'What you bring — your stance, what you carry into this dynamic.',
+                 th: 'สิ่งที่คุณนำเข้ามา — ท่าทีของคุณ สิ่งที่คุณถือไว้' } },
+      { n: 2, key: 'them', cc: 'environment',
+        short: { en: 'Their Energy', th: 'พลังของเขา' },
+        long:  { en: 'What they bring to this — their energy, attention, intent in the moment.',
+                 th: 'สิ่งที่อีกฝ่ายนำมา — พลัง ความสนใจ ความตั้งใจในช่วงนี้' } },
+      { n: 3, key: 'between', cc: 'present',
+        short: { en: 'Between You', th: 'สิ่งที่อยู่ระหว่างกัน' },
+        long:  { en: 'The space between — the present shape of what exists between you both.',
+                 th: 'พื้นที่ตรงกลาง — รูปร่างปัจจุบันของสิ่งที่อยู่ระหว่างคุณทั้งสอง' } }
+    ]
+  },
+
+  'emotional-arc': {
+    label: { en: 'Emotional Arc', th: 'ห้วงอารมณ์' },
+    blurb: { en: 'What shaped this, what is unfolding, what is changing.',
+             th: 'สิ่งที่ก่อตัวขึ้น สิ่งที่กำลังเกิด สิ่งที่กำลังเปลี่ยน' },
+    positions: [
+      { n: 1, key: 'shaped', cc: 'past',
+        short: { en: 'What Shaped This', th: 'สิ่งที่ก่อตัวขึ้น' },
+        long:  { en: 'What shaped this — the threads from before that still pulse in the present.',
+                 th: 'สิ่งที่ก่อตัวขึ้น — สายใยจากก่อนหน้านี้ที่ยังเต้นอยู่ในปัจจุบัน' } },
+      { n: 2, key: 'unfolding', cc: 'present',
+        short: { en: 'What Is Unfolding', th: 'สิ่งที่กำลังเกิดขึ้น' },
+        long:  { en: 'What is unfolding — the texture of this moment between you, as it actually feels.',
+                 th: 'สิ่งที่กำลังเกิดขึ้น — เนื้อสัมผัสของช่วงเวลานี้ระหว่างคุณ ตามที่รู้สึกจริงๆ' } },
+      { n: 3, key: 'changing', cc: 'future',
+        short: { en: 'What Is Changing', th: 'สิ่งที่กำลังเปลี่ยนไป' },
+        long:  { en: 'What is changing — the slow turn underway, where this is leaning, soft and not yet fixed.',
+                 th: 'สิ่งที่กำลังเปลี่ยนไป — การโน้มเอนช้าๆ ทิศที่กำลังเอียงไป ยังไม่แน่นอน' } }
+    ]
+  },
+
+  clarity: {
+    label: { en: 'Clarity', th: 'ความชัดเจน' },
+    blurb: { en: 'What you know, what you avoid, what needs honesty.',
+             th: 'สิ่งที่คุณรู้ สิ่งที่คุณหลีกเลี่ยง สิ่งที่ต้องการความซื่อตรง' },
+    positions: [
+      { n: 1, key: 'know', cc: 'above',
+        short: { en: 'What You Know', th: 'สิ่งที่คุณรู้' },
+        long:  { en: 'What you know — the thing you can name, the part you would say out loud.',
+                 th: 'สิ่งที่คุณรู้ — สิ่งที่คุณเรียกชื่อได้ ส่วนที่คุณพูดออกมาดังๆ ได้' } },
+      { n: 2, key: 'avoid', cc: 'below',
+        short: { en: 'What You Avoid', th: 'สิ่งที่คุณหลีกเลี่ยง' },
+        long:  { en: 'What you avoid — the thread underneath, the felt thing you keep stepping past.',
+                 th: 'สิ่งที่คุณหลีกเลี่ยง — สายใยที่อยู่ใต้ผิว ความรู้สึกที่คุณเดินผ่านไปเรื่อยๆ' } },
+      { n: 3, key: 'honesty', cc: 'challenge',
+        short: { en: 'What Needs Honesty', th: 'สิ่งที่ต้องการความซื่อตรง' },
+        long:  { en: 'What needs honesty — the place where the two above would meet if you let them.',
+                 th: 'สิ่งที่ต้องการความซื่อตรง — จุดที่สิ่งสองสิ่งข้างต้นจะมาบรรจบกัน หากคุณยอมให้มันเจอกัน' } }
+    ]
+  },
+
+  reconnection: {
+    label: { en: 'Reconnection', th: 'เชื่อมโยงใหม่' },
+    blurb: { en: 'What still exists, what creates distance, what invites reconnection.',
+             th: 'สิ่งที่ยังคงอยู่ สิ่งที่สร้างระยะ สิ่งที่เชื้อเชิญให้กลับมา' },
+    positions: [
+      { n: 1, key: 'remains', cc: 'present',
+        short: { en: 'What Still Exists', th: 'สิ่งที่ยังคงอยู่' },
+        long:  { en: 'What still exists — the thread between you that did not break, however thin it has become.',
+                 th: 'สิ่งที่ยังคงอยู่ — สายใยระหว่างคุณที่ยังไม่ขาด แม้จะบางเพียงใด' } },
+      { n: 2, key: 'distance', cc: 'challenge',
+        short: { en: 'What Creates Distance', th: 'สิ่งที่สร้างระยะ' },
+        long:  { en: 'What creates distance — the thing between you that needs to be named to soften.',
+                 th: 'สิ่งที่สร้างระยะ — สิ่งที่อยู่ระหว่างคุณซึ่งต้องถูกเรียกชื่อจึงจะคลายลง' } },
+      { n: 3, key: 'invites', cc: 'outcome',
+        short: { en: 'What Invites Reconnection', th: 'สิ่งที่เชื้อเชิญให้กลับมา' },
+        long:  { en: 'What invites reconnection — the small gesture this moment seems to be waiting for.',
+                 th: 'สิ่งที่เชื้อเชิญให้กลับมา — การกระทำเล็กๆ ที่ช่วงเวลานี้ดูเหมือนจะรออยู่' } }
+    ]
+  }
+};
+
+const DEFAULT_MODE = 'connection';
+let selectedMode = DEFAULT_MODE;
+
+function currentPositions() {
+  const m = SPREAD_MODES[selectedMode] || SPREAD_MODES[DEFAULT_MODE];
+  return m.positions;
+}
+function modeFor(key) {
+  return SPREAD_MODES[key] || SPREAD_MODES[DEFAULT_MODE];
+}
 
 /* ========================================================================
    DAILY REFLECTION LOOP — local-only history (no backend, no accounts)
@@ -1553,6 +1709,7 @@ function saveReadingToHistory() {
     question_key: selectedQuestionKey || '',
     question_text: selectedQuestionKey ? getPresetText(selectedQuestionKey, lang) : '',
     lang: lang,
+    spread_mode: selectedMode || DEFAULT_MODE,
     cards: drawn.map(d => ({
       id: d.card.id,
       name_en: d.card.name.en,
@@ -1793,7 +1950,8 @@ function onAllFlipped() {
           lang: lang,
           question_key: saved.question_key || '',
           reversed_count: saved.cards.filter(c => c.reversed).length,
-          history_size: loadHistory().length
+          history_size: loadHistory().length,
+          spread_mode: saved.spread_mode || DEFAULT_MODE
         });
       }
     }
@@ -1803,7 +1961,8 @@ function onAllFlipped() {
         lang: lang,
         reversed_count: drawn.filter(d => d.reversed).length,
         card_ids: drawn.map(d => d.card.id).join(','),
-        question_key: selectedQuestionKey || ''
+        question_key: selectedQuestionKey || '',
+        spread_mode: selectedMode
       });
     }
   }, 500);
@@ -1842,12 +2001,16 @@ function shareLoveReading() {
   });
 
   const questionText = selectedQuestionKey ? getPresetText(selectedQuestionKey, lang) : '';
+  // Build the share-image subtitle dynamically from the active spread's
+  // position labels, so an Emotional Arc reading reads
+  // "What Shaped This · What Is Unfolding · What Is Changing", etc.
+  const subtitle = currentPositions().map(p => p.short[lang]).join(' · ');
 
   window.veilaShare.shareLoveReading({
     lang: lang,
     eyebrow: T[lang].shareSheetEyebrow,
     title: T[lang].shareTitle,
-    subtitle: T[lang].shareSubtitle,
+    subtitle: subtitle,
     question: questionText,
     positions: positions,
     fineprint: T[lang].shareFineprint,
@@ -1872,7 +2035,8 @@ function shareLoveReading() {
       lang: lang,
       reversed_count: drawn.filter(d => d.reversed).length,
       card_ids: drawn.map(d => d.card.id).join(','),
-      question_key: selectedQuestionKey || ''
+      question_key: selectedQuestionKey || '',
+      spread_mode: selectedMode
     }
   });
 }
@@ -1898,7 +2062,7 @@ function syncUserQuestion() {
    MANUAL CARD SELECTION
    ========================================================================
    78 face-down cards in a scattered layout. User taps to select up to 3
-   in order; the i-th pick maps to POSITIONS[i]. Tapping a selected card
+   in order; the i-th pick maps to currentPositions()[i]. Tapping a selected card
    deselects it (with subsequent picks re-numbered). The Reveal CTA
    enables only at exactly 3.
    ======================================================================== */
@@ -2008,13 +2172,14 @@ function handleSelTap(card) {
         lang: lang,
         question_key: selectedQuestionKey || '',
         selected_count: selectedPicks.length,
-        card_id: card.id
+        card_id: card.id,
+        spread_mode: selectedMode
       });
     }
   } else {
     if (selectedPicks.length >= 3) return;   // hard cap
     selectedPicks.push(card);
-    const positionKey = POSITIONS[selectedPicks.length - 1].key;
+    const positionKey = currentPositions()[selectedPicks.length - 1].key;
     const el = selCardEls.get(card.id);
     if (el) {
       el.classList.add('selected');
@@ -2028,14 +2193,16 @@ function handleSelTap(card) {
         question_key: selectedQuestionKey || '',
         selected_count: selectedPicks.length,
         card_id: card.id,
-        position_key: positionKey
+        position_key: positionKey,
+        spread_mode: selectedMode
       });
     }
     if (selectedPicks.length === 3 && window.veilaFire) {
       window.veilaFire('love_card_selection_completed', {
         lang: lang,
         question_key: selectedQuestionKey || '',
-        card_ids: selectedPicks.map(c => c.id).join(',')
+        card_ids: selectedPicks.map(c => c.id).join(','),
+        spread_mode: selectedMode
       });
     }
   }
@@ -2064,9 +2231,8 @@ function updateSelectionUI() {
     if (count >= 3) {
       nextLabel.textContent = T[lang].selReady;
     } else {
-      const nextKey = POSITIONS[count].key;
-      const k = nextKey === 'you' ? 'selNextYou' : nextKey === 'them' ? 'selNextThem' : 'selNextBetween';
-      nextLabel.textContent = T[lang][k];
+      const nextPos = currentPositions()[count];
+      nextLabel.textContent = T[lang].selNextPrefix + nextPos.short[lang];
     }
   }
 }
@@ -2080,6 +2246,64 @@ function syncUserQuestionForSelection() {
   } else {
     el.textContent = '';
     el.hidden = true;
+  }
+}
+
+function modeLabelKey(modeKey) {
+  // 'emotional-arc' → mode_emotionalArc, others → mode_<key>
+  if (modeKey === 'emotional-arc') return 'mode_emotionalArc';
+  return 'mode_' + modeKey;
+}
+
+function renderModeChips() {
+  const wrap = document.getElementById('mode-chips');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  Object.keys(SPREAD_MODES).forEach((key) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mp-chip' + (key === selectedMode ? ' selected' : '');
+    btn.dataset.mode = key;
+    btn.setAttribute('aria-pressed', String(key === selectedMode));
+    const labelKey = modeLabelKey(key);
+    btn.textContent = (T[lang] && T[lang][labelKey]) || SPREAD_MODES[key].label[lang] || SPREAD_MODES[key].label.en;
+    btn.addEventListener('click', () => selectMode(key));
+    wrap.appendChild(btn);
+  });
+}
+
+function selectMode(modeKey) {
+  if (!SPREAD_MODES[modeKey] || modeKey === selectedMode) return;
+  selectedMode = modeKey;
+  document.querySelectorAll('.mp-chip').forEach((b) => {
+    const on = b.dataset.mode === modeKey;
+    b.classList.toggle('selected', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  // Re-numbering the picks in the new mode's position keys would
+  // misrepresent the user's intent; instead, clear picks so the user
+  // re-chooses under the new spread (with corresponding position
+  // semantics). This keeps "pick #1 → position #1" stable across mode
+  // changes, no matter when the user changes mode.
+  if (selectedPicks.length > 0) {
+    selectedPicks.forEach((c) => {
+      const el = selCardEls.get(c.id);
+      if (el) {
+        el.classList.remove('selected');
+        el.setAttribute('aria-pressed', 'false');
+        const o = el.querySelector('.sel-order');
+        if (o) o.textContent = '';
+      }
+    });
+    selectedPicks = [];
+  }
+  updateSelectionUI();
+  if (window.veilaFire) {
+    window.veilaFire('love_spread_mode_selected', {
+      lang: lang,
+      question_key: selectedQuestionKey || '',
+      spread_mode: modeKey
+    });
   }
 }
 
@@ -2101,6 +2325,7 @@ function enterSelection() {
   if (__rs) __rs.hidden = true;
 
   renderScatter();
+  renderModeChips();
   updateSelectionUI();
   syncUserQuestionForSelection();
   window.scrollTo({ top: 0, behavior: 'instant' });
@@ -2108,7 +2333,8 @@ function enterSelection() {
   if (window.veilaFire) {
     window.veilaFire('love_card_selection_started', {
       lang: lang,
-      question_key: selectedQuestionKey || ''
+      question_key: selectedQuestionKey || '',
+      spread_mode: selectedMode
     });
   }
 }
@@ -2116,9 +2342,10 @@ function enterSelection() {
 function onReveal() {
   if (selectedPicks.length !== 3) return;
 
+  const positions = currentPositions();
   drawn = selectedPicks.map((card, i) => ({
     card,
-    position: POSITIONS[i],
+    position: positions[i],
     reversed: Math.random() < 0.32,
     flipped: false
   }));
@@ -2140,14 +2367,16 @@ function onReveal() {
     window.veilaFire('love_manual_reveal_started', {
       lang: lang,
       question_key: selectedQuestionKey || '',
-      card_ids: selectedPicks.map(c => c.id).join(',')
+      card_ids: selectedPicks.map(c => c.id).join(','),
+      spread_mode: selectedMode
     });
     // Preserve existing event semantics: love_reading_started fires
     // exactly once per reading session, at the moment cards begin to
     // reveal (was: when Shuffle & Draw was tapped in v1).
     window.veilaFire('love_reading_started', {
       lang: lang,
-      question_key: selectedQuestionKey || ''
+      question_key: selectedQuestionKey || '',
+      spread_mode: selectedMode
     });
   }
 
@@ -2215,8 +2444,9 @@ function applyLang() {
   syncUserQuestionForSelection();
   renderReturnPanel();
   // Keep the next-position hint label correct after lang toggle on the
-  // selection screen.
+  // selection screen, and re-label the mode chips.
   if (!document.getElementById('selection').classList.contains('is-hidden')) {
+    renderModeChips();
     updateSelectionUI();
   }
   if (!document.getElementById('reading').classList.contains('is-hidden') && drawn.length === 3) {
@@ -2248,8 +2478,6 @@ document.querySelectorAll('.lang-toggle button').forEach((b) => {
    local date. Refreshed on every applyLang() so labels follow the
    current language even if the original reading was logged in the other.
    ======================================================================== */
-const POSITION_LABEL_KEY = { them: 'posThem', you: 'posYou', between: 'posBetween' };
-
 function renderReturnPanel() {
   const panel = document.getElementById('return-card');
   if (!panel) return;
@@ -2269,13 +2497,18 @@ function renderReturnPanel() {
     }
   }
 
-  // 3-card list — position label + roman + name in current lang
+  // 3-card list — position label resolved via the entry's saved spread
+  // mode (defaulting to 'connection' for entries saved before mode
+  // support existed). Position-key match works because each mode's
+  // positions[] carries unique keys.
+  const entryMode = modeFor(entry.spread_mode);
   const list = document.getElementById('rc-cards');
   if (list) {
     list.innerHTML = '';
     entry.cards.forEach((c) => {
       const li = document.createElement('li');
-      const posLabel = T[lang][POSITION_LABEL_KEY[c.position_key]] || '';
+      const posDef = entryMode.positions.find(p => p.key === c.position_key);
+      const posLabel = posDef ? posDef.short[lang] : c.position_key;
       const cardName = (lang === 'th' ? c.name_th : c.name_en) || c.name_en || '';
       const revSuffix = c.reversed
         ? '<span class="rc-rev">' + T[lang].rcReversedSuffix.replace(/^\s·\s/, '· ') + '</span>'
