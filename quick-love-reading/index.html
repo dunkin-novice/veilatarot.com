@@ -2006,8 +2006,17 @@ function shareLoveReading() {
   // "What Shaped This · What Is Unfolding · What Is Changing", etc.
   const subtitle = currentPositions().map(p => p.short[lang]).join(' · ');
 
+  // v2 share poster: the eyebrow slot now carries the selected spread
+  // mode's localized label (e.g., "EMOTIONAL ARC" / "ห้วงอารมณ์"). The
+  // renderer falls back to opts.eyebrow if spreadModeLabel is absent
+  // (backward-compatible with v1 callers).
+  const spreadModeLabel = (SPREAD_MODES[selectedMode] && SPREAD_MODES[selectedMode].label[lang])
+    || SPREAD_MODES[DEFAULT_MODE].label[lang];
+
   window.veilaShare.shareLoveReading({
     lang: lang,
+    spreadMode: selectedMode,
+    spreadModeLabel: spreadModeLabel,
     eyebrow: T[lang].shareSheetEyebrow,
     title: T[lang].shareTitle,
     subtitle: subtitle,

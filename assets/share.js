@@ -745,10 +745,45 @@
 
     paintBackground(ctx, W, H, 1100);
 
-    // Eyebrow
+    // Eyebrow — now carries the spread-mode label when provided.
+    // Fallback chain (backward-compatible with v1 callers):
+    //   1. opts.spreadModeLabel (new) — e.g., "Emotional Arc" / "ห้วงอารมณ์"
+    //   2. opts.eyebrow         (legacy) — e.g., "Save this reading"
+    //   3. localized "Connection" default per spec ("If no spread_mode is
+    //      passed, default to Connection mode.")
+    const DEFAULT_MODE_LABEL = isThai ? 'เชื่อมโยง' : 'Connection';
+    const eyebrowText = (opts.spreadModeLabel
+      || opts.eyebrow
+      || DEFAULT_MODE_LABEL).toString();
+
     ctx.fillStyle = '#b89968';
-    ctx.font = '500 22px "Inter", "IBM Plex Sans Thai", sans-serif';
-    drawTracked(ctx, (opts.eyebrow || '').toUpperCase(), W / 2, 200, 22, 7);
+    if (isThai) {
+      // Thai: no uppercasing (script has no case) and no canvas tracking
+      // (the "อุปสรรค" stretched-glyph problem). Autofit if a long mode
+      // label still overflows W-180 at 26px Plex Thai.
+      let eSize = 26;
+      const setE = (s) => ctx.font = `500 ${s}px "IBM Plex Sans Thai", sans-serif`;
+      setE(eSize);
+      while (ctx.measureText(eyebrowText).width > W - 180 && eSize > 18) {
+        eSize -= 2; setE(eSize);
+      }
+      ctx.textAlign = 'center';
+      ctx.fillText(eyebrowText, W / 2, 200);
+    } else {
+      // EN: uppercased + tracked (matches v1). Autofit by shrinking
+      // font (tracking stays proportional via drawTracked).
+      let eSize = 22;
+      const setE = (s) => ctx.font = `500 ${s}px "Inter", sans-serif`;
+      setE(eSize);
+      const upper = eyebrowText.toUpperCase();
+      const trackPx = 7;
+      const measureETracked = () => ctx.measureText(upper).width
+        + Math.max(0, upper.length - 1) * trackPx;
+      while (measureETracked() > W - 180 && eSize > 14) {
+        eSize -= 2; setE(eSize);
+      }
+      drawTracked(ctx, upper, W / 2, 200, eSize, trackPx);
+    }
 
     // Title
     ctx.fillStyle = '#ebe4d4';
@@ -822,32 +857,53 @@
       ctx.textAlign = 'center';
       ctx.fillText(pos.roman + '.', leftX + numWidth / 2, y);
 
-      // Position label (above card name)
-      ctx.fillStyle = '#b89968';
-      ctx.font = isThai
-        ? '500 22px "IBM Plex Sans Thai", sans-serif'
-        : '600 20px "Inter", sans-serif';
+      // Position label (above card name) — autofit so long Arc-mode
+      // labels like "WHAT INVITES RECONNECTION" never overflow.
       const labelX = leftX + numWidth + 12;
+      const labelMaxW = W - labelX - 80;
+      ctx.fillStyle = '#b89968';
       if (isThai) {
+        let lSize = 22;
+        const setL = (s) => ctx.font = `500 ${s}px "IBM Plex Sans Thai", sans-serif`;
+        setL(lSize);
+        const labelText = pos.label || '';
+        while (ctx.measureText(labelText).width > labelMaxW && lSize > 14) {
+          lSize -= 2; setL(lSize);
+        }
         ctx.textAlign = 'left';
-        ctx.fillText(pos.label || '', labelX, y - 48);
+        ctx.fillText(labelText, labelX, y - 48);
       } else {
+        let lSize = 20;
+        const setL = (s) => ctx.font = `600 ${s}px "Inter", sans-serif`;
+        const trackPx = 4;
         const labelText = (pos.label || '').toUpperCase();
-        const labelWidth = ctx.measureText(labelText).width
-                         + Math.max(0, labelText.length - 1) * 4;
+        setL(lSize);
+        const measureLTracked = () => ctx.measureText(labelText).width
+          + Math.max(0, labelText.length - 1) * trackPx;
+        while (measureLTracked() > labelMaxW && lSize > 12) {
+          lSize -= 2; setL(lSize);
+        }
+        const labelWidth = measureLTracked();
         ctx.textAlign = 'center';
-        drawTracked(ctx, labelText, labelX + labelWidth / 2, y - 48, 20, 4);
+        drawTracked(ctx, labelText, labelX + labelWidth / 2, y - 48, lSize, trackPx);
       }
 
-      // Card name
+      // Card name — autofit defensively. Long names like
+      // "Knight of Pentacles · Reversed" stay inside the poster.
       ctx.fillStyle = '#ebe4d4';
       ctx.textAlign = 'left';
-      ctx.font = isThai
-        ? '500 44px "IBM Plex Sans Thai", serif'
-        : '500 50px "Cormorant Garamond", serif';
       const cardLine = pos.cardName + (pos.reversed
         ? (isThai ? ' · กลับหัว' : ' · Reversed')
         : '');
+      let cSize = isThai ? 44 : 50;
+      const setC = (s) => ctx.font = isThai
+        ? `500 ${s}px "IBM Plex Sans Thai", serif`
+        : `500 ${s}px "Cormorant Garamond", serif`;
+      setC(cSize);
+      const cardMaxW = W - labelX - 80;
+      while (ctx.measureText(cardLine).width > cardMaxW && cSize > 28) {
+        cSize -= 2; setC(cSize);
+      }
       ctx.fillText(cardLine, labelX, y);
 
       // Snippet — up to 4 lines, lifted ivory
