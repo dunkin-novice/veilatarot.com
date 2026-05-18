@@ -631,6 +631,156 @@ html[lang="th"] .user-question {
   50%      { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(184,153,104,0.08); }
 }
 
+/* ====== MANUAL SELECTION (78-card scatter) ====== */
+.sel-counter {
+  margin-top: 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.sel-counter .sel-count-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ivory);
+}
+.sel-counter .sel-count-num #sel-count {
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 500;
+  color: var(--gold);
+  font-size: 22px;
+  margin: 0 4px;
+}
+.sel-counter .sel-next {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  padding-left: 14px;
+  border-left: 1px solid var(--rule);
+}
+
+.scatter-wrap {
+  padding: 12px 0 32px;
+}
+.scatter {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  height: clamp(540px, 70vh, 700px);
+  margin: 0 auto;
+}
+
+.sel-card {
+  position: absolute;
+  width: clamp(50px, 5.4vw, 64px);
+  height: clamp(82px, 9vw, 104px);
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  will-change: transform, left, top;
+}
+.sel-card .sel-card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--card-radius);
+  background: #14151c;
+  border: 1px solid var(--gold-dim);
+  padding: 4px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.sel-card:hover { z-index: 60; }
+.sel-card:hover .sel-card-body { transform: translateY(-6px); }
+.sel-card.selected { z-index: 50; }
+.sel-card.selected .sel-card-body {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold), 0 18px 28px rgba(184,153,104,0.22);
+  transform: translateY(-10px);
+}
+.sel-card .sel-card-body .inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(184,153,104,0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.sel-card .sel-card-body .inner::before,
+.sel-card .sel-card-body .inner::after {
+  content: "";
+  position: absolute;
+  width: 5px; height: 5px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+.sel-card .sel-card-body .inner::before { top: 5px; left: 50%; margin-left: -2.5px; }
+.sel-card .sel-card-body .inner::after  { bottom: 5px; left: 50%; margin-left: -2.5px; }
+.sel-card .sel-card-body .inner svg { color: var(--gold); opacity: 0.85; }
+
+.sel-order {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 24px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+.sel-card.selected .sel-order { opacity: 1; }
+
+/* Selection action row */
+.sel-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 24px 40px;
+  flex-wrap: wrap;
+}
+.sel-actions .sel-counter-mini { display: none; }
+.sel-actions #sel-reveal-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: var(--rule);
+  color: var(--ivory-mute);
+  pointer-events: none;
+  letter-spacing: 0.32em;
+}
+
+/* THAI typo audit on new selection labels */
+html[lang="th"] .sel-counter .sel-next,
+html[lang="th"] .sel-actions .sel-counter-mini .lbl,
+html[lang="th"] #sel-restart-btn,
+html[lang="th"] #sel-reveal-btn {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+html[lang="th"] .sel-counter .sel-next {
+  font-family: "IBM Plex Sans Thai", var(--sans);
+  font-size: 12px;
+}
+
 /* ====== HINT BAR ====== */
 .hint-bar {
   text-align: center;
@@ -906,6 +1056,107 @@ html[lang="th"] footer {
 
   .reflection-saved { font-size: 13.5px; padding: 7px 12px; }
 
+  /* Manual selection scatter — denser, sticky action bar */
+  .sel-counter { gap: 8px; margin-top: 10px; }
+  .sel-counter .sel-count-num { font-size: 15px; }
+  .sel-counter .sel-count-num #sel-count { font-size: 19px; }
+  .sel-counter .sel-next {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    padding-left: 0;
+    border-left: 0;
+    display: block;
+    margin-top: 4px;
+  }
+  html[lang="th"] .sel-counter .sel-next { font-size: 11px; }
+
+  .scatter-wrap { padding: 4px 0 110px; }
+  .scatter {
+    height: clamp(460px, 64vh, 600px);
+    max-width: calc(100% - 4px);
+  }
+  .sel-card { width: 42px; height: 66px; }
+  .sel-card .sel-card-body .inner::before,
+  .sel-card .sel-card-body .inner::after {
+    width: 4px; height: 4px;
+    margin-left: -2px;
+  }
+  .sel-card .sel-card-body .inner::before { top: 4px; }
+  .sel-card .sel-card-body .inner::after  { bottom: 4px; }
+  .sel-card .sel-card-body .inner svg { width: 18px; height: 28px; }
+  .sel-order { top: -12px; font-size: 12px; min-width: 22px; padding: 2px 7px; }
+
+  /* Sticky action bar on mobile, mirroring the Celtic Cross pattern */
+  .sel-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 30;
+    padding: 12px 12px max(12px, env(safe-area-inset-bottom));
+    gap: 10px;
+    background: rgba(10, 10, 12, 0.92);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--gold-dim);
+    flex-wrap: nowrap;
+  }
+  .sel-actions .sel-counter-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    flex: 0 0 auto;
+    padding-right: 4px;
+  }
+  .sel-actions .sel-counter-mini .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--gold);
+  }
+  .sel-actions .sel-counter-mini .num .sep,
+  .sel-actions .sel-counter-mini .num .of {
+    color: var(--ivory-mute);
+    font-style: normal;
+    font-size: 16px;
+    margin-left: 1px;
+  }
+  .sel-actions .sel-counter-mini .lbl {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ivory-mute);
+    margin-top: 4px;
+  }
+  html[lang="th"] .sel-actions .sel-counter-mini .lbl {
+    font-family: "IBM Plex Sans Thai", var(--sans);
+    font-size: 10px;
+  }
+  #sel-restart-btn {
+    padding: 11px 14px;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    flex: 0 0 auto;
+  }
+  #sel-reveal-btn {
+    padding: 14px 16px;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    flex: 1 1 auto;
+  }
+  .sel-actions.is-ready #sel-reveal-btn {
+    background: var(--gold);
+    color: var(--ink);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold), 0 8px 24px rgba(184,153,104,0.28);
+    animation: cta-pulse-love 1.8s ease-in-out infinite;
+  }
+  @keyframes cta-pulse-love {
+    0%, 100% { box-shadow: 0 0 0 1px var(--gold), 0 6px 18px rgba(184,153,104,0.18); }
+    50%      { box-shadow: 0 0 0 1px var(--gold), 0 10px 28px rgba(184,153,104,0.40); }
+  }
+
   .reading-header { padding: 18px 14px 4px; }
   .reading-header .step { margin-bottom: 10px; }
   .reading-header .question-line { font-size: 15px; line-height: 1.45; }
@@ -994,8 +1245,34 @@ html[lang="th"] footer {
         </div>
       </section>
 
-      <button class="cta-btn" id="start-btn" data-i18n="startBtn">Shuffle &amp; Draw</button>
-      <p class="pos-trail" data-i18n-html="posTrail">Their energy <span>·</span> Your energy <span>·</span> Between you</p>
+      <button class="cta-btn" id="start-btn" data-i18n="startBtn">Choose 3 cards</button>
+      <p class="pos-trail" data-i18n-html="posTrail">Your energy <span>·</span> Their energy <span>·</span> Between you</p>
+    </section>
+
+    <!-- ====== MANUAL CARD SELECTION ====== -->
+    <section id="selection" class="is-hidden">
+      <div class="reading-header">
+        <div class="step" data-i18n="selStep">Choose 3 Cards</div>
+        <p class="user-question" id="sel-user-question" hidden></p>
+        <p class="question-line" data-i18n="selSub">Hold the question in mind. Tap three cards in the order they call to you.</p>
+        <div class="sel-counter" aria-live="polite">
+          <span class="sel-count-num"><span id="sel-count">0</span> <span data-i18n="selCountSuffix">of 3 chosen</span></span>
+          <span class="sel-next" id="sel-next-label" data-i18n="selNextYou">Next: Your energy</span>
+        </div>
+      </div>
+
+      <div class="scatter-wrap">
+        <div class="scatter" id="sel-scatter"></div>
+      </div>
+
+      <div class="actions-row sel-actions" id="sel-actions">
+        <div class="sel-counter-mini" aria-hidden="true">
+          <span class="num"><span id="sel-count-mini">0</span><span class="sep">/</span><span class="of">3</span></span>
+          <span class="lbl" data-i18n="selCountMiniLbl">chosen</span>
+        </div>
+        <button type="button" class="cta-btn ghost" id="sel-restart-btn" data-i18n="selRestartBtn">Start over</button>
+        <button type="button" class="cta-btn" id="sel-reveal-btn" data-i18n="selRevealBtn" disabled>Reveal my love reading</button>
+      </div>
     </section>
 
     <!-- ====== READING ====== -->
@@ -1067,8 +1344,18 @@ const T = {
     eyebrow: 'A Quiet Reading · 3 Cards',
     introH1: 'Three cards for the <em>space between</em> you.',
     lede: "For when a question of the heart needs more than a moment but less than an hour. Take a breath. Hold the question. The cards reflect — they don't predict.",
-    startBtn: 'Shuffle & Draw',
-    posTrail: 'Their energy <span>·</span> Your energy <span>·</span> Between you',
+    startBtn: 'Choose 3 cards',
+    posTrail: 'Your energy <span>·</span> Their energy <span>·</span> Between you',
+    selStep: 'Choose 3 Cards',
+    selSub: 'Hold the question in mind. Tap three cards in the order they call to you.',
+    selCountSuffix: 'of 3 chosen',
+    selCountMiniLbl: 'chosen',
+    selNextYou: 'Next: Your energy',
+    selNextThem: 'Next: Their energy',
+    selNextBetween: 'Next: Between you',
+    selReady: 'Ready to reveal',
+    selRestartBtn: 'Start over',
+    selRevealBtn: 'Reveal my love reading',
     qpLabel: 'Choose a question (optional)',
     qpTheirEnergy: 'What is their energy toward me?',
     qpHonest: 'Is this connection honest?',
@@ -1083,7 +1370,7 @@ const T = {
     revealAllBtn: 'Reveal all',
     readoutLabel: 'The Reading',
     readoutH2: 'Notes from the cards',
-    readoutLede: 'Read each card in turn — what they bring, what you bring, what sits in the space between. These are reflections, not predictions.',
+    readoutLede: 'Read each card in turn — what you bring, what they bring, what sits in the space between. These are reflections, not predictions.',
     shareLede: 'Keep this reading as an image — three cards, for a quieter moment.',
     shareBtn: 'Save this reading',
     reflectionSaved: 'Reflection saved to this device. Return tomorrow to notice what shifts.',
@@ -1114,7 +1401,7 @@ const T = {
     sharePressHint: 'Tip: on iPhone, long-press the image above to save it to your photos.',
     shareSheetEyebrow: 'Save this reading',
     shareTitle: 'Quick Love Reading',
-    shareSubtitle: 'Their energy · Your energy · Between you',
+    shareSubtitle: 'Your energy · Their energy · Between you',
     shareFineprint: 'For reflection, not prediction.',
   },
   th: {
@@ -1123,8 +1410,18 @@ const T = {
     eyebrow: 'บทอ่านอันเงียบสงบ · 3 ใบ',
     introH1: 'ไพ่สามใบ สำหรับ<em>พื้นที่ระหว่าง</em>คุณกับเขา',
     lede: 'สำหรับคำถามของหัวใจที่ต้องการมากกว่าหนึ่งช่วงเวลา แต่ไม่ใช่ทั้งชั่วโมง สูดหายใจ ตั้งคำถามไว้ในใจ ไพ่สะท้อน — ไม่ใช่พยากรณ์',
-    startBtn: 'สับและจั่วไพ่',
-    posTrail: 'พลังของเขา <span>·</span> พลังของคุณ <span>·</span> สิ่งที่อยู่ระหว่างกัน',
+    startBtn: 'เลือกไพ่ 3 ใบ',
+    posTrail: 'พลังของคุณ <span>·</span> พลังของเขา <span>·</span> สิ่งที่อยู่ระหว่างกัน',
+    selStep: 'เลือกไพ่ 3 ใบ',
+    selSub: 'ตั้งคำถามไว้ในใจ แตะไพ่สามใบตามลำดับที่ไพ่เรียกหาคุณ',
+    selCountSuffix: 'จาก 3 ใบ',
+    selCountMiniLbl: 'เลือกแล้ว',
+    selNextYou: 'ต่อไป: พลังของคุณ',
+    selNextThem: 'ต่อไป: พลังของเขา',
+    selNextBetween: 'ต่อไป: สิ่งที่อยู่ระหว่างกัน',
+    selReady: 'พร้อมเปิดไพ่',
+    selRestartBtn: 'เริ่มใหม่',
+    selRevealBtn: 'เปิดบทอ่านของฉัน',
     qpLabel: 'เลือกคำถาม (ไม่จำเป็น)',
     qpTheirEnergy: 'เขาคิดยังไงกับเรา',
     qpHonest: 'คนคุยจริงใจไหม',
@@ -1139,7 +1436,7 @@ const T = {
     revealAllBtn: 'เปิดทั้งหมด',
     readoutLabel: 'บทอ่าน',
     readoutH2: 'บันทึกจากไพ่',
-    readoutLede: 'อ่านไพ่ทีละใบ — สิ่งที่อีกฝ่ายนำมา สิ่งที่คุณนำมา และสิ่งที่อยู่ในพื้นที่ระหว่างกัน นี่คือการสะท้อน ไม่ใช่การพยากรณ์',
+    readoutLede: 'อ่านไพ่ทีละใบ — สิ่งที่คุณนำมา สิ่งที่อีกฝ่ายนำมา และสิ่งที่อยู่ในพื้นที่ระหว่างกัน นี่คือการสะท้อน ไม่ใช่การพยากรณ์',
     shareLede: 'บันทึกบทอ่านนี้เป็นภาพ — ไพ่สามใบ ไว้ใคร่ครวญในวันอื่น',
     shareBtn: 'บันทึกบทอ่านนี้',
     reflectionSaved: 'บันทึกบทใคร่ครวญแล้วในเครื่องนี้ กลับมาวันพรุ่งนี้เพื่อสังเกตว่าอะไรเปลี่ยนไป',
@@ -1170,28 +1467,32 @@ const T = {
     sharePressHint: 'เคล็ดลับ: บน iPhone ให้กดค้างที่ภาพด้านบนเพื่อบันทึกลงในรูปภาพ',
     shareSheetEyebrow: 'บันทึกบทอ่าน',
     shareTitle: 'บทอ่านไพ่ความรัก',
-    shareSubtitle: 'พลังของเขา · พลังของคุณ · สิ่งที่อยู่ระหว่างกัน',
+    shareSubtitle: 'พลังของคุณ · พลังของเขา · สิ่งที่อยู่ระหว่างกัน',
     shareFineprint: 'เพื่อการใคร่ครวญ ไม่ใช่การพยากรณ์',
   }
 };
 
 /* ========================================================================
    POSITIONS — 3-card love spread.
+   Order = pick order: pick #1 → "you", pick #2 → "them", pick #3 → "between".
    Each position maps to an existing cards.json celtic_cross key so we
    reuse the existing position-aware interpretation text. Semantic mapping:
-     them    → environment (the external influence / what they bring)
      you     → self        (your stance / what you bring)
+     them    → environment (the external influence / what they bring)
      between → present     (the heart of the matter / the space between)
+   Saved Daily Reflection entries store position_key, so older entries
+   continue to resolve their labels via T[lang].posThem/posYou/posBetween
+   independent of this array's order.
    ======================================================================== */
 const POSITIONS = [
-  { n: 1, key: 'them', cc: 'environment',
-    short: { en: 'Their Energy',     th: 'พลังของเขา' },
-    long:  { en: 'What they bring to this — their energy, attention, intent in the moment.',
-             th: 'สิ่งที่อีกฝ่ายนำมา — พลัง ความสนใจ ความตั้งใจในช่วงนี้' } },
-  { n: 2, key: 'you', cc: 'self',
+  { n: 1, key: 'you', cc: 'self',
     short: { en: 'Your Energy',      th: 'พลังของคุณ' },
     long:  { en: 'What you bring — your stance, what you carry into this dynamic.',
              th: 'สิ่งที่คุณนำเข้ามา — ท่าทีของคุณ สิ่งที่คุณถือไว้' } },
+  { n: 2, key: 'them', cc: 'environment',
+    short: { en: 'Their Energy',     th: 'พลังของเขา' },
+    long:  { en: 'What they bring to this — their energy, attention, intent in the moment.',
+             th: 'สิ่งที่อีกฝ่ายนำมา — พลัง ความสนใจ ความตั้งใจในช่วงนี้' } },
   { n: 3, key: 'between', cc: 'present',
     short: { en: 'Between You',      th: 'สิ่งที่อยู่ระหว่างกัน' },
     long:  { en: 'The space between — the present shape of what exists between you both.',
@@ -1593,55 +1894,290 @@ function syncUserQuestion() {
   }
 }
 
-function startReading() {
-  if (!DECK.length) { loadDeck().then(() => { if (DECK.length) startReading(); }); return; }
-  const shuffled = shuffle(DECK).slice(0, 3);
-  drawn = shuffled.map((card, i) => ({
-    card,
-    position: POSITIONS[i],
-    reversed: Math.random() < 0.32,
-    flipped: false
-  }));
+/* ========================================================================
+   MANUAL CARD SELECTION
+   ========================================================================
+   78 face-down cards in a scattered layout. User taps to select up to 3
+   in order; the i-th pick maps to POSITIONS[i]. Tapping a selected card
+   deselects it (with subsequent picks re-numbered). The Reveal CTA
+   enables only at exactly 3.
+   ======================================================================== */
+let selectedPicks = [];          // Array of card objects, in pick order
+let selCardEls = new Map();      // card.id -> HTMLElement (in the scatter)
+
+function selTableZone() {
+  const isMobile = window.matchMedia('(max-width: 720px)').matches;
+  return {
+    cols: isMobile ? 8 : 13,
+    marginX: isMobile ? 4 : 4,
+    topY: 4,
+    bottomY: 96
+  };
+}
+
+function selGenerateTablePositions(count) {
+  const z = selTableZone();
+  const rows = Math.max(1, Math.ceil(count / z.cols));
+  const innerW = 100 - z.marginX * 2;
+  const innerH = z.bottomY - z.topY;
+  const cellW = innerW / z.cols;
+  const cellH = innerH / rows;
+  const positions = [];
+  for (let i = 0; i < count; i++) {
+    const r = Math.floor(i / z.cols);
+    const c = i % z.cols;
+    const jitterX = (Math.random() - 0.5) * cellW * 0.45;
+    const jitterY = (Math.random() - 0.5) * cellH * 0.35;
+    positions.push({
+      x: z.marginX + c * cellW + cellW / 2 + jitterX,
+      y: z.topY + r * cellH + cellH / 2 + jitterY,
+      rot: (Math.random() - 0.5) * 22
+    });
+  }
+  // shuffle so adjacency isn't a predictable grid order
+  for (let i = positions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [positions[i], positions[j]] = [positions[j], positions[i]];
+  }
+  return positions;
+}
+
+function renderScatter() {
+  const scatter = document.getElementById('sel-scatter');
+  if (!scatter) return;
+  scatter.innerHTML = '';
+  selCardEls = new Map();
+
+  const positions = selGenerateTablePositions(DECK.length);
+  DECK.forEach((card, i) => {
+    const pos = positions[i];
+    const el = document.createElement('div');
+    el.className = 'sel-card';
+    el.dataset.id = card.id;
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('aria-pressed', 'false');
+    el.setAttribute('aria-label', 'Choose this card');
+    el.innerHTML = `
+      <div class="sel-card-body">
+        <div class="inner">
+          <svg width="22" height="34" viewBox="0 0 36 56" fill="none" stroke="currentColor" stroke-width="0.8">
+            <path d="M18 6 L30 28 L18 50 L6 28 Z" />
+            <circle cx="18" cy="28" r="6" />
+            <path d="M18 22 L18 34 M12 28 L24 28" stroke-width="0.5"/>
+          </svg>
+        </div>
+      </div>
+      <span class="sel-order"></span>
+    `;
+    el.style.left = pos.x + '%';
+    el.style.top = pos.y + '%';
+    el.style.transform = 'translate(-50%, -50%) rotate(' + pos.rot.toFixed(2) + 'deg)';
+
+    el.addEventListener('click', () => handleSelTap(card));
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelTap(card); }
+    });
+
+    selCardEls.set(card.id, el);
+    scatter.appendChild(el);
+  });
+}
+
+function handleSelTap(card) {
+  const idx = selectedPicks.findIndex(p => p.id === card.id);
+  if (idx >= 0) {
+    // Deselect
+    selectedPicks.splice(idx, 1);
+    const el = selCardEls.get(card.id);
+    if (el) {
+      el.classList.remove('selected');
+      el.setAttribute('aria-pressed', 'false');
+      const orderEl = el.querySelector('.sel-order');
+      if (orderEl) orderEl.textContent = '';
+    }
+    // Re-number remaining picks
+    selectedPicks.forEach((c, i) => {
+      const e = selCardEls.get(c.id);
+      if (!e) return;
+      const o = e.querySelector('.sel-order');
+      if (o) o.textContent = String(i + 1);
+    });
+    if (window.veilaFire) {
+      window.veilaFire('love_manual_card_deselected', {
+        lang: lang,
+        question_key: selectedQuestionKey || '',
+        selected_count: selectedPicks.length,
+        card_id: card.id
+      });
+    }
+  } else {
+    if (selectedPicks.length >= 3) return;   // hard cap
+    selectedPicks.push(card);
+    const positionKey = POSITIONS[selectedPicks.length - 1].key;
+    const el = selCardEls.get(card.id);
+    if (el) {
+      el.classList.add('selected');
+      el.setAttribute('aria-pressed', 'true');
+      const orderEl = el.querySelector('.sel-order');
+      if (orderEl) orderEl.textContent = String(selectedPicks.length);
+    }
+    if (window.veilaFire) {
+      window.veilaFire('love_manual_card_selected', {
+        lang: lang,
+        question_key: selectedQuestionKey || '',
+        selected_count: selectedPicks.length,
+        card_id: card.id,
+        position_key: positionKey
+      });
+    }
+    if (selectedPicks.length === 3 && window.veilaFire) {
+      window.veilaFire('love_card_selection_completed', {
+        lang: lang,
+        question_key: selectedQuestionKey || '',
+        card_ids: selectedPicks.map(c => c.id).join(',')
+      });
+    }
+  }
+  updateSelectionUI();
+}
+
+function updateSelectionUI() {
+  const count = selectedPicks.length;
+  const top = document.getElementById('sel-count');
+  const mini = document.getElementById('sel-count-mini');
+  if (top) top.textContent = String(count);
+  if (mini) mini.textContent = String(count);
+
+  const btn = document.getElementById('sel-reveal-btn');
+  const row = document.getElementById('sel-actions');
+  if (count === 3) {
+    if (btn) btn.removeAttribute('disabled');
+    if (row) row.classList.add('is-ready');
+  } else {
+    if (btn) btn.setAttribute('disabled', '');
+    if (row) row.classList.remove('is-ready');
+  }
+
+  const nextLabel = document.getElementById('sel-next-label');
+  if (nextLabel) {
+    if (count >= 3) {
+      nextLabel.textContent = T[lang].selReady;
+    } else {
+      const nextKey = POSITIONS[count].key;
+      const k = nextKey === 'you' ? 'selNextYou' : nextKey === 'them' ? 'selNextThem' : 'selNextBetween';
+      nextLabel.textContent = T[lang][k];
+    }
+  }
+}
+
+function syncUserQuestionForSelection() {
+  const el = document.getElementById('sel-user-question');
+  if (!el) return;
+  if (selectedQuestionKey) {
+    el.textContent = '"' + getPresetText(selectedQuestionKey, lang) + '"';
+    el.hidden = false;
+  } else {
+    el.textContent = '';
+    el.hidden = true;
+  }
+}
+
+function enterSelection() {
+  if (!DECK.length) {
+    loadDeck().then(() => { if (DECK.length) enterSelection(); });
+    return;
+  }
+  // Reset selection + reading state
+  selectedPicks = [];
+  drawn = [];
   flippedCount = 0;
+
   document.getElementById('intro').classList.add('is-hidden');
-  document.getElementById('reading').classList.remove('is-hidden');
-  document.getElementById('hint-bar').classList.remove('is-hidden');
-  document.getElementById('pre-readout-actions').classList.remove('is-hidden');
+  document.getElementById('reading').classList.add('is-hidden');
+  document.getElementById('selection').classList.remove('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
   const __rs = document.getElementById('reflection-saved');
   if (__rs) __rs.hidden = true;
-  syncUserQuestion();
-  renderSpread();
-  updateFlipUI();
+
+  renderScatter();
+  updateSelectionUI();
+  syncUserQuestionForSelection();
   window.scrollTo({ top: 0, behavior: 'instant' });
+
   if (window.veilaFire) {
-    window.veilaFire('love_reading_started', {
+    window.veilaFire('love_card_selection_started', {
       lang: lang,
       question_key: selectedQuestionKey || ''
     });
   }
 }
 
-function revealAll() {
-  drawn.forEach((d, idx) => {
-    if (d.flipped) return;
-    setTimeout(() => {
-      const card = document.querySelector('.card[data-idx="'+idx+'"]');
-      if (card && !d.flipped) {
-        d.flipped = true;
-        card.classList.add('flipped');
-        flippedCount++;
-        updateFlipUI();
-        if (flippedCount === 3) onAllFlipped();
-      }
-    }, idx * 200);
-  });
+function onReveal() {
+  if (selectedPicks.length !== 3) return;
+
+  drawn = selectedPicks.map((card, i) => ({
+    card,
+    position: POSITIONS[i],
+    reversed: Math.random() < 0.32,
+    flipped: false
+  }));
+  flippedCount = 0;
+
+  document.getElementById('selection').classList.add('is-hidden');
+  document.getElementById('reading').classList.remove('is-hidden');
+  // Manual flow: cards auto-flip after a brief moment — no tap hint, no
+  // Reveal-all button. Hide both elements.
+  document.getElementById('hint-bar').classList.add('is-hidden');
+  document.getElementById('pre-readout-actions').classList.add('is-hidden');
+  document.getElementById('readout-section').classList.add('is-hidden');
+
+  syncUserQuestion();
+  renderSpread();
+  document.getElementById('flip-count').textContent = '0';
+
+  if (window.veilaFire) {
+    window.veilaFire('love_manual_reveal_started', {
+      lang: lang,
+      question_key: selectedQuestionKey || '',
+      card_ids: selectedPicks.map(c => c.id).join(',')
+    });
+    // Preserve existing event semantics: love_reading_started fires
+    // exactly once per reading session, at the moment cards begin to
+    // reveal (was: when Shuffle & Draw was tapped in v1).
+    window.veilaFire('love_reading_started', {
+      lang: lang,
+      question_key: selectedQuestionKey || ''
+    });
+  }
+
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
+  // Stagger-flip all three cards. onAllFlipped() handles love_reading_completed
+  // + reflection_saved (Daily Reflection Loop) once the last card is flipped.
+  setTimeout(() => {
+    drawn.forEach((d, idx) => {
+      if (d.flipped) return;
+      setTimeout(() => {
+        const cardEl = document.querySelector('.card[data-idx="' + idx + '"]');
+        if (cardEl && !d.flipped) {
+          d.flipped = true;
+          cardEl.classList.add('flipped');
+          flippedCount++;
+          updateFlipUI();
+          if (flippedCount === 3) onAllFlipped();
+        }
+      }, idx * 240);
+    });
+  }, 350);
 }
 
 function restart() {
   drawn = [];
   flippedCount = 0;
+  selectedPicks = [];
   document.getElementById('reading').classList.add('is-hidden');
+  document.getElementById('selection').classList.add('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
   document.getElementById('intro').classList.remove('is-hidden');
   // Re-evaluate the return panel: if the user just completed today, the
@@ -1676,7 +2212,13 @@ function applyLang() {
     : 'Quick Love Reading — A 3-Card Tarot Reflection | Veila';
   // re-render visible dynamic content with new language
   syncUserQuestion();
+  syncUserQuestionForSelection();
   renderReturnPanel();
+  // Keep the next-position hint label correct after lang toggle on the
+  // selection screen.
+  if (!document.getElementById('selection').classList.contains('is-hidden')) {
+    updateSelectionUI();
+  }
   if (!document.getElementById('reading').classList.contains('is-hidden') && drawn.length === 3) {
     renderSpread();
     if (!document.getElementById('readout-section').classList.contains('is-hidden')) {
@@ -1779,7 +2321,10 @@ if (rcCta) {
         days_since: entry ? daysSince(entry.date) : 0
       });
     }
-    startReading();
+    // Daily Reflection Loop preserved: the prior question is pre-selected
+    // and the user is dropped into the new manual selection flow rather
+    // than an auto-draw.
+    enterSelection();
   });
 }
 
@@ -1838,10 +2383,22 @@ applyLang();
 loadDeck();
 renderReturnPanel();
 
-document.getElementById('start-btn').addEventListener('click', startReading);
-document.getElementById('reveal-all-btn').addEventListener('click', revealAll);
+document.getElementById('start-btn').addEventListener('click', enterSelection);
 document.getElementById('share-btn').addEventListener('click', shareLoveReading);
 document.getElementById('restart-btn').addEventListener('click', restart);
+
+// Manual-selection screen controls
+document.getElementById('sel-restart-btn').addEventListener('click', () => {
+  // Clear current selection and return to intro (do NOT fire reflection events)
+  selectedPicks = [];
+  drawn = [];
+  flippedCount = 0;
+  document.getElementById('selection').classList.add('is-hidden');
+  document.getElementById('intro').classList.remove('is-hidden');
+  renderReturnPanel();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+document.getElementById('sel-reveal-btn').addEventListener('click', onReveal);
 </script>
 </body>
 </html>
