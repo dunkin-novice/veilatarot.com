@@ -941,14 +941,240 @@
     return canvas;
   }
 
+  // ============================================================
+  // Love-reading SQUARE — 1080 × 1080 (Instagram feed / Pinterest)
+  // Same content + branding system as the 1920 Story renderer above,
+  // recomposed for square: three position blocks laid out in a row
+  // instead of a stack so the square can hold all three card names
+  // without losing the eyebrow / title / question / fineprint chrome.
+  // The Story renderer above is intentionally NOT modified — this is
+  // a parallel renderer selected by opts.format === 'square'.
+  // ============================================================
+  async function renderLoveReadingSquareCanvas(opts) {
+    const W = 1080, H = 1080;
+    const isThai = opts.lang === 'th';
+    await fontsReady();
+
+    const canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'center';
+
+    paintBackground(ctx, W, H, 820);
+
+    // Eyebrow — spread-mode label, with the same Story fallback chain.
+    const DEFAULT_MODE_LABEL = isThai ? 'เชื่อมโยง' : 'Connection';
+    const eyebrowText = (opts.spreadModeLabel
+      || opts.eyebrow
+      || DEFAULT_MODE_LABEL).toString();
+
+    ctx.fillStyle = '#b89968';
+    if (isThai) {
+      // Thai: no uppercasing, no canvas tracking. Autofit if a long
+      // mode label overflows W-180 at 24px Plex Thai.
+      let eSize = 24;
+      const setE = (s) => ctx.font = `500 ${s}px "IBM Plex Sans Thai", sans-serif`;
+      setE(eSize);
+      while (ctx.measureText(eyebrowText).width > W - 180 && eSize > 16) {
+        eSize -= 2; setE(eSize);
+      }
+      ctx.textAlign = 'center';
+      ctx.fillText(eyebrowText, W / 2, 110);
+    } else {
+      let eSize = 20;
+      const setE = (s) => ctx.font = `500 ${s}px "Inter", sans-serif`;
+      setE(eSize);
+      const upper = eyebrowText.toUpperCase();
+      const trackPx = 6;
+      const measureETracked = () => ctx.measureText(upper).width
+        + Math.max(0, upper.length - 1) * trackPx;
+      while (measureETracked() > W - 180 && eSize > 13) {
+        eSize -= 2; setE(eSize);
+      }
+      drawTracked(ctx, upper, W / 2, 110, eSize, trackPx);
+    }
+
+    // Title (autofit so the Thai title doesn't run into the side rules).
+    ctx.fillStyle = '#ebe4d4';
+    let tSize = isThai ? 56 : 66;
+    const setT = (s) => ctx.font = isThai
+      ? `300 ${s}px "IBM Plex Sans Thai", serif`
+      : `300 ${s}px "Cormorant Garamond", serif`;
+    setT(tSize);
+    const titleText = opts.title || '';
+    while (ctx.measureText(titleText).width > W - 160 && tSize > 36) {
+      tSize -= 2; setT(tSize);
+    }
+    ctx.fillText(titleText, W / 2, 200);
+
+    // Question (optional) + subtitle (position trail).
+    const hasQuestion = !!(opts.question && String(opts.question).trim());
+    let dividerY;
+    if (hasQuestion) {
+      ctx.fillStyle = '#ebe4d4';
+      let qSize = isThai ? 36 : 40;
+      const qSet = (s) => ctx.font = isThai
+        ? `italic 500 ${s}px "IBM Plex Sans Thai", serif`
+        : `italic 400 ${s}px "Cormorant Garamond", serif`;
+      qSet(qSize);
+      const qText = String(opts.question).trim();
+      while (ctx.measureText(qText).width > W - 160 && qSize > 22) {
+        qSize -= 2; qSet(qSize);
+      }
+      ctx.fillText(qText, W / 2, 268);
+
+      // Subtitle (trail) — autofit so long Arc/Clarity/Reconnection
+      // trails like "WHAT INVITES RECONNECTION · WHAT HOLDS THE PAIN
+      // · WHAT MAKES IT STILL POSSIBLE" still fit in 1080.
+      ctx.fillStyle = '#b9b3a4';
+      const subtitleText = opts.subtitle || '';
+      if (isThai) {
+        let sSize = 22;
+        const setS = (s) => ctx.font = `300 ${s}px "IBM Plex Sans Thai", serif`;
+        setS(sSize);
+        while (ctx.measureText(subtitleText).width > W - 120 && sSize > 14) {
+          sSize -= 2; setS(sSize);
+        }
+        ctx.fillText(subtitleText, W / 2, 322);
+      } else {
+        let sSize = 24;
+        const setS = (s) => ctx.font = `italic 300 ${s}px "Cormorant Garamond", serif`;
+        setS(sSize);
+        while (ctx.measureText(subtitleText).width > W - 120 && sSize > 14) {
+          sSize -= 2; setS(sSize);
+        }
+        ctx.fillText(subtitleText, W / 2, 322);
+      }
+      dividerY = 380;
+    } else {
+      ctx.fillStyle = '#b9b3a4';
+      const subtitleText = opts.subtitle || '';
+      if (isThai) {
+        let sSize = 26;
+        const setS = (s) => ctx.font = `italic 300 ${s}px "IBM Plex Sans Thai", serif`;
+        setS(sSize);
+        while (ctx.measureText(subtitleText).width > W - 120 && sSize > 14) {
+          sSize -= 2; setS(sSize);
+        }
+        ctx.fillText(subtitleText, W / 2, 270);
+      } else {
+        let sSize = 28;
+        const setS = (s) => ctx.font = `italic 300 ${s}px "Cormorant Garamond", serif`;
+        setS(sSize);
+        while (ctx.measureText(subtitleText).width > W - 120 && sSize > 14) {
+          sSize -= 2; setS(sSize);
+        }
+        ctx.fillText(subtitleText, W / 2, 270);
+      }
+      dividerY = 348;
+    }
+
+    drawDivider(ctx, W / 2, dividerY, 200, 8);
+
+    // Three position blocks in a row. (1080 - 120 side pad - 80 gaps)/3
+    // ≈ 293px per column. Each cell: numeral, label, card-name.
+    const sidePad = 60;
+    const colGap = 40;
+    const colW = (W - sidePad * 2 - colGap * 2) / 3;
+    const blockY = dividerY + 110;
+
+    (opts.positions || []).forEach((pos, i) => {
+      const cx = sidePad + colW / 2 + i * (colW + colGap);
+
+      // Roman numeral
+      ctx.fillStyle = '#b89968';
+      ctx.font = 'italic 400 44px "Cormorant Garamond", "IBM Plex Sans Thai", serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(pos.roman + '.', cx, blockY);
+
+      // Position label — tracked uppercase EN, plain Thai. Autofit so
+      // long Arc-mode labels never overflow a 293-wide column.
+      ctx.fillStyle = '#b89968';
+      const labelMaxW = colW - 12;
+      if (isThai) {
+        let lSize = 20;
+        const setL = (s) => ctx.font = `500 ${s}px "IBM Plex Sans Thai", sans-serif`;
+        setL(lSize);
+        const labelText = pos.label || '';
+        while (ctx.measureText(labelText).width > labelMaxW && lSize > 12) {
+          lSize -= 2; setL(lSize);
+        }
+        ctx.fillText(labelText, cx, blockY + 54);
+      } else {
+        let lSize = 16;
+        const upper = (pos.label || '').toUpperCase();
+        const setL = (s) => ctx.font = `600 ${s}px "Inter", sans-serif`;
+        const trackPx = 3;
+        setL(lSize);
+        const measureLTracked = () => ctx.measureText(upper).width
+          + Math.max(0, upper.length - 1) * trackPx;
+        while (measureLTracked() > labelMaxW && lSize > 10) {
+          lSize -= 2; setL(lSize);
+        }
+        drawTracked(ctx, upper, cx, blockY + 54, lSize, trackPx);
+      }
+
+      // Card name + optional reversed suffix — autofit to one line.
+      ctx.fillStyle = '#ebe4d4';
+      const cardLine = pos.cardName + (pos.reversed
+        ? (isThai ? ' · กลับหัว' : ' · Reversed')
+        : '');
+      let cSize = isThai ? 30 : 34;
+      const setC = (s) => ctx.font = isThai
+        ? `500 ${s}px "IBM Plex Sans Thai", serif`
+        : `500 ${s}px "Cormorant Garamond", serif`;
+      setC(cSize);
+      const cardMaxW = colW - 8;
+      while (ctx.measureText(cardLine).width > cardMaxW && cSize > 18) {
+        cSize -= 2; setC(cSize);
+      }
+      ctx.fillText(cardLine, cx, blockY + 130);
+    });
+
+    // Fineprint
+    ctx.fillStyle = '#b9b3a4';
+    ctx.font = isThai
+      ? 'italic 300 26px "IBM Plex Sans Thai", serif'
+      : 'italic 300 28px "Cormorant Garamond", serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(opts.fineprint || '', W / 2, H - 160);
+
+    // Brand wordmark
+    ctx.fillStyle = '#ebe4d4';
+    ctx.font = '400 28px "Cormorant Garamond", "IBM Plex Sans Thai", serif';
+    drawTracked(ctx, 'VEILA', W / 2, H - 100, 28, 18);
+
+    ctx.fillStyle = '#b89968';
+    ctx.beginPath();
+    ctx.arc(W / 2, H - 80, 3, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = '#6c6a63';
+    ctx.font = '400 16px "Inter", "IBM Plex Sans Thai", sans-serif';
+    drawTracked(ctx, 'VEILATAROT.COM', W / 2, H - 45, 16, 5);
+
+    return canvas;
+  }
+
   async function shareLoveReading(opts) {
+    // v3: opts.format selects the poster shape. Default 'story' (1920)
+    // preserves the v1/v2 default; 'square' opts into the 1080×1080
+    // renderer. Any unrecognised value falls back to story so older
+    // callers and unknown inputs render the canonical poster.
+    const format = opts && opts.format === 'square' ? 'square' : 'story';
     const sheet = openSheet(opts);
     try {
-      const canvas = await renderLoveReadingCanvas(opts);
+      const canvas = format === 'square'
+        ? await renderLoveReadingSquareCanvas(opts)
+        : await renderLoveReadingCanvas(opts);
       const blob = await canvasToBlob(canvas);
       sheet.setBlob(blob);
     } catch (err) {
-      console.error('share love reading render failed', err);
+      console.error('share love reading render failed (' + format + ')', err);
       sheet.close();
     }
     return sheet;
