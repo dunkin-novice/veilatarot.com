@@ -1149,6 +1149,27 @@ html[lang="th"] .sel-counter .sel-next {
   margin: 0 auto 18px;
   max-width: 44ch;
 }
+/* Secondary "save as square" link — quieter than the main share CTA,
+   still tappable. Sits under the primary button. No emoji, no badge. */
+.share-block .share-format-link {
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  margin-top: 14px;
+  padding: 6px 12px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+  transition: color 0.25s ease;
+}
+.share-block .share-format-link:hover,
+.share-block .share-format-link:focus-visible { color: var(--gold); }
+html[lang="th"] .share-block .share-format-link { font-size: 15px; }
 .actions-row {
   display: flex;
   justify-content: center;
@@ -1624,6 +1645,7 @@ html[lang="th"] footer {
           </div>
           <p class="share-lede" data-i18n="shareLede">Keep this reading as an image — three cards, for a quieter moment.</p>
           <button type="button" class="cta-btn ghost" id="share-btn" data-i18n="shareBtn">Save this reading</button>
+          <button type="button" class="share-format-link" id="share-square-btn" data-i18n="shareSquareBtn">Save as square</button>
         </aside>
 
         <section class="continue-block" id="continue-block" hidden>
@@ -1715,6 +1737,7 @@ const T = {
     readoutLede: 'Read each card in turn — what you bring, what they bring, what sits in the space between. These are reflections, not predictions.',
     shareLede: 'Keep this reading as an image — three cards, for a quieter moment.',
     shareBtn: 'Save this reading',
+    shareSquareBtn: 'Save as square',
     reflectionSaved: 'Reflection saved to this device. Return tomorrow to notice what shifts.',
     rcLabel: 'Last time you asked…',
     rcPrompt: 'Notice what feels different today.',
@@ -1809,6 +1832,7 @@ const T = {
     readoutLede: 'อ่านไพ่ทีละใบ — สิ่งที่คุณนำมา สิ่งที่อีกฝ่ายนำมา และสิ่งที่อยู่ในพื้นที่ระหว่างกัน นี่คือการสะท้อน ไม่ใช่การพยากรณ์',
     shareLede: 'บันทึกบทอ่านนี้เป็นภาพ — ไพ่สามใบ ไว้ใคร่ครวญในวันอื่น',
     shareBtn: 'บันทึกบทอ่านนี้',
+    shareSquareBtn: 'บันทึกแบบสี่เหลี่ยม',
     reflectionSaved: 'บันทึกบทใคร่ครวญแล้วในเครื่องนี้ กลับมาวันพรุ่งนี้เพื่อสังเกตว่าอะไรเปลี่ยนไป',
     rcLabel: 'ครั้งก่อนคุณถามว่า…',
     rcPrompt: 'ลองสังเกตว่าวันนี้ความรู้สึกเปลี่ยนไปอย่างไร',
@@ -2387,8 +2411,12 @@ function trimSentence(text, maxChars) {
   return (space > 0 ? cut.slice(0, space) : cut).trim() + '…';
 }
 
-function shareLoveReading() {
-  if (!window.veilaShare || !window.veilaShare.shareLoveReading || !drawn.length) return;
+function buildShareOpts(format) {
+  // Shared opts-builder for both poster formats. The 'story' branch is
+  // byte-equivalent to the v2 call (default analytics names + filename),
+  // so existing dashboards keep firing the same events. The 'square'
+  // branch swaps in love_reading_square_* events, a -square filename,
+  // and adds poster_format: 'square' to every event payload.
   const positions = drawn.map(d => {
     const orient = d.reversed ? 'reversed' : 'upright';
     const orientLabel = d.reversed ? T[lang].reversed : T[lang].upright;
@@ -2406,20 +2434,23 @@ function shareLoveReading() {
   });
 
   const questionText = selectedQuestionKey ? getPresetText(selectedQuestionKey, lang) : '';
-  // Build the share-image subtitle dynamically from the active spread's
-  // position labels, so an Emotional Arc reading reads
-  // "What Shaped This · What Is Unfolding · What Is Changing", etc.
   const subtitle = currentPositions().map(p => p.short[lang]).join(' · ');
-
-  // v2 share poster: the eyebrow slot now carries the selected spread
-  // mode's localized label (e.g., "EMOTIONAL ARC" / "ห้วงอารมณ์"). The
-  // renderer falls back to opts.eyebrow if spreadModeLabel is absent
-  // (backward-compatible with v1 callers).
   const spreadModeLabel = (SPREAD_MODES[selectedMode] && SPREAD_MODES[selectedMode].label[lang])
     || SPREAD_MODES[DEFAULT_MODE].label[lang];
 
-  window.veilaShare.shareLoveReading({
+  const isSquare = format === 'square';
+  const sharedEventParams = {
     lang: lang,
+    reversed_count: drawn.filter(d => d.reversed).length,
+    card_ids: drawn.map(d => d.card.id).join(','),
+    question_key: selectedQuestionKey || '',
+    spread_mode: selectedMode,
+    poster_format: isSquare ? 'square' : 'story'
+  };
+
+  return {
+    lang: lang,
+    format: isSquare ? 'square' : 'story',
     spreadMode: selectedMode,
     spreadModeLabel: spreadModeLabel,
     eyebrow: T[lang].shareSheetEyebrow,
@@ -2429,7 +2460,7 @@ function shareLoveReading() {
     positions: positions,
     fineprint: T[lang].shareFineprint,
     pageUrl: location.origin + '/quick-love-reading/',
-    filename: 'veila-love-reading-' + lang + '.png',
+    filename: 'veila-love-reading' + (isSquare ? '-square-' : '-') + lang + '.png',
     sheetEyebrow: T[lang].shareSheetEyebrow,
     downloadLabel: T[lang].shareDownload,
     shareLabel: T[lang].shareNative,
@@ -2440,19 +2471,27 @@ function shareLoveReading() {
     pressHint: T[lang].sharePressHint,
     shareTitle: T[lang].shareTitle,
     shareText: T[lang].shareTitle + ' — veilatarot.com',
-    events: {
+    events: isSquare ? {
+      exported: 'love_reading_square_saved',
+      native: 'love_reading_square_shared',
+      linkCopied: 'love_reading_square_link_copied'
+    } : {
       exported: 'love_reading_saved',
       native: 'love_reading_shared',
       linkCopied: 'love_reading_link_copied'
     },
-    eventParams: {
-      lang: lang,
-      reversed_count: drawn.filter(d => d.reversed).length,
-      card_ids: drawn.map(d => d.card.id).join(','),
-      question_key: selectedQuestionKey || '',
-      spread_mode: selectedMode
-    }
-  });
+    eventParams: sharedEventParams
+  };
+}
+
+function shareLoveReading() {
+  if (!window.veilaShare || !window.veilaShare.shareLoveReading || !drawn.length) return;
+  window.veilaShare.shareLoveReading(buildShareOpts('story'));
+}
+
+function shareLoveReadingSquare() {
+  if (!window.veilaShare || !window.veilaShare.shareLoveReading || !drawn.length) return;
+  window.veilaShare.shareLoveReading(buildShareOpts('square'));
 }
 
 /* ========================================================================
@@ -3192,6 +3231,10 @@ renderArchive();
 
 document.getElementById('start-btn').addEventListener('click', enterSelection);
 document.getElementById('share-btn').addEventListener('click', shareLoveReading);
+{
+  const sq = document.getElementById('share-square-btn');
+  if (sq) sq.addEventListener('click', shareLoveReadingSquare);
+}
 document.getElementById('restart-btn').addEventListener('click', restart);
 
 // Try another spread — return to the selection screen while preserving the
