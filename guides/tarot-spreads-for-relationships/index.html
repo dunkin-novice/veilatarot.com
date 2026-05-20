@@ -222,35 +222,42 @@ html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"]
   </section>
 
   <section>
-    <h2 data-i18n="h2Start">Where to start</h2>
-    <p data-i18n="startIntro">If a particular reflective question is on your mind, it is sometimes easier to start from the question than from the spread. Each of these short pages walks through the question and recommends the spread that fits it.</p>
+    <h2 data-i18n="rrH2">Related reflections</h2>
+    <p data-i18n="rrIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
-      <li><a href="/love-readings/does-he-miss-me/">
+      <li><a href="/love-readings/does-he-miss-me/" data-related-target="intent_page" data-related-slug="does-he-miss-me">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="qLink1Name">Does he miss me?</div>
-          <div class="hcl-kw" data-i18n="qLink1Kw">→ Connection spread</div>
+          <div class="hcl-name" data-i18n="rr1Name">Does he miss me?</div>
+          <div class="hcl-kw" data-i18n="rr1Kw">→ Connection spread</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/why-did-they-pull-away/">
+      <li><a href="/love-readings/why-did-they-pull-away/" data-related-target="intent_page" data-related-slug="why-did-they-pull-away">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="qLink2Name">Why did they pull away?</div>
-          <div class="hcl-kw" data-i18n="qLink2Kw">→ Emotional Arc spread</div>
+          <div class="hcl-name" data-i18n="rr2Name">Why did they pull away?</div>
+          <div class="hcl-kw" data-i18n="rr2Kw">→ Emotional Arc spread</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/should-i-reach-out/">
+      <li><a href="/love-readings/should-i-reach-out/" data-related-target="intent_page" data-related-slug="should-i-reach-out">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="qLink3Name">Should I reach out?</div>
-          <div class="hcl-kw" data-i18n="qLink3Kw">→ Reconnection spread</div>
+          <div class="hcl-name" data-i18n="rr3Name">Should I reach out?</div>
+          <div class="hcl-kw" data-i18n="rr3Kw">→ Reconnection spread</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/what-changed-between-us/">
+      <li><a href="/love-readings/what-changed-between-us/" data-related-target="intent_page" data-related-slug="what-changed-between-us">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="qLink4Name">What changed between us?</div>
-          <div class="hcl-kw" data-i18n="qLink4Kw">→ Clarity spread</div>
+          <div class="hcl-name" data-i18n="rr4Name">What changed between us?</div>
+          <div class="hcl-kw" data-i18n="rr4Kw">→ Clarity spread</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/why-is-this-connection-confusing/" data-related-target="intent_page" data-related-slug="why-is-this-connection-confusing">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr5Name">Why is this connection confusing?</div>
+          <div class="hcl-kw" data-i18n="rr5Kw">→ Connection spread</div>
         </div>
       </a></li>
     </ol>
@@ -345,12 +352,13 @@ const T = {
     h2Surprise: 'A note on cards that surprise you',
     surprise1: "In every spread there will sometimes be a card that doesn't seem to fit. Don't force the meaning. The deck doesn't know your question; the card you drew is the card you drew. Treat the surprising card as an invitation to widen the question slightly. What if it is pointing at something near, but not quite, the thing you asked?",
     surprise2: "A surprising card is often the most useful card in a reading. It is the one your mind didn't already have a story for, which means it is the one that can give you a story you didn't yet know you were inside.",
-    h2Start: 'Where to start',
-    startIntro: 'If a particular reflective question is on your mind, it is sometimes easier to start from the question than from the spread. Each of these short pages walks through the question and recommends the spread that fits it.',
-    qLink1Name: 'Does he miss me?', qLink1Kw: '→ Connection spread',
-    qLink2Name: 'Why did they pull away?', qLink2Kw: '→ Emotional Arc spread',
-    qLink3Name: 'Should I reach out?', qLink3Kw: '→ Reconnection spread',
-    qLink4Name: 'What changed between us?', qLink4Kw: '→ Clarity spread',
+    rrH2: 'Related reflections',
+    rrIntro: 'People sitting with this question also often ask…',
+    rr1Name: 'Does he miss me?', rr1Kw: '→ Connection spread',
+    rr2Name: 'Why did they pull away?', rr2Kw: '→ Emotional Arc spread',
+    rr3Name: 'Should I reach out?', rr3Kw: '→ Reconnection spread',
+    rr4Name: 'What changed between us?', rr4Kw: '→ Clarity spread',
+    rr5Name: 'Why is this connection confusing?', rr5Kw: '→ Connection spread',
     h2Faq: 'Reflective questions',
     q1: 'Why three cards instead of one or ten?',
     a1: 'Three cards are the smallest spread that names a shape. One card is for a single noticing. Ten cards (the Celtic Cross) can hold a wide question but often overwhelm a tender one. Three is enough to break a question into parts without burying the reader in interpretation.',
@@ -411,12 +419,13 @@ const T = {
     h2Surprise: 'ข้อสังเกตเรื่องไพ่ที่ทำให้แปลกใจ',
     surprise1: 'ในทุกบทอ่านบางครั้งจะมีไพ่ที่ดูไม่เข้า อย่าบังคับความหมาย ชุดไพ่ไม่รู้คำถามของคุณ ไพ่ที่จั่วได้คือไพ่ที่จั่วได้ มองไพ่ที่แปลกใจเป็นการเชื้อเชิญให้ขยายคำถามเล็กน้อย จะเป็นไงถ้ามันชี้ไปที่อะไรบางอย่างที่ใกล้ๆ กับสิ่งที่คุณถาม แต่ไม่ใช่ทั้งหมด',
     surprise2: 'ไพ่ที่แปลกใจมักเป็นไพ่ที่มีประโยชน์ที่สุดในบทอ่าน เป็นใบที่ใจคุณยังไม่มีเรื่องเล่าสำเร็จรูปอยู่แล้ว ซึ่งหมายความว่าเป็นใบที่ให้เรื่องเล่าที่คุณยังไม่รู้ว่าตัวเองอยู่ในนั้น',
-    h2Start: 'เริ่มที่ไหน',
-    startIntro: 'ถ้าคำถามใคร่ครวญข้อหนึ่งอยู่ในใจ บางครั้งเริ่มจากคำถามง่ายกว่าเริ่มจากบทอ่าน หน้าสั้นๆ แต่ละหน้าอธิบายคำถามและแนะนำบทอ่านที่เหมาะ',
-    qLink1Name: 'เขาคิดถึงเราไหม', qLink1Kw: '→ บทอ่านเชื่อมโยง',
-    qLink2Name: 'ทำไมเขาถึงห่างไป', qLink2Kw: '→ บทอ่านห้วงอารมณ์',
-    qLink3Name: 'ควรทักไปไหม', qLink3Kw: '→ บทอ่านเชื่อมโยงใหม่',
-    qLink4Name: 'อะไรเปลี่ยนไประหว่างเรา', qLink4Kw: '→ บทอ่านความชัดเจน',
+    rrH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    rrIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
+    rr1Name: 'เขาคิดถึงเราไหม', rr1Kw: '→ บทอ่านเชื่อมโยง',
+    rr2Name: 'ทำไมเขาถึงห่างไป', rr2Kw: '→ บทอ่านห้วงอารมณ์',
+    rr3Name: 'ควรทักไปไหม', rr3Kw: '→ บทอ่านเชื่อมโยงใหม่',
+    rr4Name: 'อะไรเปลี่ยนไประหว่างเรา', rr4Kw: '→ บทอ่านความชัดเจน',
+    rr5Name: 'ทำไมความสัมพันธ์นี้ถึงสับสน', rr5Kw: '→ บทอ่านเชื่อมโยง',
     h2Faq: 'คำถามชวนใคร่ครวญ',
     q1: 'ทำไมสามใบ ไม่ใช่หนึ่งหรือสิบ',
     a1: 'ไพ่สามใบเป็นบทอ่านเล็กที่สุดที่เรียกชื่อรูปร่างได้ หนึ่งใบไว้สังเกตจุดเดียว สิบใบ (เซลติกครอส) รับคำถามกว้างได้แต่มักจะท่วมคำถามที่บอบบาง สามใบพอจะหั่นคำถามเป็นส่วนๆ โดยไม่ฝังผู้อ่านในการตีความ',
@@ -479,6 +488,22 @@ document.getElementById('cta-primary').addEventListener('click', () => {
       lang: lang
     });
   }
+});
+
+document.querySelectorAll('[data-related-target]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'guide_page',
+        target_page_type: el.getAttribute('data-related-target'),
+        source_slug: GUIDE_SLUG,
+        target_slug: el.getAttribute('data-related-slug') || '',
+        spread_mode: '',
+        question_key: '',
+        lang: lang
+      });
+    }
+  });
 });
 
 applyLang();

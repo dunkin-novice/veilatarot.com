@@ -187,21 +187,42 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   </section>
 
   <section>
-    <h2 data-i18n="intentH2">Questions this spread can sit with</h2>
-    <p data-i18n="intentIntro">If the question on your mind matches one of these, Clarity is set up for it — slow naming rather than confrontation.</p>
+    <h2 data-i18n="rrH2">Related reflections</h2>
+    <p data-i18n="rrIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
-      <li><a href="/love-readings/what-changed-between-us/">
+      <li><a href="/love-readings/should-i-let-go/" data-related-target="intent_page" data-related-slug="should-i-let-go">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent1Name">What changed between us?</div>
-          <div class="hcl-kw" data-i18n="intent1Kw">Naming a change that has no single event behind it.</div>
+          <div class="hcl-name" data-i18n="rr1Name">Should I let go?</div>
+          <div class="hcl-kw" data-i18n="rr1Kw">When the question is whether the bond is asking to be put down.</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/does-he-miss-me/">
+      <li><a href="/love-readings/am-i-holding-on-or-listening-to-my-heart/" data-related-target="intent_page" data-related-slug="am-i-holding-on-or-listening-to-my-heart">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent2Name">Does he miss me?</div>
-          <div class="hcl-kw" data-i18n="intent2Kw">When you keep trying to read meaning from small signals.</div>
+          <div class="hcl-name" data-i18n="rr2Name">Am I holding on or listening to my heart?</div>
+          <div class="hcl-kw" data-i18n="rr2Kw">When you cannot tell which voice in you is speaking.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/why-does-this-relationship-feel-unclear/" data-related-target="intent_page" data-related-slug="why-does-this-relationship-feel-unclear">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr3Name">Why does this relationship feel unclear?</div>
+          <div class="hcl-kw" data-i18n="rr3Kw">When the shape of the bond keeps moving.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/what-changed-between-us/" data-related-target="intent_page" data-related-slug="what-changed-between-us">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr4Name">What changed between us?</div>
+          <div class="hcl-kw" data-i18n="rr4Kw">Naming a change that has no single event behind it.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/is-this-just-attachment-or-love/" data-related-target="intent_page" data-related-slug="is-this-just-attachment-or-love">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr5Name">Is this just attachment or love?</div>
+          <div class="hcl-kw" data-i18n="rr5Kw">For distinguishing the felt voice from the practised one.</div>
         </div>
       </a></li>
     </ol>
@@ -283,10 +304,13 @@ const T = {
     a3: "A confession is meant for someone else to receive. Clarity is meant for you to read. The spread doesn't ask you to tell anyone anything — it asks you to see what you already half-see, and to hold it without needing to fix it.",
     q4: "Can I run this if I'm feeling raw?",
     a4: 'Yes. Clarity is intentionally quiet — three cards, slow tone, no scoreboard. If a card surfaces something heavy, close the page and come back later. The reading will keep.',
-    intentH2: 'Questions this spread can sit with',
-    intentIntro: 'If the question on your mind matches one of these, Clarity is set up for it — slow naming rather than confrontation.',
-    intent1Name: 'What changed between us?', intent1Kw: 'Naming a change that has no single event behind it.',
-    intent2Name: 'Does he miss me?', intent2Kw: 'When you keep trying to read meaning from small signals.',
+    rrH2: 'Related reflections',
+    rrIntro: 'People sitting with this question also often ask…',
+    rr1Name: 'Should I let go?', rr1Kw: 'When the question is whether the bond is asking to be put down.',
+    rr2Name: 'Am I holding on or listening to my heart?', rr2Kw: 'When you cannot tell which voice in you is speaking.',
+    rr3Name: 'Why does this relationship feel unclear?', rr3Kw: 'When the shape of the bond keeps moving.',
+    rr4Name: 'What changed between us?', rr4Kw: 'Naming a change that has no single event behind it.',
+    rr5Name: 'Is this just attachment or love?', rr5Kw: 'For distinguishing the felt voice from the practised one.',
     otherH2: 'Other spreads',
     otherArcName: 'Emotional Arc', otherArcKw: 'What shaped this, what is unfolding, what is changing.',
     otherReconName: 'Reconnection', otherReconKw: 'What still exists, what creates distance, what invites reconnection.',
@@ -326,10 +350,13 @@ const T = {
     a3: 'การสารภาพมีไว้ให้คนอื่นรับฟัง ความชัดเจนมีไว้ให้คุณอ่าน บทอ่านไม่ขอให้คุณบอกใครเลย — มันขอให้คุณเห็นสิ่งที่คุณเห็นครึ่งหนึ่งอยู่แล้ว และถือมันไว้โดยไม่ต้องแก้',
     q4: 'อ่านได้ไหมถ้ายังรู้สึกบอบบาง',
     a4: 'ได้ ความชัดเจนเงียบโดยตั้งใจ — ไพ่สามใบ น้ำเสียงช้าๆ ไม่มีคะแนน ถ้าไพ่เผยอะไรหนักๆ ปิดหน้านี้แล้วกลับมาทีหลัง บทอ่านจะรออยู่',
-    intentH2: 'คำถามที่บทอ่านนี้นั่งด้วยได้',
-    intentIntro: 'ถ้าคำถามในใจของคุณตรงกับข้อใดข้อหนึ่ง ความชัดเจนตั้งขึ้นเพื่อมัน — การเรียกชื่ออย่างช้าๆ ไม่ใช่การเผชิญหน้า',
-    intent1Name: 'อะไรเปลี่ยนไประหว่างเรา', intent1Kw: 'เรียกชื่อการเปลี่ยนแปลงที่ไม่มีเหตุการณ์เดียวอยู่เบื้องหลัง',
-    intent2Name: 'เขาคิดถึงเราไหม', intent2Kw: 'เมื่อคุณพยายามอ่านความหมายจากสัญญาณเล็กๆ',
+    rrH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    rrIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
+    rr1Name: 'เราควรปล่อยไหม', rr1Kw: 'เมื่อคำถามคือความผูกพันขอให้ถูกวางลงไหม',
+    rr2Name: 'เรากำลังยึดติด หรือกำลังฟังหัวใจตัวเอง', rr2Kw: 'เมื่อคุณบอกไม่ได้ว่าเสียงไหนในตัวคุณกำลังพูด',
+    rr3Name: 'ทำไมความสัมพันธ์นี้ถึงรู้สึกไม่ชัด', rr3Kw: 'เมื่อรูปร่างของความผูกพันเคลื่อนไปเรื่อย',
+    rr4Name: 'อะไรเปลี่ยนไประหว่างเรา', rr4Kw: 'เรียกชื่อการเปลี่ยนแปลงที่ไม่มีเหตุการณ์เดียวอยู่เบื้องหลัง',
+    rr5Name: 'นี่คือความผูกพันหรือความรัก', rr5Kw: 'สำหรับการแยกเสียงที่รู้สึกจากเสียงที่ฝึก',
     otherH2: 'บทอ่านอื่นๆ',
     otherArcName: 'ห้วงอารมณ์', otherArcKw: 'สิ่งที่ก่อตัวขึ้น สิ่งที่กำลังเกิด สิ่งที่กำลังเปลี่ยน',
     otherReconName: 'เชื่อมโยงใหม่', otherReconKw: 'สิ่งที่ยังคงอยู่ สิ่งที่สร้างระยะ สิ่งที่เชื้อเชิญให้กลับมา',
@@ -384,6 +411,22 @@ document.getElementById('cta-primary').addEventListener('click', () => {
       lang: lang
     });
   }
+});
+
+document.querySelectorAll('[data-related-target]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'spread_landing_page',
+        target_page_type: el.getAttribute('data-related-target'),
+        source_slug: MODE_KEY,
+        target_slug: el.getAttribute('data-related-slug') || '',
+        spread_mode: MODE_KEY,
+        question_key: '',
+        lang: lang
+      });
+    }
+  });
 });
 
 applyLang();

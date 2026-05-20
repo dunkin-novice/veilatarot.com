@@ -164,7 +164,8 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   </section>
 
   <section>
-    <h2 data-i18n="relatedH2">Related questions</h2>
+    <h2 data-i18n="relatedH2">Related reflections</h2>
+    <p data-i18n="relatedIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
       <li><a href="/love-readings/why-are-they-hot-and-cold/" data-target="intent_page" data-name="why-are-they-hot-and-cold">
         <div class="hcl-rom">·</div>
@@ -290,7 +291,8 @@ const T = {
     p3Name: 'What are we to each other?', p3Blurb: 'For bonds that are real and not yet named — read for shape, not label.',
     p4Name: 'Are they confused about me?', p4Blurb: 'For mixed signals — read as the shape of the space between, not as their transcript.',
     p5Name: 'Why does this connection feel so hard to explain?', p5Blurb: 'For bonds that escape every shorthand — held in three honest layers instead of one missing label.',
-    relatedH2: 'Related questions',
+    relatedH2: 'Related reflections',
+    relatedIntro: 'People sitting with this question also often ask…',
     r1Name: 'Why are they hot and cold?', r1Kw: 'When the unclarity has begun to take the shape of a rhythm.',
     r2Name: 'Why do they come back when I pull away?', r2Kw: 'For pursuer-distancer rhythms inside an unclear bond.',
     r3Name: 'Why does it feel like bad timing?', r3Kw: 'When the unclarity is about when, not whether.',
@@ -328,7 +330,8 @@ const T = {
     p3Name: 'เราเป็นอะไรกัน', p3Blurb: 'สำหรับความผูกพันที่เป็นจริงและยังไม่มีชื่อ — อ่านเพื่อรูปร่าง ไม่ใช่ป้าย',
     p4Name: 'เขางงเราอยู่ไหม', p4Blurb: 'สำหรับสัญญาณปนๆ — อ่านในฐานะรูปร่างของพื้นที่ระหว่างกัน ไม่ใช่บันทึกของเขา',
     p5Name: 'ทำไมความสัมพันธ์นี้ถึงอธิบายยาก', p5Blurb: 'สำหรับความผูกพันที่หลุดทุกคำย่อ — ถือไว้ในสามชั้นซื่อตรง แทนป้ายเดียวที่หายไป',
-    relatedH2: 'คำถามที่เกี่ยวข้อง',
+    relatedH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    relatedIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
     r1Name: 'ทำไมเขาเดี๋ยวร้อนเดี๋ยวเย็น', r1Kw: 'เมื่อความไม่ชัดเริ่มมีรูปร่างของจังหวะ',
     r2Name: 'ทำไมเขาถึงกลับมาตอนเราถอย', r2Kw: 'สำหรับจังหวะไล่-หนีในความผูกพันที่ไม่ชัด',
     r3Name: 'ทำไมรู้สึกเหมือนผิดจังหวะเวลา', r3Kw: 'เมื่อความไม่ชัดเป็นเรื่องเมื่อไร ไม่ใช่ว่าใช่หรือไม่',
@@ -400,6 +403,22 @@ function fireHubClick(targetType, targetName) {
 document.querySelectorAll('[data-target]').forEach((el) => {
   el.addEventListener('click', () => {
     fireHubClick(el.getAttribute('data-target'), el.getAttribute('data-name') || '');
+  });
+});
+
+document.querySelectorAll('a[data-target="intent_page"]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'love_readings_subhub',
+        target_page_type: 'intent_page',
+        source_slug: HUB_SLUG,
+        target_slug: el.getAttribute('data-name') || '',
+        spread_mode: '',
+        question_key: '',
+        lang: lang
+      });
+    }
   });
 });
 

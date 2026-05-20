@@ -187,28 +187,42 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   </section>
 
   <section>
-    <h2 data-i18n="intentH2">Questions this spread can sit with</h2>
-    <p data-i18n="intentIntro">If the question on your mind matches one of these, Connection is set up for it — reading the bond as a shared shape rather than as a verdict on either person.</p>
+    <h2 data-i18n="rrH2">Related reflections</h2>
+    <p data-i18n="rrIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
-      <li><a href="/love-readings/why-is-this-connection-confusing/">
+      <li><a href="/love-readings/why-is-this-connection-confusing/" data-related-target="intent_page" data-related-slug="why-is-this-connection-confusing">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent1Name">Why is this connection confusing?</div>
-          <div class="hcl-kw" data-i18n="intent1Kw">For when the confusion is shared, not only theirs.</div>
+          <div class="hcl-name" data-i18n="rr1Name">Why is this connection confusing?</div>
+          <div class="hcl-kw" data-i18n="rr1Kw">For when the confusion is shared, not only theirs.</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/are-they-confused-about-me/">
+      <li><a href="/love-readings/are-they-confused-about-me/" data-related-target="intent_page" data-related-slug="are-they-confused-about-me">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent2Name">Are they confused about me?</div>
-          <div class="hcl-kw" data-i18n="intent2Kw">For mixed signals — read as the shape of the space between, not as their transcript.</div>
+          <div class="hcl-name" data-i18n="rr2Name">Are they confused about me?</div>
+          <div class="hcl-kw" data-i18n="rr2Kw">For mixed signals — read as the shape of the space between, not as their transcript.</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/what-are-we-to-each-other/">
+      <li><a href="/love-readings/what-are-we-to-each-other/" data-related-target="intent_page" data-related-slug="what-are-we-to-each-other">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent3Name">What are we to each other?</div>
-          <div class="hcl-kw" data-i18n="intent3Kw">For bonds that are real and not yet named.</div>
+          <div class="hcl-name" data-i18n="rr3Name">What are we to each other?</div>
+          <div class="hcl-kw" data-i18n="rr3Kw">For bonds that are real and not yet named.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/why-are-they-hot-and-cold/" data-related-target="intent_page" data-related-slug="why-are-they-hot-and-cold">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr4Name">Why are they hot and cold?</div>
+          <div class="hcl-kw" data-i18n="rr4Kw">When mixed signals have begun to take the shape of a rhythm.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/is-there-still-something-between-us/" data-related-target="intent_page" data-related-slug="is-there-still-something-between-us">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr5Name">Is there still something between us?</div>
+          <div class="hcl-kw" data-i18n="rr5Kw">For reading a bond after the distance has done its work.</div>
         </div>
       </a></li>
     </ol>
@@ -290,11 +304,13 @@ const T = {
     a3: 'Connection is not built to declare a verdict. It is built to make the relationship visible in its three honest layers, so any decision that follows can come from clearer seeing rather than from a single forecast. The spread does not pronounce; it shows.',
     q4: 'Can I run this when the bond is undefined?',
     a4: 'Yes — that is one of the situations the spread is most useful for. Connection does not require a label. It can read a relationship that has not yet been named, and often the third card is the first language for what the bond is honestly doing.',
-    intentH2: 'Questions this spread can sit with',
-    intentIntro: 'If the question on your mind matches one of these, Connection is set up for it — reading the bond as a shared shape rather than as a verdict on either person.',
-    intent1Name: 'Why is this connection confusing?', intent1Kw: 'For when the confusion is shared, not only theirs.',
-    intent2Name: 'Are they confused about me?', intent2Kw: "For mixed signals — read as the shape of the space between, not as their transcript.",
-    intent3Name: 'What are we to each other?', intent3Kw: 'For bonds that are real and not yet named.',
+    rrH2: 'Related reflections',
+    rrIntro: 'People sitting with this question also often ask…',
+    rr1Name: 'Why is this connection confusing?', rr1Kw: 'For when the confusion is shared, not only theirs.',
+    rr2Name: 'Are they confused about me?', rr2Kw: 'For mixed signals — read as the shape of the space between, not as their transcript.',
+    rr3Name: 'What are we to each other?', rr3Kw: 'For bonds that are real and not yet named.',
+    rr4Name: 'Why are they hot and cold?', rr4Kw: 'When mixed signals have begun to take the shape of a rhythm.',
+    rr5Name: 'Is there still something between us?', rr5Kw: 'For reading a bond after the distance has done its work.',
     otherH2: 'Other spreads',
     otherArcName: 'Emotional Arc', otherArcKw: 'What shaped this, what is unfolding, what is changing.',
     otherClarityName: 'Clarity', otherClarityKw: 'What you know, what you avoid, what needs honesty.',
@@ -334,11 +350,13 @@ const T = {
     a3: 'เชื่อมโยงไม่ถูกสร้างมาเพื่อประกาศคำตัดสิน มันถูกสร้างเพื่อทำให้ความสัมพันธ์มองเห็นได้ในสามชั้นซื่อตรง การตัดสินใจใดๆ ที่ตามมาจึงมาจากการเห็นที่ชัดกว่า แทนการพยากรณ์เดียว บทอ่านไม่ประกาศ มันแสดง',
     q4: 'อ่านได้ไหมเมื่อความผูกพันยังไม่นิยาม',
     a4: 'ได้ — นั่นเป็นหนึ่งในสถานการณ์ที่บทอ่านมีประโยชน์ที่สุด เชื่อมโยงไม่ต้องการป้าย มันอ่านความสัมพันธ์ที่ยังไม่ถูกตั้งชื่อได้ และบ่อยครั้งไพ่ใบที่สามคือภาษาแรกของสิ่งที่ความผูกพันกำลังทำอยู่จริง',
-    intentH2: 'คำถามที่บทอ่านนี้นั่งด้วยได้',
-    intentIntro: 'ถ้าคำถามในใจของคุณตรงกับข้อใดข้อหนึ่ง เชื่อมโยงตั้งขึ้นเพื่อมัน — อ่านความผูกพันในฐานะรูปร่างร่วม แทนคำตัดสินต่อฝ่ายใดฝ่ายหนึ่ง',
-    intent1Name: 'ทำไมความสัมพันธ์นี้ถึงสับสน', intent1Kw: 'สำหรับเมื่อความสับสนเป็นร่วมกัน ไม่ใช่แค่ของเขา',
-    intent2Name: 'เขางงเราอยู่ไหม', intent2Kw: 'สำหรับสัญญาณปนๆ — อ่านในฐานะรูปร่างของพื้นที่ระหว่างกัน ไม่ใช่บันทึกของเขา',
-    intent3Name: 'เราเป็นอะไรกัน', intent3Kw: 'สำหรับความผูกพันที่เป็นจริงและยังไม่มีชื่อ',
+    rrH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    rrIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
+    rr1Name: 'ทำไมความสัมพันธ์นี้ถึงสับสน', rr1Kw: 'สำหรับเมื่อความสับสนเป็นร่วมกัน ไม่ใช่แค่ของเขา',
+    rr2Name: 'เขางงเราอยู่ไหม', rr2Kw: 'สำหรับสัญญาณปนๆ — อ่านในฐานะรูปร่างของพื้นที่ระหว่างกัน ไม่ใช่บันทึกของเขา',
+    rr3Name: 'เราเป็นอะไรกัน', rr3Kw: 'สำหรับความผูกพันที่เป็นจริงและยังไม่มีชื่อ',
+    rr4Name: 'ทำไมเขาเดี๋ยวร้อนเดี๋ยวเย็น', rr4Kw: 'เมื่อสัญญาณปนๆ เริ่มมีรูปร่างของจังหวะ',
+    rr5Name: 'ระหว่างเรายังมีอะไรเหลืออยู่ไหม', rr5Kw: 'สำหรับอ่านความผูกพันหลังระยะทำงานของมัน',
     otherH2: 'บทอ่านอื่นๆ',
     otherArcName: 'ห้วงอารมณ์', otherArcKw: 'สิ่งที่ก่อตัวขึ้น สิ่งที่กำลังเกิด สิ่งที่กำลังเปลี่ยน',
     otherClarityName: 'ความชัดเจน', otherClarityKw: 'สิ่งที่คุณรู้ สิ่งที่คุณหลีกเลี่ยง สิ่งที่ต้องการความซื่อตรง',
@@ -393,6 +411,22 @@ document.getElementById('cta-primary').addEventListener('click', () => {
       lang: lang
     });
   }
+});
+
+document.querySelectorAll('[data-related-target]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'spread_landing_page',
+        target_page_type: el.getAttribute('data-related-target'),
+        source_slug: MODE_KEY,
+        target_slug: el.getAttribute('data-related-slug') || '',
+        spread_mode: MODE_KEY,
+        question_key: '',
+        lang: lang
+      });
+    }
+  });
 });
 
 applyLang();

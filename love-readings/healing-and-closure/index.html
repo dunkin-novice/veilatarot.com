@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Healing and Closure — Love Tarot Readings | Veila</title>
-<meta name="description" content="Reflective tarot for the long quiet work after an ending — questions about reopening wounds, hosting closure yourself, and telling real recovery from skilful distraction." />
+<title>Healing and Closure — Tarot for the Long Quiet Work After Endings | Veila</title>
+<meta name="description" content="The middle of healing, where calendars stop mattering. Reflective tarot for reopening wounds, hosting closure yourself, and telling real recovery from skilful distraction — no shame-based timelines." />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0c" />
@@ -164,7 +164,8 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   </section>
 
   <section>
-    <h2 data-i18n="relatedH2">Related questions</h2>
+    <h2 data-i18n="relatedH2">Related reflections</h2>
+    <p data-i18n="relatedIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
       <li><a href="/love-readings/why-does-this-still-hurt/" data-target="intent_page" data-name="why-does-this-still-hurt">
         <div class="hcl-rom">·</div>
@@ -290,7 +291,8 @@ const T = {
     p3Name: 'Am I healing or just distracting myself?', p3Blurb: 'For the question under your busyness — telling real recovery from skilful distraction.',
     p4Name: 'What am I still hoping for?', p4Blurb: 'For the quiet hope that survives the situation it began in — held without being shamed.',
     p5Name: 'Why do old feelings keep coming back?', p5Blurb: 'For the emotions that return uninvited — welcomed as information, not as a relapse.',
-    relatedH2: 'Related questions',
+    relatedH2: 'Related reflections',
+    relatedIntro: 'People sitting with this question also often ask…',
     r1Name: 'Why does this still hurt?', r1Kw: 'For the ache that has outlasted the situation.',
     r2Name: 'Why does this relationship still have a hold on me?', r2Kw: 'For the gravity a bond keeps after the relationship is over.',
     r3Name: 'Why does moving on feel so hard?', r3Kw: 'For the difficulty of release as information rather than failure.',
@@ -328,7 +330,8 @@ const T = {
     p3Name: 'เรากำลังเยียวยา หรือกำลังเบี่ยงเบนตัวเอง', p3Blurb: 'สำหรับคำถามใต้ความยุ่ง — บอกการฟื้นตัวจริงจากการเบี่ยงเบนที่มีฝีมือ',
     p4Name: 'เรายังหวังอะไรอยู่กันแน่', p4Blurb: 'สำหรับความหวังเงียบที่รอดสถานการณ์ที่เริ่ม — ถือไว้โดยไม่ทำให้อาย',
     p5Name: 'ทำไมความรู้สึกเก่าๆ ถึงกลับมาเรื่อยๆ', p5Blurb: 'สำหรับความรู้สึกที่กลับมาโดยไม่เชิญ — ต้อนรับในฐานะข้อมูล ไม่ใช่การกำเริบ',
-    relatedH2: 'คำถามที่เกี่ยวข้อง',
+    relatedH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    relatedIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
     r1Name: 'ทำไมเรื่องนี้ถึงยังเจ็บอยู่', r1Kw: 'สำหรับความเจ็บที่ยาวกว่าสถานการณ์',
     r2Name: 'ทำไมความสัมพันธ์นี้ถึงยังมีอิทธิพลต่อเรา', r2Kw: 'สำหรับแรงดึงดูดของความผูกพันที่อยู่หลังความสัมพันธ์จบ',
     r3Name: 'ทำไมการก้าวต่อถึงยากนัก', r3Kw: 'สำหรับความยากของการปล่อยในฐานะข้อมูล ไม่ใช่ความล้มเหลว',
@@ -400,6 +403,22 @@ function fireHubClick(targetType, targetName) {
 document.querySelectorAll('[data-target]').forEach((el) => {
   el.addEventListener('click', () => {
     fireHubClick(el.getAttribute('data-target'), el.getAttribute('data-name') || '');
+  });
+});
+
+document.querySelectorAll('a[data-target="intent_page"]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'love_readings_subhub',
+        target_page_type: 'intent_page',
+        source_slug: HUB_SLUG,
+        target_slug: el.getAttribute('data-name') || '',
+        spread_mode: '',
+        question_key: '',
+        lang: lang
+      });
+    }
   });
 });
 
