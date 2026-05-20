@@ -393,6 +393,151 @@ html[lang="th"] .return-card .rc-prompt {
   font-size: 15px;
 }
 
+/* ====== REFLECTION ARCHIVE PANEL (intro screen, collapsible) ======
+   Reads veila-love-history. Renders up to 7 saved readings, most
+   recent first. Native <details>/<summary> for accessibility and
+   zero-JS toggling. No streaks, no gamification, no scores. */
+.archive-panel {
+  margin: 28px auto 0;
+  max-width: 640px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.015);
+}
+.archive-panel[open] { background: rgba(184, 153, 104, 0.025); }
+.archive-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--serif);
+  color: var(--ivory);
+}
+.archive-summary::-webkit-details-marker { display: none; }
+.archive-summary .ap-title { font-size: 16px; flex: 1; }
+.archive-summary .ap-count {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.archive-summary .ap-toggle {
+  font-family: var(--serif);
+  color: var(--ivory-mute);
+  font-size: 18px;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+.archive-panel[open] .archive-summary .ap-toggle { transform: rotate(90deg); }
+.archive-body { padding: 4px 18px 18px; }
+.archive-note {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-mute);
+  font-size: 13.5px;
+  margin: 0 0 14px;
+  line-height: 1.5;
+}
+.archive-empty {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 6px 0 6px;
+  text-align: center;
+}
+.archive-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.archive-item {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 14px 16px 16px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.archive-item .ai-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-bottom: 6px;
+}
+.archive-item .ai-date {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.archive-item .ai-mode {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+}
+.archive-item .ai-question {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory);
+  font-size: 16.5px;
+  line-height: 1.45;
+  margin: 0 0 6px;
+}
+.archive-item .ai-question.is-empty { color: var(--ivory-mute); font-style: italic; }
+.archive-item .ai-cards {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+.archive-item .ai-saved {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin: 0 0 10px;
+}
+.archive-item .ai-repeat-btn {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border: 1px solid var(--gold-dim);
+  background: transparent;
+  color: var(--ivory);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+.archive-item .ai-repeat-btn:hover { background: rgba(184, 153, 104, 0.08); border-color: var(--gold); }
+html[lang="th"] .archive-summary,
+html[lang="th"] .archive-item .ai-question { font-family: "IBM Plex Sans Thai", var(--serif); font-style: normal; }
+html[lang="th"] .archive-summary .ap-count,
+html[lang="th"] .archive-item .ai-date,
+html[lang="th"] .archive-item .ai-mode,
+html[lang="th"] .archive-item .ai-saved,
+html[lang="th"] .archive-item .ai-repeat-btn { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", var(--sans); }
+html[lang="th"] .archive-note,
+html[lang="th"] .archive-empty,
+html[lang="th"] .archive-item .ai-cards { font-family: "IBM Plex Sans Thai", var(--serif); font-style: normal; }
+@media (max-width: 600px) {
+  .archive-panel { margin-top: 24px; }
+  .archive-summary { padding: 12px 14px; }
+  .archive-summary .ap-title { font-size: 15px; }
+  .archive-body { padding: 4px 14px 16px; }
+  .archive-item { padding: 12px 13px 14px; }
+  .archive-item .ai-question { font-size: 15.5px; }
+  .archive-item .ai-cards { font-size: 13.5px; }
+  .archive-item .ai-repeat-btn { padding: 8px 14px; font-size: 11px; }
+}
+
 /* ====== CONTINUE REFLECTING BLOCK (after readout, before Try Another) ====== */
 .continue-block { margin: 28px auto 0; padding: 24px 0 0; border-top: 1px solid var(--rule); max-width: 640px; }
 .continue-block .cb-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
@@ -1392,6 +1537,23 @@ html[lang="th"] footer {
           </ul>
         </div>
       </aside>
+
+      <!-- Reflection Archive — private, device-local. Reads veila-love-history.
+           Collapsed by default. Shows up to 7 most-recent readings, with a
+           gentle "Reflect again" repeat path. No streaks, no scoring, no
+           prediction framing. -->
+      <details class="archive-panel" id="archive-panel">
+        <summary class="archive-summary">
+          <span class="ap-title" data-i18n="archiveTitle">Your reflection archive</span>
+          <span class="ap-count" id="archive-count"></span>
+          <span class="ap-toggle" aria-hidden="true">›</span>
+        </summary>
+        <div class="archive-body">
+          <p class="archive-note" data-i18n="archiveNote">Saved on this device. Private — nothing leaves your browser.</p>
+          <p class="archive-empty" id="archive-empty" hidden data-i18n="archiveEmpty">Your saved reflections will appear here after a reading.</p>
+          <ol class="archive-list" id="archive-list"></ol>
+        </div>
+      </details>
     </section>
 
     <!-- ====== MANUAL CARD SELECTION ====== -->
@@ -1559,6 +1721,17 @@ const T = {
     rcCta: "Pull today's reflection",
     rcNoQuestion: 'A quiet reading',
     rcReversedSuffix: ' · Reversed',
+    archiveTitle: 'Your reflection archive',
+    archiveCountSuffix: ' saved',
+    archiveNote: 'Saved on this device. Private — nothing leaves your browser.',
+    archiveEmpty: 'Your saved reflections will appear here after a reading.',
+    archiveNoQuestion: 'A quiet reading (no question)',
+    archiveSavedOnDevice: 'Saved on this device',
+    archiveRepeatBtn: 'Reflect again',
+    archiveToday: 'today',
+    archiveYesterday: 'yesterday',
+    archiveDaysAgoSuffix: ' days ago',
+    archiveCardsSeparator: ' · ',
     posThem: 'Their Energy',
     posYou: 'Your Energy',
     posBetween: 'Between You',
@@ -1642,6 +1815,17 @@ const T = {
     rcCta: 'เปิดบทใคร่ครวญของวันนี้',
     rcNoQuestion: 'บทอ่านอันเงียบสงบ',
     rcReversedSuffix: ' · กลับหัว',
+    archiveTitle: 'บทใคร่ครวญที่บันทึกไว้',
+    archiveCountSuffix: ' รายการ',
+    archiveNote: 'บันทึกไว้ในเครื่องนี้ เป็นส่วนตัว — ไม่มีอะไรออกจากเบราว์เซอร์ของคุณ',
+    archiveEmpty: 'บทใคร่ครวญที่บันทึกไว้จะแสดงที่นี่หลังจากคุณเปิดไพ่',
+    archiveNoQuestion: 'บทอ่านอันเงียบสงบ (ไม่มีคำถาม)',
+    archiveSavedOnDevice: 'บันทึกไว้ในเครื่องนี้',
+    archiveRepeatBtn: 'ใคร่ครวญอีกครั้ง',
+    archiveToday: 'วันนี้',
+    archiveYesterday: 'เมื่อวาน',
+    archiveDaysAgoSuffix: ' วันที่ผ่านมา',
+    archiveCardsSeparator: ' · ',
     posThem: 'พลังของเขา',
     posYou: 'พลังของคุณ',
     posBetween: 'สิ่งที่อยู่ระหว่างกัน',
@@ -2642,6 +2826,9 @@ function restart() {
   // Re-evaluate the return panel: if the user just completed today, the
   // panel hides; otherwise it stays visible.
   renderReturnPanel();
+  // Refresh archive — a new entry may have been written via
+  // saveReadingToHistory() before the user pressed Draw again.
+  renderArchive();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -2673,6 +2860,10 @@ function applyLang() {
   syncUserQuestion();
   syncUserQuestionForSelection();
   renderReturnPanel();
+  // Archive labels (date / mode / cards / button) are lang-dependent.
+  // renderArchive() is safe to call multiple times; the once-per-page
+  // analytics flag prevents reflection_archive_viewed from re-firing.
+  renderArchive();
   // Keep the next-position hint label correct after lang toggle on the
   // selection screen, and re-label the mode chips.
   if (!document.getElementById('selection').classList.contains('is-hidden')) {
@@ -2792,6 +2983,139 @@ if (rcCta) {
 }
 
 /* ========================================================================
+   REFLECTION ARCHIVE — private device-local list of past readings.
+   Reads veila-love-history. Renders up to HISTORY_MAX (7) entries,
+   most recent first. Each item has a "Reflect again" button that
+   pre-applies the saved spread_mode + question_key and drops the
+   user into manual selection (same path as the daily return CTA).
+
+   Backward compatibility: older entries may lack spread_mode — we
+   default to 'connection' via modeFor(). We never migrate stored
+   data; older entries keep their original shape.
+
+   reflection_archive_viewed fires once per page load when the
+   archive renders with history_size > 0. We use a dataset flag on
+   the panel to throttle across lang toggles, restarts, and any
+   re-render triggered by saveReadingToHistory().
+   ======================================================================== */
+function renderArchive() {
+  const panel = document.getElementById('archive-panel');
+  const list  = document.getElementById('archive-list');
+  const empty = document.getElementById('archive-empty');
+  const countEl = document.getElementById('archive-count');
+  if (!panel || !list) return;
+
+  const hist = loadHistory();
+  const dict = T[lang] || T.en;
+
+  // Empty state — render the gentle empty copy; no items, no count badge.
+  if (!hist.length) {
+    list.innerHTML = '';
+    if (empty) empty.hidden = false;
+    if (countEl) countEl.textContent = '';
+    return;
+  }
+  if (empty) empty.hidden = true;
+
+  // Count badge on the summary.
+  if (countEl) {
+    const n = Math.min(hist.length, HISTORY_MAX);
+    countEl.textContent = n + (dict.archiveCountSuffix || '');
+  }
+
+  list.innerHTML = '';
+  hist.slice(0, HISTORY_MAX).forEach((entry, idx) => {
+    const modeKey = entry.spread_mode || DEFAULT_MODE;
+    const modeDef = modeFor(modeKey);
+    const modeLabel = (modeDef.label && modeDef.label[lang]) || modeDef.label.en;
+
+    // Date line with relative suffix.
+    const ds = daysSince(entry.date || '');
+    let dateExtra = '';
+    if (ds === 0)      dateExtra = ' · ' + (dict.archiveToday || 'today');
+    else if (ds === 1) dateExtra = ' · ' + (dict.archiveYesterday || 'yesterday');
+    else if (ds > 1)   dateExtra = ' · ' + ds + (dict.archiveDaysAgoSuffix || ' days ago');
+    const dateText = (entry.date || '') + dateExtra;
+
+    // Card-name list — language-aware, gracefully falls back if name_th
+    // is empty on an older entry.
+    const sep = dict.archiveCardsSeparator || ' · ';
+    const cardNames = (Array.isArray(entry.cards) ? entry.cards : [])
+      .map(c => (lang === 'th' && c.name_th) ? c.name_th : (c.name_en || ''))
+      .filter(Boolean)
+      .join(sep);
+
+    const questionText = entry.question_text && entry.question_text.length
+      ? entry.question_text
+      : (dict.archiveNoQuestion || 'A quiet reading (no question)');
+    const questionIsEmpty = !entry.question_text;
+
+    const li = document.createElement('li');
+    li.className = 'archive-item';
+    li.innerHTML = ''
+      + '<div class="ai-meta">'
+      +   '<span class="ai-date"></span>'
+      +   '<span class="ai-mode"></span>'
+      + '</div>'
+      + '<div class="ai-question' + (questionIsEmpty ? ' is-empty' : '') + '"></div>'
+      + '<div class="ai-cards"></div>'
+      + '<div class="ai-saved"></div>'
+      + '<button type="button" class="ai-repeat-btn"></button>';
+    li.querySelector('.ai-date').textContent = dateText;
+    li.querySelector('.ai-mode').textContent = modeLabel;
+    li.querySelector('.ai-question').textContent = questionText;
+    li.querySelector('.ai-cards').textContent = cardNames;
+    li.querySelector('.ai-saved').textContent = dict.archiveSavedOnDevice || 'Saved on this device';
+    const btn = li.querySelector('.ai-repeat-btn');
+    btn.textContent = dict.archiveRepeatBtn || 'Reflect again';
+    btn.addEventListener('click', () => {
+      if (window.veilaFire) {
+        window.veilaFire('reflection_archive_repeat_clicked', {
+          lang: lang,
+          history_size: hist.length,
+          question_key: entry.question_key || '',
+          spread_mode: modeKey,
+          days_since: daysSince(entry.date || '')
+        });
+      }
+      // Pre-apply spread mode (only if it's a known mode — older
+      // entries already default to 'connection' via modeFor above).
+      if (SPREAD_MODES[modeKey]) {
+        selectedMode = modeKey;
+      } else {
+        selectedMode = DEFAULT_MODE;
+      }
+      // Pre-apply question key (if known) and sync the chip UI so the
+      // user sees their previous choice highlighted on the selection
+      // screen. Empty key is also valid — quiet reading with no chip.
+      if (entry.question_key) {
+        selectedQuestionKey = entry.question_key;
+      } else {
+        selectedQuestionKey = '';
+      }
+      syncChipSelection();
+      enterSelection();
+    });
+    list.appendChild(li);
+  });
+
+  // Fire reflection_archive_viewed exactly once per page load, only
+  // when there is history to look at. Subsequent re-renders (lang
+  // toggle, restart, post-save refresh) MUST NOT re-fire.
+  if (!panel.dataset.viewedFired && hist.length > 0 && window.veilaFire) {
+    panel.dataset.viewedFired = '1';
+    const latest = hist[0];
+    window.veilaFire('reflection_archive_viewed', {
+      lang: lang,
+      history_size: hist.length,
+      question_key: latest.question_key || '',
+      spread_mode: latest.spread_mode || DEFAULT_MODE,
+      days_since: daysSince(latest.date || '')
+    });
+  }
+}
+
+/* ========================================================================
    QUESTION CHIPS — tap one to select, tap same chip again to deselect.
    Skipping is allowed; the reading runs either way.
    ======================================================================== */
@@ -2864,6 +3188,7 @@ function loadDeck() {
 applyLang();
 loadDeck();
 renderReturnPanel();
+renderArchive();
 
 document.getElementById('start-btn').addEventListener('click', enterSelection);
 document.getElementById('share-btn').addEventListener('click', shareLoveReading);
