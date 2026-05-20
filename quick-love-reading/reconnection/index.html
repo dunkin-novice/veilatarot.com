@@ -187,21 +187,42 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   </section>
 
   <section>
-    <h2 data-i18n="intentH2">Questions this spread can sit with</h2>
-    <p data-i18n="intentIntro">If the question on your mind matches one of these, Reconnection is set up for it — for closenesses that loosened but did not end.</p>
+    <h2 data-i18n="rrH2">Related reflections</h2>
+    <p data-i18n="rrIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
-      <li><a href="/love-readings/should-i-reach-out/">
+      <li><a href="/love-readings/should-i-reach-out/" data-related-target="intent_page" data-related-slug="should-i-reach-out">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent1Name">Should I reach out?</div>
-          <div class="hcl-kw" data-i18n="intent1Kw">For when the urge to message is real but uncertain.</div>
+          <div class="hcl-name" data-i18n="rr1Name">Should I reach out?</div>
+          <div class="hcl-kw" data-i18n="rr1Kw">For when the urge to message is real but uncertain.</div>
         </div>
       </a></li>
-      <li><a href="/love-readings/does-he-miss-me/">
+      <li><a href="/love-readings/do-they-regret-losing-me/" data-related-target="intent_page" data-related-slug="do-they-regret-losing-me">
         <div class="hcl-rom">·</div>
         <div class="hcl-body">
-          <div class="hcl-name" data-i18n="intent2Name">Does he miss me?</div>
-          <div class="hcl-kw" data-i18n="intent2Kw">When silence is doing the asking on your behalf.</div>
+          <div class="hcl-name" data-i18n="rr2Name">Do they regret losing me?</div>
+          <div class="hcl-kw" data-i18n="rr2Kw">Read as your reading of the ending, not as their transcript.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/why-cant-we-let-each-other-go/" data-related-target="intent_page" data-related-slug="why-cant-we-let-each-other-go">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr3Name">Why can't we let each other go?</div>
+          <div class="hcl-kw" data-i18n="rr3Kw">For the mutual not-letting-go — without romanticising it.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/can-you-miss-someone-and-still-let-go/" data-related-target="intent_page" data-related-slug="can-you-miss-someone-and-still-let-go">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr4Name">Can you miss someone and still let go?</div>
+          <div class="hcl-kw" data-i18n="rr4Kw">When the missing and the moving on are happening at the same time.</div>
+        </div>
+      </a></li>
+      <li><a href="/love-readings/why-do-i-still-want-closure/" data-related-target="intent_page" data-related-slug="why-do-i-still-want-closure">
+        <div class="hcl-rom">·</div>
+        <div class="hcl-body">
+          <div class="hcl-name" data-i18n="rr5Name">Why do I still want closure?</div>
+          <div class="hcl-kw" data-i18n="rr5Kw">For closure as a quiet self-hosted process, not a receipt they owe you.</div>
         </div>
       </a></li>
     </ol>
@@ -283,10 +304,13 @@ const T = {
     a3: "Let the card name a direction, not a duty. Sometimes the invited gesture is external — a message, a meeting. Sometimes it's internal — a story you stop telling, a grudge you set down. Choose the version of the gesture that is honest and within reach.",
     q4: "Can I do this even if I don't plan to reach out?",
     a4: "Yes. Naming a connection is its own form of honoring it. Some readings end with the user simply seeing the shape of what they were carrying — no message sent, no action taken. The cards don't require an outcome.",
-    intentH2: 'Questions this spread can sit with',
-    intentIntro: 'If the question on your mind matches one of these, Reconnection is set up for it — for closenesses that loosened but did not end.',
-    intent1Name: 'Should I reach out?', intent1Kw: 'For when the urge to message is real but uncertain.',
-    intent2Name: 'Does he miss me?', intent2Kw: 'When silence is doing the asking on your behalf.',
+    rrH2: 'Related reflections',
+    rrIntro: 'People sitting with this question also often ask…',
+    rr1Name: 'Should I reach out?', rr1Kw: 'For when the urge to message is real but uncertain.',
+    rr2Name: 'Do they regret losing me?', rr2Kw: 'Read as your reading of the ending, not as their transcript.',
+    rr3Name: "Why can't we let each other go?", rr3Kw: 'For the mutual not-letting-go — without romanticising it.',
+    rr4Name: 'Can you miss someone and still let go?', rr4Kw: 'When the missing and the moving on are happening at the same time.',
+    rr5Name: 'Why do I still want closure?', rr5Kw: 'For closure as a quiet self-hosted process, not a receipt they owe you.',
     otherH2: 'Other spreads',
     otherArcName: 'Emotional Arc', otherArcKw: 'What shaped this, what is unfolding, what is changing.',
     otherClarityName: 'Clarity', otherClarityKw: 'What you know, what you avoid, what needs honesty.',
@@ -326,10 +350,13 @@ const T = {
     a3: 'ให้ไพ่บอกทิศ ไม่ใช่หน้าที่ บางครั้งการกระทำที่เชื้อเชิญเป็นภายนอก — ข้อความ การพบกัน บางครั้งเป็นภายใน — เรื่องที่คุณเลิกเล่า ความขุ่นเคืองที่คุณวางลง เลือกเวอร์ชั่นของการกระทำที่ซื่อตรงและอยู่ในเอื้อม',
     q4: 'อ่านได้ไหมถ้าไม่ตั้งใจจะติดต่อกลับ',
     a4: 'ได้ การเรียกชื่อความสัมพันธ์เป็นการให้เกียรติมันในรูปแบบหนึ่ง บทอ่านบางครั้งจบลงด้วยการที่คุณแค่เห็นรูปร่างของสิ่งที่คุณกำลังถืออยู่ — ไม่ส่งข้อความ ไม่ลงมือทำ ไพ่ไม่ต้องการผลลัพธ์',
-    intentH2: 'คำถามที่บทอ่านนี้นั่งด้วยได้',
-    intentIntro: 'ถ้าคำถามในใจของคุณตรงกับข้อใดข้อหนึ่ง เชื่อมโยงใหม่ตั้งขึ้นเพื่อมัน — สำหรับความใกล้ชิดที่คลายลงแต่ยังไม่จบ',
-    intent1Name: 'ควรทักไปไหม', intent1Kw: 'เมื่อความอยากส่งข้อความเป็นเรื่องจริงแต่ยังไม่แน่ใจ',
-    intent2Name: 'เขาคิดถึงเราไหม', intent2Kw: 'เมื่อความเงียบกำลังถามแทนคุณ',
+    rrH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    rrIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
+    rr1Name: 'ควรทักไปไหม', rr1Kw: 'เมื่อความอยากส่งข้อความเป็นเรื่องจริงแต่ยังไม่แน่ใจ',
+    rr2Name: 'เขาเสียดายที่เสียเราไปหรือเปล่า', rr2Kw: 'อ่านในฐานะการอ่านของคุณ ไม่ใช่บันทึกของเขา',
+    rr3Name: 'ทำไมเราถึงปล่อยกันไม่ได้', rr3Kw: 'สำหรับการไม่ปล่อยกันร่วม — โดยไม่ทำให้โรแมนติก',
+    rr4Name: 'คิดถึงเขาแล้วยังปล่อยได้ไหม', rr4Kw: 'เมื่อการคิดถึงและการก้าวต่อเกิดพร้อมกัน',
+    rr5Name: 'ทำไมเรายังอยากได้การปิด', rr5Kw: 'สำหรับการปิดในฐานะกระบวนการเงียบที่เป็นเจ้าภาพเอง ไม่ใช่ใบเสร็จที่เขาค้างคุณ',
     otherH2: 'บทอ่านอื่นๆ',
     otherArcName: 'ห้วงอารมณ์', otherArcKw: 'สิ่งที่ก่อตัวขึ้น สิ่งที่กำลังเกิด สิ่งที่กำลังเปลี่ยน',
     otherClarityName: 'ความชัดเจน', otherClarityKw: 'สิ่งที่คุณรู้ สิ่งที่คุณหลีกเลี่ยง สิ่งที่ต้องการความซื่อตรง',
@@ -384,6 +411,22 @@ document.getElementById('cta-primary').addEventListener('click', () => {
       lang: lang
     });
   }
+});
+
+document.querySelectorAll('[data-related-target]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'spread_landing_page',
+        target_page_type: el.getAttribute('data-related-target'),
+        source_slug: MODE_KEY,
+        target_slug: el.getAttribute('data-related-slug') || '',
+        spread_mode: MODE_KEY,
+        question_key: '',
+        lang: lang
+      });
+    }
+  });
 });
 
 applyLang();

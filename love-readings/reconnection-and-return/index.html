@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Reconnection and Return — Love Tarot Readings | Veila</title>
-<meta name="description" content="Reflective tarot for cycles of leaving and re-entering — questions about whether they will come back, why the bond keeps returning, and what to do inside a relationship that does not end cleanly." />
+<title>Reconnection and Return — Tarot for Bonds That Don't End Cleanly | Veila</title>
+<meta name="description" content="Cycles of leaving and re-entering, read from outside the loop. Reflective tarot for whether they will come back, why the bond keeps returning, and what to do inside a relationship that won't end cleanly." />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0c" />
@@ -164,7 +164,8 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   </section>
 
   <section>
-    <h2 data-i18n="relatedH2">Related questions</h2>
+    <h2 data-i18n="relatedH2">Related reflections</h2>
+    <p data-i18n="relatedIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
       <li><a href="/love-readings/do-they-regret-losing-me/" data-target="intent_page" data-name="do-they-regret-losing-me">
         <div class="hcl-rom">·</div>
@@ -297,7 +298,8 @@ const T = {
     p3Name: 'Why do I keep going back to them?', p3Blurb: 'For the recurring pattern from your side — what the going-back is reaching for.',
     p4Name: "Why can't we let each other go?", p4Blurb: 'For the mutual not-letting-go — when the bond has become its own kind of relationship.',
     p5Name: 'Why does seeing them again change everything?', p5Blurb: 'For the rearrangement a single meeting can cause — held as information, not as a verdict on your healing.',
-    relatedH2: 'Related questions',
+    relatedH2: 'Related reflections',
+    relatedIntro: 'People sitting with this question also often ask…',
     r1Name: 'Do they regret losing me?', r1Kw: 'For the bond after an ending — held as your reading, not as their transcript.',
     r2Name: 'Why did they pull away?', r2Kw: 'For reading the moment before the return became possible.',
     r3Name: 'What changed between us?', r3Kw: 'For the shift that made return necessary or impossible.',
@@ -336,7 +338,8 @@ const T = {
     p3Name: 'ทำไมเราถึงกลับไปหาเขาซ้ำๆ', p3Blurb: 'สำหรับรูปแบบที่ซ้ำจากด้านของคุณ — สิ่งที่การกลับไปกำลังเอื้อมหา',
     p4Name: 'ทำไมเราถึงปล่อยกันไม่ได้', p4Blurb: 'สำหรับการไม่ปล่อยกันร่วม — เมื่อความผูกพันได้กลายเป็นความสัมพันธ์อีกแบบของมัน',
     p5Name: 'ทำไมการเห็นเขาอีกครั้งเปลี่ยนทุกอย่าง', p5Blurb: 'สำหรับการเรียงใหม่ที่การพบครั้งเดียวทำให้เกิด — ถือไว้ในฐานะข้อมูล ไม่ใช่คำตัดสินต่อการเยียวยา',
-    relatedH2: 'คำถามที่เกี่ยวข้อง',
+    relatedH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    relatedIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
     r1Name: 'เขาเสียดายที่เสียเราไปหรือเปล่า', r1Kw: 'สำหรับความผูกพันหลังการจบ — ถือไว้ในฐานะการอ่านของคุณ ไม่ใช่บันทึกของเขา',
     r2Name: 'ทำไมเขาถึงห่างไป', r2Kw: 'สำหรับการอ่านชั่วขณะก่อนการกลับจะเป็นไปได้',
     r3Name: 'อะไรเปลี่ยนไประหว่างเรา', r3Kw: 'สำหรับการเปลี่ยนที่ทำให้การกลับจำเป็นหรือเป็นไปไม่ได้',
@@ -409,6 +412,22 @@ function fireHubClick(targetType, targetName) {
 document.querySelectorAll('[data-target]').forEach((el) => {
   el.addEventListener('click', () => {
     fireHubClick(el.getAttribute('data-target'), el.getAttribute('data-name') || '');
+  });
+});
+
+document.querySelectorAll('a[data-target="intent_page"]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'love_readings_subhub',
+        target_page_type: 'intent_page',
+        source_slug: HUB_SLUG,
+        target_slug: el.getAttribute('data-name') || '',
+        spread_mode: '',
+        question_key: '',
+        lang: lang
+      });
+    }
   });
 });
 

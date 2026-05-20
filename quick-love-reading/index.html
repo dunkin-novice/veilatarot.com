@@ -393,6 +393,28 @@ html[lang="th"] .return-card .rc-prompt {
   font-size: 15px;
 }
 
+/* ====== CONTINUE REFLECTING BLOCK (after readout, before Try Another) ====== */
+.continue-block { margin: 28px auto 0; padding: 24px 0 0; border-top: 1px solid var(--rule); max-width: 640px; }
+.continue-block .cb-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.continue-block .cb-heading { font-family: var(--serif); font-size: 22px; color: var(--ivory); margin: 0 0 8px; font-weight: 400; }
+.continue-block .cb-lede { font-family: var(--serif); font-style: italic; color: var(--ivory-dim); line-height: 1.55; margin: 0 0 16px; font-size: 15px; }
+.continue-block .cb-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.continue-block .cb-list a { display: block; border: 1px solid var(--gold-dim); border-radius: 4px; padding: 14px 16px; background: rgba(184,153,104,0.04); text-decoration: none; transition: background 0.3s ease; }
+.continue-block .cb-list a:hover { background: rgba(184,153,104,0.08); }
+.continue-block .cb-item-kind { font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.continue-block .cb-item-title { font-family: var(--serif); font-size: 17px; color: var(--ivory); margin: 0 0 4px; }
+.continue-block .cb-item-blurb { font-family: var(--serif); font-style: italic; color: var(--ivory-dim); line-height: 1.5; margin: 0; font-size: 14.5px; }
+html[lang="th"] .continue-block .cb-label, html[lang="th"] .continue-block .cb-item-kind { letter-spacing: 0; text-transform: none; }
+html[lang="th"] .continue-block .cb-heading { font-family: "IBM Plex Sans Thai", serif; }
+html[lang="th"] .continue-block .cb-lede, html[lang="th"] .continue-block .cb-item-blurb { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+html[lang="th"] .continue-block .cb-item-title { font-family: "IBM Plex Sans Thai", serif; }
+@media (max-width: 600px) {
+  .continue-block { padding-top: 22px; margin-top: 22px; }
+  .continue-block .cb-heading { font-size: 20px; }
+  .continue-block .cb-item-title { font-size: 16px; }
+  .continue-block .cb-list a { padding: 12px 14px; }
+}
+
 /* ====== REFLECTION SAVED (after readout) ====== */
 .reflection-saved {
   display: inline-flex;
@@ -1442,6 +1464,13 @@ html[lang="th"] footer {
           <button type="button" class="cta-btn ghost" id="share-btn" data-i18n="shareBtn">Save this reading</button>
         </aside>
 
+        <section class="continue-block" id="continue-block" hidden>
+          <div class="cb-label" data-i18n="continueLabel">Continue reflecting</div>
+          <h3 class="cb-heading" data-i18n="continueH3">Three places to sit with this next</h3>
+          <p class="cb-lede" data-i18n="continueLede">Picked from where this reading sits, not from a guess at what happens next. Take any of them slowly.</p>
+          <ol class="cb-list" id="continue-list"></ol>
+        </section>
+
         <div class="actions-row try-another-row">
           <button type="button" class="cta-btn ghost" id="try-another-btn" data-i18n="tryAnotherBtn">Try another spread</button>
         </div>
@@ -2019,10 +2048,112 @@ function renderReadout() {
   });
 }
 
+/* ========================================================================
+   CONTINUE REFLECTING BLOCK — post-readout recommendations
+   3 contextual links picked from current spread_mode (+ question_key when
+   available). Reflective tone — no "next prediction" framing. Fires
+   love_post_reading_continue_clicked on every click.
+   ======================================================================== */
+const CONTINUE_RECS = {
+  connection: {
+    intent: { slug: 'are-they-confused-about-me', url: '/love-readings/are-they-confused-about-me/' },
+    spread: { slug: 'emotional-arc', url: '/quick-love-reading/emotional-arc/' },
+    guide:  { slug: 'tarot-spreads-for-relationships', url: '/guides/tarot-spreads-for-relationships/' }
+  },
+  'emotional-arc': {
+    intent: { slug: 'why-do-i-still-miss-them', url: '/love-readings/why-do-i-still-miss-them/' },
+    spread: { slug: 'connection', url: '/quick-love-reading/connection/' },
+    guide:  { slug: 'tarot-for-reflection', url: '/guides/tarot-for-reflection/' }
+  },
+  clarity: {
+    intent: { slug: 'should-i-let-go', url: '/love-readings/should-i-let-go/' },
+    spread: { slug: 'reconnection', url: '/quick-love-reading/reconnection/' },
+    guide:  { slug: 'how-to-ask-a-tarot-question', url: '/guides/how-to-ask-a-tarot-question/' }
+  },
+  reconnection: {
+    intent: { slug: 'why-cant-we-let-each-other-go', url: '/love-readings/why-cant-we-let-each-other-go/' },
+    spread: { slug: 'connection', url: '/quick-love-reading/connection/' },
+    guide:  { slug: 'tarot-for-reflection', url: '/guides/tarot-for-reflection/' }
+  }
+};
+const CONTINUE_LABELS = {
+  en: {
+    kindIntent: 'A question to sit with', kindSpread: 'Another spread', kindGuide: 'A guide to read slowly',
+    'are-they-confused-about-me': { title: 'Are they confused about me?', blurb: 'Read mixed signals as the shape of the space between, not as their transcript.' },
+    'why-do-i-still-miss-them': { title: 'Why do I still miss them?', blurb: 'When the missing has its own season, separate from the situation.' },
+    'should-i-let-go': { title: 'Should I let go?', blurb: 'Asked when the question is whether the bond is asking to be put down.' },
+    'why-cant-we-let-each-other-go': { title: "Why can't we let each other go?", blurb: 'For the mutual not-letting-go — when the bond becomes its own kind of relationship.' },
+    'connection': { title: 'Connection spread', blurb: 'You, them, the space between — for bonds whose shape itself is the question.' },
+    'emotional-arc': { title: 'Emotional Arc spread', blurb: 'What shaped this, what is unfolding, what is changing — feelings across time.' },
+    'clarity': { title: 'Clarity spread', blurb: 'What you know, what you avoid, what needs honesty — for decisions and inner conflict.' },
+    'reconnection': { title: 'Reconnection spread', blurb: 'What still exists, what creates distance, what invites — bonds after silence or return.' },
+    'how-to-ask-a-tarot-question': { title: 'How to ask a tarot question', blurb: "Softening closed questions about another person's mind into ones the cards can meet." },
+    'tarot-spreads-for-relationships': { title: 'Tarot spreads for relationships', blurb: 'Why three cards, and how to choose the spread that matches your question.' },
+    'tarot-for-reflection': { title: 'Tarot for reflection', blurb: 'The practice — what reflective tarot is for, and what it is not for.' }
+  },
+  th: {
+    kindIntent: 'คำถามให้นั่งด้วย', kindSpread: 'บทอ่านอื่น', kindGuide: 'คู่มือให้อ่านช้าๆ',
+    'are-they-confused-about-me': { title: 'เขางงเราอยู่ไหม', blurb: 'อ่านสัญญาณปนๆ ในฐานะรูปร่างของพื้นที่ระหว่างกัน ไม่ใช่บันทึกของเขา' },
+    'why-do-i-still-miss-them': { title: 'ทำไมเรายังคิดถึงเขา', blurb: 'เมื่อการคิดถึงมีฤดูของมันเอง แยกจากสถานการณ์' },
+    'should-i-let-go': { title: 'เราควรปล่อยไหม', blurb: 'ถามเมื่อคำถามคือความผูกพันขอให้ถูกวางลงไหม' },
+    'why-cant-we-let-each-other-go': { title: 'ทำไมเราถึงปล่อยกันไม่ได้', blurb: 'สำหรับการไม่ปล่อยกันร่วม — เมื่อความผูกพันกลายเป็นความสัมพันธ์อีกแบบของมัน' },
+    'connection': { title: 'บทอ่านเชื่อมโยง', blurb: 'คุณ เขา และพื้นที่ระหว่างกัน — สำหรับความผูกพันที่รูปร่างเองคือคำถาม' },
+    'emotional-arc': { title: 'บทอ่านห้วงอารมณ์', blurb: 'สิ่งที่ก่อตัว สิ่งที่กำลังเกิด สิ่งที่กำลังเปลี่ยน — ความรู้สึกข้ามเวลา' },
+    'clarity': { title: 'บทอ่านความชัดเจน', blurb: 'สิ่งที่คุณรู้ สิ่งที่คุณหลีกเลี่ยง สิ่งที่ต้องการความซื่อตรง — สำหรับการตัดสินใจและความขัดแย้งภายใน' },
+    'reconnection': { title: 'บทอ่านเชื่อมโยงใหม่', blurb: 'สิ่งที่ยังคงอยู่ สิ่งที่สร้างระยะ สิ่งที่เชื้อเชิญ — ความผูกพันหลังความเงียบหรือการกลับ' },
+    'how-to-ask-a-tarot-question': { title: 'วิธีถามคำถามไพ่ทาโรต์', blurb: 'ทำคำถามปิดเกี่ยวกับใจของอีกคนให้นุ่มลง เพื่อให้ไพ่มีอะไรให้พบ' },
+    'tarot-spreads-for-relationships': { title: 'บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์', blurb: 'ทำไมสามใบ และเลือกบทอ่านที่ตรงคำถามของคุณยังไง' },
+    'tarot-for-reflection': { title: 'ไพ่ทาโรต์เพื่อใคร่ครวญ', blurb: 'การฝึก — ไพ่ทาโรต์ชวนใคร่ครวญมีไว้เพื่ออะไร และไม่ใช่เพื่ออะไร' }
+  }
+};
+
+function renderContinueBlock() {
+  const block = document.getElementById('continue-block');
+  const list = document.getElementById('continue-list');
+  if (!block || !list) return;
+  const recs = CONTINUE_RECS[selectedMode] || CONTINUE_RECS.connection;
+  const labels = CONTINUE_LABELS[lang] || CONTINUE_LABELS.en;
+  const rows = [
+    { type: 'intent_page',         kind: labels.kindIntent, rec: recs.intent },
+    { type: 'spread_landing_page', kind: labels.kindSpread, rec: recs.spread },
+    { type: 'guide_page',          kind: labels.kindGuide,  rec: recs.guide }
+  ];
+  list.innerHTML = '';
+  rows.forEach(({ type, kind, rec }) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = rec.url;
+    a.setAttribute('data-continue-target', type);
+    a.setAttribute('data-continue-slug', rec.slug);
+    const meta = labels[rec.slug] || { title: rec.slug, blurb: '' };
+    a.innerHTML =
+      '<div class="cb-item-kind">' + kind + '</div>' +
+      '<div class="cb-item-title">' + meta.title + '</div>' +
+      '<p class="cb-item-blurb">' + meta.blurb + '</p>';
+    a.addEventListener('click', () => {
+      if (window.veilaFire) {
+        window.veilaFire('love_post_reading_continue_clicked', {
+          source_page_type: 'quick_love_reading',
+          target_page_type: type,
+          source_slug: 'quick-love-reading',
+          target_slug: rec.slug,
+          spread_mode: selectedMode,
+          question_key: selectedQuestionKey || '',
+          lang: lang
+        });
+      }
+    });
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+  block.hidden = false;
+}
+
 function onAllFlipped() {
   setTimeout(() => {
     document.getElementById('hint-bar').classList.add('is-hidden');
     renderReadout();
+    renderContinueBlock();
     const section = document.getElementById('readout-section');
     section.classList.remove('is-hidden');
     setTimeout(() => {

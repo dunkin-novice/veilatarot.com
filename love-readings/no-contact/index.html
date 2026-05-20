@@ -164,7 +164,8 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   </section>
 
   <section>
-    <h2 data-i18n="relatedH2">Related questions</h2>
+    <h2 data-i18n="relatedH2">Related reflections</h2>
+    <p data-i18n="relatedIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
       <li><a href="/love-readings/does-he-miss-me/" data-target="intent_page" data-name="does-he-miss-me">
         <div class="hcl-rom">·</div>
@@ -290,7 +291,8 @@ const T = {
     p3Name: 'Are they waiting for me to reach out?', p3Blurb: 'For the standoff of mutual quiet — and for telling the urge to write from the suspense to end.',
     p4Name: 'Do they still think about me?', p4Blurb: 'For the question silence has begun to ask alone — read as what you are bringing rather than as their transcript.',
     p5Name: 'Is there still something between us?', p5Blurb: 'For reading a bond after long distance has had time to do its work — what remains and what has moved on.',
-    relatedH2: 'Related questions',
+    relatedH2: 'Related reflections',
+    relatedIntro: 'People sitting with this question also often ask…',
     r1Name: 'Does he miss me?', r1Kw: 'When silence has carried the question alone too long.',
     r2Name: 'Should I reach out?', r2Kw: 'For the decision the silence has begun to ask of you.',
     r3Name: 'Why do they feel distant?', r3Kw: 'When the silence is happening while they are still in the room.',
@@ -328,7 +330,8 @@ const T = {
     p3Name: 'เขากำลังรอให้เราทักไปก่อนหรือเปล่า', p3Blurb: 'สำหรับการประจันหน้าของความเงียบร่วม — และเพื่อแยกความอยากเขียนจากความอยากให้ความระทึกจบ',
     p4Name: 'เขายังคิดถึงเราอยู่ไหม', p4Blurb: 'สำหรับคำถามที่ความเงียบเริ่มถามคนเดียว — อ่านในฐานะสิ่งที่คุณนำมา ไม่ใช่บันทึกของเขา',
     p5Name: 'ระหว่างเรายังมีอะไรเหลืออยู่ไหม', p5Blurb: 'สำหรับการอ่านความผูกพันหลังระยะยาวมีเวลาทำงานของมัน — สิ่งที่เหลือและสิ่งที่ไปแล้ว',
-    relatedH2: 'คำถามที่เกี่ยวข้อง',
+    relatedH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    relatedIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
     r1Name: 'เขาคิดถึงเราไหม', r1Kw: 'เมื่อความเงียบแบกคำถามคนเดียวนานเกินไป',
     r2Name: 'ควรทักไปไหม', r2Kw: 'สำหรับการตัดสินใจที่ความเงียบเริ่มขอจากคุณ',
     r3Name: 'ทำไมเขาถึงห่างเหินกับเรา', r3Kw: 'เมื่อความเงียบกำลังเกิดขณะที่เขายังอยู่ในห้อง',
@@ -400,6 +403,22 @@ function fireHubClick(targetType, targetName) {
 document.querySelectorAll('[data-target]').forEach((el) => {
   el.addEventListener('click', () => {
     fireHubClick(el.getAttribute('data-target'), el.getAttribute('data-name') || '');
+  });
+});
+
+document.querySelectorAll('a[data-target="intent_page"]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'love_readings_subhub',
+        target_page_type: 'intent_page',
+        source_slug: HUB_SLUG,
+        target_slug: el.getAttribute('data-name') || '',
+        spread_mode: '',
+        question_key: '',
+        lang: lang
+      });
+    }
   });
 });
 

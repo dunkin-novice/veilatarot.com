@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Attachment and Letting Go — Love Tarot Readings | Veila</title>
-<meta name="description" content="Reflective tarot for bonds whose gravity has outlasted their reason — questions about the difficulty of release, the kindness of staying with the missing, and what readiness actually feels like." />
+<title>Attachment and Letting Go — Tarot for Bonds That Won't Quite Release | Veila</title>
+<meta name="description" content="When the bond has outlasted the reason. Reflective tarot for the difficulty of release, the kindness of staying with the missing, and what readiness actually feels like — without shame-based healing." />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0c" />
@@ -164,7 +164,8 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   </section>
 
   <section>
-    <h2 data-i18n="relatedH2">Related questions</h2>
+    <h2 data-i18n="relatedH2">Related reflections</h2>
+    <p data-i18n="relatedIntro">People sitting with this question also often ask…</p>
     <ol class="hub-card-list">
       <li><a href="/love-readings/is-this-just-attachment-or-love/" data-target="intent_page" data-name="is-this-just-attachment-or-love">
         <div class="hcl-rom">·</div>
@@ -290,7 +291,8 @@ const T = {
     p3Name: "How do I know when it's time to let go?", p3Blurb: 'For readiness as motion — where you are on the arc, instead of waiting for a single moment.',
     p4Name: 'Can you miss someone and still let go?', p4Blurb: 'For the quiet truth that missing and moving on can live together — not opposite, but braided.',
     p5Name: 'Why does moving on feel so hard?', p5Blurb: 'For the difficulty itself — read as information about what the bond was carrying, not as evidence of failure.',
-    relatedH2: 'Related questions',
+    relatedH2: 'Related reflections',
+    relatedIntro: 'People sitting with this question also often ask…',
     r1Name: 'Is this just attachment or love?', r1Kw: 'For distinguishing the felt voice from the practised one.',
     r2Name: 'Why do I still miss them?', r2Kw: 'When the missing has its own season.',
     r3Name: 'Am I holding on or listening to my heart?', r3Kw: 'When the decision becomes a question of which voice is speaking.',
@@ -328,7 +330,8 @@ const T = {
     p3Name: 'จะรู้ได้ยังไงว่าถึงเวลาปล่อยแล้ว', p3Blurb: 'สำหรับความพร้อมในฐานะการเคลื่อน — ที่ที่คุณอยู่บนเส้นโค้ง แทนการรอชั่วขณะเดียว',
     p4Name: 'คิดถึงเขาแล้วยังปล่อยได้ไหม', p4Blurb: 'สำหรับความจริงที่เงียบว่าการคิดถึงและการก้าวต่ออยู่ด้วยกันได้ — ไม่ตรงข้าม แต่ถักรวมกัน',
     p5Name: 'ทำไมการก้าวต่อถึงยากนัก', p5Blurb: 'สำหรับความยากเอง — อ่านในฐานะข้อมูลเกี่ยวกับสิ่งที่ความผูกพันแบกไว้ ไม่ใช่หลักฐานของความล้มเหลว',
-    relatedH2: 'คำถามที่เกี่ยวข้อง',
+    relatedH2: 'การใคร่ครวญที่เกี่ยวข้อง',
+    relatedIntro: 'คนที่นั่งกับคำถามนี้มักถามต่อว่า…',
     r1Name: 'นี่คือความผูกพันหรือความรัก', r1Kw: 'สำหรับการแยกเสียงที่รู้สึกจากเสียงที่ฝึก',
     r2Name: 'ทำไมเรายังคิดถึงเขา', r2Kw: 'เมื่อการคิดถึงมีฤดูของมันเอง',
     r3Name: 'เรากำลังยึดติด หรือกำลังฟังหัวใจตัวเอง', r3Kw: 'เมื่อการตัดสินใจกลายเป็นคำถามว่าเสียงไหนกำลังพูด',
@@ -400,6 +403,22 @@ function fireHubClick(targetType, targetName) {
 document.querySelectorAll('[data-target]').forEach((el) => {
   el.addEventListener('click', () => {
     fireHubClick(el.getAttribute('data-target'), el.getAttribute('data-name') || '');
+  });
+});
+
+document.querySelectorAll('a[data-target="intent_page"]').forEach((el) => {
+  el.addEventListener('click', () => {
+    if (window.veilaFire) {
+      window.veilaFire('love_related_reflection_clicked', {
+        source_page_type: 'love_readings_subhub',
+        target_page_type: 'intent_page',
+        source_slug: HUB_SLUG,
+        target_slug: el.getAttribute('data-name') || '',
+        spread_mode: '',
+        question_key: '',
+        lang: lang
+      });
+    }
   });
 });
 
