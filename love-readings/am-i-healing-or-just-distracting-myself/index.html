@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the busyness is honest and you cannot quite tell from the inside</div>
   <h1 class="title" data-i18n="title">Am I Healing or Just Distracting Myself?</h1>
   <p class="lede" data-i18n="lede">There is a quiet honesty in even asking this question — and a quiet trap inside it, where any answer can feel like an accusation. The Clarity spread does not score your recovery. It separates what you already know about the way you have been moving from what you have been avoiding seeing, and names what is asking for honesty — so the difference between healing and distraction can be felt without becoming a verdict on your worth.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Healing rarely looks the way it should from the inside. Busyness can be genuine rest the body needs, or a quiet refusal to feel — sometimes both at once. This reading is designed to separate what you already know about your own movement from what you have been avoiding seeing, not to grade your recovery.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="am-i-healing-or-just-distracting-myself"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-am-i-healing-or-just-distracting-myself">
+    <h2 class="sr-label" id="sr-label-am-i-healing-or-just-distracting-myself" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=clarity" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Clarity reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Am I Healing or Just Distracting Myself?',
     eyebrow: 'When the busyness is honest and you cannot quite tell from the inside',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Healing rarely looks the way it should from the inside. Busyness can be genuine rest the body needs, or a quiet refusal to feel — sometimes both at once. This reading is designed to separate what you already know about your own movement from what you have been avoiding seeing, not to grade your recovery.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'Am I Healing or Just Distracting Myself?',
     lede: 'There is a quiet honesty in even asking this question — and a quiet trap inside it, where any answer can feel like an accusation. The Clarity spread does not score your recovery. It separates what you already know about the way you have been moving from what you have been avoiding seeing, and names what is asking for honesty — so the difference between healing and distraction can be felt without becoming a verdict on your worth.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เรากำลังเยียวยา หรือกำลังเบี่ยงเบนตัวเอง',
     eyebrow: 'เมื่อความยุ่งซื่อตรง และคุณบอกไม่ได้จากด้านใน',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การเยียวยาแทบไม่เคยดูเหมือนสิ่งที่ควรจะเป็นจากภายใน ความวุ่นวายอาจเป็นการพักที่ร่างกายต้องการจริง หรือการปฏิเสธความรู้สึกแบบเงียบๆ ก็เป็นได้ บทอ่านนี้ช่วยแยกสิ่งที่คุณรู้แล้วเกี่ยวกับการเคลื่อนตัวของตัวเอง ออกจากสิ่งที่คุณกำลังหลีกเลี่ยงไม่ดู ไม่ใช่ให้คะแนนการเยียวยาของคุณ',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'เรากำลังเยียวยา หรือกำลังเบี่ยงเบนตัวเอง',
     lede: 'มีความซื่อตรงที่เงียบในการแม้แต่ถามคำถามนี้ — และกับดักที่เงียบในนั้น ที่คำตอบใดๆ รู้สึกเหมือนข้อกล่าวหา บทอ่านความชัดเจนไม่ให้คะแนนการฟื้นตัว มันแยกสิ่งที่คุณรู้แล้วเกี่ยวกับวิธีที่คุณกำลังเคลื่อนออกจากสิ่งที่คุณหลีกเลี่ยงไม่เห็น และเรียกชื่อสิ่งที่ขอความซื่อตรง — ความต่างระหว่างการเยียวยากับการเบี่ยงเบนจึงรู้สึกได้ โดยไม่กลายเป็นคำตัดสินต่อคุณค่า',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

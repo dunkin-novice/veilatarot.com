@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the rhythm has started to feel like the relationship</div>
   <h1 class="title" data-i18n="title">Why Do They Come Back When I Pull Away?</h1>
   <p class="lede" data-i18n="lede">The pattern is exhausting partly because the return is sweet. When you pull away, they reach. When you reach, they pull. Each side, alone, feels like the real relationship — and yet together they form a rhythm that has begun to do the talking for both of you. The Reconnection spread does not award blame for the pattern. It reads what still exists between you, what is keeping the distance, and what would invite a different kind of contact — so the rhythm becomes legible, and you can decide what is yours to do inside it, with words instead of with distance.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">A pattern that has its own rhythm — return-on-withdrawal — usually says more about how the bond breathes than about either person choosing it. This reading reads the rhythm itself, so the next move can come from inside the rhythm or from outside it, not from being its hostage.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-do-they-come-back-when-i-pull-away"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-do-they-come-back-when-i-pull-away">
+    <h2 class="sr-label" id="sr-label-why-do-they-come-back-when-i-pull-away" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=reconnection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Reconnection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Do They Come Back When I Pull Away?',
     eyebrow: 'When the rhythm has started to feel like the relationship',
+    qrLabel: 'Quick reflection',
+    qrBody: 'A pattern that has its own rhythm — return-on-withdrawal — usually says more about how the bond breathes than about either person choosing it. This reading reads the rhythm itself, so the next move can come from inside the rhythm or from outside it, not from being its hostage.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Why Do They Come Back When I Pull Away?',
     lede: 'The pattern is exhausting partly because the return is sweet. When you pull away, they reach. When you reach, they pull. Each side, alone, feels like the real relationship — and yet together they form a rhythm that has begun to do the talking for both of you. The Reconnection spread does not award blame for the pattern. It reads what still exists between you, what is keeping the distance, and what would invite a different kind of contact — so the rhythm becomes legible, and you can decide what is yours to do inside it, with words instead of with distance.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมเขาถึงกลับมาตอนเราถอย',
     eyebrow: 'เมื่อจังหวะเริ่มรู้สึกเป็นความสัมพันธ์',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'รูปแบบที่มีจังหวะของมัน — กลับมาเมื่อเราถอย — มักบอกถึงวิธีที่ความผูกพันหายใจ มากกว่าการเลือกของฝ่ายใด บทอ่านนี้อ่านจังหวะนั้นเอง เพื่อให้การเคลื่อนต่อไป มาจากภายในจังหวะหรือภายนอกมัน ไม่ใช่จากการเป็นตัวประกันของมัน',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'ทำไมเขาถึงกลับมาตอนเราถอย',
     lede: 'รูปแบบเหนื่อยส่วนหนึ่งเพราะการกลับมาหวาน เมื่อคุณถอย เขาเอื้อม เมื่อคุณเอื้อม เขาถอย แต่ละด้านลำพังรู้สึกเหมือนความสัมพันธ์จริง — และเมื่อรวมกันมันสร้างจังหวะที่เริ่มพูดแทนทั้งคู่ บทอ่านเชื่อมโยงใหม่ไม่ให้รางวัลความผิดต่อรูปแบบ มันอ่านสิ่งที่ยังคงอยู่ระหว่างกัน สิ่งที่กำลังรักษาระยะ และสิ่งที่จะเชื้อเชิญการสัมผัสอีกแบบ — จังหวะจึงอ่านได้ และคุณตัดสินใจได้ว่าอะไรเป็นของคุณในนั้น ด้วยถ้อยคำแทนระยะ',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When emotions return uninvited and you are not the same room you used to be</div>
   <h1 class="title" data-i18n="title">Why Do Old Feelings Keep Coming Back?</h1>
   <p class="lede" data-i18n="lede">Old feelings rarely knock politely. They arrive in the middle of an ordinary afternoon, on a familiar street, in a half-heard song — and they bring with them the version of you who first met them. The Emotional Arc spread does not call the returning a relapse. It reads what shaped the original feeling, what is unfolding when it visits now, and what is quietly changing underneath — so the returning can be welcomed as information rather than treated as evidence that the work was undone.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Old feelings returning is not a failure of moving on; the wave has its own rhythm separate from the calendar. This reading reads the return as information about what is being asked to be met again, rather than evidence that you must restart the story you have already worked through.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-do-old-feelings-keep-coming-back"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-do-old-feelings-keep-coming-back">
+    <h2 class="sr-label" id="sr-label-why-do-old-feelings-keep-coming-back" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Do Old Feelings Keep Coming Back?',
     eyebrow: 'When emotions return uninvited and you are not the same room you used to be',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Old feelings returning is not a failure of moving on; the wave has its own rhythm separate from the calendar. This reading reads the return as information about what is being asked to be met again, rather than evidence that you must restart the story you have already worked through.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'Why Do Old Feelings Keep Coming Back?',
     lede: 'Old feelings rarely knock politely. They arrive in the middle of an ordinary afternoon, on a familiar street, in a half-heard song — and they bring with them the version of you who first met them. The Emotional Arc spread does not call the returning a relapse. It reads what shaped the original feeling, what is unfolding when it visits now, and what is quietly changing underneath — so the returning can be welcomed as information rather than treated as evidence that the work was undone.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมความรู้สึกเก่าๆ ถึงกลับมาเรื่อยๆ',
     eyebrow: 'เมื่อความรู้สึกกลับมาโดยไม่ได้เชิญ และคุณไม่ใช่ห้องเดิมที่เคยเป็น',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ความรู้สึกเก่ากลับมา ไม่ใช่ความล้มเหลวของการก้าวต่อ คลื่นมีจังหวะของมันเอง แยกจากปฏิทิน บทอ่านนี้อ่านการกลับมาในฐานะข้อมูลของสิ่งที่ขอให้ถูกพบใหม่ ไม่ใช่หลักฐานว่าคุณต้องเริ่มเรื่องที่คุณผ่านมาแล้วใหม่',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'ทำไมความรู้สึกเก่าๆ ถึงกลับมาเรื่อยๆ',
     lede: 'ความรู้สึกเก่าๆ แทบไม่เคาะประตูสุภาพ มันมาในกลางบ่ายธรรมดา บนถนนที่คุ้นเคย ในเพลงที่ได้ยินครึ่งหนึ่ง — และพามาพร้อมเวอร์ชันของคุณที่พบมันครั้งแรก บทอ่านห้วงอารมณ์ไม่เรียกการกลับมาว่าการกำเริบ มันอ่านสิ่งที่ก่อตัวความรู้สึกแรก สิ่งที่กำลังเกิดเมื่อมันมาเยี่ยมตอนนี้ และสิ่งที่กำลังเปลี่ยนข้างใต้อย่างเงียบ — การกลับมาจึงได้รับการต้อนรับในฐานะข้อมูล แทนถูกปฏิบัติเป็นหลักฐานว่างานถูกถอน',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

@@ -88,7 +88,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Does feeling distant always mean they are pulling away?", "acceptedAnswer": { "@type": "Answer", "text": "Not always. Distance is a felt thing first; it doesn't always mean a deliberate withdrawal. The reading separates the felt distance from the question of intent — sometimes someone is simply tired, occupied elsewhere, or in their own season, and the distance you sense is real but not yours to fix." } },
-    { "@type": "Question", "name": "What if 'What Shaped This' points to something I did?", "acceptedAnswer": { "@type": "Answer", "text": "Read it gently. The card names a thread, not a verdict. Sometimes you did something; more often you participated in a shared pattern that has nothing to do with fault. The reading is for noticing, not punishing." } },
+    { "@type": "Question", "name": "What if \"What Shaped This\" points to something I did?", "acceptedAnswer": { "@type": "Answer", "text": "Read it gently. The card names a thread, not a verdict. Sometimes you did something; more often you participated in a shared pattern that has nothing to do with fault. The reading is for noticing, not punishing." } },
     { "@type": "Question", "name": "Should I ask them what changed?", "acceptedAnswer": { "@type": "Answer", "text": "That is a separate question, and a fair one. The reading first can help you arrive at the conversation with a clearer sense of what you already half-know — so the asking comes from steadier ground rather than from urgency." } },
     { "@type": "Question", "name": "How do I tell distance from disinterest?", "acceptedAnswer": { "@type": "Answer", "text": "Often you can't tell from the inside of the question, and that is part of why the question is hard. The reading helps by surfacing the felt shape of the present rather than asking you to label it. Sometimes the labelling becomes possible later; sometimes it never quite does, and that is also an answer." } }
   ]
@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the warmth has thinned without an event</div>
   <h1 class="title" data-i18n="title">Why Do They Feel Distant?</h1>
   <p class="lede" data-i18n="lede">Distance rarely arrives all at once. You notice the cooler tone, the longer pauses, and try to point at the moment it began — and there usually isn't one. The Emotional Arc reads a connection across time: what shaped this moment between you, what is unfolding now, and where it is quietly leaning. The reading won't give you their reason. It can help you see the arc clearly enough to stop reaching for a single explanation that may not exist.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Distance often has more authors than the person who appears distant. This reading does not assign blame. It reads the distance as a shape the two of you are making together — sometimes from outside pressure, sometimes from old patterns, sometimes from a real edge that has not been named yet.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -265,6 +288,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-do-they-feel-distant"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-do-they-feel-distant">
+    <h2 class="sr-label" id="sr-label-why-do-they-feel-distant" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -289,6 +321,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Do They Feel Distant?',
     eyebrow: 'When the warmth has thinned without an event',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Distance often has more authors than the person who appears distant. This reading does not assign blame. It reads the distance as a shape the two of you are making together — sometimes from outside pressure, sometimes from old patterns, sometimes from a real edge that has not been named yet.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Why Do They Feel Distant?',
     lede: "Distance rarely arrives all at once. You notice the cooler tone, the longer pauses, and try to point at the moment it began — and there usually isn't one. The Emotional Arc reads a connection across time: what shaped this moment between you, what is unfolding now, and where it is quietly leaning. The reading won't give you their reason. It can help you see the arc clearly enough to stop reaching for a single explanation that may not exist.",
     recH2: 'A spread for this question',
@@ -338,6 +376,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมเขาถึงห่างเหินกับเรา',
     eyebrow: 'เมื่อความอบอุ่นบางลงโดยไม่มีเหตุการณ์',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ระยะห่างมักมีผู้สร้างมากกว่าคนที่ดูห่างเหิน บทอ่านนี้ไม่ใช่การโทษ แต่อ่านระยะห่างในฐานะรูปร่างที่ทั้งสองคนสร้างขึ้นด้วยกัน — บางครั้งจากแรงกดดันภายนอก บางครั้งจากรูปแบบเก่า บางครั้งจากขอบเขตจริงที่ยังไม่ถูกตั้งชื่อ',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'ทำไมเขาถึงห่างเหินกับเรา',
     lede: 'ระยะแทบไม่เคยมาทีเดียว คุณสังเกตน้ำเสียงที่เย็นกว่า ช่วงเงียบที่ยาวกว่า แล้วพยายามชี้ไปที่ช่วงเวลาที่มันเริ่ม — และส่วนใหญ่ก็ไม่มี บทอ่านห้วงอารมณ์อ่านความสัมพันธ์ผ่านเวลา: อะไรก่อตัวขึ้นในช่วงเวลานี้ระหว่างคุณ อะไรกำลังเกิดอยู่ตอนนี้ และมันกำลังเอียงไปทางไหนอย่างเงียบๆ บทอ่านจะไม่ให้เหตุผลของเขา มันช่วยให้คุณเห็นเส้นโค้งชัดพอที่จะหยุดไล่หาคำอธิบายเดียวที่อาจไม่มี',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

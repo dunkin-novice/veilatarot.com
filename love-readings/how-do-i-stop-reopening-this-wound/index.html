@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the same ache keeps finding the same hand</div>
   <h1 class="title" data-i18n="title">How Do I Stop Reopening This Wound?</h1>
   <p class="lede" data-i18n="lede">It is one of the tenderest questions a person can ask: why do I keep finding myself back here, even when I know the visit costs me something. The reopening is rarely about lack of willpower. It is usually about a wound that has not yet received what it actually needs. The Emotional Arc spread does not declare you broken. It reads what shaped the hurt, what is unfolding when you return to it, and what is quietly changing — so the reopening can be met with compassion instead of shame.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">A wound that keeps reopening usually has its own logic — a place where the work is unfinished, not a sign that you are failing to heal. This reading helps you read the shape of the loop rather than scolding yourself for falling into it, so the next return can meet the wound with more kindness.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +302,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="how-do-i-stop-reopening-this-wound"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-how-do-i-stop-reopening-this-wound">
+    <h2 class="sr-label" id="sr-label-how-do-i-stop-reopening-this-wound" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -303,6 +335,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'How Do I Stop Reopening This Wound?',
     eyebrow: 'When the same ache keeps finding the same hand',
+    qrLabel: 'Quick reflection',
+    qrBody: 'A wound that keeps reopening usually has its own logic — a place where the work is unfinished, not a sign that you are failing to heal. This reading helps you read the shape of the loop rather than scolding yourself for falling into it, so the next return can meet the wound with more kindness.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'How Do I Stop Reopening This Wound?',
     lede: 'It is one of the tenderest questions a person can ask: why do I keep finding myself back here, even when I know the visit costs me something. The reopening is rarely about lack of willpower. It is usually about a wound that has not yet received what it actually needs. The Emotional Arc spread does not declare you broken. It reads what shaped the hurt, what is unfolding when you return to it, and what is quietly changing — so the reopening can be met with compassion instead of shame.',
     recH2: 'A spread for this question',
@@ -354,6 +392,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'จะหยุดเปิดแผลเดิมยังไง',
     eyebrow: 'เมื่อความเจ็บเดิมหามือเดิมเจอเสมอ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'บาดแผลที่เปิดซ้ำ มักมีตรรกะของมันเอง — เป็นที่ที่งานยังไม่จบ ไม่ใช่สัญญาณว่าคุณกำลังเยียวยาล้มเหลว บทอ่านนี้ช่วยอ่านรูปร่างของวงจร แทนการดุตัวเองที่ตกลงไปในนั้น เพื่อให้การกลับครั้งต่อไป พบกับบาดแผลด้วยความเมตตามากขึ้น',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'จะหยุดเปิดแผลเดิมยังไง',
     lede: 'นี่เป็นหนึ่งในคำถามที่อ่อนโยนที่สุดที่คนเราถามได้: ทำไมฉันถึงพบตัวเองกลับมาที่นี่ แม้รู้ว่าการเยี่ยมมีค่าใช้จ่าย การเปิดแผลใหม่แทบไม่ใช่การขาดความตั้งใจ มันมักเกี่ยวกับแผลที่ยังไม่ได้รับสิ่งที่มันต้องการจริงๆ บทอ่านห้วงอารมณ์ไม่ประกาศว่าคุณแตก มันอ่านสิ่งที่ก่อตัวความเจ็บ สิ่งที่กำลังเกิดเมื่อคุณกลับไปหามัน และสิ่งที่กำลังเปลี่ยนอย่างเงียบ — การเปิดแผลใหม่จึงพบได้ด้วยความเมตตา แทนความอาย',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

@@ -88,7 +88,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Can tarot actually tell me if they will come back?", "acceptedAnswer": { "@type": "Answer", "text": "No. The cards cannot promise a return. What they can do is read whether the connection still has motion in it, and which part of that motion is yours to hold. A return, if it happens, will happen because two people choose to meet again — not because a card said so." } },
-    { "@type": "Question", "name": "What if 'What Is Changing' suggests closure?", "acceptedAnswer": { "@type": "Answer", "text": "Read it gently. The card is naming a direction the connection is already leaning, not pronouncing an ending. Closure as a slow turn is information about where you can place your attention — often more usefully toward yourself than toward waiting." } },
+    { "@type": "Question", "name": "What if \"What Is Changing\" suggests closure?", "acceptedAnswer": { "@type": "Answer", "text": "Read it gently. The card is naming a direction the connection is already leaning, not pronouncing an ending. Closure as a slow turn is information about where you can place your attention — often more usefully toward yourself than toward waiting." } },
     { "@type": "Question", "name": "Is it wrong to hope for their return?", "acceptedAnswer": { "@type": "Answer", "text": "No. Hoping is honest. The reading isn't a judgement of the hope; it is a way to read what the hope is actually about, and whether honoring it requires their return or only your own attention." } },
     { "@type": "Question", "name": "Can I do this reading more than once?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but space it out. Asking the same question repeatedly within hours tends to dull the practice. A week later is fine; the cards will reflect what has actually shifted, which is usually the better question by then anyway." } }
   ]
@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the thread feels unfinished</div>
   <h1 class="title" data-i18n="title">Will They Come Back?</h1>
   <p class="lede" data-i18n="lede">The question lives in the unfinished. Tarot can't promise a return — no one can without two people choosing to meet again — but the Emotional Arc reads the connection as a shape across time. What gave this its texture, what is unfolding now, where it is quietly leaning. The reading won't predict their arrival. It can help you read whether the arc is still in motion, and what part of it is yours to hold.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">"Will they come back" rarely answers the deeper question, which is whether their return would meet the version of you that is here now. The cards do not announce the future. This reading reads what the question is actually asking — and the answer often changes shape once you read it.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="will-they-come-back"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-will-they-come-back">
+    <h2 class="sr-label" id="sr-label-will-they-come-back" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/reconnection-and-return/" data-i18n="srSubhub">Reconnection and return cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Will They Come Back?',
     eyebrow: 'When the thread feels unfinished',
+    qrLabel: 'Quick reflection',
+    qrBody: '"Will they come back" rarely answers the deeper question, which is whether their return would meet the version of you that is here now. The cards do not announce the future. This reading reads what the question is actually asking — and the answer often changes shape once you read it.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Reconnection and return cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'Will They Come Back?',
     lede: "The question lives in the unfinished. Tarot can't promise a return — no one can without two people choosing to meet again — but the Emotional Arc reads the connection as a shape across time. What gave this its texture, what is unfolding now, where it is quietly leaning. The reading won't predict their arrival. It can help you read whether the arc is still in motion, and what part of it is yours to hold.",
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เขาจะกลับมาไหม',
     eyebrow: 'เมื่อสายใยรู้สึกค้างอยู่',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: '"เขาจะกลับมาไหม" มักไม่ตอบคำถามที่ลึกกว่า ซึ่งคือการกลับมาของเขาจะพบกับเวอร์ชั่นของคุณที่อยู่ตอนนี้หรือไม่ ไพ่ไม่ประกาศอนาคต บทอ่านนี้อ่านสิ่งที่คำถามถามอยู่จริง — และคำตอบมักเปลี่ยนรูปร่างเมื่อคุณอ่านมัน',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การกลับมาและการเชื่อมโยงใหม่',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'เขาจะกลับมาไหม',
     lede: 'คำถามอยู่ในความค้าง ไพ่ทาโรต์ไม่สัญญาว่าจะมีการกลับมา — ไม่มีใครสัญญาได้นอกจากคนสองคนเลือกที่จะมาพบกันอีกครั้ง — แต่บทอ่านห้วงอารมณ์อ่านความสัมพันธ์เป็นรูปร่างผ่านเวลา อะไรให้เนื้อสัมผัสกับสิ่งนี้ อะไรกำลังเกิดอยู่ตอนนี้ มันกำลังเอียงไปทางไหนอย่างเงียบๆ บทอ่านจะไม่ทำนายการกลับมาของเขา มันช่วยให้คุณอ่านว่าเส้นโค้งยังเคลื่อนอยู่ไหม และส่วนไหนเป็นของคุณที่ต้องถือ',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

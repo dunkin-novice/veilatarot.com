@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When their mixed signals become the question</div>
   <h1 class="title" data-i18n="title">Are They Confused About Me?</h1>
   <p class="lede" data-i18n="lede">The question often arrives before the answer. You aren't really asking whether they like you — you're asking whether they know what they want, and whether their not-knowing has started to be your problem to solve. The Connection spread reads three angles at once: what you're bringing, what their presence actually feels like, and the shape of the space between. The reading won't tell you what's in their head. It can show you whose confusion you've been carrying, and where you can put it down.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Mixed signals are usually the shape of what someone cannot say clearly to themselves yet, not a coded transcript of their feelings about you. The cards do not read their mind. They give the messy shape of the space between you a form you can sit with, instead of asking you to decode it alone.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="are-they-confused-about-me"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-are-they-confused-about-me">
+    <h2 class="sr-label" id="sr-label-are-they-confused-about-me" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=connection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Connection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Are They Confused About Me?',
     eyebrow: 'When their mixed signals become the question',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Mixed signals are usually the shape of what someone cannot say clearly to themselves yet, not a coded transcript of their feelings about you. The cards do not read their mind. They give the messy shape of the space between you a form you can sit with, instead of asking you to decode it alone.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Are They Confused About Me?',
     lede: "The question often arrives before the answer. You aren't really asking whether they like you — you're asking whether they know what they want, and whether their not-knowing has started to be your problem to solve. The Connection spread reads three angles at once: what you're bringing, what their presence actually feels like, and the shape of the space between. The reading won't tell you what's in their head. It can show you whose confusion you've been carrying, and where you can put it down.",
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เขางงเราอยู่ไหม',
     eyebrow: 'เมื่อสัญญาณปนๆ ของเขากลายเป็นคำถาม',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'สัญญาณปนๆ มักเป็นรูปร่างของสิ่งที่คนคนหนึ่งยังพูดให้ตัวเองชัดไม่ได้ ไม่ใช่บันทึกรหัสของความรู้สึกที่เขามีต่อคุณ ไพ่ไม่ได้อ่านใจเขา แต่ให้รูปร่างที่ยุ่งเหยิงของพื้นที่ระหว่างคุณ ในแบบที่คุณนั่งกับมันได้ แทนที่จะต้องถอดรหัสคนเดียว',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'เขางงเราอยู่ไหม',
     lede: 'คำถามมักมาก่อนคำตอบ คุณไม่ได้ถามว่าเขาชอบคุณไหมจริงๆ — คุณกำลังถามว่าเขารู้ไหมว่าตัวเองอยากได้อะไร และความไม่รู้ของเขาเริ่มกลายเป็นปัญหาของคุณที่ต้องแก้หรือยัง บทอ่านเชื่อมโยงอ่านสามมุมพร้อมกัน: สิ่งที่คุณนำมา สิ่งที่การมีอยู่ของเขารู้สึกได้จริง และรูปร่างของพื้นที่ระหว่างกัน บทอ่านจะไม่บอกว่าในหัวเขามีอะไร มันแสดงให้เห็นว่าคุณกำลังถือความสับสนของใครอยู่ และคุณวางลงได้ตรงไหน',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

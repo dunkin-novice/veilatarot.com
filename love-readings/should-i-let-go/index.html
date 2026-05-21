@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">For the question that won't let itself be answered</div>
   <h1 class="title" data-i18n="title">Should I Let Go?</h1>
   <p class="lede" data-i18n="lede">"Should I let go" is one of the loudest questions a tarot deck gets asked. The Reconnection spread takes the question gently. It reads what still exists between you, what is creating the distance, and the small gesture this moment seems to be inviting. Sometimes the gesture is to reach. Sometimes the gesture is to set down. The reading helps you see which one is honest, instead of which one is louder.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Letting go is rarely one clean decision. The question is often whether the bond is asking to be put down, whether the waiting is still honest, or whether you have already begun to let go in places the mind has not yet noticed. This reading helps you read what is being asked of you — not predict whether you should leave.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -286,6 +309,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="should-i-let-go"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-should-i-let-go">
+    <h2 class="sr-label" id="sr-label-should-i-let-go" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/reconnection/" data-i18n="srSpread">Reconnection spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=reconnection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Reconnection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -310,6 +342,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Should I Let Go?',
     eyebrow: "For the question that won't let itself be answered",
+    qrLabel: 'Quick reflection',
+    qrBody: 'Letting go is rarely one clean decision. The question is often whether the bond is asking to be put down, whether the waiting is still honest, or whether you have already begun to let go in places the mind has not yet noticed. This reading helps you read what is being asked of you — not predict whether you should leave.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Reconnection spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'Should I Let Go?',
     lede: "\"Should I let go\" is one of the loudest questions a tarot deck gets asked. The Reconnection spread takes the question gently. It reads what still exists between you, what is creating the distance, and the small gesture this moment seems to be inviting. Sometimes the gesture is to reach. Sometimes the gesture is to set down. The reading helps you see which one is honest, instead of which one is louder.",
     recH2: 'A spread for this question',
@@ -362,6 +400,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ควรปล่อยไปไหม',
     eyebrow: 'สำหรับคำถามที่ไม่ยอมให้ตัวเองถูกตอบ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การปล่อยมักไม่ใช่การตัดสินใจครั้งเดียวที่ชัดเจน คำถามมักเป็นว่าความผูกพันขอให้ถูกวางลงไหม การรอยังซื่อตรงอยู่ไหม หรือคุณเริ่มปล่อยไปแล้วในที่ที่ใจยังไม่ทันรู้ บทอ่านนี้ช่วยอ่านสิ่งที่ถูกถามจากคุณ ไม่ใช่ทำนายว่าคุณควรไป',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านเชื่อมโยงใหม่',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'ควรปล่อยไปไหม',
     lede: '"ควรปล่อยไปไหม" เป็นคำถามที่ดังที่สุดข้อหนึ่งที่ชุดไพ่ทาโรต์ถูกถาม บทอ่านเชื่อมโยงใหม่รับคำถามอย่างนุ่มนวล มันอ่านสิ่งที่ยังอยู่ระหว่างคุณ สิ่งที่กำลังสร้างระยะ และการกระทำเล็กๆ ที่ช่วงเวลานี้กำลังเชื้อเชิญ บางครั้งการกระทำคือการเอื้อม บางครั้งคือการวาง บทอ่านช่วยให้คุณเห็นว่าอันไหนซื่อตรง แทนที่จะเป็นอันไหนดังกว่า',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

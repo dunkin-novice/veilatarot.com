@@ -100,6 +100,14 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .position-card .pc-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
 </style>
 </head>
 <body>
@@ -125,6 +133,11 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   <div class="eyebrow" data-i18n="eyebrow">For threads that loosened</div>
   <h1 class="title" data-i18n-html="title">The <em>Reconnection</em> Spread</h1>
   <p class="lede" data-i18n="lede">Some closenesses don't end so much as dim. Neither of you spoke an ending — the room just got quieter. The Reconnection spread reads the shape of that quiet: what is still there between you, what is creating the distance, and the small gesture this moment may be waiting for.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The Reconnection spread reads bonds after silence or return — what still exists between you, what creates the distance, and what invites you back into honest contact. It does not promise reunion. It reads whether and how reconnection is being asked for, so the next move comes from clarity rather than wishful thinking.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +292,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcQlr: 'Quick Love Reading', bcCurrent: 'Reconnection',
     eyebrow: 'For threads that loosened',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The Reconnection spread reads bonds after silence or return — what still exists between you, what creates the distance, and what invites you back into honest contact. It does not promise reunion. It reads whether and how reconnection is being asked for, so the next move comes from clarity rather than wishful thinking.',
     title: 'The <em>Reconnection</em> Spread',
     lede: "Some closenesses don't end so much as dim. Neither of you spoke an ending — the room just got quieter. The Reconnection spread reads the shape of that quiet: what is still there between you, what is creating the distance, and the small gesture this moment may be waiting for.",
     posH2: 'The three positions',
@@ -325,6 +340,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcQlr: 'บทอ่านไพ่ความรัก', bcCurrent: 'เชื่อมโยงใหม่',
     eyebrow: 'สำหรับสายใยที่คลายลง',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'บทอ่านเชื่อมโยงใหม่อ่านความผูกพันหลังความเงียบหรือการกลับ — สิ่งที่ยังคงอยู่ระหว่างคุณ สิ่งที่สร้างระยะห่าง และสิ่งที่เชื้อเชิญคุณกลับเข้าสู่การติดต่อซื่อตรง บทอ่านนี้ไม่สัญญาการกลับมารวมกัน แต่อ่านว่ามีการขอเชื่อมโยงใหม่ไหม และในแบบใด เพื่อให้การเคลื่อนต่อไปมาจากความชัดเจน ไม่ใช่ความคิดเพ้อฝัน',
     title: 'บทอ่าน <em>เชื่อมโยงใหม่</em>',
     lede: 'ความใกล้ชิดบางอย่างไม่ได้จบ มันแค่หรี่ลง ไม่มีใครพูดคำลา แค่ห้องเงียบลงเฉยๆ บทอ่านเชื่อมโยงใหม่อ่านรูปร่างของความเงียบนั้น ว่ามีอะไรยังอยู่ระหว่างคุณ มีอะไรกำลังสร้างระยะ และการกระทำเล็กๆ ที่ช่วงเวลานี้อาจกำลังรออยู่',
     posH2: 'สามตำแหน่ง',

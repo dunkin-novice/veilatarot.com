@@ -87,7 +87,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is there a single moment that says 'now is the time'?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely. The right time is more often a slow recognition than a single revelation. The reading does not predict the moment; it can read where you actually are on the arc of readiness right now, which is more useful than waiting for a sign that may arrive only in retrospect." } },
+    { "@type": "Question", "name": "Is there a single moment that says \"now is the time\"?", "acceptedAnswer": { "@type": "Answer", "text": "Rarely. The right time is more often a slow recognition than a single revelation. The reading does not predict the moment; it can read where you actually are on the arc of readiness right now, which is more useful than waiting for a sign that may arrive only in retrospect." } },
     { "@type": "Question", "name": "What if I'm still feeling — does that mean it's not time?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Feeling and being ready can coexist. The reading reads readiness as something more honest than the absence of feeling — usually as a steady willingness to live a fuller life even while the feeling is still present." } },
     { "@type": "Question", "name": "Can I let go without their agreement?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Letting go is rarely something that requires their participation. The reading can show that the readiness is yours, and that the move belongs to you regardless of what they would say if you asked." } },
     { "@type": "Question", "name": "What if I let go and then regret it?", "acceptedAnswer": { "@type": "Answer", "text": "Real letting go is rarely a one-time event you cannot revisit. The reading does not perform an irreversible procedure on you. It can show that you are allowed to release in stages, and that returning to a feeling later is not undoing the work — it is the work doing its honest, non-linear shape." } }
@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When readiness is a slow knowing, not a single hour</div>
   <h1 class="title" data-i18n="title">How Do I Know When It's Time to Let Go?</h1>
   <p class="lede" data-i18n="lede">The right time rarely announces itself with a banner. It tends to arrive as a quiet recognition — first in the body, later in the words. The Emotional Arc spread does not put a date on your readiness. It reads three honest points along the same line — what shaped where you are now, what is unfolding in this present moment of the question, and what is changing underneath — so the threshold of letting go can be felt as something you grow toward rather than something you are supposed to decide.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The moment that wants to be named rarely arrives with a clear sign. Often it is already underway in your body before the mind agrees. This reading helps you tell whether the question is still open or whether some part of you has quietly already answered, without forcing a decision before it is honest.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="how-do-i-know-when-its-time-to-let-go"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-how-do-i-know-when-its-time-to-let-go">
+    <h2 class="sr-label" id="sr-label-how-do-i-know-when-its-time-to-let-go" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/reconnection/" data-i18n="srSpread">Reconnection spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: "How Do I Know When It's Time to Let Go?",
     eyebrow: 'When readiness is a slow knowing, not a single hour',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The moment that wants to be named rarely arrives with a clear sign. Often it is already underway in your body before the mind agrees. This reading helps you tell whether the question is still open or whether some part of you has quietly already answered, without forcing a decision before it is honest.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Reconnection spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: "How Do I Know When It's Time to Let Go?",
     lede: 'The right time rarely announces itself with a banner. It tends to arrive as a quiet recognition — first in the body, later in the words. The Emotional Arc spread does not put a date on your readiness. It reads three honest points along the same line — what shaped where you are now, what is unfolding in this present moment of the question, and what is changing underneath — so the threshold of letting go can be felt as something you grow toward rather than something you are supposed to decide.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'จะรู้ได้ยังไงว่าถึงเวลาปล่อยแล้ว',
     eyebrow: 'เมื่อความพร้อมคือการรู้ที่ช้า ไม่ใช่ชั่วโมงเดียว',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ช่วงเวลาที่อยากถูกตั้งชื่อ มักไม่มาพร้อมสัญญาณชัด บ่อยครั้งมันเกิดขึ้นในร่างกายแล้วก่อนที่ใจจะตกลง บทอ่านนี้ช่วยบอกว่าคำถามยังเปิดอยู่ หรือบางส่วนของคุณตอบเงียบๆ ไปแล้ว โดยไม่บังคับให้ตัดสินใจก่อนที่มันจะซื่อตรง',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านเชื่อมโยงใหม่',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'จะรู้ได้ยังไงว่าถึงเวลาปล่อยแล้ว',
     lede: 'เวลาที่ใช่แทบไม่ประกาศตัวด้วยป้าย มันมักมาในฐานะการรู้ที่เงียบ — ในกายก่อน ในถ้อยคำทีหลัง บทอ่านห้วงอารมณ์ไม่ใส่วันที่ให้ความพร้อมของคุณ มันอ่านสามจุดซื่อตรงบนเส้นเดียวกัน — สิ่งที่ก่อตัวที่ที่คุณอยู่ตอนนี้ สิ่งที่กำลังเกิดในชั่วขณะปัจจุบันของคำถาม และสิ่งที่กำลังเปลี่ยนข้างใต้ — ธรณีประตูของการปล่อยจึงรู้สึกได้ในฐานะสิ่งที่คุณเติบโตไปสู่ แทนสิ่งที่คุณต้องตัดสิน',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

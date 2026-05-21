@@ -100,6 +100,14 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .position-card .pc-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
 </style>
 </head>
 <body>
@@ -125,6 +133,11 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   <div class="eyebrow" data-i18n="eyebrow">A three-part honesty</div>
   <h1 class="title" data-i18n-html="title">The <em>Clarity</em> Spread</h1>
   <p class="lede" data-i18n="lede">Some questions you keep replaying because you already know the answer, and some because you don't. The Clarity spread sits with both. It names the thing you can say out loud, the thing you keep stepping past, and the place where those two would meet if you let them.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The Clarity spread reads inner conflict in three honest layers: what you already know, what you have been avoiding, and what needs honesty. It does not grade your decisions. It separates the felt voices from the practised ones, so the choice you arrive at comes from something more honest than the loudest worry of the week.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +292,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcQlr: 'Quick Love Reading', bcCurrent: 'Clarity',
     eyebrow: 'A three-part honesty',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The Clarity spread reads inner conflict in three honest layers: what you already know, what you have been avoiding, and what needs honesty. It does not grade your decisions. It separates the felt voices from the practised ones, so the choice you arrive at comes from something more honest than the loudest worry of the week.',
     title: 'The <em>Clarity</em> Spread',
     lede: "Some questions you keep replaying because you already know the answer, and some because you don't. The Clarity spread sits with both. It names the thing you can say out loud, the thing you keep stepping past, and the place where those two would meet if you let them.",
     posH2: 'The three positions',
@@ -325,6 +340,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcQlr: 'บทอ่านไพ่ความรัก', bcCurrent: 'ความชัดเจน',
     eyebrow: 'ความซื่อตรงในสามส่วน',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'บทอ่านความชัดเจนอ่านความขัดแย้งภายในในสามชั้นซื่อตรง: สิ่งที่คุณรู้แล้ว สิ่งที่คุณกำลังหลีกเลี่ยง และสิ่งที่ต้องการความซื่อตรง บทอ่านนี้ไม่ให้คะแนนการตัดสินใจ แต่แยกเสียงที่รู้สึกได้ออกจากเสียงที่ฝึกมา เพื่อให้ทางเลือกที่คุณไปถึง มาจากบางสิ่งซื่อตรงกว่าความกังวลที่ดังที่สุดของสัปดาห์',
     title: 'บทอ่าน <em>ความชัดเจน</em>',
     lede: 'บางคำถามคุณคิดวนเพราะรู้คำตอบอยู่แล้ว บางคำถามเพราะยังไม่รู้ บทอ่านความชัดเจนนั่งกับทั้งสองอย่าง มันเรียกชื่อสิ่งที่คุณพูดออกมาดังๆ ได้ สิ่งที่คุณเดินผ่านไปเรื่อยๆ และจุดที่สองสิ่งนี้จะมาบรรจบกัน หากคุณยอมให้มันเจอกัน',
     posH2: 'สามตำแหน่ง',

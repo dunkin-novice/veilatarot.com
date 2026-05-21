@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the closeness has thinned without an event to blame</div>
   <h1 class="title" data-i18n="title">Are We Growing Apart?</h1>
   <p class="lede" data-i18n="lede">Sometimes the question arrives before either of you has done anything wrong. The closeness has thinned, the conversations have shortened, and the warmth has not so much gone as moved a little further out — and you can feel it before you can say it. The Emotional Arc spread does not declare the relationship over or save it. It reads three honest points along the same line — what shaped where you both are, what is unfolding between you right now, and what is changing underneath — so the drift becomes a shape you can see and respond to, instead of a fear running quietly in the background.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Drifting apart often has no single event to point to — only a different feel that grew slowly until you noticed it. This reading does not deliver a verdict on whether the bond is over. It separates the change that is happening from the meaning you have been trying to read into it, so the question becomes easier to sit with honestly.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="are-we-growing-apart"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-are-we-growing-apart">
+    <h2 class="sr-label" id="sr-label-are-we-growing-apart" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Are We Growing Apart?',
     eyebrow: 'When the closeness has thinned without an event to blame',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Drifting apart often has no single event to point to — only a different feel that grew slowly until you noticed it. This reading does not deliver a verdict on whether the bond is over. It separates the change that is happening from the meaning you have been trying to read into it, so the question becomes easier to sit with honestly.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'Are We Growing Apart?',
     lede: 'Sometimes the question arrives before either of you has done anything wrong. The closeness has thinned, the conversations have shortened, and the warmth has not so much gone as moved a little further out — and you can feel it before you can say it. The Emotional Arc spread does not declare the relationship over or save it. It reads three honest points along the same line — what shaped where you both are, what is unfolding between you right now, and what is changing underneath — so the drift becomes a shape you can see and respond to, instead of a fear running quietly in the background.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เรากำลังห่างไกลกันหรือเปล่า',
     eyebrow: 'เมื่อความใกล้ชิดบางลงโดยไม่มีเหตุการณ์ให้โทษ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การห่างไกลกันมักไม่มีเหตุการณ์เดียวให้ชี้ มีแค่ความรู้สึกที่ต่างไป ค่อยๆ โตขึ้นจนคุณสังเกตเห็น บทอ่านนี้ไม่ตัดสินว่าความผูกพันจบแล้วหรือยัง แต่แยกการเปลี่ยนที่กำลังเกิดขึ้น ออกจากความหมายที่คุณพยายามอ่านลงไปในนั้น เพื่อให้คำถามนั่งกับมันได้ในแบบที่ซื่อตรงขึ้น',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'เรากำลังห่างไกลกันหรือเปล่า',
     lede: 'บางครั้งคำถามมาก่อนที่ฝ่ายใดทำอะไรผิด ความใกล้ชิดบางลง บทสนทนาสั้นลง และความอบอุ่นไม่ได้หายไป แต่ขยับออกไปอีกหน่อย — และคุณรู้สึกได้ก่อนพูดได้ บทอ่านห้วงอารมณ์ไม่ประกาศว่าความสัมพันธ์จบหรือรอด มันอ่านสามจุดซื่อตรงบนเส้นเดียวกัน — สิ่งที่ก่อตัวที่ที่ทั้งคู่อยู่ สิ่งที่กำลังเกิดระหว่างคุณตอนนี้ และสิ่งที่กำลังเปลี่ยนข้างใต้ — การห่างไกลจึงเป็นรูปร่างที่คุณเห็นและตอบสนองได้ แทนความกลัวที่วิ่งเงียบในพื้นหลัง',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

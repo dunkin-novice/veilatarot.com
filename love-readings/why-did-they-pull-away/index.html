@@ -96,6 +96,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -119,6 +137,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   <div class="eyebrow" data-i18n="eyebrow">When the room got quieter without an announcement</div>
   <h1 class="title" data-i18n="title">Why Did They Pull Away?</h1>
   <p class="lede" data-i18n="lede">Pulling away is rarely a single event. By the time you notice the distance, something has usually been shifting underneath for a while. The Emotional Arc reads a connection across time — what gave this moment its texture, what is unfolding now, and what is quietly turning. It won't tell you their reason. It can help you see the shape of the change clearly enough to stop reaching for a single explanation that may not exist.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">A pull-away rarely has one cause and even more rarely has nothing to do with the person doing it. The cards do not interrogate their reasoning. This reading reads the moment that already happened and the meaning that is still arriving, so the distance becomes more than a verdict on you.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -240,6 +263,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   </section>
 
   <aside class="related-rail" data-related-source="why-did-they-pull-away"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-did-they-pull-away">
+    <h2 class="sr-label" id="sr-label-why-did-they-pull-away" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -264,6 +296,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Did They Pull Away?',
     eyebrow: 'When the room got quieter without an announcement',
+    qrLabel: 'Quick reflection',
+    qrBody: 'A pull-away rarely has one cause and even more rarely has nothing to do with the person doing it. The cards do not interrogate their reasoning. This reading reads the moment that already happened and the meaning that is still arriving, so the distance becomes more than a verdict on you.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Why Did They Pull Away?',
     lede: "Pulling away is rarely a single event. By the time you notice the distance, something has usually been shifting underneath for a while. The Emotional Arc reads a connection across time — what gave this moment its texture, what is unfolding now, and what is quietly turning. It won't tell you their reason. It can help you see the shape of the change clearly enough to stop reaching for a single explanation that may not exist.",
     recH2: 'A spread for this question',
@@ -310,6 +348,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมเขาถึงห่างไป',
     eyebrow: 'เมื่อห้องเงียบลงโดยไม่มีใครประกาศ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การห่างออกไป มักไม่มีเหตุเดียว และยิ่งน้อยมากที่จะไม่เกี่ยวกับคนที่ห่างออกไปเลย ไพ่ไม่ได้สอบสวนเหตุผลของเขา บทอ่านนี้อ่านช่วงเวลาที่เกิดไปแล้ว และความหมายที่ยังกำลังมา เพื่อให้ระยะห่างเป็นมากกว่าคำตัดสินเกี่ยวกับคุณ',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'ทำไมเขาถึงห่างไป',
     lede: 'การห่างกันแทบไม่ใช่เหตุการณ์เดียว กว่าคุณจะสังเกตเห็นระยะ บางอย่างใต้ผิวก็มักจะขยับมาสักพักแล้ว บทอ่านห้วงอารมณ์อ่านความสัมพันธ์ผ่านเวลา — อะไรให้เนื้อสัมผัสกับช่วงเวลานี้ อะไรกำลังเกิดอยู่ตอนนี้ และอะไรกำลังโน้มเอียงอย่างเงียบๆ มันจะไม่บอกว่าทำไม แต่มันช่วยให้คุณเห็นรูปร่างของการเปลี่ยนแปลงชัดพอที่จะหยุดไล่หาคำอธิบายเดียวที่อาจไม่มี',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

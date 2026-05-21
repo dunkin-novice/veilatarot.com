@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the silence has started to do the talking</div>
   <h1 class="title" data-i18n="title">Why Haven't They Contacted Me?</h1>
   <p class="lede" data-i18n="lede">The question is rarely only about the message that did not arrive. It is about the meaning the silence has begun to take on — the way the not-hearing has started to feel like an answer, and the way you have been turning the absence over to read it. The Connection spread does not deliver a transcript of their reasons. It reads three honest angles on the silence — what you are bringing to it, what their presence (or its absence) sits like, and the shape of the space between — so the quiet can be sat with rather than guessed at.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Silence is its own communication, not just an absence of one. The cards do not interrogate the other person. This reading reads what the silence is shaped like in your case — fear, distance, indifference, or something quieter than any of those — so you can meet it without having to invent its meaning.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-havent-they-contacted-me"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-havent-they-contacted-me">
+    <h2 class="sr-label" id="sr-label-why-havent-they-contacted-me" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=connection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Connection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: "Why Haven't They Contacted Me?",
     eyebrow: 'When the silence has started to do the talking',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Silence is its own communication, not just an absence of one. The cards do not interrogate the other person. This reading reads what the silence is shaped like in your case — fear, distance, indifference, or something quieter than any of those — so you can meet it without having to invent its meaning.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: "Why Haven't They Contacted Me?",
     lede: 'The question is rarely only about the message that did not arrive. It is about the meaning the silence has begun to take on — the way the not-hearing has started to feel like an answer, and the way you have been turning the absence over to read it. The Connection spread does not deliver a transcript of their reasons. It reads three honest angles on the silence — what you are bringing to it, what their presence (or its absence) sits like, and the shape of the space between — so the quiet can be sat with rather than guessed at.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมเขาถึงไม่ติดต่อมา',
     eyebrow: 'เมื่อความเงียบเริ่มพูดแทน',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ความเงียบเป็นการสื่อสารของมันเอง ไม่ใช่แค่การไม่มี ไพ่ไม่ได้สอบสวนอีกคน บทอ่านนี้อ่านรูปร่างของความเงียบในกรณีของคุณ — ความกลัว การห่าง ความไม่ใส่ใจ หรืออะไรที่เงียบกว่านั้น เพื่อให้คุณพบมันได้ โดยไม่ต้องคิดความหมายของมันเอง',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'ทำไมเขาถึงไม่ติดต่อมา',
     lede: 'คำถามแทบไม่ใช่เรื่องของข้อความที่ไม่มาเท่านั้น มันเกี่ยวกับความหมายที่ความเงียบเริ่มสวมใส่ — การที่การไม่ได้ยินเริ่มรู้สึกเหมือนเป็นคำตอบ และวิธีที่คุณกำลังพลิกการหายไปไปมาเพื่ออ่านมัน บทอ่านเชื่อมโยงไม่ส่งบทสำเนาเหตุผลของเขามาให้ มันอ่านสามมุมที่ซื่อตรงของความเงียบ — สิ่งที่คุณนำมา การมีอยู่ (หรือการไม่มี) ของเขาตั้งอยู่ยังไง และรูปร่างของพื้นที่ระหว่างกัน — ความเงียบจึงนั่งด้วยได้ แทนการเดา',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',
