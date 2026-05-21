@@ -63,7 +63,7 @@
   "image": "https://veilatarot.com/og.png",
   "inLanguage": "en-US",
   "datePublished": "2026-05-19",
-  "dateModified": "2026-05-19",
+  "dateModified": "2026-05-22",
   "publisher": { "@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/" },
   "mainEntityOfPage": "https://veilatarot.com/guides/how-to-ask-a-tarot-question/"
 }
@@ -133,6 +133,18 @@ main.article p { font-family: var(--serif); color: var(--ivory-dim); font-size: 
 html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow, html[lang="th"] .breadcrumb, html[lang="th"] .qpair .qp-label { letter-spacing: 0; text-transform: none; }
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"] .qpair .qp-text, html[lang="th"] .steps li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Last-reviewed freshness signal — sits under the last-updated footer line. */
+.last-reviewed { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 11px; letter-spacing: 0.04em; color: var(--ivory-mute, #6c6a63); margin-top: 4px; line-height: 1.5; }
+html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans Thai", sans-serif; font-size: 12px; }
 </style>
 </head>
 <body>
@@ -156,6 +168,11 @@ html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"]
   <div class="eyebrow" data-i18n="eyebrow">The shape of the question shapes the answer</div>
   <h1 class="title" data-i18n-html="title">How to Ask a <em>Tarot Question</em></h1>
   <p class="lede" data-i18n="lede">The most common reason a tarot reading feels flat is not the cards. It is the question. A closed prediction question — "Will he come back?" — forces the deck to behave like a coin. A reflective question gives the deck something to read. The whole practice often turns on this one rewrite.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">A good tarot question is not the one that demands a yes or a no about another person. It is the one the cards can actually meet — phrased so the reading can hold the feeling, the shape, the texture of what is being asked. This guide is for softening closed questions into ones that open something honest.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -355,6 +372,7 @@ html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"]
 
 <footer>
   <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 19 May 2026</div>
+  <div class="last-reviewed" data-i18n="footerLastReviewed">Last reviewed for clarity and emotional accuracy · May 2026</div>
   <nav class="footer-nav">
     <a href="/quick-love-reading/" data-i18n="navQlr">Quick Love Reading</a>
     <span class="sep">·</span>
@@ -371,6 +389,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'How to Ask a Tarot Question',
     eyebrow: 'The shape of the question shapes the answer',
+    qrLabel: 'Quick reflection',
+    qrBody: 'A good tarot question is not the one that demands a yes or a no about another person. It is the one the cards can actually meet — phrased so the reading can hold the feeling, the shape, the texture of what is being asked. This guide is for softening closed questions into ones that open something honest.',
     title: 'How to Ask a <em>Tarot Question</em>',
     lede: 'The most common reason a tarot reading feels flat is not the cards. It is the question. A closed prediction question — "Will he come back?" — forces the deck to behave like a coin. A reflective question gives the deck something to read. The whole practice often turns on this one rewrite.',
     h2Kinds: 'Two kinds of questions',
@@ -424,6 +444,7 @@ const T = {
     ctaPrimary: 'Try a reading with your softened question',
     ctaSecondary: 'Tarot for reflection — the practice',
     footerLastUpdated: 'Last updated · 19 May 2026',
+    footerLastReviewed: 'Last reviewed for clarity and emotional accuracy · May 2026',
     navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
     footerCopy: 'veilatarot.com · © MMXXVI'
   },
@@ -431,6 +452,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'วิธีถามคำถามไพ่ทาโรต์',
     eyebrow: 'รูปร่างของคำถามกำหนดรูปร่างของคำตอบ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'คำถามไพ่ทาโรต์ที่ดี ไม่ใช่คำถามที่ขอใช่หรือไม่เกี่ยวกับอีกคน แต่เป็นคำถามที่ไพ่พบได้จริง — เรียบเรียงในแบบที่บทอ่านถือความรู้สึก รูปร่าง เนื้อหาของสิ่งที่ถูกถาม คู่มือนี้สำหรับการทำคำถามปิดให้นุ่มลง ให้เปิดบางสิ่งที่ซื่อตรง',
     title: 'วิธี<em>ถามคำถามไพ่ทาโรต์</em>',
     lede: 'เหตุผลที่บทอ่านไพ่ทาโรต์รู้สึกแบนๆ บ่อยที่สุดไม่ใช่ไพ่ มันคือคำถาม คำถามแบบทำนายปิด — "เขาจะกลับมาไหม" — บังคับให้ชุดไพ่ทำตัวเหมือนเหรียญ คำถามที่ใคร่ครวญให้ไพ่มีอะไรให้อ่าน การฝึกทั้งหมดมักจะหมุนรอบการเขียนคำถามใหม่ครั้งเดียวนี้',
     h2Kinds: 'คำถามสองชนิด',
@@ -484,6 +507,7 @@ const T = {
     ctaPrimary: 'ลองบทอ่านกับคำถามที่ทำให้นุ่มลงแล้ว',
     ctaSecondary: 'ไพ่ทาโรต์เพื่อใคร่ครวญ — การฝึก',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 19 พฤษภาคม 2026',
+    footerLastReviewed: 'ทบทวนล่าสุดเพื่อความชัดเจนและความซื่อตรงทางอารมณ์ · พฤษภาคม 2026',
     navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
     footerCopy: 'veilatarot.com · © MMXXVI'
   }

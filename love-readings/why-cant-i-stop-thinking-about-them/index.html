@@ -90,7 +90,7 @@
     { "@type": "Question", "name": "Does thinking about someone mean they are thinking about me?", "acceptedAnswer": { "@type": "Answer", "text": "No, not reliably. Persistent thinking is information about your own state, not a transmission. Your thinking can be intense and theirs absent — and the other way around. Treating the thinking as a sign about them tends to extend it; treating it as information about you tends to soften it." } },
     { "@type": "Question", "name": "Is constant thinking about someone a sign we're meant to be?", "acceptedAnswer": { "@type": "Answer", "text": "No. Veila avoids that framing. Persistent thinking is often a sign of something unfinished in you — an unhealed pattern, an unspoken thing, a grief or a hope that wants language. The reading helps you read the thinking as information about you, not as a verdict about destiny." } },
     { "@type": "Question", "name": "Will the reading make the thinking stop?", "acceptedAnswer": { "@type": "Answer", "text": "Probably not, at least not immediately. What it can do is shift the thinking from background noise into something you can hold. Once it has a shape, it tends to demand less of your day, even if it doesn't fully leave." } },
-    { "@type": "Question", "name": "What if 'What You Avoid' surfaces something I'm not ready for?", "acceptedAnswer": { "@type": "Answer", "text": "Close the page. The reading doesn't require you to do anything with what it surfaces. A noticing held quietly is often more useful than a noticing rushed into action. The reading will keep, and the thing it surfaced was already there before the cards." } }
+    { "@type": "Question", "name": "What if \"What You Avoid\" surfaces something I'm not ready for?", "acceptedAnswer": { "@type": "Answer", "text": "Close the page. The reading doesn't require you to do anything with what it surfaces. A noticing held quietly is often more useful than a noticing rushed into action. The reading will keep, and the thing it surfaced was already there before the cards." } }
   ]
 }
 </script>
@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the thinking has become its own room</div>
   <h1 class="title" data-i18n="title">Why Can't I Stop Thinking About Them?</h1>
   <p class="lede" data-i18n="lede">Persistent thinking about someone is rarely about them, exactly. It is about you — a part of you that is using the thinking for something it isn't naming. The Clarity spread asks you to look at three honest things: the part of the thinking you can name out loud, the part you keep stepping past, and the place where those two would meet if you let them. The reading won't make the thinking stop. It can help you see what it is for, which is usually the thing that softens it.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">A mind that loops on someone is usually responding to something unfinished, not announcing that the relationship should return. The loop has its own logic worth reading. This reading helps you sit with the loop as information, not as evidence of either love or failure to move on.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-cant-i-stop-thinking-about-them"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-cant-i-stop-thinking-about-them">
+    <h2 class="sr-label" id="sr-label-why-cant-i-stop-thinking-about-them" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=clarity" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Clarity reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: "Why Can't I Stop Thinking About Them?",
     eyebrow: 'When the thinking has become its own room',
+    qrLabel: 'Quick reflection',
+    qrBody: 'A mind that loops on someone is usually responding to something unfinished, not announcing that the relationship should return. The loop has its own logic worth reading. This reading helps you sit with the loop as information, not as evidence of either love or failure to move on.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: "Why Can't I Stop Thinking About Them?",
     lede: "Persistent thinking about someone is rarely about them, exactly. It is about you — a part of you that is using the thinking for something it isn't naming. The Clarity spread asks you to look at three honest things: the part of the thinking you can name out loud, the part you keep stepping past, and the place where those two would meet if you let them. The reading won't make the thinking stop. It can help you see what it is for, which is usually the thing that softens it.",
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมถึงเลิกคิดถึงเขาไม่ได้',
     eyebrow: 'เมื่อการคิดกลายเป็นห้องของตัวมันเอง',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ใจที่วนคิดถึงใครคนหนึ่ง มักตอบสนองต่อบางอย่างที่ยังไม่จบ ไม่ใช่ประกาศว่าความสัมพันธ์ควรกลับมา วงจรนี้มีตรรกะของมันที่ควรอ่าน บทอ่านนี้ช่วยให้คุณนั่งกับวงจรในฐานะข้อมูล ไม่ใช่หลักฐานของความรักหรือการก้าวต่อไม่ได้',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'ทำไมถึงเลิกคิดถึงเขาไม่ได้',
     lede: 'การคิดถึงใครคนหนึ่งอย่างต่อเนื่องแทบไม่ใช่เรื่องของเขาเสียทีเดียว มันเป็นเรื่องของคุณ — ส่วนของคุณที่กำลังใช้การคิดเพื่ออะไรที่มันไม่ได้เรียกชื่อ บทอ่านความชัดเจนขอให้คุณมองสามสิ่งที่ซื่อตรง: ส่วนของการคิดที่คุณเรียกชื่อออกมาดังๆ ได้ ส่วนที่คุณเดินผ่านไปเรื่อยๆ และจุดที่ทั้งสองจะมาบรรจบกันหากคุณยอม บทอ่านจะไม่ทำให้การคิดหยุด มันช่วยให้คุณเห็นว่ามันมีไว้เพื่ออะไร ซึ่งมักเป็นสิ่งที่ทำให้มันนุ่มลง',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

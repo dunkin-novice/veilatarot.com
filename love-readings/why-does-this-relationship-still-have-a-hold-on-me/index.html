@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the gravity of the bond outlasts the relationship itself</div>
   <h1 class="title" data-i18n="title">Why Does This Relationship Still Have a Hold on Me?</h1>
   <p class="lede" data-i18n="lede">Some bonds keep gravity even after the relationship ends. They influence the seasons of your life from a distance, not because you are still inside them, but because something in them touched the deeper soil. The Emotional Arc spread does not call this attachment evidence of fate or proof of unfinished business. It reads what shaped the bond, what is unfolding in the present hold, and what is quietly changing — so the gravity can be understood with compassion rather than fought as a flaw.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">A hold is real even when it is no longer convenient, and reading the hold honestly is usually kinder than fighting it. This reading reads the shape of the grip — where it touches you, what it keeps offering, what it costs — so the question of staying or loosening is one you can answer with information rather than shame.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-does-this-relationship-still-have-a-hold-on-me"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-does-this-relationship-still-have-a-hold-on-me">
+    <h2 class="sr-label" id="sr-label-why-does-this-relationship-still-have-a-hold-on-me" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Does This Relationship Still Have a Hold on Me?',
     eyebrow: 'When the gravity of the bond outlasts the relationship itself',
+    qrLabel: 'Quick reflection',
+    qrBody: 'A hold is real even when it is no longer convenient, and reading the hold honestly is usually kinder than fighting it. This reading reads the shape of the grip — where it touches you, what it keeps offering, what it costs — so the question of staying or loosening is one you can answer with information rather than shame.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'Why Does This Relationship Still Have a Hold on Me?',
     lede: 'Some bonds keep gravity even after the relationship ends. They influence the seasons of your life from a distance, not because you are still inside them, but because something in them touched the deeper soil. The Emotional Arc spread does not call this attachment evidence of fate or proof of unfinished business. It reads what shaped the bond, what is unfolding in the present hold, and what is quietly changing — so the gravity can be understood with compassion rather than fought as a flaw.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมความสัมพันธ์นี้ถึงยังมีอิทธิพลต่อเรา',
     eyebrow: 'เมื่อแรงดึงดูดของความผูกพันอยู่นานกว่าความสัมพันธ์เอง',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'อิทธิพลเป็นเรื่องจริง แม้จะไม่สะดวกแล้ว และการอ่านอิทธิพลอย่างซื่อตรง มักเมตตามากกว่าการสู้กับมัน บทอ่านนี้อ่านรูปร่างของการถือ — มันแตะคุณตรงไหน มันยังมอบอะไรอยู่ มันค่าใช้จ่ายเท่าไร เพื่อให้คำถามเรื่องอยู่หรือคลาย เป็นคำถามที่คุณตอบด้วยข้อมูล ไม่ใช่ความอาย',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'ทำไมความสัมพันธ์นี้ถึงยังมีอิทธิพลต่อเรา',
     lede: 'ความผูกพันบางอย่างเก็บแรงดึงดูดไว้แม้ความสัมพันธ์จบลง พวกมันมีอิทธิพลต่อฤดูในชีวิตของคุณจากระยะไกล ไม่ใช่เพราะคุณยังอยู่ในนั้น แต่เพราะบางอย่างในนั้นสัมผัสดินที่ลึกกว่า บทอ่านห้วงอารมณ์ไม่เรียกความผูกพันนี้ว่าหลักฐานของโชคชะตา หรือหลักฐานของธุระที่ไม่จบ มันอ่านสิ่งที่ก่อตัวความผูกพัน สิ่งที่กำลังเกิดในอิทธิพลปัจจุบัน และสิ่งที่กำลังเปลี่ยนอย่างเงียบ — แรงดึงดูดจึงเข้าใจได้ด้วยความเมตตา แทนการต่อสู้ในฐานะข้อบกพร่อง',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

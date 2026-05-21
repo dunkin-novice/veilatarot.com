@@ -104,6 +104,18 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .featured-list .fl-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Last-reviewed freshness signal — sits under the last-updated footer line. */
+.last-reviewed { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 11px; letter-spacing: 0.04em; color: var(--ivory-mute, #6c6a63); margin-top: 4px; line-height: 1.5; }
+html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans Thai", sans-serif; font-size: 12px; }
 </style>
 </head>
 <body>
@@ -129,6 +141,11 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   <div class="eyebrow" data-i18n="eyebrow">For the long quiet work after an ending</div>
   <h1 class="title" data-i18n="title">Healing and Closure</h1>
   <p class="lede" data-i18n="lede">Healing rarely behaves the way other people expect it to. Old feelings return at hours that did not announce themselves, the wound is touched again by a song or a photograph, the wish for closure does not always wait for the conversation that would have provided it. The readings in this cluster meet that work with compassion rather than scoring. They do not measure your recovery against a calendar, do not promise the next chapter, and do not pretend that closure is something the other person owes you. They give the slow, honest work somewhere skilful to happen.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">This cluster holds readings for slow grief, returning waves, and the closure that does not always wait for the conversation that would have provided it. The work here is not a calendar. Each reading meets the healing where it actually is, rather than where the outside world expects it to be by now.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -265,6 +282,7 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
 
 <footer>
   <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 20 May 2026</div>
+  <div class="last-reviewed" data-i18n="footerLastReviewed">Last reviewed for clarity and emotional accuracy · May 2026</div>
   <nav class="footer-nav">
     <a href="/quick-love-reading/" data-i18n="navQlr">Quick Love Reading</a>
     <span class="sep">·</span>
@@ -281,6 +299,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcParent: 'Love Readings', bcCurrent: 'Healing and Closure',
     eyebrow: 'For the long quiet work after an ending',
+    qrLabel: 'Quick reflection',
+    qrBody: 'This cluster holds readings for slow grief, returning waves, and the closure that does not always wait for the conversation that would have provided it. The work here is not a calendar. Each reading meets the healing where it actually is, rather than where the outside world expects it to be by now.',
     title: 'Healing and Closure',
     lede: 'Healing rarely behaves the way other people expect it to. Old feelings return at hours that did not announce themselves, the wound is touched again by a song or a photograph, the wish for closure does not always wait for the conversation that would have provided it. The readings in this cluster meet that work with compassion rather than scoring. They do not measure your recovery against a calendar, do not promise the next chapter, and do not pretend that closure is something the other person owes you. They give the slow, honest work somewhere skilful to happen.',
     stateH2: 'The emotional state behind this cluster',
@@ -313,6 +333,7 @@ const T = {
     ctaPrimary: 'Begin an Emotional Arc reading',
     ctaSecondary: 'Back to all clusters',
     footerLastUpdated: 'Last updated · 20 May 2026',
+    footerLastReviewed: 'Last reviewed for clarity and emotional accuracy · May 2026',
     navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
     footerCopy: 'veilatarot.com · © MMXXVI'
   },
@@ -320,6 +341,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcParent: 'บทอ่านไพ่ความรัก', bcCurrent: 'การเยียวยาและการปิด',
     eyebrow: 'สำหรับงานเงียบยาวหลังการจบ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'กลุ่มนี้รวมบทอ่านสำหรับความเศร้าที่ช้า คลื่นที่กลับมา และการปิดที่ไม่ได้รอบทสนทนาที่จะให้ความปิดเสมอ งานนี้ไม่ใช่ปฏิทิน บทอ่านแต่ละบทพบการเยียวยาในที่ที่มันอยู่จริง ไม่ใช่ในที่ที่โลกภายนอกคาดว่ามันควรไปถึงแล้ว',
     title: 'การเยียวยาและการปิด',
     lede: 'การเยียวยาแทบไม่เป็นไปแบบที่คนอื่นคาดหวัง ความรู้สึกเก่ากลับมาในชั่วโมงที่ไม่ประกาศตัว แผลถูกสัมผัสอีกครั้งโดยเพลงหรือรูป ความปรารถนาให้มีการปิดไม่รอบทสนทนาที่จะให้มันเสมอ บทอ่านในกลุ่มนี้พบงานนั้นด้วยความเมตตา ไม่ใช่การให้คะแนน มันไม่วัดการฟื้นตัวกับปฏิทิน ไม่สัญญาบทต่อไป และไม่แสร้งว่าการปิดคือสิ่งที่อีกคนค้างคุณ มันให้งานช้าและซื่อตรงมีที่ที่ฝีมือ',
     stateH2: 'สภาวะอารมณ์ที่อยู่เบื้องหลังกลุ่มนี้',
@@ -352,6 +375,7 @@ const T = {
     ctaPrimary: 'เริ่มบทอ่านห้วงอารมณ์',
     ctaSecondary: 'กลับไปทุกกลุ่ม',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 20 พฤษภาคม 2026',
+    footerLastReviewed: 'ทบทวนล่าสุดเพื่อความชัดเจนและความซื่อตรงทางอารมณ์ · พฤษภาคม 2026',
     navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
     footerCopy: 'veilatarot.com · © MMXXVI'
   }

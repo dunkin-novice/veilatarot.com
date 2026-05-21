@@ -100,6 +100,14 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .position-card .pc-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
 </style>
 </head>
 <body>
@@ -125,6 +133,11 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   <div class="eyebrow" data-i18n="eyebrow">A three-part triangulation</div>
   <h1 class="title" data-i18n-html="title">The <em>Connection</em> Spread</h1>
   <p class="lede" data-i18n="lede">Some relationships are easier to feel than to describe. The Connection spread sits with the bond as it actually is — three honest perspectives on the same moment, not a transcript of anyone's mind. It gives the felt thing between two people a shape you can read, instead of asking the cards to forecast what the other person will do.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The Connection spread reads a bond as three honest perspectives on the same moment: your energy, their energy, and the space between you. It does not predict what the other person will do. It gives the felt thing between two people a shape you can sit with — the bond as it actually is, rather than as you wish it would be.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +292,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcQlr: 'Quick Love Reading', bcCurrent: 'Connection',
     eyebrow: 'A three-part triangulation',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The Connection spread reads a bond as three honest perspectives on the same moment: your energy, their energy, and the space between you. It does not predict what the other person will do. It gives the felt thing between two people a shape you can sit with — the bond as it actually is, rather than as you wish it would be.',
     title: 'The <em>Connection</em> Spread',
     lede: "Some relationships are easier to feel than to describe. The Connection spread sits with the bond as it actually is — three honest perspectives on the same moment, not a transcript of anyone's mind. It gives the felt thing between two people a shape you can read, instead of asking the cards to forecast what the other person will do.",
     posH2: 'The three positions',
@@ -325,6 +340,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcQlr: 'บทอ่านไพ่ความรัก', bcCurrent: 'เชื่อมโยง',
     eyebrow: 'การดูสามจุดเทียบกัน',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'บทอ่านเชื่อมโยงอ่านความผูกพันในฐานะสามมุมมองซื่อตรงในช่วงเวลาเดียวกัน: พลังงานของคุณ พลังงานของเขา และพื้นที่ระหว่างคุณ บทอ่านนี้ไม่ทำนายว่าเขาจะทำอะไร แต่ให้รูปร่างกับสิ่งที่รู้สึกได้ระหว่างสองคน — ความผูกพันในแบบที่มันเป็น ไม่ใช่ในแบบที่คุณอยากให้เป็น',
     title: 'บทอ่าน <em>เชื่อมโยง</em>',
     lede: 'ความสัมพันธ์บางอย่างรู้สึกง่ายกว่าอธิบาย บทอ่านเชื่อมโยงนั่งกับความผูกพันในแบบที่มันเป็นจริง — สามมุมมองซื่อตรงในช่วงเวลาเดียวกัน ไม่ใช่บันทึกใจของใคร มันให้รูปร่างกับสิ่งที่รู้สึกได้ระหว่างคนสองคน ที่คุณอ่านได้ แทนการขอให้ไพ่ทำนายสิ่งที่อีกคนจะทำ',
     posH2: 'สามตำแหน่ง',

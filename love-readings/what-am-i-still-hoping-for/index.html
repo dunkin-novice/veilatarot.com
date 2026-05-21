@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the hope has stayed and you cannot quite name it</div>
   <h1 class="title" data-i18n="title">What Am I Still Hoping For?</h1>
   <p class="lede" data-i18n="lede">There is a particular kind of hope that survives the situation it began in — a small, private hope that has not announced itself to other people and has not been put down even after the part of you that could explain it has gone quiet. The Connection spread does not name the hope for you. It reads three honest perspectives — what you are bringing, what their presence is actually like inside you now, and what the space between you holds — so the hope can be seen for what it is, instead of being secretly carried.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Naming the hope quietly is often more useful than arguing with it. The cards do not measure whether the hope is reasonable. This reading helps you see the hope at its actual size — sometimes smaller than you feared, sometimes shaped like something you have not yet given yourself permission to want.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +302,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="what-am-i-still-hoping-for"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-what-am-i-still-hoping-for">
+    <h2 class="sr-label" id="sr-label-what-am-i-still-hoping-for" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=connection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Connection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -303,6 +335,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'What Am I Still Hoping For?',
     eyebrow: 'When the hope has stayed and you cannot quite name it',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Naming the hope quietly is often more useful than arguing with it. The cards do not measure whether the hope is reasonable. This reading helps you see the hope at its actual size — sometimes smaller than you feared, sometimes shaped like something you have not yet given yourself permission to want.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'What Am I Still Hoping For?',
     lede: 'There is a particular kind of hope that survives the situation it began in — a small, private hope that has not announced itself to other people and has not been put down even after the part of you that could explain it has gone quiet. The Connection spread does not name the hope for you. It reads three honest perspectives — what you are bringing, what their presence is actually like inside you now, and what the space between you holds — so the hope can be seen for what it is, instead of being secretly carried.',
     recH2: 'A spread for this question',
@@ -354,6 +392,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เรายังหวังอะไรอยู่กันแน่',
     eyebrow: 'เมื่อความหวังยังอยู่ และคุณเรียกชื่อมันไม่ครบ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การเรียกชื่อความหวังเงียบๆ มักมีประโยชน์กว่าการเถียงกับมัน ไพ่ไม่ได้วัดว่าความหวังสมเหตุสมผลไหม บทอ่านนี้ช่วยให้คุณเห็นความหวังในขนาดจริงของมัน — บางครั้งเล็กกว่าที่กลัว บางครั้งเป็นรูปร่างของสิ่งที่คุณยังไม่ได้อนุญาตตัวเองให้ต้องการ',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'เรายังหวังอะไรอยู่กันแน่',
     lede: 'มีความหวังแบบหนึ่งที่รอดสถานการณ์ที่มันเริ่ม — ความหวังเล็ก ส่วนตัว ที่ไม่ประกาศตัวให้คนอื่น และไม่ถูกวางลงแม้ส่วนของคุณที่อธิบายมันได้เงียบไปแล้ว บทอ่านเชื่อมโยงไม่เรียกชื่อความหวังให้คุณ มันอ่านสามมุมที่ซื่อตรง — สิ่งที่คุณกำลังนำมา การมีอยู่ของเขาเป็นแบบไหนจริงๆ ในตัวคุณตอนนี้ และพื้นที่ระหว่างกันถืออะไร — ความหวังจึงเห็นได้ในสิ่งที่มันเป็น แทนถูกแบกอย่างลับๆ',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

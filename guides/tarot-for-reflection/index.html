@@ -63,7 +63,7 @@
   "image": "https://veilatarot.com/og.png",
   "inLanguage": "en-US",
   "datePublished": "2026-05-19",
-  "dateModified": "2026-05-19",
+  "dateModified": "2026-05-22",
   "publisher": { "@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/" },
   "mainEntityOfPage": "https://veilatarot.com/guides/tarot-for-reflection/"
 }
@@ -126,6 +126,18 @@ main.article p { font-family: var(--serif); color: var(--ivory-dim); font-size: 
 html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow, html[lang="th"] .breadcrumb, html[lang="th"] .compare-table .ct-cell h4 { letter-spacing: 0; text-transform: none; }
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"] .example { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Last-reviewed freshness signal — sits under the last-updated footer line. */
+.last-reviewed { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 11px; letter-spacing: 0.04em; color: var(--ivory-mute, #6c6a63); margin-top: 4px; line-height: 1.5; }
+html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans Thai", sans-serif; font-size: 12px; }
 </style>
 </head>
 <body>
@@ -149,6 +161,11 @@ html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"]
   <div class="eyebrow" data-i18n="eyebrow">A practice, not a prediction tool</div>
   <h1 class="title" data-i18n-html="title">Tarot for <em>Reflection</em></h1>
   <p class="lede" data-i18n="lede">Tarot is a poor crystal ball and an unusually good mirror. Most of what makes it useful has nothing to do with knowing the future. It comes from the small, slow act of placing a question down on a table, watching it become a few cards, and reading those cards as a way of reading yourself.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Reflective tarot is a way of using the cards as a mirror for feeling rather than as a forecast. This guide explains what reflective tarot is for, what it is not for, and how to read the cards when you do not want the reading to tell you the future — only to help you sit with the present more honestly.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -313,6 +330,7 @@ html[lang="th"] main.article h3, html[lang="th"] main.article p, html[lang="th"]
 
 <footer>
   <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 19 May 2026</div>
+  <div class="last-reviewed" data-i18n="footerLastReviewed">Last reviewed for clarity and emotional accuracy · May 2026</div>
   <nav class="footer-nav">
     <a href="/quick-love-reading/" data-i18n="navQlr">Quick Love Reading</a>
     <span class="sep">·</span>
@@ -329,6 +347,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Tarot for Reflection',
     eyebrow: 'A practice, not a prediction tool',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Reflective tarot is a way of using the cards as a mirror for feeling rather than as a forecast. This guide explains what reflective tarot is for, what it is not for, and how to read the cards when you do not want the reading to tell you the future — only to help you sit with the present more honestly.',
     title: 'Tarot for <em>Reflection</em>',
     lede: 'Tarot is a poor crystal ball and an unusually good mirror. Most of what makes it useful has nothing to do with knowing the future. It comes from the small, slow act of placing a question down on a table, watching it become a few cards, and reading those cards as a way of reading yourself.',
     intro: 'This page is a starting point for anyone who wants to use tarot the way a careful journal or a long conversation with a thoughtful friend is used. It is not about how to predict outcomes. It is about how to notice what you are already half-noticing, and how to hold the noticing without rushing it into action.',
@@ -383,6 +403,7 @@ const T = {
     ctaPrimary: 'Try a reflective reading',
     ctaSecondary: 'How to ask a tarot question',
     footerLastUpdated: 'Last updated · 19 May 2026',
+    footerLastReviewed: 'Last reviewed for clarity and emotional accuracy · May 2026',
     navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
     footerCopy: 'veilatarot.com · © MMXXVI'
   },
@@ -390,6 +411,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ไพ่ทาโรต์เพื่อใคร่ครวญ',
     eyebrow: 'การฝึก ไม่ใช่เครื่องมือทำนาย',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ไพ่ทาโรต์เพื่อใคร่ครวญ เป็นวิธีใช้ไพ่เป็นกระจกสำหรับความรู้สึก ไม่ใช่การพยากรณ์ คู่มือนี้อธิบายว่าไพ่ทาโรต์ชวนใคร่ครวญมีไว้เพื่ออะไร ไม่ใช่เพื่ออะไร และจะอ่านไพ่ยังไงเมื่อไม่อยากให้บทอ่านบอกอนาคต — แค่ช่วยให้นั่งกับปัจจุบันได้ซื่อตรงขึ้น',
     title: 'ไพ่ทาโรต์เพื่อ<em>ใคร่ครวญ</em>',
     lede: 'ไพ่ทาโรต์เป็นลูกแก้วที่ห่วย แต่เป็นกระจกที่ดีอย่างน่าทึ่ง สิ่งที่ทำให้มันมีประโยชน์เกือบทั้งหมดไม่เกี่ยวกับการรู้อนาคต มันมาจากการกระทำเล็กๆ ที่ช้าๆ คือการวางคำถามลงบนโต๊ะ ดูมันกลายเป็นไพ่ไม่กี่ใบ แล้วอ่านไพ่เหล่านั้นเป็นวิธีอ่านตัวเอง',
     intro: 'หน้านี้เป็นจุดเริ่มต้นสำหรับคนที่อยากใช้ไพ่ทาโรต์แบบเดียวกับการใช้บันทึกที่ซื่อตรงหรือบทสนทนายาวๆ กับเพื่อนที่ใคร่ครวญ มันไม่เกี่ยวกับวิธีทำนายผล มันเกี่ยวกับวิธีสังเกตสิ่งที่คุณสังเกตเห็นครึ่งหนึ่งอยู่แล้ว และวิธีถือการสังเกตนั้นโดยไม่เร่งให้ลงมือทำ',
@@ -444,6 +467,7 @@ const T = {
     ctaPrimary: 'ลองบทอ่านที่ใคร่ครวญ',
     ctaSecondary: 'วิธีถามคำถามไพ่ทาโรต์',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 19 พฤษภาคม 2026',
+    footerLastReviewed: 'ทบทวนล่าสุดเพื่อความชัดเจนและความซื่อตรงทางอารมณ์ · พฤษภาคม 2026',
     navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
     footerCopy: 'veilatarot.com · © MMXXVI'
   }

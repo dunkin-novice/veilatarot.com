@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the connection is real and the season for it is not</div>
   <h1 class="title" data-i18n="title">Why Does It Feel Like Bad Timing?</h1>
   <p class="lede" data-i18n="lede">Some connections arrive at hours that cannot quite hold them. The person is real, the bond is real, and somehow the moment around the two of you is not. The Emotional Arc spread does not promise that a right time is coming — and does not assume that one is not. It reads three honest points along the same line: what shaped where you both are, what is unfolding right now, and what is changing underneath — so the timing can stop feeling like punishment and start being information you can be honest with.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">"Bad timing" can be a real obstacle and also the gentlest way to name something else — a difference in capacity, in willingness, in honesty about what each person can give right now. This reading reads which it is in your case, without forcing you to call the bond a failure for not surviving its own season.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-does-it-feel-like-bad-timing"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-does-it-feel-like-bad-timing">
+    <h2 class="sr-label" id="sr-label-why-does-it-feel-like-bad-timing" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Does It Feel Like Bad Timing?',
     eyebrow: 'When the connection is real and the season for it is not',
+    qrLabel: 'Quick reflection',
+    qrBody: '"Bad timing" can be a real obstacle and also the gentlest way to name something else — a difference in capacity, in willingness, in honesty about what each person can give right now. This reading reads which it is in your case, without forcing you to call the bond a failure for not surviving its own season.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'Why Does It Feel Like Bad Timing?',
     lede: 'Some connections arrive at hours that cannot quite hold them. The person is real, the bond is real, and somehow the moment around the two of you is not. The Emotional Arc spread does not promise that a right time is coming — and does not assume that one is not. It reads three honest points along the same line: what shaped where you both are, what is unfolding right now, and what is changing underneath — so the timing can stop feeling like punishment and start being information you can be honest with.',
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมรู้สึกเหมือนผิดจังหวะเวลา',
     eyebrow: 'เมื่อการเชื่อมโยงเป็นจริง และฤดูของมันยังไม่ใช่',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: '"จังหวะเวลาผิด" อาจเป็นอุปสรรคจริง และเป็นวิธีนุ่มที่สุดในการเรียกชื่อสิ่งอื่น — ความแตกต่างของความสามารถ ของความเต็มใจ ของความซื่อตรงเกี่ยวกับสิ่งที่แต่ละคนให้ได้ในตอนนี้ บทอ่านนี้อ่านว่าในกรณีของคุณคืออะไร โดยไม่บังคับให้เรียกความผูกพันว่าล้มเหลวเพราะไม่รอดผ่านฤดูของมันเอง',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'ทำไมรู้สึกเหมือนผิดจังหวะเวลา',
     lede: 'บางความสัมพันธ์มาในชั่วโมงที่ไม่สามารถถือมันได้ คนคนนั้นเป็นจริง ความผูกพันเป็นจริง และช่วงเวลารอบทั้งคู่ไม่ใช่ บทอ่านห้วงอารมณ์ไม่สัญญาว่าเวลาที่ใช่กำลังจะมา — และไม่สมมุติว่าไม่มี มันอ่านสามจุดซื่อตรงบนเส้นเดียวกัน: สิ่งที่ก่อตัวที่ที่ทั้งคู่อยู่ สิ่งที่กำลังเกิดตอนนี้ และสิ่งที่กำลังเปลี่ยนข้างใต้ — จังหวะเวลาจึงเลิกรู้สึกเป็นการลงโทษ และเริ่มเป็นข้อมูลที่คุณซื่อตรงกับได้',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

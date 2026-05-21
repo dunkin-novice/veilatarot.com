@@ -88,7 +88,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Will the reading tell me if it's over?", "acceptedAnswer": { "@type": "Answer", "text": "No. The reading reflects what is still real between you and what has actually changed, but the decision about whether the relationship continues is not the deck's to make. What it can do is help you see the shape of the question clearly enough to act from a steadier place." } },
-    { "@type": "Question", "name": "What if 'What Still Exists' looks strong and I want to leave?", "acceptedAnswer": { "@type": "Answer", "text": "A strong thread doesn't obligate you to stay. The card is naming what is real, not what is required. Some endings happen between people who still love each other; some staying happens between people who don't. The reading is a mirror, not a contract." } },
+    { "@type": "Question", "name": "What if \"What Still Exists\" looks strong and I want to leave?", "acceptedAnswer": { "@type": "Answer", "text": "A strong thread doesn't obligate you to stay. The card is naming what is real, not what is required. Some endings happen between people who still love each other; some staying happens between people who don't. The reading is a mirror, not a contract." } },
     { "@type": "Question", "name": "Is it wrong to want a reading to confirm a decision I've already made?", "acceptedAnswer": { "@type": "Answer", "text": "Not wrong, but notice it. If you find yourself running readings until one says what you want, the question has already been answered — by you. The reading is most useful when you let it surprise you, even if the surprise is uncomfortable." } },
     { "@type": "Question", "name": "Can I do this reading without deciding to act on it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many readings end with the reader simply noticing where they are in the question. The cards don't require a decision; they are equally useful as a place to put a hard question down for a while and return to your day." } }
   ]
@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">For the question you keep almost answering</div>
   <h1 class="title" data-i18n="title">Is This Relationship Over?</h1>
   <p class="lede" data-i18n="lede">Most endings don't arrive on a single day. They accumulate, then become legible all at once. Asking "is this over" is rarely asking for a forecast — it is asking whether you are allowed to call something what it has been quietly becoming. The Reconnection spread reads both sides of the question with care: what is still real between you, what has actually changed, and what the moment is gently asking for. The reading isn't a verdict. It is a place to set the question down where you can see all of it.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">"Over" is often something that has already happened in places before the mind admits it. The cards do not announce a verdict from outside. This reading reads where the bond actually lives now — where it is still moving, where it has gone still — so the answer comes from honesty rather than from optimism or fear.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +295,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="is-this-relationship-over"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-is-this-relationship-over">
+    <h2 class="sr-label" id="sr-label-is-this-relationship-over" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/reconnection/" data-i18n="srSpread">Reconnection spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=reconnection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Reconnection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -296,6 +328,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Is This Relationship Over?',
     eyebrow: 'For the question you keep almost answering',
+    qrLabel: 'Quick reflection',
+    qrBody: '"Over" is often something that has already happened in places before the mind admits it. The cards do not announce a verdict from outside. This reading reads where the bond actually lives now — where it is still moving, where it has gone still — so the answer comes from honesty rather than from optimism or fear.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Reconnection spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'Is This Relationship Over?',
     lede: "Most endings don't arrive on a single day. They accumulate, then become legible all at once. Asking \"is this over\" is rarely asking for a forecast — it is asking whether you are allowed to call something what it has been quietly becoming. The Reconnection spread reads both sides of the question with care: what is still real between you, what has actually changed, and what the moment is gently asking for. The reading isn't a verdict. It is a place to set the question down where you can see all of it.",
     recH2: 'A spread for this question',
@@ -346,6 +384,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ความสัมพันธ์นี้จบแล้วหรือยัง',
     eyebrow: 'สำหรับคำถามที่คุณเกือบตอบอยู่เรื่อยๆ',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: '"จบ" มักเป็นสิ่งที่เกิดขึ้นแล้วในที่ต่างๆ ก่อนที่ใจจะยอมรับ ไพ่ไม่ได้ประกาศคำตัดสินจากภายนอก บทอ่านนี้อ่านว่าความผูกพันอยู่ที่ไหนจริงๆ ตอนนี้ — ที่ไหนยังเคลื่อนอยู่ ที่ไหนนิ่งไปแล้ว เพื่อให้คำตอบมาจากความซื่อตรง ไม่ใช่ความหวังหรือความกลัว',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านเชื่อมโยงใหม่',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'ความสัมพันธ์นี้จบแล้วหรือยัง',
     lede: 'การจบส่วนใหญ่ไม่ได้มาในวันเดียว มันสะสม แล้วอ่านได้ทีเดียว การถาม "มันจบแล้วหรือยัง" แทบไม่ใช่การขอพยากรณ์ — มันคือการถามว่าคุณได้รับอนุญาตให้เรียกชื่อสิ่งที่กำลังกลายเป็นอยู่เงียบๆ หรือยัง บทอ่านเชื่อมโยงใหม่อ่านทั้งสองด้านของคำถามด้วยความระมัดระวัง: อะไรยังเป็นจริงระหว่างคุณ อะไรเปลี่ยนไปจริงๆ และช่วงเวลานี้กำลังขออะไรอย่างนุ่มนวล บทอ่านไม่ใช่คำตัดสิน มันคือที่ที่คุณวางคำถามลงและเห็นทั้งหมดของมัน',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

@@ -96,6 +96,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -119,6 +137,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   <div class="eyebrow" data-i18n="eyebrow">When you're carrying the question alone</div>
   <h1 class="title" data-i18n="title">Does He Miss Me?</h1>
   <p class="lede" data-i18n="lede">Tarot can't answer this for certain — no one can without asking him. What it can do is widen the question. Three cards read three things at once: what you are bringing into this, what their energy seems to be, and the shape of the space between you. The answer that surfaces is rarely a clean yes or no. It's a clearer picture of where you actually are inside the question, which is usually the part that's been missing.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Missing happens in textures, not in yes or no. The cards do not pull the answer out of his mind; they read the shape of the bond as it actually is now, so the question of his missing becomes something you can feel honestly instead of decoding alone.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -240,6 +263,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   </section>
 
   <aside class="related-rail" data-related-source="does-he-miss-me"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-does-he-miss-me">
+    <h2 class="sr-label" id="sr-label-does-he-miss-me" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=connection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Connection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -264,6 +296,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Does He Miss Me?',
     eyebrow: "When you're carrying the question alone",
+    qrLabel: 'Quick reflection',
+    qrBody: 'Missing happens in textures, not in yes or no. The cards do not pull the answer out of his mind; they read the shape of the bond as it actually is now, so the question of his missing becomes something you can feel honestly instead of decoding alone.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Does He Miss Me?',
     lede: "Tarot can't answer this for certain — no one can without asking him. What it can do is widen the question. Three cards read three things at once: what you are bringing into this, what their energy seems to be, and the shape of the space between you. The answer that surfaces is rarely a clean yes or no. It's a clearer picture of where you actually are inside the question, which is usually the part that's been missing.",
     recH2: 'A spread for this question',
@@ -310,6 +348,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เขาคิดถึงเราไหม',
     eyebrow: 'เมื่อคุณถือคำถามไว้คนเดียว',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การคิดถึงเกิดขึ้นในเนื้อหา ไม่ใช่ในใช่หรือไม่ ไพ่ไม่ได้ดึงคำตอบออกจากใจเขา แต่อ่านรูปร่างของความผูกพันในแบบที่มันเป็นจริงตอนนี้ เพื่อให้คำถามเรื่องการคิดถึงของเขา กลายเป็นสิ่งที่คุณสัมผัสได้อย่างซื่อตรง แทนการถอดรหัสคนเดียว',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'เขาคิดถึงเราไหม',
     lede: 'ไพ่ทาโรต์ตอบเรื่องนี้แบบฟันธงไม่ได้ — ไม่มีใครตอบได้นอกจากถามเขาตรงๆ สิ่งที่ไพ่ทำได้คือขยายคำถามให้กว้างขึ้น ไพ่สามใบอ่านสามมุมพร้อมกัน คุณกำลังนำอะไรเข้ามาในเรื่องนี้ พลังของเขาดูเป็นยังไง และพื้นที่ระหว่างคุณทั้งสองมีรูปร่างยังไง คำตอบที่ปรากฏแทบจะไม่ใช่ "ใช่" หรือ "ไม่" คมๆ มันเป็นภาพที่ชัดขึ้นว่าคุณอยู่ตรงไหนของคำถาม ซึ่งมักจะเป็นส่วนที่หายไป',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

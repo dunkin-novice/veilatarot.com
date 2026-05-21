@@ -104,6 +104,18 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .featured-list .fl-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Last-reviewed freshness signal — sits under the last-updated footer line. */
+.last-reviewed { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 11px; letter-spacing: 0.04em; color: var(--ivory-mute, #6c6a63); margin-top: 4px; line-height: 1.5; }
+html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans Thai", sans-serif; font-size: 12px; }
 </style>
 </head>
 <body>
@@ -129,6 +141,11 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
   <div class="eyebrow" data-i18n="eyebrow">When the leaving has happened more than once</div>
   <h1 class="title" data-i18n="title">Reconnection and Return</h1>
   <p class="lede" data-i18n="lede">Some bonds do not end in a single sentence. They come back — through months, through other people, through quiet stretches that turned out to be commas instead of full stops. The questions in this cluster meet that return without romanticising it or shaming it. The readings here do not forecast a final reunion or order you to refuse the next visit. They read the cycle from outside the cycle — what is genuinely alive in the bond, what creates the distance, and what each return is actually being asked to do.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">This cluster holds readings for bonds that came back, or might. Coming back is not the same as reunion, and these readings do not promise either. Each one reads what the returning is actually asking — sometimes a real invitation, sometimes a familiar loop — so the response can come from your own ground.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -272,6 +289,7 @@ html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", se
 
 <footer>
   <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 20 May 2026</div>
+  <div class="last-reviewed" data-i18n="footerLastReviewed">Last reviewed for clarity and emotional accuracy · May 2026</div>
   <nav class="footer-nav">
     <a href="/quick-love-reading/" data-i18n="navQlr">Quick Love Reading</a>
     <span class="sep">·</span>
@@ -288,6 +306,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcParent: 'Love Readings', bcCurrent: 'Reconnection and Return',
     eyebrow: 'When the leaving has happened more than once',
+    qrLabel: 'Quick reflection',
+    qrBody: 'This cluster holds readings for bonds that came back, or might. Coming back is not the same as reunion, and these readings do not promise either. Each one reads what the returning is actually asking — sometimes a real invitation, sometimes a familiar loop — so the response can come from your own ground.',
     title: 'Reconnection and Return',
     lede: 'Some bonds do not end in a single sentence. They come back — through months, through other people, through quiet stretches that turned out to be commas instead of full stops. The questions in this cluster meet that return without romanticising it or shaming it. The readings here do not forecast a final reunion or order you to refuse the next visit. They read the cycle from outside the cycle — what is genuinely alive in the bond, what creates the distance, and what each return is actually being asked to do.',
     stateH2: 'The emotional state behind this cluster',
@@ -321,6 +341,7 @@ const T = {
     ctaPrimary: 'Begin a Reconnection reading',
     ctaSecondary: 'Back to all clusters',
     footerLastUpdated: 'Last updated · 20 May 2026',
+    footerLastReviewed: 'Last reviewed for clarity and emotional accuracy · May 2026',
     navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
     footerCopy: 'veilatarot.com · © MMXXVI'
   },
@@ -328,6 +349,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcParent: 'บทอ่านไพ่ความรัก', bcCurrent: 'การกลับมาและการเชื่อมโยงใหม่',
     eyebrow: 'เมื่อการจากเกิดขึ้นมากกว่าหนึ่งครั้ง',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'กลุ่มนี้รวมบทอ่านสำหรับความผูกพันที่กลับมา หรืออาจกลับมา การกลับมาไม่เหมือนการกลับมารวมกัน และบทอ่านเหล่านี้ไม่สัญญาทั้งคู่ แต่ละบทอ่านสิ่งที่การกลับขอจริงๆ — บางครั้งคือคำเชื้อเชิญจริง บางครั้งคือวงจรที่คุ้นเคย เพื่อให้การตอบมาจากพื้นของคุณเอง',
     title: 'การกลับมาและการเชื่อมโยงใหม่',
     lede: 'ความผูกพันบางอย่างไม่จบในประโยคเดียว มันกลับมา — ผ่านหลายเดือน ผ่านคนอื่น ผ่านช่วงเงียบที่กลายเป็นเครื่องหมายจุลภาคแทนจุดเต็ม คำถามในกลุ่มนี้พบการกลับโดยไม่ทำให้โรแมนติกและไม่ทำให้อาย บทอ่านที่นี่ไม่พยากรณ์การกลับมาเจอกันครั้งสุดท้ายหรือสั่งให้คุณปฏิเสธการมาเยี่ยมครั้งต่อไป มันอ่านวงจรจากนอกวงจร — สิ่งที่ยังมีชีวิตจริงในความผูกพัน สิ่งที่สร้างระยะ และสิ่งที่การกลับแต่ละครั้งกำลังถูกขอให้ทำจริงๆ',
     stateH2: 'สภาวะอารมณ์ที่อยู่เบื้องหลังกลุ่มนี้',
@@ -361,6 +384,7 @@ const T = {
     ctaPrimary: 'เริ่มบทอ่านเชื่อมโยงใหม่',
     ctaSecondary: 'กลับไปทุกกลุ่ม',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 20 พฤษภาคม 2026',
+    footerLastReviewed: 'ทบทวนล่าสุดเพื่อความชัดเจนและความซื่อตรงทางอารมณ์ · พฤษภาคม 2026',
     navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
     footerCopy: 'veilatarot.com · © MMXXVI'
   }

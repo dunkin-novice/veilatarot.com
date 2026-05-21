@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When you cannot tell which voice in you is speaking</div>
   <h1 class="title" data-i18n="title">Am I Holding On or Listening to My Heart?</h1>
   <p class="lede" data-i18n="lede">This is one of the most difficult interior questions a person can sit with. Both holding on and listening to your heart can feel like love — and both can wear the same clothes for a while before they reveal themselves. The Clarity spread does not deliver a verdict about which one is true. It separates what you already quietly know from what you have been avoiding, and names what is asking for honesty — so the difference between habit and heart can be felt rather than fought over.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The difference between holding on and listening to your heart often feels identical from the inside. Sometimes the holding has its own honest reasons; sometimes the listening sounds quieter than the wanting. This reading helps you tell which voice is doing more of the speaking right now, without making either of them shameful.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +302,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="am-i-holding-on-or-listening-to-my-heart"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-am-i-holding-on-or-listening-to-my-heart">
+    <h2 class="sr-label" id="sr-label-am-i-holding-on-or-listening-to-my-heart" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=clarity" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Clarity reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -303,6 +335,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Am I Holding On or Listening to My Heart?',
     eyebrow: 'When you cannot tell which voice in you is speaking',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The difference between holding on and listening to your heart often feels identical from the inside. Sometimes the holding has its own honest reasons; sometimes the listening sounds quieter than the wanting. This reading helps you tell which voice is doing more of the speaking right now, without making either of them shameful.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'Am I Holding On or Listening to My Heart?',
     lede: 'This is one of the most difficult interior questions a person can sit with. Both holding on and listening to your heart can feel like love — and both can wear the same clothes for a while before they reveal themselves. The Clarity spread does not deliver a verdict about which one is true. It separates what you already quietly know from what you have been avoiding, and names what is asking for honesty — so the difference between habit and heart can be felt rather than fought over.',
     recH2: 'A spread for this question',
@@ -354,6 +392,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เรากำลังยึดติด หรือกำลังฟังหัวใจตัวเอง',
     eyebrow: 'เมื่อคุณบอกไม่ได้ว่าเสียงไหนในตัวคุณกำลังพูด',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ความแตกต่างระหว่างการยึดติดกับการฟังหัวใจ มักรู้สึกเหมือนกันเมื่อมองจากภายใน บางครั้งการยึดติดก็มีเหตุผลซื่อตรงของมัน บางครั้งการฟังก็เงียบกว่าความอยาก บทอ่านนี้ช่วยบอกว่าเสียงไหนกำลังพูดมากกว่าในตอนนี้ โดยไม่ทำให้เสียงไหนน่าอาย',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'เรากำลังยึดติด หรือกำลังฟังหัวใจตัวเอง',
     lede: 'นี่เป็นหนึ่งในคำถามภายในที่ยากที่สุดที่คนเรานั่งกับได้ ทั้งการยึดติดและการฟังหัวใจรู้สึกเหมือนความรัก — และทั้งสองสวมเสื้อผ้าเดียวกันได้ระยะหนึ่งก่อนเปิดเผยตัวเอง บทอ่านความชัดเจนไม่ส่งคำตัดสินว่าอันไหนจริง มันแยกสิ่งที่คุณรู้แล้วเงียบๆ จากสิ่งที่คุณหลีกเลี่ยง และเรียกชื่อสิ่งที่ขอความซื่อตรง — ความต่างระหว่างความเคยชินกับหัวใจจึงรู้สึกได้ แทนถูกต่อสู้',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

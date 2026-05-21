@@ -100,6 +100,14 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .position-card .pc-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
 </style>
 </head>
 <body>
@@ -125,6 +133,11 @@ html[lang="th"] .position-card .pc-long, html[lang="th"] .when-list li { font-fa
   <div class="eyebrow" data-i18n="eyebrow">A reading in three moments</div>
   <h1 class="title" data-i18n-html="title">The <em>Emotional Arc</em> Spread</h1>
   <p class="lede" data-i18n="lede">Some feelings have weight you cannot quite place — like they started before this week and aren't done with you yet. The Emotional Arc reads a connection across time: what gave this moment its texture, what it feels like now, and where it is quietly turning.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The Emotional Arc spread reads feelings across time: what shaped this, what is unfolding now, and what is changing. It does not announce a destiny for the relationship. It holds the way emotion moves — the season the bond is in — so the work of staying with it does not have to compete with the work of understanding it.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +292,8 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcQlr: 'Quick Love Reading', bcCurrent: 'Emotional Arc',
     eyebrow: 'A reading in three moments',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The Emotional Arc spread reads feelings across time: what shaped this, what is unfolding now, and what is changing. It does not announce a destiny for the relationship. It holds the way emotion moves — the season the bond is in — so the work of staying with it does not have to compete with the work of understanding it.',
     title: 'The <em>Emotional Arc</em> Spread',
     lede: "Some feelings have weight you cannot quite place — like they started before this week and aren't done with you yet. The Emotional Arc reads a connection across time: what gave this moment its texture, what it feels like now, and where it is quietly turning.",
     posH2: 'The three positions',
@@ -325,6 +340,8 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcQlr: 'บทอ่านไพ่ความรัก', bcCurrent: 'ห้วงอารมณ์',
     eyebrow: 'บทอ่านในสามห้วงเวลา',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'บทอ่านห้วงอารมณ์อ่านความรู้สึกข้ามเวลา: สิ่งที่ก่อตัว สิ่งที่กำลังเกิดตอนนี้ และสิ่งที่กำลังเปลี่ยน บทอ่านนี้ไม่ประกาศชะตาของความสัมพันธ์ แต่ถือวิธีที่อารมณ์เคลื่อน — ฤดูที่ความผูกพันอยู่ — เพื่อให้การอยู่กับมัน ไม่ต้องแข่งกับการเข้าใจมัน',
     title: 'บทอ่าน <em>ห้วงอารมณ์</em>',
     lede: 'บางความรู้สึกมีน้ำหนักที่บอกไม่ถูก — เหมือนมันเริ่มก่อนสัปดาห์นี้ และยังไม่เลิกตามคุณ บทอ่านห้วงอารมณ์อ่านความสัมพันธ์ผ่านเวลา ว่าอะไรให้เนื้อสัมผัสกับช่วงเวลานี้ ความรู้สึกในตอนนี้เป็นยังไง และมันกำลังโน้มเอียงไปทางไหนอย่างเงียบๆ',
     posH2: 'สามตำแหน่ง',

@@ -96,6 +96,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -119,6 +137,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   <div class="eyebrow" data-i18n="eyebrow">For the change you can feel but not yet name</div>
   <h1 class="title" data-i18n="title">What Changed Between Us?</h1>
   <p class="lede" data-i18n="lede">When closeness shifts, part of you usually already knows the answer and part of you doesn't. The Clarity spread holds both. It names the thing you can say out loud, the thread underneath you keep stepping past, and the place where those two would meet if you let them. The reading isn't about exposing anything — it's about giving language to something you already half-see.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The shift between you might have no single event, only a different feel — and the question of what changed often deserves more honesty than the most obvious story can hold. This reading reads the change as it actually moves, not as the cleanest narrative you might have built to explain it.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -247,6 +270,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   </section>
 
   <aside class="related-rail" data-related-source="what-changed-between-us"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-what-changed-between-us">
+    <h2 class="sr-label" id="sr-label-what-changed-between-us" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/clarity/" data-i18n="srSpread">Clarity spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=clarity" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Clarity reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -271,6 +303,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'What Changed Between Us?',
     eyebrow: 'For the change you can feel but not yet name',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The shift between you might have no single event, only a different feel — and the question of what changed often deserves more honesty than the most obvious story can hold. This reading reads the change as it actually moves, not as the cleanest narrative you might have built to explain it.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Clarity spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'What Changed Between Us?',
     lede: "When closeness shifts, part of you usually already knows the answer and part of you doesn't. The Clarity spread holds both. It names the thing you can say out loud, the thread underneath you keep stepping past, and the place where those two would meet if you let them. The reading isn't about exposing anything — it's about giving language to something you already half-see.",
     recH2: 'A spread for this question',
@@ -318,6 +356,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'อะไรเปลี่ยนไประหว่างเรา',
     eyebrow: 'สำหรับการเปลี่ยนแปลงที่คุณรู้สึกได้แต่ยังเรียกชื่อไม่ได้',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การเปลี่ยนระหว่างคุณอาจไม่มีเหตุการณ์เดียว มีเพียงความรู้สึกที่ต่างไป — และคำถามว่าอะไรเปลี่ยน มักต้องการความซื่อตรงมากกว่าเรื่องเล่าที่ชัดที่สุดจะรองรับได้ บทอ่านนี้อ่านการเปลี่ยนในแบบที่มันเคลื่อนจริง ไม่ใช่ในแบบเรื่องเล่าที่สะอาดที่สุดที่คุณอาจสร้างขึ้นเพื่ออธิบายมัน',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านความชัดเจน',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'อะไรเปลี่ยนไประหว่างเรา',
     lede: 'เมื่อความใกล้ชิดขยับ ส่วนหนึ่งของคุณมักจะรู้คำตอบแล้ว และอีกส่วนยังไม่รู้ บทอ่านความชัดเจนถือทั้งสองส่วนไว้ มันเรียกชื่อสิ่งที่คุณพูดออกมาดังๆ ได้ สายใยใต้ผิวที่คุณเดินผ่านไปเรื่อยๆ และจุดที่สองสิ่งนี้จะมาบรรจบกัน หากคุณยอมให้มันเจอกัน บทอ่านไม่ใช่เรื่องการเปิดเผยอะไร — มันคือการให้ภาษากับสิ่งที่คุณเห็นครึ่งหนึ่งอยู่แล้ว',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

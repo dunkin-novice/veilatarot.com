@@ -116,6 +116,10 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-card .sc-name, html[lang="th"] .cluster-list .cl-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-card .sc-blurb, html[lang="th"] .cluster-list .cl-blurb { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Last-reviewed freshness signal — sits under the last-updated footer line. */
+.last-reviewed { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 11px; letter-spacing: 0.04em; color: var(--ivory-mute, #6c6a63); margin-top: 4px; line-height: 1.5; }
+html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans Thai", sans-serif; font-size: 12px; }
 </style>
 </head>
 <body>
@@ -310,6 +314,7 @@ html[lang="th"] .spread-card .sc-blurb, html[lang="th"] .cluster-list .cl-blurb 
 
 <footer>
   <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 20 May 2026</div>
+  <div class="last-reviewed" data-i18n="footerLastReviewed">Last reviewed for clarity and emotional accuracy · May 2026</div>
   <nav class="footer-nav">
     <a href="/quick-love-reading/" data-i18n="navQlr">Quick Love Reading</a>
     <span class="sep">·</span>
@@ -368,6 +373,7 @@ const T = {
     ctaPrimary: 'Open the Quick Love Reading',
     ctaSecondary: 'Celtic Cross (long reading)',
     footerLastUpdated: 'Last updated · 20 May 2026',
+    footerLastReviewed: 'Last reviewed for clarity and emotional accuracy · May 2026',
     navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
     footerCopy: 'veilatarot.com · © MMXXVI'
   },
@@ -417,6 +423,7 @@ const T = {
     ctaPrimary: 'เปิดบทอ่านไพ่ความรักด่วน',
     ctaSecondary: 'เซลติกครอส (บทอ่านยาว)',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 20 พฤษภาคม 2026',
+    footerLastReviewed: 'ทบทวนล่าสุดเพื่อความชัดเจนและความซื่อตรงทางอารมณ์ · พฤษภาคม 2026',
     navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
     footerCopy: 'veilatarot.com · © MMXXVI'
   }

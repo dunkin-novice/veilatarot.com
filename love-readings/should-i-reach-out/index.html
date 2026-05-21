@@ -96,6 +96,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -119,6 +137,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   <div class="eyebrow" data-i18n="eyebrow">For the half-written message</div>
   <h1 class="title" data-i18n="title">Should I Reach Out?</h1>
   <p class="lede" data-i18n="lede">Sometimes the urge to reach out comes from clarity, and sometimes from restlessness. The two can feel identical from the inside — your phone is in your hand either way. The Reconnection spread doesn't tell you whether to send the message. It reads what is still there between you, what is creating the distance, and the gesture this moment seems to be inviting from you. Then the choice is yours, made from steadier ground.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">The message that has been half-written for days has its own information in it. The cards do not promise a particular reply. This reading reads the part of you that needs the answer first — whether reaching out would be honest, premature, or already a quiet way of asking yourself something else.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -233,6 +256,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li { font-fami
   </section>
 
   <aside class="related-rail" data-related-source="should-i-reach-out"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-should-i-reach-out">
+    <h2 class="sr-label" id="sr-label-should-i-reach-out" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/no-contact/" data-i18n="srSubhub">No contact cluster</a></li>
+      <li><a href="/quick-love-reading/connection/" data-i18n="srSpread">Connection spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=reconnection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Reconnection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -257,6 +289,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Should I Reach Out?',
     eyebrow: 'For the half-written message',
+    qrLabel: 'Quick reflection',
+    qrBody: 'The message that has been half-written for days has its own information in it. The cards do not promise a particular reply. This reading reads the part of you that needs the answer first — whether reaching out would be honest, premature, or already a quiet way of asking yourself something else.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'No contact cluster',
+    srSpread: 'Connection spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Should I Reach Out?',
     lede: "Sometimes the urge to reach out comes from clarity, and sometimes from restlessness. The two can feel identical from the inside — your phone is in your hand either way. The Reconnection spread doesn't tell you whether to send the message. It reads what is still there between you, what is creating the distance, and the gesture this moment seems to be inviting from you. Then the choice is yours, made from steadier ground.",
     recH2: 'A spread for this question',
@@ -302,6 +340,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ควรทักไปไหม',
     eyebrow: 'สำหรับข้อความที่เขียนค้างไว้',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ข้อความที่เขียนค้างอยู่หลายวันมีข้อมูลของมันเอง ไพ่ไม่สัญญาคำตอบใดเป็นพิเศษ บทอ่านนี้อ่านส่วนของคุณที่อยากรู้ก่อน — การทักไปจะซื่อตรงไหม เร็วเกินไปไหม หรือเป็นวิธีเงียบๆ ที่คุณกำลังถามตัวเองในเรื่องอื่นอยู่แล้ว',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความเงียบ ไม่ติดต่อ',
+    srSpread: 'บทอ่านเชื่อมโยง',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'ควรทักไปไหม',
     lede: 'บางครั้งความอยากทักก่อนมาจากความชัดเจน บางครั้งมาจากความไม่นิ่ง สองอย่างนี้รู้สึกเหมือนกันจากข้างใน — โทรศัพท์อยู่ในมือคุณอยู่ดีไม่ว่าจะแบบไหน บทอ่านเชื่อมโยงใหม่ไม่บอกว่าควรส่งข้อความหรือไม่ มันอ่านสิ่งที่ยังอยู่ระหว่างคุณ สิ่งที่กำลังสร้างระยะ และการกระทำที่ช่วงเวลานี้กำลังเชื้อเชิญจากคุณ จากนั้นการตัดสินใจเป็นของคุณ ที่ทำจากพื้นที่ที่มั่นคงกว่า',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

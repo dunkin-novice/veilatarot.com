@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When both of you have stopped writing first</div>
   <h1 class="title" data-i18n="title">Are They Waiting for Me to Reach Out?</h1>
   <p class="lede" data-i18n="lede">The question often arrives in the long pause between two people who are both, secretly, trying not to be the one who needs more. Underneath it is a wish to know whether the silence is mutual longing or mutual moving-on — and a quieter wish, harder to admit, that reaching out would not have to be a risk. The Clarity spread does not promise what they are doing on the other side. It reads what you know, what you have been avoiding, and what would be honest to bring to the next move, regardless of where they are.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Silence can mean waiting, distance, or something quieter than either. The cards do not guarantee they are sitting by a phone, and they do not announce that you should stay quiet either. This reading reads the silence as its own information about the shape of the space between, so the next move comes from honesty rather than guesswork.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +302,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="are-they-waiting-for-me-to-reach-out"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-are-they-waiting-for-me-to-reach-out">
+    <h2 class="sr-label" id="sr-label-are-they-waiting-for-me-to-reach-out" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/confusing-connections/" data-i18n="srSubhub">Confusing connections cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/tarot-spreads-for-relationships/" data-i18n="srGuide">Guide: Tarot spreads for relationships</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=clarity" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Clarity reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -303,6 +335,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Are They Waiting for Me to Reach Out?',
     eyebrow: 'When both of you have stopped writing first',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Silence can mean waiting, distance, or something quieter than either. The cards do not guarantee they are sitting by a phone, and they do not announce that you should stay quiet either. This reading reads the silence as its own information about the shape of the space between, so the next move comes from honesty rather than guesswork.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Confusing connections cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: Tarot spreads for relationships',
     title: 'Are They Waiting for Me to Reach Out?',
     lede: 'The question often arrives in the long pause between two people who are both, secretly, trying not to be the one who needs more. Underneath it is a wish to know whether the silence is mutual longing or mutual moving-on — and a quieter wish, harder to admit, that reaching out would not have to be a risk. The Clarity spread does not promise what they are doing on the other side. It reads what you know, what you have been avoiding, and what would be honest to bring to the next move, regardless of where they are.',
     recH2: 'A spread for this question',
@@ -354,6 +392,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'เขากำลังรอให้เราทักไปก่อนหรือเปล่า',
     eyebrow: 'เมื่อทั้งคู่หยุดเขียนก่อน',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ความเงียบอาจหมายถึงการรอ การห่าง หรืออะไรที่เงียบกว่านั้น ไพ่ไม่รับประกันว่าเขากำลังนั่งรอโทรศัพท์ และไม่ประกาศว่าคุณควรเงียบไว้เช่นกัน บทอ่านนี้อ่านความเงียบในฐานะข้อมูลของรูปร่างของพื้นที่ระหว่างกัน เพื่อให้การเคลื่อนต่อไปมาจากความซื่อตรง ไม่ใช่การเดา',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเชื่อมโยงที่สับสน',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: บทอ่านไพ่ทาโรต์สำหรับความสัมพันธ์',
     title: 'เขากำลังรอให้เราทักไปก่อนหรือเปล่า',
     lede: 'คำถามมักมาในการหยุดยาวระหว่างคนสองคนที่ทั้งคู่กำลังพยายามอย่างลับๆ ที่จะไม่เป็นคนที่ต้องการมากกว่า ใต้คำถามคือความปรารถนาจะรู้ว่าความเงียบคือการโหยหากันหรือการเดินจากกัน — และความปรารถนาที่เงียบกว่า ยอมรับยากกว่าคือ การเอื้อมออกไปไม่ต้องเป็นความเสี่ยง บทอ่านความชัดเจนไม่สัญญาว่าเขาทำอะไรอยู่ข้างฝั่งของเขา มันอ่านสิ่งที่คุณรู้ สิ่งที่คุณหลีกเลี่ยง และสิ่งที่ซื่อตรงจะนำมาในการเคลื่อนต่อไป ไม่ว่าเขาจะอยู่ที่ไหน',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

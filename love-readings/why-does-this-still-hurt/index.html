@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When the ache has lasted longer than the timeline allowed for</div>
   <h1 class="title" data-i18n="title">Why Does This Still Hurt?</h1>
   <p class="lede" data-i18n="lede">The hurt has its own season, and it rarely apologises for staying. You may have done the work — talked, walked, written, slept, tried — and still the ache shows up at an ordinary hour and asks for the day. The Emotional Arc spread does not grade your healing. It reads what shaped the hurt, what it is doing in you now, and what is quietly changing underneath — so the ache stops being evidence of failure and becomes something you can sit beside while it does its work.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">An ache that returns is information, not a failure to heal. This reading reads the pain as a shape with a logic — where it lives in you, what it is still asking to be met — rather than measuring you against a recovery you should have completed by now.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +302,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="why-does-this-still-hurt"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-why-does-this-still-hurt">
+    <h2 class="sr-label" id="sr-label-why-does-this-still-hurt" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/healing-and-closure/" data-i18n="srSubhub">Healing and closure cluster</a></li>
+      <li><a href="/quick-love-reading/emotional-arc/" data-i18n="srSpread">Emotional Arc spread</a></li>
+      <li><a href="/guides/how-to-ask-a-tarot-question/" data-i18n="srGuide">Guide: How to ask a tarot question</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=emotional-arc" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin an Emotional Arc reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -303,6 +335,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Why Does This Still Hurt?',
     eyebrow: 'When the ache has lasted longer than the timeline allowed for',
+    qrLabel: 'Quick reflection',
+    qrBody: 'An ache that returns is information, not a failure to heal. This reading reads the pain as a shape with a logic — where it lives in you, what it is still asking to be met — rather than measuring you against a recovery you should have completed by now.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Healing and closure cluster',
+    srSpread: 'Emotional Arc spread',
+    srGuide: 'Guide: How to ask a tarot question',
     title: 'Why Does This Still Hurt?',
     lede: 'The hurt has its own season, and it rarely apologises for staying. You may have done the work — talked, walked, written, slept, tried — and still the ache shows up at an ordinary hour and asks for the day. The Emotional Arc spread does not grade your healing. It reads what shaped the hurt, what it is doing in you now, and what is quietly changing underneath — so the ache stops being evidence of failure and becomes something you can sit beside while it does its work.',
     recH2: 'A spread for this question',
@@ -354,6 +392,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'ทำไมเรื่องนี้ถึงยังเจ็บอยู่',
     eyebrow: 'เมื่อความเจ็บยาวนานกว่าตารางเวลาที่อนุญาตให้',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'ความเจ็บที่กลับมาเป็นข้อมูล ไม่ใช่ความล้มเหลวในการเยียวยา บทอ่านนี้อ่านความเจ็บในฐานะรูปร่างที่มีตรรกะ — มันอยู่ที่ไหนในตัวคุณ มันยังขอให้ถูกพบในสิ่งใด แทนที่จะวัดคุณกับการฟื้นตัวที่ควรจะจบไปแล้ว',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: การเยียวยาและการปิด',
+    srSpread: 'บทอ่านห้วงอารมณ์',
+    srGuide: 'คู่มือ: วิธีถามคำถามไพ่ทาโรต์',
     title: 'ทำไมเรื่องนี้ถึงยังเจ็บอยู่',
     lede: 'ความเจ็บมีฤดูของมันเอง และมันแทบไม่เคยขอโทษที่อยู่ต่อ คุณอาจทำงานแล้ว — พูด เดิน เขียน นอน พยายาม — และความเจ็บก็ยังโผล่มาในชั่วโมงธรรมดาและขอวันทั้งวัน บทอ่านห้วงอารมณ์ไม่ให้คะแนนการฟื้นตัวของคุณ มันอ่านว่าอะไรก่อตัวความเจ็บ มันกำลังทำอะไรในตัวคุณตอนนี้ และอะไรกำลังเปลี่ยนข้างใต้อย่างเงียบๆ — ความเจ็บจึงเลิกเป็นหลักฐานของความล้มเหลว และกลายเป็นสิ่งที่คุณนั่งข้างได้ ขณะที่มันทำงานของมัน',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',

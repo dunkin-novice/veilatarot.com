@@ -110,6 +110,24 @@ html[lang="th"] .lang-toggle, html[lang="th"] .cta-btn, html[lang="th"] .eyebrow
 html[lang="th"] body { font-family: "IBM Plex Sans Thai", "Inter", sans-serif; }
 html[lang="th"] .spread-rec .sr-name { font-family: "IBM Plex Sans Thai", serif; }
 html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang="th"] .example-block { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+
+/* Static crawl-strengthening links — additive to the JS rail; rendered without JS. */
+.static-related { margin: 36px auto 0; padding: 24px 0 0; border-top: 1px solid rgba(184,153,104,0.18); max-width: 720px; }
+.static-related .sr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 14px; font-weight: 500; }
+.static-related .sr-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.static-related .sr-list li { margin: 0; }
+.static-related .sr-list a { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; color: var(--ivory-dim, #b9b3a4); font-size: 15px; text-decoration: underline dotted; text-underline-offset: 4px; transition: color 0.25s ease; }
+.static-related .sr-list a:hover, .static-related .sr-list a:focus-visible { color: var(--gold, #b89968); }
+html[lang="th"] .static-related .sr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .static-related .sr-list a { font-family: "IBM Plex Sans Thai", serif; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -133,6 +151,11 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   <div class="eyebrow" data-i18n="eyebrow">When missing them and moving on are happening at the same time</div>
   <h1 class="title" data-i18n="title">Can You Miss Someone and Still Let Go?</h1>
   <p class="lede" data-i18n="lede">The question is quieter than it sounds, and the answer is usually yes. Missing them and letting go are not opposites; they are two parts of the same long, slow shape of love changing form. The Reconnection spread does not test whether your release is complete. It reads what still exists between you, what creates the distance now, and what kind of contact (often with yourself first) the next part of letting go invites — so the missing can stay tender without becoming the whole story.</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label" data-i18n="qrLabel">Quick reflection</h2>
+    <p class="qr-body" data-i18n="qrBody">Missing someone and letting them go are not opposite states. The missing can be honest information about a real bond, and the letting go can still be the choice that fits where your life is now. This reading helps you read both feelings without forcing one to invalidate the other.</p>
+  </section>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
 
@@ -279,6 +302,15 @@ html[lang="th"] .spread-rec .sr-blurb, html[lang="th"] .when-list li, html[lang=
   </section>
 
   <aside class="related-rail" data-related-source="can-you-miss-someone-and-still-let-go"></aside>
+
+  <aside class="static-related" aria-labelledby="sr-label-can-you-miss-someone-and-still-let-go">
+    <h2 class="sr-label" id="sr-label-can-you-miss-someone-and-still-let-go" data-i18n="srLabel">Explore related reflections</h2>
+    <ul class="sr-list">
+      <li><a href="/love-readings/attachment-and-letting-go/" data-i18n="srSubhub">Attachment and letting go cluster</a></li>
+      <li><a href="/quick-love-reading/reconnection/" data-i18n="srSpread">Reconnection spread</a></li>
+      <li><a href="/guides/tarot-for-reflection/" data-i18n="srGuide">Guide: Tarot for reflection</a></li>
+    </ul>
+  </aside>
   <div class="cta-row">
     <a href="/quick-love-reading/?mode=reconnection" class="cta-btn" id="cta-primary" data-i18n="ctaPrimary">Begin a Reconnection reading</a>
     <a href="/quick-love-reading/" class="cta-btn ghost" data-i18n="ctaSecondary">Open the app</a>
@@ -303,6 +335,12 @@ const T = {
     brandSub: 'A Tarot Practice',
     bcHome: 'Home', bcCurrent: 'Can You Miss Someone and Still Let Go?',
     eyebrow: 'When missing them and moving on are happening at the same time',
+    qrLabel: 'Quick reflection',
+    qrBody: 'Missing someone and letting them go are not opposite states. The missing can be honest information about a real bond, and the letting go can still be the choice that fits where your life is now. This reading helps you read both feelings without forcing one to invalidate the other.',
+    srLabel: 'Explore related reflections',
+    srSubhub: 'Attachment and letting go cluster',
+    srSpread: 'Reconnection spread',
+    srGuide: 'Guide: Tarot for reflection',
     title: 'Can You Miss Someone and Still Let Go?',
     lede: 'The question is quieter than it sounds, and the answer is usually yes. Missing them and letting go are not opposites; they are two parts of the same long, slow shape of love changing form. The Reconnection spread does not test whether your release is complete. It reads what still exists between you, what creates the distance now, and what kind of contact (often with yourself first) the next part of letting go invites — so the missing can stay tender without becoming the whole story.',
     recH2: 'A spread for this question',
@@ -354,6 +392,12 @@ const T = {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
     bcHome: 'หน้าแรก', bcCurrent: 'คิดถึงเขาแล้วยังปล่อยได้ไหม',
     eyebrow: 'เมื่อการคิดถึงและการก้าวต่อเกิดพร้อมกัน',
+    qrLabel: 'ใคร่ครวญสั้นๆ',
+    qrBody: 'การคิดถึงและการปล่อย ไม่ใช่สภาวะที่ตรงข้ามกัน การคิดถึงอาจเป็นข้อมูลซื่อตรงเกี่ยวกับความผูกพันที่จริง และการปล่อยก็ยังเป็นทางเลือกที่เข้ากับชีวิตคุณตอนนี้ได้ บทอ่านนี้ช่วยอ่านความรู้สึกทั้งสองอย่าง โดยไม่บังคับให้ฝ่ายใดฝ่ายหนึ่งล้มล้างอีกฝ่าย',
+    srLabel: 'สำรวจบทใคร่ครวญที่เกี่ยวข้อง',
+    srSubhub: 'กลุ่ม: ความผูกพันและการปล่อย',
+    srSpread: 'บทอ่านเชื่อมโยงใหม่',
+    srGuide: 'คู่มือ: ไพ่ทาโรต์เพื่อใคร่ครวญ',
     title: 'คิดถึงเขาแล้วยังปล่อยได้ไหม',
     lede: 'คำถามนี้เงียบกว่าที่ฟัง และคำตอบมักจะใช่ การคิดถึงเขาและการปล่อยไม่ใช่สิ่งตรงข้ามกัน มันคือสองส่วนของรูปร่างเดียวกันที่ยาวและช้าของความรักที่เปลี่ยนรูป บทอ่านเชื่อมโยงใหม่ไม่ตรวจสอบว่าการปล่อยของคุณสมบูรณ์หรือยัง มันอ่านสิ่งที่ยังคงอยู่ระหว่างกัน สิ่งที่สร้างระยะตอนนี้ และการสัมผัสแบบไหน (มักกับตัวเองก่อน) ที่ส่วนต่อไปของการปล่อยเชื้อเชิญ — การคิดถึงจึงยังอ่อนโยนได้ โดยไม่กลายเป็นเรื่องราวทั้งหมด',
     recH2: 'บทอ่านที่เหมาะกับคำถามนี้',
