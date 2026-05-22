@@ -1580,6 +1580,47 @@ html[lang="th"] .reflection-threads .rt-pill {
 @media (max-width: 600px) {
   .reflection-threads .rt-line { font-size: 14.5px; }
 }
+
+/* Reflection echoes — even quieter than threads. A faded marginalia line
+   that sits just under threads and just above the archive list. Single
+   dashed top border only, slightly smaller and more muted than the
+   threads block so it doesn't compete visually. */
+.reflection-echoes {
+  margin: 0 0 14px;
+  padding: 10px 0 0;
+  border-top: 1px dashed rgba(184,153,104,0.12);
+}
+.reflection-echoes .re-eyebrow {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin: 0 0 6px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+.reflection-echoes .re-line {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-mute);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+  opacity: 0.9;
+}
+html[lang="th"] .reflection-echoes .re-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+}
+html[lang="th"] .reflection-echoes .re-line {
+  font-family: "IBM Plex Sans Thai", serif;
+  font-style: normal;
+}
+@media (max-width: 600px) {
+  .reflection-echoes .re-line { font-size: 13.5px; }
+}
 </style>
 </head>
 <body>
@@ -1679,6 +1720,10 @@ html[lang="th"] .reflection-threads .rt-pill {
             <div class="rt-eyebrow" id="rt-eyebrow" data-i18n="rtEyebrow">Reflection threads</div>
             <p class="rt-line" id="rt-line"></p>
             <div class="rt-pills" id="rt-pills"></div>
+          </div>
+          <div class="reflection-echoes" id="reflection-echoes" hidden aria-labelledby="re-eyebrow">
+            <div class="re-eyebrow" id="re-eyebrow" data-i18n="reEyebrow">Reflection echoes</div>
+            <p class="re-line" id="re-line"></p>
           </div>
           <ol class="archive-list" id="archive-list"></ol>
         </div>
@@ -1856,6 +1901,7 @@ const T = {
     shareSquareBtn: 'Save as square',
     ewEyebrow: 'Emotional weather',
     rtEyebrow: 'Reflection threads',
+    reEyebrow: 'Reflection echoes',
     reflectionSaved: 'Reflection saved to this device. Return tomorrow to notice what shifts.',
     rcLabel: 'Last time you asked…',
     rcPrompt: 'Notice what feels different today.',
@@ -1956,6 +2002,7 @@ const T = {
     shareSquareBtn: 'บันทึกแบบสี่เหลี่ยม',
     ewEyebrow: 'บรรยากาศทางอารมณ์',
     rtEyebrow: 'เส้นใยใคร่ครวญ',
+    reEyebrow: 'เสียงสะท้อนของบทใคร่ครวญ',
     reflectionSaved: 'บันทึกบทใคร่ครวญแล้วในเครื่องนี้ กลับมาวันพรุ่งนี้เพื่อสังเกตว่าอะไรเปลี่ยนไป',
     rcLabel: 'ครั้งก่อนคุณถามว่า…',
     rcPrompt: 'ลองสังเกตว่าวันนี้ความรู้สึกเปลี่ยนไปอย่างไร',
@@ -3575,6 +3622,199 @@ function renderReflectionThreads(hist) {
 }
 
 /* ========================================================================
+   REFLECTION ECHOES — emotional contrast layer for the archive.
+
+   Surfaces a quiet 1-sentence observation when the archive contains 4+
+   readings AND a meaningful contrast pattern exists. NOT a progress
+   metric, NOT a healing arc, NOT a diagnosis — just a literary notice
+   that the same emotional question can sound different at different
+   moments.
+
+   Detection runs in three stages and picks the FIRST match (registry
+   order), so behaviour is deterministic on any given archive state:
+
+     1. OPPOSING_PAIRS — both clusters of a pair are present in the
+        recent history (longing ↔ release, silence ↔ reconnection,
+        ambiguity ↔ selfInquiry, repetition ↔ drifting).
+     2. SAME cluster × DIFFERENT spread modes — one feeling has been
+        approached through more than one spread mode.
+     3. SAME cluster × DIFFERENT question_keys — one feeling has been
+        asked about with more than one preset question.
+
+   If none of the three patterns matches, the panel stays hidden.
+   No fallback to generic — sparse / uniform archives keep the slot
+   empty rather than inventing a contrast.
+
+   Local-only. Reads veila-love-history; writes nothing. Reuses
+   pickWeatherCluster() from Emotional Weather and clusters from
+   Reflection Threads. Analytics fire once per page load.
+   ======================================================================== */
+const REFLECTION_ECHO_PAIRS = [
+  ['longing',    'release'],
+  ['silence',    'reconnection'],
+  ['ambiguity',  'selfInquiry'],
+  ['repetition', 'drifting']
+];
+
+const REFLECTION_ECHOES = {
+  pair_longing_release: [
+    { en: 'Some readings ask whether to hold on. Others ask what remains.',
+      th: 'บางบทอ่านถามว่าจะยึดไว้ไหม บทอ่านอื่นถามว่ามีอะไรเหลืออยู่' },
+    { en: 'Longing appears in one reflection, release in another.',
+      th: 'การคิดถึงปรากฏในบทใคร่ครวญหนึ่ง การปล่อยอยู่ในอีกบท' },
+    { en: 'The same bond can sound like holding and like letting go on different days.',
+      th: 'ความผูกพันเดียวกัน อาจฟังดูเหมือนการยึดและการปล่อยในวันที่ต่างกัน' },
+    { en: 'These reflections seem to sit on both sides of a single feeling.',
+      th: 'บทใคร่ครวญเหล่านี้ดูเหมือนนั่งอยู่ทั้งสองด้านของความรู้สึกเดียว' }
+  ],
+  pair_silence_reconnection: [
+    { en: 'Distance appears in one reading, the question of return in another.',
+      th: 'ระยะห่างปรากฏในบทอ่านหนึ่ง คำถามเรื่องการกลับมาอยู่ในอีกบท' },
+    { en: 'Some readings ask about silence. Others ask what would speak across it.',
+      th: 'บางบทอ่านถามเรื่องความเงียบ บทอ่านอื่นถามว่ามีอะไรจะพูดข้ามมัน' },
+    { en: 'A silence has been read here, and a possible return has been read too.',
+      th: 'ความเงียบถูกอ่านที่นี่ และการกลับมาที่อาจเป็นไปได้ก็ถูกอ่านเช่นกัน' },
+    { en: 'These reflections move between distance and the question of crossing it.',
+      th: 'บทใคร่ครวญเหล่านี้เคลื่อนระหว่างระยะห่างและคำถามเรื่องการข้ามมัน' }
+  ],
+  pair_ambiguity_selfInquiry: [
+    { en: 'Some readings sit with not-knowing. Others ask what you already know.',
+      th: 'บางบทอ่านนั่งกับการไม่รู้ บทอ่านอื่นถามว่าคุณรู้อะไรแล้ว' },
+    { en: 'Uncertainty appears in one reflection, honest looking in another.',
+      th: 'ความไม่แน่ชัดปรากฏในบทใคร่ครวญหนึ่ง การมองอย่างซื่อตรงอยู่ในอีกบท' },
+    { en: 'The same question can be asked from outside the answer and from inside it.',
+      th: 'คำถามเดียวกันถามได้ทั้งจากนอกคำตอบและจากภายในคำตอบ' },
+    { en: 'These reflections move between not-knowing and noticing what you do know.',
+      th: 'บทใคร่ครวญเหล่านี้เคลื่อนระหว่างการไม่รู้และการสังเกตสิ่งที่คุณรู้' }
+  ],
+  pair_repetition_drifting: [
+    { en: 'Some readings notice a repeating shape. Others notice what is shifting.',
+      th: 'บางบทอ่านสังเกตรูปร่างที่เกิดซ้ำ บทอ่านอื่นสังเกตสิ่งที่กำลังเปลี่ยน' },
+    { en: 'A pattern is named in one reflection, and a change in another.',
+      th: 'รูปแบบถูกตั้งชื่อในบทใคร่ครวญหนึ่ง และการเปลี่ยนในอีกบท' },
+    { en: 'These reflections seem to read what stays and what moves at the same time.',
+      th: 'บทใคร่ครวญเหล่านี้ดูเหมือนอ่านสิ่งที่อยู่และสิ่งที่เคลื่อนพร้อมกัน' },
+    { en: 'Repetition and drift have both appeared in recent readings.',
+      th: 'การเกิดซ้ำและการล่องลอยปรากฏทั้งสองอย่างในบทอ่านล่าสุด' }
+  ],
+  same_mode: [
+    { en: 'This question seems to return with a different tone.',
+      th: 'คำถามนี้ดูเหมือนกลับมาด้วยน้ำเสียงที่ต่างไป' },
+    { en: 'A similar feeling has been approached from more than one angle.',
+      th: 'ความรู้สึกที่คล้ายกัน ถูกเข้าหาจากมุมที่มากกว่าหนึ่ง' },
+    { en: 'The same emotion sat with you through different spreads.',
+      th: 'อารมณ์เดียวกันนั่งกับคุณผ่านบทอ่านที่ต่างกัน' },
+    { en: 'A recent reflection approached this feeling more softly.',
+      th: 'บทใคร่ครวญล่าสุดเข้าหาความรู้สึกนี้อย่างนุ่มกว่า' },
+    { en: 'Distance appears again, but not in the same shape.',
+      th: 'ระยะห่างปรากฏอีก แต่ไม่ใช่รูปร่างเดิม' },
+    { en: 'The question may be similar, but the angle has shifted.',
+      th: 'คำถามอาจคล้ายกัน แต่มุมเปลี่ยนไปแล้ว' }
+  ],
+  same_intent: [
+    { en: 'The same feeling has been asked about with different questions.',
+      th: 'ความรู้สึกเดียวกันถูกถามด้วยคำถามที่ต่างกัน' },
+    { en: 'Different questions sometimes touch the same edge.',
+      th: 'คำถามที่ต่างกันบางครั้งแตะขอบเดียวกัน' },
+    { en: 'Two reflections take separate routes into the same feeling.',
+      th: 'บทใคร่ครวญสองบทเดินทางคนละทางเข้าสู่ความรู้สึกเดียวกัน' },
+    { en: 'Different ways of asking lead to the same feeling.',
+      th: 'วิธีถามที่ต่างกัน นำไปสู่ความรู้สึกเดียวกัน' },
+    { en: 'Some readings reach this feeling from different starting points.',
+      th: 'บทอ่านบางบทเข้าถึงความรู้สึกนี้จากจุดเริ่มที่ต่างกัน' },
+    { en: 'The shape underneath has been similar, even when the surface changed.',
+      th: 'รูปร่างใต้นั้นคล้ายกัน แม้ผิวจะเปลี่ยน' }
+  ]
+};
+
+// Detect the first matching contrast pattern in deterministic order.
+// Returns { key, type, source_clusters } or null when nothing matches.
+function detectEcho(hist) {
+  if (!Array.isArray(hist) || hist.length < 4) return null;
+  const classified = hist.map(function (e) {
+    return {
+      cluster: pickWeatherCluster((e && e.spread_mode) || '', (e && e.question_key) || ''),
+      mode:    (e && e.spread_mode) || DEFAULT_MODE,
+      qkey:    (e && e.question_key) || ''
+    };
+  });
+  const clusters = new Set(classified.map(function (c) { return c.cluster; }));
+
+  // 1. opposing pair
+  for (const pair of REFLECTION_ECHO_PAIRS) {
+    if (clusters.has(pair[0]) && clusters.has(pair[1])) {
+      return {
+        type: 'pair',
+        key: 'pair_' + pair[0] + '_' + pair[1],
+        source_clusters: [pair[0], pair[1]]
+      };
+    }
+  }
+
+  // 2 & 3 — group by cluster, walk in alphabetical order for determinism.
+  const byCluster = {};
+  for (const c of classified) {
+    (byCluster[c.cluster] = byCluster[c.cluster] || []).push(c);
+  }
+  const ckOrder = Object.keys(byCluster).sort();
+
+  // 2. same cluster × different spread modes
+  for (const ck of ckOrder) {
+    const ents = byCluster[ck];
+    if (ents.length < 2) continue;
+    const modes = new Set(ents.map(function (e) { return e.mode; }));
+    if (modes.size >= 2) {
+      return { type: 'same_mode', key: 'same_mode', source_clusters: [ck] };
+    }
+  }
+
+  // 3. same cluster × different question_keys (qkey must be non-empty)
+  for (const ck of ckOrder) {
+    const ents = byCluster[ck];
+    if (ents.length < 2) continue;
+    const intents = new Set(ents.map(function (e) { return e.qkey; }).filter(Boolean));
+    if (intents.size >= 2) {
+      return { type: 'same_intent', key: 'same_intent', source_clusters: [ck] };
+    }
+  }
+
+  return null;
+}
+
+function pickEchoLine(echo, historySize) {
+  const bank = REFLECTION_ECHOES[echo.key];
+  if (!bank || !bank.length) return null;
+  const idx = ((historySize || 0) % bank.length + bank.length) % bank.length;
+  return bank[idx];
+}
+
+function renderReflectionEchoes(hist) {
+  const panel = document.getElementById('reflection-echoes');
+  if (!panel) return;
+  if (!Array.isArray(hist) || hist.length < 4) { panel.hidden = true; return; }
+
+  const echo = detectEcho(hist);
+  if (!echo) { panel.hidden = true; return; }
+
+  const lineEl = document.getElementById('re-line');
+  if (!lineEl) return;
+  const obs = pickEchoLine(echo, hist.length);
+  if (!obs) { panel.hidden = true; return; }
+  lineEl.textContent = (obs[lang] || obs.en || '');
+  panel.hidden = false;
+
+  if (!panel.dataset.fired && window.veilaFire) {
+    panel.dataset.fired = '1';
+    window.veilaFire('love_reflection_echoes_viewed', {
+      lang: lang,
+      history_size: hist.length,
+      echo_key: echo.key,
+      source_clusters: echo.source_clusters.join(',')
+    });
+  }
+}
+
+/* ========================================================================
    REFLECTION ARCHIVE — private device-local list of past readings.
    Reads veila-love-history. Renders up to HISTORY_MAX (7) entries,
    most recent first. Each item has a "Reflect again" button that
@@ -3606,6 +3846,7 @@ function renderArchive() {
     if (empty) empty.hidden = false;
     if (countEl) countEl.textContent = '';
     renderReflectionThreads(hist);
+    renderReflectionEchoes(hist);
     return;
   }
   if (empty) empty.hidden = true;
@@ -3618,6 +3859,10 @@ function renderArchive() {
 
   // Threads panel — visible only when 3+ readings AND a recurring cluster.
   renderReflectionThreads(hist);
+  // Echoes panel — even quieter; visible only when 4+ readings AND a
+  // contrast pattern (opposing pair / same-cluster-different-mode /
+  // same-cluster-different-intent) is detected.
+  renderReflectionEchoes(hist);
 
   list.innerHTML = '';
   hist.slice(0, HISTORY_MAX).forEach((entry, idx) => {
