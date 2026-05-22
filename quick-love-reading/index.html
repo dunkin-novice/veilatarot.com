@@ -1477,6 +1477,47 @@ html[lang="th"] footer {
   :root { --card-w: 88px; --card-h: 146px; }
   .three-cards { gap: 10px; }
 }
+
+/* Emotional weather — quiet aside surfaced under the reading. Subtle border,
+   muted text, not card-like, not CTA-like. Sits between the share block
+   and Continue Reflecting so the eye crosses it on the way out. */
+.emotional-weather {
+  margin: 40px auto 0;
+  max-width: 540px;
+  padding: 16px 22px;
+  border-left: 2px solid rgba(184,153,104,0.35);
+  background: transparent;
+}
+.emotional-weather .ew-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.emotional-weather .ew-line {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+html[lang="th"] .emotional-weather .ew-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+}
+html[lang="th"] .emotional-weather .ew-line {
+  font-family: "IBM Plex Sans Thai", serif;
+  font-style: normal;
+}
+@media (max-width: 600px) {
+  .emotional-weather { margin-top: 32px; padding: 14px 18px; }
+  .emotional-weather .ew-line { font-size: 15px; }
+}
 </style>
 </head>
 <body>
@@ -1648,6 +1689,11 @@ html[lang="th"] footer {
           <button type="button" class="share-format-link" id="share-square-btn" data-i18n="shareSquareBtn">Save as square</button>
         </aside>
 
+        <aside class="emotional-weather" id="emotional-weather" hidden aria-labelledby="ew-eyebrow">
+          <div class="ew-eyebrow" id="ew-eyebrow" data-i18n="ewEyebrow">Emotional weather</div>
+          <p class="ew-line" id="ew-line"></p>
+        </aside>
+
         <section class="continue-block" id="continue-block" hidden>
           <div class="cb-label" data-i18n="continueLabel">Continue reflecting</div>
           <h3 class="cb-heading" data-i18n="continueH3">Three places to sit with this next</h3>
@@ -1741,6 +1787,7 @@ const T = {
     shareLede: 'Keep this reading as an image — three cards, for a quieter moment.',
     shareBtn: 'Save this reading',
     shareSquareBtn: 'Save as square',
+    ewEyebrow: 'Emotional weather',
     reflectionSaved: 'Reflection saved to this device. Return tomorrow to notice what shifts.',
     rcLabel: 'Last time you asked…',
     rcPrompt: 'Notice what feels different today.',
@@ -1839,6 +1886,7 @@ const T = {
     shareLede: 'บันทึกบทอ่านนี้เป็นภาพ — ไพ่สามใบ ไว้ใคร่ครวญในวันอื่น',
     shareBtn: 'บันทึกบทอ่านนี้',
     shareSquareBtn: 'บันทึกแบบสี่เหลี่ยม',
+    ewEyebrow: 'บรรยากาศทางอารมณ์',
     reflectionSaved: 'บันทึกบทใคร่ครวญแล้วในเครื่องนี้ กลับมาวันพรุ่งนี้เพื่อสังเกตว่าอะไรเปลี่ยนไป',
     rcLabel: 'ครั้งก่อนคุณถามว่า…',
     rcPrompt: 'ลองสังเกตว่าวันนี้ความรู้สึกเปลี่ยนไปอย่างไร',
@@ -2363,11 +2411,250 @@ function renderContinueBlock() {
   block.hidden = false;
 }
 
+/* ========================================================================
+   EMOTIONAL WEATHER — quiet return layer.
+
+   A short reflective "weather line" surfaces beneath each completed
+   reading. The line:
+     • is one of 48 pre-written sentences in WEATHER_LINES below
+     • is picked deterministically, NOT randomly — same cluster + same
+       counter state always yields the same line
+     • slowly rotates: each time a cluster comes up, the counter advances
+       and recently-shown keys are skipped, so a user never sees the same
+       sentence two readings in a row in the same cluster
+     • never predicts outcomes, names destiny, references the universe,
+       soulmates, twin flames, your-person framing, energy cords, or
+       manifestation; lines were authored against that ban list
+
+   State lives in localStorage under 'veila-weather-state', a NEW key —
+   we never touch the existing 'veila-love-history' archive schema.
+   Shape: { last_keys: ['<key>', …], counters: { <cluster>: <int>, … } }
+   Fail-soft: any read/write error returns/keeps the in-memory default.
+
+   Analytics: love_emotional_weather_viewed fires ONCE per reading
+   (gated by panel.dataset.firedKey) with params
+   { spread_mode, weather_key, lang, history_size }. Lang toggle
+   re-renders the line's text but does NOT re-fire.
+   ======================================================================== */
+const WEATHER_LINES = {
+  longing: [
+    { key: 'longing-1', en: 'This feeling may still be unfolding.',
+                        th: 'ความรู้สึกนี้อาจยังกำลังคลี่ออก' },
+    { key: 'longing-2', en: 'Missing tends to have its own season, separate from the situation.',
+                        th: 'การคิดถึงมักมีฤดูของมัน แยกจากสถานการณ์' },
+    { key: 'longing-3', en: 'You may be carrying more than the moment asked for.',
+                        th: 'คุณอาจกำลังถือไว้มากกว่าที่ช่วงเวลานี้ขอ' },
+    { key: 'longing-4', en: 'Sit with the longing without making it a request.',
+                        th: 'นั่งกับการคิดถึงโดยไม่ทำให้มันเป็นคำขอ' },
+    { key: 'longing-5', en: 'Some attachments quiet when they are simply allowed to be there.',
+                        th: 'ความผูกพันบางอย่างเงียบลงเมื่อเพียงยอมให้มันอยู่ตรงนั้น' },
+    { key: 'longing-6', en: 'Not every feeling that keeps returning is asking you to act on it.',
+                        th: 'ไม่ใช่ทุกความรู้สึกที่กลับมาเรื่อยๆ จะขอให้คุณทำอะไรกับมัน' }
+  ],
+  ambiguity: [
+    { key: 'ambiguity-1', en: "Some shapes don't want to be named yet.",
+                          th: 'บางรูปร่างยังไม่อยากถูกตั้งชื่อ' },
+    { key: 'ambiguity-2', en: 'You may be noticing different layers than before.',
+                          th: 'คุณอาจกำลังเห็นชั้นที่ต่างไปจากเดิม' },
+    { key: 'ambiguity-3', en: 'The not-knowing is sometimes the most honest place to stand.',
+                          th: 'การไม่รู้บางครั้งเป็นที่ที่ยืนได้ซื่อตรงที่สุด' },
+    { key: 'ambiguity-4', en: 'What feels confusing may just be unwilling to be simplified.',
+                          th: 'สิ่งที่รู้สึกสับสน อาจเพียงไม่ยอมให้ถูกทำให้ง่าย' },
+    { key: 'ambiguity-5', en: 'Confusing exchanges sometimes carry their own clarity.',
+                          th: 'การโต้ตอบที่สับสน บางครั้งมีความชัดในแบบของมัน' },
+    { key: 'ambiguity-6', en: 'An unclear bond is not the same as a wrong one.',
+                          th: 'ความผูกพันที่ไม่ชัด ไม่เท่ากับความผูกพันที่ผิด' }
+  ],
+  release: [
+    { key: 'release-1', en: 'Letting go often arrives in pieces, not in one decision.',
+                        th: 'การปล่อยมักมาเป็นชิ้นๆ ไม่ใช่ในการตัดสินใจครั้งเดียว' },
+    { key: 'release-2', en: 'Some questions soften when revisited later.',
+                        th: 'คำถามบางอย่างนุ่มลงเมื่อทบทวนใหม่ภายหลัง' },
+    { key: 'release-3', en: 'Closure is sometimes the act of stopping looking for closure.',
+                        th: 'การปิดบางครั้งคือการหยุดมองหาการปิด' },
+    { key: 'release-4', en: 'A wound that returns is asking to be met, not graded.',
+                        th: 'บาดแผลที่กลับมา ขอให้ถูกพบ ไม่ใช่ขอให้ถูกให้คะแนน' },
+    { key: 'release-5', en: 'The body finishes endings on its own schedule.',
+                        th: 'ร่างกายจบเรื่องในตารางของมันเอง' },
+    { key: 'release-6', en: 'Letting go can coexist with still caring.',
+                        th: 'การปล่อยอยู่ร่วมกับการที่ยังห่วงใยได้' }
+  ],
+  silence: [
+    { key: 'silence-1', en: 'Silence carries its own information.',
+                        th: 'ความเงียบมีข้อมูลของมันเอง' },
+    { key: 'silence-2', en: 'Some quiets are not waiting to be broken.',
+                        th: 'ความเงียบบางอย่างไม่ได้รอให้ถูกทำลาย' },
+    { key: 'silence-3', en: 'The absence of contact is not the absence of presence.',
+                        th: 'การไม่มีการติดต่อ ไม่ใช่การไม่มีอยู่' },
+    { key: 'silence-4', en: 'Distance changes the shape of certain emotions.',
+                        th: 'ระยะห่างเปลี่ยนรูปร่างของบางอารมณ์' },
+    { key: 'silence-5', en: 'Not every silence is asking to be filled by you.',
+                        th: 'ความเงียบไม่ทุกอันขอให้คุณเติม' },
+    { key: 'silence-6', en: 'What a silence becomes depends partly on how you carry it.',
+                        th: 'ความเงียบจะกลายเป็นอะไร ขึ้นกับวิธีที่คุณถือมันด้วย' }
+  ],
+  reconnection: [
+    { key: 'reconnection-1', en: 'Coming back is not the same as resuming.',
+                              th: 'การกลับมาไม่เหมือนการดำเนินต่อ' },
+    { key: 'reconnection-2', en: 'A return meets the version of you that is here now, not the older one.',
+                              th: 'การกลับมาพบกับเวอร์ชั่นของคุณที่อยู่ตอนนี้ ไม่ใช่เวอร์ชั่นเก่า' },
+    { key: 'reconnection-3', en: 'Some bonds quiet for a season and stay alive underneath.',
+                              th: 'ความผูกพันบางอย่างเงียบไปฤดูหนึ่งและยังมีชีวิตอยู่ใต้นั้น' },
+    { key: 'reconnection-4', en: 'What reconnects is sometimes different from what was before.',
+                              th: 'สิ่งที่เชื่อมโยงใหม่ บางครั้งต่างจากสิ่งที่เคยเป็น' },
+    { key: 'reconnection-5', en: 'Returning has its own questions, separate from staying.',
+                              th: 'การกลับมามีคำถามของมัน แยกจากการอยู่ต่อ' },
+    { key: 'reconnection-6', en: 'Reconnection does not have to mean reunion.',
+                              th: 'การเชื่อมโยงใหม่ ไม่จำเป็นต้องหมายถึงการกลับมารวมกัน' }
+  ],
+  selfInquiry: [
+    { key: 'selfInquiry-1', en: 'Honesty often arrives in smaller voices than the ones we expect.',
+                            th: 'ความซื่อตรงมักมาในเสียงเล็กกว่าที่เราคาด' },
+    { key: 'selfInquiry-2', en: 'You may be telling yourself the truth in fragments.',
+                            th: 'คุณอาจกำลังบอกความจริงกับตัวเองทีละชิ้น' },
+    { key: 'selfInquiry-3', en: 'Not every unresolved feeling needs an answer today.',
+                            th: 'ไม่ใช่ทุกความรู้สึกที่ยังไม่จบ จะต้องการคำตอบในวันนี้' },
+    { key: 'selfInquiry-4', en: 'Sitting with not-knowing is its own kind of progress.',
+                            th: 'การนั่งกับการไม่รู้ เป็นความคืบหน้าในแบบของมัน' },
+    { key: 'selfInquiry-5', en: 'What you avoid noticing is sometimes already known.',
+                            th: 'สิ่งที่คุณหลีกเลี่ยงไม่สังเกต บางครั้งคุณรู้แล้ว' },
+    { key: 'selfInquiry-6', en: 'Clarity rarely arrives all at once.',
+                            th: 'ความชัดเจนไม่ค่อยมาทั้งหมดในครั้งเดียว' }
+  ],
+  drifting: [
+    { key: 'drifting-1', en: 'Some things drift in directions we did not choose.',
+                         th: 'บางสิ่งล่องลอยไปในทิศทางที่เราไม่ได้เลือก' },
+    { key: 'drifting-2', en: 'Change can happen without an obvious event.',
+                         th: 'การเปลี่ยนเกิดขึ้นได้โดยไม่มีเหตุการณ์ที่ชัด' },
+    { key: 'drifting-3', en: 'Two people moving differently is not always a failure.',
+                         th: 'การที่สองคนเคลื่อนต่างกัน ไม่ใช่ความล้มเหลวเสมอ' },
+    { key: 'drifting-4', en: 'What was once shared may have become more privately yours.',
+                         th: 'สิ่งที่เคยร่วมกันอาจกลายเป็นของคุณเองมากขึ้น' },
+    { key: 'drifting-5', en: 'A drift can finish quietly long before either person says so.',
+                         th: 'การล่องลอยจบลงเงียบๆ ก่อนที่ใครจะพูดออกมาได้นาน' },
+    { key: 'drifting-6', en: 'Time changes connections in ways neither person directs.',
+                         th: 'เวลาเปลี่ยนความสัมพันธ์ในแบบที่ไม่มีใครกำกับ' }
+  ],
+  repetition: [
+    { key: 'repetition-1', en: 'A loop is information about something not yet finished.',
+                           th: 'วงจรเป็นข้อมูลของบางอย่างที่ยังไม่จบ' },
+    { key: 'repetition-2', en: 'Returning to the same shape is not the same as failing.',
+                           th: 'การกลับไปอยู่ในรูปแบบเดิม ไม่ใช่ความล้มเหลว' },
+    { key: 'repetition-3', en: 'Some patterns need to be seen many times before they soften.',
+                           th: 'รูปแบบบางอย่างต้องถูกเห็นหลายครั้งก่อนจะนุ่มลง' },
+    { key: 'repetition-4', en: 'What keeps happening between you is its own kind of message.',
+                           th: 'สิ่งที่เกิดซ้ำๆ ระหว่างคุณ เป็นข้อความในแบบของมันเอง' },
+    { key: 'repetition-5', en: 'A repeat is not always a return — sometimes it is a recognition.',
+                           th: 'การเกิดซ้ำไม่ใช่การกลับเสมอ — บางครั้งคือการมองเห็น' },
+    { key: 'repetition-6', en: 'The same bond can ask the same question for different reasons each time.',
+                           th: 'ความผูกพันเดิมถามคำถามเดิมด้วยเหตุผลที่ต่างไปได้ในแต่ละครั้ง' }
+  ]
+};
+
+// Map current reading context → cluster. Question key (the user's chosen
+// preset chip) wins; otherwise we fall back to selectedMode.
+function pickWeatherCluster(mode, qkey) {
+  const Q_MAP = {
+    'their-energy':    'ambiguity',
+    'honest':          'selfInquiry',
+    'reach-out':       'silence',
+    'direction':       'drifting',
+    'still-thinking':  'longing',
+    'wait-or-let-go':  'release'
+  };
+  if (qkey && Q_MAP[qkey]) return Q_MAP[qkey];
+  const M_MAP = {
+    'clarity':       'selfInquiry',
+    'emotional-arc': 'drifting',
+    'connection':    'ambiguity',
+    'reconnection':  'reconnection'
+  };
+  return M_MAP[mode] || 'selfInquiry';
+}
+
+const WEATHER_STATE_KEY = 'veila-weather-state';
+function loadWeatherState() {
+  try {
+    const raw = localStorage.getItem(WEATHER_STATE_KEY);
+    if (!raw) return { last_keys: [], counters: {} };
+    const obj = JSON.parse(raw);
+    return {
+      last_keys: Array.isArray(obj.last_keys) ? obj.last_keys.slice(-12) : [],
+      counters: (obj.counters && typeof obj.counters === 'object') ? obj.counters : {}
+    };
+  } catch (e) { return { last_keys: [], counters: {} }; }
+}
+function saveWeatherState(state) {
+  try {
+    localStorage.setItem(WEATHER_STATE_KEY, JSON.stringify({
+      last_keys: (state.last_keys || []).slice(-12),
+      counters: state.counters || {}
+    }));
+  } catch (e) { /* quota or private mode — silent */ }
+}
+
+// Pick a line within a cluster: rotate by counter, skip recently-shown keys.
+// Returns the picked entry { key, en, th }.
+function pickWeatherLine(cluster, state) {
+  const lines = WEATHER_LINES[cluster] || WEATHER_LINES.selfInquiry;
+  const recent = new Set((state.last_keys || []).slice(-5));
+  const startIdx = ((state.counters && state.counters[cluster]) || 0) % lines.length;
+  for (let i = 0; i < lines.length; i++) {
+    const idx = (startIdx + i) % lines.length;
+    if (!recent.has(lines[idx].key)) return lines[idx];
+  }
+  return lines[startIdx];
+}
+
+// Render the weather panel. Called from onAllFlipped() once per reading
+// (fires analytics) and from applyLang() to re-translate without re-firing.
+function renderEmotionalWeather() {
+  const panel  = document.getElementById('emotional-weather');
+  const lineEl = document.getElementById('ew-line');
+  if (!panel || !lineEl || !drawn.length) return;
+
+  // If we've already chosen the line for THIS reading, just re-render its
+  // text in the current language. We stash the chosen key on the panel
+  // dataset so a lang toggle never picks a different line mid-session.
+  const cluster = pickWeatherCluster(selectedMode, selectedQuestionKey);
+  let entry;
+  if (panel.dataset.firedKey) {
+    // Find the entry by key from the cluster (or any cluster, in case the
+    // cluster mapping changed across modes mid-session).
+    for (const c of Object.keys(WEATHER_LINES)) {
+      const m = WEATHER_LINES[c].find(l => l.key === panel.dataset.firedKey);
+      if (m) { entry = m; break; }
+    }
+  }
+  if (!entry) {
+    const state = loadWeatherState();
+    entry = pickWeatherLine(cluster, state);
+    // Persist: advance the cluster counter and append the chosen key.
+    state.counters[cluster] = ((state.counters[cluster] || 0) + 1);
+    state.last_keys = (state.last_keys || []).concat(entry.key).slice(-12);
+    saveWeatherState(state);
+    panel.dataset.firedKey = entry.key;
+
+    if (window.veilaFire) {
+      window.veilaFire('love_emotional_weather_viewed', {
+        spread_mode: selectedMode || DEFAULT_MODE,
+        weather_key: entry.key,
+        lang: lang,
+        history_size: loadHistory().length
+      });
+    }
+  }
+
+  lineEl.textContent = (entry[lang] || entry.en || '');
+  panel.hidden = false;
+}
+
 function onAllFlipped() {
   setTimeout(() => {
     document.getElementById('hint-bar').classList.add('is-hidden');
     renderReadout();
     renderContinueBlock();
+    renderEmotionalWeather();
     const section = document.getElementById('readout-section');
     section.classList.remove('is-hidden');
     setTimeout(() => {
@@ -2867,6 +3154,11 @@ function restart() {
   document.getElementById('reading').classList.add('is-hidden');
   document.getElementById('selection').classList.add('is-hidden');
   document.getElementById('readout-section').classList.add('is-hidden');
+  // Reset the emotional-weather panel so the next reading picks a fresh
+  // line + re-fires analytics. The localStorage state is preserved, so
+  // the counter still advances and the next pick respects recent keys.
+  const _ew = document.getElementById('emotional-weather');
+  if (_ew) { _ew.hidden = true; delete _ew.dataset.firedKey; }
   document.getElementById('intro').classList.remove('is-hidden');
   // Re-evaluate the return panel: if the user just completed today, the
   // panel hides; otherwise it stays visible.
@@ -2919,6 +3211,9 @@ function applyLang() {
     renderSpread();
     if (!document.getElementById('readout-section').classList.contains('is-hidden')) {
       renderReadout();
+      // Re-translate the weather line in the new language without re-firing
+      // analytics — renderEmotionalWeather guards on panel.dataset.firedKey.
+      renderEmotionalWeather();
     }
   }
 }
