@@ -1518,6 +1518,68 @@ html[lang="th"] .emotional-weather .ew-line {
   .emotional-weather { margin-top: 32px; padding: 14px 18px; }
   .emotional-weather .ew-line { font-size: 15px; }
 }
+
+/* Reflection threads — quiet observation block above the archive list.
+   Soft divider, muted typography. Not an achievement card, not glowing,
+   no percentages, no charts. Visible only when 3+ readings exist AND a
+   recurring emotional cluster is detected. */
+.reflection-threads {
+  margin: 4px 0 16px;
+  padding: 12px 0 16px;
+  border-top: 1px dashed rgba(184,153,104,0.18);
+  border-bottom: 1px dashed rgba(184,153,104,0.18);
+}
+.reflection-threads .rt-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ivory-mute);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.reflection-threads .rt-line {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+.reflection-threads .rt-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.reflection-threads .rt-pill {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(184,153,104,0.35);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: transparent;
+}
+html[lang="th"] .reflection-threads .rt-eyebrow {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+}
+html[lang="th"] .reflection-threads .rt-line {
+  font-family: "IBM Plex Sans Thai", serif;
+  font-style: normal;
+}
+html[lang="th"] .reflection-threads .rt-pill {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  .reflection-threads .rt-line { font-size: 14.5px; }
+}
 </style>
 </head>
 <body>
@@ -1613,6 +1675,11 @@ html[lang="th"] .emotional-weather .ew-line {
         <div class="archive-body">
           <p class="archive-note" data-i18n="archiveNote">Saved on this device. Private — nothing leaves your browser.</p>
           <p class="archive-empty" id="archive-empty" hidden data-i18n="archiveEmpty">Your saved readings will appear here after a reading.</p>
+          <div class="reflection-threads" id="reflection-threads" hidden aria-labelledby="rt-eyebrow">
+            <div class="rt-eyebrow" id="rt-eyebrow" data-i18n="rtEyebrow">Reflection threads</div>
+            <p class="rt-line" id="rt-line"></p>
+            <div class="rt-pills" id="rt-pills"></div>
+          </div>
           <ol class="archive-list" id="archive-list"></ol>
         </div>
       </details>
@@ -1788,6 +1855,7 @@ const T = {
     shareBtn: 'Save this reading',
     shareSquareBtn: 'Save as square',
     ewEyebrow: 'Emotional weather',
+    rtEyebrow: 'Reflection threads',
     reflectionSaved: 'Reflection saved to this device. Return tomorrow to notice what shifts.',
     rcLabel: 'Last time you asked…',
     rcPrompt: 'Notice what feels different today.',
@@ -1887,6 +1955,7 @@ const T = {
     shareBtn: 'บันทึกบทอ่านนี้',
     shareSquareBtn: 'บันทึกแบบสี่เหลี่ยม',
     ewEyebrow: 'บรรยากาศทางอารมณ์',
+    rtEyebrow: 'เส้นใยใคร่ครวญ',
     reflectionSaved: 'บันทึกบทใคร่ครวญแล้วในเครื่องนี้ กลับมาวันพรุ่งนี้เพื่อสังเกตว่าอะไรเปลี่ยนไป',
     rcLabel: 'ครั้งก่อนคุณถามว่า…',
     rcPrompt: 'ลองสังเกตว่าวันนี้ความรู้สึกเปลี่ยนไปอย่างไร',
@@ -3323,6 +3392,189 @@ if (rcCta) {
 }
 
 /* ========================================================================
+   REFLECTION THREADS — emotional continuity layer for the archive.
+
+   Surfaces a quiet observation block ABOVE the archive list when the
+   user has 3+ saved readings AND a recurring emotional cluster is
+   detected. NOT a diagnosis, NOT a personality label — just a soft
+   pattern observation across the local archive.
+
+   - Reuses pickWeatherCluster(mode, qkey) from the Emotional Weather
+     layer to classify each archive entry into one of 8 clusters.
+   - Deterministic: same archive state → same observation.
+   - Local-only: no schema change to veila-love-history.
+   - Analytics: love_reflection_threads_viewed fires once per page
+     load via panel.dataset.fired. Lang toggle re-renders text only.
+   ======================================================================== */
+const THREAD_OBSERVATIONS = {
+  longing: [
+    { en: 'Missing has shown up in a few readings.',
+      th: 'การคิดถึงปรากฏในบทอ่านหลายครั้ง' },
+    { en: 'Some questions seem to circle back to longing.',
+      th: 'บางคำถามดูเหมือนวนกลับมาที่การคิดถึง' },
+    { en: 'A feeling of missing keeps appearing in different forms.',
+      th: 'ความรู้สึกคิดถึงโผล่มาในรูปแบบที่ต่างกัน' }
+  ],
+  silence: [
+    { en: 'Distance appears in several reflections.',
+      th: 'ระยะห่างปรากฏในบทใคร่ครวญหลายครั้ง' },
+    { en: 'Questions around silence have shown up a few times.',
+      th: 'คำถามเกี่ยวกับความเงียบโผล่มาหลายครั้ง' },
+    { en: 'Silence keeps surfacing across readings.',
+      th: 'ความเงียบยังปรากฏข้ามบทอ่าน' }
+  ],
+  reconnection: [
+    { en: 'Returning has come up more than once.',
+      th: 'การกลับมาโผล่มามากกว่าครั้งเดียว' },
+    { en: 'A few readings have asked about coming back.',
+      th: 'บทอ่านหลายครั้งถามเรื่องการกลับมา' },
+    { en: 'The shape of return appears in different forms.',
+      th: 'รูปร่างของการกลับมาปรากฏในแบบที่ต่างกัน' }
+  ],
+  ambiguity: [
+    { en: 'A few readings seem to orbit the same uncertainty.',
+      th: 'บทอ่านหลายครั้งดูเหมือนโคจรรอบความไม่แน่ชัดเดียวกัน' },
+    { en: 'Uncertainty has appeared in different forms.',
+      th: 'ความไม่แน่ชัดปรากฏในรูปแบบที่ต่างกัน' },
+    { en: 'You seem to return often to questions without clear answers.',
+      th: 'คุณดูเหมือนกลับมาที่คำถามที่ไม่มีคำตอบชัดบ่อยครั้ง' }
+  ],
+  release: [
+    { en: 'Some reflections seem to circle around closure.',
+      th: 'บทใคร่ครวญบางส่วนดูเหมือนวนรอบการปิด' },
+    { en: 'Letting go has shown up in a few different shapes.',
+      th: 'การปล่อยโผล่มาในรูปร่างต่างๆ' },
+    { en: 'Questions about release keep returning.',
+      th: 'คำถามเกี่ยวกับการปล่อยยังกลับมาอยู่' }
+  ],
+  repetition: [
+    { en: 'Patterns have shown up across readings.',
+      th: 'รูปแบบปรากฏข้ามบทอ่าน' },
+    { en: 'A repeating shape appears more than once.',
+      th: 'รูปร่างที่เกิดซ้ำปรากฏมากกว่าครั้งเดียว' },
+    { en: 'Some readings seem to recognise something familiar.',
+      th: 'บทอ่านบางส่วนดูเหมือนจำบางอย่างที่คุ้นเคยได้' }
+  ],
+  drifting: [
+    { en: 'Change has appeared in different forms.',
+      th: 'การเปลี่ยนปรากฏในรูปแบบที่ต่างกัน' },
+    { en: 'Some readings touch on what is shifting.',
+      th: 'บทอ่านบางส่วนแตะถึงสิ่งที่กำลังเปลี่ยน' },
+    { en: 'Questions about time and change keep returning.',
+      th: 'คำถามเกี่ยวกับเวลาและการเปลี่ยนยังกลับมาอยู่' }
+  ],
+  selfInquiry: [
+    { en: 'Some readings turn inward more than once.',
+      th: 'บทอ่านบางส่วนหันเข้าสู่ภายในมากกว่าครั้งเดียว' },
+    { en: 'Questions about your own response have come up a few times.',
+      th: 'คำถามเกี่ยวกับการตอบสนองของคุณเองโผล่มาหลายครั้ง' },
+    { en: 'A few readings sit with self-reflection.',
+      th: 'บทอ่านหลายครั้งนั่งกับการใคร่ครวญตนเอง' }
+  ],
+  // Generic fallbacks for when two clusters tie / no single dominant.
+  generic: [
+    { en: 'A few readings seem to ask similar emotional questions.',
+      th: 'บทอ่านหลายครั้งดูเหมือนถามคำถามทางอารมณ์ที่คล้ายกัน' },
+    { en: 'This feeling has been approached from different angles.',
+      th: 'ความรู้สึกนี้ถูกเข้าหาจากมุมที่ต่างกัน' },
+    { en: 'Some reflections circle the same emotional shape.',
+      th: 'บทใคร่ครวญบางส่วนวนรอบรูปร่างทางอารมณ์เดียวกัน' },
+    { en: 'Different questions sometimes carry the same weight.',
+      th: 'คำถามที่ต่างกันบางครั้งถือน้ำหนักเดียวกัน' },
+    { en: 'Some questions return in quieter forms.',
+      th: 'บางคำถามกลับมาในรูปแบบที่เงียบกว่า' },
+    { en: 'Recent readings seem to share a common edge.',
+      th: 'บทอ่านล่าสุดดูเหมือนมีขอบที่ร่วมกัน' }
+  ]
+};
+
+// Short, friendly cluster labels for the optional pills.
+const CLUSTER_LABELS = {
+  longing:      { en: 'Missing',     th: 'การคิดถึง' },
+  silence:      { en: 'Distance',    th: 'ระยะห่าง' },
+  reconnection: { en: 'Return',      th: 'การกลับมา' },
+  ambiguity:    { en: 'Uncertainty', th: 'ความไม่แน่ชัด' },
+  release:      { en: 'Letting go',  th: 'การปล่อย' },
+  repetition:   { en: 'Patterns',    th: 'รูปแบบ' },
+  drifting:     { en: 'Change',      th: 'การเปลี่ยน' },
+  selfInquiry: { en: 'Self',         th: 'ตัวเอง' }
+};
+
+// Classify every entry → count clusters → return dominant + thread keys.
+// Threads = clusters appearing >= 2 times. No thread → return null so the
+// panel stays hidden (no false-positive "trend" from sparse history).
+function detectThreads(hist) {
+  if (!Array.isArray(hist) || hist.length < 3) return null;
+  const counts = {};
+  for (const entry of hist) {
+    if (!entry) continue;
+    const c = pickWeatherCluster(entry.spread_mode || '', entry.question_key || '');
+    counts[c] = (counts[c] || 0) + 1;
+  }
+  // Sort descending by count, then alphabetically — deterministic.
+  const sorted = Object.entries(counts).sort((a, b) =>
+    b[1] - a[1] || a[0].localeCompare(b[0])
+  );
+  if (!sorted.length || sorted[0][1] < 2) return null;
+  const dominant = sorted[0][0];
+  const threadKeys = sorted.filter(function (p) { return p[1] >= 2; }).map(function (p) { return p[0]; });
+  return { dominant: dominant, threadKeys: threadKeys, counts: counts };
+}
+
+// Pick an observation for the dominant cluster. Rotation: history.length
+// is used as the index so the line slowly varies as the archive grows,
+// staying deterministic on the same archive state.
+function pickThreadObservation(threads, historySize) {
+  // If two or more clusters tie for the top spot, prefer the "generic"
+  // bank — it reads more honestly when no single thread is dominant.
+  const top = threads.counts[threads.dominant];
+  const ties = Object.values(threads.counts).filter(function (c) { return c === top; }).length;
+  const cluster = ties >= 2 ? 'generic' : threads.dominant;
+  const bank = THREAD_OBSERVATIONS[cluster] || THREAD_OBSERVATIONS.generic;
+  const idx = ((historySize || 0) % bank.length + bank.length) % bank.length;
+  return bank[idx];
+}
+
+function renderReflectionThreads(hist) {
+  const panel = document.getElementById('reflection-threads');
+  if (!panel) return;
+  if (!Array.isArray(hist) || hist.length < 3) { panel.hidden = true; return; }
+
+  const threads = detectThreads(hist);
+  if (!threads) { panel.hidden = true; return; }
+
+  const lineEl  = document.getElementById('rt-line');
+  const pillsEl = document.getElementById('rt-pills');
+  if (!lineEl || !pillsEl) return;
+
+  const obs = pickThreadObservation(threads, hist.length);
+  lineEl.textContent = (obs[lang] || obs.en || '');
+
+  pillsEl.innerHTML = '';
+  threads.threadKeys.slice(0, 3).forEach(function (cluster) {
+    const meta = CLUSTER_LABELS[cluster];
+    if (!meta) return;
+    const span = document.createElement('span');
+    span.className = 'rt-pill';
+    span.textContent = (meta[lang] || meta.en || cluster);
+    pillsEl.appendChild(span);
+  });
+
+  panel.hidden = false;
+
+  // Fire once per page load. Lang toggle re-renders text but does NOT re-fire.
+  if (!panel.dataset.fired && window.veilaFire) {
+    panel.dataset.fired = '1';
+    window.veilaFire('love_reflection_threads_viewed', {
+      lang: lang,
+      history_size: hist.length,
+      thread_keys: threads.threadKeys.join(','),
+      dominant_cluster: threads.dominant
+    });
+  }
+}
+
+/* ========================================================================
    REFLECTION ARCHIVE — private device-local list of past readings.
    Reads veila-love-history. Renders up to HISTORY_MAX (7) entries,
    most recent first. Each item has a "Reflect again" button that
@@ -3353,6 +3605,7 @@ function renderArchive() {
     list.innerHTML = '';
     if (empty) empty.hidden = false;
     if (countEl) countEl.textContent = '';
+    renderReflectionThreads(hist);
     return;
   }
   if (empty) empty.hidden = true;
@@ -3362,6 +3615,9 @@ function renderArchive() {
     const n = Math.min(hist.length, HISTORY_MAX);
     countEl.textContent = n + (dict.archiveCountSuffix || '');
   }
+
+  // Threads panel — visible only when 3+ readings AND a recurring cluster.
+  renderReflectionThreads(hist);
 
   list.innerHTML = '';
   hist.slice(0, HISTORY_MAX).forEach((entry, idx) => {
