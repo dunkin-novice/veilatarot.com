@@ -2969,7 +2969,11 @@ function renderQuietPause() {
   if (!entry) {
     const bank = QUIET_PAUSES[cluster] || QUIET_PAUSES.generic;
     const histLen = loadHistory().length;
-    const idx = ((histLen || 0) % bank.length + bank.length) % bank.length;
+    // +1 offset relative to Emotional Weather's index so the two layers
+    // never land on the same position within a cluster bank — prevents
+    // jarring side-by-side phrase echoes like "this feeling" appearing
+    // in both Weather and Pause on the very first reading.
+    const idx = (((histLen || 0) + 1) % bank.length + bank.length) % bank.length;
     entry = bank[idx];
     panel.dataset.firedKey = entry.key;
 
@@ -3558,6 +3562,12 @@ function applyLang() {
       renderEmotionalWeather();
       // Same guard pattern for the quiet-pause line.
       renderQuietPause();
+      // Continue Reflecting's per-item kind / title / blurb come from
+      // CONTINUE_LABELS[lang] and were only being rebuilt on reading
+      // completion — without this call the EN/TH toggle left the three
+      // cards stale. Click handlers are torn down and rebuilt inside
+      // renderContinueBlock, so we do not accumulate duplicates.
+      renderContinueBlock();
     }
   }
 }
