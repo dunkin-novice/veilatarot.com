@@ -1621,6 +1621,38 @@ html[lang="th"] .reflection-echoes .re-line {
 @media (max-width: 600px) {
   .reflection-echoes .re-line { font-size: 13.5px; }
 }
+
+/* Quiet pause — lighter than Weather, Threads, and Echoes. A single
+   centered italic line with generous breathing space and only a hairline
+   divider above. "Negative space with words" — no eyebrow, no border
+   ornament, no card chrome. */
+.quiet-pause {
+  margin: 28px auto;
+  max-width: 420px;
+  padding: 20px 16px 0;
+  text-align: center;
+  border-top: 1px solid rgba(184,153,104,0.10);
+}
+.quiet-pause .qp-line {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ivory-mute);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.85;
+}
+html[lang="th"] .quiet-pause .qp-line {
+  font-family: "IBM Plex Sans Thai", serif;
+  font-style: normal;
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+@media (max-width: 600px) {
+  .quiet-pause { margin: 24px auto; padding: 18px 12px 0; max-width: 360px; }
+  .quiet-pause .qp-line { font-size: 14px; }
+  html[lang="th"] .quiet-pause .qp-line { font-size: 13.5px; }
+}
 </style>
 </head>
 <body>
@@ -1804,6 +1836,10 @@ html[lang="th"] .reflection-echoes .re-line {
         <aside class="emotional-weather" id="emotional-weather" hidden aria-labelledby="ew-eyebrow">
           <div class="ew-eyebrow" id="ew-eyebrow" data-i18n="ewEyebrow">Emotional weather</div>
           <p class="ew-line" id="ew-line"></p>
+        </aside>
+
+        <aside class="quiet-pause" id="quiet-pause" hidden>
+          <p class="qp-line" id="qp-line"></p>
         </aside>
 
         <section class="continue-block" id="continue-block" hidden>
@@ -2765,12 +2801,199 @@ function renderEmotionalWeather() {
   panel.hidden = false;
 }
 
+/* ========================================================================
+   QUIET PAUSES — reflective breathing-space layer.
+
+   A single short italic pause-line shown between the Emotional Weather
+   block and Continue Reflecting. Lighter than every other post-reading
+   layer; "negative space with words". NOT meditation, NOT mindfulness
+   coaching, NOT motivation, NOT therapy, NOT mystical.
+
+   Cluster picker is shared with Emotional Weather (pickWeatherCluster).
+   Determinism is achieved exactly as Weather/Threads/Echoes do it: the
+   chosen key is stashed on panel.dataset.firedKey so lang toggles and
+   late re-renders translate the same line without re-firing analytics.
+   On restart() we drop the firedKey so the next reading picks fresh.
+
+   Selection logic (deterministic):
+     • cluster = pickWeatherCluster(selectedMode, selectedQuestionKey)
+       (question_key wins, then spread mode, then selfInquiry fallback)
+     • bank    = QUIET_PAUSES[cluster] || QUIET_PAUSES.generic
+     • index   = history.length % bank.length
+
+   Local-only. No new localStorage key. No archive schema change.
+   Analytics: love_quiet_pause_viewed fires once per reading.
+   ======================================================================== */
+const QUIET_PAUSES = {
+  longing: [
+    { key: 'longing-1', en: 'You do not have to answer this feeling immediately.',
+                        th: 'คุณไม่ต้องตอบความรู้สึกนี้ทันที' },
+    { key: 'longing-2', en: 'Some longings stay quiet without needing to be solved.',
+                        th: 'การคิดถึงบางอย่างเงียบอยู่ได้โดยไม่ต้องถูกแก้' },
+    { key: 'longing-3', en: 'Missing someone can simply be allowed for a while.',
+                        th: 'การคิดถึงใครคนหนึ่ง อยู่ได้ชั่วระยะหนึ่ง' },
+    { key: 'longing-4', en: 'It may be enough to notice this for now.',
+                        th: 'เพียงสังเกตเห็นมันในตอนนี้ก็พอ' },
+    { key: 'longing-5', en: 'Longing can be present without becoming an action.',
+                        th: 'การคิดถึงอยู่ได้โดยไม่ต้องกลายเป็นการกระทำ' },
+    { key: 'longing-6', en: 'Not every feeling that lingers is asking you to do something.',
+                        th: 'ไม่ใช่ทุกความรู้สึกที่ค้างอยู่ จะขอให้คุณทำอะไร' }
+  ],
+  ambiguity: [
+    { key: 'ambiguity-1', en: 'You do not need to name this yet.',
+                          th: 'คุณยังไม่ต้องตั้งชื่อให้มัน' },
+    { key: 'ambiguity-2', en: 'It can stay unclear for a while longer.',
+                          th: 'มันยังไม่ชัดต่อไปอีกสักพักก็ได้' },
+    { key: 'ambiguity-3', en: 'Some questions become clearer after distance.',
+                          th: 'บางคำถามชัดขึ้นเมื่อมีระยะ' },
+    { key: 'ambiguity-4', en: 'Sit with this without forcing a shape.',
+                          th: 'นั่งกับสิ่งนี้โดยไม่บังคับให้มันมีรูปร่าง' },
+    { key: 'ambiguity-5', en: 'A pause is allowed when the answer is not ready.',
+                          th: 'การหยุดพักได้ เมื่อคำตอบยังไม่พร้อม' },
+    { key: 'ambiguity-6', en: 'The bond may not need a name to be real.',
+                          th: 'ความผูกพันอาจไม่ต้องมีคำเรียกเพื่อจะเป็นจริง' }
+  ],
+  silence: [
+    { key: 'silence-1', en: 'The silence does not need to be filled by you.',
+                        th: 'ความเงียบไม่ต้องให้คุณเติม' },
+    { key: 'silence-2', en: 'You can hold the quiet without holding a verdict.',
+                        th: 'คุณถือความเงียบได้โดยไม่ต้องถือคำตัดสิน' },
+    { key: 'silence-3', en: 'Distance does not always need a response.',
+                        th: 'ระยะห่างไม่ต้องการการตอบสนองเสมอ' },
+    { key: 'silence-4', en: 'Some quiets carry their own kind of presence.',
+                        th: 'ความเงียบบางอย่างถือการมีอยู่ในแบบของมัน' },
+    { key: 'silence-5', en: 'Not every absence is asking to be solved.',
+                        th: 'การไม่อยู่ไม่ทุกครั้งจะขอให้ถูกแก้' },
+    { key: 'silence-6', en: 'It is alright to let this stay where it is for a while.',
+                        th: 'ปล่อยให้มันอยู่ตรงนั้นสักพักก็ได้' }
+  ],
+  reconnection: [
+    { key: 'reconnection-1', en: 'A return does not have to be answered right away.',
+                              th: 'การกลับมาไม่ต้องตอบทันที' },
+    { key: 'reconnection-2', en: 'You can notice the question without choosing yet.',
+                              th: 'สังเกตเห็นคำถามได้โดยยังไม่ต้องเลือก' },
+    { key: 'reconnection-3', en: 'Reconnection can be considered slowly.',
+                              th: 'การเชื่อมโยงใหม่พิจารณาช้าๆ ได้' },
+    { key: 'reconnection-4', en: 'Some openings do not need to be walked through immediately.',
+                              th: 'ช่องเปิดบางอย่างไม่ต้องเดินผ่านทันที' },
+    { key: 'reconnection-5', en: 'Returning is not the only option, even when it is offered.',
+                              th: 'การกลับมาไม่ใช่ทางเลือกเดียว แม้จะถูกเสนอ' },
+    { key: 'reconnection-6', en: 'What returns can be held at a distance first.',
+                              th: 'สิ่งที่กลับมาถือไว้ในระยะห่างก่อนได้' }
+  ],
+  release: [
+    { key: 'release-1', en: 'Letting go does not need to be finished in one sitting.',
+                        th: 'การปล่อยไม่ต้องเสร็จในรอบเดียว' },
+    { key: 'release-2', en: 'A feeling can stay unfinished for a while.',
+                        th: 'ความรู้สึกค้างไว้ได้ระยะหนึ่ง' },
+    { key: 'release-3', en: 'Some endings move slower than the calendar wants.',
+                        th: 'การจบบางอย่างเคลื่อนช้ากว่าที่ปฏิทินอยากให้' },
+    { key: 'release-4', en: 'You can put this down without needing to throw it away.',
+                        th: 'วางมันลงได้โดยไม่ต้องทิ้ง' },
+    { key: 'release-5', en: 'Release can be a small private moment, not an announcement.',
+                        th: 'การปล่อยเป็นช่วงเวลาเงียบๆ ของคุณก็ได้ ไม่ต้องประกาศ' },
+    { key: 'release-6', en: 'What is leaving can leave at its own pace.',
+                        th: 'สิ่งที่กำลังจาก จากไปในจังหวะของมันเอง' }
+  ],
+  selfInquiry: [
+    { key: 'selfInquiry-1', en: 'Not every honest question wants an immediate answer.',
+                            th: 'ไม่ใช่ทุกคำถามที่ซื่อตรงจะอยากได้คำตอบทันที' },
+    { key: 'selfInquiry-2', en: 'Sitting with the question is its own kind of answer.',
+                            th: 'การนั่งกับคำถามเป็นคำตอบในแบบของมัน' },
+    { key: 'selfInquiry-3', en: 'Clarity rarely arrives all at once.',
+                            th: 'ความชัดเจนไม่ค่อยมาทั้งหมดในครั้งเดียว' },
+    { key: 'selfInquiry-4', en: 'You can keep listening without needing to decide.',
+                            th: 'ฟังต่อได้โดยไม่ต้องตัดสินใจ' },
+    { key: 'selfInquiry-5', en: 'Honesty often arrives in pieces, on its own time.',
+                            th: 'ความซื่อตรงมักมาเป็นชิ้นๆ ในเวลาของมัน' },
+    { key: 'selfInquiry-6', en: 'Some questions are quieter when held lightly.',
+                            th: 'บางคำถามเงียบกว่าเมื่อถือเบาๆ' }
+  ],
+  repetition: [
+    { key: 'repetition-1', en: 'Noticing a pattern is enough for one reading.',
+                           th: 'การสังเกตเห็นรูปแบบหนึ่งบทอ่าน ก็พอแล้ว' },
+    { key: 'repetition-2', en: 'A loop can be witnessed without needing to break it in this moment.',
+                           th: 'วงจรถูกมองเห็นได้โดยไม่ต้องตัดในจังหวะนี้' },
+    { key: 'repetition-3', en: 'Recognising the shape is a small thing on its own.',
+                           th: 'การจำรูปร่างได้เป็นเรื่องเล็กๆ ในตัวมันเอง' },
+    { key: 'repetition-4', en: 'You do not have to solve the repetition in this reading.',
+                           th: 'คุณไม่ต้องแก้การเกิดซ้ำในบทอ่านนี้' },
+    { key: 'repetition-5', en: 'Some patterns soften when simply named.',
+                           th: 'รูปแบบบางอย่างนุ่มลงเมื่อแค่ถูกตั้งชื่อ' },
+    { key: 'repetition-6', en: 'Seeing the loop is already a kind of distance from it.',
+                           th: 'การเห็นวงจรเป็นระยะห่างจากมันแล้ว' }
+  ],
+  drifting: [
+    { key: 'drifting-1', en: 'Change does not need to be reacted to immediately.',
+                         th: 'การเปลี่ยนไม่ต้องตอบสนองทันที' },
+    { key: 'drifting-2', en: 'Drift can be noticed without being stopped.',
+                         th: 'การล่องลอยสังเกตได้โดยไม่ต้องหยุด' },
+    { key: 'drifting-3', en: 'Some things move at their own pace, with or without us.',
+                         th: 'บางสิ่งเคลื่อนในจังหวะของมัน กับเราหรือไม่ก็ตาม' },
+    { key: 'drifting-4', en: 'You can let what is shifting keep shifting for a while.',
+                         th: 'ปล่อยให้สิ่งที่เปลี่ยนเปลี่ยนต่อไปอีกสักระยะได้' },
+    { key: 'drifting-5', en: 'Watching the change is sometimes the right action.',
+                         th: 'การมองดูการเปลี่ยน บางครั้งคือการกระทำที่ถูกแล้ว' },
+    { key: 'drifting-6', en: 'Not every drift asks to be redirected.',
+                         th: 'การล่องลอยไม่ทุกครั้งจะขอให้ถูกเปลี่ยนทิศ' }
+  ],
+  generic: [
+    { key: 'generic-1', en: 'Not every emotion asks to be solved.',
+                        th: 'ไม่ใช่ทุกอารมณ์จะขอให้ถูกแก้' },
+    { key: 'generic-2', en: 'A pause is enough.',
+                        th: 'การหยุดพักก็พอแล้ว' },
+    { key: 'generic-3', en: 'You can leave this here and return to it later.',
+                        th: 'วางไว้ตรงนี้แล้วกลับมาที่มันภายหลังก็ได้' },
+    { key: 'generic-4', en: 'Sometimes a reading is most useful when it is allowed to be quiet.',
+                        th: 'บางครั้งบทอ่านมีประโยชน์ที่สุดเมื่อถูกปล่อยให้เงียบ' },
+    { key: 'generic-5', en: 'Nothing here needs to be decided in this moment.',
+                        th: 'ที่นี่ไม่มีอะไรต้องตัดสินในจังหวะนี้' },
+    { key: 'generic-6', en: 'It is okay to leave the question open.',
+                        th: 'ปล่อยให้คำถามเปิดอยู่ก็ได้' }
+  ]
+};
+
+function renderQuietPause() {
+  const panel  = document.getElementById('quiet-pause');
+  const lineEl = document.getElementById('qp-line');
+  if (!panel || !lineEl || !drawn.length) return;
+
+  const cluster = pickWeatherCluster(selectedMode, selectedQuestionKey);
+  let entry;
+  if (panel.dataset.firedKey) {
+    for (const c of Object.keys(QUIET_PAUSES)) {
+      const m = QUIET_PAUSES[c].find(function (l) { return l.key === panel.dataset.firedKey; });
+      if (m) { entry = m; break; }
+    }
+  }
+  if (!entry) {
+    const bank = QUIET_PAUSES[cluster] || QUIET_PAUSES.generic;
+    const histLen = loadHistory().length;
+    const idx = ((histLen || 0) % bank.length + bank.length) % bank.length;
+    entry = bank[idx];
+    panel.dataset.firedKey = entry.key;
+
+    if (window.veilaFire) {
+      window.veilaFire('love_quiet_pause_viewed', {
+        lang: lang,
+        pause_key: entry.key,
+        source_cluster: cluster,
+        spread_mode: selectedMode || DEFAULT_MODE
+      });
+    }
+  }
+
+  lineEl.textContent = (entry[lang] || entry.en || '');
+  panel.hidden = false;
+}
+
 function onAllFlipped() {
   setTimeout(() => {
     document.getElementById('hint-bar').classList.add('is-hidden');
     renderReadout();
     renderContinueBlock();
     renderEmotionalWeather();
+    renderQuietPause();
     const section = document.getElementById('readout-section');
     section.classList.remove('is-hidden');
     setTimeout(() => {
@@ -3275,6 +3498,9 @@ function restart() {
   // the counter still advances and the next pick respects recent keys.
   const _ew = document.getElementById('emotional-weather');
   if (_ew) { _ew.hidden = true; delete _ew.dataset.firedKey; }
+  // Quiet pause: same lifecycle — hide + drop firedKey on draw-again.
+  const _qp = document.getElementById('quiet-pause');
+  if (_qp) { _qp.hidden = true; delete _qp.dataset.firedKey; }
   document.getElementById('intro').classList.remove('is-hidden');
   // Re-evaluate the return panel: if the user just completed today, the
   // panel hides; otherwise it stays visible.
@@ -3330,6 +3556,8 @@ function applyLang() {
       // Re-translate the weather line in the new language without re-firing
       // analytics — renderEmotionalWeather guards on panel.dataset.firedKey.
       renderEmotionalWeather();
+      // Same guard pattern for the quiet-pause line.
+      renderQuietPause();
     }
   }
 }
