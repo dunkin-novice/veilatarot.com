@@ -741,7 +741,7 @@ html[lang="th"] .user-question {
   flex-direction: column;
   border: 1px solid var(--gold-dim);
 }
-.face-front.reversed .art { transform: scaleY(-1); }
+.face-front.reversed .art { transform: rotate(180deg); }
 .face-front .position-num {
   font-family: var(--serif);
   font-style: italic;
@@ -966,6 +966,20 @@ html[lang="th"] .mp-chip { font-family: "IBM Plex Sans Thai", var(--sans); font-
   box-shadow: 0 2px 8px rgba(0,0,0,0.55);
 }
 .sel-card.selected .sel-order { opacity: 1; }
+
+/* Subtle entrance for scatter cards when the selection screen appears
+   after the user taps "Choose 3 cards". Animated on .sel-card-body so the
+   outer .sel-card's inline transform (translate + rotate placement) is
+   not disturbed. backwards fill-mode keeps the card invisible during its
+   delay; once the animation completes, the body returns to its natural
+   state so hover (translateY(-6px)) and selected styles work unchanged. */
+@keyframes qlr-sel-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sel-card-body.qlr-entering {
+  animation: qlr-sel-enter 0.4s cubic-bezier(.4, 0, .2, 1) backwards;
+}
 
 /* Selection action row */
 .sel-actions {
@@ -3343,6 +3357,16 @@ function renderScatter() {
 
     selCardEls.set(card.id, el);
     scatter.appendChild(el);
+
+    // Subtle staggered entrance — animates the body wrapper so the
+    // outer .sel-card's positioning transform is preserved. Cap the
+    // stagger at the first 6 cards so the full table appears within
+    // the ~700ms budget even with 78 cards.
+    const body = el.querySelector('.sel-card-body');
+    if (body) {
+      body.classList.add('qlr-entering');
+      body.style.animationDelay = (Math.min(i, 5) * 60) + 'ms';
+    }
   });
 }
 
