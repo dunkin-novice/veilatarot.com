@@ -2292,6 +2292,77 @@ function getPresetText(key, l) {
 }
 
 /* ========================================================================
+   QUESTION-SPECIFIC DATASET REGISTRY (additive overlay; NOT a replacement)
+
+   When a preset chip is selected AND we hold its dataset in memory, the
+   readout uses dataset-specific position labels + interpretations instead
+   of the cards.json celtic_cross fallback. Datasets are fetched lazily on
+   chip click and cached in-memory. If the fetch fails (network, 404,
+   parse error, or unknown root shape), renderReadout silently falls
+   through to the existing cards.json path — the generic layer remains
+   sacred.
+
+   One dataset (should-i-wait-or-let-go) uses a variant root schema
+   (question_key / question_en / question_th / spread_structure). The
+   normalizer below adapts it to the canonical { question, spread.positions
+   } shape at load time — the on-disk file is never modified.
+   ======================================================================== */
+const QUESTION_DATASETS = {
+  'their-energy':   '/assets/data/love-readings/what-is-their-energy-toward-me-reading.json',
+  'honest':         '/assets/data/love-readings/is-this-connection-honest-reading.json',
+  'reach-out':      '/assets/data/love-readings/should-i-reach-out-reading.json',
+  'direction':      '/assets/data/love-readings/where-is-this-connection-going-reading.json',
+  'still-thinking': '/assets/data/love-readings/does-this-person-miss-me-reading.json',
+  'wait-or-let-go': '/assets/data/love-readings/should-i-wait-or-let-go-reading.json'
+};
+
+const __datasetCache    = Object.create(null);
+const __datasetInflight = Object.create(null);
+
+// Normalize either root shape into a single canonical structure the
+// renderer can rely on. Returns null when the shape is unrecognised so
+// the caller can fall through to cards.json.
+function __normalizeDataset(raw) {
+  if (!raw || typeof raw !== 'object' || !raw.cards) return null;
+  // Canonical: { spread: { positions: [{ key, label: { en, th } }] }, ... }
+  if (raw.spread && Array.isArray(raw.spread.positions)) return raw;
+  // Variant: { spread_structure: { <key>: { en, th } }, question_key/en/th }
+  if (raw.spread_structure && typeof raw.spread_structure === 'object') {
+    const positions = Object.keys(raw.spread_structure).map(function (k) {
+      return { key: k, label: raw.spread_structure[k] };
+    });
+    return {
+      version: 'normalized-v1',
+      locale_support: ['en', 'th'],
+      question: { key: raw.question_key || '', en: raw.question_en || '', th: raw.question_th || '' },
+      spread: { card_count: positions.length, positions: positions },
+      cards: raw.cards
+    };
+  }
+  return null;
+}
+
+function loadQuestionDataset(key) {
+  if (!key || !QUESTION_DATASETS[key]) return Promise.resolve(null);
+  if (__datasetCache[key])    return Promise.resolve(__datasetCache[key]);
+  if (__datasetInflight[key]) return __datasetInflight[key];
+
+  const url = QUESTION_DATASETS[key];
+  const p = fetch(url, { cache: 'force-cache' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)); })
+    .then(function (raw) {
+      const normalized = __normalizeDataset(raw);
+      if (!normalized) { console.warn('dataset shape unknown', key); return null; }
+      __datasetCache[key] = normalized;
+      return normalized;
+    })
+    .catch(function (err) { console.warn('dataset load failed', key, err && err.message); return null; })
+    .then(function (out) { delete __datasetInflight[key]; return out; });
+  __datasetInflight[key] = p;
+  return p;
+}
+
+/* ========================================================================
    STATE
    ======================================================================== */
 let DECK = [];
@@ -2424,7 +2495,15 @@ function renderReadout() {
   const list = document.getElementById('readout-list');
   list.innerHTML = '';
 
-  drawn.forEach((d) => {
+  // OVERLAY: when a preset chip is selected AND its dataset is in cache,
+  // pull position labels + interpretation from the dataset. Otherwise the
+  // generic cards.json celtic_cross path runs unchanged — the dataset
+  // branch never executes for free-text / no-preset readings.
+  const dataset = (selectedQuestionKey && __datasetCache[selectedQuestionKey]) || null;
+  const usingDataset = !!(dataset && dataset.cards && dataset.spread && Array.isArray(dataset.spread.positions));
+  const datasetPositions = usingDataset ? dataset.spread.positions : null;
+
+  drawn.forEach((d, idx) => {
     const row = document.createElement('div');
     row.className = 'readout';
     row.setAttribute('data-position-key', d.position.key);
@@ -2432,18 +2511,41 @@ function renderReadout() {
     const orient = d.reversed ? 'reversed' : 'upright';
     const orientLabel = d.reversed ? T[lang].reversed : T[lang].upright;
     const cell = d.card[orient] || {};
-    const cc = (cell.celtic_cross && cell.celtic_cross[d.position.cc]) || {};
-    const interp = cc[lang] || (cell.standalone && cell.standalone[lang]) || '';
     const keywords = (cell.keywords && cell.keywords[lang]) || '';
+
+    // Default — generic layer (cards.json celtic_cross). KEEP byte-equivalent.
+    let positionLabel = d.position.short[lang];
+    let positionLong  = (d.position.long && d.position.long[lang]) ? (d.position.long[lang] + '.') : '';
+    let interp = '';
+    if (usingDataset) {
+      // Dataset overlay: use the i-th dataset position by index (the
+      // selection screen still chooses a spread mode of 3 positions; we
+      // map the slot to the dataset's slot of the same index).
+      const dp = datasetPositions[idx];
+      const dpKey   = dp && dp.key;
+      const dpLabel = dp && dp.label && (dp.label[lang] || dp.label.en);
+      if (dpLabel) positionLabel = dpLabel;
+      positionLong = ''; // dataset positions intentionally have no long copy
+      const cardData = dataset.cards[d.card.id];
+      const slot = cardData && cardData[orient] && dpKey && cardData[orient][dpKey];
+      if (slot && (slot[lang] || slot.en)) {
+        interp = slot[lang] || slot.en;
+      }
+    }
+    if (!interp) {
+      // Generic-layer interpretation (unchanged path).
+      const cc = (cell.celtic_cross && cell.celtic_cross[d.position.cc]) || {};
+      interp = cc[lang] || (cell.standalone && cell.standalone[lang]) || '';
+    }
 
     row.innerHTML = `
       <div class="num">${toRoman(d.position.n)}</div>
       <div class="body">
-        <div class="position-name">${d.position.short[lang]}</div>
+        <div class="position-name">${positionLabel}</div>
         <h3>${d.card.name[lang]}<em>· ${orientLabel}</em></h3>
         <div class="keywords">${keywords}</div>
         <div class="interp">
-          <span class="position-long">${d.position.long[lang]}.</span>
+          ${positionLong ? '<span class="position-long">' + positionLong + '</span>' : ''}
           <p>${interp}</p>
         </div>
       </div>
@@ -2992,8 +3094,15 @@ function renderQuietPause() {
 }
 
 function onAllFlipped() {
-  setTimeout(() => {
+  setTimeout(async () => {
     document.getElementById('hint-bar').classList.add('is-hidden');
+    // If a preset chip is selected and we don't have its dataset cached
+    // yet, wait briefly for the fetch to settle. A null result (network,
+    // 404, parse error) is fine — renderReadout falls through to the
+    // generic cards.json path. Already-cached datasets resolve sync.
+    if (selectedQuestionKey && QUESTION_DATASETS[selectedQuestionKey] && !__datasetCache[selectedQuestionKey]) {
+      try { await loadQuestionDataset(selectedQuestionKey); } catch (e) { /* fallthrough */ }
+    }
     renderReadout();
     renderContinueBlock();
     renderEmotionalWeather();
@@ -4216,6 +4325,10 @@ document.querySelectorAll('.qp-chip').forEach((btn) => {
     }
     selectedQuestionKey = key;
     syncChipSelection();
+    // Fire-and-forget prefetch of the question-specific dataset (if any).
+    // No await — the chip should feel instantaneous. The reveal-time
+    // await below will catch up if the user moves quickly.
+    loadQuestionDataset(key);
     const preset = getPreset(key);
     if (window.veilaFire && preset) {
       window.veilaFire('love_question_selected', {
