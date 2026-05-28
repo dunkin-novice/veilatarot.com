@@ -1,0 +1,2380 @@
+{
+  "version": "why-did-they-pull-away-v1",
+  "locale_support": [
+    "en",
+    "th"
+  ],
+  "question": {
+    "key": "why_did_they_pull_away",
+    "en": "Why did they pull away?",
+    "th": "ทำไมเขาถึงถอยห่างออกไป?"
+  },
+  "spread": {
+    "card_count": 3,
+    "positions": [
+      {
+        "key": "trigger",
+        "label": {
+          "en": "What triggered the distance",
+          "th": "สิ่งที่กระตุ้นให้เขาถอยห่าง"
+        }
+      },
+      {
+        "key": "inner_state",
+        "label": {
+          "en": "What is happening inside them",
+          "th": "สิ่งที่กำลังเกิดขึ้นภายในใจเขา"
+        }
+      },
+      {
+        "key": "path_forward",
+        "label": {
+          "en": "What this distance is leading toward",
+          "th": "ระยะห่างนี้กำลังพาไปสู่อะไร"
+        }
+      }
+    ]
+  },
+  "cards": {
+    "01-the-fool": {
+      "upright": {
+        "trigger": {
+          "en": "An impulsive lightness pulled them toward open ground rather than away from you specifically. The exit felt small to them — a step, not a verdict — even if it landed heavily on your side.",
+          "th": "ความรู้สึกอยากออกไปสู่พื้นที่กว้างๆ ดึงเขาออกไปอย่างเป็นธรรมชาติ มากกว่าที่จะเป็นการเดินหนีคุณโดยเฉพาะ การก้าวออกของเขารู้สึกเบาสำหรับตัวเอง แม้จะรู้สึกหนักสำหรับคุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are looking outward more than inward — restless for something unfamiliar without quite naming it. There is no calculated rejection here, only the pull of curiosity overtaking the pull of the bond.",
+          "th": "ภายในใจเขามองออกไปข้างนอกมากกว่าหันมามองภายใน รู้สึกกระสับกระส่ายต่อสิ่งใหม่ที่ตัวเขาเองยังเรียกชื่อไม่ได้ ไม่ใช่การปฏิเสธอย่างคำนวณไว้ เพียงแรงดึงของความอยากรู้ที่มากกว่าแรงดึงของความสัมพันธ์ในตอนนี้"
+        },
+        "path_forward": {
+          "en": "This distance leads into a phase of unsupervised wandering for them. The bond may circle back if their wandering teaches them something about what they left, but no return is being planned — only watched.",
+          "th": "ระยะห่างนี้กำลังพาเขาเข้าสู่ช่วงของการเดินทางที่ไม่มีใครคอยกำกับ ความสัมพันธ์อาจวนกลับมาหากการเดินทางของเขาสอนให้รู้บางอย่างเกี่ยวกับสิ่งที่ทิ้งไว้ แต่ยังไม่มีการกลับมาแบบวางแผน มีเพียงการดูว่ามันจะพาไปทางใด"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A reckless misjudgement or a quiet fear of commitment made them retreat before they could even name what they were retreating from. The trigger was more inner anxiety than any single event between you.",
+          "th": "การตัดสินใจที่รีบร้อนหรือความกลัวการผูกมัดที่ซ่อนอยู่เงียบๆ ทำให้เขาถอยออกไปก่อนที่จะรู้ตัวด้วยซ้ำว่าถอยจากอะไร สิ่งที่กระตุ้นมาจากความกังวลภายในของเขามากกว่าเหตุการณ์ใดเหตุการณ์หนึ่งระหว่างคุณ"
+        },
+        "inner_state": {
+          "en": "They feel cornered by their own immaturity — knowing on some level they fled rather than spoke. There is quiet shame mixed with relief in their withdrawal, and neither feeling is fully welcomed.",
+          "th": "เขารู้สึกถูกบีบจากความยังไม่พร้อมของตัวเอง ลึกๆ รู้ว่าเขาเลือกหนีแทนที่จะเลือกพูด มีความรู้สึกผิดเงียบๆ ปนกับความโล่งใจในการถอยห่างของเขา และทั้งสองความรู้สึกนั้นเขาก็ยังไม่ได้ต้อนรับให้เต็มที่"
+        },
+        "path_forward": {
+          "en": "The distance leads toward either a clumsy delayed return or a quiet acceptance that they were not ready for what was forming. Either resolution belongs more to their growth than to anything you do.",
+          "th": "ระยะห่างนี้นำไปสู่การกลับมาแบบเก้ๆ กังๆ ในภายหลัง หรือการยอมรับเงียบๆ ว่าเขายังไม่พร้อมกับสิ่งที่กำลังก่อตัวขึ้น ไม่ว่าจะเป็นทางไหน คำตอบนั้นอยู่ที่การเติบโตของเขา ไม่ใช่ที่สิ่งที่คุณทำ"
+        }
+      }
+    },
+    "02-the-magician": {
+      "upright": {
+        "trigger": {
+          "en": "Their focus narrowed onto a project, goal, or external commitment that needed every tool they had. Pulling back from the bond felt less like leaving and more like clearing the workbench.",
+          "th": "ความสนใจของเขาแคบลงเข้าไปที่งาน เป้าหมาย หรือภาระภายนอกบางอย่างที่ต้องใช้ทุกเครื่องมือที่เขามี การถอยห่างจากความสัมพันธ์รู้สึกน้อยกว่าการจากไป และเหมือนการเคลียร์โต๊ะทำงานให้พร้อมมากกว่า"
+        },
+        "inner_state": {
+          "en": "Inside, they are channeling everything toward what they are trying to build. The bond hasn't been dismissed — it has been set aside, in a place they can find again when their hands are free.",
+          "th": "ภายในใจเขากำลังทุ่มทุกอย่างไปกับสิ่งที่กำลังสร้าง ความสัมพันธ์ไม่ได้ถูกตัดทิ้ง เพียงแต่ถูกวางพักไว้ในที่ที่เขาจะกลับมาหามันได้เมื่อมือว่างจากภาระเหล่านั้น"
+        },
+        "path_forward": {
+          "en": "The distance leads into a building phase that has its own timeline. Re-engagement is possible when their work releases them, but their work — not the bond — will set the pace.",
+          "th": "ระยะห่างนี้นำเข้าสู่ช่วงเวลาของการสร้างที่มีจังหวะของมันเอง การกลับมาเชื่อมโยงเป็นไปได้เมื่อเขาเสร็จจากภาระงาน แต่งาน ไม่ใช่ความสัมพันธ์ จะเป็นตัวกำหนดจังหวะ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A misuse of charm or a subtle self-deception about their own intentions tilted things sideways. The pullback may look strategic to them, but it carries an undertone of avoidance rather than focus.",
+          "th": "การใช้เสน่ห์ผิดทาง หรือการหลอกตัวเองอย่างแนบเนียนเกี่ยวกับเจตนาของตัวเอง ทำให้เรื่องเอียงออกไป การถอยห่างอาจดูเหมือนกลยุทธ์สำหรับเขา แต่ใต้นั้นเป็นการหลีกเลี่ยงมากกว่าการโฟกัส"
+        },
+        "inner_state": {
+          "en": "Their intent is scattered and they sense it. There is a quiet awareness that they're performing more than feeling, and that the silence is easier than naming what's actually true for them right now.",
+          "th": "เจตนาของเขากระจัดกระจาย และเขาก็รับรู้ได้ มีความตระหนักเงียบๆ ว่าเขากำลังแสดงมากกว่ารู้สึก และความเงียบนั้นง่ายกว่าการเรียกชื่อสิ่งที่เป็นจริงในใจของเขาตอนนี้"
+        },
+        "path_forward": {
+          "en": "Real movement only comes once they let the performance drop. Until they choose authenticity over impression, the distance will keep producing complicated, surface-level exchanges rather than honest ones.",
+          "th": "การเคลื่อนไหวที่แท้จริงจะมาก็ต่อเมื่อเขายอมวางการแสดงลง จนกว่าเขาจะเลือกความเป็นตัวเองเหนือการสร้างภาพ ระยะห่างจะยังให้ผลเป็นการพูดคุยที่ผิวเผินและซับซ้อน แทนการสื่อสารที่ซื่อตรง"
+        }
+      }
+    },
+    "03-the-high-priestess": {
+      "upright": {
+        "trigger": {
+          "en": "A quiet inner knowing pulled them inward, with no single event you could point to. Something they sensed but couldn't name yet asked for silence rather than conversation.",
+          "th": "ความรู้เงียบๆ ภายในใจดึงเขาเข้าหาตัวเอง โดยไม่มีเหตุการณ์ใดเหตุการณ์หนึ่งที่คุณจะชี้ได้ บางสิ่งที่เขารู้สึกได้แต่ยังเรียกชื่อไม่ได้ ขอความเงียบมากกว่าการพูดคุย"
+        },
+        "inner_state": {
+          "en": "Inside they are listening — to themselves, to the bond, to a slow understanding still forming. Words feel premature, and reaching out would interrupt something that needs to stay private a little longer.",
+          "th": "ภายในใจเขากำลังฟัง ฟังตัวเอง ฟังความสัมพันธ์ ฟังความเข้าใจช้าๆ ที่ยังกำลังก่อตัว คำพูดยังรู้สึกเร็วเกินไป และการสื่อสารจะเป็นการขัดจังหวะบางสิ่งที่ยังต้องการอยู่เงียบๆ สักระยะ"
+        },
+        "path_forward": {
+          "en": "A slow private resolution is forming. Clarity will likely emerge without spectacle — through a small realization rather than a dramatic conversation — and the timing belongs to their inner pace.",
+          "th": "การคลี่คลายช้าๆ และเป็นส่วนตัวกำลังก่อตัวอยู่ ความชัดเจนน่าจะเกิดขึ้นโดยไม่มีฉากใหญ่ จากการตระหนักเล็กๆ มากกว่าบทสนทนาดราม่า และจังหวะของมันเป็นของจังหวะภายในของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They are confusing intuition with avoidance, suppressing what they sense rather than facing it. The pullback came from looking away, not from looking deeper.",
+          "th": "เขากำลังสับสนระหว่างสัญชาตญาณกับการหลีกหนี กดทับสิ่งที่เขารู้สึกได้แทนที่จะเผชิญหน้ากับมัน การถอยห่างมาจากการมองออก ไม่ใช่การมองเข้าลึกขึ้น"
+        },
+        "inner_state": {
+          "en": "Inside, they're ignoring their own gut and pretending they don't know what they know. The fog is partly self-made, and they sense that too — which makes the silence feel even thicker.",
+          "th": "ภายในใจเขากำลังเพิกเฉยต่อสัญชาตญาณของตัวเอง และทำเป็นไม่รู้ในสิ่งที่ตัวเองรู้ หมอกบางส่วนเขาก่อขึ้นเอง และเขาก็รู้สึกได้ ทำให้ความเงียบยิ่งหนาขึ้นกว่าเดิม"
+        },
+        "path_forward": {
+          "en": "A longer fog before clarity returns. The bond stays paused until they stop refusing what their own intuition has been telling them — there is no shortcut around their honesty with themselves.",
+          "th": "หมอกที่ยาวนานกว่าก่อนที่ความชัดเจนจะกลับมา ความสัมพันธ์จะหยุดนิ่งอยู่จนกว่าเขาจะเลิกปฏิเสธสิ่งที่สัญชาตญาณของตัวเองพยายามบอก ไม่มีทางลัดอ้อมความซื่อตรงต่อตัวเองของเขา"
+        }
+      }
+    },
+    "04-the-empress": {
+      "upright": {
+        "trigger": {
+          "en": "They needed space to tend something — their own wellbeing, another relationship, a project that needed care. The pullback was a return to nourishing what was already in their life, not a turning against you.",
+          "th": "เขาต้องการพื้นที่เพื่อดูแลบางสิ่ง ดูแลความเป็นอยู่ของตัวเอง ความสัมพันธ์อื่น หรืองานที่ต้องการการเอาใจใส่ การถอยห่างคือการกลับไปหล่อเลี้ยงสิ่งที่อยู่ในชีวิตเขาอยู่แล้ว ไม่ใช่การหันหลังให้คุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are tending to themselves first — not from coldness but from a felt need to replenish what was being spent too quickly. There is care still there, but it is being directed inward.",
+          "th": "ภายในใจเขากำลังดูแลตัวเองก่อน ไม่ใช่จากความเย็นชา แต่จากความรู้สึกว่าต้องเติมเต็มสิ่งที่กำลังหมดไปเร็วเกินไป ความใส่ใจยังอยู่ แต่กำลังถูกหันเข้าหาตัวเอง"
+        },
+        "path_forward": {
+          "en": "A return may come only when their nourishment makes room for you again. Forcing the timing would deplete what they are trying to restore, and the bond's chance lies in respecting their slow refill.",
+          "th": "การกลับมาอาจเกิดขึ้นได้เมื่อความเต็มของเขาเปิดพื้นที่ให้คุณอีกครั้ง การเร่งจังหวะจะทำให้สิ่งที่เขาพยายามฟื้นฟูร่อยหรอลง โอกาสของความสัมพันธ์อยู่ที่การเคารพการเติมเต็มช้าๆ ของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Emotional over-giving or smothering exhausted them — possibly from your side, possibly from their own pattern of pouring out too much. Either way, the well went dry and they retreated to refill.",
+          "th": "การให้ทางอารมณ์ที่มากเกินไป หรือความรู้สึกถูกประคบประหงมจนอึดอัด ทำให้เขาหมดแรง อาจมาจากฝั่งคุณหรือจากนิสัยของเขาเองที่เทออกมากเกินไป ไม่ว่าจะทางไหน บ่อก็แห้ง และเขาถอยไปเติมใหม่"
+        },
+        "inner_state": {
+          "en": "Inside, they are depleted — not angry, just empty. Protecting whatever inner resource remains feels more urgent than maintaining the bond, even one they value.",
+          "th": "ภายในใจเขาหมดเรี่ยวแรง ไม่ใช่โกรธ เพียงว่างเปล่า การปกป้องสิ่งที่ยังเหลืออยู่ภายในรู้สึกเร่งด่วนกว่าการรักษาความสัมพันธ์ แม้ความสัมพันธ์ที่เขาให้ค่าก็ตาม"
+        },
+        "path_forward": {
+          "en": "Necessary distance until they feel restored. Re-approach gently, without expectation; the bond may resume but only at the pace their replenishment allows.",
+          "th": "ระยะห่างที่จำเป็นจนกว่าเขาจะรู้สึกฟื้นตัว การกลับเข้าใกล้อย่างนุ่มนวลโดยไม่คาดหวัง ความสัมพันธ์อาจกลับมาได้ แต่ในจังหวะที่การฟื้นตัวของเขาอนุญาตเท่านั้น"
+        }
+      }
+    },
+    "05-the-emperor": {
+      "upright": {
+        "trigger": {
+          "en": "They needed to reassert order in their own life. The bond's softness collided with their need for structure, and they stepped back to restore the boundaries that make them feel like themselves.",
+          "th": "เขาต้องการจัดระเบียบชีวิตของตัวเองอีกครั้ง ความอ่อนของความสัมพันธ์กระทบกับความต้องการโครงสร้าง และเขาถอยกลับเพื่อฟื้นขอบเขตที่ทำให้เขารู้สึกเป็นตัวเอง"
+        },
+        "inner_state": {
+          "en": "Inside, they are focused on stability and control. Emotional closeness feels like surrender, and surrender feels unsafe right now — even if a part of them quietly misses what closeness offered.",
+          "th": "ภายในใจเขากำลังจดจ่อกับความมั่นคงและการควบคุม ความใกล้ชิดทางอารมณ์รู้สึกเหมือนการยอม และการยอมรู้สึกไม่ปลอดภัยในตอนนี้ แม้ส่วนหนึ่งของเขาจะคิดถึงสิ่งที่ความใกล้ชิดเคยให้อยู่เงียบๆ"
+        },
+        "path_forward": {
+          "en": "Return becomes possible when they have defined what structure they need. The bond may stand inside their order if you respect their framework — but not before they have rebuilt it.",
+          "th": "การกลับมาเป็นไปได้เมื่อเขานิยามชัดแล้วว่าโครงสร้างที่ต้องการคืออะไร ความสัมพันธ์อาจยืนอยู่ภายในระเบียบของเขาได้หากคุณเคารพกรอบของเขา แต่ยังไม่ใช่ก่อนที่เขาจะสร้างกรอบนั้นใหม่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Rigidity or fear of vulnerability — dressed up as discipline — made them harden against the bond. What looks like firmness from outside is often protection from inside.",
+          "th": "ความแข็งกระด้างหรือความกลัวที่จะอ่อนแอ ที่เขาหุ้มไว้ในนามของวินัย ทำให้เขาแข็งขึ้นกับความสัมพันธ์ สิ่งที่ดูเหมือนความเด็ดเดี่ยวจากภายนอก มักเป็นการปกป้องตัวเองจากภายใน"
+        },
+        "inner_state": {
+          "en": "Inside, they are defensively in control — punishing themselves and you with structure that doesn't actually serve them. There's pride in the wall and quiet loneliness behind it.",
+          "th": "ภายในใจเขากำลังควบคุมแบบป้องกันตัว ทั้งลงโทษตัวเองและคุณด้วยโครงสร้างที่ไม่ได้รับใช้เขาจริงๆ มีความภูมิใจในกำแพง และมีความเหงาเงียบๆ อยู่ข้างหลังกำแพงนั้น"
+        },
+        "path_forward": {
+          "en": "The wall thickens unless they choose flexibility. The bond's path depends entirely on whether they soften the rules they have set against themselves — your role here is limited.",
+          "th": "กำแพงจะหนาขึ้นจนกว่าเขาจะเลือกความยืดหยุ่น เส้นทางของความสัมพันธ์ขึ้นอยู่ทั้งหมดว่าเขาจะอ่อนกฎที่ตั้งไว้กับตัวเองหรือไม่ บทบาทของคุณตรงนี้มีจำกัด"
+        }
+      }
+    },
+    "06-the-hierophant": {
+      "upright": {
+        "trigger": {
+          "en": "External pressure from family, community, or role expectations made the bond feel out of place. The pullback came from the weight of an inherited framework, not from a private change of heart.",
+          "th": "แรงกดดันจากภายนอก จากครอบครัว สังคม หรือบทบาทที่ถูกคาดหวัง ทำให้ความสัมพันธ์รู้สึกไม่เข้าที่ การถอยห่างมาจากน้ำหนักของกรอบที่ถูกถ่ายทอดมา ไม่ใช่จากการเปลี่ยนใจส่วนตัว"
+        },
+        "inner_state": {
+          "en": "Inside, they are weighing this bond against the world they grew up inside. Their context resists, and they haven't decided yet which voice to follow — yours, or the one they were taught to obey.",
+          "th": "ภายในใจเขากำลังชั่งน้ำหนักความสัมพันธ์นี้กับโลกที่เขาเติบโตมา บริบทของเขาต้านไว้ และเขายังไม่ตัดสินใจว่าจะฟังเสียงใด ของคุณ หรือเสียงที่เขาถูกสอนให้เชื่อฟัง"
+        },
+        "path_forward": {
+          "en": "A slow return is possible only if they reconcile their inner truth with their outer role. That reconciliation belongs to them; you can be patient, but you cannot do their negotiation for them.",
+          "th": "การกลับมาช้าๆ เป็นไปได้ก็ต่อเมื่อเขาประสานความจริงภายในกับบทบาทภายนอกได้ การประสานนั้นเป็นของเขา คุณรอด้วยความอดทนได้ แต่ไม่สามารถทำการต่อรองนั้นแทนเขาได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A rebellion against their own conditioning got pointed in the wrong direction — at you, by accident. The retreat was less about the bond and more about pushing back at something older.",
+          "th": "การต่อต้านสิ่งที่หล่อหลอมตัวเขาถูกชี้ไปผิดทิศ มาที่คุณโดยบังเอิญ การถอยห่างไม่ได้เกี่ยวกับความสัมพันธ์เท่าไหร่ และเป็นการผลักดันสิ่งที่เก่ากว่าออกไปมากกว่า"
+        },
+        "inner_state": {
+          "en": "Inside, they are conflicted — testing what they actually believe against what they were taught to want. The bond got caught in the middle of an argument they are having with themselves.",
+          "th": "ภายในใจเขาขัดแย้งกับตัวเอง กำลังลองดูว่าเขาเชื่อในสิ่งใดจริงๆ เทียบกับสิ่งที่เขาถูกสอนให้อยาก ความสัมพันธ์ถูกดึงเข้าไปอยู่ตรงกลางของการเถียงที่เขามีกับตัวเอง"
+        },
+        "path_forward": {
+          "en": "Clarity comes once they finish their internal rebellion. Until then, the distance is part of an unresolved private chapter — the bond's fate waits on the verdict they will eventually reach.",
+          "th": "ความชัดเจนจะมาเมื่อเขาเดินผ่านการต่อต้านภายในของตัวเองจนจบ จนถึงตอนนั้น ระยะห่างเป็นส่วนหนึ่งของบทส่วนตัวที่ยังไม่จบ ชะตาของความสัมพันธ์รอคำตัดสินที่เขาจะไปถึงในที่สุด"
+        }
+      }
+    },
+    "07-the-lovers": {
+      "upright": {
+        "trigger": {
+          "en": "A values conflict surfaced — between what the bond offered and what they were also being called toward elsewhere. The choice felt too large to make while still in close contact with you.",
+          "th": "ความขัดแย้งทางคุณค่าผุดขึ้น ระหว่างสิ่งที่ความสัมพันธ์ให้ กับสิ่งที่กำลังเรียกเขาไปที่อื่นด้วย ทางเลือกรู้สึกใหญ่เกินกว่าจะตัดสินใจในขณะที่ยังอยู่ใกล้คุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are choosing — between you and another path, or between two versions of themselves the bond illuminates. The pullback is the space they need to feel which choice fits the deeper truth.",
+          "th": "ภายในใจเขากำลังเลือก ระหว่างคุณกับเส้นทางอื่น หรือระหว่างตัวเองสองเวอร์ชั่นที่ความสัมพันธ์สะท้อนให้เห็น การถอยห่างคือพื้นที่ที่เขาต้องการเพื่อจะรู้สึกว่าทางเลือกใดเข้ากับความจริงที่ลึกกว่า"
+        },
+        "path_forward": {
+          "en": "Clarity will come from their choice, not from your appeal. Whatever they decide, the result is likely to feel honest — even if the honesty is hard. Pressing them now risks distorting that choice.",
+          "th": "ความชัดเจนจะมาจากการเลือกของเขา ไม่ใช่จากการที่คุณวิงวอน ไม่ว่าเขาจะตัดสินอย่างไร ผลน่าจะรู้สึกซื่อตรง แม้ความซื่อตรงนั้นจะยาก การกดดันเขาตอนนี้เสี่ยงต่อการบิดเบือนทางเลือกของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Mismatched values that had been quietly tolerated became too loud to ignore. Something between you didn't actually align, and they noticed it before either of you spoke it.",
+          "th": "ความไม่ลงรอยทางคุณค่าที่เคยอดทนกันเงียบๆ ดังขึ้นจนเพิกเฉยไม่ได้ บางอย่างระหว่างคุณไม่ได้ลงล็อกกันจริงๆ และเขาสังเกตเห็นก่อนที่ใครจะพูดออกมา"
+        },
+        "inner_state": {
+          "en": "Inside, regret and self-doubt are tangled — about whether they should have spoken sooner, whether they pulled back too quickly, and whether the mismatch they sensed is even real.",
+          "th": "ภายในใจเขามีความเสียดายและความสงสัยในตัวเองพันกันอยู่ ว่าเขาควรจะพูดเร็วกว่านี้ไหม ว่าเขาถอยเร็วเกินไปไหม และว่าความไม่ลงรอยที่เขารู้สึกได้นั้นจริงไหม"
+        },
+        "path_forward": {
+          "en": "The path forward is either an ending or an honest renegotiation — no neutral middle holds for long. The bond needs each of you to name what you actually want, even if naming it hurts.",
+          "th": "เส้นทางต่อไปคือการจบ หรือการต่อรองใหม่อย่างซื่อตรง ไม่มีตรงกลางที่จะอยู่ได้นาน ความสัมพันธ์ต้องการให้แต่ละคนเรียกชื่อสิ่งที่ตัวเองอยากได้จริงๆ แม้การเรียกชื่อนั้นจะเจ็บ"
+        }
+      }
+    },
+    "08-the-chariot": {
+      "upright": {
+        "trigger": {
+          "en": "A focused push toward a goal of their own left no room for the bond at this pace. They are mid-momentum and slowing down feels like losing the run they have built.",
+          "th": "การมุ่งหน้าไปที่เป้าหมายของตัวเองทำให้ไม่มีพื้นที่เหลือสำหรับความสัมพันธ์ในจังหวะนี้ เขากำลังอยู่ในแรงเหวี่ยง และการชะลอลงรู้สึกเหมือนการสูญเสียจังหวะที่ตัวเองสร้างมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are steering — eyes on the road, hands tight. Emotional check-ins feel like they would break their concentration, even though some part of them knows the bond is one of the things they're driving toward.",
+          "th": "ภายในใจเขากำลังถือพวงมาลัย สายตาจดที่ถนน มือกำแน่น การเช็คความรู้สึกรู้สึกเหมือนจะทำให้สมาธิเขาแตก แม้ส่วนหนึ่งของเขาจะรู้ว่าความสัมพันธ์เป็นหนึ่งในสิ่งที่เขากำลังขับไปหา"
+        },
+        "path_forward": {
+          "en": "A return may come once they reach their next checkpoint — on their schedule, not yours. The bond can survive the speed if you trust their direction without demanding to ride along.",
+          "th": "การกลับมาอาจมาเมื่อเขาถึงจุดหมายถัดไปของตัวเอง ในตารางของเขา ไม่ใช่ของคุณ ความสัมพันธ์อยู่รอดผ่านความเร็วได้ ถ้าคุณเชื่อในทิศทางของเขาโดยไม่บังคับให้นั่งไปด้วย"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They lost their direction, and the distance is a stalled engine rather than real progress. The pullback may look like motion, but it's actually a quiet kind of being stuck.",
+          "th": "เขาสูญทิศทาง และระยะห่างนี้คือเครื่องยนต์ที่ดับ ไม่ใช่ความคืบหน้าจริง การถอยห่างอาจดูเหมือนการเคลื่อนไหว แต่จริงๆ คือการติดอยู่กับที่อย่างเงียบๆ"
+        },
+        "inner_state": {
+          "en": "Inside, they are confused about where to steer. Pulling away feels less like a choice and more like a pause they don't quite know how to end — the wheels are turning but going nowhere.",
+          "th": "ภายในใจเขาสับสนว่าจะหันไปทางไหน การถอยห่างไม่ค่อยรู้สึกเหมือนทางเลือก แต่เหมือนการหยุดที่เขาไม่รู้จะสิ้นสุดอย่างไร ล้อยังหมุนแต่ไม่ไปไหน"
+        },
+        "path_forward": {
+          "en": "Things stay stuck until they find direction again — with or without you. The bond's chance depends on whether they can name what they're actually steering toward, rather than driving in circles around it.",
+          "th": "ทุกอย่างจะติดอยู่จนกว่าเขาจะพบทิศทางใหม่ ไม่ว่าจะมีคุณอยู่ด้วยหรือไม่ โอกาสของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเรียกชื่อสิ่งที่ตัวเองกำลังขับไปหาได้ไหม แทนที่จะวนรอบมัน"
+        }
+      }
+    },
+    "09-strength": {
+      "upright": {
+        "trigger": {
+          "en": "They needed to be gentle with themselves at a moment when the bond's intensity felt too loud. The retreat was an act of self-care, not a verdict against the connection.",
+          "th": "เขาต้องการอ่อนโยนกับตัวเองในช่วงที่ความเข้มของความสัมพันธ์รู้สึกดังเกินไป การถอยห่างคือการดูแลตัวเอง ไม่ใช่คำตัดสินต่อความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are quietly self-tending — conserving emotional strength they sense they will need. There is care for the bond, but it is being held at a distance where they can still breathe.",
+          "th": "ภายในใจเขากำลังดูแลตัวเองอย่างเงียบ สงวนกำลังใจที่เขารู้สึกว่าจะต้องใช้ มีความห่วงใยต่อความสัมพันธ์ แต่ถูกถือไว้ในระยะที่เขายังหายใจได้"
+        },
+        "path_forward": {
+          "en": "A return is likely once their inner work settles — and the version of them that comes back may be more grounded than the one that pulled away. The distance is a small kindness to both of you.",
+          "th": "การกลับมามีแนวโน้มเกิดขึ้นเมื่องานภายในของเขานิ่งลง และเวอร์ชั่นของเขาที่กลับมาอาจหนักแน่นกว่าเวอร์ชั่นที่ถอยไป ระยะห่างนี้คือความเมตตาเล็กๆ ต่อทั้งสองคน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Insecurity overwhelmed their capacity to stay open. Some part of them felt unworthy of the bond, and pulling away was easier than risking that the feeling might be confirmed.",
+          "th": "ความไม่มั่นคงภายในกลบความสามารถที่จะเปิดอยู่ ส่วนหนึ่งของเขารู้สึกว่าตัวเองไม่คู่ควรกับความสัมพันธ์ และการถอยห่างง่ายกว่าการเสี่ยงให้ความรู้สึกนั้นถูกยืนยัน"
+        },
+        "inner_state": {
+          "en": "Inside, their self-worth is fragile and intimacy threatens whatever armor they have. They are not pulling away from you so much as from the version of themselves they fear you might see.",
+          "th": "ภายในใจเขามีคุณค่าตัวเองที่เปราะ และความใกล้ชิดคุกคามเกราะที่เขามี เขาไม่ได้ถอยห่างจากคุณเท่าไหร่ แต่ถอยจากเวอร์ชั่นของตัวเองที่กลัวว่าคุณจะเห็น"
+        },
+        "path_forward": {
+          "en": "Clarity comes only if they meet what scared them rather than keep avoiding it. The bond's path forward depends on whether they choose to grow into the closeness or shrink away from it.",
+          "th": "ความชัดเจนจะมาก็ต่อเมื่อเขาเผชิญกับสิ่งที่ทำให้กลัว แทนการหลีกเลี่ยงต่อไป เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกเติบโตเข้าหาความใกล้ชิด หรือหดตัวออกห่าง"
+        }
+      }
+    },
+    "10-the-hermit": {
+      "upright": {
+        "trigger": {
+          "en": "A chosen retreat to think — not a rejection but a contemplation. They needed to sit with their own questions before they could meet you with any real answer.",
+          "th": "การถอยตัวออกมาเพื่อคิดที่เขาเลือกเอง ไม่ใช่การปฏิเสธ แต่เป็นการใคร่ครวญ เขาต้องการนั่งกับคำถามของตัวเองก่อนที่จะกลับมาพบคุณพร้อมคำตอบที่แท้จริง"
+        },
+        "inner_state": {
+          "en": "Inside, they are processing alone — by design. Communication right now would feel premature, like answering a question they haven't finished asking themselves.",
+          "th": "ภายในใจเขากำลังประมวลคำถามอยู่คนเดียว ตามที่ตั้งใจ การสื่อสารในตอนนี้จะรู้สึกเร็วเกินไป เหมือนการตอบคำถามที่ตัวเองยังถามไม่จบ"
+        },
+        "path_forward": {
+          "en": "A return is possible once they have the answer they have been searching for. The bond may resume on different ground — quieter, more considered — when their solitude has served its purpose.",
+          "th": "การกลับมาเป็นไปได้เมื่อเขาได้คำตอบที่ตามหา ความสัมพันธ์อาจดำเนินต่อบนพื้นที่ต่างไป เงียบกว่า ใคร่ครวญกว่า เมื่อความสันโดษของเขาได้ทำหน้าที่ของมันแล้ว"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Isolation as avoidance — pulling away to stop feeling rather than to reflect. The retreat looks like contemplation from outside but is closer to hiding from inside.",
+          "th": "การแยกตัวในฐานะการหลีกหนี ถอยห่างเพื่อหยุดรู้สึก แทนการใคร่ครวญ การถอยตัวดูเหมือนการพิจารณาจากภายนอก แต่ใกล้กับการซ่อนตัวจากภายใน"
+        },
+        "inner_state": {
+          "en": "Inside, they are hiding from what the bond surfaced, not reflecting on it. The silence is defensive — built to keep what they don't want to feel safely outside the door.",
+          "th": "ภายในใจเขากำลังหลบจากสิ่งที่ความสัมพันธ์ทำให้ผุดขึ้น ไม่ได้กำลังพิจารณามัน ความเงียบเป็นแนวป้องกัน สร้างขึ้นเพื่อกันสิ่งที่เขาไม่อยากรู้สึกให้อยู่นอกประตู"
+        },
+        "path_forward": {
+          "en": "Prolonged distance until the isolation becomes unbearable enough to break. The bond's path depends on whether they choose to come out before the hiding turns into a habit they no longer notice.",
+          "th": "ระยะห่างที่ยาวนานจนกว่าการแยกตัวจะทนไม่ไหวพอที่จะแตกสลาย เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกออกมาก่อนที่การซ่อนจะกลายเป็นนิสัยที่เขาไม่สังเกตเห็นอีกต่อไป"
+        }
+      }
+    },
+    "11-wheel-of-fortune": {
+      "upright": {
+        "trigger": {
+          "en": "An external timing shift moved them out of reach — circumstances rearranged themselves and the bond got caught in the rearrangement. The trigger wasn't personal so much as situational.",
+          "th": "การเปลี่ยนแปลงของจังหวะภายนอกพาเขาออกห่าง สถานการณ์รอบตัวจัดเรียงตัวเองใหม่ และความสัมพันธ์ติดอยู่ในการจัดเรียงนั้น สิ่งกระตุ้นไม่ได้เป็นเรื่องส่วนตัวเท่ากับเรื่องของสถานการณ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are at the mercy of a phase — passive but not dismissive. The bond hasn't been chosen against; it's just outside what they can actively hold while a chapter of their life turns.",
+          "th": "ภายในใจเขาอยู่ในจังหวะที่ควบคุมเองไม่ได้ ตั้งรับแต่ไม่ใช่การปฏิเสธ ความสัมพันธ์ไม่ได้ถูกเลือกปฏิเสธ เพียงแต่อยู่นอกสิ่งที่เขาถือไว้ได้ในขณะที่บทหนึ่งของชีวิตเขากำลังพลิก"
+        },
+        "path_forward": {
+          "en": "A natural turn may bring them back. The cycle keeps moving and what is out of reach today can be in reach next season — but the bond's return is not something either of you can force into place.",
+          "th": "การพลิกตามธรรมชาติอาจพาเขากลับมา วงจรยังเคลื่อนต่อ และสิ่งที่อยู่นอกมือวันนี้อาจอยู่ในมือฤดูถัดไป แต่การกลับมาของความสัมพันธ์ไม่ใช่สิ่งที่ใครฝ่ายใดบังคับให้เกิดได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Bad timing they couldn't navigate. The bond and the conditions of their life simply didn't line up, and they pulled back rather than fight a current they couldn't see clearly.",
+          "th": "จังหวะที่ไม่ดีซึ่งเขาก็ไม่รู้จะรับมือยังไง ความสัมพันธ์และสภาพชีวิตของเขาไม่ได้สอดคล้องกัน และเขาเลือกถอยมากกว่าสู้กับกระแสที่ตัวเองมองไม่ชัด"
+        },
+        "inner_state": {
+          "en": "Inside, they feel stuck — unable to act on what they want, unable to fully release what they had. The distance is born of inertia, not decision.",
+          "th": "ภายในใจเขารู้สึกติดอยู่ ทำอะไรกับสิ่งที่ต้องการไม่ได้ ปล่อยสิ่งที่มีอยู่ก็ไม่ได้เต็มที่ ระยะห่างเกิดจากความเฉื่อย ไม่ใช่การตัดสินใจ"
+        },
+        "path_forward": {
+          "en": "A slower turn ahead. Clarity emerges as the conditions around them change, not from anything they actively choose — patience is the only honest posture, on both sides.",
+          "th": "การพลิกที่ช้ากว่าจะรออยู่ข้างหน้า ความชัดเจนเกิดขึ้นเมื่อสถานการณ์รอบตัวเขาเปลี่ยน ไม่ใช่จากสิ่งที่เขาเลือกเอง ความอดทนคือท่าทีที่ซื่อตรงเพียงทางเดียว สำหรับทั้งสองฝ่าย"
+        }
+      }
+    },
+    "12-justice": {
+      "upright": {
+        "trigger": {
+          "en": "An honest reckoning. They weighed the bond against what they could give and what they needed, and the math made them step back to think.",
+          "th": "การชั่งใจอย่างซื่อตรง เขาวัดความสัมพันธ์กับสิ่งที่ตัวเองให้ได้และสิ่งที่ตัวเองต้องการ และผลลัพธ์ทำให้เขาถอยออกมาคิด"
+        },
+        "inner_state": {
+          "en": "Inside, a quiet verdict is being reached. They are being honest with themselves about what is and isn't sustainable — and that honesty asks for silence while it settles.",
+          "th": "ภายในใจคำตัดสินเงียบๆ กำลังถูกเอ่ย เขากำลังซื่อตรงกับตัวเองว่าอะไรประคองต่อได้และอะไรประคองต่อไม่ได้ และความซื่อตรงนั้นขอความเงียบขณะที่มันกำลังตกตะกอน"
+        },
+        "path_forward": {
+          "en": "A clear outcome — return or release — based on facts, not feelings alone. Whatever they decide will likely feel fair, even when fairness is hard.",
+          "th": "ผลลัพธ์ที่ชัดเจน กลับมาหรือปล่อย ตามข้อเท็จจริงไม่ใช่แค่ความรู้สึก สิ่งที่เขาตัดสินจะรู้สึกเป็นธรรม แม้ความเป็นธรรมจะยาก"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Avoidance of an honest conversation they should have had. The pullback came in place of words they could not yet bring themselves to say out loud.",
+          "th": "การหลีกเลี่ยงบทสนทนาที่ซื่อตรงซึ่งควรเกิดขึ้น การถอยห่างเข้ามาแทนที่คำพูดที่เขายังไม่กล้าเอ่ยออกมา"
+        },
+        "inner_state": {
+          "en": "Inside, guilt and self-deception sit together. They know what would be fair to say, and they are choosing not to say it — and the weight of that choice is slowing everything down.",
+          "th": "ภายในใจเขามีความรู้สึกผิดและการหลอกตัวเองนั่งอยู่ด้วยกัน เขารู้ว่าอะไรซื่อตรงที่ควรพูด และเขากำลังเลือกไม่พูด น้ำหนักของการเลือกนั้นทำให้ทุกอย่างช้าลง"
+        },
+        "path_forward": {
+          "en": "No real movement until they speak the truth — to themselves first, then to you. The bond will wait, but the silence is not neutral; it is part of what needs to be addressed.",
+          "th": "ไม่มีการเคลื่อนที่จริงจนกว่าเขาจะพูดความจริง กับตัวเองก่อน แล้วจึงกับคุณ ความสัมพันธ์จะรอ แต่ความเงียบไม่ได้เป็นกลาง มันเป็นส่วนหนึ่งของสิ่งที่ต้องถูกพูดถึง"
+        }
+      }
+    },
+    "13-the-hanged-man": {
+      "upright": {
+        "trigger": {
+          "en": "A forced or chosen pause. They needed to see the bond from another angle — sideways, upside down, from a place where their usual perspective couldn't reach.",
+          "th": "การหยุดที่ถูกบังคับหรือเลือกเอง เขาต้องการเห็นความสัมพันธ์จากมุมอื่น มุมข้าง มุมกลับหัว จากที่ที่มุมมองปกติของเขาไปไม่ถึง"
+        },
+        "inner_state": {
+          "en": "Inside, they are suspended — not deciding, not acting, just looking. The stillness is the work, even though from outside it can look like nothing is happening.",
+          "th": "ภายในใจเขาแขวนอยู่ ไม่ตัดสิน ไม่กระทำ เพียงมอง ความนิ่งคืองาน แม้จากภายนอกจะดูเหมือนไม่มีอะไรเกิดขึ้น"
+        },
+        "path_forward": {
+          "en": "Clarity emerges from the pause itself, not from action. When they finally move, the move will be smaller and quieter than you might expect — but it will fit.",
+          "th": "ความชัดเจนเกิดจากการหยุดเอง ไม่ใช่จากการกระทำ เมื่อเขาเคลื่อนในที่สุด การเคลื่อนนั้นจะเล็กและเงียบกว่าที่คุณคาด แต่จะลงล็อก"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Stuck in indecision they refuse to leave. The suspension stopped being a vantage point and became a hiding place, and they noticed without changing course.",
+          "th": "ติดอยู่ในความลังเลที่เขาไม่ยอมออก การแขวนหยุดเป็นจุดมองและกลายเป็นที่ซ่อน เขาสังเกตเห็นโดยไม่เปลี่ยนเส้นทาง"
+        },
+        "inner_state": {
+          "en": "Inside, they are passively avoiding — postponing the choice indefinitely. There is a low-grade discomfort with their own paralysis, but it has not yet become uncomfortable enough to move.",
+          "th": "ภายในใจเขาหลีกเลี่ยงแบบนิ่งเฉย เลื่อนการตัดสินใจออกไปไม่มีกำหนด มีความอึดอัดต่ำๆ กับการหยุดนิ่งของตัวเอง แต่ยังไม่ถึงขั้นอึดอัดพอที่จะเคลื่อน"
+        },
+        "path_forward": {
+          "en": "The pause becomes a habit unless something breaks it. The bond's chance depends on whether something — internal or external — finally interrupts the stillness they have made comfortable.",
+          "th": "การหยุดจะกลายเป็นนิสัยจนกว่าจะมีบางอย่างทำให้แตก โอกาสของความสัมพันธ์ขึ้นอยู่กับว่าจะมีบางอย่าง ภายในหรือภายนอก ขัดจังหวะความนิ่งที่เขาเริ่มอยู่ได้สบายในที่สุดหรือไม่"
+        }
+      }
+    },
+    "14-death": {
+      "upright": {
+        "trigger": {
+          "en": "A clear ending in their internal world. An old chapter closed for them — not necessarily the bond, but something the bond was tied to — and they pulled back to make room for what comes next.",
+          "th": "การจบที่ชัดเจนในโลกภายในของเขา บทเก่าจบลง ไม่จำเป็นว่าจะเป็นความสัมพันธ์ แต่เป็นบางสิ่งที่ความสัมพันธ์ผูกอยู่ด้วย และเขาถอยห่างเพื่อเปิดที่ให้สิ่งที่จะตามมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are grieving an old version of themselves — or of the bond — and making room for whatever takes its place. Death here is not cruelty; it is metabolism.",
+          "th": "ภายในใจเขากำลังเสียใจกับเวอร์ชั่นเก่าของตัวเอง หรือของความสัมพันธ์ และกำลังเปิดที่ให้สิ่งใดก็ตามที่จะเข้ามาแทน ความตายตรงนี้ไม่ใช่ความใจร้าย เป็นการย่อยสลายและฟื้นใหม่"
+        },
+        "path_forward": {
+          "en": "Real release is underway. What returns — if anything does — will be different in shape from what left. Trying to preserve the old form would only delay something already in motion.",
+          "th": "การปล่อยที่แท้จริงกำลังเกิดขึ้น สิ่งที่กลับมา ถ้ามี จะมีรูปร่างต่างจากสิ่งที่จากไป การพยายามรักษารูปเดิมไว้จะเพียงชะลอสิ่งที่กำลังเคลื่อนอยู่แล้ว"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Resistance to an ending they sense is coming. They are clinging while pulling away at the same time — and that contradiction is its own kind of distance.",
+          "th": "การต้านการจบที่เขารู้สึกว่ากำลังมา เขายึดและถอยพร้อมกัน และความขัดแย้งนั้นเองคือระยะห่างอีกแบบหนึ่ง"
+        },
+        "inner_state": {
+          "en": "Inside, they are half-decided to end and half-decided to stay. Incomplete grief is making everything heavier than it needs to be, and they sense it without being able to resolve it.",
+          "th": "ภายในใจเขาตัดสินครึ่งหนึ่งว่าจะจบ ตัดสินครึ่งหนึ่งว่าจะอยู่ ความเสียใจที่ยังไม่เสร็จทำให้ทุกอย่างหนักกว่าที่ควรจะเป็น และเขารู้สึกได้โดยที่ยังคลี่คลายไม่ได้"
+        },
+        "path_forward": {
+          "en": "A drawn-out half-ending until they accept the change. The bond's resolution depends on whether they choose to finish what has already, in some quiet way, finished itself.",
+          "th": "การจบครึ่งๆ ที่ยาวนานจนกว่าเขาจะยอมรับการเปลี่ยนแปลง การคลี่คลายของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกจบสิ่งที่อย่างเงียบๆ จบไปแล้วในระดับหนึ่งหรือไม่"
+        }
+      }
+    },
+    "15-temperance": {
+      "upright": {
+        "trigger": {
+          "en": "Needing time to find balance. The bond intensified faster than they could integrate, and they stepped back to let the mixture settle at its own rate.",
+          "th": "ต้องการเวลาเพื่อหาความสมดุล ความสัมพันธ์ทวีความเข้มเร็วกว่าที่เขาจะหลอมรวมได้ และเขาถอยออกเพื่อให้ส่วนผสมตกตะกอนในจังหวะของมันเอง"
+        },
+        "inner_state": {
+          "en": "Inside, they are slowly integrating what the bond has been showing them. Their pace can't be rushed without spilling something, and they are protecting what is forming.",
+          "th": "ภายในใจเขากำลังหลอมรวมสิ่งที่ความสัมพันธ์เปิดให้เห็นช้าๆ จังหวะของเขาเร่งไม่ได้โดยไม่ทำให้บางอย่างหก และเขากำลังปกป้องสิ่งที่กำลังก่อตัว"
+        },
+        "path_forward": {
+          "en": "Gradual reconnection is likely, on both your patience holding. The bond's chance lies in matching their rhythm rather than asking them to match yours.",
+          "th": "การเชื่อมโยงใหม่ทีละน้อยมีแนวโน้มเกิดขึ้น หากความอดทนของทั้งสองยังอยู่ โอกาสของความสัมพันธ์อยู่ที่การเข้าจังหวะของเขา ไม่ใช่ขอให้เขาเข้าจังหวะของคุณ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Emotional imbalance overwhelmed them. They couldn't find the middle and chose distance instead of trying to navigate the extremes the bond was producing.",
+          "th": "ความไม่สมดุลทางอารมณ์กลบเขา หาตรงกลางไม่เจอ และเลือกระยะห่างแทนการพยายามนำทางผ่านขั้วสองด้านที่ความสัมพันธ์กำลังก่อ"
+        },
+        "inner_state": {
+          "en": "Inside, they swing between over-pour and shutdown, with no middle ground yet. Each extreme exhausts them, and pulling away has become the only steady place they can find.",
+          "th": "ภายในใจเขาแกว่งระหว่างการเทมากเกินไปกับการปิดสนิท ยังไม่มีตรงกลาง ปลายทั้งสองด้านทำให้เขาหมดแรง และการถอยห่างกลายเป็นที่เดียวที่นิ่งซึ่งเขาพอจะหาเจอ"
+        },
+        "path_forward": {
+          "en": "A longer process than expected. The bond needs more time than either of you predicted, and trying to compress that time will only push things further out of balance.",
+          "th": "กระบวนการที่ยาวกว่าที่คาด ความสัมพันธ์ต้องการเวลามากกว่าที่ทั้งสองคนเดาไว้ การพยายามบีบเวลานั้นจะทำให้ทุกอย่างเสียสมดุลมากขึ้น"
+        }
+      }
+    },
+    "16-the-devil": {
+      "upright": {
+        "trigger": {
+          "en": "A pattern in the bond began to feel like a trap they needed to step out of — even briefly — to test whether they could. The trigger was the dynamic itself, not any one moment between you.",
+          "th": "รูปแบบในความสัมพันธ์เริ่มรู้สึกเหมือนกับดักที่เขาต้องก้าวออก แม้เพียงชั่วครู่ เพื่อทดสอบว่าตัวเองทำได้ไหม สิ่งที่กระตุ้นคือรูปแบบนั้นเอง ไม่ใช่ช่วงเวลาใดช่วงเวลาหนึ่งระหว่างคุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are aware of an attachment they don't fully approve of in themselves. The distance is a kind of test — a way of asking whether they are choosing the bond, or simply caught by it.",
+          "th": "ภายในใจเขาตระหนักถึงความผูกพันที่ตัวเองไม่เห็นด้วยอย่างเต็มที่ ระยะห่างเป็นการทดสอบในแบบหนึ่ง วิธีถามว่าตัวเองกำลังเลือกความสัมพันธ์ หรือเพียงถูกมันจับไว้"
+        },
+        "path_forward": {
+          "en": "Clarity comes if they can name what bound them in the first place. If they can't, the pattern returns — sometimes with you, sometimes with someone else — until the naming happens.",
+          "th": "ความชัดเจนจะมาหากเขาเรียกชื่อสิ่งที่ผูกเขาไว้ตั้งแต่แรกได้ ถ้าไม่ได้ รูปแบบจะกลับมา บางครั้งกับคุณ บางครั้งกับคนอื่น จนกว่าการเรียกชื่อจะเกิดขึ้น"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They began to recognise the chain — and the pullback is a half-break, not a full one. Something in them sees what was unhealthy and is reaching toward freedom, even if shakily.",
+          "th": "เขาเริ่มเห็นโซ่ และการถอยห่างคือการตัดครึ่ง ไม่ใช่ทั้งหมด บางสิ่งในตัวเขาเห็นสิ่งที่ไม่ดีและกำลังเอื้อมสู่อิสรภาพ แม้จะสั่นๆ"
+        },
+        "inner_state": {
+          "en": "Inside, they are ambivalent about freedom — relief mixed with the familiar pull of what they are stepping away from. The two feelings sit together and neither has won yet.",
+          "th": "ภายในใจเขาลังเลกับอิสรภาพ ความโล่งใจปนกับแรงดึงที่คุ้นเคยของสิ่งที่กำลังก้าวออก ทั้งสองความรู้สึกนั่งอยู่ด้วยกันและยังไม่มีฝั่งใดชนะ"
+        },
+        "path_forward": {
+          "en": "The bond can transform if they understand what made it sticky, not just leave it. A reformed version is possible — but only with honest examination of the pattern, not with avoidance of it.",
+          "th": "ความสัมพันธ์เปลี่ยนรูปได้หากเขาเข้าใจสิ่งที่ทำให้มันเหนียว ไม่ใช่เพียงทิ้งมัน เวอร์ชั่นที่เปลี่ยนใหม่เป็นไปได้ แต่ต้องผ่านการพิจารณารูปแบบอย่างซื่อตรงเท่านั้น ไม่ใช่การหลีกเลี่ยงมัน"
+        }
+      }
+    },
+    "17-the-tower": {
+      "upright": {
+        "trigger": {
+          "en": "A sudden disruption — internal or external — broke a structure they had been standing on. The pullback wasn't planned; it was a reaction to ground giving way under their feet.",
+          "th": "การพังที่กะทันหัน ภายในหรือภายนอก ทำให้โครงสร้างที่เขายืนอยู่แตก การถอยห่างไม่ได้วางแผน เป็นปฏิกิริยาต่อพื้นที่ทรุดใต้เท้าของเขา"
+        },
+        "inner_state": {
+          "en": "Inside, they are shaken — reassessing what they thought was solid. The bond may be one of the things they're reassessing, but the shaking is bigger than the bond.",
+          "th": "ภายในใจเขาสั่นไหว กำลังประเมินใหม่กับสิ่งที่เคยคิดว่าแน่นอน ความสัมพันธ์อาจเป็นหนึ่งในสิ่งที่ถูกประเมินใหม่ แต่การสั่นไหวใหญ่กว่าความสัมพันธ์"
+        },
+        "path_forward": {
+          "en": "Nothing returns the same. The bond can be clear-eyed rebuilt on different ground, or it can end honestly — but pretending the structure is still there would only delay the next collapse.",
+          "th": "ไม่มีอะไรกลับมาเหมือนเดิม ความสัมพันธ์สามารถถูกสร้างใหม่ด้วยตาที่ใส บนพื้นที่ต่างไป หรือจบลงอย่างซื่อตรงก็ได้ แต่การแกล้งทำว่าโครงสร้างเดิมยังอยู่จะเพียงชะลอการพังครั้งต่อไป"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An averted collapse — they pulled back to avoid a full break, sensing what was about to happen and choosing to slow the fall. The trigger was anticipation rather than impact.",
+          "th": "การพังที่ถูกชะลอ เขาถอยห่างเพื่อหลีกเลี่ยงการแตกเต็มที่ รู้สึกได้ว่าอะไรกำลังจะเกิด และเลือกชะลอการตก สิ่งที่กระตุ้นคือการคาดการณ์ ไม่ใช่การปะทะ"
+        },
+        "inner_state": {
+          "en": "Inside, they are anxious about a coming truth — bracing rather than facing. The distance is a way of postponing the conversation that would name what they both already sense.",
+          "th": "ภายในใจเขากังวลกับความจริงที่กำลังมา ตั้งรับแทนที่จะเผชิญ ระยะห่างเป็นวิธีเลื่อนบทสนทนาที่จะเรียกชื่อสิ่งที่ทั้งสองคนรู้สึกได้แล้ว"
+        },
+        "path_forward": {
+          "en": "The avoidance only delays the reckoning. Whatever they are bracing against will need to be met eventually — and the longer the bracing, the heavier the meeting.",
+          "th": "การหลีกเลี่ยงเพียงชะลอการเผชิญหน้า สิ่งที่เขากำลังเตรียมรับมือต้องถูกพบในที่สุด และยิ่งเตรียมรับนาน การพบยิ่งหนัก"
+        }
+      }
+    },
+    "18-the-star": {
+      "upright": {
+        "trigger": {
+          "en": "They needed quiet space to heal — not from you, but with you held at a careful distance while they tended a part of themselves the bond had touched.",
+          "th": "เขาต้องการพื้นที่เงียบเพื่อเยียวยา ไม่ใช่จากคุณ แต่โดยถือคุณไว้ในระยะที่ระวัง ขณะที่เขาดูแลส่วนหนึ่งของตัวเองซึ่งความสัมพันธ์ได้แตะถึง"
+        },
+        "inner_state": {
+          "en": "Inside, gentle replenishment is happening — slow, soft, almost unspoken. There is faith underneath the silence, and a quiet sense that something good is being preserved.",
+          "th": "ภายในใจการเติมเต็มอย่างนุ่มนวลกำลังเกิดขึ้น ช้า เบา แทบไม่ส่งเสียง มีศรัทธาอยู่ใต้ความเงียบ และความรู้สึกเงียบๆ ว่าบางสิ่งที่ดีกำลังถูกรักษาไว้"
+        },
+        "path_forward": {
+          "en": "A softer return once they feel restored. The bond's path forward is gentle — neither dramatic nor urgent — and patience is its closest ally.",
+          "th": "การกลับมาที่อ่อนนุ่มกว่าเมื่อเขารู้สึกฟื้นตัว เส้นทางของความสัมพันธ์อ่อนนวล ไม่ดราม่าและไม่เร่งด่วน และความอดทนคือพันธมิตรที่ใกล้ที่สุด"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Doubt eclipsed their hope. Faith in the bond — or in their own capacity to receive it — faltered, and they pulled back rather than risk discovering their doubt was right.",
+          "th": "ความสงสัยกลบความหวัง ศรัทธาในความสัมพันธ์ หรือในความสามารถของตัวเองที่จะรับมันได้ สั่นคลอน และเขาถอยห่างแทนที่จะเสี่ยงพบว่าความสงสัยของตัวเองถูก"
+        },
+        "inner_state": {
+          "en": "Inside, there is discouragement — quiet, unspectacular, the kind that doesn't announce itself but slowly drains color from things. They may not even know yet that this is what they are feeling.",
+          "th": "ภายในใจมีความท้อแท้ เงียบ ไม่อึกทึก แบบที่ไม่ประกาศตัวแต่ค่อยๆ ดูดสีออกจากสิ่งต่างๆ เขาอาจยังไม่รู้ตัวว่านี่คือสิ่งที่กำลังรู้สึก"
+        },
+        "path_forward": {
+          "en": "They need to renew their own hope first, alone. The bond cannot lend them faith they don't yet have, and trying to lend it would only widen the distance.",
+          "th": "เขาต้องฟื้นความหวังของตัวเองก่อน ด้วยตัวเอง ความสัมพันธ์ไม่สามารถยืมศรัทธาที่เขายังไม่มีให้ได้ และการพยายามยืมจะเพียงทำให้ระยะห่างกว้างขึ้น"
+        }
+      }
+    },
+    "19-the-moon": {
+      "upright": {
+        "trigger": {
+          "en": "Emotional fog. They pulled away from what they couldn't see clearly — their own feelings, your feelings, the shape of the bond — and chose distance over decisions made in poor light.",
+          "th": "หมอกทางอารมณ์ เขาถอยจากสิ่งที่มองไม่ชัด ความรู้สึกของตัวเอง ความรู้สึกของคุณ รูปร่างของความสัมพันธ์ และเลือกระยะห่างมากกว่าการตัดสินใจในแสงมัว"
+        },
+        "inner_state": {
+          "en": "Inside, they are unclear about themselves — projections, old fears, and present truth all blurred into each other. They sense the bond but can't quite trust what they are sensing.",
+          "th": "ภายในใจเขาไม่ชัดกับตัวเอง การฉายภาพ ความกลัวเก่า และความจริงปัจจุบันเบลอเข้าหากัน เขารู้สึกถึงความสัมพันธ์แต่ยังไม่ค่อยเชื่อในสิ่งที่ตัวเองรู้สึก"
+        },
+        "path_forward": {
+          "en": "Clarity emerges only as the fog lifts in its own time. Pressing for answers now would produce wrong ones, and the bond's chance is in waiting out the weather rather than trying to clear it.",
+          "th": "ความชัดเจนจะเกิดเมื่อหมอกจางในจังหวะของมันเอง การเร่งคำตอบในตอนนี้จะให้คำตอบผิด โอกาสของความสัมพันธ์คือการรอให้สภาพอากาศผ่าน ไม่ใช่พยายามทำให้มันใส"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An illusion shattering. Something they had been telling themselves about the bond — or about themselves — revealed its real shape, and the pullback came from that small uncovering.",
+          "th": "ภาพลวงตาแตก บางสิ่งที่เขาเล่ากับตัวเองเกี่ยวกับความสัมพันธ์ หรือเกี่ยวกับตัวเอง เผยรูปร่างที่แท้จริง และการถอยห่างมาจากการเปิดเผยเล็กๆ นั้น"
+        },
+        "inner_state": {
+          "en": "Inside, the anxiety is thinning and truth is surfacing despite their resistance to it. There is relief mixed with disorientation as a clearer view replaces a comfortable distortion.",
+          "th": "ภายในใจความกังวลกำลังบางลง และความจริงกำลังผุดขึ้นแม้เขาจะต้านมัน มีความโล่งใจปนกับความสับสน ขณะที่มุมมองที่ชัดขึ้นเข้ามาแทนการบิดเบือนที่เคยสบายใจกว่า"
+        },
+        "path_forward": {
+          "en": "Clearer ground ahead. What was hidden will be named, and the bond — whether it ends or continues — will move into a more honest version of itself than what it was before.",
+          "th": "พื้นที่ที่ชัดกว่าอยู่ข้างหน้า สิ่งที่ซ่อนอยู่จะถูกเรียกชื่อ และความสัมพันธ์ ไม่ว่าจะจบหรือดำเนินต่อ จะเคลื่อนเข้าสู่เวอร์ชั่นที่ซื่อตรงกว่าที่เคยเป็น"
+        }
+      }
+    },
+    "20-the-sun": {
+      "upright": {
+        "trigger": {
+          "en": "A phase of their own joy that didn't include this particular kind of intimacy. They are bright but distracted — their light is on themselves, and the bond is in its shadow for now.",
+          "th": "ช่วงของความสุขส่วนตัวที่ไม่ได้รวมความใกล้ชิดแบบนี้ไว้ด้วย เขาสว่างแต่เผลอ แสงของเขาส่องที่ตัวเอง และความสัมพันธ์อยู่ในเงาของมันในตอนนี้"
+        },
+        "inner_state": {
+          "en": "Inside, they are warmed by something the bond didn't provide. There is no rejection here — only a happiness that has its own direction, and you are not unwelcome, just outside its center.",
+          "th": "ภายในใจเขาอบอุ่นจากบางสิ่งที่ความสัมพันธ์ไม่ได้ให้ ไม่มีการปฏิเสธตรงนี้ มีเพียงความสุขที่มีทิศของมันเอง และคุณไม่ได้ถูกกีดกัน เพียงอยู่นอกจุดศูนย์กลางของมัน"
+        },
+        "path_forward": {
+          "en": "Warm reconnection is possible if both of you are honest about what each is bringing. The bond may grow brighter from this distance, or simply finish as a fond chapter — both endings are kind.",
+          "th": "การเชื่อมโยงใหม่ที่อบอุ่นเป็นไปได้ หากทั้งสองคนซื่อตรงกับสิ่งที่แต่ละคนนำมา ความสัมพันธ์อาจสว่างขึ้นจากระยะห่างนี้ หรือเพียงจบเป็นบทที่อบอุ่น ปลายทั้งสองนั้นล้วนเมตตา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "False brightness covering a private struggle. They have been performing well-being while something underneath was not well, and the bond got distance because they could not maintain the act around you.",
+          "th": "ความสว่างปลอมที่ปิดบังการดิ้นรนส่วนตัวอยู่ เขาแสดงความเป็นอยู่ที่ดีในขณะที่ใต้นั้นไม่ดี และความสัมพันธ์ได้ระยะห่างเพราะเขารักษาการแสดงนั้นต่อหน้าคุณไม่ได้"
+        },
+        "inner_state": {
+          "en": "Inside, they are pretending more wellness than they feel. The mask is heavy, and intimacy threatened to lift it — so they chose the lighter weight of distance over the heavier weight of being seen.",
+          "th": "ภายในใจเขาแสร้งว่าเป็นอยู่ดีกว่าที่รู้สึก หน้ากากหนัก และความใกล้ชิดเสี่ยงที่จะยกมันขึ้น เขาจึงเลือกน้ำหนักที่เบากว่าของระยะห่าง แทนน้ำหนักที่หนักกว่าของการถูกเห็น"
+        },
+        "path_forward": {
+          "en": "Clarity comes only when they let the mask down. The bond's path forward depends on whether they choose honesty about their actual state — not on whether you can coax the mask off for them.",
+          "th": "ความชัดเจนจะมาก็ต่อเมื่อเขายอมวางหน้ากากลง เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกซื่อตรงต่อสภาพจริงของตัวเองหรือไม่ ไม่ใช่ว่าคุณจะกล่อมให้เขาวางหน้ากากให้ได้"
+        }
+      }
+    },
+    "21-judgement": {
+      "upright": {
+        "trigger": {
+          "en": "An inner call to reassess everything — and this bond was part of the inventory. They pulled back to listen to what their life is asking of them at this point, including questions about you.",
+          "th": "เสียงเรียกภายในให้ทบทวนทุกสิ่ง และความสัมพันธ์นี้คือส่วนหนึ่งของการตรวจสอบ เขาถอยห่างเพื่อฟังว่าชีวิตขอสิ่งใดจากเขาในจุดนี้ รวมถึงคำถามเกี่ยวกับคุณด้วย"
+        },
+        "inner_state": {
+          "en": "Inside, they are weighing their life — deciding what to carry forward, what to set down, what needs to be answered honestly. The bond is being considered, not dismissed.",
+          "th": "ภายในใจเขากำลังชั่งชีวิตของตัวเอง ตัดสินว่าจะถืออะไรต่อ จะวางอะไรลง อะไรต้องตอบอย่างซื่อตรง ความสัมพันธ์กำลังถูกพิจารณา ไม่ใช่ถูกตัดทิ้ง"
+        },
+        "path_forward": {
+          "en": "A deliberate return or a deliberate release — either is honest. Whatever they decide will be a chosen movement, not a drift, and that intentionality is what the bond gains either way.",
+          "th": "การกลับมาที่ตั้งใจ หรือการปล่อยที่ตั้งใจ ทางใดก็ซื่อตรง สิ่งที่เขาตัดสินจะเป็นการเคลื่อนที่ที่เลือก ไม่ใช่ลอย และความตั้งใจนั้นคือสิ่งที่ความสัมพันธ์ได้ ไม่ว่าทางไหน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Ignoring the call. Something asked them to look at their life clearly, and they pulled back rather than answer it — distance felt easier than self-examination.",
+          "th": "การเพิกเฉยต่อเสียงเรียก บางสิ่งขอให้เขามองชีวิตของตัวเองให้ชัด และเขาถอยห่างแทนที่จะตอบ ระยะห่างง่ายกว่าการตรวจสอบตัวเอง"
+        },
+        "inner_state": {
+          "en": "Inside, they are avoiding their own truth — pretending nothing needs review, even though something quietly does. The pretense is taking energy the bond would otherwise receive.",
+          "th": "ภายในใจเขากำลังหลีกเลี่ยงความจริงของตัวเอง ทำเป็นไม่มีอะไรต้องทบทวน ทั้งที่บางอย่างเงียบๆ ต้องการ การแกล้งทำนั้นใช้พลังที่ความสัมพันธ์อาจได้รับ"
+        },
+        "path_forward": {
+          "en": "The call will repeat until they answer it. The bond's path waits on a piece of self-honesty they have not yet chosen — and your patience can only extend so far.",
+          "th": "เสียงเรียกจะซ้ำจนกว่าเขาจะตอบ เส้นทางของความสัมพันธ์รอชิ้นส่วนของความซื่อตรงต่อตัวเองที่เขายังไม่ได้เลือก และความอดทนของคุณยืดได้แค่เท่านั้น"
+        }
+      }
+    },
+    "22-the-world": {
+      "upright": {
+        "trigger": {
+          "en": "A sense of arrival in their own life made the bond feel like one room of a house they were finishing. The pullback was a step back to see the whole, not a closing of any one door.",
+          "th": "ความรู้สึกว่ามาถึงในชีวิตของตัวเอง ทำให้ความสัมพันธ์รู้สึกเหมือนห้องหนึ่งของบ้านที่เขากำลังสร้างเสร็จ การถอยห่างคือการก้าวกลับเพื่อมองทั้งหมด ไม่ใช่การปิดประตูใด"
+        },
+        "inner_state": {
+          "en": "Inside, they are integrating — gathering the pieces of what they have built into a coherent picture. The bond is part of the picture, but the picture is being arranged from a distance.",
+          "th": "ภายในใจเขากำลังหลอมรวม รวบรวมชิ้นส่วนที่เขาสร้างเป็นภาพที่สอดคล้องกัน ความสัมพันธ์เป็นส่วนหนึ่งของภาพ แต่ภาพถูกจัดเรียงจากระยะห่าง"
+        },
+        "path_forward": {
+          "en": "When their integration is done, the bond may resume in a clearer place within their larger life. Patience here serves both of you — the wholeness they are reaching for can include you.",
+          "th": "เมื่อการหลอมรวมเสร็จ ความสัมพันธ์อาจกลับมาในที่ที่ชัดกว่าภายในชีวิตที่กว้างขึ้นของเขา ความอดทนตรงนี้รับใช้ทั้งสองคน ความสมบูรณ์ที่เขากำลังเอื้อมหารวมคุณไว้ได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An almost-arrival that didn't quite land. They sensed the bond was nearing a wholeness it never reached, and pulled back from the disappointment of being so close to something complete.",
+          "th": "การเกือบถึงที่ลงไม่สนิท เขารู้สึกว่าความสัมพันธ์ใกล้ถึงความสมบูรณ์ที่มันไม่เคยไปถึง และถอยห่างจากความผิดหวังของการอยู่ใกล้สิ่งที่จะสมบูรณ์มาก"
+        },
+        "inner_state": {
+          "en": "Inside, there is unfinished business with what was almost-built. Frustration sits alongside affection, and they don't yet know which of the two should lead.",
+          "th": "ภายในใจมีเรื่องที่ยังไม่จบกับสิ่งที่เกือบสร้างเสร็จ ความหงุดหงิดนั่งข้างความรัก และเขายังไม่รู้ว่าควรให้ฝั่งไหนนำ"
+        },
+        "path_forward": {
+          "en": "Resolution requires naming what was missing rather than pretending it was close enough. The bond can be finished honestly or rebuilt honestly — but the half-state cannot be held much longer.",
+          "th": "การคลี่คลายต้องเรียกชื่อสิ่งที่ขาดไป มากกว่าแกล้งว่ามันใกล้พอแล้ว ความสัมพันธ์จบลงอย่างซื่อตรงได้ หรือสร้างใหม่อย่างซื่อตรงได้ แต่สภาพครึ่งๆ ถือไว้นานกว่านี้ไม่ได้"
+        }
+      }
+    },
+    "23-ace-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "A new spark elsewhere caught their attention. It wasn't necessarily romantic — it could be a project, a place, an interest — but it lit them up in a way that drew them away from the bond.",
+          "th": "ประกายใหม่ในที่อื่นดึงความสนใจของเขา ไม่จำเป็นต้องเป็นเรื่องโรแมนติก อาจเป็นโครงการ สถานที่ ความสนใจบางอย่าง แต่มันจุดเขาให้สว่างในแบบที่ดึงเขาออกจากความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are excited by something other than this bond. The energy is real and self-directed — not a verdict on you, but a phase of being pulled toward newness.",
+          "th": "ภายในใจเขาตื่นเต้นกับบางสิ่งที่ไม่ใช่ความสัมพันธ์นี้ พลังงานนั้นจริงและพุ่งสู่ตัวเอง ไม่ใช่คำตัดสินต่อคุณ เพียงช่วงที่เขาถูกดึงเข้าหาความใหม่"
+        },
+        "path_forward": {
+          "en": "Their fire may circle back if the new spark dims, but no promise is being made. The bond's chance lies in letting them follow the flame without resentment — and waiting to see what they bring back.",
+          "th": "ไฟของเขาอาจวนกลับมาหากประกายใหม่หรี่ลง แต่ไม่มีคำสัญญา โอกาสของความสัมพันธ์อยู่ที่การปล่อยให้เขาตามเปลวไปโดยไม่ขุ่นเคือง และรอดูสิ่งที่เขาจะพากลับมา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "The spark for you specifically dimmed. Not anger, not betrayal — just a quieter flame than there was, and they sensed it before they could explain it.",
+          "th": "ประกายสำหรับคุณโดยเฉพาะหรี่ลง ไม่ใช่ความโกรธ ไม่ใช่การทรยศ เพียงเปลวที่เงียบกว่าเดิม และเขารู้สึกได้ก่อนที่จะอธิบายเป็นคำได้"
+        },
+        "inner_state": {
+          "en": "Inside, they feel flat — uninspired in a way that has no clear cause. The heat is gone, not redirected, and they don't yet know what to do with the absence.",
+          "th": "ภายในใจเขารู้สึกเรียบๆ ไม่มีแรงบันดาลใจในแบบที่ไม่มีสาเหตุชัด ความร้อนหายไป ไม่ได้ถูกเปลี่ยนทิศ และเขายังไม่รู้จะทำอย่างไรกับการขาดหายนั้น"
+        },
+        "path_forward": {
+          "en": "The spark may not return without something genuinely new — not from effort, but from a shift in what either of you brings. Forcing warmth would only confirm the cold.",
+          "th": "ประกายอาจไม่กลับโดยปราศจากบางสิ่งที่ใหม่จริงๆ ไม่ใช่จากความพยายาม แต่จากการเปลี่ยนสิ่งที่แต่ละคนนำมา การบังคับความอบอุ่นจะเพียงยืนยันความเย็น"
+        }
+      }
+    },
+    "24-two-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "Looking far ahead, they grew uncertain whether you fit the long view they were sketching for themselves. The pullback was less rejection and more pause-to-survey.",
+          "th": "มองออกไปไกล เขาเริ่มไม่แน่ใจว่าคุณเข้ากับมุมมองระยะยาวที่กำลังร่างให้ตัวเองหรือไม่ การถอยห่างเป็นการหยุดเพื่อสำรวจมากกว่าการปฏิเสธ"
+        },
+        "inner_state": {
+          "en": "Inside, they are scanning their horizon — deciding what to plan toward and what to set aside. The bond is one item on a longer list of considerations.",
+          "th": "ภายในใจเขากำลังกวาดสายตามองขอบฟ้าของตัวเอง ตัดสินว่าจะวางแผนไปทางไหนและจะวางสิ่งใดไว้ข้างทาง ความสัมพันธ์เป็นหนึ่งในรายการของสิ่งที่ต้องพิจารณา"
+        },
+        "path_forward": {
+          "en": "Their plan will decide the bond's place, not your effort to convince them. Patience is the only respectful posture; the survey is theirs to complete.",
+          "th": "แผนของเขาจะเป็นตัวกำหนดที่ของความสัมพันธ์ ไม่ใช่ความพยายามของคุณที่จะโน้มน้าว ความอดทนคือท่าทีที่เคารพเพียงทางเดียว การสำรวจเป็นของเขาที่จะทำให้เสร็จ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Indecision about the future paralyzed them. Choosing where to point made too much pressure, and the bond's presence added weight they couldn't yet bear.",
+          "th": "ความลังเลเกี่ยวกับอนาคตทำให้เขาหยุดนิ่ง การเลือกว่าจะชี้ไปทางไหนกดดันเกินไป และการมีอยู่ของความสัมพันธ์เพิ่มน้ำหนักที่เขายังแบกไม่ไหว"
+        },
+        "inner_state": {
+          "en": "Inside, they are torn between routes and adding intimacy to the mix feels intolerable. Each option looks valid; none of them feels decided.",
+          "th": "ภายในใจเขาขาดแยกระหว่างเส้นทาง และการเพิ่มความใกล้ชิดเข้าไปในส่วนผสมรู้สึกทนไม่ได้ ตัวเลือกแต่ละทางดูสมเหตุสมผล ไม่มีทางใดที่รู้สึกถูกตัดสินแล้ว"
+        },
+        "path_forward": {
+          "en": "Stuck until they choose a direction. The bond cannot move forward inside their indecision — patience helps, but the choice belongs to them alone.",
+          "th": "ติดอยู่จนกว่าเขาจะเลือกทิศ ความสัมพันธ์เคลื่อนต่อภายในความลังเลของเขาไม่ได้ ความอดทนช่วย แต่ทางเลือกเป็นของเขาฝ่ายเดียว"
+        }
+      }
+    },
+    "25-three-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "They are waiting for something else to land — a result, an outcome, a confirmation — and the bond is paused in the meantime. The distance is not refusal; it is anticipation.",
+          "th": "เขากำลังรอบางสิ่งอื่นที่จะลง ผลลัพธ์ คำตอบ การยืนยัน และความสัมพันธ์ถูกหยุดในช่วงนั้น ระยะห่างไม่ใช่การปฏิเสธ มันคือการคาดหวัง"
+        },
+        "inner_state": {
+          "en": "Inside, they are focused outward — watching for ships on the horizon. The bond exists in their peripheral vision; it has not been forgotten, only deprioritized while they wait.",
+          "th": "ภายในใจเขาจดจ่อกับภายนอก เฝ้ามองเรือที่ขอบฟ้า ความสัมพันธ์อยู่ในมุมข้างของสายตาเขา ยังไม่ถูกลืม เพียงถูกลดความสำคัญลงในระหว่างที่รอ"
+        },
+        "path_forward": {
+          "en": "When their ship comes in — or doesn't — they will have answers and the bond will reach the front of their attention again. The waiting belongs to them; you can only let it run.",
+          "th": "เมื่อเรือของเขามาถึง หรือไม่มา เขาจะมีคำตอบ และความสัมพันธ์จะกลับมาอยู่ตรงหน้าความสนใจของเขาอีกครั้ง การรอเป็นของเขา คุณทำได้เพียงปล่อยให้มันดำเนิน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Their plan unraveled — the result they were waiting for didn't arrive, or arrived in a shape they didn't expect. The waiting curdled into withdrawal.",
+          "th": "แผนของเขาคลี่ออก ผลลัพธ์ที่รออยู่ไม่มา หรือมาในรูปที่ไม่ได้คาด การรอเปรี้ยวกลายเป็นการถอยห่าง"
+        },
+        "inner_state": {
+          "en": "Inside, they are discouraged — less open than they were when the waiting felt productive. The bond got included in the general dimming of hope.",
+          "th": "ภายในใจเขาท้อใจ เปิดน้อยลงกว่าตอนที่การรอยังรู้สึกมีค่า ความสัมพันธ์ถูกรวมอยู่ในการหรี่ลงของความหวังโดยรวม"
+        },
+        "path_forward": {
+          "en": "They need to recover ground before re-engaging. The bond can wait, but its return depends on whether they rebuild some sense of forward motion in their own life first.",
+          "th": "เขาต้องการฟื้นพื้นที่ก่อนจะกลับเข้าหาความสัมพันธ์ ความสัมพันธ์รอได้ แต่การกลับมาขึ้นอยู่กับว่าเขาจะสร้างความรู้สึกของการเดินหน้าในชีวิตของตัวเองขึ้นมาก่อนหรือไม่"
+        }
+      }
+    },
+    "26-four-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "They were gathering in their own community — family, old friends, the people who anchor them — and the bond didn't quite fit the room. The pullback was a return to a familiar foundation.",
+          "th": "เขาได้รวมตัวอยู่ในชุมชนของตัวเอง ครอบครัว เพื่อนเก่า คนที่เป็นรากของเขา และความสัมพันธ์ยังไม่เข้ากับห้องนั้น การถอยห่างคือการกลับสู่รากที่คุ้นเคย"
+        },
+        "inner_state": {
+          "en": "Inside, they are enjoying their own foundation. You are at the perimeter of their inner circle — not excluded, but not yet folded in the way the bond would need to be.",
+          "th": "ภายในใจเขากำลังเพลินกับรากของตัวเอง คุณอยู่ที่ขอบของวงในของเขา ไม่ได้ถูกกีดกัน แต่ยังไม่ถูกรวมเข้าในแบบที่ความสัมพันธ์จะต้องเป็น"
+        },
+        "path_forward": {
+          "en": "A return is possible only if you can be included in their home life, in whatever shape that takes. The bond's chance lies in showing it can belong inside their existing world.",
+          "th": "การกลับมาเป็นไปได้ก็ต่อเมื่อคุณสามารถถูกรวมในชีวิตที่บ้านของเขา ในรูปแบบใดก็ตามที่เป็นไปได้ โอกาสของความสัมพันธ์อยู่ที่การแสดงว่ามันอยู่ในโลกที่มีอยู่ของเขาได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Instability at home eclipsed everything else. Something in their foundation shook, and the bond had to be set aside while they tended to the cracks.",
+          "th": "ความไม่มั่นคงที่บ้านกลบทุกอย่าง บางสิ่งในรากของเขาสั่น และความสัมพันธ์ต้องถูกวางไว้ข้างๆ ในขณะที่เขาดูแลรอยร้าว"
+        },
+        "inner_state": {
+          "en": "Inside, they are unsettled — they cannot host another bond when their own ground is uncertain. There is care for you mixed with an inability to give it shape right now.",
+          "th": "ภายในใจเขาไม่นิ่ง เขาไม่สามารถต้อนรับความสัมพันธ์อีกความสัมพันธ์เมื่อพื้นของตัวเองยังไม่แน่นอน มีความห่วงใยต่อคุณปนกับความไม่สามารถที่จะให้รูปร่างกับมันในตอนนี้"
+        },
+        "path_forward": {
+          "en": "Re-engagement depends on whether their foundation steadies. The bond cannot be the answer to the instability — only their own work can — and it must wait until that work settles.",
+          "th": "การกลับเข้าหากันขึ้นอยู่กับว่ารากของเขาจะนิ่งหรือไม่ ความสัมพันธ์ไม่อาจเป็นคำตอบของความไม่มั่นคง เฉพาะงานของเขาเองเท่านั้น และมันต้องรอจนงานนั้นนิ่ง"
+        }
+      }
+    },
+    "27-five-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "Too many competing demands pulled at them at once. You became one voice in a crowd of voices, and they stepped back to lower the volume rather than to silence you specifically.",
+          "th": "ความต้องการที่แข่งกันมากเกินไปดึงเขาพร้อมกัน คุณกลายเป็นหนึ่งเสียงในฝูงเสียง และเขาถอยกลับเพื่อลดเสียงลง ไม่ใช่เพื่อทำให้คุณเงียบโดยเฉพาะ"
+        },
+        "inner_state": {
+          "en": "Inside, they are scrambled — multiple priorities pulling them in different directions. Intimacy adds a demand they cannot meet while the other demands are this loud.",
+          "th": "ภายในใจเขาวุ่นวาย ความสำคัญหลายอย่างดึงเขาไปคนละทิศ ความใกล้ชิดเพิ่มความต้องการที่เขารับมือไม่ได้ในขณะที่ความต้องการอื่นๆ ดังขนาดนี้"
+        },
+        "path_forward": {
+          "en": "Clarity comes only after the conflict elsewhere resolves. The bond cannot be navigated inside the noise; it has to wait for the room to quiet.",
+          "th": "ความชัดเจนมาหลังความขัดแย้งที่อื่นคลี่คลาย ความสัมพันธ์เดินไม่ได้ในเสียงรบกวน ต้องรอให้ห้องเงียบลง"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An unspoken conflict between you became too tiring to keep tolerating. They pulled back to stop the friction, even though the friction had never been named out loud.",
+          "th": "ความขัดแย้งที่ไม่ได้พูดระหว่างคุณกลายเป็นสิ่งเหนื่อยเกินกว่าจะทนต่อ เขาถอยห่างเพื่อหยุดการเสียดสี แม้การเสียดสีนั้นจะไม่เคยถูกเรียกชื่อออกมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are tired of fighting — even fights that no one is having out loud. Choosing peace over presence felt like the only way to recover.",
+          "th": "ภายในใจเขาเหนื่อยจากการต่อสู้ แม้การต่อสู้ที่ไม่มีใครพูดออกมา การเลือกความสงบเหนือการมีอยู่รู้สึกเป็นทางเดียวที่จะฟื้นตัว"
+        },
+        "path_forward": {
+          "en": "The bond needs honest air, not more skirmishes. The unspoken needs to be spoken — and if it cannot be, the distance becomes the answer instead.",
+          "th": "ความสัมพันธ์ต้องการอากาศที่ซื่อตรง ไม่ใช่การปะทะมากกว่านี้ สิ่งที่ไม่ได้พูดต้องถูกพูด และถ้าพูดไม่ได้ ระยะห่างจะกลายเป็นคำตอบแทน"
+        }
+      }
+    },
+    "28-six-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "Success elsewhere — recognition, a win, applause — turned their attention outward. The bond got smaller in their field of vision while they enjoyed the brightness of being seen.",
+          "th": "ความสำเร็จในที่อื่น การได้รับการยอมรับ ชัยชนะ เสียงปรบมือ หันความสนใจของเขาออกไป ความสัมพันธ์เล็กลงในสายตาขณะที่เขาเพลินกับความสว่างของการถูกเห็น"
+        },
+        "inner_state": {
+          "en": "Inside, they are enjoying recognition. Intimacy feels small by comparison — quieter, slower — and they are not yet ready to come back to that smaller scale.",
+          "th": "ภายในใจเขาเพลินกับการได้รับการยอมรับ ความใกล้ชิดรู้สึกเล็กเมื่อเทียบกัน เงียบกว่า ช้ากว่า และเขายังไม่พร้อมจะกลับมาที่ขนาดที่เล็กกว่านั้น"
+        },
+        "path_forward": {
+          "en": "Their return depends on whether they need quiet again — when the applause fades, the bond may look more interesting. Until then, the distance is part of their current chapter, not the bond's verdict.",
+          "th": "การกลับมาของเขาขึ้นอยู่กับว่าเขาจะต้องการความเงียบอีกครั้งไหม เมื่อเสียงปรบมือซา ความสัมพันธ์อาจดูน่าสนใจขึ้น จนถึงตอนนั้น ระยะห่างเป็นส่วนหนึ่งของบทปัจจุบันของเขา ไม่ใช่คำตัดสินของความสัมพันธ์"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Bruised pride. A setback — public or private — made them retreat, and they didn't want you to witness the bruise. The distance protected an image rather than the bond.",
+          "th": "ความภูมิใจที่ฟกช้ำ การล้มเหลว ในที่สาธารณะหรือส่วนตัว ทำให้เขาถอย และเขาไม่อยากให้คุณเห็นรอยฟกช้ำ ระยะห่างปกป้องภาพ ไม่ใช่ความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, there is shame they don't want you to see. Coming back would require dropping a mask they are not yet able to lower.",
+          "th": "ภายในใจมีความอายที่เขาไม่อยากให้คุณเห็น การกลับมาจะต้องถอดหน้ากากที่เขายังไม่อาจวางลง"
+        },
+        "path_forward": {
+          "en": "Re-engagement once they recover face. The bond's path forward depends on whether they trust you with the bruise — not on whether you can pretend you don't notice it.",
+          "th": "การกลับเข้าหากันเมื่อเขากู้หน้าได้ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเชื่อใจให้คุณเห็นรอยฟกช้ำหรือไม่ ไม่ใช่ที่ว่าคุณจะแกล้งทำเป็นมองไม่เห็นได้หรือไม่"
+        }
+      }
+    },
+    "29-seven-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "They felt cornered by life — too many demands on what little they had. Defending what they could, they had no hand free to hold the bond.",
+          "th": "เขารู้สึกถูกต้อนจากชีวิต ความต้องการมากเกินไปกับสิ่งเล็กที่เขามี ปกป้องสิ่งที่ทำได้ ไม่มีมือว่างจะถือความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are defensive — they cannot host another claim on their energy right now. The withdrawal is a posture of self-protection, not a turning against you.",
+          "th": "ภายในใจเขาตั้งรับ ไม่สามารถต้อนรับการอ้างอีกอันต่อพลังของเขาในตอนนี้ การถอยห่างเป็นท่าทีของการป้องกันตัวเอง ไม่ใช่การหันหลังให้คุณ"
+        },
+        "path_forward": {
+          "en": "A gentle, slow re-approach is the only way back in. The bond cannot be insisted upon — only quietly offered, in small amounts they can decide to accept.",
+          "th": "การกลับเข้าหาอย่างนุ่มและช้าคือทางเดียวที่จะกลับเข้าไป ความสัมพันธ์บังคับไม่ได้ ทำได้เพียงเสนออย่างเงียบ ในปริมาณเล็กที่เขาเลือกจะรับ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They gave up the fight — surrendered the position they had been trying to hold. Pulling away was less a strategy and more a collapse of resistance.",
+          "th": "เขายอมแพ้ ปล่อยตำแหน่งที่พยายามยึด การถอยห่างเป็นการพังของการต้าน ไม่ใช่กลยุทธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are depleted — nothing left to defend with, nothing left to assert. The distance is what someone with no remaining energy chooses by default.",
+          "th": "ภายในใจเขาหมดเรี่ยวแรง ไม่มีอะไรเหลือให้ป้องกัน ไม่มีอะไรเหลือให้ยืนยัน ระยะห่างคือสิ่งที่คนซึ่งไม่มีพลังเหลือเลือกโดยปริยาย"
+        },
+        "path_forward": {
+          "en": "They need rest before any rebuilding. The bond can return only if they recover enough to want anything at all — and that recovery is not something you can hand them.",
+          "th": "เขาต้องพักก่อนการสร้างใหม่ใดๆ ความสัมพันธ์กลับมาได้ก็ต่อเมื่อเขาฟื้นพอที่จะอยากอะไรเลย และการฟื้นนั้นไม่ใช่สิ่งที่คุณจะยื่นให้ได้"
+        }
+      }
+    },
+    "30-eight-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "A rush of events swept them past this bond — opportunities, demands, sudden shifts moving so fast they couldn't pause to attend to the connection while they ran.",
+          "th": "กระแสเหตุการณ์ที่เร่งรีบพัดเขาผ่านความสัมพันธ์นี้ โอกาส ความต้องการ การเปลี่ยนแปลงกะทันหันเคลื่อนเร็วจนเขาไม่อาจหยุดดูแลการเชื่อมโยงในขณะที่วิ่ง"
+        },
+        "inner_state": {
+          "en": "Inside, they are moving fast — and there is no time in their current pace to attend to a slower thing like a bond. The distance is a side-effect of speed, not of choice.",
+          "th": "ภายในใจเขาเคลื่อนเร็ว ไม่มีเวลาในจังหวะปัจจุบันที่จะดูแลสิ่งที่ช้ากว่าอย่างความสัมพันธ์ ระยะห่างเป็นผลข้างเคียงของความเร็ว ไม่ใช่ของการเลือก"
+        },
+        "path_forward": {
+          "en": "They may land somewhere unexpected — and the bond will shift with their landing. Where they end up is not yet clear, but they will end up somewhere; you can only watch where.",
+          "th": "เขาอาจลงในที่ที่ไม่คาด และความสัมพันธ์จะเปลี่ยนตามการลงของเขา ที่ที่เขาจะไปจบยังไม่ชัด แต่เขาจะจบที่ใดที่หนึ่ง คุณทำได้เพียงดูว่าที่ไหน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Communication broke down too quickly to recover. Words fell wrong, were misread, or arrived at bad timing, and they retreated rather than try to repair in the rush.",
+          "th": "การสื่อสารพังเร็วเกินกว่าจะกู้คืน คำพูดตกผิดที่ ถูกอ่านผิด หรือมาในเวลาที่ไม่ดี และเขาถอยห่างมากกว่าพยายามซ่อมในช่วงที่เร่งรีบ"
+        },
+        "inner_state": {
+          "en": "Inside, they are anxious — the speed of what went wrong outran their ability to process it. Pulling back was a way to stop the spiral, not a verdict on the bond.",
+          "th": "ภายในใจเขากังวล ความเร็วของสิ่งที่พลาดวิ่งแซงความสามารถในการประมวลของเขา การถอยห่างคือวิธีหยุดวงจร ไม่ใช่คำตัดสินต่อความสัมพันธ์"
+        },
+        "path_forward": {
+          "en": "A slower re-approach, at lower pace, may reset things. The bond's repair depends on choosing patience over speed — and on letting words land carefully this time.",
+          "th": "การกลับเข้าหาที่ช้ากว่า ในจังหวะที่ต่ำกว่า อาจรีเซ็ตเรื่องได้ การซ่อมความสัมพันธ์ขึ้นอยู่กับการเลือกความอดทนเหนือความเร็ว และการปล่อยให้คำลงอย่างระมัดระวังครั้งนี้"
+        }
+      }
+    },
+    "31-nine-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "Exhausted from past hurts, they could not risk another one. The pullback was less about you and more about the weight of what came before.",
+          "th": "เหนื่อยจากความเจ็บในอดีต เขาไม่อาจเสี่ยงอีกครั้ง การถอยห่างเกี่ยวกับน้ำหนักของสิ่งที่มาก่อนมากกว่าเกี่ยวกับคุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are wary — bracing for harm even when none is coming. Their nervous system is louder than the present moment, and the bond got caught in that loudness.",
+          "th": "ภายในใจเขาระมัดระวัง ตั้งรับการบาดเจ็บแม้ไม่มีอะไรกำลังมา ระบบประสาทของเขาดังกว่าปัจจุบัน และความสัมพันธ์ติดอยู่ในความดังนั้น"
+        },
+        "path_forward": {
+          "en": "A return only when they feel safer than they are now — which takes more time than the bond's calendar might prefer. The path is gentle steadiness, not reassurance forced from outside.",
+          "th": "การกลับมาก็ต่อเมื่อเขารู้สึกปลอดภัยกว่าตอนนี้ ซึ่งใช้เวลามากกว่าที่ปฏิทินของความสัมพันธ์อาจอยากให้ เส้นทางคือความมั่นคงที่อ่อนนวล ไม่ใช่การปลอบที่ถูกบังคับจากภายนอก"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "The last of their strength collapsed. Nothing left to defend with, no more buffer to absorb the bond's demands, and they pulled back from a place of having spent everything.",
+          "th": "กำลังสุดท้ายของเขาทรุดลง ไม่มีอะไรเหลือให้ป้องกัน ไม่มีกันชนเหลือที่จะดูดซับความต้องการของความสัมพันธ์ และเขาถอยจากที่ที่ใช้ทุกอย่างไปแล้ว"
+        },
+        "inner_state": {
+          "en": "Inside, they are defenseless — and protecting that fact. The distance is a way of hiding how empty they actually are right now.",
+          "th": "ภายในใจเขาไร้การป้องกัน และกำลังปกป้องความจริงนั้น ระยะห่างเป็นวิธีซ่อนว่าจริงๆ ตอนนี้เขาว่างเปล่าแค่ไหน"
+        },
+        "path_forward": {
+          "en": "A long pause. Healing must precede any return; nothing the bond can offer will substitute for the rest they actually need.",
+          "th": "การหยุดที่ยาว การเยียวยาต้องมาก่อนการกลับมา ไม่มีอะไรที่ความสัมพันธ์ให้ได้จะแทนการพักที่เขาต้องการจริงๆ"
+        }
+      }
+    },
+    "32-ten-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "Too many burdens. The bond got set down not because it lacked value, but because they had no hand free to hold it alongside everything else.",
+          "th": "ภาระมากเกินไป ความสัมพันธ์ถูกวางลงไม่ใช่เพราะขาดคุณค่า แต่เพราะเขาไม่มีมือว่างจะถือไว้คู่กับทุกสิ่ง"
+        },
+        "inner_state": {
+          "en": "Inside, they are overwhelmed — in survival mode, narrowed to what cannot be dropped. The bond is in a place they can return to, but only when the load lightens.",
+          "th": "ภายในใจเขาท่วมท้น อยู่ในโหมดเอาตัวรอด แคบลงเหลือเฉพาะสิ่งที่วางลงไม่ได้ ความสัมพันธ์อยู่ในที่ที่กลับไปได้ แต่ก็ต่อเมื่อภาระเบาลง"
+        },
+        "path_forward": {
+          "en": "When the load lightens, they may pick the bond back up. The path forward is theirs to clear; the bond cannot help carry what they have not asked you to carry.",
+          "th": "เมื่อภาระเบาลง เขาอาจหยิบความสัมพันธ์ขึ้นมาใหม่ เส้นทางต่อไปเป็นของเขาที่จะเคลียร์ ความสัมพันธ์ช่วยแบกสิ่งที่เขาไม่ได้ขอให้คุณแบกไม่ได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They refused to put anything down — and collapsed under the load. The distance is what overload looks like when nothing was allowed to be set aside.",
+          "th": "เขาปฏิเสธที่จะวางอะไรลง และทรุดลงใต้ภาระ ระยะห่างคือสิ่งที่การท่วมท้นดูเหมือนเมื่อไม่อนุญาตให้วางอะไรไว้ข้างๆ"
+        },
+        "inner_state": {
+          "en": "Inside, they are paralyzed by overload — unable to triage, unable to delegate, unable to ask for help. The bond is one of many things they cannot currently meet.",
+          "th": "ภายในใจเขาเป็นอัมพาตจากความท่วมท้น คัดเลือกไม่ได้ มอบหมายไม่ได้ ขอความช่วยเหลือไม่ได้ ความสัมพันธ์เป็นหนึ่งในหลายสิ่งที่เขาตอบรับไม่ได้ในตอนนี้"
+        },
+        "path_forward": {
+          "en": "Nothing moves until they let go of something. The bond's path forward depends on whether they make space — and they alone can decide what gets set down.",
+          "th": "ไม่มีอะไรเคลื่อนจนกว่าเขาจะปล่อยบางสิ่ง เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเปิดที่หรือไม่ เขาคนเดียวที่ตัดสินว่าอะไรจะถูกวางลง"
+        }
+      }
+    },
+    "33-page-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "They chased a new flame — not from malice, but from immaturity. A shiny thing pulled them and they followed without first finishing the conversation with you.",
+          "th": "เขาตามเปลวใหม่ ไม่ใช่จากความใจร้าย แต่จากความยังไม่โต สิ่งใหม่ที่แวววาวดึงเขา และเขาตามไปโดยไม่จบบทสนทนากับคุณก่อน"
+        },
+        "inner_state": {
+          "en": "Inside, they are excited and inconsistent. Attention is hard for them to hold; the bond is one of many things they keep starting and pausing without quite finishing.",
+          "th": "ภายในใจเขาตื่นเต้นและไม่สม่ำเสมอ ความสนใจถือไว้ยากสำหรับเขา ความสัมพันธ์เป็นหนึ่งในหลายสิ่งที่เขาเริ่มและหยุด โดยยังไม่จบ"
+        },
+        "path_forward": {
+          "en": "A return is possible but inconsistent — expect cycles, not steady contact. The bond can survive the pattern only if you can tolerate the rhythm of their attention coming and going.",
+          "th": "การกลับมาเป็นไปได้แต่ไม่สม่ำเสมอ คาดวงจร ไม่ใช่การติดต่อที่นิ่ง ความสัมพันธ์อยู่รอดได้ก็ต่อเมื่อคุณทนรับจังหวะของความสนใจที่มาและไปได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A tantrum-level retreat over a small wound. Something landed wrong, hurt their pride, and they pulled back in a way bigger than the wound warranted.",
+          "th": "การถอยขนาดงอนต่อแผลเล็ก บางสิ่งลงผิดที่ ทำร้ายความภูมิใจของเขา และเขาถอยห่างในแบบที่ใหญ่กว่าขนาดของแผล"
+        },
+        "inner_state": {
+          "en": "Inside, they are sulking — and cannot quite articulate what hurt them. The withdrawal is more reactive than considered, and they sense the disproportion even while staying inside it.",
+          "th": "ภายในใจเขางอน และอธิบายไม่ได้ชัดว่าอะไรทำร้ายเขา การถอยห่างเป็นปฏิกิริยามากกว่าการพิจารณา และเขารู้สึกได้ถึงความไม่ได้สัดส่วน แม้จะยังอยู่ในนั้น"
+        },
+        "path_forward": {
+          "en": "Re-engagement comes after they cool off, not before. The bond cannot be coaxed back during the sulk; only after, when they are ready to laugh at themselves a little.",
+          "th": "การกลับเข้าหากันมาหลังเขาเย็นลง ไม่ใช่ก่อน ความสัมพันธ์เกลี้ยกล่อมกลับมาในระหว่างการงอนไม่ได้ จนกว่าเขาจะพร้อมหัวเราะให้ตัวเองสักนิด"
+        }
+      }
+    },
+    "34-knight-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "They chased a sudden impulse elsewhere — a trip, a project, a person, a new direction — and the bond was something they assumed would still be there when they got back.",
+          "th": "เขาตามแรงกระตุ้นที่กะทันหันไปที่อื่น การเดินทาง งาน คน ทิศทางใหม่ และความสัมพันธ์คือสิ่งที่เขาคิดว่าจะยังอยู่เมื่อกลับมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are restless — cannot stand still long enough to feel what staying would require. Action soothes them in a way that intimacy does not.",
+          "th": "ภายในใจเขากระสับกระส่าย ยืนนิ่งไม่ได้นานพอที่จะรู้สึกถึงสิ่งที่การอยู่ต่อต้องการ การกระทำปลอบเขาในแบบที่ความใกล้ชิดทำไม่ได้"
+        },
+        "path_forward": {
+          "en": "Their return is possible but volatile. The bond may resume in bursts rather than continuously — and may not survive the intensity if you need steady ground.",
+          "th": "การกลับมาของเขาเป็นไปได้แต่ผันผวน ความสัมพันธ์อาจกลับมาเป็นช่วงๆ มากกว่าต่อเนื่อง และอาจไม่อยู่รอดผ่านความเข้มหากคุณต้องการพื้นที่นิ่ง"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An impulsive break — possibly regretted within hours. Something flared, they reacted, and now they are sitting with the fallout of a decision that didn't pause for thought.",
+          "th": "การตัดที่หุนหัน อาจเสียดายภายในไม่กี่ชั่วโมง บางสิ่งโพล่งขึ้น เขาตอบสนอง และตอนนี้กำลังนั่งกับผลของการตัดสินที่ไม่ได้หยุดคิด"
+        },
+        "inner_state": {
+          "en": "Inside, they are reactive and unstable — second-guessing themselves about the very thing they did. The bond's confusion mirrors their own.",
+          "th": "ภายในใจเขาเป็นปฏิกิริยาและไม่นิ่ง สงสัยในสิ่งที่ตัวเองเพิ่งทำ ความสับสนของความสัมพันธ์สะท้อนความสับสนของตัวเขา"
+        },
+        "path_forward": {
+          "en": "Depends on whether they slow down enough to think. The bond's chance lies in their willingness to consider what they did — and to act differently next time the impulse rises.",
+          "th": "ขึ้นอยู่กับว่าเขาจะชะลอพอที่จะคิดหรือไม่ โอกาสของความสัมพันธ์อยู่ที่ความเต็มใจของเขาที่จะพิจารณาสิ่งที่ทำ และทำแตกต่างในครั้งต่อไปที่แรงกระตุ้นเกิด"
+        }
+      }
+    },
+    "35-queen-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "They re-centered themselves and chose their own warmth first. The distance was not a withdrawal of care so much as a return to their own light.",
+          "th": "เขากลับมาที่ศูนย์กลางของตัวเองและเลือกความอบอุ่นของตัวเองก่อน ระยะห่างไม่ใช่การถอนความใส่ใจ เป็นการกลับสู่แสงของตัวเอง"
+        },
+        "inner_state": {
+          "en": "Inside, they are confident in their own direction — not seeking anything from you right now. The bond is allowed to exist on the side of their attention, but not at its center.",
+          "th": "ภายในใจเขามั่นใจในทิศของตัวเอง ไม่ได้กำลังหาสิ่งใดจากคุณในตอนนี้ ความสัมพันธ์ได้รับอนุญาตให้อยู่ข้างความสนใจของเขา แต่ไม่ใช่ตรงกลาง"
+        },
+        "path_forward": {
+          "en": "A return is likely if their warmth includes you again — and that will happen on their schedule, not yours. The path forward is to let their light shine alone for a while.",
+          "th": "การกลับมามีแนวโน้มเกิดขึ้นหากความอบอุ่นของเขารวมคุณอีกครั้ง และมันจะเกิดในตารางของเขา ไม่ใช่ของคุณ เส้นทางคือการปล่อยให้แสงของเขาส่องอยู่คนเดียวสักระยะ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Jealousy or insecurity they didn't want you to see surfaced. They pulled away rather than admit a smaller feeling than the role they usually play.",
+          "th": "ความหึงหรือความไม่มั่นใจที่เขาไม่อยากให้คุณเห็นผุดขึ้น เขาถอยห่างมากกว่ายอมรับความรู้สึกที่เล็กกว่าบทบาทที่เขามักเล่น"
+        },
+        "inner_state": {
+          "en": "Inside, their confidence is shaken — and they are pulling away while they rebuild. The image of strength matters more to them right now than the closeness of the bond.",
+          "th": "ภายในใจความมั่นใจของเขาสั่น และเขากำลังถอยห่างในขณะที่สร้างใหม่ ภาพของความเข้มแข็งสำคัญสำหรับเขาในตอนนี้มากกว่าความใกล้ชิดของความสัมพันธ์"
+        },
+        "path_forward": {
+          "en": "They need to feel strong again before re-engaging. The bond cannot do that work for them; only their own restoration of self-trust will reopen the door.",
+          "th": "เขาต้องรู้สึกเข้มแข็งอีกครั้งก่อนจะกลับเข้าหา ความสัมพันธ์ทำงานนั้นแทนเขาไม่ได้ เฉพาะการฟื้นความเชื่อในตัวเองของเขาเองที่จะเปิดประตูอีกครั้ง"
+        }
+      }
+    },
+    "36-king-of-wands": {
+      "upright": {
+        "trigger": {
+          "en": "A vision pulled them — a future they wanted to build — and the bond didn't yet fit the plan. The pullback was strategic, even if it didn't feel that way to you.",
+          "th": "วิสัยทัศน์ดึงเขา อนาคตที่เขาอยากสร้าง และความสัมพันธ์ยังไม่เข้ากับแผน การถอยห่างเป็นกลยุทธ์ แม้จะไม่รู้สึกเช่นนั้นสำหรับคุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are focused on their direction. Intimacy is secondary right now — not unwanted, but not where their fire is currently pointing.",
+          "th": "ภายในใจเขาจดจ่อกับทิศของตัวเอง ความใกล้ชิดเป็นรองในตอนนี้ ไม่ใช่ไม่ต้องการ แต่ไม่ใช่ที่ที่ไฟของเขาชี้อยู่ในขณะนี้"
+        },
+        "path_forward": {
+          "en": "A return is possible if the bond can integrate into the vision. The path forward is to show that you can stand in the future they are building — without asking them to choose between you and it.",
+          "th": "การกลับมาเป็นไปได้หากความสัมพันธ์รวมเข้ากับวิสัยทัศน์ได้ เส้นทางคือการแสดงว่าคุณยืนในอนาคตที่เขากำลังสร้างได้ โดยไม่ขอให้เขาเลือกระหว่างคุณกับมัน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Ego or dominance pushed them away from softness. The leadership posture became a defense, and intimacy threatened the authority they wanted to keep intact.",
+          "th": "อีโก้หรือการครอบงำผลักเขาออกจากความอ่อน ท่าทีผู้นำกลายเป็นการป้องกัน และความใกล้ชิดคุกคามอำนาจที่เขาอยากรักษาไว้"
+        },
+        "inner_state": {
+          "en": "Inside, they are defensive about their authority. Letting the bond close in would feel like ceding ground they aren't yet ready to share.",
+          "th": "ภายในใจเขาตั้งรับเรื่องอำนาจของตัวเอง การปล่อยให้ความสัมพันธ์ใกล้ขึ้นจะรู้สึกเหมือนสละพื้นที่ที่เขายังไม่พร้อมแบ่ง"
+        },
+        "path_forward": {
+          "en": "Harder to reach; their stance softens slowly. The bond's path depends on whether they choose to lead from steadiness rather than from defense — and that choice belongs to them.",
+          "th": "เข้าถึงยากกว่า ท่าทีของเขาอ่อนช้าๆ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกนำจากความมั่นคงแทนการป้องกันหรือไม่ และทางเลือกนั้นเป็นของเขา"
+        }
+      }
+    },
+    "37-ace-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "A sudden surge of feeling overwhelmed them. The bond reached an emotional opening they were not ready to walk through, and they stepped back to let the surge subside.",
+          "th": "คลื่นความรู้สึกที่กะทันหันท่วมเขา ความสัมพันธ์มาถึงช่องเปิดทางอารมณ์ที่เขายังไม่พร้อมจะเดินผ่าน และเขาก้าวถอยเพื่อให้คลื่นสงบลง"
+        },
+        "inner_state": {
+          "en": "Inside, they are flooded — too much emotion to process while staying connected. The withdrawal is not refusal of the feeling, but a need to keep it from spilling everywhere at once.",
+          "th": "ภายในใจเขาท่วม อารมณ์มากเกินกว่าจะประมวลในขณะที่ยังเชื่อมกัน การถอยห่างไม่ใช่การปฏิเสธความรู้สึก เป็นความต้องการไม่ให้มันหกออกทุกทิศพร้อมกัน"
+        },
+        "path_forward": {
+          "en": "When they regain their footing, the cup may overflow back toward you. The bond's chance lies in giving them room to feel without trying to direct what they feel.",
+          "th": "เมื่อเขาตั้งตัวได้ ถ้วยอาจล้นกลับมาทางคุณ โอกาสของความสัมพันธ์อยู่ที่การให้พื้นที่ให้เขารู้สึก โดยไม่พยายามกำหนดสิ่งที่เขารู้สึก"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They shut down before the feeling could land. Something tender almost broke through and they closed quickly, choosing safety over openness.",
+          "th": "เขาปิดก่อนที่ความรู้สึกจะลง บางสิ่งอ่อนเกือบทะลุเข้ามา และเขาปิดเร็ว เลือกความปลอดภัยเหนือการเปิด"
+        },
+        "inner_state": {
+          "en": "Inside, they are closed — afraid of the emotion that nearly broke through. The bond touched a place they cannot yet bear to let be touched.",
+          "th": "ภายในใจเขาปิด กลัวอารมณ์ที่เกือบทะลุเข้ามา ความสัมพันธ์แตะที่ที่เขายังทนไม่ได้ที่จะถูกแตะ"
+        },
+        "path_forward": {
+          "en": "A long thaw — the heart needs solo time before it can open again. Pressing the door now would only confirm the lock; the bond's chance lies in being patient enough to let warmth return on its own.",
+          "th": "การละลายที่ยาว หัวใจต้องการเวลาคนเดียวก่อนจะเปิดได้อีกครั้ง การกดประตูตอนนี้จะเพียงยืนยันการล็อก โอกาสของความสัมพันธ์อยู่ที่ความอดทนพอที่จะปล่อยให้ความอบอุ่นกลับมาเอง"
+        }
+      }
+    },
+    "38-two-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "An asymmetry surfaced — they felt the imbalance between what was being given and what was being received. The pullback was a way of marking the gap without naming it.",
+          "th": "ความไม่สมมาตรผุดขึ้น เขารู้สึกถึงความไม่สมดุลระหว่างสิ่งที่ให้และสิ่งที่ได้รับ การถอยห่างเป็นวิธีทำเครื่องหมายช่องว่างโดยไม่เรียกชื่อมัน"
+        },
+        "inner_state": {
+          "en": "Inside, they are noticing the gap between what you offer and what they can match right now. There is no blame in their accounting — only honesty about the math.",
+          "th": "ภายในใจเขาสังเกตช่องว่างระหว่างสิ่งที่คุณเสนอกับสิ่งที่เขาตอบกลับได้ในตอนนี้ ไม่มีการกล่าวโทษในการคำนวณของเขา มีแต่ความซื่อตรงเกี่ยวกับตัวเลข"
+        },
+        "path_forward": {
+          "en": "Only mutual honesty restores the bond. The path forward asks each of you to name what you can give right now — and to accept what the other can match.",
+          "th": "เฉพาะความซื่อตรงร่วมกันที่ฟื้นความสัมพันธ์ได้ เส้นทางต่อไปขอให้แต่ละคนเรียกชื่อสิ่งที่ตัวเองให้ได้ในตอนนี้ และยอมรับสิ่งที่อีกฝ่ายตอบกลับได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A rupture in trust quieted everything. Something broke — small or large — and the pullback came in place of the conversation that should have followed.",
+          "th": "การแตกในความเชื่อใจทำให้ทุกอย่างเงียบ บางสิ่งแตก เล็กหรือใหญ่ และการถอยห่างเข้ามาแทนบทสนทนาที่ควรตามมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are heartbroken in silence — not dramatic, just quiet. The bond's tenderness has been bruised and they are deciding whether it can be held again.",
+          "th": "ภายในใจเขาเจ็บปวดในความเงียบ ไม่ดราม่า เพียงเงียบ ความอ่อนของความสัมพันธ์ฟกช้ำ และเขากำลังตัดสินว่าจะถือไว้อีกครั้งได้หรือไม่"
+        },
+        "path_forward": {
+          "en": "Repair is possible but only with honest naming. The bond's chance lies in someone — likely both of you — finding the courage to speak what broke rather than waiting it out.",
+          "th": "การซ่อมเป็นไปได้แต่ต้องผ่านการเรียกชื่ออย่างซื่อตรงเท่านั้น โอกาสของความสัมพันธ์อยู่ที่ใครคนหนึ่ง คงทั้งสองคน หาความกล้าพูดถึงสิ่งที่แตก แทนการรอให้มันผ่าน"
+        }
+      }
+    },
+    "39-three-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "They leaned into their wider circle — friends, social events, communal joy — and set the bond aside while they tended that source of warmth. It wasn't rejection so much as a different filling.",
+          "th": "เขาเอนเข้าหาวงสังคมที่กว้างขึ้น เพื่อน งานสังสรรค์ ความสุขร่วม และวางความสัมพันธ์ไว้ข้างๆ ขณะดูแลแหล่งความอบอุ่นนั้น ไม่ใช่การปฏิเสธ เป็นการเติมจากแหล่งอื่น"
+        },
+        "inner_state": {
+          "en": "Inside, they are nourished by others — less hungry for intimacy in its quieter form. The bond exists at the edge of a fuller room, not in the center where the laughter is.",
+          "th": "ภายในใจเขาอิ่มจากคนอื่น หิวความใกล้ชิดในรูปเงียบน้อยลง ความสัมพันธ์อยู่ที่ขอบของห้องที่เต็ม ไม่ใช่ตรงกลางที่เสียงหัวเราะอยู่"
+        },
+        "path_forward": {
+          "en": "A return depends on whether the bond fits among their people. The path forward is showing that you can stand inside the wider circle, not asking them to leave it.",
+          "th": "การกลับมาขึ้นอยู่กับว่าความสัมพันธ์เข้ากับคนของเขาหรือไม่ เส้นทางคือการแสดงว่าคุณยืนอยู่ในวงที่กว้างกว่าได้ ไม่ใช่ขอให้เขาออกจากมัน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Gossip or social tension complicated the bond. The wider circle introduced friction the two of you could not have predicted, and they retreated to escape the noise.",
+          "th": "การนินทาหรือความตึงเครียดในสังคมทำให้ความสัมพันธ์ซับซ้อน วงที่กว้างกว่านำการเสียดสีที่คุณสองคนคาดไม่ได้ และเขาถอยห่างเพื่อหนีเสียงรบกวน"
+        },
+        "inner_state": {
+          "en": "Inside, they are socially overwhelmed — they need quiet, not crowd. The bond may not be the problem, but it has been caught in the spillover of a larger fatigue.",
+          "th": "ภายในใจเขาท่วมจากสังคม ต้องการความเงียบ ไม่ใช่ฝูงคน ความสัมพันธ์อาจไม่ใช่ปัญหา แต่ติดอยู่ในกระแสล้นของความเหนื่อยที่ใหญ่กว่า"
+        },
+        "path_forward": {
+          "en": "A smaller, more private reconnection may be possible. The bond's path forward asks for less audience and more direct contact — fewer people in the room when you next meet.",
+          "th": "การกลับมาเชื่อมโยงที่เล็กและส่วนตัวกว่าอาจเป็นไปได้ เส้นทางของความสัมพันธ์ขอผู้ชมน้อยลงและการพบกันโดยตรงมากขึ้น คนน้อยลงในห้องเมื่อคุณพบกันครั้งต่อไป"
+        }
+      }
+    },
+    "40-four-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "An inner dissatisfaction distracted them, and they missed the offering the bond was making. The pullback came from looking inward and not noticing what was being held out.",
+          "th": "ความไม่พอใจภายในทำให้เขาเผลอ และเขาพลาดสิ่งที่ความสัมพันธ์กำลังยื่นให้ การถอยห่างมาจากการมองเข้าด้านในและไม่สังเกตสิ่งที่ถูกยื่นมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are discontented without a clear cause. Even good things look smaller from this angle, and the bond is among the things they cannot currently see clearly.",
+          "th": "ภายในใจเขาไม่พอใจโดยไม่มีสาเหตุชัด แม้สิ่งที่ดีก็ดูเล็กลงจากมุมนี้ และความสัมพันธ์เป็นหนึ่งในสิ่งที่เขามองไม่ชัดในตอนนี้"
+        },
+        "path_forward": {
+          "en": "A return when their melancholy lifts. The bond's path forward depends on whether something — internal or external — shifts the angle from which they are looking.",
+          "th": "การกลับมาเมื่อความหม่นของเขาบรรเทา เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่ามีบางสิ่ง ภายในหรือภายนอก เปลี่ยนมุมที่เขามองหรือไม่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An internal shift toward openness almost happened — but they retreated again at the last moment. Something in them is ready to reach back but a part still pulls away.",
+          "th": "การเปลี่ยนภายในสู่การเปิดเกือบเกิดขึ้น แต่เขาถอยอีกครั้งในช่วงสุดท้าย บางส่วนของเขาพร้อมจะเอื้อมกลับ แต่บางส่วนยังดึงกลับ"
+        },
+        "inner_state": {
+          "en": "Inside, they are emerging from apathy but cautious about reopening. The motion is real but small — and they are not yet trusting it.",
+          "th": "ภายในใจเขากำลังโผล่จากความเฉื่อย แต่ระวังเรื่องการเปิดใหม่ การเคลื่อนเป็นจริงแต่เล็ก และเขายังไม่เชื่อมั่นในมัน"
+        },
+        "path_forward": {
+          "en": "Slow reawakening; the movement is internal first. The bond's chance comes when their attention naturally turns outward again — but it must come from them, not from your prompting.",
+          "th": "การตื่นช้าๆ การเคลื่อนเป็นภายในก่อน โอกาสของความสัมพันธ์มาเมื่อความสนใจของเขาหันออกอย่างเป็นธรรมชาติอีกครั้ง แต่ต้องมาจากเขา ไม่ใช่จากการกระตุ้นของคุณ"
+        }
+      }
+    },
+    "41-five-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "They are grieving something they haven't shared with you — a loss, a disappointment, a quiet sorrow that took precedence over the bond.",
+          "th": "เขากำลังเสียใจกับบางสิ่งที่ไม่ได้แบ่งกับคุณ การสูญเสีย ความผิดหวัง ความเศร้าเงียบที่เข้ามาแทนความสำคัญของความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are focused on what's lost — and cannot yet see what is still here. The bond is among the things still here that they cannot quite see right now.",
+          "th": "ภายในใจเขาจดจ่อกับสิ่งที่หายไป และยังมองไม่เห็นสิ่งที่ยังอยู่ ความสัมพันธ์เป็นหนึ่งในสิ่งที่ยังอยู่ ซึ่งเขายังมองไม่เห็นในตอนนี้"
+        },
+        "path_forward": {
+          "en": "A return when they shift their gaze to what remains. The bond's path forward depends on their grief running its course — pressing it short would only delay the shift.",
+          "th": "การกลับมาเมื่อเขาเปลี่ยนสายตามองสิ่งที่ยังเหลือ เส้นทางของความสัมพันธ์ขึ้นอยู่กับการที่ความเสียใจของเขาเดินผ่านจังหวะของมัน การเร่งจะเพียงชะลอการเปลี่ยน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They are beginning to look up — and halting because looking up hurts. The pullback is the pause between grief and tentative hope, not a refusal of either.",
+          "th": "เขาเริ่มเงยขึ้น และหยุดเพราะการเงยเจ็บ การถอยห่างคือการพักระหว่างความเสียใจกับความหวังที่ยังลังเล ไม่ใช่การปฏิเสธสิ่งใด"
+        },
+        "inner_state": {
+          "en": "Inside, tentative healing is happening — afraid of caring again, afraid of being disappointed twice. Each small forward step costs them something.",
+          "th": "ภายในใจการเยียวยาที่ลังเลกำลังเกิดขึ้น กลัวที่จะใส่ใจอีกครั้ง กลัวที่จะผิดหวังสองครั้ง แต่ละก้าวเล็กไปข้างหน้ามีค่าให้เขาต้องจ่าย"
+        },
+        "path_forward": {
+          "en": "Gentle re-emergence, careful step by step. The bond's chance is in being a quiet presence that doesn't require much — a place to land, not a place that asks for performance.",
+          "th": "การโผล่กลับอย่างนุ่ม ทีละก้าวอย่างระมัดระวัง โอกาสของความสัมพันธ์อยู่ที่การเป็นที่ที่เงียบและไม่ต้องการมาก ที่ลง ไม่ใช่ที่ที่ขอการแสดง"
+        }
+      }
+    },
+    "42-six-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "They were pulled back into memories of someone or something earlier. Nostalgia became a strong tide and the present bond got quieter while they swam in older waters.",
+          "th": "เขาถูกดึงกลับเข้าสู่ความทรงจำของใครหรือบางสิ่งในอดีต ความคิดถึงกลายเป็นกระแสที่แรง และความสัมพันธ์ปัจจุบันเงียบลงขณะที่เขาว่ายในน้ำเก่า"
+        },
+        "inner_state": {
+          "en": "Inside, they are visiting a simpler time before this bond — not necessarily missing a person, but missing a version of themselves that existed back then.",
+          "th": "ภายในใจเขาเยี่ยมเยียนช่วงเวลาที่ง่ายกว่าก่อนความสัมพันธ์นี้ ไม่จำเป็นว่าจะคิดถึงคน เป็นการคิดถึงเวอร์ชั่นของตัวเองที่เคยอยู่ตอนนั้น"
+        },
+        "path_forward": {
+          "en": "A return is possible if they make peace with the past rather than keep visiting it. The bond's chance lies in their reconciliation with what came before — not in your competing with it.",
+          "th": "การกลับมาเป็นไปได้หากเขาทำสันติกับอดีตแทนการเยี่ยมมันต่อ โอกาสของความสัมพันธ์อยู่ที่การคืนดีของเขากับสิ่งที่มาก่อน ไม่ใช่ที่คุณแข่งกับมัน"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Trapped in the past, they cannot meet you in the present. Old stories have a stronger grip on them than current reality, and the bond suffers from that displacement.",
+          "th": "ติดอยู่ในอดีต เขาพบคุณในปัจจุบันไม่ได้ เรื่องเก่ายึดเขาแน่นกว่าความจริงปัจจุบัน และความสัมพันธ์ได้รับผลจากการแทนที่นั้น"
+        },
+        "inner_state": {
+          "en": "Inside, they are stuck in old stories — current reality feels secondary to them. The bond exists in the present, but they are not currently living there.",
+          "th": "ภายในใจเขาติดอยู่ในเรื่องเก่า ความจริงปัจจุบันรู้สึกเป็นรองสำหรับเขา ความสัมพันธ์อยู่ในปัจจุบัน แต่เขาไม่ได้กำลังอยู่ที่นั่นในตอนนี้"
+        },
+        "path_forward": {
+          "en": "The bond waits until they return to now. Until they choose the present over the past, distance is what the bond will have — patience, not pursuit, is what serves you.",
+          "th": "ความสัมพันธ์รอจนกว่าเขาจะกลับมาที่ตอนนี้ จนกว่าเขาจะเลือกปัจจุบันเหนืออดีต ระยะห่างคือสิ่งที่ความสัมพันธ์จะได้ ความอดทน ไม่ใช่การวิ่งเข้าหา คือสิ่งที่รับใช้คุณ"
+        }
+      }
+    },
+    "43-seven-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "Lost in possibilities, they couldn't commit to seeing you clearly. Too many imagined paths were open, and the bond got blurred into the field of options.",
+          "th": "หลงในความเป็นไปได้ เขามองคุณชัดไม่ได้ เส้นทางในจินตนาการเปิดอยู่มากเกินไป และความสัมพันธ์เบลอเข้าไปในสนามของทางเลือก"
+        },
+        "inner_state": {
+          "en": "Inside, they are dreaming rather than deciding. The bond is one option among many imagined ones — and as long as they keep imagining, none of them is real to them.",
+          "th": "ภายในใจเขากำลังฝันมากกว่าตัดสิน ความสัมพันธ์เป็นหนึ่งทางเลือกในหลายทางที่จินตนาการขึ้น และตราบใดที่เขายังจินตนาการ ไม่มีทางใดที่จริงสำหรับเขา"
+        },
+        "path_forward": {
+          "en": "A real return requires them choosing the real thing rather than continuing to imagine alternatives. The bond's path forward depends on their willingness to step out of fantasy.",
+          "th": "การกลับมาจริงต้องผ่านการที่เขาเลือกสิ่งที่จริง แทนการจินตนาการทางเลือกต่อไป เส้นทางของความสัมพันธ์ขึ้นอยู่กับความเต็มใจของเขาที่จะก้าวออกจากจินตนาการ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "An illusion shattered — what they had been imagining about the bond, or themselves, or what they wanted, revealed itself as not quite real. Reality surfaced abruptly.",
+          "th": "ภาพลวงตาแตก สิ่งที่เขาจินตนาการเกี่ยวกับความสัมพันธ์ หรือตัวเอง หรือสิ่งที่ต้องการ เผยตัวว่าไม่จริงนัก ความจริงผุดขึ้นกะทันหัน"
+        },
+        "inner_state": {
+          "en": "Inside, they are sober but disoriented — reassessing what they want now that the illusion has lifted. The bond may look different to them than it did when imagined.",
+          "th": "ภายในใจเขาสร่างแต่งง ประเมินใหม่ว่าตอนนี้ต้องการอะไรเมื่อภาพลวงตาหายไป ความสัมพันธ์อาจดูต่างจากที่เขาเคยจินตนาการ"
+        },
+        "path_forward": {
+          "en": "Clearer ground if they choose what is rather than what could be. The bond's path forward depends on whether they can love the actual thing — not the imagined version of it.",
+          "th": "พื้นที่ที่ชัดกว่าหากเขาเลือกสิ่งที่เป็น แทนสิ่งที่อาจเป็น เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาสามารถรักสิ่งที่เป็นจริงได้หรือไม่ ไม่ใช่เวอร์ชั่นที่จินตนาการขึ้น"
+        }
+      }
+    },
+    "44-eight-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "An internal call to leave for something deeper. They sensed this bond couldn't give what they were seeking — not because it lacked value, but because the seeking was elsewhere.",
+          "th": "เสียงเรียกภายในให้ออกไปหาบางสิ่งที่ลึกกว่า เขารู้สึกว่าความสัมพันธ์นี้ให้สิ่งที่ตามหาไม่ได้ ไม่ใช่เพราะขาดคุณค่า แต่เพราะการตามหาอยู่ที่อื่น"
+        },
+        "inner_state": {
+          "en": "Inside, they know this bond cannot give what they are seeking right now. The leaving is not against you; it is toward something they cannot yet name.",
+          "th": "ภายในใจเขารู้ว่าความสัมพันธ์นี้ให้สิ่งที่เขากำลังตามหาในตอนนี้ไม่ได้ การจากไปไม่ได้ขัดแย้งกับคุณ เป็นการมุ่งสู่บางสิ่งที่เขายังเรียกชื่อไม่ได้"
+        },
+        "path_forward": {
+          "en": "A real departure; what returns will be a different person. The bond cannot follow them where they're going — only meet them again on the other side, if there is one.",
+          "th": "การจากที่แท้จริง สิ่งที่กลับมาจะเป็นคนละคน ความสัมพันธ์ตามเขาไปไม่ได้ที่ที่เขากำลังไป ทำได้เพียงพบเขาอีกครั้งที่อีกฝั่ง หากมี"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Half-leaving, half-staying. They cannot fully walk away but cannot fully stay either, and the bond is being kept in a held-breath state.",
+          "th": "จากครึ่ง อยู่ครึ่ง เขาเดินจากเต็มที่ไม่ได้ และอยู่เต็มที่ก็ไม่ได้ และความสัมพันธ์ถูกถือไว้ในสภาพกลั้นหายใจ"
+        },
+        "inner_state": {
+          "en": "Inside, they are torn — one foot in the bond, one foot toward the door. The position is uncomfortable for them too, but they cannot yet bring themselves to commit either way.",
+          "th": "ภายในใจเขาขาดแยก เท้าหนึ่งในความสัมพันธ์ อีกเท้าหนึ่งสู่ประตู ท่านี้อึดอัดสำหรับเขาด้วย แต่เขายังไม่อาจให้ตัวเองตัดสินทางใดทางหนึ่ง"
+        },
+        "path_forward": {
+          "en": "Prolonged uncertainty until they choose. The bond cannot hold a half-decision forever — your patience is real, but it is not infinite, and they sense that too.",
+          "th": "ความไม่แน่นอนที่ยาวจนกว่าเขาจะเลือก ความสัมพันธ์ถือการตัดสินครึ่งๆ ไม่ได้ตลอดไป ความอดทนของคุณจริง แต่ไม่ไร้ขอบเขต และเขารู้สึกได้ด้วย"
+        }
+      }
+    },
+    "45-nine-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "Contentment elsewhere — pleasure, abundance, a kind of personal satisfaction — pulled them away. They are full from another source and intimacy didn't feel necessary.",
+          "th": "ความพอใจในที่อื่น ความสุข ความอุดมสมบูรณ์ ความพอใจส่วนตัวบางอย่าง ดึงเขาออกไป เขาอิ่มจากแหล่งอื่น และความใกล้ชิดไม่รู้สึกจำเป็น"
+        },
+        "inner_state": {
+          "en": "Inside, they are self-satisfied — intimacy seems unnecessary at this fullness. The bond is not unwanted, but it is also not currently being missed.",
+          "th": "ภายในใจเขาพอใจในตัวเอง ความใกล้ชิดดูไม่จำเป็นที่ความอิ่มนี้ ความสัมพันธ์ไม่ได้ไม่ต้องการ แต่ก็ไม่ได้ถูกคิดถึงในตอนนี้"
+        },
+        "path_forward": {
+          "en": "A return only if their satisfaction asks for company. The bond's path forward depends on whether their fullness wants to be shared — not on whether you can convince them it should be.",
+          "th": "การกลับมาก็ต่อเมื่อความพอใจของเขาขอเพื่อน เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าความอิ่มของเขาอยากแบ่งหรือไม่ ไม่ใช่ที่คุณจะโน้มน้าวให้มันควร"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Surface contentment masking deeper emptiness. They are pulling back not because they are full, but because intimacy threatened to reveal that they are not.",
+          "th": "ความพอใจที่ผิวปกปิดความว่างเปล่าที่ลึก เขาถอยไม่ใช่เพราะอิ่ม แต่เพราะความใกล้ชิดเสี่ยงจะเผยว่าจริงๆ ไม่อิ่ม"
+        },
+        "inner_state": {
+          "en": "Inside, they are emptier than they look — hiding behind appearances. The bond is at risk of seeing through the mask, and they cannot yet bear that.",
+          "th": "ภายในใจเขาว่างกว่าที่ดู ซ่อนหลังภาพ ความสัมพันธ์เสี่ยงจะมองทะลุหน้ากาก และเขายังทนสิ่งนั้นไม่ได้"
+        },
+        "path_forward": {
+          "en": "Real reconnection only if the mask drops. The bond's path forward depends on whether they choose authenticity over performance — and that choice is theirs alone.",
+          "th": "การเชื่อมโยงใหม่ที่จริงก็ต่อเมื่อหน้ากากถูกถอด เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกความเป็นตัวเองเหนือการแสดงหรือไม่ และทางเลือกนั้นเป็นของเขาฝ่ายเดียว"
+        }
+      }
+    },
+    "46-ten-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "Prioritizing their family or chosen-family circle. The bond didn't fit the picture of home they were holding, and they pulled back rather than fight the picture.",
+          "th": "ให้ความสำคัญกับครอบครัวหรือวงคนใกล้ชิด ความสัมพันธ์ไม่เข้ากับภาพของบ้านที่เขาถืออยู่ และเขาถอยห่างมากกว่าสู้กับภาพนั้น"
+        },
+        "inner_state": {
+          "en": "Inside, they are nesting — the bond didn't fit their image of where they were going. There is care, but it has been weighed against a longer vision of home.",
+          "th": "ภายในใจเขากำลังสร้างรัง ความสัมพันธ์ไม่เข้ากับภาพของที่ที่เขากำลังไป มีความห่วงใย แต่ถูกชั่งกับวิสัยทัศน์ที่ยาวกว่าของบ้าน"
+        },
+        "path_forward": {
+          "en": "A return if and only if the bond becomes part of the family vision. The path forward depends on whether you can be folded into the picture they are building.",
+          "th": "การกลับมาก็ต่อเมื่อความสัมพันธ์กลายเป็นส่วนหนึ่งของวิสัยทัศน์ของครอบครัว เส้นทางขึ้นอยู่กับว่าคุณจะถูกพับเข้าในภาพที่เขากำลังสร้างได้หรือไม่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Domestic discord swallowed their attention. Something at home — family conflict, household stress, broken expectations — left no room for the bond to be tended.",
+          "th": "ความไม่ลงรอยในครอบครัวกลืนความสนใจของเขา บางสิ่งที่บ้าน ความขัดแย้งในครอบครัว ความเครียดในบ้าน ความคาดหวังที่แตก ทำให้ไม่มีที่เหลือให้ดูแลความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are torn between obligations and feelings. The bond has no chance to compete with what their family is demanding from them right now.",
+          "th": "ภายในใจเขาขาดแยกระหว่างหน้าที่กับความรู้สึก ความสัมพันธ์ไม่มีโอกาสแข่งกับสิ่งที่ครอบครัวของเขาเรียกร้องในตอนนี้"
+        },
+        "path_forward": {
+          "en": "Dependent on resolution of their home life. The bond's path forward is paused until they have settled what is asking for their attention closer in — and that timing is not yours to set.",
+          "th": "ขึ้นอยู่กับการคลี่คลายชีวิตที่บ้าน เส้นทางของความสัมพันธ์ถูกหยุดจนกว่าเขาจะจัดการสิ่งที่ขอความสนใจในวงใกล้ และจังหวะนั้นไม่ใช่ของคุณที่จะกำหนด"
+        }
+      }
+    },
+    "47-page-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "Tender feeling overwhelmed a fragile heart. Something between you was sweeter than they expected, and they pulled back from the surprise of being moved.",
+          "th": "ความรู้สึกอ่อนท่วมหัวใจที่เปราะ บางสิ่งระหว่างคุณหวานกว่าที่เขาคาด และเขาถอยจากความประหลาดใจของการถูกสัมผัส"
+        },
+        "inner_state": {
+          "en": "Inside, they are shy — protecting an emerging emotion they don't yet know how to hold. The distance is a way of giving themselves time to grow into the feeling.",
+          "th": "ภายในใจเขาขี้อาย ปกป้องอารมณ์ที่ผุดขึ้นซึ่งเขายังไม่รู้จะถือไว้อย่างไร ระยะห่างเป็นวิธีให้เวลาตัวเองเติบโตเข้าสู่ความรู้สึก"
+        },
+        "path_forward": {
+          "en": "A soft return is possible with gentle pace. The bond's chance lies in not startling them — small contacts, warm but unintrusive, will land better than grand gestures.",
+          "th": "การกลับมาที่อ่อนเป็นไปได้ด้วยจังหวะที่นุ่ม โอกาสของความสัมพันธ์อยู่ที่การไม่ทำให้เขาตกใจ การติดต่อเล็กๆ อบอุ่นแต่ไม่ก้าวก่าย จะลงได้ดีกว่าท่าทางใหญ่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Their feelings were hurt — accidentally or carelessly — in a way they cannot articulate. The pullback came from a tender place that doesn't know how to ask for repair.",
+          "th": "ความรู้สึกของเขาถูกทำร้าย โดยบังเอิญหรือไม่ระมัดระวัง ในแบบที่อธิบายไม่ได้ การถอยห่างมาจากที่อ่อนซึ่งไม่รู้วิธีขอการซ่อม"
+        },
+        "inner_state": {
+          "en": "Inside, they are bruised in a way they cannot put into words. The silence is their best available substitute for an explanation they don't yet know how to give.",
+          "th": "ภายในใจเขาฟกช้ำในแบบที่ใส่เป็นคำไม่ได้ ความเงียบคือสิ่งทดแทนที่ดีที่สุดสำหรับคำอธิบายที่ยังไม่รู้จะให้อย่างไร"
+        },
+        "path_forward": {
+          "en": "Needs time and tenderness to come back. The bond's path forward is gentleness — not pursuit, not pressure, just steady warmth from a respectful distance.",
+          "th": "ต้องการเวลาและความอ่อนโยนเพื่อจะกลับมา เส้นทางของความสัมพันธ์คือความนุ่ม ไม่ใช่การเร่งเข้าหา ไม่ใช่การกดดัน เพียงความอบอุ่นที่นิ่งจากระยะที่เคารพ"
+        }
+      }
+    },
+    "48-knight-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "Their ideal of the bond outran the reality. They had been imagining a particular romance, and when reality didn't quite match, they retreated from the disappointment.",
+          "th": "อุดมคติของเขาเกี่ยวกับความสัมพันธ์วิ่งแซงความจริง เขาเคยจินตนาการความรักแบบหนึ่ง และเมื่อความจริงไม่ลงล็อก เขาถอยจากความผิดหวัง"
+        },
+        "inner_state": {
+          "en": "Inside, they are disappointed that life didn't match the dream. The bond is real, but it is not what they imagined — and they don't yet know how to love the actual thing.",
+          "th": "ภายในใจเขาผิดหวังที่ชีวิตไม่ตรงกับฝัน ความสัมพันธ์เป็นจริง แต่ไม่ใช่สิ่งที่เขาจินตนาการ และเขายังไม่รู้จะรักสิ่งที่เป็นจริงได้อย่างไร"
+        },
+        "path_forward": {
+          "en": "A return only if they accept the bond as it is. The path forward depends on whether they can let go of the imagined version and meet what is actually here.",
+          "th": "การกลับมาก็ต่อเมื่อเขายอมรับความสัมพันธ์ตามที่มันเป็น เส้นทางขึ้นอยู่กับว่าเขาจะปล่อยเวอร์ชั่นที่จินตนาการได้ และพบสิ่งที่อยู่ตรงนี้จริงๆ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Moodiness or a romanticized exit. They left in a way that felt poetic to them — a story they could tell themselves — even if it confused the bond into silence.",
+          "th": "อารมณ์แปรปรวนหรือการจากที่ทำให้ดูโรแมนติก เขาจากในแบบที่รู้สึกมีบทกวีสำหรับตัวเอง เรื่องที่เขาเล่าให้ตัวเองฟัง แม้จะทำให้ความสัมพันธ์งงเงียบไป"
+        },
+        "inner_state": {
+          "en": "Inside, they are melancholy — prone to dramatic withdrawal that serves their inner narrative more than the actual situation. The mood is bigger than the moment.",
+          "th": "ภายในใจเขาหม่น โน้มเอียงสู่การถอยห่างแบบดราม่าที่รับใช้เรื่องเล่าภายในมากกว่าสถานการณ์จริง อารมณ์ใหญ่กว่าช่วงเวลา"
+        },
+        "path_forward": {
+          "en": "Depends on emotional grounding they need to find alone. The bond's path forward requires them to step out of the story they are telling and meet ordinary reality again.",
+          "th": "ขึ้นอยู่กับการลงหลักทางอารมณ์ที่เขาต้องหาด้วยตัวเอง เส้นทางของความสัมพันธ์ต้องการให้เขาก้าวออกจากเรื่องที่กำลังเล่า และพบความจริงที่ธรรมดาอีกครั้ง"
+        }
+      }
+    },
+    "49-queen-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "Empathic overload — they absorbed too much from the bond, from others, from the world — and needed solitude to drain what they had taken in.",
+          "th": "การซึมซับเกินขนาด เขาดูดซับมากเกินจากความสัมพันธ์ จากคนอื่น จากโลก และต้องการความเงียบเพื่อระบายสิ่งที่รับเข้ามา"
+        },
+        "inner_state": {
+          "en": "Inside, they are emotionally saturated — cannot host more feeling without it spilling. The bond was a strong current; they needed to find shore again.",
+          "th": "ภายในใจเขาอิ่มตัวทางอารมณ์ ต้อนรับความรู้สึกเพิ่มไม่ได้โดยไม่ล้น ความสัมพันธ์เป็นกระแสที่แรง เขาต้องหาฝั่งอีกครั้ง"
+        },
+        "path_forward": {
+          "en": "A gentle return when their inner waters settle. The bond's path forward is calm — not flat, just settled — and patience on your part is the most useful thing.",
+          "th": "การกลับมาที่อ่อนเมื่อน้ำในใจของเขาตกตะกอน เส้นทางของความสัมพันธ์คือความสงบ ไม่ใช่เรียบจืด เพียงนิ่งลง และความอดทนของคุณเป็นสิ่งที่ใช้ประโยชน์ได้มากที่สุด"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Overwhelmed and reactive, they withdrew to protect themselves from their own emotions as much as from yours. The pullback was both a wall and a refuge.",
+          "th": "ท่วมและเป็นปฏิกิริยา เขาถอยเพื่อปกป้องตัวเองจากอารมณ์ของตัวเองพอๆ กับจากของคุณ การถอยห่างเป็นทั้งกำแพงและที่หลบ"
+        },
+        "inner_state": {
+          "en": "Inside, they are tearful and guarded — emotions outsize the situation. They sense that their reaction is bigger than what triggered it, but they cannot yet shrink it.",
+          "th": "ภายในใจเขาน้ำตาคลอและตั้งรับ อารมณ์ใหญ่กว่าสถานการณ์ เขารู้สึกได้ว่าปฏิกิริยาของตัวเองใหญ่กว่าสิ่งที่กระตุ้น แต่ยังหดมันไม่ได้"
+        },
+        "path_forward": {
+          "en": "Re-engagement when they trust their own composure again. The bond cannot do that work for them — they need to find their own steady ground first.",
+          "th": "การกลับเข้าหากันเมื่อเขาเชื่อความสงบของตัวเองอีกครั้ง ความสัมพันธ์ทำงานนั้นแทนเขาไม่ได้ เขาต้องหาพื้นที่นิ่งของตัวเองก่อน"
+        }
+      }
+    },
+    "50-king-of-cups": {
+      "upright": {
+        "trigger": {
+          "en": "They calmly chose distance — emotion processed without performance. The decision was considered, not reactive, and they are at peace with having made it.",
+          "th": "เขาเลือกระยะห่างอย่างสงบ อารมณ์ถูกประมวลโดยไม่แสดง การตัดสินใจถูกพิจารณา ไม่ใช่ปฏิกิริยา และเขาสงบกับการตัดสินนั้น"
+        },
+        "inner_state": {
+          "en": "Inside, they are composed — this decision has been weighed and they are not second-guessing it. The bond is being held at a deliberate distance, not an anxious one.",
+          "th": "ภายในใจเขาสงบ การตัดสินนี้ถูกชั่ง และเขาไม่ลังเล ความสัมพันธ์ถูกถือไว้ในระยะที่ตั้งใจ ไม่ใช่ระยะของความกังวล"
+        },
+        "path_forward": {
+          "en": "A return is honest if it comes; an end is honest if it doesn't. Whatever shape the bond takes from here will reflect their settled relationship with it, not a momentary mood.",
+          "th": "การกลับมาเป็นเรื่องซื่อตรงหากเกิดขึ้น การจบก็เป็นเรื่องซื่อตรงหากไม่เกิด รูปร่างใดก็ตามที่ความสัมพันธ์จะมีจากตรงนี้ จะสะท้อนความสัมพันธ์ที่นิ่งของเขากับมัน ไม่ใช่อารมณ์ชั่วครู่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Suppressed feeling surfaced as cold distance. They were ruling their emotions instead of feeling them, and the bond got the chill of an emotion that wasn't being allowed to thaw.",
+          "th": "ความรู้สึกที่ถูกกดผุดมาเป็นระยะห่างที่เย็น เขากำลังปกครองอารมณ์แทนการรู้สึกมัน และความสัมพันธ์ได้รับความเย็นของอารมณ์ที่ไม่ถูกอนุญาตให้ละลาย"
+        },
+        "inner_state": {
+          "en": "Inside, they are ruling their emotions instead of letting them move. The suppression takes energy, and very little of that energy reaches the bond.",
+          "th": "ภายในใจเขากำลังปกครองอารมณ์แทนการปล่อยให้มันเคลื่อน การกดทำให้เปลืองพลัง และพลังนั้นเหลือถึงความสัมพันธ์น้อยมาก"
+        },
+        "path_forward": {
+          "en": "Depends on whether they let the suppression melt. The bond's path forward requires them to feel what they have been managing — and that softening, if it comes, takes time.",
+          "th": "ขึ้นอยู่กับว่าเขาจะปล่อยให้การกดละลายหรือไม่ เส้นทางของความสัมพันธ์ต้องการให้เขารู้สึกสิ่งที่จัดการอยู่ และการอ่อนนั้น หากมา ใช้เวลา"
+        }
+      }
+    },
+    "51-ace-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A sudden clarity changed how they saw the bond. A truth landed sharply, and they pulled back to hold what they suddenly understood without yet knowing how to say it.",
+          "th": "ความชัดเจนที่กะทันหันเปลี่ยนวิธีที่เขาเห็นความสัมพันธ์ ความจริงลงคม และเขาถอยห่างเพื่อถือสิ่งที่เพิ่งเข้าใจ โดยยังไม่รู้จะพูดออกมาอย่างไร"
+        },
+        "inner_state": {
+          "en": "Inside, a new truth is being held. They are sharp inside — not cold, but clear — and the silence is them giving the truth room to settle before they speak it.",
+          "th": "ภายในใจมีความจริงใหม่ที่ถูกถือไว้ เขาคมภายใน ไม่ใช่เย็น แต่ชัด และความเงียบคือการที่เขาให้พื้นที่ความจริงตกตะกอนก่อนพูด"
+        },
+        "path_forward": {
+          "en": "A clear movement — toward or away — once they speak the truth. The bond's direction depends on what gets named, and the naming will arrive in their own time.",
+          "th": "การเคลื่อนที่ชัดเจน เข้าหาหรือออกห่าง เมื่อเขาพูดความจริง ทิศของความสัมพันธ์ขึ้นอยู่กับสิ่งที่จะถูกเรียกชื่อ และการเรียกชื่อจะมาในจังหวะของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "False clarity that turned out wrong. They cut something quickly based on a thought that felt sharp, but the sharpness was theirs more than the truth's.",
+          "th": "ความชัดที่ผิด เขาตัดบางสิ่งอย่างเร็วจากความคิดที่รู้สึกคม แต่ความคมเป็นของเขามากกว่าของความจริง"
+        },
+        "inner_state": {
+          "en": "Inside, they are confused after a moment of false certainty. They sense the cut may have been wrong but cannot yet bring themselves to take it back.",
+          "th": "ภายในใจเขาสับสนหลังช่วงเวลาของความแน่นอนปลอม เขารู้สึกว่าการตัดอาจผิด แต่ยังไม่อาจให้ตัวเองดึงกลับ"
+        },
+        "path_forward": {
+          "en": "Real clarity needs to follow; the first cut wasn't it. The bond's path forward depends on whether they can admit the mistake — and on how much the cut wounded in the meantime.",
+          "th": "ความชัดเจนที่แท้จริงต้องตามมา การตัดครั้งแรกไม่ใช่ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะยอมรับความผิดพลาดหรือไม่ และว่าการตัดทำร้ายแค่ไหนระหว่างนั้น"
+        }
+      }
+    },
+    "52-two-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "They refused to look at what they sensed. The pullback was a turning-away — eyes closed against a choice that was asking to be made.",
+          "th": "เขาปฏิเสธที่จะมองสิ่งที่ตัวเองรู้สึก การถอยห่างคือการหันไป ปิดตาต่อทางเลือกที่ขอให้ถูกตัดสิน"
+        },
+        "inner_state": {
+          "en": "Inside, they are blindfolded by their own choosing — afraid to decide and pretending the choice isn't there. The bond is one of the things they cannot currently bear to look at clearly.",
+          "th": "ภายในใจเขาปิดตาตัวเอง กลัวการตัดสินใจและทำเป็นไม่มีทางเลือก ความสัมพันธ์เป็นหนึ่งในสิ่งที่เขาทนไม่ได้ที่จะมองให้ชัดในตอนนี้"
+        },
+        "path_forward": {
+          "en": "Nothing moves until they remove the blindfold. The bond cannot proceed inside their refusal to look — and you cannot make them look, only refuse to pretend with them.",
+          "th": "ไม่มีอะไรเคลื่อนจนกว่าเขาจะถอดผ้าปิดตา ความสัมพันธ์เดินต่อไม่ได้ภายในการปฏิเสธที่จะมองของเขา และคุณบังคับให้เขามองไม่ได้ ทำได้เพียงปฏิเสธที่จะแกล้งทำไปด้วย"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A forced confrontation broke their refusal to look. Something — perhaps from outside, perhaps from inside — made the blindfold impossible to keep on.",
+          "th": "การเผชิญหน้าที่ถูกบังคับทำลายการปฏิเสธที่จะมองของเขา บางสิ่ง อาจมาจากภายนอก อาจมาจากภายใน ทำให้ผ้าปิดตาคงไว้ไม่ได้"
+        },
+        "inner_state": {
+          "en": "Inside, they are facing what they avoided — raw, slow, uncomfortable. Processing is happening, but it is not pretty, and they are not yet ready to share the process with you.",
+          "th": "ภายในใจเขากำลังเผชิญสิ่งที่เคยหลีกเลี่ยง ดิบ ช้า อึดอัด การประมวลกำลังเกิดขึ้น แต่ไม่สวย และเขายังไม่พร้อมจะแบ่งกระบวนการกับคุณ"
+        },
+        "path_forward": {
+          "en": "Clarity is coming, but the path is uncomfortable. The bond's chance depends on whether they can be honest with you about what they are seeing — once they have finished seeing it themselves.",
+          "th": "ความชัดเจนกำลังมา แต่เส้นทางอึดอัด โอกาสของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะซื่อตรงกับคุณเรื่องสิ่งที่กำลังเห็นได้หรือไม่ เมื่อเขาเห็นเสร็จด้วยตัวเอง"
+        }
+      }
+    },
+    "53-three-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A painful realization or rupture. Something hurt in a way that could not be ignored, and they pulled back to grieve rather than to keep pretending the wound wasn't there.",
+          "th": "การตระหนักหรือการแตกที่เจ็บปวด บางสิ่งทำร้ายในแบบที่ละเลยไม่ได้ และเขาถอยห่างเพื่อเสียใจ แทนการแกล้งว่าแผลไม่อยู่ตรงนั้น"
+        },
+        "inner_state": {
+          "en": "Inside, their heart is in pieces and they cannot pretend otherwise. The pain is honest, even if its source is not yet clear, and they need space to feel it.",
+          "th": "ภายในใจหัวใจของเขาเป็นชิ้นๆ และเขาแกล้งทำไม่ได้ ความเจ็บซื่อตรง แม้ที่มายังไม่ชัด และเขาต้องการพื้นที่เพื่อรู้สึก"
+        },
+        "path_forward": {
+          "en": "A clean grief, not a closed door — but it needs space. The bond is not over; it is wounded, and wounds need time the same way muscles need rest.",
+          "th": "ความเสียใจที่สะอาด ไม่ใช่ประตูปิด แต่ต้องการพื้นที่ ความสัมพันธ์ไม่ได้จบ มันบาดเจ็บ และแผลต้องการเวลาเหมือนกล้ามเนื้อต้องการการพัก"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Avoided heartbreak — the pain is delayed, not resolved. The pullback came in place of grief that they couldn't yet bring themselves to feel out loud.",
+          "th": "ความเสียใจที่ถูกหลีกเลี่ยง ความเจ็บถูกเลื่อน ไม่ได้แก้ไข การถอยห่างเข้ามาแทนความเสียใจที่เขายังไม่อาจให้ตัวเองรู้สึกออกมา"
+        },
+        "inner_state": {
+          "en": "Inside, the hurt is half-acknowledged — bleeding quietly. They are functioning, but something is leaking under the surface, and the bond can sense it without being told.",
+          "th": "ภายในใจความเจ็บถูกยอมรับครึ่งหนึ่ง เลือดไหลเงียบ เขาทำงานได้ แต่บางสิ่งรั่วใต้ผิว และความสัมพันธ์รู้สึกได้โดยไม่ต้องถูกบอก"
+        },
+        "path_forward": {
+          "en": "Real healing only when the wound is named. The bond's path forward depends on whether they can speak the hurt — to themselves first, then to you — rather than letting it leak indefinitely.",
+          "th": "การเยียวยาที่แท้จริงเกิดเมื่อแผลถูกเรียกชื่อ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะพูดความเจ็บได้หรือไม่ กับตัวเองก่อน แล้วจึงกับคุณ แทนการปล่อยให้มันรั่วต่อเรื่อยๆ"
+        }
+      }
+    },
+    "54-four-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "They needed rest — the bond required energy they didn't have. The pullback was strategic in a quiet way, choosing recovery over continued engagement.",
+          "th": "เขาต้องการการพัก ความสัมพันธ์ต้องการพลังที่เขาไม่มี การถอยห่างเป็นกลยุทธ์ในแบบเงียบ เลือกการฟื้นเหนือการเชื่อมต่อ"
+        },
+        "inner_state": {
+          "en": "Inside, they are recovering — in repair mode, narrowed to what restores them. The bond is paused, not ended; the pause is what their body and mind are insisting on.",
+          "th": "ภายในใจเขากำลังฟื้นตัว อยู่ในโหมดซ่อม แคบลงเหลือเฉพาะสิ่งที่ฟื้นเขา ความสัมพันธ์ถูกหยุด ไม่ใช่จบ การหยุดคือสิ่งที่ร่างกายและใจของเขายืนยัน"
+        },
+        "path_forward": {
+          "en": "A return once they've recovered, on their pace. The bond's path forward asks for patience equal to the depth of their tiredness — and they are tired enough to need real time.",
+          "th": "การกลับมาเมื่อเขาฟื้นแล้ว ในจังหวะของเขา เส้นทางของความสัมพันธ์ขอความอดทนเท่ากับความลึกของความเหนื่อยของเขา และเขาเหนื่อยพอที่จะต้องการเวลาจริง"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Forced rest they didn't want. Something compelled them to step back even though they would have preferred to keep going, and recovery isn't going the way it should.",
+          "th": "การพักที่ถูกบังคับซึ่งเขาไม่อยาก บางสิ่งทำให้เขาต้องถอยแม้เขาจะอยากเดินต่อ และการฟื้นไม่ได้เป็นไปอย่างที่ควร"
+        },
+        "inner_state": {
+          "en": "Inside, they are restless inside their stillness — unable to truly rest, unable to truly act. The bond sits in the same limbo, waiting for them to find one or the other.",
+          "th": "ภายในใจเขากระสับกระส่ายภายในความนิ่ง พักจริงๆ ไม่ได้ ลงมือจริงๆ ไม่ได้ ความสัมพันธ์อยู่ในที่กลางๆ เดียวกัน รอให้เขาหาเจอด้านใดด้านหนึ่ง"
+        },
+        "path_forward": {
+          "en": "Longer than expected — the rest isn't restorative yet. The bond's chance lies in whatever helps them actually settle into the pause rather than fight it.",
+          "th": "นานกว่าที่คาด การพักยังไม่ฟื้น โอกาสของความสัมพันธ์อยู่ที่สิ่งใดก็ตามที่ช่วยให้เขาตั้งหลักในการหยุดได้จริง แทนการสู้กับมัน"
+        }
+      }
+    },
+    "55-five-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A conflict they technically won but emotionally lost. They got their way, or proved their point, and the cost of winning was the warmth they had with you.",
+          "th": "ความขัดแย้งที่เขาชนะในทางเทคนิคแต่แพ้ทางอารมณ์ เขาได้ในสิ่งที่ต้องการ หรือพิสูจน์จุดยืน และค่าใช้จ่ายของการชนะคือความอบอุ่นที่เขามีกับคุณ"
+        },
+        "inner_state": {
+          "en": "Inside, pride and regret are tangled together. They are not sorry in the simple sense — but they are not satisfied either, and the bond is paying for the leftover tension.",
+          "th": "ภายในใจความภูมิใจกับความเสียใจพันกัน เขาไม่ขอโทษในความหมายธรรมดา แต่ก็ไม่พอใจ และความสัมพันธ์กำลังจ่ายให้กับความตึงที่เหลือ"
+        },
+        "path_forward": {
+          "en": "A return only with humility they may not yet have. The bond cannot heal while they are still defending the victory — and admitting the loss is the only honest path.",
+          "th": "การกลับมาก็ต่อเมื่อมีความถ่อมที่เขาอาจยังไม่มี ความสัมพันธ์เยียวยาไม่ได้ในขณะที่เขายังป้องกันชัยชนะ และการยอมรับการแพ้คือเส้นทางซื่อตรงเพียงทางเดียว"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Surrendering an old fight. They are ready to step back from being right, and the pullback is part of laying down a posture they have been holding too long.",
+          "th": "การยอมแพ้การต่อสู้เก่า เขาพร้อมจะถอยจากการต้องถูก และการถอยห่างเป็นส่วนหนึ่งของการวางท่าทีที่ถือมานานเกินไป"
+        },
+        "inner_state": {
+          "en": "Inside, they are softening — tired of winning hollow battles. The distance is a kind of self-correction, an honesty they are starting to extend to themselves.",
+          "th": "ภายในใจเขากำลังอ่อนลง เหนื่อยจากการชนะการต่อสู้ที่ว่างเปล่า ระยะห่างเป็นการแก้ตัวในแบบหนึ่ง ความซื่อตรงที่เขาเริ่มขยายให้ตัวเอง"
+        },
+        "path_forward": {
+          "en": "Real repair if they choose connection over correctness. The bond's path forward opens when they decide that being close matters more than being right — a choice only they can make.",
+          "th": "การซ่อมที่จริงหากเขาเลือกความเชื่อมโยงเหนือความถูก เส้นทางของความสัมพันธ์เปิดเมื่อเขาตัดสินว่าการอยู่ใกล้สำคัญกว่าการถูก ทางเลือกที่เขาเท่านั้นที่ทำได้"
+        }
+      }
+    },
+    "56-six-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "They moved to calmer water — and this bond was part of what they left behind. The pullback was a quiet relocation, not a slammed door.",
+          "th": "เขาเคลื่อนสู่น้ำที่นิ่งกว่า และความสัมพันธ์นี้คือส่วนหนึ่งของสิ่งที่ทิ้งไว้ การถอยห่างเป็นการย้ายที่อย่างเงียบ ไม่ใช่การกระแทกประตู"
+        },
+        "inner_state": {
+          "en": "Inside, they are in transit emotionally — calm but distant. The new shore is calling them, and the bond is on the old shore unless something brings it across.",
+          "th": "ภายในใจเขากำลังเคลื่อนทางอารมณ์ สงบแต่ห่าง ฝั่งใหม่กำลังเรียกเขา และความสัมพันธ์อยู่ที่ฝั่งเก่าจนกว่าจะมีสิ่งใดพามันข้าม"
+        },
+        "path_forward": {
+          "en": "A return possible from the new shore, if they choose to look back. The bond's chance lies in whether their calmer ground includes you — and that decision rests with them.",
+          "th": "การกลับมาเป็นไปได้จากฝั่งใหม่ หากเขาเลือกมองกลับ โอกาสของความสัมพันธ์อยู่ที่ว่าพื้นที่ที่นิ่งกว่าของเขารวมคุณหรือไม่ และการตัดสินนั้นเป็นของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A failed transition — they couldn't quite leave but couldn't quite stay either. The pullback is the in-between of an attempted move that didn't complete.",
+          "th": "การย้ายที่ล้มเหลว เขาออกไปสุดทางก็ไม่ได้ อยู่สุดทางก็ไม่ได้ การถอยห่างคือช่วงกลางของการย้ายที่พยายามแต่ไม่จบ"
+        },
+        "inner_state": {
+          "en": "Inside, they are caught between shores — unsettled, neither here nor fully gone. The bond is one of the things they cannot quite leave and cannot quite hold.",
+          "th": "ภายในใจเขาติดอยู่ระหว่างสองฝั่ง ไม่นิ่ง ไม่อยู่ที่นี่และไม่จากไปเต็มที่ ความสัมพันธ์เป็นหนึ่งในสิ่งที่เขาจากเต็มที่ไม่ได้ และถือเต็มที่ก็ไม่ได้"
+        },
+        "path_forward": {
+          "en": "Stalled until they commit to either side. The bond's path forward needs them to choose — to come back fully, or to fully leave — and the in-between cannot be a destination.",
+          "th": "หยุดนิ่งจนกว่าเขาจะตัดสินด้านใดด้านหนึ่ง เส้นทางของความสัมพันธ์ต้องการให้เขาเลือก กลับมาเต็มที่ หรือจากไปเต็มที่ และช่วงกลางไม่อาจเป็นที่หมาย"
+        }
+      }
+    },
+    "57-seven-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "They avoided what they could have said — took the back exit rather than the front door. The pullback is the shape of a conversation they chose not to have.",
+          "th": "เขาหลีกเลี่ยงสิ่งที่อาจพูดได้ ใช้ทางออกหลังแทนประตูหน้า การถอยห่างคือรูปร่างของบทสนทนาที่เขาเลือกไม่มี"
+        },
+        "inner_state": {
+          "en": "Inside, they are hiding something — from you, or from themselves, possibly both. The silence is part of the concealment and they sense the weight of the omission.",
+          "th": "ภายในใจเขากำลังซ่อนบางสิ่ง จากคุณ หรือจากตัวเอง อาจทั้งสอง ความเงียบเป็นส่วนหนึ่งของการปกปิด และเขารู้สึกถึงน้ำหนักของการละไว้"
+        },
+        "path_forward": {
+          "en": "Nothing real returns until they come out from hiding. The bond cannot grow on top of an unspoken thing; the path forward requires honesty they are currently choosing not to give.",
+          "th": "ไม่มีอะไรจริงกลับมาจนกว่าเขาจะออกจากที่ซ่อน ความสัมพันธ์เติบโตบนสิ่งที่ไม่ได้พูดไม่ได้ เส้นทางต้องการความซื่อตรงที่เขากำลังเลือกไม่ให้ในตอนนี้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Caught in their own evasion — the cover slipped. Something they had been hiding became visible, and now they are dealing with the fact of having been seen.",
+          "th": "ติดในการหลบของตัวเอง สิ่งปิดบังหลุด สิ่งที่เขาซ่อนกลายเป็นเห็นได้ และตอนนี้กำลังจัดการกับความจริงของการถูกเห็น"
+        },
+        "inner_state": {
+          "en": "Inside, they are exposed and embarrassed — defenses crumbling. The pullback is partly humiliation, partly relief that the secret is no longer just theirs to carry.",
+          "th": "ภายในใจเขาถูกเปิดเผยและอาย แนวป้องกันพังลง การถอยห่างส่วนหนึ่งคือความอับอาย ส่วนหนึ่งคือความโล่งใจที่ความลับไม่ใช่ของเขาคนเดียวที่ต้องแบกอีกต่อไป"
+        },
+        "path_forward": {
+          "en": "Honest repair possible if they choose it. The bond's path forward depends on whether they let the exposure become an opening — rather than running from the embarrassment of having been honest by accident.",
+          "th": "การซ่อมที่ซื่อตรงเป็นไปได้หากเขาเลือก เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะปล่อยให้การถูกเปิดเผยกลายเป็นช่องเปิดหรือไม่ แทนการวิ่งหนีความอับอายของการได้ซื่อตรงโดยบังเอิญ"
+        }
+      }
+    },
+    "58-eight-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "They felt trapped by the bond — not by you, but by their own perception of it. The pullback was an escape from a cage they themselves had constructed.",
+          "th": "เขารู้สึกถูกขังโดยความสัมพันธ์ ไม่ใช่โดยคุณ แต่โดยมุมมองของตัวเองต่อมัน การถอยห่างคือการหนีจากกรงที่เขาสร้างเอง"
+        },
+        "inner_state": {
+          "en": "Inside, they are cornered by their own thoughts — believing the bond restricts them in ways it doesn't actually impose. The walls are real to them, even if they aren't physically there.",
+          "th": "ภายในใจเขาถูกต้อนโดยความคิดของตัวเอง เชื่อว่าความสัมพันธ์จำกัดเขาในแบบที่จริงๆ ไม่ได้บังคับ กำแพงเป็นจริงสำหรับเขา แม้ทางกายภาพจะไม่อยู่ที่นั่น"
+        },
+        "path_forward": {
+          "en": "Release only when they see they aren't actually tied. The bond's chance depends on whether they can recognize the cage as their own perception — and you cannot force that recognition.",
+          "th": "การปล่อยก็ต่อเมื่อเขาเห็นว่าจริงๆ ตัวเองไม่ได้ถูกผูก โอกาสของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะจดจำกรงในฐานะมุมมองของตัวเองได้หรือไม่ และคุณบังคับการจดจำนั้นไม่ได้"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They are beginning to see that the prison was self-made. The pullback is part of a slow recognition — not an escape from you, but a loosening of the bind they put themselves in.",
+          "th": "เขาเริ่มเห็นว่าคุกถูกสร้างเอง การถอยห่างเป็นส่วนหนึ่งของการตระหนักช้าๆ ไม่ใช่การหนีจากคุณ แต่เป็นการคลายข้อผูกที่เขาใส่ตัวเอง"
+        },
+        "inner_state": {
+          "en": "Inside, they are opening — recognising their own role in the bind. The clarity is gentle, not dramatic, and it is happening at the pace honest insight tends to move.",
+          "th": "ภายในใจเขากำลังเปิด ตระหนักบทบาทของตัวเองในข้อผูก ความชัดเจนอ่อน ไม่ดราม่า และเกิดในจังหวะที่ความเข้าใจจริงมักจะเคลื่อน"
+        },
+        "path_forward": {
+          "en": "Gradual freedom; a return may follow. The bond's path forward looks brighter than before — but its pace belongs to their unbinding, not to your enthusiasm.",
+          "th": "อิสรภาพทีละน้อย การกลับมาอาจตามมา เส้นทางของความสัมพันธ์ดูสว่างกว่าก่อน แต่จังหวะของมันเป็นของการคลายของเขา ไม่ใช่ของความตื่นเต้นของคุณ"
+        }
+      }
+    },
+    "59-nine-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "Anxiety spiked — they pulled back to manage the spiral. The bond's presence felt like adding to a fire that was already too hot, and distance was the only cooling they could find.",
+          "th": "ความกังวลพุ่งสูง เขาถอยกลับเพื่อจัดการวงจร การมีอยู่ของความสัมพันธ์รู้สึกเหมือนเติมไฟที่ร้อนเกินไปอยู่แล้ว และระยะห่างคือการเย็นเพียงทางเดียวที่เขาพบ"
+        },
+        "inner_state": {
+          "en": "Inside, they are sleepless and catastrophizing — quiet from outside, loud inside. The bond is one of many things being magnified by the late-night version of their mind.",
+          "th": "ภายในใจเขานอนไม่หลับและคิดทุกข์ เงียบจากภายนอก ดังจากภายใน ความสัมพันธ์เป็นหนึ่งในหลายสิ่งที่ถูกขยายโดยเวอร์ชั่นยามดึกของใจเขา"
+        },
+        "path_forward": {
+          "en": "A return only when their nervous system settles. The bond cannot be reasoned with while their body is in alarm; patience and quiet are the only useful offerings.",
+          "th": "การกลับมาก็ต่อเมื่อระบบประสาทของเขานิ่ง ความสัมพันธ์มีเหตุผลให้กันไม่ได้ในขณะที่ร่างกายของเขาเตือนภัย ความอดทนและความเงียบคือสิ่งที่ใช้ประโยชน์ได้เพียงทางเดียว"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Night-fears bleeding into day — they couldn't handle proximity while their anxiety was this loud. The pullback came less from choice and more from overwhelm.",
+          "th": "ความกลัวยามค่ำซึมเข้าวัน เขารับมือกับความใกล้ชิดไม่ได้ในขณะที่ความกังวลดังขนาดนี้ การถอยห่างไม่ได้มาจากทางเลือกเท่าจากความท่วม"
+        },
+        "inner_state": {
+          "en": "Inside, chronic worry has set in — they need help they aren't asking for. The bond cannot supply that help, and pretending it can would only delay the real care.",
+          "th": "ภายในใจความกังวลเรื้อรังก่อตัวแล้ว เขาต้องการความช่วยเหลือที่ตัวเองไม่ได้ขอ ความสัมพันธ์ให้ความช่วยเหลือนั้นไม่ได้ และการแกล้งว่าได้จะเพียงชะลอการดูแลจริง"
+        },
+        "path_forward": {
+          "en": "Longer process; their anxiety needs care first. The bond's path forward depends on whether they seek the kind of help that actually addresses what's happening, not on whether you can soothe them through it.",
+          "th": "กระบวนการที่ยาวกว่า ความกังวลของเขาต้องการการดูแลก่อน เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะหาความช่วยเหลือที่จัดการสิ่งที่เกิดขึ้นจริงหรือไม่ ไม่ใช่ที่คุณจะปลอบเขาผ่านมันได้"
+        }
+      }
+    },
+    "60-ten-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A definitive ending in their mind — they closed the chapter. The pullback is not a pause; it is a marking of where they have decided the bond ends, at least in its current form.",
+          "th": "การจบที่เด็ดขาดในใจของเขา เขาปิดบท การถอยห่างไม่ใช่การหยุด เป็นการทำเครื่องหมายว่าเขาตัดสินให้ความสัมพันธ์จบที่ไหน อย่างน้อยในรูปแบบปัจจุบัน"
+        },
+        "inner_state": {
+          "en": "Inside, they are emptied out — they see no more. The decision feels final to them, even if it lands as devastation on your side, and they are not currently looking for a way back.",
+          "th": "ภายในใจเขาว่างเปล่า มองไม่เห็นมากกว่านี้ การตัดสินรู้สึกขั้นสุดท้ายสำหรับเขา แม้จะลงเป็นความพังทลายในฝั่งคุณ และเขาไม่ได้กำลังหาทางกลับในตอนนี้"
+        },
+        "path_forward": {
+          "en": "No easy return — what comes next is a different bond entirely if anything comes at all. The closure may be hard, but pretending it isn't there would only delay the real grief.",
+          "th": "ไม่มีการกลับที่ง่าย สิ่งที่ตามมาจะเป็นความสัมพันธ์คนละความสัมพันธ์โดยสิ้นเชิง หากมีอะไรตามมาเลย การปิดอาจยาก แต่การแกล้งว่ามันไม่อยู่จะเพียงชะลอความเสียใจจริง"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Barely surviving an ending — partial collapse. Something nearly broke completely, and they are now in the wreckage trying to figure out what was salvageable.",
+          "th": "เกือบรอดผ่านการจบ การพังบางส่วน บางสิ่งเกือบแตกสมบูรณ์ และตอนนี้เขาอยู่ในซากพยายามค้นว่าอะไรกู้ได้"
+        },
+        "inner_state": {
+          "en": "Inside, they are struggling to recover — not quite finished, not quite intact. The bond is part of the rubble they are sorting through, and they cannot yet say what they will keep.",
+          "th": "ภายในใจเขาดิ้นรนเพื่อฟื้น ยังไม่จบ ยังไม่สมบูรณ์ ความสัมพันธ์เป็นส่วนหนึ่งของซากที่เขากำลังคัดแยก และเขายังบอกไม่ได้ว่าจะเก็บอะไร"
+        },
+        "path_forward": {
+          "en": "A slow rebuild — or not — depending on what they salvage. The bond's path forward is in their sorting; the salvageable parts may surface, but only after the wreck has been honestly looked at.",
+          "th": "การสร้างใหม่ช้าๆ หรือไม่ ขึ้นอยู่กับว่าเขากู้อะไร เส้นทางของความสัมพันธ์อยู่ในการคัดแยกของเขา ส่วนที่กู้ได้อาจปรากฏ แต่ก็ต่อเมื่อซากถูกมองอย่างซื่อตรงแล้ว"
+        }
+      }
+    },
+    "61-page-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A wary observation made them step back to assess. They saw something that needed more thinking — not an accusation, but an open question they were not ready to ask out loud.",
+          "th": "การสังเกตที่ระมัดระวังทำให้เขาถอยมาประเมิน เขาเห็นบางสิ่งที่ต้องคิดมากขึ้น ไม่ใช่การกล่าวหา แต่เป็นคำถามที่เปิดอยู่ ซึ่งเขายังไม่พร้อมจะถามออกมา"
+        },
+        "inner_state": {
+          "en": "Inside, they are watching from a distance — gathering information rather than reacting. The pullback is investigative more than emotional, and they are trying to think clearly.",
+          "th": "ภายในใจเขากำลังดูจากระยะห่าง เก็บข้อมูลแทนการตอบสนอง การถอยห่างเป็นการสืบสวนมากกว่าทางอารมณ์ และเขาพยายามคิดให้ชัด"
+        },
+        "path_forward": {
+          "en": "A return once they've finished observing. The bond's path forward depends on what conclusions they draw — and whether they speak them, or simply act on them quietly.",
+          "th": "การกลับมาเมื่อเขาดูเสร็จ เส้นทางของความสัมพันธ์ขึ้นอยู่กับข้อสรุปที่เขาได้ และว่าเขาจะพูดมันออกมา หรือทำตามมันเงียบๆ"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Jumped to a sharp conclusion they may regret. They thought too quickly, decided too quickly, and pulled back based on a verdict that wasn't fully fair.",
+          "th": "กระโดดสู่ข้อสรุปที่คมซึ่งอาจเสียดาย เขาคิดเร็วเกินไป ตัดสินเร็วเกินไป และถอยห่างจากคำตัดสินที่ยังไม่เป็นธรรมเต็มที่"
+        },
+        "inner_state": {
+          "en": "Inside, they are reactive and suspicious — mind running ahead of evidence. The bond is being judged on assumption rather than experience, and they cannot yet see the difference.",
+          "th": "ภายในใจเขาเป็นปฏิกิริยาและน่าสงสัย ใจวิ่งแซงหลักฐาน ความสัมพันธ์ถูกตัดสินบนการสมมติ ไม่ใช่ประสบการณ์ และเขายังเห็นความต่างไม่ได้"
+        },
+        "path_forward": {
+          "en": "Clearer ground if they slow down and check. The bond's path forward depends on whether they revisit the conclusion they jumped to — and on whether the jump damaged trust in the meantime.",
+          "th": "พื้นที่ที่ชัดกว่าหากเขาชะลอและตรวจสอบ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะทบทวนข้อสรุปที่กระโดดไปหรือไม่ และว่าการกระโดดทำลายความเชื่อใจระหว่างนั้นแค่ไหน"
+        }
+      }
+    },
+    "62-knight-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A decision made too fast — they couldn't tolerate slow processing and cut where they could have paused. The pullback is the sharp edge of impatience.",
+          "th": "การตัดสินที่เร็วเกินไป เขาทนการประมวลที่ช้าไม่ได้ และตัดที่ที่อาจหยุดได้ การถอยห่างคือขอบคมของความใจร้อน"
+        },
+        "inner_state": {
+          "en": "Inside, they are impatient — cannot bear ambiguity, cannot bear waiting. The bond's slower pace felt unbearable, and they chose movement over patience.",
+          "th": "ภายในใจเขาใจร้อน ทนความคลุมเครือไม่ได้ ทนการรอไม่ได้ จังหวะที่ช้ากว่าของความสัมพันธ์รู้สึกทนไม่ได้ และเขาเลือกการเคลื่อนเหนือความอดทน"
+        },
+        "path_forward": {
+          "en": "A return only if they slow enough to consider their cut. The bond's chance depends on whether they can pause long enough to ask whether the speed served them — or just felt like control.",
+          "th": "การกลับมาก็ต่อเมื่อเขาช้าพอที่จะพิจารณาการตัดของตัวเอง โอกาสของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะหยุดได้นานพอที่จะถามไหมว่าความเร็วรับใช้เขา หรือเพียงรู้สึกเหมือนการควบคุม"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Reckless words or actions — the aftermath is messy. They did something fast, and now they are dealing with consequences they didn't predict.",
+          "th": "คำพูดหรือการกระทำที่หุนหัน ผลที่ตามมาวุ่นวาย เขาทำบางสิ่งเร็ว และตอนนี้กำลังจัดการกับผลที่ไม่ได้คาด"
+        },
+        "inner_state": {
+          "en": "Inside, regret is laced with stubbornness — they can't quite admit error. The bond is caught in their inability to walk back what they wish they hadn't said.",
+          "th": "ภายในใจความเสียดายปนกับความดื้อ เขายอมรับความผิดพลาดไม่ได้นัก ความสัมพันธ์ติดอยู่ในความไม่สามารถของเขาที่จะถอนสิ่งที่อยากไม่ได้พูด"
+        },
+        "path_forward": {
+          "en": "Clarity only when they pause long enough to reflect. The bond's path forward asks for a slowness they have been resisting — and the resistance itself is part of what needs to soften.",
+          "th": "ความชัดเจนก็ต่อเมื่อเขาหยุดนานพอที่จะใคร่ครวญ เส้นทางของความสัมพันธ์ขอความช้าที่เขาต้านอยู่ และการต้านเองคือส่วนหนึ่งของสิ่งที่ต้องอ่อนลง"
+        }
+      }
+    },
+    "63-queen-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A clear-eyed boundary — not cruel, just final-feeling. They drew a line based on careful thought, and the line happened to fall where the bond was standing.",
+          "th": "ขอบเขตที่ตามองชัด ไม่ใช่ใจร้าย เพียงรู้สึกขั้นสุดท้าย เขาขีดเส้นจากการคิดอย่างระมัดระวัง และเส้นนั้นบังเอิญตกที่ความสัมพันธ์ยืนอยู่"
+        },
+        "inner_state": {
+          "en": "Inside, they are measured and composed — emotion has been processed, not avoided. The pullback is the act of someone who has thought this through rather than someone who is reacting.",
+          "th": "ภายในใจเขาวัดและสงบ อารมณ์ถูกประมวล ไม่ใช่หลีกเลี่ยง การถอยห่างเป็นการกระทำของคนที่คิดผ่านแล้ว ไม่ใช่คนที่กำลังตอบสนอง"
+        },
+        "path_forward": {
+          "en": "A return only if the bond meets their standards. The path forward asks for honesty about whether you can stand inside what they need — and they will accept the truth either way.",
+          "th": "การกลับมาก็ต่อเมื่อความสัมพันธ์ตอบมาตรฐานของเขา เส้นทางขอความซื่อตรงว่าคุณสามารถยืนในสิ่งที่เขาต้องการได้หรือไม่ และเขาจะยอมรับความจริงทั้งสองทาง"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Coldness that masked deeper hurt. They were sharp on the surface and tender underneath, and the pullback is the harder version of a hurt they cannot show.",
+          "th": "ความเย็นที่ปกปิดความเจ็บที่ลึกกว่า เขาคมที่ผิวและอ่อนใต้นั้น และการถอยห่างคือเวอร์ชั่นที่แข็งกว่าของความเจ็บที่เขาแสดงไม่ได้"
+        },
+        "inner_state": {
+          "en": "Inside, they are defensively sharp — protecting a soft underneath. The bond was getting close to the soft part, and they cut to keep the soft part safe.",
+          "th": "ภายในใจเขาคมเพื่อป้องกัน ปกป้องส่วนที่อ่อนภายใน ความสัมพันธ์กำลังเข้าใกล้ส่วนที่อ่อน และเขาตัดเพื่อรักษาส่วนที่อ่อนไว้ให้ปลอดภัย"
+        },
+        "path_forward": {
+          "en": "Re-engagement when they allow softness again. The bond's path forward depends on whether they choose to trust you with what their sharpness has been protecting.",
+          "th": "การกลับเข้าหากันเมื่อเขาอนุญาตความอ่อนอีกครั้ง เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกเชื่อใจคุณกับสิ่งที่ความคมของเขาได้ปกป้องไว้หรือไม่"
+        }
+      }
+    },
+    "64-king-of-swords": {
+      "upright": {
+        "trigger": {
+          "en": "A principled judgment that this bond doesn't currently serve them. The pullback is structured — based on values, not on mood — and the structure makes it feel firm.",
+          "th": "การตัดสินเชิงหลักการว่าความสัมพันธ์นี้ไม่ได้รับใช้เขาในตอนนี้ การถอยห่างมีโครงสร้าง บนค่านิยม ไม่ใช่อารมณ์ และโครงสร้างทำให้รู้สึกแน่น"
+        },
+        "inner_state": {
+          "en": "Inside, they are ruling with their head — heart kept at a distance. The decision feels right to them, even if some part of them quietly notices what the heart wants.",
+          "th": "ภายในใจเขาปกครองด้วยหัว ใจถูกถือไว้ห่าง การตัดสินรู้สึกถูกสำหรับเขา แม้บางส่วนของเขาจะสังเกตเงียบๆ ว่าใจต้องการอะไร"
+        },
+        "path_forward": {
+          "en": "A return only if reason and feeling realign. The bond's path forward depends on whether the head's verdict and the heart's pull come back to the same conclusion — which takes time, on their side.",
+          "th": "การกลับมาก็ต่อเมื่อเหตุผลกับความรู้สึกลงล็อกกัน เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าคำตัดสินของหัวและแรงดึงของใจจะกลับมาที่ข้อสรุปเดียวกันหรือไม่ ซึ่งใช้เวลา ในฝั่งของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Rigid thinking shutting out emotional reality. They are using logic as a wall against what they actually feel — and the bond is on the wrong side of that wall.",
+          "th": "การคิดแข็งกระด้างปิดความจริงทางอารมณ์ เขากำลังใช้ตรรกะเป็นกำแพงต่อสิ่งที่ตัวเองรู้สึก และความสัมพันธ์อยู่ผิดด้านของกำแพงนั้น"
+        },
+        "inner_state": {
+          "en": "Inside, they are defensively intellectual — unwilling to feel because feeling would unravel the position they have argued themselves into. The bond is a casualty of their stubbornness.",
+          "th": "ภายในใจเขาใช้สมองเพื่อป้องกัน ไม่เต็มใจรู้สึกเพราะการรู้สึกจะคลายตำแหน่งที่เขาเถียงตัวเองเข้าไป ความสัมพันธ์เป็นเหยื่อของความดื้อของเขา"
+        },
+        "path_forward": {
+          "en": "Harder reach; the bond needs them to soften. The path forward is a softening they can only choose themselves — and intellectual victories cannot substitute for it.",
+          "th": "เข้าถึงยากกว่า ความสัมพันธ์ต้องการให้เขาอ่อนลง เส้นทางคือการอ่อนที่เขาเลือกเองได้เพียงคนเดียว และชัยชนะทางสมองแทนที่มันไม่ได้"
+        }
+      }
+    },
+    "65-ace-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "A new external focus — work, money, stability — pulled them. The bond was set aside while they tended to a seed they wanted to grow on solid ground.",
+          "th": "จุดสนใจภายนอกใหม่ งาน เงิน ความมั่นคง ดึงเขา ความสัมพันธ์ถูกวางไว้ข้างๆ ในขณะที่เขาดูแลเมล็ดที่อยากปลูกบนพื้นที่มั่นคง"
+        },
+        "inner_state": {
+          "en": "Inside, they are building something — and the bond is a longer-term plant they trust will still be there once the foundation is in. There is care, but it is patient rather than urgent.",
+          "th": "ภายในใจเขากำลังสร้างบางสิ่ง และความสัมพันธ์เป็นพืชระยะยาวที่เขาเชื่อว่าจะยังอยู่เมื่อรากเข้าที่ มีความใส่ใจ แต่เป็นแบบอดทน ไม่เร่งด่วน"
+        },
+        "path_forward": {
+          "en": "A return once their foundation has roots. The bond's path forward is patient and grounded — and the wait, while real, has a useful purpose on their side.",
+          "th": "การกลับมาเมื่อรากของเขาเข้าที่ เส้นทางของความสัมพันธ์อดทนและมั่นคง และการรอ แม้จะจริง มีวัตถุประสงค์ที่ใช้ประโยชน์ได้ในฝั่งของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Financial or stability pressure overwhelmed their bandwidth. The bond had no chance to compete with worries about basics — and they couldn't pretend otherwise.",
+          "th": "แรงกดดันด้านการเงินหรือความมั่นคงท่วมความสามารถของเขา ความสัมพันธ์ไม่มีโอกาสแข่งกับความกังวลเรื่องพื้นฐาน และเขาแกล้งทำเป็นไม่เป็นแบบนั้นไม่ได้"
+        },
+        "inner_state": {
+          "en": "Inside, they are stressed about basics — emotion is a luxury they cannot currently afford. The bond is in a class of things they have set aside until the math works.",
+          "th": "ภายในใจเขาเครียดเรื่องพื้นฐาน อารมณ์เป็นความหรูที่เขายังจ่ายไม่ไหวในตอนนี้ ความสัมพันธ์อยู่ในกลุ่มสิ่งที่เขาวางไว้จนกว่าตัวเลขจะลงตัว"
+        },
+        "path_forward": {
+          "en": "Dependent on whether their material life settles. The bond cannot fix the pressure for them — only their own stabilization will reopen the room for connection.",
+          "th": "ขึ้นอยู่กับว่าชีวิตด้านวัตถุของเขาจะนิ่งหรือไม่ ความสัมพันธ์แก้แรงกดดันให้เขาไม่ได้ เฉพาะการตั้งหลักของเขาเองที่จะเปิดที่ให้ความเชื่อมโยงอีกครั้ง"
+        }
+      }
+    },
+    "66-two-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Too much to juggle — the bond was the ball that got dropped. Not from carelessness, but from the simple impossibility of holding everything at once.",
+          "th": "ต้องโยนรับมากเกินไป ความสัมพันธ์คือลูกที่ตก ไม่ใช่เพราะไม่ระวัง แต่จากความเป็นไปไม่ได้ของการถือทุกอย่างพร้อมกัน"
+        },
+        "inner_state": {
+          "en": "Inside, they are overextended — nothing gets full attention. The bond is in their peripheral vision; they know it is there, but they cannot currently look directly at it.",
+          "th": "ภายในใจเขายืดเกินไป ไม่มีอะไรได้ความสนใจเต็มที่ ความสัมพันธ์อยู่ในมุมข้างของสายตา เขารู้ว่ามันอยู่ แต่ตอนนี้มองตรงไม่ได้"
+        },
+        "path_forward": {
+          "en": "A return when they reorganize their priorities. The bond's path forward depends on whether they choose to put it back into rotation — and that choice is theirs to make.",
+          "th": "การกลับมาเมื่อเขาจัดความสำคัญใหม่ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะเลือกใส่มันกลับเข้าวงเวียนหรือไม่ และทางเลือกนั้นเป็นของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "They dropped the juggle — something fell apart. The pullback came after something larger broke, and the bond is one of many things now scattered.",
+          "th": "เขาทำการโยนรับตก บางสิ่งพัง การถอยห่างมาหลังบางอย่างที่ใหญ่กว่าแตก และความสัมพันธ์เป็นหนึ่งในหลายสิ่งที่ตอนนี้กระจัดกระจาย"
+        },
+        "inner_state": {
+          "en": "Inside, they are scrambling — cannot add anything new while they pick up what already fell. The bond is in line behind a longer queue than they want to admit.",
+          "th": "ภายในใจเขาวุ่นวาย เพิ่มสิ่งใหม่ไม่ได้ในขณะที่หยิบสิ่งที่ตกแล้ว ความสัมพันธ์อยู่ในคิวที่ยาวกว่าที่เขาอยากยอมรับ"
+        },
+        "path_forward": {
+          "en": "Stabilization needed before reconnection. The bond cannot be rebuilt on a pile of dropped things — the picking up has to happen first.",
+          "th": "การตั้งหลักจำเป็นก่อนการเชื่อมโยงใหม่ ความสัมพันธ์สร้างใหม่บนกองสิ่งที่ตกไม่ได้ การหยิบต้องเกิดก่อน"
+        }
+      }
+    },
+    "67-three-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Their collaboration was elsewhere — the bond didn't fit the team they were building with. The pullback came from a workspace that didn't include you.",
+          "th": "ความร่วมมือของเขาอยู่ที่อื่น ความสัมพันธ์ไม่เข้ากับทีมที่เขากำลังสร้างด้วย การถอยห่างมาจากพื้นที่ทำงานที่ไม่รวมคุณ"
+        },
+        "inner_state": {
+          "en": "Inside, they are building with others — not making solo time. The bond exists outside the project they are absorbed in, and right now the project is most of their attention.",
+          "th": "ภายในใจเขากำลังสร้างกับคนอื่น ไม่ได้สร้างเวลาคนเดียว ความสัมพันธ์อยู่นอกโครงการที่เขาจดจ่อ และตอนนี้โครงการคือความสนใจส่วนใหญ่ของเขา"
+        },
+        "path_forward": {
+          "en": "A return if you can become a collaborator in their work — broadly interpreted. The bond's path forward depends on whether you can be folded into what they are making, in some form.",
+          "th": "การกลับมาหากคุณสามารถเป็นผู้ร่วมงานในงานของเขา ตีความกว้างๆ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าคุณจะถูกพับเข้าในสิ่งที่เขากำลังสร้างได้หรือไม่ ในรูปแบบใดก็ตาม"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A project collapse left them depleted. Their work didn't go as planned, and the disappointment spilled into their capacity for everything else, including the bond.",
+          "th": "การพังของโครงการทำให้เขาหมดเรี่ยวแรง งานไม่เป็นไปตามแผน และความผิดหวังไหลล้นไปยังความสามารถของเขาในทุกอย่าง รวมถึงความสัมพันธ์"
+        },
+        "inner_state": {
+          "en": "Inside, they are discouraged in their work — and cannot bring extra to a bond when their main current is depleted. The withdrawal is partly the after-effect of a different exhaustion.",
+          "th": "ภายในใจเขาท้อใจในงาน และนำสิ่งพิเศษมาให้ความสัมพันธ์ไม่ได้เมื่อกระแสหลักของเขาหมด การถอยห่างส่วนหนึ่งคือผลที่ตามมาของความเหนื่อยอีกแบบ"
+        },
+        "path_forward": {
+          "en": "Rebuild needed before re-engagement. The bond cannot help them recover from the project's collapse — that recovery belongs to them — but it can wait without rushing them.",
+          "th": "การสร้างใหม่จำเป็นก่อนการกลับเข้าหากัน ความสัมพันธ์ช่วยให้เขาฟื้นจากการพังของโครงการไม่ได้ การฟื้นนั้นเป็นของเขา แต่ความสัมพันธ์รอได้โดยไม่เร่งเขา"
+        }
+      }
+    },
+    "68-four-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Gripping tight to security — emotional risk felt unaffordable. They pulled back because intimacy threatened the safety they had carefully gathered.",
+          "th": "ยึดความมั่นคงแน่น ความเสี่ยงทางอารมณ์รู้สึกจ่ายไม่ไหว เขาถอยห่างเพราะความใกล้ชิดคุกคามความปลอดภัยที่เขารวบรวมอย่างระมัดระวัง"
+        },
+        "inner_state": {
+          "en": "Inside, they are closed-fisted — afraid to lose what they have. The bond would require an opening that feels too costly to make right now.",
+          "th": "ภายในใจเขากำมือแน่น กลัวจะเสียสิ่งที่มี ความสัมพันธ์จะต้องการการเปิดที่รู้สึกแพงเกินกว่าจะทำในตอนนี้"
+        },
+        "path_forward": {
+          "en": "A return only if they choose to open the grip. The bond's path forward depends on whether they decide that holding less can sometimes mean holding more — and that choice is theirs alone.",
+          "th": "การกลับมาก็ต่อเมื่อเขาเลือกเปิดมือ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะตัดสินว่าการถือน้อยลงบางครั้งอาจหมายถึงการถือมากขึ้น และทางเลือกนั้นเป็นของเขาฝ่ายเดียว"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Beginning to release the grip but cautious about generosity. The pullback is the in-between of someone who is starting to trust opening but isn't fully ready yet.",
+          "th": "เริ่มผ่อนการกำแต่ระวังเรื่องความใจกว้าง การถอยห่างคือช่วงกลางของคนที่กำลังเริ่มเชื่อในการเปิด แต่ยังไม่พร้อมเต็มที่"
+        },
+        "inner_state": {
+          "en": "Inside, they are thawing slowly — trust is fragile but real. The bond is being considered with more openness than before, even if the openness has not yet reached the surface.",
+          "th": "ภายในใจเขากำลังละลายช้าๆ ความเชื่อใจเปราะแต่จริง ความสัมพันธ์ถูกพิจารณาด้วยการเปิดมากกว่าก่อน แม้การเปิดยังไม่ได้ถึงผิว"
+        },
+        "path_forward": {
+          "en": "Gradual opening, careful steps. The bond's chance lies in being gentle with the new tentativeness — large gestures could startle them back into the closed fist.",
+          "th": "การเปิดทีละน้อย ก้าวที่ระมัดระวัง โอกาสของความสัมพันธ์อยู่ที่ความนุ่มกับความระมัดระวังใหม่ ท่าทางใหญ่อาจทำให้เขาตกใจกลับเข้าสู่กำปั้นปิด"
+        }
+      }
+    },
+    "69-five-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Hard times made them turn inward. They retreated rather than ask for help, believing isolation was safer than admitting they needed something.",
+          "th": "ช่วงเวลาที่ยากทำให้เขาหันเข้าด้านใน เขาถอยกลับแทนการขอความช่วยเหลือ เชื่อว่าการอยู่คนเดียวปลอดภัยกว่าการยอมรับว่าตัวเองต้องการอะไร"
+        },
+        "inner_state": {
+          "en": "Inside, they are caught in a scarcity mindset — doesn't believe they're worthy of the warmth the bond was offering. The pullback came from a place that did not feel deserving.",
+          "th": "ภายในใจเขาติดในกรอบความขาดแคลน ไม่เชื่อว่าตัวเองคู่ควรกับความอบอุ่นที่ความสัมพันธ์เคยให้ การถอยห่างมาจากที่ที่ไม่รู้สึกสมควร"
+        },
+        "path_forward": {
+          "en": "A return when they accept the help they need. The bond's path forward depends on whether they can let warmth in — and on whether they choose to believe they deserve it.",
+          "th": "การกลับมาเมื่อเขายอมรับความช่วยเหลือที่ต้องการ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะปล่อยให้ความอบอุ่นเข้าไปได้หรือไม่ และว่าจะเลือกเชื่อว่าตัวเองสมควรหรือไม่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Stopped suffering alone — reaching out, but unevenly. They are starting to come back from isolation, though the steps are tentative and the timing is uneven.",
+          "th": "หยุดทุกข์คนเดียว เอื้อมออก แต่ไม่สม่ำเสมอ เขากำลังเริ่มกลับจากการแยกตัว แม้ก้าวจะยังลังเลและจังหวะยังไม่สม่ำเสมอ"
+        },
+        "inner_state": {
+          "en": "Inside, they are tentatively hopeful — afraid to fall again. The bond is one of the warm windows they are slowly walking toward, but they have not yet committed to the door.",
+          "th": "ภายในใจเขาหวังแบบลังเล กลัวจะตกอีกครั้ง ความสัมพันธ์เป็นหนึ่งในหน้าต่างที่อบอุ่นที่เขากำลังเดินช้าๆ เข้าหา แต่ยังไม่ตกลงกับประตู"
+        },
+        "path_forward": {
+          "en": "Gentle re-emergence; warmth offered without pressure. The bond's chance lies in being available without demanding — let them choose how close to come and when.",
+          "th": "การโผล่กลับอย่างนุ่ม ความอบอุ่นที่ให้โดยไม่กดดัน โอกาสของความสัมพันธ์อยู่ที่การพร้อมอยู่โดยไม่เรียกร้อง ให้เขาเลือกว่าจะเข้าใกล้แค่ไหนและเมื่อไหร่"
+        }
+      }
+    },
+    "70-six-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "An imbalance in giving and receiving — one of you was over-extending. The pullback was their way of marking that the math was no longer working.",
+          "th": "ความไม่สมดุลในการให้และรับ คนหนึ่งกำลังยืดเกินไป การถอยห่างเป็นวิธีที่เขาทำเครื่องหมายว่าตัวเลขไม่ลงตัวอีกต่อไป"
+        },
+        "inner_state": {
+          "en": "Inside, they are tracking what was fair — the math felt off and the imbalance was producing quiet resentment they didn't want to name out loud.",
+          "th": "ภายในใจเขากำลังติดตามสิ่งที่เป็นธรรม ตัวเลขรู้สึกผิด และความไม่สมดุลกำลังก่อความขุ่นเงียบที่เขาไม่อยากเรียกชื่อออกมา"
+        },
+        "path_forward": {
+          "en": "A return possible with rebalanced exchange. The bond's path forward depends on whether you can both renegotiate what you offer and what you expect — honestly, on both sides.",
+          "th": "การกลับมาเป็นไปได้ด้วยการแลกเปลี่ยนที่สมดุลใหม่ เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าทั้งสองคนต่อรองสิ่งที่ให้และสิ่งที่คาดหวังใหม่ได้หรือไม่ อย่างซื่อตรงทั้งสองฝ่าย"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "A hidden ledger of unspoken debts. They have been keeping score and didn't tell you, and the pullback came when the score reached a number they could not ignore.",
+          "th": "บัญชีลับของหนี้ที่ไม่ได้พูด เขาเก็บคะแนนและไม่บอกคุณ และการถอยห่างมาเมื่อคะแนนถึงตัวเลขที่เพิกเฉยไม่ได้"
+        },
+        "inner_state": {
+          "en": "Inside, they are resentful of the unspoken imbalance. The bond feels uneven to them, and they have been carrying that feeling alone for longer than the conversation suggests.",
+          "th": "ภายในใจเขาขุ่นกับความไม่สมดุลที่ไม่ได้พูด ความสัมพันธ์รู้สึกเอียงสำหรับเขา และเขาแบกความรู้สึกนั้นคนเดียวมานานกว่าที่บทสนทนาบอก"
+        },
+        "path_forward": {
+          "en": "Honest renegotiation needed. The bond cannot heal under hidden ledgers — the ledger has to be opened and looked at, even if what shows up is uncomfortable for both of you.",
+          "th": "การต่อรองใหม่ที่ซื่อตรงจำเป็น ความสัมพันธ์เยียวยาภายใต้บัญชีลับไม่ได้ บัญชีต้องถูกเปิดและถูกมอง แม้สิ่งที่ปรากฏจะอึดอัดสำหรับทั้งสองคน"
+        }
+      }
+    },
+    "71-seven-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Waiting on their own slow harvest — they couldn't tend the bond too while their personal effort was so demanding. The pullback was an act of focus, not abandonment.",
+          "th": "รอเก็บเกี่ยวช้าๆ ของตัวเอง เขาไม่อาจดูแลความสัมพันธ์ในขณะที่ความพยายามส่วนตัวเรียกร้องขนาดนี้ การถอยห่างเป็นการจดจ่อ ไม่ใช่การละทิ้ง"
+        },
+        "inner_state": {
+          "en": "Inside, they are patient with their own process — less patient with relating. The bond has been put on the longer of two timelines they are running simultaneously.",
+          "th": "ภายในใจเขาอดทนกับกระบวนการของตัวเอง อดทนกับการสัมพันธ์น้อยกว่า ความสัมพันธ์ถูกใส่ในไทม์ไลน์ที่ยาวกว่าของสองอันที่เขาเดินพร้อมกัน"
+        },
+        "path_forward": {
+          "en": "A return when their harvest is in. The bond's path forward asks for patience equal to the patience they are extending to their own work — which is to say, considerable.",
+          "th": "การกลับมาเมื่อการเก็บเกี่ยวของเขาเข้าที่ เส้นทางของความสัมพันธ์ขอความอดทนเท่ากับความอดทนที่เขาให้กับงานของตัวเอง ซึ่งหมายถึงค่อนข้างมาก"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Discouraged with slow progress — they pulled back to protect themselves from feeling the slowness in front of you. Their hope dimmed and the bond got dimmer with it.",
+          "th": "ท้อใจกับความคืบหน้าที่ช้า เขาถอยกลับเพื่อปกป้องตัวเองจากการรู้สึกถึงความช้าต่อหน้าคุณ ความหวังของเขาหรี่ และความสัมพันธ์หรี่ตามไป"
+        },
+        "inner_state": {
+          "en": "Inside, they are doubting whether their effort matters. The bond cannot be the answer to that doubt; only their own evidence of progress will reopen the room.",
+          "th": "ภายในใจเขาสงสัยว่าความพยายามของตัวเองมีค่าไหม ความสัมพันธ์ไม่อาจเป็นคำตอบของความสงสัยนั้น เฉพาะหลักฐานการคืบหน้าของเขาเองที่จะเปิดที่ใหม่"
+        },
+        "path_forward": {
+          "en": "Re-engagement once they see signs of growth. The bond's path forward depends on whether they regain belief in their own slow-build — and that belief is built quietly, on their side.",
+          "th": "การกลับเข้าหากันเมื่อเขาเห็นสัญญาณของการเติบโต เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะกลับมาเชื่อในการสร้างช้าของตัวเองหรือไม่ และความเชื่อนั้นถูกสร้างเงียบๆ ในฝั่งของเขา"
+        }
+      }
+    },
+    "72-eight-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Deep focus on craft — everything else paused. They are inside a phase of skilled, absorbing work, and the bond is one of the things politely waiting at the door.",
+          "th": "การจดจ่อลึกกับงานฝีมือ ทุกอย่างหยุดพัก เขาอยู่ในช่วงของงานทักษะที่กลืนเขา และความสัมพันธ์เป็นหนึ่งในสิ่งที่รออย่างสุภาพที่ประตู"
+        },
+        "inner_state": {
+          "en": "Inside, they are absorbed — nothing else can land while they are inside the work. The bond is not unwanted; it simply cannot reach them at this depth of focus.",
+          "th": "ภายในใจเขากำลังถูกกลืน ไม่มีอะไรอื่นลงได้ในขณะที่เขาอยู่ในงาน ความสัมพันธ์ไม่ใช่ไม่ต้องการ เพียงเข้าถึงเขาไม่ได้ที่ความลึกของการจดจ่อนี้"
+        },
+        "path_forward": {
+          "en": "A return when they emerge from focused work. The bond's chance lies in respecting the work as something they need to finish, rather than as competition for their attention.",
+          "th": "การกลับมาเมื่อเขาโผล่จากงานที่จดจ่อ โอกาสของความสัมพันธ์อยู่ที่การเคารพงานในฐานะสิ่งที่เขาต้องทำให้เสร็จ มากกว่าในฐานะคู่แข่งของความสนใจของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Workaholic withdrawal — using work to avoid feeling. The pullback dressed itself in productivity, but the productivity was partly a hiding place.",
+          "th": "การถอยแบบบ้างาน ใช้งานเพื่อหลีกเลี่ยงการรู้สึก การถอยห่างแต่งตัวด้วยผลผลิต แต่ผลผลิตส่วนหนึ่งคือที่ซ่อน"
+        },
+        "inner_state": {
+          "en": "Inside, they are hiding in productivity — the work is real but it is also a wall against what the bond would surface if they let it close in.",
+          "th": "ภายในใจเขากำลังซ่อนในผลผลิต งานเป็นจริงแต่ก็เป็นกำแพงต่อสิ่งที่ความสัมพันธ์จะทำให้ผุดขึ้น หากเขาปล่อยให้มันใกล้เข้ามา"
+        },
+        "path_forward": {
+          "en": "Clearer ground if they admit what they're avoiding. The bond's path forward depends on whether they can step out from behind the work long enough to feel what is on the other side.",
+          "th": "พื้นที่ที่ชัดกว่าหากเขายอมรับสิ่งที่หลีกเลี่ยง เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะก้าวออกจากหลังงานนานพอที่จะรู้สึกสิ่งที่อยู่อีกฝั่งหรือไม่"
+        }
+      }
+    },
+    "73-nine-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Enjoying their own life independently — the bond wasn't required for their happiness. The pullback came from a place of self-sufficiency, not deficit.",
+          "th": "เพลินกับชีวิตของตัวเองอย่างอิสระ ความสัมพันธ์ไม่จำเป็นต่อความสุขของเขา การถอยห่างมาจากที่ของความพอเพียงในตัวเอง ไม่ใช่การขาด"
+        },
+        "inner_state": {
+          "en": "Inside, they are self-sufficient and content. You are a nice-to-have rather than a need — and they are honest enough with themselves to notice the difference.",
+          "th": "ภายในใจเขาพอเพียงและพอใจ คุณเป็นสิ่งที่มีก็ดี มากกว่าสิ่งจำเป็น และเขาซื่อตรงกับตัวเองพอที่จะสังเกตความต่าง"
+        },
+        "path_forward": {
+          "en": "A return only if they choose to share rather than need. The bond's path forward asks for a kind of love that doesn't depend on neediness — and that might be a love they prefer.",
+          "th": "การกลับมาก็ต่อเมื่อเขาเลือกที่จะแบ่ง แทนการต้องการ เส้นทางของความสัมพันธ์ขอความรักที่ไม่พึ่งความต้องการ และนั่นอาจเป็นความรักที่เขาชอบกว่า"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Isolated abundance that started to feel lonely. They had built a fine life and then noticed the bond's absence from it more sharply than they expected.",
+          "th": "ความอุดมที่อยู่คนเดียวซึ่งเริ่มรู้สึกเหงา เขาสร้างชีวิตที่ดีและสังเกตการขาดของความสัมพันธ์ในนั้นชัดกว่าที่คาด"
+        },
+        "inner_state": {
+          "en": "Inside, they are questioning what self-sufficiency cost them. The pullback is being reconsidered — quietly — though they have not yet announced any change of mind.",
+          "th": "ภายในใจเขากำลังตั้งคำถามว่าความพอเพียงคุ้มไหม การถอยห่างถูกทบทวน อย่างเงียบ แม้เขายังไม่ประกาศการเปลี่ยนใจใดๆ"
+        },
+        "path_forward": {
+          "en": "Opening possible if they admit they want company. The bond's path forward depends on whether they let the loneliness become a question they answer with you, rather than a fact they continue alone.",
+          "th": "การเปิดเป็นไปได้หากเขายอมรับว่าอยากมีเพื่อน เส้นทางของความสัมพันธ์ขึ้นอยู่กับว่าเขาจะปล่อยให้ความเหงากลายเป็นคำถามที่ตอบกับคุณหรือไม่ แทนการเป็นข้อเท็จจริงที่เขาเดินคนเดียวต่อ"
+        }
+      }
+    },
+    "74-ten-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Legacy concerns — family, heritage, the longer arc of their life — pulled them toward tradition. The bond's place in that arc wasn't yet clear, so they stepped back to consider it.",
+          "th": "ความห่วงเรื่องมรดก ครอบครัว สายเลือด เส้นยาวของชีวิต ดึงเขาเข้าหาประเพณี ที่ของความสัมพันธ์ในเส้นนั้นยังไม่ชัด เขาจึงถอยกลับเพื่อพิจารณา"
+        },
+        "inner_state": {
+          "en": "Inside, they are rooted in lineage — the bond didn't yet fit the larger picture they were drawing. There is care, but it is being filtered through what they were taught matters.",
+          "th": "ภายในใจเขาฝังรากในสายเลือด ความสัมพันธ์ยังไม่เข้ากับภาพใหญ่ที่เขากำลังวาด มีความใส่ใจ แต่ถูกกรองผ่านสิ่งที่เขาถูกสอนให้สำคัญ"
+        },
+        "path_forward": {
+          "en": "A return if the bond can be acknowledged within their world. The path forward depends on whether you fit the legacy they are committed to building — and that judgment is theirs.",
+          "th": "การกลับมาหากความสัมพันธ์ได้รับการยอมรับในโลกของเขา เส้นทางขึ้นอยู่กับว่าคุณเข้ากับมรดกที่เขายึดมั่นจะสร้างได้หรือไม่ และการตัดสินนั้นเป็นของเขา"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Family disapproval or instability disrupted the bond. Pressure from older roots made the bond feel impossible to hold in the open, and they pulled back to manage the impossibility.",
+          "th": "ความไม่เห็นด้วยของครอบครัวหรือความไม่มั่นคงรบกวนความสัมพันธ์ แรงกดดันจากรากเก่าทำให้ความสัมพันธ์รู้สึกถือเปิดเผยไม่ได้ และเขาถอยห่างเพื่อจัดการความเป็นไปไม่ได้นั้น"
+        },
+        "inner_state": {
+          "en": "Inside, they are torn between heart and heritage. The pullback is part of an unresolved private chapter — they are not over you, but they cannot yet stand against what they were raised inside.",
+          "th": "ภายในใจเขาขาดแยกระหว่างหัวใจกับมรดก การถอยห่างเป็นส่วนหนึ่งของบทส่วนตัวที่ยังไม่จบ เขาไม่ได้ผ่านคุณไป แต่ยังยืนต้านสิ่งที่ตัวเองถูกเลี้ยงในนั้นไม่ได้"
+        },
+        "path_forward": {
+          "en": "Resolution requires honest reckoning with their roots. The bond's path forward depends on a piece of family negotiation that belongs only to them — you cannot speak in that conversation.",
+          "th": "การคลี่คลายต้องการการประเมินรากอย่างซื่อตรง เส้นทางของความสัมพันธ์ขึ้นอยู่กับการต่อรองในครอบครัวที่เป็นของเขาเท่านั้น คุณไม่อาจพูดในบทสนทนานั้น"
+        }
+      }
+    },
+    "75-page-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "A slow careful study made them pause for evidence. They were learning what the bond actually was, and learning takes a step back from immediate involvement.",
+          "th": "การเรียนรู้ช้าและระมัดระวังทำให้เขาหยุดเพื่อรอหลักฐาน เขากำลังเรียนว่าความสัมพันธ์เป็นอะไรจริงๆ และการเรียนต้องการการถอยจากการเข้าร่วมโดยตรง"
+        },
+        "inner_state": {
+          "en": "Inside, they are gathering data on whether to commit further. The bond is being looked at carefully — not coldly, but thoroughly — and that looking requires distance.",
+          "th": "ภายในใจเขากำลังรวบรวมข้อมูลว่าจะตกลงไปต่อหรือไม่ ความสัมพันธ์ถูกมองอย่างระมัดระวัง ไม่ใช่อย่างเย็น แต่อย่างละเอียด และการมองนั้นต้องการระยะห่าง"
+        },
+        "path_forward": {
+          "en": "A return when they have enough to decide. The bond's path forward depends on what they conclude after the study — and on whether they share that conclusion with you when they reach it.",
+          "th": "การกลับมาเมื่อเขามีพอจะตัดสินใจ เส้นทางของความสัมพันธ์ขึ้นอยู่กับสิ่งที่เขาสรุปหลังการเรียน และว่าเขาจะแบ่งข้อสรุปนั้นกับคุณเมื่อไปถึงหรือไม่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Hesitant, immature about commitment. They want what the bond offers but cannot quite step into the responsibility of it, and the pullback is a way of staying junior to the choice.",
+          "th": "ลังเล ยังไม่โตเรื่องการตกลง เขาอยากได้สิ่งที่ความสัมพันธ์ให้ แต่ก้าวเข้าหาความรับผิดชอบของมันไม่ได้ และการถอยห่างเป็นวิธีอยู่เด็กกว่าทางเลือก"
+        },
+        "inner_state": {
+          "en": "Inside, they are stalling — afraid to graduate to bigger feelings. The bond is one of the things they keep almost-deciding without quite deciding.",
+          "th": "ภายในใจเขากำลังเลื่อน กลัวจะจบการศึกษาสู่อารมณ์ที่ใหญ่กว่า ความสัมพันธ์เป็นหนึ่งในสิ่งที่เขาเกือบตัดสิน โดยไม่ตัดสินสุดทาง"
+        },
+        "path_forward": {
+          "en": "Dependent on whether they take the next step. The bond's chance lies in their willingness to grow into the choice — and that growth is theirs to do, on their pace.",
+          "th": "ขึ้นอยู่กับว่าเขาจะก้าวต่อหรือไม่ โอกาสของความสัมพันธ์อยู่ที่ความเต็มใจของเขาที่จะเติบโตเข้าสู่ทางเลือก และการเติบโตนั้นเป็นของเขาที่จะทำ ในจังหวะของเขา"
+        }
+      }
+    },
+    "76-knight-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Their steady pace couldn't accommodate sudden intensity. The bond moved faster than their natural speed, and they pulled back to return to the rhythm they trust.",
+          "th": "จังหวะที่นิ่งของเขาไม่อาจรับความเข้มที่กะทันหัน ความสัมพันธ์เคลื่อนเร็วกว่าความเร็วธรรมชาติของเขา และเขาถอยห่างเพื่อกลับสู่จังหวะที่เขาเชื่อ"
+        },
+        "inner_state": {
+          "en": "Inside, they are methodical — they need predictability you may not be able to provide at the bond's current speed. The pullback is a return to footing they know how to stand on.",
+          "th": "ภายในใจเขาเป็นระเบียบ ต้องการความคาดเดาได้ซึ่งคุณอาจให้ไม่ได้ที่ความเร็วปัจจุบันของความสัมพันธ์ การถอยห่างคือการกลับสู่พื้นที่เขารู้จักวิธียืน"
+        },
+        "path_forward": {
+          "en": "A return on their schedule, slow and considered. The bond's chance lies in matching their pace — patience is not a cost to them; it is the language they speak.",
+          "th": "การกลับมาในตารางของเขา ช้าและพิจารณา โอกาสของความสัมพันธ์อยู่ที่การเข้าจังหวะของเขา ความอดทนไม่ใช่ค่าใช้จ่ายสำหรับเขา เป็นภาษาที่เขาพูด"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Stubbornness — they refused to bend the pace even when the bond needed flexibility. The pullback came from a posture of rigidity rather than care.",
+          "th": "ความดื้อ เขาปฏิเสธที่จะอ่อนจังหวะแม้ความสัมพันธ์จะต้องการความยืดหยุ่น การถอยห่างมาจากท่าทีของความแข็ง ไม่ใช่ความใส่ใจ"
+        },
+        "inner_state": {
+          "en": "Inside, they are stuck in old grooves — resistant to adjustment. The bond is being held to a standard they will not negotiate, even when the standard is no longer useful.",
+          "th": "ภายในใจเขาติดในร่องเก่า ต้านการปรับ ความสัมพันธ์ถูกถือไว้กับมาตรฐานที่เขาจะไม่ต่อรอง แม้มาตรฐานจะไม่ได้ใช้ประโยชน์อีกต่อไป"
+        },
+        "path_forward": {
+          "en": "Limited movement — the bond may stall out. The path forward depends on whether they choose to flex — and if they do not, the bond may simply slow until it stops.",
+          "th": "การเคลื่อนที่จำกัด ความสัมพันธ์อาจติดขัด เส้นทางขึ้นอยู่กับว่าเขาจะเลือกยืดหยุ่นหรือไม่ และหากไม่ ความสัมพันธ์อาจช้าลงจนหยุด"
+        }
+      }
+    },
+    "77-queen-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Tending to many people or things — their warmth was being spread thin. The bond got less of them not because of any decline in care, but because there were so many things needing tending.",
+          "th": "ดูแลคนและสิ่งหลายอย่าง ความอบอุ่นของเขาถูกแบ่งให้บาง ความสัมพันธ์ได้น้อยลงไม่ใช่เพราะความใส่ใจลดลง แต่เพราะมีหลายสิ่งที่ต้องดูแล"
+        },
+        "inner_state": {
+          "en": "Inside, they are in caretaker mode — meeting practical needs over emotional ones. The bond is still in their picture, just lower in the day's priority order.",
+          "th": "ภายในใจเขาอยู่ในโหมดผู้ดูแล ตอบสนองความต้องการเชิงปฏิบัติเหนืออารมณ์ ความสัมพันธ์ยังอยู่ในภาพ เพียงต่ำกว่าในลำดับความสำคัญของวัน"
+        },
+        "path_forward": {
+          "en": "A return if you can both meet on practical ground. The bond's path forward might look more domestic than romantic for a while — and that may suit them more than performance.",
+          "th": "การกลับมาหากทั้งสองคนพบกันบนพื้นปฏิบัติได้ เส้นทางของความสัมพันธ์อาจดูเป็นเรื่องบ้านมากกว่าโรแมนติกสักระยะ และนั่นอาจเข้ากับเขามากกว่าการแสดง"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Depleted from over-tending — pulled away to refill. Their generosity ran past its limits and the pullback was the necessary correction.",
+          "th": "หมดเรี่ยวจากการดูแลมากเกินไป ถอยห่างเพื่อเติม ความใจกว้างของเขาวิ่งเกินขีดจำกัด และการถอยห่างเป็นการแก้ที่จำเป็น"
+        },
+        "inner_state": {
+          "en": "Inside, they are resentful of unmet needs of their own — needs they didn't voice while they were tending to everyone else. The bond got included in the general retraction.",
+          "th": "ภายในใจเขาขุ่นกับความต้องการที่ไม่ได้รับการตอบของตัวเอง ความต้องการที่เขาไม่ได้เปล่งเสียงในขณะที่ดูแลคนอื่น ความสัมพันธ์ถูกรวมในการถอนรวบ"
+        },
+        "path_forward": {
+          "en": "Re-engagement only when their cup refills. The bond's chance depends on whether they learn to ask for what they need — and on whether you can hear it once they do.",
+          "th": "การกลับเข้าหากันก็ต่อเมื่อถ้วยของเขาเติม โอกาสของความสัมพันธ์ขึ้นอยู่กับว่าเขาเรียนรู้จะขอสิ่งที่ต้องการหรือไม่ และว่าคุณจะได้ยินมันเมื่อเขาขอ"
+        }
+      }
+    },
+    "78-king-of-pentacles": {
+      "upright": {
+        "trigger": {
+          "en": "Their established life had limited room for a new bond — or for this bond at its current scale. The pullback was a quiet protection of what they had already carefully built.",
+          "th": "ชีวิตที่ตั้งหลักของเขามีที่จำกัดสำหรับความสัมพันธ์ใหม่ หรือสำหรับความสัมพันธ์นี้ที่ขนาดปัจจุบัน การถอยห่างเป็นการปกป้องเงียบๆ ของสิ่งที่เขาสร้างไว้ระมัดระวัง"
+        },
+        "inner_state": {
+          "en": "Inside, they are focused on what they've already built — protective of stability. The bond would require an integration they are not yet ready to perform.",
+          "th": "ภายในใจเขาจดจ่อกับสิ่งที่สร้างแล้ว ปกป้องความมั่นคง ความสัมพันธ์จะต้องการการหลอมรวมที่เขายังไม่พร้อมจะทำ"
+        },
+        "path_forward": {
+          "en": "A return if the bond can integrate into his world. The path forward depends on whether you can stand inside the life he has built — and on whether he chooses to make room.",
+          "th": "การกลับมาหากความสัมพันธ์สามารถหลอมรวมเข้ากับโลกของเขาได้ เส้นทางขึ้นอยู่กับว่าคุณสามารถยืนในชีวิตที่เขาสร้างได้หรือไม่ และว่าเขาจะเลือกเปิดที่หรือไม่"
+        }
+      },
+      "reversed": {
+        "trigger": {
+          "en": "Rigidity about resources or status — the bond felt threatening to what he had accumulated. The pullback came from a place of guarding rather than sharing.",
+          "th": "ความแข็งเรื่องทรัพยากรหรือสถานะ ความสัมพันธ์รู้สึกคุกคามต่อสิ่งที่เขาสะสม การถอยห่างมาจากที่ของการเฝ้า ไม่ใช่การแบ่ง"
+        },
+        "inner_state": {
+          "en": "Inside, he is defensive about what he's accumulated. The bond's openness was reading as risk rather than as offer, and he chose closure over what he could not control.",
+          "th": "ภายในใจเขาตั้งรับเรื่องสิ่งที่สะสม ความเปิดของความสัมพันธ์ถูกอ่านเป็นความเสี่ยง ไม่ใช่ข้อเสนอ และเขาเลือกการปิดเหนือสิ่งที่ควบคุมไม่ได้"
+        },
+        "path_forward": {
+          "en": "Limited movement; depends on his willingness to share. The bond's path forward asks for a softening of the gate he is currently keeping — and that softening is his alone to choose.",
+          "th": "การเคลื่อนที่จำกัด ขึ้นอยู่กับความเต็มใจของเขาที่จะแบ่ง เส้นทางของความสัมพันธ์ขอการอ่อนของประตูที่เขาเฝ้าอยู่ และการอ่อนนั้นเป็นของเขาฝ่ายเดียวที่เลือก"
+        }
+      }
+    }
+  }
+}
