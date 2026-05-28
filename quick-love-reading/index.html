@@ -1722,6 +1722,8 @@ html[lang="th"] .quiet-pause .qp-line {
           <button type="button" class="qp-chip" data-key="direction"       aria-pressed="false" data-i18n="qpDirection">Where is this connection going?</button>
           <button type="button" class="qp-chip" data-key="still-thinking"  aria-pressed="false" data-i18n="qpStillThinking">Are they still thinking of me?</button>
           <button type="button" class="qp-chip" data-key="wait-or-let-go"  aria-pressed="false" data-i18n="qpWaitOrLetGo">Should I wait or let go?</button>
+          <button type="button" class="qp-chip" data-key="find-someone"   aria-pressed="false" data-i18n="qpFindSomeone">When will I meet someone?</button>
+          <button type="button" class="qp-chip" data-key="pull-away"      aria-pressed="false" data-i18n="qpPullAway">Why did they pull away?</button>
         </div>
       </section>
 
@@ -1935,6 +1937,8 @@ const T = {
     qpDirection: 'Where is this connection going?',
     qpStillThinking: 'Are they still thinking of me?',
     qpWaitOrLetGo: 'Should I wait or let go?',
+    qpFindSomeone: 'When will I meet someone?',
+    qpPullAway: 'Why did they pull away?',
     readStep: 'Three Cards Drawn',
     readSub: 'Three cards are placed face-down. Tap each in turn.',
     hintTap: 'Tap each card to reveal it. Your reading appears below.',
@@ -2036,6 +2040,8 @@ const T = {
     qpDirection: 'ความสัมพันธ์นี้กำลังไปทางไหน',
     qpStillThinking: 'เขายังคิดถึงเราไหม',
     qpWaitOrLetGo: 'ควรรอหรือควรพอ',
+    qpFindSomeone: 'เมื่อไหร่จะได้เจอใครสักคน',
+    qpPullAway: 'ทำไมเขาถึงถอยห่าง',
     readStep: 'จั่วไพ่สามใบแล้ว',
     readSub: 'ไพ่สามใบถูกวางคว่ำหน้าไว้ แตะทีละใบเพื่อเปิด',
     hintTap: 'แตะไพ่แต่ละใบเพื่อเปิด บทอ่านจะปรากฏด้านล่าง',
@@ -2297,7 +2303,9 @@ const PRESETS = [
   { key: 'reach-out',      en: 'Should I reach out?',               th: 'ควรทักไปไหม' },
   { key: 'direction',      en: 'Where is this connection going?',   th: 'ความสัมพันธ์นี้กำลังไปทางไหน' },
   { key: 'still-thinking', en: 'Are they still thinking of me?',    th: 'เขายังคิดถึงเราไหม' },
-  { key: 'wait-or-let-go', en: 'Should I wait or let go?',          th: 'ควรรอหรือควรพอ' }
+  { key: 'wait-or-let-go', en: 'Should I wait or let go?',          th: 'ควรรอหรือควรพอ' },
+  { key: 'find-someone',   en: 'When will I meet someone?',          th: 'เมื่อไหร่จะได้เจอใครสักคน' },
+  { key: 'pull-away',      en: 'Why did they pull away?',            th: 'ทำไมเขาถึงถอยห่าง' }
 ];
 function getPreset(key) { return PRESETS.find(p => p.key === key) || null; }
 function getPresetText(key, l) {
@@ -2327,7 +2335,9 @@ const QUESTION_DATASETS = {
   'reach-out':      '/assets/data/love-readings/should-i-reach-out-reading.json',
   'direction':      '/assets/data/love-readings/where-is-this-connection-going-reading.json',
   'still-thinking': '/assets/data/love-readings/does-this-person-miss-me-reading.json',
-  'wait-or-let-go': '/assets/data/love-readings/should-i-wait-or-let-go-reading.json'
+  'wait-or-let-go': '/assets/data/love-readings/should-i-wait-or-let-go-reading.json',
+  'find-someone':   '/assets/data/love-readings/soulmate-reading.json',
+  'pull-away':      '/assets/data/love-readings/why-did-they-pull-away-reading.json'
 };
 
 const __datasetCache    = Object.create(null);
