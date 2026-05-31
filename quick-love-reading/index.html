@@ -4411,6 +4411,34 @@ function loadDeck() {
   } catch (e) { /* no-op */ }
 })();
 
+// ?q=<key> preselect — Thai/EN SEO landing pages link in with a chosen
+// preset question. URL keys may use slug-friendly aliases (going / miss-me)
+// that map to canonical PRESETS keys (direction / still-thinking). Invalid
+// or missing values are silently ignored — no regression to existing flow.
+(function preselectQuestionFromQuery() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const inbound = params.get('q');
+    if (inbound) {
+      const Q_ALIAS = { 'going': 'direction', 'miss-me': 'still-thinking' };
+      const key = Q_ALIAS[inbound] || inbound;
+      if (getPreset(key)) {
+        selectedQuestionKey = key;
+        // Fire-and-forget prefetch of the question-specific dataset.
+        if (typeof loadQuestionDataset === 'function') loadQuestionDataset(key);
+        // Reflect the selection in the chip UI immediately.
+        if (typeof syncChipSelection === 'function') syncChipSelection();
+      }
+    }
+    if (params.has('q')) {
+      params.delete('q');
+      const q = params.toString();
+      const newUrl = window.location.pathname + (q ? '?' + q : '') + window.location.hash;
+      window.history.replaceState(null, '', newUrl);
+    }
+  } catch (e) { /* no-op */ }
+})();
+
 applyLang();
 loadDeck();
 renderReturnPanel();
