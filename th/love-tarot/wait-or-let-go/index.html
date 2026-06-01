@@ -98,6 +98,20 @@
   ]
 }
 </script>
+
+<script data-veila-lang-persist="1">
+/* Persist the page-declared locale to localStorage so that downstream apps
+   (homepage Celtic Cross / Quick Love Reading / intent pages) read the
+   correct lang when the user navigates here. Static TH SEO pages have no
+   in-page toggle and no app-level lang reader; this 4-line write closes
+   the cross-navigation gap surfaced in the language-persistence audit. */
+(function () {
+  try {
+    var l = document.documentElement.lang;
+    if (l === 'th' || l === 'en') localStorage.setItem('veila-lang', l);
+  } catch (e) { /* private-mode / quota — silent */ }
+})();
+</script>
 </head>
 <body>
 
