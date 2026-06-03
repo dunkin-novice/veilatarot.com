@@ -98,6 +98,15 @@
   ]
 }
 </script>
+<style>
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+</style>
 </head>
 <body>
 
@@ -117,6 +126,11 @@
   <div class="eyebrow">ไพ่ทาโรต์ 3 ใบ · บทอ่านเพื่อใคร่ครวญ</div>
   <h1 class="title">เขาคิดยังไงกับเรา — ดูพลังของเขาผ่านไพ่ทาโรต์</h1>
   <p class="lede">บางครั้งสัญญาณจากอีกฝ่ายไม่ชัดพอที่จะอ่านได้ บางวันเขาดูใส่ใจ บางวันก็เงียบหายไป บทอ่านนี้ใช้ไพ่ 3 ใบช่วยจัดเรียงพลังทางอารมณ์ของเขา เพื่อให้คุณเห็นภาพชัดขึ้น โดยไม่ต้องเดาเอง</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label">บทสะท้อนสั้นๆ</h2>
+    <p class="qr-body">ไพ่ไม่ได้อ่านความคิดของเขาแทนคุณ แต่ช่วยจัดเรียงพลังทางอารมณ์ที่เขากำลังส่งออกมา: ความรู้สึกที่ปรากฏ สิ่งที่ซ่อนอยู่ และทิศที่อารมณ์เหล่านั้นกำลังเคลื่อนไป</p>
+  </section>
 
   <section>
     <h2>คำถามนี้เหมาะกับเมื่อ…</h2>
