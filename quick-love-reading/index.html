@@ -56,6 +56,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('set', 'user_properties', { site_lang: (document.documentElement.lang || 'en').slice(0,2) });
   gtag('config', 'G-NQWWZ3HT2S');
 </script>
 
@@ -3721,6 +3722,7 @@ function setLang(next) {
   const from = lang;
   lang = next;
   try { localStorage.setItem('veila-lang', lang); } catch (e) {}
+  if (typeof gtag === 'function') { gtag('set', 'user_properties', { site_lang: lang }); }
   applyLang();
   if (window.veilaFire) {
     window.veilaFire('language_switched', { from_lang: from, to_lang: next, method: 'inline', source_page: '/quick-love-reading/' });
