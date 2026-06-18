@@ -62,6 +62,7 @@
 
 <script src="/assets/analytics.js" defer></script>
 <script src="/assets/share.js" defer></script>
+<script src="/assets/100-questions.js"></script>
 
 <script type="application/ld+json">
 {
@@ -79,6 +80,7 @@
 }
 </script>
 
+<link rel="stylesheet" href="/assets/autocomplete.css" />
 <style>
 :root {
   --ink: #0a0a0c;
@@ -1714,17 +1716,14 @@ html[lang="th"] .quiet-pause .qp-line {
       <div class="divider-ornament"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
       <p class="lede" data-i18n="lede">For when a question of the heart needs more than a moment but less than an hour. Take a breath. Hold the question. The cards reflect — they don't predict.</p>
 
-      <section class="question-presets" aria-labelledby="qp-label">
-        <div class="qp-label" id="qp-label" data-i18n="qpLabel">Choose a question (optional)</div>
-        <div class="qp-chips" role="group" aria-label="Preset questions">
-          <button type="button" class="qp-chip" data-key="their-energy"   aria-pressed="false" data-i18n="qpTheirEnergy">What is their energy toward me?</button>
-          <button type="button" class="qp-chip" data-key="honest"          aria-pressed="false" data-i18n="qpHonest">Is this connection honest?</button>
-          <button type="button" class="qp-chip" data-key="reach-out"       aria-pressed="false" data-i18n="qpReachOut">Should I reach out?</button>
-          <button type="button" class="qp-chip" data-key="direction"       aria-pressed="false" data-i18n="qpDirection">Where is this connection going?</button>
-          <button type="button" class="qp-chip" data-key="still-thinking"  aria-pressed="false" data-i18n="qpStillThinking">Are they still thinking of me?</button>
-          <button type="button" class="qp-chip" data-key="wait-or-let-go"  aria-pressed="false" data-i18n="qpWaitOrLetGo">Should I wait or let go?</button>
-          <button type="button" class="qp-chip" data-key="find-someone"   aria-pressed="false" data-i18n="qpFindSomeone">When will I meet someone?</button>
-          <button type="button" class="qp-chip" data-key="pull-away"      aria-pressed="false" data-i18n="qpPullAway">Why did they pull away?</button>
+      <section class="question-search" aria-labelledby="qp-label">
+        <div class="qp-label" id="qp-label" data-i18n="qpLabel">Ask a question</div>
+        <div class="q-autocomplete-wrapper">
+          <input type="text" id="q-input" autocomplete="off" placeholder="Type your question..." data-i18n-placeholder="qPlaceholder">
+          <button type="button" id="q-clear" class="q-clear" hidden>×</button>
+          <div class="q-dropdown" id="q-dropdown" hidden>
+            <!-- Dynamically populated via JS -->
+          </div>
         </div>
       </section>
 
@@ -2298,7 +2297,7 @@ function daysSince(dateStr) {
    PRESET QUESTIONS — 6 reflective love questions, EN/TH.
    No free-text input in v1. User can also skip — reading still works.
    ======================================================================== */
-const PRESETS = [
+const ORIGINAL_PRESETS = [
   { key: 'their-energy',   en: 'What is their energy toward me?',  th: 'เขาคิดยังไงกับเรา' },
   { key: 'honest',         en: 'Is this connection honest?',        th: 'คนคุยจริงใจไหม' },
   { key: 'reach-out',      en: 'Should I reach out?',               th: 'ควรทักไปไหม' },
@@ -2307,6 +2306,16 @@ const PRESETS = [
   { key: 'wait-or-let-go', en: 'Should I wait or let go?',          th: 'ควรรอหรือควรพอ' },
   { key: 'find-someone',   en: 'When will I meet someone?',          th: 'เมื่อไหร่จะได้เจอใครสักคน' },
   { key: 'pull-away',      en: 'Why did they pull away?',            th: 'ทำไมเขาถึงถอยห่าง' }
+];
+
+const PRESETS = [
+  ...ORIGINAL_PRESETS,
+  ...(typeof HUNDRED_QUESTIONS !== 'undefined' ? HUNDRED_QUESTIONS.map((q, idx) => ({
+    key: 'custom_' + idx,
+    en: q.en,
+    th: q.th,
+    pillar: q.pillar
+  })) : [])
 ];
 function getPreset(key) { return PRESETS.find(p => p.key === key) || null; }
 function getPresetText(key, l) {
@@ -3270,9 +3279,11 @@ function shareLoveReadingSquare() {
 function syncUserQuestion() {
   const el = document.getElementById('user-question');
   if (!el) return;
-  if (selectedQuestionKey) {
+  if (selectedQuestionKey === 'custom' && window.customQuestionText) {
+    el.textContent = '"' + window.customQuestionText + '"';
+    el.hidden = false;
+  } else if (selectedQuestionKey) {
     const text = getPresetText(selectedQuestionKey, lang);
-    // Italicised quotation marks differ by lang — keep ASCII for portability.
     el.textContent = '"' + text + '"';
     el.hidden = false;
   } else {
@@ -4340,41 +4351,112 @@ function renderArchive() {
 }
 
 /* ========================================================================
-   QUESTION CHIPS — tap one to select, tap same chip again to deselect.
-   Skipping is allowed; the reading runs either way.
+   QUESTION AUTOCOMPLETE
    ======================================================================== */
-function syncChipSelection() {
-  document.querySelectorAll('.qp-chip').forEach((b) => {
-    const on = b.dataset.key === selectedQuestionKey;
-    b.classList.toggle('selected', on);
-    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+window.customQuestionText = '';
+
+function initAutocomplete() {
+  const input = document.getElementById('q-input');
+  const dropdown = document.getElementById('q-dropdown');
+  const clearBtn = document.getElementById('q-clear');
+  if (!input || !dropdown) return;
+
+  function renderDropdown(filterText = '') {
+    dropdown.innerHTML = '';
+    const q = filterText.toLowerCase().trim();
+
+    let currentPillar = '';
+    let pillarGroup = null;
+
+    PRESETS.forEach((preset) => {
+      const textEn = preset.en.toLowerCase();
+      const textTh = preset.th ? preset.th.toLowerCase() : '';
+      if (q && !textEn.includes(q) && !textTh.includes(q)) return;
+
+      if (preset.pillar !== currentPillar) {
+        currentPillar = preset.pillar;
+        pillarGroup = document.createElement('div');
+        pillarGroup.className = 'q-pillar-group';
+        const label = document.createElement('div');
+        label.className = 'q-pillar-label';
+        label.textContent = currentPillar ? currentPillar.toUpperCase() : 'GENERAL';
+        pillarGroup.appendChild(label);
+        dropdown.appendChild(pillarGroup);
+      }
+
+      const item = document.createElement('div');
+      item.className = 'q-item';
+      item.textContent = preset[lang] || preset.en;
+      item.addEventListener('click', () => {
+        selectedQuestionKey = preset.key;
+        input.value = item.textContent;
+        dropdown.hidden = true;
+        clearBtn.hidden = false;
+        loadQuestionDataset(preset.key);
+        if (window.veilaFire) {
+          window.veilaFire('love_question_selected', {
+            lang: lang,
+            question_key: preset.key,
+            question_text: item.textContent
+          });
+        }
+      });
+      pillarGroup.appendChild(item);
+    });
+
+    if (q) {
+      const otherGroup = document.createElement('div');
+      otherGroup.className = 'q-pillar-group';
+      const otherItem = document.createElement('div');
+      otherItem.className = 'q-item other';
+      otherItem.textContent = (lang === 'th' ? 'อื่นๆ: ' : 'Other: ') + filterText;
+      otherItem.addEventListener('click', () => {
+        selectedQuestionKey = 'custom';
+        window.customQuestionText = filterText;
+        input.value = filterText;
+        dropdown.hidden = true;
+        clearBtn.hidden = false;
+        if (window.veilaFire) {
+          window.veilaFire('love_question_custom', {
+            lang: lang,
+            question_text: filterText
+          });
+        }
+      });
+      otherGroup.appendChild(otherItem);
+      dropdown.appendChild(otherGroup);
+    }
+  }
+
+  input.addEventListener('focus', () => {
+    renderDropdown(input.value);
+    dropdown.hidden = false;
+  });
+
+  input.addEventListener('input', (e) => {
+    renderDropdown(e.target.value);
+    clearBtn.hidden = e.target.value.length === 0;
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    selectedQuestionKey = null;
+    window.customQuestionText = '';
+    clearBtn.hidden = true;
+    renderDropdown('');
+    input.focus();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.q-autocomplete-wrapper')) {
+      dropdown.hidden = true;
+    }
   });
 }
-document.querySelectorAll('.qp-chip').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const key = btn.dataset.key;
-    if (selectedQuestionKey === key) {
-      // toggle off — no analytics for deselect
-      selectedQuestionKey = null;
-      syncChipSelection();
-      return;
-    }
-    selectedQuestionKey = key;
-    syncChipSelection();
-    // Fire-and-forget prefetch of the question-specific dataset (if any).
-    // No await — the chip should feel instantaneous. The reveal-time
-    // await below will catch up if the user moves quickly.
-    loadQuestionDataset(key);
-    const preset = getPreset(key);
-    if (window.veilaFire && preset) {
-      window.veilaFire('love_question_selected', {
-        lang: lang,
-        question_key: key,
-        question_text: preset[lang] || preset.en
-      });
-    }
-  });
-});
+
+function syncChipSelection() {
+  // Deprecated - replaced by autocomplete
+}
 
 /* ========================================================================
    BOOT
@@ -4445,6 +4527,7 @@ applyLang();
 loadDeck();
 renderReturnPanel();
 renderArchive();
+initAutocomplete();
 
 document.getElementById('start-btn').addEventListener('click', enterSelection);
 document.getElementById('share-btn').addEventListener('click', shareLoveReading);
