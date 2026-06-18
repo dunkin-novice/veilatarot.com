@@ -901,3 +901,18 @@ footer .footer-nav .sep {
   .hub-card-list .hcl-rom { font-size: 18px; }
   .hub-card-list .hcl-name { font-size: 17px; }
 }
+
+/* AEO Snippet Styling */
+.aeo-snippet {
+  margin: 32px 0 40px;
+  padding: 24px;
+  background: var(--panel);
+  border-left: 3px solid var(--gold);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+.aeo-snippet p {
+  font-size: 15px;
+  color: var(--ivory-dim);
+  margin: 0;
+}

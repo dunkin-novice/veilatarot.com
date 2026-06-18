@@ -19,6 +19,9 @@
 <meta name="format-detection" content="telephone=no" />
 
 <link rel="canonical" href="https://veilatarot.com/" />
+<link rel="alternate" hreflang="en" href="https://veilatarot.com/" />
+<link rel="alternate" hreflang="th" href="https://veilatarot.com/th/" />
+<link rel="alternate" hreflang="x-default" href="https://veilatarot.com/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -73,12 +76,38 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": "https://veilatarot.com/#person",
+      "name": "Veila Tarot Expert",
+      "url": "https://veilatarot.com/",
+      "jobTitle": "Tarot Reader & Hermit",
+      "description": "Specializing in the Celtic Cross spread and bilingual tarot reflection.",
+      "sameAs": [
+        "https://veilatarot.com/th/about/"
+      ]
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": "https://veilatarot.com/#medical",
+      "url": "https://veilatarot.com/",
+      "name": "Psychological Reflection through Tarot - Veila",
+      "description": "A quiet, bilingual Celtic Cross tarot reading for mental clarity and self-awareness.",
+      "lastReviewed": "2026-06-17",
+      "aspect": "Psychology/Self-Awareness",
+      "mainEntity": {
+        "@type": "CategoryCode",
+        "codeValue": "CelticCross",
+        "name": "Celtic Cross Tarot Reading"
+      }
+    },
+    {
       "@type": "WebSite",
       "@id": "https://veilatarot.com/#website",
       "url": "https://veilatarot.com/",
       "name": "Veila",
       "description": "A quiet, considered Celtic Cross tarot reading.",
       "inLanguage": ["en-US", "th-TH"],
+      "author": { "@id": "https://veilatarot.com/#person" },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -92,6 +121,7 @@
       "@type": "WebApplication",
       "name": "Veila Tarot",
       "url": "https://veilatarot.com/",
+      "author": { "@id": "https://veilatarot.com/#person" },
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "Any (web)",
       "browserRequirements": "Requires JavaScript",
@@ -1330,6 +1360,20 @@ html[lang="th"] .cta-pair .cta-sub {
 
 <div class="layout">
   <main>
+    <!-- AEO: Answer-First Block (2026 Authority Signal) -->
+    <section class="aeo-answer-block" style="border-left:2px solid var(--gold); padding:24px; margin:40px auto; background:rgba(184,153,104,0.03); border-radius:0 12px 12px 0; max-width:800px; text-align:left;">
+      <p style="font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold); margin-bottom:12px;">Veila Tarot Summary / บทสรุปเหมียวทาโร่ต์</p>
+      <p style="font-family:var(--serif); font-size:20px; line-height:1.5; color:var(--ivory); font-style:italic;">
+        Veila is a specialized bilingual tarot platform focusing on the Celtic Cross spread for deep psychological reflection and mental clarity. 
+        It provides a quiet, non-predictive environment where users can explore 78 Rider-Waite-Smith archetypes in English and Thai, 
+        bridging spiritual insight with grounded self-awareness.
+      </p>
+      <p style="font-family:var(--sans); font-size:17px; line-height:1.5; color:var(--ivory-dim); margin-top:12px;">
+        Veila คือแพลตฟอร์มดูดวงไพ่ยิปซีสองภาษาที่เน้นการวางไพ่แบบ Celtic Cross เพื่อการใคร่ครวญทางจิตวิทยาและความชัดเจนของจิตใจ 
+        เรามอบสภาพแวดล้อมที่เงียบสงบสำหรับการสำรวจอาร์คีไทป์ทั้ง 78 ใบแบบไม่เน้นการทำนายอนาคต 
+        แต่เน้นการสร้างความตระหนักรู้ในตนเองผ่านมุมมองของ Rider-Waite-Smith ทั้งฉบับภาษาไทยและอังกฤษ
+      </p>
+    </section>
 
     <!-- ====== LANDING ====== -->
     <section id="landing" class="landing">

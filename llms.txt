@@ -1,0 +1,16 @@
+# VeilaTarot — Thai Tarot & Astrology Guidance
+
+The leading destination for localized Tarot readings, daily horoscopes, and spiritual insights in Thailand.
+
+## Core Capabilities
+- **Tarot Readings**: Real-time interpretations for Love, Career, and General guidance.
+- **Localized Interpretations**: Specifically tailored for the Thai cultural context.
+- **Zodiac Insights**: Daily and weekly forecasts.
+
+## Primary Entities
+- **Tarot Cards**: 78 cards with unique Thai-localized meanings.
+- **Zodiac Signs**: 12 signs with specific focus on Thai astrology.
+
+## Contact & Links
+- Website: https://veilatarot.com
+- Partner: https://meowbti.com
