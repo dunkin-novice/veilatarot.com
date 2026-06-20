@@ -56,11 +56,13 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('set', 'user_properties', { site_lang: (document.documentElement.lang || 'en').slice(0,2) });
   gtag('config', 'G-NQWWZ3HT2S');
 </script>
 
 <script src="/assets/analytics.js" defer></script>
 <script src="/assets/share.js" defer></script>
+<script src="/assets/100-questions.js"></script>
 
 <script type="application/ld+json">
 {
@@ -78,6 +80,7 @@
 }
 </script>
 
+<link rel="stylesheet" href="/assets/autocomplete.css" />
 <style>
 :root {
   --ink: #0a0a0c;
@@ -1713,17 +1716,14 @@ html[lang="th"] .quiet-pause .qp-line {
       <div class="divider-ornament"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
       <p class="lede" data-i18n="lede">For when a question of the heart needs more than a moment but less than an hour. Take a breath. Hold the question. The cards reflect — they don't predict.</p>
 
-      <section class="question-presets" aria-labelledby="qp-label">
-        <div class="qp-label" id="qp-label" data-i18n="qpLabel">Choose a question (optional)</div>
-        <div class="qp-chips" role="group" aria-label="Preset questions">
-          <button type="button" class="qp-chip" data-key="their-energy"   aria-pressed="false" data-i18n="qpTheirEnergy">What is their energy toward me?</button>
-          <button type="button" class="qp-chip" data-key="honest"          aria-pressed="false" data-i18n="qpHonest">Is this connection honest?</button>
-          <button type="button" class="qp-chip" data-key="reach-out"       aria-pressed="false" data-i18n="qpReachOut">Should I reach out?</button>
-          <button type="button" class="qp-chip" data-key="direction"       aria-pressed="false" data-i18n="qpDirection">Where is this connection going?</button>
-          <button type="button" class="qp-chip" data-key="still-thinking"  aria-pressed="false" data-i18n="qpStillThinking">Are they still thinking of me?</button>
-          <button type="button" class="qp-chip" data-key="wait-or-let-go"  aria-pressed="false" data-i18n="qpWaitOrLetGo">Should I wait or let go?</button>
-          <button type="button" class="qp-chip" data-key="find-someone"   aria-pressed="false" data-i18n="qpFindSomeone">When will I meet someone?</button>
-          <button type="button" class="qp-chip" data-key="pull-away"      aria-pressed="false" data-i18n="qpPullAway">Why did they pull away?</button>
+      <section class="question-search" aria-labelledby="qp-label">
+        <div class="qp-label" id="qp-label" data-i18n="qpLabel">Ask a question</div>
+        <div class="q-autocomplete-wrapper">
+          <input type="text" id="q-input" autocomplete="off" placeholder="Type your question..." data-i18n-placeholder="qPlaceholder">
+          <button type="button" id="q-clear" class="q-clear" hidden>×</button>
+          <div class="q-dropdown" id="q-dropdown" hidden>
+            <!-- Dynamically populated via JS -->
+          </div>
         </div>
       </section>
 
@@ -2297,7 +2297,7 @@ function daysSince(dateStr) {
    PRESET QUESTIONS — 6 reflective love questions, EN/TH.
    No free-text input in v1. User can also skip — reading still works.
    ======================================================================== */
-const PRESETS = [
+const ORIGINAL_PRESETS = [
   { key: 'their-energy',   en: 'What is their energy toward me?',  th: 'เขาคิดยังไงกับเรา' },
   { key: 'honest',         en: 'Is this connection honest?',        th: 'คนคุยจริงใจไหม' },
   { key: 'reach-out',      en: 'Should I reach out?',               th: 'ควรทักไปไหม' },
@@ -2306,6 +2306,16 @@ const PRESETS = [
   { key: 'wait-or-let-go', en: 'Should I wait or let go?',          th: 'ควรรอหรือควรพอ' },
   { key: 'find-someone',   en: 'When will I meet someone?',          th: 'เมื่อไหร่จะได้เจอใครสักคน' },
   { key: 'pull-away',      en: 'Why did they pull away?',            th: 'ทำไมเขาถึงถอยห่าง' }
+];
+
+const PRESETS = [
+  ...ORIGINAL_PRESETS,
+  ...(typeof HUNDRED_QUESTIONS !== 'undefined' ? HUNDRED_QUESTIONS.map((q) => ({
+    key: q.key,
+    en: q.en,
+    th: q.th,
+    pillar: q.pillar
+  })) : [])
 ];
 function getPreset(key) { return PRESETS.find(p => p.key === key) || null; }
 function getPresetText(key, l) {
@@ -2337,7 +2347,107 @@ const QUESTION_DATASETS = {
   'still-thinking': '/assets/data/love-readings/does-this-person-miss-me-reading.json',
   'wait-or-let-go': '/assets/data/love-readings/should-i-wait-or-let-go-reading.json',
   'find-someone':   '/assets/data/love-readings/soulmate-reading.json',
-  'pull-away':      '/assets/data/love-readings/why-did-they-pull-away-reading.json'
+  'pull-away':      '/assets/data/love-readings/why-did-they-pull-away-reading.json',
+  'whats-blocking': '/assets/data/love-readings/whats-blocking-my-love-reading.json',
+  'attract-right': '/assets/data/love-readings/attract-the-right-partner-reading.json',
+  'my-energy': '/assets/data/love-readings/what-energy-i-project-reading.json',
+  'heal-before': '/assets/data/love-readings/heal-before-next-love-reading.json',
+  'same-type': '/assets/data/love-readings/why-i-attract-same-type-reading.json',
+  'be-open': '/assets/data/love-readings/be-more-open-to-love-reading.json',
+  'single-lesson': '/assets/data/love-readings/single-season-lesson-reading.json',
+  'blind-spot': '/assets/data/love-readings/dating-blind-spot-reading.json',
+  'look-for': '/assets/data/love-readings/what-to-look-for-reading.json',
+  'stop-settling': '/assets/data/love-readings/stop-settling-for-less-reading.json',
+  'boundaries': '/assets/data/love-readings/dating-boundaries-reading.json',
+  'am-ready': '/assets/data/love-readings/am-i-ready-for-love-reading.json',
+  'hiding': '/assets/data/love-readings/what-im-hiding-reading.json',
+  'self-love': '/assets/data/love-readings/build-self-love-reading.json',
+  'anxiety': '/assets/data/love-readings/dating-anxiety-reading.json',
+  'universe': '/assets/data/love-readings/universe-message-love-reading.json',
+  'intuition': '/assets/data/love-readings/trust-my-intuition-reading.json',
+  'archetype': '/assets/data/love-readings/romantic-archetype-reading.json',
+  'fear-rejection': '/assets/data/love-readings/let-go-fear-rejection-reading.json',
+  'past-patterns': '/assets/data/love-readings/past-dating-patterns-reading.json',
+  'make-space': '/assets/data/love-readings/make-space-for-love-reading.json',
+  'i-bring': '/assets/data/love-readings/what-i-bring-reading.json',
+  'self-sabotage': '/assets/data/love-readings/why-i-self-sabotage-reading.json',
+  'crave': '/assets/data/love-readings/love-i-crave-reading.json',
+  'stop-comparing': '/assets/data/love-readings/stop-comparing-in-love-reading.json',
+  'next-step': '/assets/data/love-readings/next-step-romance-reading.json',
+  'communicate': '/assets/data/love-readings/communicate-needs-reading.json',
+  'heart-care': '/assets/data/love-readings/heart-needs-care-reading.json',
+  'know-right': '/assets/data/love-readings/know-someone-right-reading.json',
+  'my-desires': '/assets/data/love-readings/ignoring-my-desires-reading.json',
+  'vulnerability': '/assets/data/love-readings/embrace-vulnerability-reading.json',
+  'solitude': '/assets/data/love-readings/meaning-of-solitude-reading.json',
+  'hopeful': '/assets/data/love-readings/stay-hopeful-reading.json',
+  'dating-break': '/assets/data/love-readings/break-from-dating-reading.json',
+  'mourning-what': '/assets/data/love-readings/mourning-person-or-potential-reading.json',
+  'closure': '/assets/data/love-readings/closure-without-them-reading.json',
+  'moving-on-hard': '/assets/data/love-readings/why-moving-on-is-hard-reading.json',
+  'still-hope': '/assets/data/love-readings/why-i-still-hold-hope-reading.json',
+  'relationship-taught-me': '/assets/data/love-readings/what-relationship-taught-me-reading.json',
+  'stop-checking-up': '/assets/data/love-readings/how-to-stop-checking-up-reading.json',
+  'first-step-healing': '/assets/data/love-readings/first-step-to-heal-my-heart-reading.json',
+  'lost-myself': '/assets/data/love-readings/why-i-lost-myself-reading.json',
+  'forgive-them': '/assets/data/love-readings/how-to-forgive-them-reading.json',
+  'forgive-myself': '/assets/data/love-readings/how-to-forgive-myself-reading.json',
+  'reclaim-part': '/assets/data/love-readings/what-part-to-reclaim-reading.json',
+  'silence-hurts': '/assets/data/love-readings/why-the-silence-hurts-reading.json',
+  'let-go-anger': '/assets/data/love-readings/how-to-let-go-of-anger-reading.json',
+  'truth-it-ended': '/assets/data/love-readings/the-truth-about-why-it-ended-reading.json',
+  'avoid-feeling': '/assets/data/love-readings/what-im-avoiding-feeling-reading.json',
+  'rebuild-self-esteem': '/assets/data/love-readings/rebuild-self-esteem-after-breakup-reading.json',
+  'miss-them-wrong': '/assets/data/love-readings/why-i-miss-them-though-wrong-reading.json',
+  'hear-they-wont-say': '/assets/data/love-readings/what-i-need-to-hear-reading.json',
+  'accept-its-over': '/assets/data/love-readings/how-to-accept-its-over-reading.json',
+  'beauty-after-grief': '/assets/data/love-readings/what-waits-after-grief-reading.json',
+  'responsible-failing': '/assets/data/love-readings/why-i-feel-responsible-reading.json',
+  'stop-romanticizing': '/assets/data/love-readings/how-to-stop-romanticizing-past-reading.json',
+  'fill-the-void': '/assets/data/love-readings/how-to-fill-the-void-reading.json',
+  'illusions-about-them': '/assets/data/love-readings/what-illusions-i-held-reading.json',
+  'independence-gave-away': '/assets/data/love-readings/what-independence-i-gave-away-reading.json',
+  'trust-after-betrayal': '/assets/data/love-readings/how-to-trust-after-betrayal-reading.json',
+  'afraid-let-go-pain': '/assets/data/love-readings/why-afraid-to-let-go-of-pain-reading.json',
+  'unresolved-questions': '/assets/data/love-readings/peace-with-unresolved-questions-reading.json',
+  'hidden-strength': '/assets/data/love-readings/hidden-strength-from-heartbreak-reading.json',
+  'honor-memories-let-go': '/assets/data/love-readings/honor-memories-while-letting-go-reading.json',
+  'missing-vs-lonely': '/assets/data/love-readings/missing-them-vs-being-lonely-reading.json',
+  'most-loving-thing-today': '/assets/data/love-readings/most-loving-thing-for-myself-today-reading.json',
+  'gently-close-chapter': '/assets/data/love-readings/how-to-gently-close-this-chapter-reading.json',
+  'communicate-better': '/assets/data/love-readings/how-can-we-communicate-better-reading.json',
+  'root-of-arguments': '/assets/data/love-readings/root-of-our-recurring-arguments-reading.json',
+  'more-passion': '/assets/data/love-readings/how-to-bring-more-passion-reading.json',
+  'partner-needs-now': '/assets/data/love-readings/what-my-partner-needs-now-reading.json',
+  'build-more-trust': '/assets/data/love-readings/how-to-build-more-trust-reading.json',
+  'need-not-asking': '/assets/data/love-readings/what-i-need-but-dont-ask-reading.json',
+  'unspoken-tension': '/assets/data/love-readings/the-unspoken-tension-reading.json',
+  'taking-for-granted': '/assets/data/love-readings/what-im-taking-for-granted-reading.json',
+  'align-future-goals': '/assets/data/love-readings/how-to-align-future-goals-reading.json',
+  'support-growth': '/assets/data/love-readings/how-to-support-each-others-growth-reading.json',
+  'emotionally-distant': '/assets/data/love-readings/why-i-feel-emotionally-distant-reading.json',
+  'be-more-present': '/assets/data/love-readings/how-to-be-more-present-reading.json',
+  'heal-resentments': '/assets/data/love-readings/how-to-heal-past-resentments-reading.json',
+  'strength-of-bond': '/assets/data/love-readings/the-strength-of-our-bond-reading.json',
+  'avoiding-talking': '/assets/data/love-readings/what-we-are-avoiding-talking-about-reading.json',
+  'show-appreciation': '/assets/data/love-readings/how-to-show-appreciation-reading.json',
+  'feel-insecure': '/assets/data/love-readings/why-i-feel-insecure-reading.json',
+  'balance-independence': '/assets/data/love-readings/how-to-balance-independence-togetherness-reading.json',
+  'meaning-of-conflict': '/assets/data/love-readings/deeper-meaning-of-our-conflict-reading.json',
+  'reignite-spark': '/assets/data/love-readings/how-to-reignite-the-spark-reading.json',
+  'unfair-expectations': '/assets/data/love-readings/unfair-expectations-on-them-reading.json',
+  'external-stress': '/assets/data/love-readings/navigating-external-stress-reading.json',
+  'relationship-teaching': '/assets/data/love-readings/what-our-relationship-teaches-me-reading.json',
+  'deepen-intimacy': '/assets/data/love-readings/how-to-deepen-emotional-intimacy-reading.json',
+  'roommates-not-lovers': '/assets/data/love-readings/why-we-feel-like-roommates-reading.json',
+  'feel-understood': '/assets/data/love-readings/how-to-feel-more-understood-reading.json',
+  'foundation-commitment': '/assets/data/love-readings/true-foundation-of-our-commitment-reading.json',
+  'handle-disagreements': '/assets/data/love-readings/handle-disagreements-with-compassion-reading.json',
+  'compromise-to-move-forward': '/assets/data/love-readings/compromise-to-move-forward-reading.json',
+  'express-vulnerabilities': '/assets/data/love-readings/how-to-express-vulnerabilities-safely-reading.json',
+  'shared-dream': '/assets/data/love-readings/what-shared-dream-to-build-reading.json',
+  'break-stagnant-routine': '/assets/data/love-readings/how-to-break-stagnant-routine-reading.json',
+  'next-chapter': '/assets/data/love-readings/the-next-chapter-for-our-love-reading.json'
 };
 
 const __datasetCache    = Object.create(null);
@@ -3269,9 +3379,11 @@ function shareLoveReadingSquare() {
 function syncUserQuestion() {
   const el = document.getElementById('user-question');
   if (!el) return;
-  if (selectedQuestionKey) {
+  if (selectedQuestionKey === 'custom' && window.customQuestionText) {
+    el.textContent = '"' + window.customQuestionText + '"';
+    el.hidden = false;
+  } else if (selectedQuestionKey) {
     const text = getPresetText(selectedQuestionKey, lang);
-    // Italicised quotation marks differ by lang — keep ASCII for portability.
     el.textContent = '"' + text + '"';
     el.hidden = false;
   } else {
@@ -3539,11 +3651,39 @@ function selectMode(modeKey) {
   }
 }
 
+/* Resolve a question the user typed but never clicked in the dropdown.
+   Called as the reading starts so EVERY asked question is captured:
+   an exact match snaps to its preset key (specific reading + logged key),
+   anything else is logged as a custom question for "what to build next". */
+function commitPendingQuestion() {
+  const input = document.getElementById('q-input');
+  if (!input) return;
+  const typed = (input.value || '').trim();
+  if (!typed || selectedQuestionKey) return; // empty, or already resolved
+  const t = typed.toLowerCase();
+  const match = PRESETS.find(p =>
+    (p.en && p.en.toLowerCase() === t) || (p.th && p.th.toLowerCase() === t));
+  if (match) {
+    selectedQuestionKey = match.key;
+    if (typeof loadQuestionDataset === 'function') loadQuestionDataset(match.key);
+    if (window.veilaFire) window.veilaFire('love_question_selected', {
+      lang: lang, question_key: match.key, question_text: match[lang] || match.en, source: 'typed'
+    });
+  } else {
+    selectedQuestionKey = 'custom';
+    window.customQuestionText = typed;
+    if (window.veilaFire) window.veilaFire('love_question_custom', {
+      lang: lang, question_text: typed, source: 'typed'
+    });
+  }
+}
+
 function enterSelection() {
   if (!DECK.length) {
     loadDeck().then(() => { if (DECK.length) enterSelection(); });
     return;
   }
+  commitPendingQuestion();
   // Reset selection + reading state
   selectedPicks = [];
   drawn = [];
@@ -3721,6 +3861,7 @@ function setLang(next) {
   const from = lang;
   lang = next;
   try { localStorage.setItem('veila-lang', lang); } catch (e) {}
+  if (typeof gtag === 'function') { gtag('set', 'user_properties', { site_lang: lang }); }
   applyLang();
   if (window.veilaFire) {
     window.veilaFire('language_switched', { from_lang: from, to_lang: next, method: 'inline', source_page: '/quick-love-reading/' });
@@ -4338,41 +4479,118 @@ function renderArchive() {
 }
 
 /* ========================================================================
-   QUESTION CHIPS — tap one to select, tap same chip again to deselect.
-   Skipping is allowed; the reading runs either way.
+   QUESTION AUTOCOMPLETE
    ======================================================================== */
-function syncChipSelection() {
-  document.querySelectorAll('.qp-chip').forEach((b) => {
-    const on = b.dataset.key === selectedQuestionKey;
-    b.classList.toggle('selected', on);
-    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+window.customQuestionText = '';
+
+function initAutocomplete() {
+  const input = document.getElementById('q-input');
+  const dropdown = document.getElementById('q-dropdown');
+  const clearBtn = document.getElementById('q-clear');
+  if (!input || !dropdown) return;
+
+  function renderDropdown(filterText = '') {
+    dropdown.innerHTML = '';
+    const q = filterText.toLowerCase().trim();
+
+    let currentPillar = '';
+    let pillarGroup = null;
+
+    PRESETS.forEach((preset) => {
+      const textEn = preset.en.toLowerCase();
+      const textTh = preset.th ? preset.th.toLowerCase() : '';
+      if (q && !textEn.includes(q) && !textTh.includes(q)) return;
+
+      if (preset.pillar !== currentPillar) {
+        currentPillar = preset.pillar;
+        pillarGroup = document.createElement('div');
+        pillarGroup.className = 'q-pillar-group';
+        const label = document.createElement('div');
+        label.className = 'q-pillar-label';
+        label.textContent = currentPillar ? currentPillar.toUpperCase() : 'GENERAL';
+        pillarGroup.appendChild(label);
+        dropdown.appendChild(pillarGroup);
+      }
+
+      const item = document.createElement('div');
+      item.className = 'q-item';
+      item.textContent = preset[lang] || preset.en;
+      item.addEventListener('click', () => {
+        selectedQuestionKey = preset.key;
+        input.value = item.textContent;
+        dropdown.hidden = true;
+        clearBtn.hidden = false;
+        loadQuestionDataset(preset.key);
+        if (window.veilaFire) {
+          window.veilaFire('love_question_selected', {
+            lang: lang,
+            question_key: preset.key,
+            question_text: item.textContent
+          });
+        }
+      });
+      pillarGroup.appendChild(item);
+    });
+
+    if (q) {
+      const otherGroup = document.createElement('div');
+      otherGroup.className = 'q-pillar-group';
+      const otherItem = document.createElement('div');
+      otherItem.className = 'q-item other';
+      otherItem.textContent = (lang === 'th' ? 'อื่นๆ: ' : 'Other: ') + filterText;
+      otherItem.addEventListener('click', () => {
+        selectedQuestionKey = 'custom';
+        window.customQuestionText = filterText;
+        input.value = filterText;
+        dropdown.hidden = true;
+        clearBtn.hidden = false;
+        if (window.veilaFire) {
+          window.veilaFire('love_question_custom', {
+            lang: lang,
+            question_text: filterText
+          });
+        }
+      });
+      otherGroup.appendChild(otherItem);
+      dropdown.appendChild(otherGroup);
+    }
+  }
+
+  input.addEventListener('focus', () => {
+    renderDropdown(input.value);
+    dropdown.hidden = false;
+  });
+
+  input.addEventListener('input', (e) => {
+    // Any manual typing invalidates a prior dropdown selection. The typed
+    // text becomes the pending question, resolved on start via
+    // commitPendingQuestion() (matched to a preset key, else logged custom).
+    // Note: programmatic `.value =` on preset click does NOT fire 'input'.
+    selectedQuestionKey = null;
+    window.customQuestionText = '';
+    renderDropdown(e.target.value);
+    clearBtn.hidden = e.target.value.length === 0;
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    selectedQuestionKey = null;
+    window.customQuestionText = '';
+    clearBtn.hidden = true;
+    renderDropdown('');
+    input.focus();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.q-autocomplete-wrapper')) {
+      dropdown.hidden = true;
+    }
   });
 }
-document.querySelectorAll('.qp-chip').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const key = btn.dataset.key;
-    if (selectedQuestionKey === key) {
-      // toggle off — no analytics for deselect
-      selectedQuestionKey = null;
-      syncChipSelection();
-      return;
-    }
-    selectedQuestionKey = key;
-    syncChipSelection();
-    // Fire-and-forget prefetch of the question-specific dataset (if any).
-    // No await — the chip should feel instantaneous. The reveal-time
-    // await below will catch up if the user moves quickly.
-    loadQuestionDataset(key);
-    const preset = getPreset(key);
-    if (window.veilaFire && preset) {
-      window.veilaFire('love_question_selected', {
-        lang: lang,
-        question_key: key,
-        question_text: preset[lang] || preset.en
-      });
-    }
-  });
-});
+
+function syncChipSelection() {
+  // Deprecated - replaced by autocomplete
+}
 
 /* ========================================================================
    BOOT
@@ -4443,6 +4661,7 @@ applyLang();
 loadDeck();
 renderReturnPanel();
 renderArchive();
+initAutocomplete();
 
 document.getElementById('start-btn').addEventListener('click', enterSelection);
 document.getElementById('share-btn').addEventListener('click', shareLoveReading);

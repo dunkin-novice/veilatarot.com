@@ -1,0 +1,84 @@
+.question-search {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 100;
+}
+.q-autocomplete-wrapper {
+  position: relative;
+  width: 100%;
+}
+.q-autocomplete-wrapper input {
+  width: 100%;
+  padding: 14px 44px 14px 16px;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--ivory);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+.q-autocomplete-wrapper input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.q-autocomplete-wrapper input::placeholder {
+  color: var(--ivory-mute);
+}
+.q-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--ivory-dim);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+}
+.q-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 4px;
+  background: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.q-dropdown[hidden] {
+  display: none;
+}
+.q-pillar-group {
+  padding: 8px 0;
+}
+.q-pillar-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  padding: 4px 16px;
+}
+.q-item {
+  padding: 10px 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ivory-dim);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.q-item:hover, .q-item.active {
+  background: var(--rule);
+  color: var(--ivory);
+}
+.q-item.other {
+  border-top: 1px solid var(--rule);
+  font-style: italic;
+}

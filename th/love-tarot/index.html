@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ดูดวงความรัก ไพ่ทาโรต์ — 8 คำถามที่ใจถามบ่อยที่สุด | Veila</title>
+<title>ดูดวงความรัก ไพ่ยิปซี เลือกไพ่ แม่นๆ — ดูดวงความรัก ไพ่ยิปซี เลือกไพ่ แม่นๆ | Veila</title>
 <meta name="description" content="ดูดวงความรักด้วยไพ่ทาโรต์ Veila — เลือกคำถามที่ตรงกับใจคุณตอนนี้ จาก 8 หัวข้อ พลังของอีกฝ่าย ความจริงใจ การทัก ทิศทาง การคิดถึง การรอ คนที่กำลังมา และการถอยห่าง" />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -38,6 +38,31 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/page.css" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQWWZ3HT2S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('set', 'user_properties', { site_lang: (document.documentElement.lang || 'en').slice(0,2) });
+  gtag('config', 'G-NQWWZ3HT2S');
+</script>
+<script src="/assets/analytics.js" defer></script>
+<script>
+  /* TH love-intent CTA -> reading-app handoff (parity with EN love-readings) */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="/quick-love-reading/?q="]');
+    if (a && window.veilaFire) {
+      var q = (a.getAttribute('href').split('q=')[1] || '').split('&')[0];
+      window.veilaFire('love_question_intent_cta_clicked', {
+        intent_slug: q,
+        lang: (document.documentElement.lang || 'th').slice(0, 2),
+        source_page: location.pathname
+      });
+    }
+  });
+</script>
 
 <style>
 /* Hub-card-list overrides scoped to this Thai hub.

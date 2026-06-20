@@ -31,8 +31,35 @@ ROOT = Path(__file__).resolve().parent.parent
 DECK_PATH = ROOT / 'cards.json'
 DECK = json.loads(DECK_PATH.read_text(encoding='utf-8'))
 
-BUILD_DATE = '2026-05-14'
+BUILD_DATE = '2026-06-17'
 LANGS = ('en', 'th')
+
+def aeo_block(title_en, title_th, desc_en, desc_th, lang):
+    """Bilingual Answer-First block for AI extractability."""
+    is_th = (lang == 'th')
+    label = 'Verdict Summary / บทสรุป' if is_th else 'Verdict Summary'
+    return f'''  <!-- AEO: Answer-First Block (2026 Strategy) -->
+  <section class="aeo-answer-block" style="border-left:2px solid var(--gold); padding:20px; margin:28px 0; background:rgba(184,153,104,0.03); border-radius:0 12px 12px 0; text-align:left;">
+    <p style="font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold); margin-bottom:10px;">{escape(label)}</p>
+    <p style="font-family:var(--serif); font-size:19px; line-height:1.5; color:var(--ivory); font-style:italic;">{escape(desc_en)}</p>
+    <p style="font-family:var(--sans); font-size:16px; line-height:1.5; color:var(--ivory-dim); margin-top:10px;">{escape(desc_th)}</p>
+  </section>'''
+
+def medical_schema(url, name, desc, entity_code, entity_name):
+    """2026 YMYL trust signal."""
+    return {
+        "@type": "MedicalWebPage",
+        "url": url,
+        "name": name,
+        "description": desc,
+        "lastReviewed": BUILD_DATE,
+        "aspect": "Psychology/Guidance",
+        "mainEntity": {
+            "@type": "CategoryCode",
+            "codeValue": entity_code,
+            "name": entity_name
+        }
+    }
 
 # ---------------------------------------------------------------------------
 # DATA STRUCTURES
@@ -263,6 +290,135 @@ TH_SCENARIOS = [
     },
 ]
 
+ZODIAC_DATA = [
+    ('aries', 'ราศีเมษ'),
+    ('taurus', 'ราศีพฤษภ'),
+    ('gemini', 'ราศีเมถุน'),
+    ('cancer', 'ราศีกรกฎ'),
+    ('leo', 'ราศีสิงห์'),
+    ('virgo', 'ราศีกันย์'),
+    ('libra', 'ราศีตุลย์'),
+    ('scorpio', 'ราศีพิจิก'),
+    ('sagittarius', 'ราศีธนู'),
+    ('capricorn', 'ราศีมังกร'),
+    ('aquarius', 'ราศีกุมภ์'),
+    ('pisces', 'ราศีมีน')
+]
+
+def render_zodiac_page(slug, th_name):
+    """Render an individual zodiac love tarot page."""
+    canonical = f'/th/zodiac-love-tarot/{slug}/'
+    page_url = f'https://veilatarot.com{canonical}'
+    title = f'ดูดวงความรัก {th_name} — ไพ่ยิปซี เลือกไพ่ แม่นๆ | Veila'
+    desc = f'ดูดวงความรัก {th_name} ด้วยไพ่ยิปซีรายเดือน เลือกไพ่ 3 ใบเพื่ออ่านพลังงานความรัก ความสัมพันธ์ และสิ่งที่กำลังจะเกิดขึ้นสำหรับชาว{th_name}โดยเฉพาะ'
+    
+    crumbs = [
+        home_crumb('th'),
+        ('ดวงความรัก 12 ราศี', 'https://veilatarot.com/th/zodiac-love-tarot/'),
+        (th_name, page_url),
+    ]
+    
+    article_jsonld = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": desc,
+        "image": "https://veilatarot.com/og.png",
+        "inLanguage": "th-TH",
+        "datePublished": BUILD_DATE,
+        "dateModified": BUILD_DATE,
+        "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
+        "mainEntityOfPage": page_url
+    }
+    
+    head = _render_head_block_th_only(
+        title=title, desc=desc,
+        canonical=canonical, th_path=canonical,
+        extra_jsonld=[article_jsonld, breadcrumb_jsonld(crumbs)]
+    )
+    
+    return f'''<!DOCTYPE html>
+<html lang="th">
+<head>
+{head}</head>
+<body>
+
+{render_header(canonical, canonical, 'th')}
+
+<main class="article">
+  {render_breadcrumb_html(crumbs)}
+  <div class="eyebrow">ดวงความรักรายเดือน · {th_name}</div>
+  <h1 class="title">ดูดวงความรัก {th_name} — ไพ่ยิปซี เลือกไพ่ แม่นๆ</h1>
+  
+  <div class="aeo-snippet">
+    <p>ดูดวงความรัก {th_name} ด้วยไพ่ยิปซี: สำหรับชาว{th_name}ที่กำลังมองหาคำตอบเรื่องความสัมพันธ์ เลือกไพ่ 3 ใบเพื่อเปิดรับสารจากจักรวาล บทอ่านนี้จะช่วยสะท้อนพลังงานปัจจุบัน สิ่งที่ขวางกั้น และแนวโน้มในอนาคตอันใกล้สำหรับคุณโดยเฉพาะ</p>
+  </div>
+
+  <section>
+    <h2>เริ่มทำนายดวงความรักชาว{th_name}</h2>
+    <p>ตั้งสมาธิ นึกถึงเรื่องราวความรักของคุณ แล้วเลือกไพ่ที่ดึงดูดใจที่สุด</p>
+    <div style="margin: 40px 0; text-align: center;">
+      <a href="/quick-love-reading/?q=zodiac-{slug}&lang=th" class="btn" style="display: inline-block; padding: 18px 36px; background: var(--gold); color: var(--ink); text-decoration: none; font-weight: 600; border-radius: 4px;">เลือกไพ่ {th_name}</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>FAQ เกี่ยวกับดวงความรัก {th_name}</h2>
+    <div class="faq-item">
+      <h3>ดวงความรักนี้แม่นแค่ไหน?</h3>
+      <p>การดูดวงด้วยไพ่ยิปซีเป็นการอ่านพลังงานในช่วงเวลาหนึ่ง ผลลัพธ์อาจเปลี่ยนแปลงได้ตามการตัดสินใจของคุณ</p>
+    </div>
+  </section>
+</main>
+
+{render_footer('th')}
+</body>
+</html>'''
+
+def render_zodiac_hub():
+    """Render the main zodiac love tarot hub."""
+    canonical = '/th/zodiac-love-tarot/'
+    page_url = f'https://veilatarot.com{canonical}'
+    title = 'ดูดวงความรัก 12 ราศี — ไพ่ยิปซี เลือกไพ่ แม่นๆ ครบทุกราศี | Veila'
+    desc = 'เช็คดวงความรัก 12 ราศี ด้วยไพ่ยิปซี เลือกราศีของคุณเพื่อเริ่มทำนายดวงความรัก แม่นๆ ทั้งคนโสดและคนมีคู่'
+    
+    crumbs = [
+        home_crumb('th'),
+        ('ดวงความรัก 12 ราศี', page_url),
+    ]
+    
+    head = _render_head_block_th_only(
+        title=title, desc=desc,
+        canonical=canonical, th_path=canonical,
+        extra_jsonld=[breadcrumb_jsonld(crumbs)]
+    )
+    
+    links = ""
+    for slug, th_name in ZODIAC_DATA:
+        links += f'<a href="/th/zodiac-love-tarot/{slug}/" style="padding: 20px; border: 1px solid var(--rule); text-decoration: none; color: var(--ivory);">{th_name}</a>\n'
+
+    return f'''<!DOCTYPE html>
+<html lang="th">
+<head>
+{head}</head>
+<body>
+
+{render_header(canonical, canonical, 'th')}
+
+<main class="article">
+  {render_breadcrumb_html(crumbs)}
+  <h1 class="title">ดูดวงความรัก 12 ราศี</h1>
+  <div class="aeo-snippet">
+    <p>ดูดวงความรัก 12 ราศี ด้วยไพ่ยิปซี: ค้นหาคำตอบเรื่องหัวใจสำหรับราศีของคุณ เลือกไพ่แม่นๆ เพื่ออ่านทิศทางความรักและความสัมพันธ์ประจำเดือนนี้</p>
+  </div>
+  <div class="hub-card-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px;">
+    {links}
+  </div>
+</main>
+
+{render_footer('th')}
+</body>
+</html>'''
 
 def render_scenario(scenario):
     """Render a /th/scenarios/<slug>/ page."""
@@ -285,7 +441,7 @@ def render_scenario(scenario):
     if len(desc) > 175:
         desc = scenario['lede'][:140] + '… จาก Veila'
 
-    meta_title = f'{title} — บทใคร่ครวญด้วยไพ่ทาโรต์ | Veila'
+    meta_title = f'{title} — ดูดวงความรัก ไพ่ยิปซี เลือกไพ่ แม่นๆ | Veila'
 
     category_hub = ('/th/tarot-love-readings/' if scenario['category'] == 'love'
                     else '/th/career-tarot-reading/')
@@ -344,6 +500,11 @@ def render_scenario(scenario):
   {render_breadcrumb_html(crumbs)}
   <div class="eyebrow">{escape(scenario['eyebrow'])}</div>
   <h1 class="title">{escape(title)}</h1>
+  
+  <div class="aeo-snippet">
+    <p>ดูดวงความรัก ไพ่ยิปซี เพื่อหาคำตอบว่า{escape(title)} เลือกไพ่ 3 ใบเพื่ออ่านความจริงที่ซ่อนอยู่ บทอ่านแม่นๆ นี้ช่วยวิเคราะห์สถานการณ์ปัจจุบันเพื่อให้คุณเห็นภาพชัดเจนที่สุด</p>
+  </div>
+
   <p class="lede">{escape(scenario['lede'])}</p>
 
   <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
@@ -495,7 +656,7 @@ def card_meta_desc(card, lang):
     kw_up = (card['upright'].get('keywords') or {}).get(lang, '') or ''
     if lang == 'en':
         return f"{name} tarot card meaning: {kw_up}. Upright, reversed, and all ten Celtic Cross positions explained."
-    return f"ความหมายไพ่ {name}: {kw_up} คำทำนายไพ่ตั้งตรง ไพ่กลับหัว และทั้งสิบตำแหน่งของผังเซลติกครอส"
+    return f"ความหมายไพ่ {name}: {kw_up} ดูดวงความรัก ไพ่ยิปซี เลือกไพ่ แม่นๆ พร้อมคำทำนายทั้งสิบตำแหน่งของผังเซลติกครอส"
 
 def topical_link_for_card(card, lang):
     if card['arcana'] == 'minor' and card['suit'] == 'cups':
@@ -795,7 +956,7 @@ def card_i18n(lang, name):
             'adj_aria': 'Adjacent cards',
         }
     return {
-        'title': f"ความหมายไพ่ {name} — ตั้งตรง กลับหัว และเซลติกครอส | Veila",
+        'title': f"ความหมายไพ่ {name} — ดูดวงความรัก ไพ่ยิปซี เลือกไพ่ แม่นๆ | Veila",
         'h2_up': f"{name} — ตั้งตรง",
         'h2_rev': f"{name} — กลับหัว",
         'h2_cc': 'ในผังเซลติกครอส',
@@ -858,6 +1019,40 @@ def render_scenario_links_th(card):
   </aside>'''
 
 
+def render_card_faq_jsonld(card, lang):
+    name = card['name'][lang]
+    up_text = (card.get('upright') or {}).get('standalone', {}).get(lang, '')
+    rev_text = (card.get('reversed') or {}).get('standalone', {}).get(lang, '')
+    
+    if lang == 'th':
+        questions = [
+            (f"ไพ่ {name} หมายถึงอะไรในเรื่องความรัก?", f"ไพ่ {name} ในตำแหน่งตั้งตรงมักสื่อถึง {up_text[:120]}..."),
+            (f"ไพ่ {name} กลับหัวหมายความว่าอย่างไร?", f"เมื่อไพ่ {name} ปรากฏในลักษณะกลับหัว อาจหมายถึง {rev_text[:120]}...")
+        ]
+    else:
+        questions = [
+            (f"What does the {name} tarot card mean for love?", f"The {name} card in an upright position generally signifies {up_text[:120]}..."),
+            (f"What does {name} reversed mean?", f"When the {name} appears reversed, it can indicate {rev_text[:120]}...")
+        ]
+        
+    faq_entities = []
+    for q, a in questions:
+        faq_entities.append({
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": a
+            }
+        })
+        
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faq_entities
+    }
+
+
 def render_card(card, prev_card, next_card, lang):
     sl = card_slug(card)
     name = card['name'][lang]
@@ -914,13 +1109,15 @@ def render_card(card, prev_card, next_card, lang):
     crumbs = breadcrumb_for_card(card, lang)
     breadcrumb_html = render_breadcrumb_html(crumbs)
     crumbs_jsonld = breadcrumb_jsonld(crumbs)
+    faq_jsonld = render_card_faq_jsonld(card, lang)
+    med_jsonld = medical_schema(page_url, title, desc, card['id'], name)
     related_html = render_related_cards_module(card, lang)
     explore_html = render_explore_related_readings(card, lang)
 
     head = render_head_block(
         title=title, desc=desc, canonical=canonical,
         en_path=en_path, th_path=th_path, lang=lang,
-        extra_jsonld=[article_jsonld, crumbs_jsonld],
+        extra_jsonld=[article_jsonld, crumbs_jsonld, faq_jsonld, med_jsonld],
         include_share=True,
     )
 
@@ -1033,6 +1230,7 @@ def render_card(card, prev_card, next_card, lang):
 
 <main class="article card-page">
   {breadcrumb_html}
+  {aeo_block(name, card['name']['th'], up_text, (card.get('upright') or {}).get('standalone', {}).get('th', ''), lang)}
   <div class="eyebrow">{escape(label)}</div>
   <h1 class="title">{escape(name)}</h1>
   <p class="archetype">{escape(archetype)}</p>
@@ -1420,14 +1618,18 @@ def render_hub(slug, lang):
         "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
         "mainEntityOfPage": f"https://veilatarot.com{canonical}"
     }
+    med_jsonld = medical_schema(f"https://veilatarot.com{canonical}", meta['title'], meta['desc'], slug, meta['title'])
     head = render_head_block(
         title=meta['title'], desc=meta['desc'],
         canonical=canonical, en_path=en_path, th_path=th_path, lang=lang,
-        extra_jsonld=[article_jsonld, crumbs_jsonld]
+        extra_jsonld=[article_jsonld, crumbs_jsonld, med_jsonld]
     )
 
     # Body content
+    meta_en = spec['meta']['en']
+    meta_th = spec['meta']['th']
     body_html = f'''  {render_breadcrumb_html(crumbs)}
+  {aeo_block(meta_en['title'], meta_th['title'], meta_en['lede'], meta_th['lede'], lang)}
   <div class="eyebrow">{escape(meta['eyebrow'])}</div>
   <h1 class="title">{meta['h1_html']}</h1>
   <p class="lede">{escape(meta['lede'])}</p>
@@ -1886,6 +2088,18 @@ def main():
         out_dir = scenarios_dir / s['slug']
         out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / 'index.html').write_text(render_scenario(s), encoding='utf-8')
+
+    # Zodiac Hub and Pages
+    zodiac_dir = ROOT / 'th' / 'zodiac-love-tarot'
+    if zodiac_dir.exists():
+        shutil.rmtree(zodiac_dir)
+    print(f'Zodiac: writing {len(ZODIAC_DATA) + 1} TH pages...')
+    zodiac_dir.mkdir(parents=True, exist_ok=True)
+    (zodiac_dir / 'index.html').write_text(render_zodiac_hub(), encoding='utf-8')
+    for slug, th_name in ZODIAC_DATA:
+        out_dir = zodiac_dir / slug
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / 'index.html').write_text(render_zodiac_page(slug, th_name), encoding='utf-8')
 
     # HTML sitemap (/all-tarot-pages/)
     for lang in LANGS:
