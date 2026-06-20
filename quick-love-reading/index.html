@@ -2310,8 +2310,8 @@ const ORIGINAL_PRESETS = [
 
 const PRESETS = [
   ...ORIGINAL_PRESETS,
-  ...(typeof HUNDRED_QUESTIONS !== 'undefined' ? HUNDRED_QUESTIONS.map((q, idx) => ({
-    key: 'custom_' + idx,
+  ...(typeof HUNDRED_QUESTIONS !== 'undefined' ? HUNDRED_QUESTIONS.map((q) => ({
+    key: q.key,
     en: q.en,
     th: q.th,
     pillar: q.pillar
@@ -2347,7 +2347,107 @@ const QUESTION_DATASETS = {
   'still-thinking': '/assets/data/love-readings/does-this-person-miss-me-reading.json',
   'wait-or-let-go': '/assets/data/love-readings/should-i-wait-or-let-go-reading.json',
   'find-someone':   '/assets/data/love-readings/soulmate-reading.json',
-  'pull-away':      '/assets/data/love-readings/why-did-they-pull-away-reading.json'
+  'pull-away':      '/assets/data/love-readings/why-did-they-pull-away-reading.json',
+  'whats-blocking': '/assets/data/love-readings/whats-blocking-my-love-reading.json',
+  'attract-right': '/assets/data/love-readings/attract-the-right-partner-reading.json',
+  'my-energy': '/assets/data/love-readings/what-energy-i-project-reading.json',
+  'heal-before': '/assets/data/love-readings/heal-before-next-love-reading.json',
+  'same-type': '/assets/data/love-readings/why-i-attract-same-type-reading.json',
+  'be-open': '/assets/data/love-readings/be-more-open-to-love-reading.json',
+  'single-lesson': '/assets/data/love-readings/single-season-lesson-reading.json',
+  'blind-spot': '/assets/data/love-readings/dating-blind-spot-reading.json',
+  'look-for': '/assets/data/love-readings/what-to-look-for-reading.json',
+  'stop-settling': '/assets/data/love-readings/stop-settling-for-less-reading.json',
+  'boundaries': '/assets/data/love-readings/dating-boundaries-reading.json',
+  'am-ready': '/assets/data/love-readings/am-i-ready-for-love-reading.json',
+  'hiding': '/assets/data/love-readings/what-im-hiding-reading.json',
+  'self-love': '/assets/data/love-readings/build-self-love-reading.json',
+  'anxiety': '/assets/data/love-readings/dating-anxiety-reading.json',
+  'universe': '/assets/data/love-readings/universe-message-love-reading.json',
+  'intuition': '/assets/data/love-readings/trust-my-intuition-reading.json',
+  'archetype': '/assets/data/love-readings/romantic-archetype-reading.json',
+  'fear-rejection': '/assets/data/love-readings/let-go-fear-rejection-reading.json',
+  'past-patterns': '/assets/data/love-readings/past-dating-patterns-reading.json',
+  'make-space': '/assets/data/love-readings/make-space-for-love-reading.json',
+  'i-bring': '/assets/data/love-readings/what-i-bring-reading.json',
+  'self-sabotage': '/assets/data/love-readings/why-i-self-sabotage-reading.json',
+  'crave': '/assets/data/love-readings/love-i-crave-reading.json',
+  'stop-comparing': '/assets/data/love-readings/stop-comparing-in-love-reading.json',
+  'next-step': '/assets/data/love-readings/next-step-romance-reading.json',
+  'communicate': '/assets/data/love-readings/communicate-needs-reading.json',
+  'heart-care': '/assets/data/love-readings/heart-needs-care-reading.json',
+  'know-right': '/assets/data/love-readings/know-someone-right-reading.json',
+  'my-desires': '/assets/data/love-readings/ignoring-my-desires-reading.json',
+  'vulnerability': '/assets/data/love-readings/embrace-vulnerability-reading.json',
+  'solitude': '/assets/data/love-readings/meaning-of-solitude-reading.json',
+  'hopeful': '/assets/data/love-readings/stay-hopeful-reading.json',
+  'dating-break': '/assets/data/love-readings/break-from-dating-reading.json',
+  'mourning-what': '/assets/data/love-readings/mourning-person-or-potential-reading.json',
+  'closure': '/assets/data/love-readings/closure-without-them-reading.json',
+  'moving-on-hard': '/assets/data/love-readings/why-moving-on-is-hard-reading.json',
+  'still-hope': '/assets/data/love-readings/why-i-still-hold-hope-reading.json',
+  'relationship-taught-me': '/assets/data/love-readings/what-relationship-taught-me-reading.json',
+  'stop-checking-up': '/assets/data/love-readings/how-to-stop-checking-up-reading.json',
+  'first-step-healing': '/assets/data/love-readings/first-step-to-heal-my-heart-reading.json',
+  'lost-myself': '/assets/data/love-readings/why-i-lost-myself-reading.json',
+  'forgive-them': '/assets/data/love-readings/how-to-forgive-them-reading.json',
+  'forgive-myself': '/assets/data/love-readings/how-to-forgive-myself-reading.json',
+  'reclaim-part': '/assets/data/love-readings/what-part-to-reclaim-reading.json',
+  'silence-hurts': '/assets/data/love-readings/why-the-silence-hurts-reading.json',
+  'let-go-anger': '/assets/data/love-readings/how-to-let-go-of-anger-reading.json',
+  'truth-it-ended': '/assets/data/love-readings/the-truth-about-why-it-ended-reading.json',
+  'avoid-feeling': '/assets/data/love-readings/what-im-avoiding-feeling-reading.json',
+  'rebuild-self-esteem': '/assets/data/love-readings/rebuild-self-esteem-after-breakup-reading.json',
+  'miss-them-wrong': '/assets/data/love-readings/why-i-miss-them-though-wrong-reading.json',
+  'hear-they-wont-say': '/assets/data/love-readings/what-i-need-to-hear-reading.json',
+  'accept-its-over': '/assets/data/love-readings/how-to-accept-its-over-reading.json',
+  'beauty-after-grief': '/assets/data/love-readings/what-waits-after-grief-reading.json',
+  'responsible-failing': '/assets/data/love-readings/why-i-feel-responsible-reading.json',
+  'stop-romanticizing': '/assets/data/love-readings/how-to-stop-romanticizing-past-reading.json',
+  'fill-the-void': '/assets/data/love-readings/how-to-fill-the-void-reading.json',
+  'illusions-about-them': '/assets/data/love-readings/what-illusions-i-held-reading.json',
+  'independence-gave-away': '/assets/data/love-readings/what-independence-i-gave-away-reading.json',
+  'trust-after-betrayal': '/assets/data/love-readings/how-to-trust-after-betrayal-reading.json',
+  'afraid-let-go-pain': '/assets/data/love-readings/why-afraid-to-let-go-of-pain-reading.json',
+  'unresolved-questions': '/assets/data/love-readings/peace-with-unresolved-questions-reading.json',
+  'hidden-strength': '/assets/data/love-readings/hidden-strength-from-heartbreak-reading.json',
+  'honor-memories-let-go': '/assets/data/love-readings/honor-memories-while-letting-go-reading.json',
+  'missing-vs-lonely': '/assets/data/love-readings/missing-them-vs-being-lonely-reading.json',
+  'most-loving-thing-today': '/assets/data/love-readings/most-loving-thing-for-myself-today-reading.json',
+  'gently-close-chapter': '/assets/data/love-readings/how-to-gently-close-this-chapter-reading.json',
+  'communicate-better': '/assets/data/love-readings/how-can-we-communicate-better-reading.json',
+  'root-of-arguments': '/assets/data/love-readings/root-of-our-recurring-arguments-reading.json',
+  'more-passion': '/assets/data/love-readings/how-to-bring-more-passion-reading.json',
+  'partner-needs-now': '/assets/data/love-readings/what-my-partner-needs-now-reading.json',
+  'build-more-trust': '/assets/data/love-readings/how-to-build-more-trust-reading.json',
+  'need-not-asking': '/assets/data/love-readings/what-i-need-but-dont-ask-reading.json',
+  'unspoken-tension': '/assets/data/love-readings/the-unspoken-tension-reading.json',
+  'taking-for-granted': '/assets/data/love-readings/what-im-taking-for-granted-reading.json',
+  'align-future-goals': '/assets/data/love-readings/how-to-align-future-goals-reading.json',
+  'support-growth': '/assets/data/love-readings/how-to-support-each-others-growth-reading.json',
+  'emotionally-distant': '/assets/data/love-readings/why-i-feel-emotionally-distant-reading.json',
+  'be-more-present': '/assets/data/love-readings/how-to-be-more-present-reading.json',
+  'heal-resentments': '/assets/data/love-readings/how-to-heal-past-resentments-reading.json',
+  'strength-of-bond': '/assets/data/love-readings/the-strength-of-our-bond-reading.json',
+  'avoiding-talking': '/assets/data/love-readings/what-we-are-avoiding-talking-about-reading.json',
+  'show-appreciation': '/assets/data/love-readings/how-to-show-appreciation-reading.json',
+  'feel-insecure': '/assets/data/love-readings/why-i-feel-insecure-reading.json',
+  'balance-independence': '/assets/data/love-readings/how-to-balance-independence-togetherness-reading.json',
+  'meaning-of-conflict': '/assets/data/love-readings/deeper-meaning-of-our-conflict-reading.json',
+  'reignite-spark': '/assets/data/love-readings/how-to-reignite-the-spark-reading.json',
+  'unfair-expectations': '/assets/data/love-readings/unfair-expectations-on-them-reading.json',
+  'external-stress': '/assets/data/love-readings/navigating-external-stress-reading.json',
+  'relationship-teaching': '/assets/data/love-readings/what-our-relationship-teaches-me-reading.json',
+  'deepen-intimacy': '/assets/data/love-readings/how-to-deepen-emotional-intimacy-reading.json',
+  'roommates-not-lovers': '/assets/data/love-readings/why-we-feel-like-roommates-reading.json',
+  'feel-understood': '/assets/data/love-readings/how-to-feel-more-understood-reading.json',
+  'foundation-commitment': '/assets/data/love-readings/true-foundation-of-our-commitment-reading.json',
+  'handle-disagreements': '/assets/data/love-readings/handle-disagreements-with-compassion-reading.json',
+  'compromise-to-move-forward': '/assets/data/love-readings/compromise-to-move-forward-reading.json',
+  'express-vulnerabilities': '/assets/data/love-readings/how-to-express-vulnerabilities-safely-reading.json',
+  'shared-dream': '/assets/data/love-readings/what-shared-dream-to-build-reading.json',
+  'break-stagnant-routine': '/assets/data/love-readings/how-to-break-stagnant-routine-reading.json',
+  'next-chapter': '/assets/data/love-readings/the-next-chapter-for-our-love-reading.json'
 };
 
 const __datasetCache    = Object.create(null);
@@ -3551,11 +3651,39 @@ function selectMode(modeKey) {
   }
 }
 
+/* Resolve a question the user typed but never clicked in the dropdown.
+   Called as the reading starts so EVERY asked question is captured:
+   an exact match snaps to its preset key (specific reading + logged key),
+   anything else is logged as a custom question for "what to build next". */
+function commitPendingQuestion() {
+  const input = document.getElementById('q-input');
+  if (!input) return;
+  const typed = (input.value || '').trim();
+  if (!typed || selectedQuestionKey) return; // empty, or already resolved
+  const t = typed.toLowerCase();
+  const match = PRESETS.find(p =>
+    (p.en && p.en.toLowerCase() === t) || (p.th && p.th.toLowerCase() === t));
+  if (match) {
+    selectedQuestionKey = match.key;
+    if (typeof loadQuestionDataset === 'function') loadQuestionDataset(match.key);
+    if (window.veilaFire) window.veilaFire('love_question_selected', {
+      lang: lang, question_key: match.key, question_text: match[lang] || match.en, source: 'typed'
+    });
+  } else {
+    selectedQuestionKey = 'custom';
+    window.customQuestionText = typed;
+    if (window.veilaFire) window.veilaFire('love_question_custom', {
+      lang: lang, question_text: typed, source: 'typed'
+    });
+  }
+}
+
 function enterSelection() {
   if (!DECK.length) {
     loadDeck().then(() => { if (DECK.length) enterSelection(); });
     return;
   }
+  commitPendingQuestion();
   // Reset selection + reading state
   selectedPicks = [];
   drawn = [];
@@ -4434,6 +4562,12 @@ function initAutocomplete() {
   });
 
   input.addEventListener('input', (e) => {
+    // Any manual typing invalidates a prior dropdown selection. The typed
+    // text becomes the pending question, resolved on start via
+    // commitPendingQuestion() (matched to a preset key, else logged custom).
+    // Note: programmatic `.value =` on preset click does NOT fire 'input'.
+    selectedQuestionKey = null;
+    window.customQuestionText = '';
     renderDropdown(e.target.value);
     clearBtn.hidden = e.target.value.length === 0;
   });
