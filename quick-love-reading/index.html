@@ -4489,28 +4489,30 @@ function initAutocomplete() {
   const clearBtn = document.getElementById('q-clear');
   if (!input || !dropdown) return;
 
+  // Flat list — no pillar headers (Single/Heartbroken/Taken read as
+  // jargon to visitors). Order: highest search volume first when known
+  // (optional numeric `searchVolume` on a preset), otherwise alphabetical
+  // by the displayed-language text. Re-collated per render so a language
+  // toggle re-sorts correctly.
+  function sortedPresets() {
+    return PRESETS.slice().sort((a, b) => {
+      const va = typeof a.searchVolume === 'number' ? a.searchVolume : -1;
+      const vb = typeof b.searchVolume === 'number' ? b.searchVolume : -1;
+      if (vb !== va) return vb - va;
+      const ta = a[lang] || a.en || '';
+      const tb = b[lang] || b.en || '';
+      return ta.localeCompare(tb, lang === 'th' ? 'th' : 'en', { sensitivity: 'base' });
+    });
+  }
+
   function renderDropdown(filterText = '') {
     dropdown.innerHTML = '';
     const q = filterText.toLowerCase().trim();
 
-    let currentPillar = '';
-    let pillarGroup = null;
-
-    PRESETS.forEach((preset) => {
+    sortedPresets().forEach((preset) => {
       const textEn = preset.en.toLowerCase();
       const textTh = preset.th ? preset.th.toLowerCase() : '';
       if (q && !textEn.includes(q) && !textTh.includes(q)) return;
-
-      if (preset.pillar !== currentPillar) {
-        currentPillar = preset.pillar;
-        pillarGroup = document.createElement('div');
-        pillarGroup.className = 'q-pillar-group';
-        const label = document.createElement('div');
-        label.className = 'q-pillar-label';
-        label.textContent = currentPillar ? currentPillar.toUpperCase() : 'GENERAL';
-        pillarGroup.appendChild(label);
-        dropdown.appendChild(pillarGroup);
-      }
 
       const item = document.createElement('div');
       item.className = 'q-item';
@@ -4529,12 +4531,10 @@ function initAutocomplete() {
           });
         }
       });
-      pillarGroup.appendChild(item);
+      dropdown.appendChild(item);
     });
 
     if (q) {
-      const otherGroup = document.createElement('div');
-      otherGroup.className = 'q-pillar-group';
       const otherItem = document.createElement('div');
       otherItem.className = 'q-item other';
       otherItem.textContent = (lang === 'th' ? 'อื่นๆ: ' : 'Other: ') + filterText;
@@ -4551,8 +4551,7 @@ function initAutocomplete() {
           });
         }
       });
-      otherGroup.appendChild(otherItem);
-      dropdown.appendChild(otherGroup);
+      dropdown.appendChild(otherItem);
     }
   }
 
