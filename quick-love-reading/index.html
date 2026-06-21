@@ -2317,6 +2317,38 @@ const PRESETS = [
     pillar: q.pillar
   })) : [])
 ];
+
+/* QUESTION_ALIASES — extra Thai phrasings that mean the same as an existing
+   question. Typing any alias surfaces that question's canonical row (and loads
+   its existing reading). Pure search-coverage enrichment: no new datasets.
+   Built from the dedup of the high-intent Thai question research. */
+const QUESTION_ALIASES = {
+  'their-energy':   ['เขารู้สึกกับเรายังไงจริงๆ', 'เขามีใจให้เราไหม', 'เราคิดไปเองหรือเขามีใจ', 'ตอนนี้แฟนรู้สึกกับเรายังไง'],
+  'direction':      ['คนคุยคนนี้จะพัฒนาเป็นแฟนได้ไหม', 'เราจะได้คบกันไหม', 'เราสองคนมีอนาคตร่วมกันไหม', 'ความสัมพันธ์เราตอนนี้เป็นยังไง', 'แฟนมองอนาคตกับเรายังไง', 'แฟนอยากสร้างอนาคตกับเราไหม', 'ความสัมพันธ์นี้จะจบลงยังไง', 'ความรักของเราจะไปได้ไกลแค่ไหน', 'เราสองคนจะลงเอยด้วยกันไหม'],
+  'reach-out':      ['ควรเริ่มก่อนหรือรอให้เขาเข้ามา', 'ควรทักไปหาเขาก่อนไหม', 'ควรเป็นฝ่ายเริ่มก่อนไหม'],
+  'still-thinking': ['แฟนเก่ายังคิดถึงเราอยู่ไหม', 'แฟนเก่ายังมีใจให้เราไหม', 'เขายังแคร์เราอยู่ไหม'],
+  'wait-or-let-go': ['ควรไปต่อหรือพอแค่นี้', 'ควรให้โอกาสแฟนเก่าหรือเดินต่อ', 'เราควรตัดใจจากเขาได้หรือยัง', 'ถ้าถอยออกมาชีวิตจะดีขึ้นไหม', 'เราควรรอเขาต่อไปไหม', 'ความสัมพันธ์นี้คุ้มที่จะสู้ต่อไหม'],
+  'find-someone':   ['เมื่อไหร่จะได้เจอคนที่ใช่', 'จะได้พบเนื้อคู่เมื่อไหร่', '3 เดือนนี้จะมีคนใหม่เข้ามาไหม'],
+  'pull-away':      ['เขาหายไปเพราะอะไรจะกลับมาคุยไหม', 'ทำไมเขาถึงทิ้งเราไป'],
+  'honest':         ['คนที่กำลังจะเข้ามาจริงใจกับเราไหม', 'เขาจริงใจกับเราไหม'],
+  'whats-blocking': ['ทำไมยังหาคนที่ใช่ไม่เจอ', 'ทำไมความรักเราไม่สมหวังสักที'],
+  'attract-right':  ['ต้องปรับอะไรเพื่อดึงดูดความรักดีๆ', 'ทำยังไงให้มีความรักดีๆเข้ามา'],
+  'my-energy':      ['เรามีเสน่ห์ดึงดูดแค่ไหน', 'เสน่ห์ความรักของเราเป็นยังไง'],
+  'am-ready':       ['เราพร้อมสำหรับความรักครั้งใหม่หรือยัง'],
+  'know-right':     ['คนคุยคนนี้ใช่คนที่ใช่ไหม', 'คนนี้ใช่คนที่ใช่ไหม'],
+  'crave':          ['เราเหมาะกับความรักแบบไหน'],
+  'reignite-spark': ['เราจะกลับมาหวานเหมือนเดิมได้ไหม', 'ทำยังไงให้กลับมารักกันเหมือนเดิม'],
+  'root-of-arguments': ['ปัญหาที่แท้จริงของเราคืออะไร'],
+  'external-stress':['คนรอบข้างหรือครอบครัวจะกระทบความรักเราไหม'],
+  'align-future-goals': ['เราวางแผนครอบครัวร่วมกันได้ไหม'],
+  'strength-of-bond':   ['สิ่งที่ยึดเราสองคนไว้คืออะไร'],
+  'next-step':      ['ทางออกที่ดีที่สุดของเราตอนนี้คืออะไร'],
+  'accept-its-over':['ความสัมพันธ์นี้จบจริงหรือยัง'],
+  'moving-on-hard': ['ทำไมเรายังลืมเขาไม่ได้'],
+  'next-chapter':   ['บทต่อไปของความรักเราคืออะไร']
+};
+PRESETS.forEach(p => { p.aliases = QUESTION_ALIASES[p.key] || []; });
+
 function getPreset(key) { return PRESETS.find(p => p.key === key) || null; }
 function getPresetText(key, l) {
   const p = getPreset(key);
@@ -3662,7 +3694,8 @@ function commitPendingQuestion() {
   if (!typed || selectedQuestionKey) return; // empty, or already resolved
   const t = typed.toLowerCase();
   const match = PRESETS.find(p =>
-    (p.en && p.en.toLowerCase() === t) || (p.th && p.th.toLowerCase() === t));
+    (p.en && p.en.toLowerCase() === t) || (p.th && p.th.toLowerCase() === t) ||
+    (p.aliases || []).some(a => a.toLowerCase() === t));
   if (match) {
     selectedQuestionKey = match.key;
     if (typeof loadQuestionDataset === 'function') loadQuestionDataset(match.key);
@@ -4512,7 +4545,8 @@ function initAutocomplete() {
     sortedPresets().forEach((preset) => {
       const textEn = preset.en.toLowerCase();
       const textTh = preset.th ? preset.th.toLowerCase() : '';
-      if (q && !textEn.includes(q) && !textTh.includes(q)) return;
+      const aliasHit = (preset.aliases || []).some(a => a.toLowerCase().includes(q));
+      if (q && !textEn.includes(q) && !textTh.includes(q) && !aliasHit) return;
 
       const item = document.createElement('div');
       item.className = 'q-item';
