@@ -3,11 +3,11 @@ import os
 from datetime import datetime, timedelta
 
 # Configuration
-EXP_START_DATE = '2026-06-16'
+EXP_START_DATE = '2026-06-23'
 SUBJECT_URLS = [
     'https://veilatarot.com/',
-    'https://veilatarot.com/th/scenarios/kao-kid-kab-rao/',
-    'https://veilatarot.com/th/scenarios/kao-ja-glab-ma/'
+    'https://veilatarot.com/th/scenarios/what-does-he-think-about-me/',
+    'https://veilatarot.com/th/scenarios/will-he-come-back/'
 ]
 
 def analyze_gsc_data(csv_path):
