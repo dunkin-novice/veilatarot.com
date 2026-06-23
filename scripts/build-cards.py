@@ -32,6 +32,7 @@ DECK_PATH = ROOT / 'cards.json'
 DECK = json.loads(DECK_PATH.read_text(encoding='utf-8'))
 
 BUILD_DATE = '2026-06-17'
+SCENARIO_MIGRATION_DATE = '2026-06-23'
 LANGS = ('en', 'th')
 
 def aeo_block(title_en, title_th, desc_en, desc_th, lang):
@@ -139,7 +140,8 @@ STATIC_URLS = [
 
 TH_SCENARIOS = [
     {
-        'slug': 'kao-kid-kab-rao',
+        'slug': 'what-does-he-think-about-me',
+        'legacy_slug': 'kao-kid-kab-rao',
         'category': 'love',
         'title': 'เขาคิดยังไงกับเรา',
         'eyebrow': 'สำหรับเรื่องของหัวใจ',
@@ -154,7 +156,8 @@ TH_SCENARIOS = [
         'cards': ['the-lovers', 'two-of-cups', 'knight-of-cups', 'page-of-cups', 'the-high-priestess', 'the-moon'],
     },
     {
-        'slug': 'kao-ja-glab-ma',
+        'slug': 'will-he-come-back',
+        'legacy_slug': 'kao-ja-glab-ma',
         'category': 'love',
         'title': 'เขาจะกลับมาไหม',
         'eyebrow': 'สำหรับการรอ',
@@ -169,7 +172,8 @@ TH_SCENARIOS = [
         'cards': ['six-of-cups', 'wheel-of-fortune', 'eight-of-cups', 'the-hanged-man', 'judgement', 'the-moon'],
     },
     {
-        'slug': 'khon-kuy-jing-jai',
+        'slug': 'is-he-sincere',
+        'legacy_slug': 'khon-kuy-jing-jai',
         'category': 'love',
         'title': 'คนคุยจริงใจไหม',
         'eyebrow': 'สำหรับช่วงต้นของความสัมพันธ์',
@@ -184,7 +188,8 @@ TH_SCENARIOS = [
         'cards': ['seven-of-swords', 'the-moon', 'two-of-pentacles', 'knight-of-cups', 'page-of-swords', 'the-devil'],
     },
     {
-        'slug': 'khwam-samphan-pai-tor',
+        'slug': 'should-this-relationship-continue',
+        'legacy_slug': 'khwam-samphan-pai-tor',
         'category': 'love',
         'title': 'ความสัมพันธ์นี้ควรไปต่อไหม',
         'eyebrow': 'สำหรับจุดเปลี่ยน',
@@ -199,7 +204,8 @@ TH_SCENARIOS = [
         'cards': ['the-lovers', 'two-of-cups', 'three-of-swords', 'the-tower', 'death', 'the-hanged-man'],
     },
     {
-        'slug': 'kao-yang-kid-thueng-rao',
+        'slug': 'does-he-still-miss-me',
+        'legacy_slug': 'kao-yang-kid-thueng-rao',
         'category': 'love',
         'title': 'เขายังคิดถึงเราไหม',
         'eyebrow': 'สำหรับใจที่ยังค้าง',
@@ -214,7 +220,8 @@ TH_SCENARIOS = [
         'cards': ['six-of-cups', 'the-hanged-man', 'four-of-cups', 'eight-of-cups', 'the-moon', 'three-of-cups'],
     },
     {
-        'slug': 'rao-thak-kao-mai',
+        'slug': 'should-i-reach-out',
+        'legacy_slug': 'rao-thak-kao-mai',
         'category': 'love',
         'title': 'เราควรทักเขาไหม',
         'eyebrow': 'สำหรับการตัดสินใจส่งข้อความ',
@@ -229,7 +236,8 @@ TH_SCENARIOS = [
         'cards': ['the-magician', 'the-fool', 'two-of-pentacles', 'eight-of-cups', 'the-hermit', 'page-of-cups'],
     },
     {
-        'slug': 'ror-rue-por',
+        'slug': 'should-i-wait-or-let-go',
+        'legacy_slug': 'ror-rue-por',
         'category': 'love',
         'title': 'ควรรอหรือควรพอ',
         'eyebrow': 'สำหรับใจที่ยังไม่ตัดสินใจ',
@@ -244,7 +252,8 @@ TH_SCENARIOS = [
         'cards': ['the-hanged-man', 'eight-of-cups', 'the-tower', 'justice', 'four-of-cups', 'two-of-swords'],
     },
     {
-        'slug': 'rak-son-arai',
+        'slug': 'what-is-this-love-teaching-me',
+        'legacy_slug': 'rak-son-arai',
         'category': 'love',
         'title': 'รักครั้งนี้สอนอะไรเรา',
         'eyebrow': 'สำหรับการมองย้อนหลัง',
@@ -259,7 +268,8 @@ TH_SCENARIOS = [
         'cards': ['the-hermit', 'strength', 'judgement', 'the-star', 'death', 'temperance'],
     },
     {
-        'slug': 'ngan-nee-chai-mai',
+        'slug': 'is-this-job-right-for-me',
+        'legacy_slug': 'ngan-nee-chai-mai',
         'category': 'career',
         'title': 'งานนี้ใช่ทางของเราไหม',
         'eyebrow': 'สำหรับการงานและอาชีพ',
@@ -274,7 +284,8 @@ TH_SCENARIOS = [
         'cards': ['the-hermit', 'eight-of-pentacles', 'three-of-pentacles', 'knight-of-pentacles', 'wheel-of-fortune', 'the-emperor'],
     },
     {
-        'slug': 'plian-ngan-mai',
+        'slug': 'should-i-change-jobs',
+        'legacy_slug': 'plian-ngan-mai',
         'category': 'career',
         'title': 'ควรเปลี่ยนงานไหม',
         'eyebrow': 'สำหรับจุดเปลี่ยนในอาชีพ',
@@ -330,7 +341,6 @@ def render_zodiac_page(slug, th_name):
         "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
         "mainEntityOfPage": page_url
     }
-    
     head = _render_head_block_th_only(
         title=title, desc=desc,
         canonical=canonical, th_path=canonical,
@@ -461,10 +471,20 @@ def render_scenario(scenario):
         "image": "https://veilatarot.com/og.png",
         "inLanguage": "th-TH",
         "datePublished": BUILD_DATE,
-        "dateModified": BUILD_DATE,
+        "dateModified": SCENARIO_MIGRATION_DATE,
         "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
         "mainEntityOfPage": page_url
     }
+    if slug in {'what-does-he-think-about-me', 'will-he-come-back'}:
+        article_jsonld['author'] = {
+            "@type": "Person",
+            "@id": "https://veilatarot.com/#person",
+            "name": "Veila Tarot Expert",
+            "url": "https://veilatarot.com/th/about/",
+            "jobTitle": "Tarot Reader & Hermit",
+            "description": "Specializing in the Celtic Cross spread and bilingual tarot reflection.",
+            "sameAs": ["https://veilatarot.com/th/about/"]
+        }
     crumbs_jsonld = breadcrumb_jsonld(crumbs)
 
     # head_block expects en_path + th_path. For TH-only pages we omit
@@ -500,7 +520,7 @@ def render_scenario(scenario):
   {render_breadcrumb_html(crumbs)}
   <div class="eyebrow">{escape(scenario['eyebrow'])}</div>
   <h1 class="title">{escape(title)}</h1>
-  
+
   <div class="aeo-snippet">
     <p>ดูดวงความรัก ไพ่ยิปซี เพื่อหาคำตอบว่า{escape(title)} เลือกไพ่ 3 ใบเพื่ออ่านความจริงที่ซ่อนอยู่ บทอ่านแม่นๆ นี้ช่วยวิเคราะห์สถานการณ์ปัจจุบันเพื่อให้คุณเห็นภาพชัดเจนที่สุด</p>
   </div>
@@ -543,6 +563,27 @@ def render_scenario(scenario):
 </body>
 </html>
 '''
+
+
+def render_scenario_redirect(scenario):
+    """Compatibility redirect retained at a scenario's former Thai-transliterated URL."""
+    target = f'/th/scenarios/{scenario["slug"]}/'
+    target_url = f'https://veilatarot.com{target}'
+    return f'''<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,follow" />
+  <meta http-equiv="refresh" content="0; url={target}" />
+  <link rel="canonical" href="{target_url}" />
+  <title>ย้ายหน้าแล้ว | Veila</title>
+  <script>window.location.replace('{target}' + window.location.search + window.location.hash);</script>
+</head>
+<body>
+  <p>หน้านี้ย้ายแล้ว <a href="{target}">ไปยังหน้าปัจจุบัน</a></p>
+</body>
+</html>'''
 
 
 def _render_head_block_th_only(title, desc, canonical, th_path, extra_jsonld=None):
@@ -2014,13 +2055,31 @@ def build_feed():
 # ---------------------------------------------------------------------------
 
 def build_sitemap(card_slugs):
+    existing_meta = {}
+    sitemap_path = ROOT / 'sitemap.xml'
+    if sitemap_path.exists():
+        existing_xml = sitemap_path.read_text(encoding='utf-8')
+        for block in re.findall(r'<url>.*?</url>', existing_xml, flags=re.DOTALL):
+            fields = {}
+            for tag in ('loc', 'lastmod', 'changefreq', 'priority'):
+                match = re.search(fr'<{tag}>(.*?)</{tag}>', block)
+                if match:
+                    fields[tag] = match.group(1)
+            if 'loc' in fields:
+                loc = fields['loc'].removeprefix('https://veilatarot.com')
+                existing_meta[loc] = fields
+
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 
-    def url_block(loc, priority, changefreq):
+    def url_block(loc, priority, changefreq, lastmod=None):
+        saved = existing_meta.get(loc, {})
+        lastmod = lastmod or saved.get('lastmod', BUILD_DATE)
+        changefreq = saved.get('changefreq', changefreq)
+        priority = saved.get('priority', priority)
         return (f'  <url>\n'
                 f'    <loc>https://veilatarot.com{loc}</loc>\n'
-                f'    <lastmod>{BUILD_DATE}</lastmod>\n'
+                f'    <lastmod>{lastmod}</lastmod>\n'
                 f'    <changefreq>{changefreq}</changefreq>\n'
                 f'    <priority>{priority}</priority>\n'
                 f'  </url>')
@@ -2033,11 +2092,21 @@ def build_sitemap(card_slugs):
     for sl in card_slugs:
         out.append(url_block(f'/cards/{sl}/', '0.6', 'monthly'))
         out.append(url_block(f'/th/cards/{sl}/', '0.5', 'monthly'))
+    # Standalone editorial/interactive trees maintained outside this generator.
+    # Discover their existing index pages so a rebuild cannot silently drop them.
+    additional_roots = (
+        'guides', 'love-readings', 'quick-love-reading',
+        'th/daily-love-tarot', 'th/love-tarot', 'th/zodiac-love-tarot',
+    )
+    for root_name in additional_roots:
+        for index_path in sorted((ROOT / root_name).rglob('index.html')):
+            rel_dir = index_path.parent.relative_to(ROOT).as_posix()
+            out.append(url_block(f'/{rel_dir}/', '0.6', 'monthly'))
     # TH emotional scenarios
     for s in TH_SCENARIOS:
-        out.append(url_block(f'/th/scenarios/{s["slug"]}/', '0.6', 'monthly'))
-    out.append('</urlset>')
-    return '\n'.join(out) + '\n'
+        out.append(url_block(f'/th/scenarios/{s["slug"]}/', '0.6', 'monthly', SCENARIO_MIGRATION_DATE))
+    blocks = sorted(out[2:], key=lambda block: re.search(r'<loc>(.*?)</loc>', block).group(1))
+    return '\n'.join(out[:2] + blocks + ['</urlset>']) + '\n'
 
 # ---------------------------------------------------------------------------
 # MAIN
@@ -2083,11 +2152,14 @@ def main():
     scenarios_dir = ROOT / 'th' / 'scenarios'
     if scenarios_dir.exists():
         shutil.rmtree(scenarios_dir)
-    print(f'Scenarios: writing {len(TH_SCENARIOS)} TH pages...')
+    print(f'Scenarios: writing {len(TH_SCENARIOS)} TH pages + compatibility redirects...')
     for s in TH_SCENARIOS:
         out_dir = scenarios_dir / s['slug']
         out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / 'index.html').write_text(render_scenario(s), encoding='utf-8')
+        redirect_dir = scenarios_dir / s['legacy_slug']
+        redirect_dir.mkdir(parents=True, exist_ok=True)
+        (redirect_dir / 'index.html').write_text(render_scenario_redirect(s), encoding='utf-8')
 
     # Zodiac Hub and Pages
     zodiac_dir = ROOT / 'th' / 'zodiac-love-tarot'
@@ -2113,7 +2185,15 @@ def main():
     # XML sitemap
     (ROOT / 'sitemap.xml').write_text(build_sitemap(slugs), encoding='utf-8')
 
-    total_urls = len(STATIC_URLS) + 2 * len(HUB_SLUGS) + 2 * n + len(TH_SCENARIOS)
+    additional_sitemap_urls = sum(
+        len(list((ROOT / root_name).rglob('index.html')))
+        for root_name in (
+            'guides', 'love-readings', 'quick-love-reading',
+            'th/daily-love-tarot', 'th/love-tarot', 'th/zodiac-love-tarot',
+        )
+    )
+    total_urls = (len(STATIC_URLS) + 2 * len(HUB_SLUGS) + 2 * n
+                  + additional_sitemap_urls + len(TH_SCENARIOS))
     print(f'  cards: {n * 2}')
     print(f'  hubs:  {len(HUB_SLUGS) * 2}')
     print(f'  scenarios: {len(TH_SCENARIOS)}')
