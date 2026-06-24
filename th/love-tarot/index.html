@@ -206,6 +206,15 @@
   ]
 }
 </script>
+<style>
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+</style>
 </head>
 <body>
 
@@ -223,6 +232,11 @@
   <div class="eyebrow">8 คำถาม · ไพ่ 3 ใบต่อคำถาม</div>
   <h1 class="title">ดูดวงความรัก ไพ่ทาโรต์ — เลือกคำถามที่ใจอยากรู้</h1>
   <p class="lede">ความรักไม่ได้ตอบทุกคำถามด้วยคำเดียวกัน ความสับสนที่อยากเข้าใจเขา กับความเหนื่อยที่อยากตัดสินใจ ใช้บทอ่านคนละแบบ Veila จัด 8 บทอ่านตามคำถามที่ใจของคุณกำลังถาม เพื่อให้ไพ่ตอบในมุมที่ตรง ไม่ใช่บทอ่านทั่วๆ ไปที่ครอบจักรวาล</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label">บทสะท้อนสั้นๆ</h2>
+    <p class="qr-body">ดูดวงความรักด้วยไพ่ไม่ได้เริ่มจาก "จะลงเอยยังไง" แต่เริ่มจากคำถามที่ใจคุณกำลังถามอยู่ตอนนี้ ทั้ง 8 บทอ่านที่ Veila จัดไว้ มาให้ตรงกับสิ่งที่ใจหนักจริง ไม่ใช่บทอ่านครอบจักรวาลที่ตอบกว้างเกินไปจนไม่เห็นใจตัวเอง</p>
+  </section>
 
   <section class="hub-cards">
     <h2>คำถามที่ใจคุณกำลังถาม</h2>

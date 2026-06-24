@@ -123,6 +123,15 @@
   ]
 }
 </script>
+<style>
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+</style>
 </head>
 <body>
 
@@ -145,6 +154,11 @@
     <p>ดูดวงความรัก ไพ่ยิปซี เพื่อหาคำตอบว่าเขายังคิดถึงเราไหม เลือกไพ่ 3 ใบเพื่ออ่านความจริงที่ซ่อนอยู่ บทอ่านแม่นๆ นี้ช่วยวิเคราะห์สถานการณ์ปัจจุบันและสิ่งที่อยู่ใต้ความนิ่งเฉย เพื่อให้คุณเห็นภาพชัดเจนและตัดสินใจได้ซื่อตรงต่อใจตัวเองที่สุด</p>
   </div>
   <p class="lede">หลังเงียบหายไประยะหนึ่ง สิ่งที่ใจอยากรู้บ่อยที่สุดคือ &quot;เขายังคิดถึงเราอยู่ไหม&quot; บทอ่านนี้ไม่ตอบใช่/ไม่ใช่อย่างกำปั้นทุบดิน แต่อ่านสามชั้น: สิ่งที่ยังค้างในใจเขา เหตุผลของความเงียบ และความสัมพันธ์นี้ยังสะท้อนยังไงในตอนนี้</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label">บทสะท้อนสั้นๆ</h2>
+    <p class="qr-body">ไพ่ไม่ได้ตอบว่าเขาคิดถึงเราหรือเปล่าแบบฟันธง แต่ช่วยให้คุณเห็นร่องรอยที่ยังหลงเหลือในใจเขา เหตุผลของความเงียบ และเสียงสะท้อนที่ความสัมพันธ์ยังส่งกลับมาในช่วงนี้</p>
+  </section>
 
   <section>
     <h2>คำถามนี้เหมาะกับเมื่อ…</h2>
