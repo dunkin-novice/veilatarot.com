@@ -598,5 +598,233 @@ const HUNDRED_QUESTIONS = [
     "key": "next-chapter",
     "en": "What is the next chapter for our love story?",
     "th": "บทต่อไปในเรื่องราวความรักของเราคืออะไร?"
+  },
+  {
+    "pillar": "predictive",
+    "key": "talking-to-others",
+    "en": "Is he talking only to me, or to others too?",
+    "th": "เขาคุยกับเราคนเดียวหรือมีคนอื่นด้วย"
+  },
+  {
+    "pillar": "predictive",
+    "key": "partner-cheating",
+    "en": "Does my partner have someone else?",
+    "th": "แฟนมีคนอื่นหรือมือที่สามไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "will-ex-come-back",
+    "en": "Will my ex come back?",
+    "th": "แฟนเก่าจะกลับมาไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "serious-or-playing",
+    "en": "Is he serious about me, or just playing?",
+    "th": "เขาจริงจังกับเราหรือแค่คุยเล่น"
+  },
+  {
+    "pillar": "predictive",
+    "key": "win-his-heart",
+    "en": "How can I win his heart?",
+    "th": "ทำยังไงถึงจะชนะใจเขา"
+  },
+  {
+    "pillar": "predictive",
+    "key": "what-he-likes",
+    "en": "What does he like or dislike about me?",
+    "th": "เขาชอบหรือไม่ชอบอะไรในตัวเรา"
+  },
+  {
+    "pillar": "predictive",
+    "key": "will-he-chase",
+    "en": "If I go quiet, will he chase after me?",
+    "th": "ถ้าเราเงียบไป เขาจะตามไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "secret-admirer",
+    "en": "Is someone secretly into me?",
+    "th": "มีใครแอบชอบเราอยู่ไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "who-to-choose",
+    "en": "With several people interested, who should I choose?",
+    "th": "มีหลายคนเข้ามา ควรเลือกใครดี"
+  },
+  {
+    "pillar": "predictive",
+    "key": "will-he-reach-out",
+    "en": "Will he reach out to me first?",
+    "th": "เขาจะทักมาหาเราก่อนไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "his-true-character",
+    "en": "What is his true character really like?",
+    "th": "นิสัยจริงๆ ของเขาเป็นคนยังไง"
+  },
+  {
+    "pillar": "predictive",
+    "key": "still-loves-me",
+    "en": "Does my partner still love me the same?",
+    "th": "แฟนยังรักเราเหมือนเดิมไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "why-partner-changed",
+    "en": "Why has my partner grown distant or changed?",
+    "th": "ทำไมแฟนทำตัวเปลี่ยนไป"
+  },
+  {
+    "pillar": "predictive",
+    "key": "partner-cheating-what-to-do",
+    "en": "If my partner is cheating, what should I do?",
+    "th": "ถ้ารู้ว่าแฟนมีกิ๊ก ควรทำยังไง"
+  },
+  {
+    "pillar": "predictive",
+    "key": "partner-leaving",
+    "en": "Is my partner thinking of leaving me?",
+    "th": "แฟนคิดอยากเลิกกับเราไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "what-to-watch-now",
+    "en": "What should we watch out for in our love right now?",
+    "th": "ช่วงนี้ความรักเราต้องระวังอะไร"
+  },
+  {
+    "pillar": "predictive",
+    "key": "are-we-compatible",
+    "en": "Are the two of us truly compatible?",
+    "th": "เราสองคนดวงสมพงษ์กันไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "through-rough-patch",
+    "en": "Will we get through this rough patch together?",
+    "th": "เราจะผ่านช่วงนี้ไปด้วยกันได้ไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "reunite-better",
+    "en": "If we get back together, will it be better this time?",
+    "th": "ถ้ากลับไปคบกันใหม่ จะดีขึ้นไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "does-he-regret",
+    "en": "Does he regret breaking up with me?",
+    "th": "เขาเสียใจกับการเลิกครั้งนี้ไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "ex-someone-new",
+    "en": "Does my ex have someone new now?",
+    "th": "ตอนนี้แฟนเก่ามีคนใหม่หรือยัง"
+  },
+  {
+    "pillar": "predictive",
+    "key": "force-it-continue",
+    "en": "What happens if we force this relationship to continue?",
+    "th": "ถ้าฝืนคบกันต่อจะเป็นยังไง"
+  },
+  {
+    "pillar": "predictive",
+    "key": "cross-paths-again",
+    "en": "Will the two of us cross paths again?",
+    "th": "เราจะได้เจอกันอีกไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "what-soulmate-like",
+    "en": "What is my soulmate like?",
+    "th": "เนื้อคู่ของเราเป็นคนแบบไหน"
+  },
+  {
+    "pillar": "predictive",
+    "key": "love-luck-this-year",
+    "en": "What is my love luck like this year?",
+    "th": "ปีนี้ดวงความรักเป็นยังไง"
+  },
+  {
+    "pillar": "predictive",
+    "key": "will-next-love-last",
+    "en": "Will my next love be long-lasting?",
+    "th": "ความรักครั้งหน้าจะยืนยาวไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "choosing-me-or-stalling",
+    "en": "Is he choosing me, or just buying time?",
+    "th": "เขาตั้งใจเลือกเราจริง หรือแค่ยื้อเวลา"
+  },
+  {
+    "pillar": "predictive",
+    "key": "when-limbo-ends",
+    "en": "When will this in-between situation finally end?",
+    "th": "เมื่อไหร่สถานะคาราคาซังนี้จะจบ"
+  },
+  {
+    "pillar": "predictive",
+    "key": "real-or-backup",
+    "en": "Am I his real choice, or just a backup?",
+    "th": "เราเป็นตัวจริงหรือตัวสำรองของเขา"
+  },
+  {
+    "pillar": "predictive",
+    "key": "leave-them-for-me",
+    "en": "Will he really leave the other person for me?",
+    "th": "เขาจะเลิกกับคนของเขามาหาเราจริงไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "secret-found-out",
+    "en": "Will this secret relationship be found out?",
+    "th": "ความสัมพันธ์ลับนี้จะมีคนรู้ไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "does-he-feel-guilty",
+    "en": "Does he feel guilty about what he is doing?",
+    "th": "เขารู้สึกผิดกับสิ่งที่ทำอยู่ไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "hot-and-cold",
+    "en": "He runs hot and cold — what does he really want?",
+    "th": "เขากลับไปกลับมา ตกลงคิดยังไงกันแน่"
+  },
+  {
+    "pillar": "predictive",
+    "key": "karmic-tie",
+    "en": "What karmic tie binds the two of us?",
+    "th": "เขากับเรามีกรรมอะไรผูกกันไว้"
+  },
+  {
+    "pillar": "predictive",
+    "key": "will-i-marry-this-person",
+    "en": "Will I marry this person?",
+    "th": "เราจะได้แต่งงานกับคนนี้ไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "married-life-smooth",
+    "en": "Will our married life be smooth?",
+    "th": "ชีวิตคู่ของเราจะราบรื่นไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "obstacles-to-future",
+    "en": "What obstacles are blocking our future together?",
+    "th": "มีอุปสรรคอะไรขวางอนาคตของเราไหม"
+  },
+  {
+    "pillar": "predictive",
+    "key": "forever-love",
+    "en": "Is this love the final, forever one for me?",
+    "th": "ความรักครั้งนี้คือครั้งสุดท้ายของเราไหม"
   }
 ];
