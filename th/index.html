@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Veila — ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ</title>
+<meta name="description" content="Veila คือพื้นที่ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ ไม่ทำนายอนาคต แต่ช่วยให้คุณมองเห็นสิ่งที่ใจกำลังถาม ผ่านบทอ่านความรัก ไพ่รายวัน และเซลติกครอส" />
+<meta name="author" content="Veila Tarot" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#0a0a0c" />
+<meta name="color-scheme" content="dark" />
+
+<link rel="canonical" href="https://veilatarot.com/th/" />
+<link rel="alternate" hreflang="en" href="https://veilatarot.com/" />
+<link rel="alternate" hreflang="th" href="https://veilatarot.com/th/" />
+<link rel="alternate" hreflang="x-default" href="https://veilatarot.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Veila" />
+<meta property="og:title" content="Veila — ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ" />
+<meta property="og:description" content="Veila คือพื้นที่ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ ไม่ทำนายอนาคต แต่ช่วยให้คุณมองเห็นสิ่งที่ใจกำลังถาม" />
+<meta property="og:url" content="https://veilatarot.com/th/" />
+<meta property="og:image" content="https://veilatarot.com/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Veila — ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ" />
+<meta name="twitter:description" content="Veila คือพื้นที่ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ" />
+<meta name="twitter:image" content="https://veilatarot.com/og.png" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link rel="manifest" href="/manifest.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/page.css" />
+
+<style>
+/* Featured list — mirrors EN cluster-subhub pattern, inlined here because
+   assets/page.css is shared/protected and does not carry .featured-list rules. */
+.featured-list { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 12px; }
+.featured-list a { display: block; border: 1px solid var(--gold-dim); border-radius: 4px; padding: 16px 18px; background: rgba(184,153,104,0.04); text-decoration: none; transition: background 0.3s ease; }
+.featured-list a:hover { background: rgba(184,153,104,0.08); }
+.featured-list .fl-name { font-family: var(--serif); font-size: 19px; color: var(--ivory); margin: 0 0 6px; }
+.featured-list .fl-blurb { font-family: var(--serif); font-style: italic; color: var(--ivory-dim); line-height: 1.55; margin: 0; font-size: 15px; }
+html[lang="th"] .featured-list .fl-name { font-family: "IBM Plex Sans Thai", serif; }
+html[lang="th"] .featured-list .fl-blurb { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+
+/* Quick Reflection — snippet-extractable block for Google featured snippets. */
+.quick-reflection { margin: 24px 0 8px; padding: 18px 20px; border-left: 2px solid var(--gold, #b89968); background: rgba(184,153,104,0.05); border-radius: 0 4px 4px 0; }
+.quick-reflection .qr-label { font-family: var(--sans, "Inter"), "IBM Plex Sans Thai", sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold, #b89968); margin: 0 0 8px; font-weight: 500; }
+.quick-reflection .qr-body { font-family: var(--serif, "Cormorant Garamond"), "IBM Plex Sans Thai", serif; font-style: italic; color: var(--ivory, #ebe4d4); font-size: 17px; line-height: 1.6; margin: 0; }
+html[lang="th"] .quick-reflection .qr-label { letter-spacing: 0; text-transform: none; font-family: "IBM Plex Sans Thai", sans-serif; }
+html[lang="th"] .quick-reflection .qr-body { font-family: "IBM Plex Sans Thai", serif; font-style: normal; }
+@media (max-width: 600px) { .quick-reflection { padding: 14px 16px; } .quick-reflection .qr-body { font-size: 16px; } }
+</style>
+
+<script data-veila-lang-persist="1">
+(function () {
+  try {
+    var l = document.documentElement.lang;
+    if (l === 'th' || l === 'en') localStorage.setItem('veila-lang', l);
+  } catch (e) { /* private-mode / quota — silent */ }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Veila — ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ",
+  "description": "Veila คือพื้นที่ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ ไม่ทำนายอนาคต แต่ช่วยให้คุณมองเห็นสิ่งที่ใจกำลังถาม",
+  "url": "https://veilatarot.com/th/",
+  "inLanguage": "th-TH",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Veila Tarot",
+    "url": "https://veilatarot.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Veila",
+    "url": "https://veilatarot.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "หน้าหลัก (English)", "item": "https://veilatarot.com/" },
+    { "@type": "ListItem", "position": 2, "name": "ภาษาไทย", "item": "https://veilatarot.com/th/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "th",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Veila ดูดวงไพ่ทาโรต์ต่างจากที่อื่นยังไง?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Veila ไม่ฟันธงอนาคต ไม่ใช้คำที่ทำให้กลัว และไม่ตัดสินใจแทนคุณ ทุกบทอ่านออกแบบให้เป็นพื้นที่ใคร่ครวญใจ ไพ่จะสะท้อนสิ่งที่ใจกำลังถาม เพื่อให้คุณเลือกจังหวะของตัวเองได้ในตอนสุดท้าย"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ควรเริ่มจากบทอ่านไหน?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ถ้ามีคำถามความรักที่ชัดอยู่แล้ว เริ่มที่ 'ดูดวงความรัก 8 คำถาม' ถ้าอยากเปิดวันด้วยไพ่หนึ่งใบ ลองไพ่ความรักประจำวัน ถ้าคำถามใหญ่และซับซ้อน เซลติกครอสจะเห็นภาพรวมชัดที่สุด"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ใช้งานฟรีไหม?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ใช้ได้ฟรี ทุกบทอ่านเปิดได้ทันทีโดยไม่ต้องสมัครสมาชิก ไม่ต้องลงทะเบียน ไพ่ทุกใบและบทอ่านทุกบทเก็บอยู่ในเบราว์เซอร์ของคุณเองเท่านั้น"
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/th/" aria-label="Veila — กลับสู่หน้าหลัก">Veila<span class="dot"></span><span class="brand-sub">ไพ่ทาโรต์ดูดวง</span></a>
+</header>
+
+<main class="article">
+
+  <h1 class="title">Veila — ดูดวงไพ่ทาโรต์เพื่อใคร่ครวญใจ</h1>
+  <p class="lede">Veila ไม่ใช่หมอดูที่ฟันธงอนาคต แต่เป็นพื้นที่เปิดไพ่เพื่อใคร่ครวญใจของคุณเอง ไพ่ไม่ตอบแทนการตัดสินใจ แต่ช่วยจัดเรียงสิ่งที่ใจกำลังถาม ให้คุณเห็นชัดขึ้นในจังหวะของตัวเอง</p>
+
+  <section class="quick-reflection" id="quick-reflection" aria-labelledby="qr-label">
+    <h2 class="qr-label" id="qr-label">บทสะท้อนสั้นๆ</h2>
+    <p class="qr-body">ไพ่ทาโรต์ของ Veila ออกแบบเป็นพื้นที่สะท้อนใจ ไม่ใช่เครื่องมือทำนายอนาคต บทอ่านทุกแบบมาให้ตรงกับคำถามที่ใจกำลังถามจริง ไม่ใช่คำตอบครอบจักรวาลที่ใช้กับทุกสถานการณ์</p>
+  </section>
+
+  <div class="divider"><span class="line"></span><span class="mark"></span><span class="line"></span></div>
+
+  <section>
+    <h2>เริ่มต้นจากตรงนี้</h2>
+    <p>เลือกบทอ่านที่ตรงกับสิ่งที่ใจคุณกำลังถามตอนนี้ ทุกบทอ่านเปิดได้ทันที ไม่ต้องสมัครสมาชิก ไม่ต้องลงทะเบียน</p>
+    <ul class="featured-list">
+      <li><a href="/th/love-tarot/">
+        <p class="fl-name">ดูดวงความรัก 8 คำถาม</p>
+        <p class="fl-blurb">8 บทอ่านความรักที่ตรงกับคำถามใจ ไม่ใช่บทอ่านครอบจักรวาล เลือกหัวข้อที่ตรงกับสิ่งที่ใจกำลังถามตอนนี้</p>
+      </a></li>
+      <li><a href="/th/daily-love-tarot/">
+        <p class="fl-name">ไพ่ความรักประจำวัน</p>
+        <p class="fl-blurb">เปิดไพ่หนึ่งใบเพื่อใคร่ครวญพลังของวันนี้ในมุมความสัมพันธ์ ใช้เวลาเพียงไม่กี่นาที</p>
+      </a></li>
+      <li><a href="/th/celtic-cross-tarot/">
+        <p class="fl-name">เซลติกครอส</p>
+        <p class="fl-blurb">บทอ่านลึก 10 ใบ เห็นภาพรวมของชีวิตหรือคำถามใหญ่ที่ค้างใจ จากหลายมิติพร้อมกัน</p>
+      </a></li>
+      <li><a href="/th/tarot-love-readings/">
+        <p class="fl-name">คู่มือดูไพ่ความรัก</p>
+        <p class="fl-blurb">วิธีอ่านไพ่ความรักด้วยใจ ไม่ใช่ด้วยสูตร เพื่อใช้กับชีวิตจริง อ่านได้ทั้งมือใหม่และมือเก่า</p>
+      </a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>ทำไมต้อง Veila</h2>
+    <p>ไพ่ทาโรต์ของ Veila ออกแบบให้เป็นพื้นที่ใคร่ครวญ ไม่ใช่เครื่องมือฟันธงอนาคต ทุกบทอ่านมาพร้อมคำอธิบายที่ละมุน ไม่ตัดสิน ไม่ขู่ และไม่ใช้คำที่ทำให้คุณเกิดความกลัว เพราะหน้าที่ของไพ่คือสะท้อน ไม่ใช่ตัดสินแทนใจคุณ</p>
+    <p>บทอ่านทั้งหมดบนเว็บไซต์นี้ฟรี เปิดได้ทันที ไม่เก็บข้อมูลส่วนตัว ไม่ต้องสมัครสมาชิก ทุกบทอ่านที่คุณบันทึกไว้เก็บอยู่ในเบราว์เซอร์ของคุณเองเท่านั้น</p>
+  </section>
+
+  <section>
+    <h2>คำถามที่พบบ่อย</h2>
+    <details>
+      <summary>Veila ดูดวงไพ่ทาโรต์ต่างจากที่อื่นยังไง?</summary>
+      <p>Veila ไม่ฟันธงอนาคต ไม่ใช้คำที่ทำให้กลัว และไม่ตัดสินใจแทนคุณ ทุกบทอ่านออกแบบให้เป็นพื้นที่ใคร่ครวญใจ ไพ่จะสะท้อนสิ่งที่ใจกำลังถาม เพื่อให้คุณเลือกจังหวะของตัวเองได้ในตอนสุดท้าย</p>
+    </details>
+    <details>
+      <summary>ควรเริ่มจากบทอ่านไหน?</summary>
+      <p>ถ้ามีคำถามความรักที่ชัดอยู่แล้ว เริ่มที่ "ดูดวงความรัก 8 คำถาม" ถ้าอยากเปิดวันด้วยไพ่หนึ่งใบ ลองไพ่ความรักประจำวัน ถ้าคำถามใหญ่และซับซ้อน เซลติกครอสจะเห็นภาพรวมชัดที่สุด</p>
+    </details>
+    <details>
+      <summary>ใช้งานฟรีไหม?</summary>
+      <p>ใช้ได้ฟรี ทุกบทอ่านเปิดได้ทันทีโดยไม่ต้องสมัครสมาชิก ไม่ต้องลงทะเบียน ไพ่ทุกใบและบทอ่านทุกบทเก็บอยู่ในเบราว์เซอร์ของคุณเองเท่านั้น</p>
+    </details>
+  </section>
+
+  <div class="cta-row">
+    <a href="/quick-love-reading/" class="cta-btn">เปิดบทอ่านความรักตอนนี้</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="last-updated">ปรับปรุงล่าสุด · มิถุนายน 2026</div>
+  <nav class="footer-nav">
+    <a href="/th/love-tarot/">ดูดวงความรัก</a>
+    <span class="sep">·</span>
+    <a href="/th/daily-love-tarot/">ไพ่รายวัน</a>
+    <span class="sep">·</span>
+    <a href="/th/celtic-cross-tarot/">เซลติกครอส</a>
+    <span class="sep">·</span>
+    <a href="/" hreflang="en" rel="alternate">English</a>
+  </nav>
+  <div>veilatarot.com · © MMXXVI</div>
+</footer>
+
+</body>
+</html>
