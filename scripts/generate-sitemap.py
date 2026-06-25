@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-project_dir = '/Users/kitikornrakhangthong/projects/veilatarot.com'
+project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sitemap_path = os.path.join(project_dir, 'sitemap.xml')
 base_url = 'https://veilatarot.com/'
 
