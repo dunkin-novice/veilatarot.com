@@ -916,3 +916,53 @@ footer .footer-nav .sep {
   color: var(--ivory-dim);
   margin: 0;
 }
+
+/* ===== VERTICAL NAV (injected by /assets/chrome.js) ===== */
+.vertical-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--rule);
+  overflow-x: auto;
+}
+.vertical-nav a, .vertical-nav span {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ivory-dim);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.vertical-nav a:hover { color: var(--ivory); }
+.vertical-nav a[aria-current="page"] { color: var(--gold); }
+.vertical-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -15px;
+  height: 1px;
+  background: var(--gold);
+}
+.vertical-nav .tag {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 2px;
+  padding: 2px 5px;
+}
+.vertical-nav .vn-soon { color: var(--ivory-mute); }
+.vertical-nav .vn-soon .tag {
+  background: none;
+  color: var(--ivory-mute);
+  border: 1px solid var(--rule);
+}
+@media (max-width: 560px) {
+  .vertical-nav { gap: 20px; padding: 14px 22px; }
+}
