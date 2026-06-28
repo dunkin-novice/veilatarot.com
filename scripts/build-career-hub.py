@@ -45,6 +45,7 @@ def build_questions_html(questions, lang, reading_base):
     by = {}
     for q in questions:
         by.setdefault(q["pillar"], []).append(q)
+    seo_base = reading_base.replace("reading/", "")  # /career/reading/ -> /career/
     out = []
     for pkey, en_label, th_label, en_blurb, th_blurb in PILLARS:
         items = by.get(pkey, [])
@@ -55,7 +56,9 @@ def build_questions_html(questions, lang, reading_base):
             text = q[lang]
             rows.append(
                 f'        <li><a href="{reading_base}?q={q["key"]}" '
-                f'data-i18n="q_{q["key"]}">{text}</a></li>'
+                f'data-i18n="q_{q["key"]}">{text}</a>'
+                f' <a class="qg-about" href="{seo_base}{q["key"]}/" '
+                f'data-i18n="q_about">About this question &rarr;</a></li>'
             )
         rows_html = "\n".join(rows)
         out.append(
@@ -86,6 +89,7 @@ def build_tdict(questions):
         "footerDaily": "Daily Card", "footerAll": "All Pages",
         "enter": "Enter →", "comingSoon": "Coming soon",
         "fineprint": "For reflection, not prediction.",
+        "q_about": "About this question →",
     }
     th = {
         "brandSub": "พื้นที่ดูไพ่ทาโรต์",
@@ -104,6 +108,7 @@ def build_tdict(questions):
         "footerDaily": "ไพ่ประจำวัน", "footerAll": "ทุกหน้า",
         "enter": "เข้าสู่ →", "comingSoon": "เร็ว ๆ นี้",
         "fineprint": "เพื่อการใคร่ครวญ ไม่ใช่การทำนาย",
+        "q_about": "อ่านรายละเอียด →",
     }
     for pkey, en_label, th_label, en_blurb, th_blurb in PILLARS:
         en[f"pillar_{pkey}"] = en_label
@@ -269,6 +274,9 @@ body{{background:var(--ink);color:var(--ivory);font-family:var(--sans);font-weig
 .qg-list{{list-style:none;display:grid;grid-template-columns:1fr;gap:10px;}}
 .qg-list a{{display:block;border:1px solid var(--rule);border-radius:4px;padding:15px 18px;background:rgba(184,153,104,.03);color:var(--ivory-dim);text-decoration:none;font-family:var(--serif);font-size:18px;transition:border-color .3s ease,color .3s ease,background .3s ease;}}
 .qg-list a:hover{{border-color:var(--gold-dim);color:var(--ivory);background:rgba(184,153,104,.07);}}
+.qg-list li{{display:flex;flex-direction:column;}}
+.qg-list a.qg-about{{display:inline-block;align-self:flex-start;border:none;border-radius:0;background:none;padding:6px 2px 0;margin-top:2px;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ivory-mute);}}
+.qg-list a.qg-about:hover{{border:none;background:none;color:var(--gold-dim);}}
 
 .aeo-answer-block{{border-left:2px solid var(--gold);padding:24px;margin:10px auto 64px;background:rgba(184,153,104,.03);border-radius:0 12px 12px 0;max-width:820px;text-align:left;}}
 .aeo-answer-block .label{{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:12px;}}
@@ -454,7 +462,7 @@ def build_jsonld(questions, lc):
 
 def main():
     questions = load_questions()
-    assert len(questions) == 18, f"expected 18 questions, got {len(questions)}"
+    assert len(questions) >= 18, f"expected >=18 questions, got {len(questions)}"
     en_dict, th_dict = build_tdict(questions)
 
     titles = {

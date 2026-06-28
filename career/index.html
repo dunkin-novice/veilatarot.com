@@ -73,7 +73,7 @@
       "@type": "ItemList",
       "@id": "https://veilatarot.com/career/#questions",
       "name": "Career tarot questions",
-      "numberOfItems": 18,
+      "numberOfItems": 23,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -182,6 +182,36 @@
           "position": 18,
           "name": "Should I go back to study or retrain?",
           "url": "https://veilatarot.com/career/reading/?q=should-i-go-back-to-study"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Should I go freelance?",
+          "url": "https://veilatarot.com/career/reading/?q=should-i-go-freelance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Will I get promoted?",
+          "url": "https://veilatarot.com/career/reading/?q=will-i-get-promoted"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "How do I handle a difficult boss?",
+          "url": "https://veilatarot.com/career/reading/?q=handle-difficult-boss"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Should I relocate for work?",
+          "url": "https://veilatarot.com/career/reading/?q=should-i-relocate-for-work"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Will my business make it?",
+          "url": "https://veilatarot.com/career/reading/?q=will-my-business-survive"
         }
       ]
     }
@@ -242,6 +272,9 @@ body{background:var(--ink);color:var(--ivory);font-family:var(--sans);font-weigh
 .qg-list{list-style:none;display:grid;grid-template-columns:1fr;gap:10px;}
 .qg-list a{display:block;border:1px solid var(--rule);border-radius:4px;padding:15px 18px;background:rgba(184,153,104,.03);color:var(--ivory-dim);text-decoration:none;font-family:var(--serif);font-size:18px;transition:border-color .3s ease,color .3s ease,background .3s ease;}
 .qg-list a:hover{border-color:var(--gold-dim);color:var(--ivory);background:rgba(184,153,104,.07);}
+.qg-list li{display:flex;flex-direction:column;}
+.qg-list a.qg-about{display:inline-block;align-self:flex-start;border:none;border-radius:0;background:none;padding:6px 2px 0;margin-top:2px;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ivory-mute);}
+.qg-list a.qg-about:hover{border:none;background:none;color:var(--gold-dim);}
 
 .aeo-answer-block{border-left:2px solid var(--gold);padding:24px;margin:10px auto 64px;background:rgba(184,153,104,.03);border-radius:0 12px 12px 0;max-width:820px;text-align:left;}
 .aeo-answer-block .label{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:12px;}
@@ -319,48 +352,53 @@ html[lang="th"] .headline em{font-style:normal;}
         <h2 class="qg-title" data-i18n="pillar_decision">Decisions & crossroads</h2>
         <p class="qg-blurb" data-i18n="pillarb_decision">For the yes-or-no you keep circling — take it, leave it, or move now.</p>
         <ul class="qg-list">
-        <li><a href="/career/reading/?q=should-i-take-this-job" data-i18n="q_should-i-take-this-job">Should I take this job?</a></li>
-        <li><a href="/career/reading/?q=should-i-quit" data-i18n="q_should-i-quit">Should I quit my job?</a></li>
-        <li><a href="/career/reading/?q=should-i-start-my-own-thing" data-i18n="q_should-i-start-my-own-thing">Should I start my own business?</a></li>
-        <li><a href="/career/reading/?q=is-this-offer-good" data-i18n="q_is-this-offer-good">Is this offer right for me?</a></li>
-        <li><a href="/career/reading/?q=should-i-wait-or-move" data-i18n="q_should-i-wait-or-move">Should I wait, or make a move now?</a></li>
+        <li><a href="/career/reading/?q=should-i-take-this-job" data-i18n="q_should-i-take-this-job">Should I take this job?</a> <a class="qg-about" href="/career/should-i-take-this-job/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-quit" data-i18n="q_should-i-quit">Should I quit my job?</a> <a class="qg-about" href="/career/should-i-quit/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-start-my-own-thing" data-i18n="q_should-i-start-my-own-thing">Should I start my own business?</a> <a class="qg-about" href="/career/should-i-start-my-own-thing/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=is-this-offer-good" data-i18n="q_is-this-offer-good">Is this offer right for me?</a> <a class="qg-about" href="/career/is-this-offer-good/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-wait-or-move" data-i18n="q_should-i-wait-or-move">Should I wait, or make a move now?</a> <a class="qg-about" href="/career/should-i-wait-or-move/" data-i18n="q_about">About this question &rarr;</a></li>
         </ul>
       </section>
       <section class="qgroup">
         <h2 class="qg-title" data-i18n="pillar_money">Money & worth</h2>
         <p class="qg-blurb" data-i18n="pillarb_money">For pay, value, and the worry underneath — read as direction, not a number.</p>
         <ul class="qg-list">
-        <li><a href="/career/reading/?q=am-i-underpaid" data-i18n="q_am-i-underpaid">Am I being underpaid or undervalued?</a></li>
-        <li><a href="/career/reading/?q=will-money-improve" data-i18n="q_will-money-improve">Will my finances improve?</a></li>
-        <li><a href="/career/reading/?q=should-i-ask-for-a-raise" data-i18n="q_should-i-ask-for-a-raise">Should I ask for a raise?</a></li>
-        <li><a href="/career/reading/?q=how-to-handle-money-fear" data-i18n="q_how-to-handle-money-fear">How do I handle money anxiety?</a></li>
+        <li><a href="/career/reading/?q=am-i-underpaid" data-i18n="q_am-i-underpaid">Am I being underpaid or undervalued?</a> <a class="qg-about" href="/career/am-i-underpaid/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=will-money-improve" data-i18n="q_will-money-improve">Will my finances improve?</a> <a class="qg-about" href="/career/will-money-improve/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-ask-for-a-raise" data-i18n="q_should-i-ask-for-a-raise">Should I ask for a raise?</a> <a class="qg-about" href="/career/should-i-ask-for-a-raise/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=how-to-handle-money-fear" data-i18n="q_how-to-handle-money-fear">How do I handle money anxiety?</a> <a class="qg-about" href="/career/how-to-handle-money-fear/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=will-my-business-survive" data-i18n="q_will-my-business-survive">Will my business make it?</a> <a class="qg-about" href="/career/will-my-business-survive/" data-i18n="q_about">About this question &rarr;</a></li>
         </ul>
       </section>
       <section class="qgroup">
         <h2 class="qg-title" data-i18n="pillar_growth">Growth & momentum</h2>
         <p class="qg-blurb" data-i18n="pillarb_growth">For the work that feels stuck, and where the next step actually is.</p>
         <ul class="qg-list">
-        <li><a href="/career/reading/?q=why-is-work-stuck" data-i18n="q_why-is-work-stuck">Why does my work feel stuck?</a></li>
-        <li><a href="/career/reading/?q=whats-blocking-my-success" data-i18n="q_whats-blocking-my-success">What is blocking my success?</a></li>
-        <li><a href="/career/reading/?q=how-to-grow-here" data-i18n="q_how-to-grow-here">How do I grow in this role?</a></li>
-        <li><a href="/career/reading/?q=will-this-project-land" data-i18n="q_will-this-project-land">Will this project succeed?</a></li>
+        <li><a href="/career/reading/?q=why-is-work-stuck" data-i18n="q_why-is-work-stuck">Why does my work feel stuck?</a> <a class="qg-about" href="/career/why-is-work-stuck/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=whats-blocking-my-success" data-i18n="q_whats-blocking-my-success">What is blocking my success?</a> <a class="qg-about" href="/career/whats-blocking-my-success/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=how-to-grow-here" data-i18n="q_how-to-grow-here">How do I grow in this role?</a> <a class="qg-about" href="/career/how-to-grow-here/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=will-this-project-land" data-i18n="q_will-this-project-land">Will this project succeed?</a> <a class="qg-about" href="/career/will-this-project-land/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=will-i-get-promoted" data-i18n="q_will-i-get-promoted">Will I get promoted?</a> <a class="qg-about" href="/career/will-i-get-promoted/" data-i18n="q_about">About this question &rarr;</a></li>
         </ul>
       </section>
       <section class="qgroup">
         <h2 class="qg-title" data-i18n="pillar_fit">Fit & calling</h2>
         <p class="qg-blurb" data-i18n="pillarb_fit">For whether this is yours — the role, the recognition, the real calling.</p>
         <ul class="qg-list">
-        <li><a href="/career/reading/?q=is-this-career-right" data-i18n="q_is-this-career-right">Is this career right for me?</a></li>
-        <li><a href="/career/reading/?q=are-they-valuing-me" data-i18n="q_are-they-valuing-me">Does my workplace value me?</a></li>
-        <li><a href="/career/reading/?q=what-is-my-calling" data-i18n="q_what-is-my-calling">What is my real calling?</a></li>
+        <li><a href="/career/reading/?q=is-this-career-right" data-i18n="q_is-this-career-right">Is this career right for me?</a> <a class="qg-about" href="/career/is-this-career-right/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=are-they-valuing-me" data-i18n="q_are-they-valuing-me">Does my workplace value me?</a> <a class="qg-about" href="/career/are-they-valuing-me/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=what-is-my-calling" data-i18n="q_what-is-my-calling">What is my real calling?</a> <a class="qg-about" href="/career/what-is-my-calling/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=handle-difficult-boss" data-i18n="q_handle-difficult-boss">How do I handle a difficult boss?</a> <a class="qg-about" href="/career/handle-difficult-boss/" data-i18n="q_about">About this question &rarr;</a></li>
         </ul>
       </section>
       <section class="qgroup">
         <h2 class="qg-title" data-i18n="pillar_change">Change & direction</h2>
         <p class="qg-blurb" data-i18n="pillarb_change">For the pull toward something different — and what each path opens.</p>
         <ul class="qg-list">
-        <li><a href="/career/reading/?q=change-careers" data-i18n="q_change-careers">Should I change careers?</a></li>
-        <li><a href="/career/reading/?q=should-i-go-back-to-study" data-i18n="q_should-i-go-back-to-study">Should I go back to study or retrain?</a></li>
+        <li><a href="/career/reading/?q=change-careers" data-i18n="q_change-careers">Should I change careers?</a> <a class="qg-about" href="/career/change-careers/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-go-back-to-study" data-i18n="q_should-i-go-back-to-study">Should I go back to study or retrain?</a> <a class="qg-about" href="/career/should-i-go-back-to-study/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-go-freelance" data-i18n="q_should-i-go-freelance">Should I go freelance?</a> <a class="qg-about" href="/career/should-i-go-freelance/" data-i18n="q_about">About this question &rarr;</a></li>
+        <li><a href="/career/reading/?q=should-i-relocate-for-work" data-i18n="q_should-i-relocate-for-work">Should I relocate for work?</a> <a class="qg-about" href="/career/should-i-relocate-for-work/" data-i18n="q_about">About this question &rarr;</a></li>
         </ul>
       </section>
     </section>
@@ -430,6 +468,7 @@ html[lang="th"] .headline em{font-style:normal;}
     "enter": "Enter →",
     "comingSoon": "Coming soon",
     "fineprint": "For reflection, not prediction.",
+    "q_about": "About this question →",
     "pillar_decision": "Decisions & crossroads",
     "pillarb_decision": "For the yes-or-no you keep circling — take it, leave it, or move now.",
     "pillar_money": "Money & worth",
@@ -457,7 +496,12 @@ html[lang="th"] .headline em{font-style:normal;}
     "q_what-is-my-calling": "What is my real calling?",
     "q_how-to-handle-money-fear": "How do I handle money anxiety?",
     "q_will-this-project-land": "Will this project succeed?",
-    "q_should-i-go-back-to-study": "Should I go back to study or retrain?"
+    "q_should-i-go-back-to-study": "Should I go back to study or retrain?",
+    "q_should-i-go-freelance": "Should I go freelance?",
+    "q_will-i-get-promoted": "Will I get promoted?",
+    "q_handle-difficult-boss": "How do I handle a difficult boss?",
+    "q_should-i-relocate-for-work": "Should I relocate for work?",
+    "q_will-my-business-survive": "Will my business make it?"
   },
   "th": {
     "brandSub": "พื้นที่ดูไพ่ทาโรต์",
@@ -484,6 +528,7 @@ html[lang="th"] .headline em{font-style:normal;}
     "enter": "เข้าสู่ →",
     "comingSoon": "เร็ว ๆ นี้",
     "fineprint": "เพื่อการใคร่ครวญ ไม่ใช่การทำนาย",
+    "q_about": "อ่านรายละเอียด →",
     "pillar_decision": "การตัดสินใจและทางแยก",
     "pillarb_decision": "สำหรับคำถามใช่หรือไม่ที่คุณวนคิดอยู่ — รับ ลาออก หรือขยับตอนนี้",
     "pillar_money": "เงินและคุณค่า",
@@ -511,7 +556,12 @@ html[lang="th"] .headline em{font-style:normal;}
     "q_what-is-my-calling": "อะไรคือเส้นทางที่ใช่ของฉันจริง ๆ?",
     "q_how-to-handle-money-fear": "ฉันจะรับมือกับความกังวลเรื่องเงินได้อย่างไร?",
     "q_will-this-project-land": "โปรเจกต์นี้จะสำเร็จไหม?",
-    "q_should-i-go-back-to-study": "ฉันควรกลับไปเรียนหรือฝึกทักษะใหม่ไหม?"
+    "q_should-i-go-back-to-study": "ฉันควรกลับไปเรียนหรือฝึกทักษะใหม่ไหม?",
+    "q_should-i-go-freelance": "ฉันควรออกมาเป็นฟรีแลนซ์ไหม?",
+    "q_will-i-get-promoted": "ฉันจะได้เลื่อนตำแหน่งไหม?",
+    "q_handle-difficult-boss": "ฉันจะรับมือกับหัวหน้าที่เข้ากันยากอย่างไร?",
+    "q_should-i-relocate-for-work": "ฉันควรย้ายเมืองเพื่องานไหม?",
+    "q_will-my-business-survive": "ธุรกิจของฉันจะไปรอดไหม?"
   }
 };
   var HTML_KEYS = {headline:1, navCareer:1, navHealth:1};

@@ -55,8 +55,14 @@ Beyond the copy swap it now also (all in the `structural` dict, regeneratable):
   (redirect vs. keep as a supporting article linking up to `/career/`).
 - **Footer-cols rollout** to the other ~400 `page.css` pages — deferred
   (existing footers work; vertical-nav already injected site-wide).
-- **Per-slug `/career/<slug>/` SEO scenario pages** — future; scale on winners
-  after the reading app indexes (mirrors `/love-readings/<slug>/`).
+- ~~**Per-slug `/career/<slug>/` SEO scenario pages**~~ — **DONE 2026-06-28**
+  (branch `career-seo-pages`, commit `1346719`, NOT merged/live). 36 pages
+  (18 Qs × EN+TH) via `scripts/build-career-seo-pages.mjs`; each surfaces its
+  unique 3-position labels from the reading JSON; reciprocal hreflang; CTA →
+  `/career/reading/?q=<slug>`; Article+FAQ+Breadcrumb JSON-LD. Hub de-orphans
+  them via a muted "About this question" link (`build-career-hub.py` `q_about`).
+  Sitemap → 466 URLs. To scale: add questions to `career-questions.js`,
+  generate readings, then re-run `build-career-seo-pages.mjs`.
 - Merge branch `homepage-three-vertical-reframe` → `main` when ready to ship.
 - The 8 unreachable `CONTINUE_RECS` entries for non-`connection` modes still
   hold love URLs — dead code (career is always `connection`), harmless.
