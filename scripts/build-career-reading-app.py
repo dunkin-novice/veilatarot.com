@@ -13,13 +13,15 @@ SRC = os.path.join(REPO, "quick-love-reading/index.html")
 OUT_DIR = os.path.join(REPO, "career/reading")
 OUT = os.path.join(OUT_DIR, "index.html")
 
-# 18 career question keys (order = career-questions.js)
+# 23 career question keys (order = career-questions.js)
 KEYS = [
     "should-i-take-this-job","should-i-quit","is-this-career-right","am-i-underpaid",
     "will-money-improve","should-i-ask-for-a-raise","change-careers","why-is-work-stuck",
     "whats-blocking-my-success","should-i-start-my-own-thing","is-this-offer-good",
     "how-to-grow-here","are-they-valuing-me","should-i-wait-or-move","what-is-my-calling",
     "how-to-handle-money-fear","will-this-project-land","should-i-go-back-to-study",
+    "should-i-go-freelance","will-i-get-promoted","handle-difficult-boss",
+    "should-i-relocate-for-work","will-my-business-survive",
 ]
 
 def replace_block(html, start_pat, close, new_text, label):

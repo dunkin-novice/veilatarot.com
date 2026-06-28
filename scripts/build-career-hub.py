@@ -462,7 +462,7 @@ def build_jsonld(questions, lc):
 
 def main():
     questions = load_questions()
-    assert len(questions) == 18, f"expected 18 questions, got {len(questions)}"
+    assert len(questions) >= 18, f"expected >=18 questions, got {len(questions)}"
     en_dict, th_dict = build_tdict(questions)
 
     titles = {

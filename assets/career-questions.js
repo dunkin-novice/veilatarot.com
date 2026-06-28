@@ -21,6 +21,11 @@ const CAREER_QUESTIONS = [
   { "pillar": "fit",      "key": "what-is-my-calling",         "en": "What is my real calling?",                     "th": "อะไรคือเส้นทางที่ใช่ของฉันจริง ๆ?" },
   { "pillar": "money",    "key": "how-to-handle-money-fear",   "en": "How do I handle money anxiety?",               "th": "ฉันจะรับมือกับความกังวลเรื่องเงินได้อย่างไร?" },
   { "pillar": "growth",   "key": "will-this-project-land",     "en": "Will this project succeed?",                   "th": "โปรเจกต์นี้จะสำเร็จไหม?" },
-  { "pillar": "change",   "key": "should-i-go-back-to-study",  "en": "Should I go back to study or retrain?",        "th": "ฉันควรกลับไปเรียนหรือฝึกทักษะใหม่ไหม?" }
+  { "pillar": "change",   "key": "should-i-go-back-to-study",  "en": "Should I go back to study or retrain?",        "th": "ฉันควรกลับไปเรียนหรือฝึกทักษะใหม่ไหม?" },
+  { "pillar": "change",   "key": "should-i-go-freelance",      "en": "Should I go freelance?",                       "th": "ฉันควรออกมาเป็นฟรีแลนซ์ไหม?" },
+  { "pillar": "growth",   "key": "will-i-get-promoted",        "en": "Will I get promoted?",                         "th": "ฉันจะได้เลื่อนตำแหน่งไหม?" },
+  { "pillar": "fit",      "key": "handle-difficult-boss",      "en": "How do I handle a difficult boss?",            "th": "ฉันจะรับมือกับหัวหน้าที่เข้ากันยากอย่างไร?" },
+  { "pillar": "change",   "key": "should-i-relocate-for-work", "en": "Should I relocate for work?",                  "th": "ฉันควรย้ายเมืองเพื่องานไหม?" },
+  { "pillar": "money",    "key": "will-my-business-survive",   "en": "Will my business make it?",                    "th": "ธุรกิจของฉันจะไปรอดไหม?" }
 ];
 if (typeof module !== 'undefined' && module.exports) module.exports = { CAREER_QUESTIONS };
