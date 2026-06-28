@@ -100,7 +100,7 @@
       "upright": {
         "the_armor": {
           "en": "You hold yourself in a soft mystery — present and warm, yet quietly unreadable, never giving away too much at once. People sense there is depth in you, but you let them see only the surface of the water. This gentle reticence keeps you safe, but it also keeps you slightly out of reach.",
-          "th": "คุณดำรงตัวอยู่ในความลึกลับที่อ่อนโยน — อยู่ตรงนั้นและอบอุ่น แต่ก็อ่านไม่ออกอย่างเงียบๆ ไม่เคยเปิดเผยมากเกินไปในคราวเดียว ผู้คนสัมผัสได้ว่าในตัวคุณมีความลึก แต่คุณปล่อยให้เขาเห็นเพียงผิวน้ำ ความสงวนท่าทีอันนุ่มนวลนี้ทำให้คุณปลอดภัย แต่มันก็ทำให้คุณอยู่ไกลเกินเอื้อมเล็กน้อย"
+          "th": "คุณดำรงตัวอยู่ในความลึกลับที่อ่อนโยน — อยู่ตรงนั้นและอบอุ่น แต่ก็อ่านไม่ออกอย่างเงียบๆ ไม่เคยเปิดเผยมากเกินไปในคราวเดียว ผู้คนสัมผัสได้ว่าในตัวคุณลึก แต่คุณปล่อยให้เขาเห็นเพียงผิวน้ำ ความสงวนท่าทีอันนุ่มนวลนี้ทำให้คุณปลอดภัย แต่มันก็ทำให้คุณอยู่ไกลเกินเอื้อมเล็กน้อย"
         },
         "the_fear": {
           "en": "What the mystery protects is your inner world — the intuitions, the deep feelings, the knowing you carry but rarely speak. You fear that if you revealed all of it too soon, it might be misread, dismissed, or used. So you keep the sacred inner room locked, guarding a tenderness that has learned the value of privacy.",
@@ -408,7 +408,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is your real point of view — the quiet opinions and longings you've been holding upside down so as not to weigh anyone down. There's relief waiting in simply saying what you'd actually like. You can let someone meet the version of you that has preferences, not just patience.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือมุมมองจริงๆ ของคุณ ความคิดเห็นและความปรารถนาเงียบๆ ที่คุณกลับหัวเก็บไว้เพื่อไม่ให้ใครรู้สึกหนักใจ มีความโล่งใจรออยู่แค่ในการพูดว่าจริงๆ แล้วคุณอยากได้อะไร คุณยอมให้ใครสักคนได้รู้จักคุณในเวอร์ชันที่มีความชอบของตัวเอง ไม่ใช่แค่ความอดทน"
+          "th": "มุมที่อยากให้เขาได้เห็นคือมุมมองจริงๆ ของคุณ ความคิดเห็นและความปรารถนาเงียบๆ ที่คุณกลับหัวเก็บไว้เพื่อไม่ให้ใครรู้สึกหนักใจ โล่งใจรออยู่แค่ในการพูดว่าจริงๆ แล้วคุณอยากได้อะไร คุณยอมให้ใครสักคนได้รู้จักคุณในเวอร์ชันที่มีความชอบของตัวเอง ไม่ใช่แค่ความอดทน"
         }
       },
       "reversed": {
@@ -438,7 +438,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is that you have lived through endings and come out tender, not hardened — your history isn't baggage, it's evidence of how you love and let go. There's depth in someone who has grieved well. You can let a new person see that you've been remade, scars and all.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือคุณเคยผ่านการสิ้นสุดมาแล้วและออกมาด้วยความอ่อนโยน ไม่ใช่แข็งกระด้าง อดีตของคุณไม่ใช่ภาระ แต่เป็นหลักฐานว่าคุณรักและปล่อยวางอย่างไร มีความลึกในคนที่ผ่านความเศร้ามาได้ดี คุณยอมให้คนใหม่ได้เห็นว่าคุณถูกสร้างขึ้นใหม่ พร้อมรอยแผลทั้งหมดได้"
+          "th": "มุมที่อยากให้เขาได้เห็นคือคุณเคยผ่านการสิ้นสุดมาแล้วและออกมาด้วยความอ่อนโยน ไม่ใช่แข็งกระด้าง อดีตของคุณไม่ใช่ภาระ แต่เป็นหลักฐานว่าคุณรักและปล่อยวางอย่างไร ลึกในคนที่ผ่านความเศร้ามาได้ดี คุณยอมให้คนใหม่ได้เห็นว่าคุณถูกสร้างขึ้นใหม่ พร้อมรอยแผลทั้งหมดได้"
         }
       },
       "reversed": {
@@ -512,7 +512,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the freer you that's emerging — someone learning that wanting and being safe are not opposites, that you can desire without surrendering yourself. There's a softness in letting need show again, on your own terms. You can let someone see that you've come back to your appetite wiser, not warier forever.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือตัวคุณที่อิสระกว่ากำลังปรากฏขึ้น คนที่กำลังเรียนรู้ว่าการอยากและการปลอดภัยไม่ใช่สิ่งตรงข้ามกัน ว่าคุณปรารถนาได้โดยไม่ต้องยอมสละตัวเอง มีความอ่อนโยนในการยอมให้ความต้องการได้แสดงออกอีกครั้ง ในเงื่อนไขของคุณเอง คุณยอมให้ใครได้เห็นว่าคุณกลับมาหาความกระหายของตัวเองอย่างฉลาดขึ้น ไม่ใช่ระแวงไปตลอดกาล"
+          "th": "มุมที่อยากให้เขาได้เห็นคือตัวคุณที่อิสระกว่ากำลังปรากฏขึ้น คนที่กำลังเรียนรู้ว่าการอยากและการปลอดภัยไม่ใช่สิ่งตรงข้ามกัน ว่าคุณปรารถนาได้โดยไม่ต้องยอมสละตัวเอง อ่อนโยนในการยอมให้ความต้องการได้แสดงออกอีกครั้ง ในเงื่อนไขของคุณเอง คุณยอมให้ใครได้เห็นว่าคุณกลับมาหาความกระหายของตัวเองอย่างฉลาดขึ้น ไม่ใช่ระแวงไปตลอดกาล"
         }
       }
     },
@@ -542,7 +542,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the part of you ready to let the false structure go gently, before it has to break — to admit out loud that something needs to change. There's relief in stopping the bracing. You can let someone see you choosing the truth before it's forced on you, and discover they were never the threat.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือส่วนของคุณที่พร้อมจะปล่อยโครงสร้างจอมปลอมไปอย่างนุ่มนวล ก่อนที่มันจะต้องแตกหัก ยอมรับออกมาดังๆ ว่ามีบางอย่างต้องเปลี่ยน มีความโล่งใจในการหยุดเกร็งพยุง คุณยอมให้ใครได้เห็นคุณเลือกความจริงก่อนที่มันจะถูกบังคับให้เกิด และค้นพบว่าเขาไม่เคยเป็นภัยคุกคามเลย"
+          "th": "มุมที่อยากให้เขาได้เห็นคือส่วนของคุณที่พร้อมจะปล่อยโครงสร้างจอมปลอมไปอย่างนุ่มนวล ก่อนที่มันจะต้องแตกหัก ยอมรับออกมาดังๆ ว่ามีบางอย่างต้องเปลี่ยน โล่งใจในการหยุดเกร็งพยุง คุณยอมให้ใครได้เห็นคุณเลือกความจริงก่อนที่มันจะถูกบังคับให้เกิด และค้นพบว่าเขาไม่เคยเป็นภัยคุกคามเลย"
         }
       }
     },
@@ -588,7 +588,7 @@
         },
         "the_offering": {
           "en": "What quietly wishes to be seen is your intuitive, dreaming inner world — the way you sense things others miss and carry whole oceans beneath a calm surface. There is no need to make it crystal clear all at once; you can let the right person walk into the moonlight slowly. Being seen here doesn't mean being explained, only being allowed to be deep.",
-          "th": "มุมที่แอบอยากให้เขาได้เห็นคือโลกภายในที่ช่างฝันและรับรู้ได้ไวของคุณ วิธีที่คุณสัมผัสสิ่งที่คนอื่นมองข้าม และเก็บทั้งมหาสมุทรไว้ใต้ผิวน้ำที่สงบนิ่ง คุณไม่จำเป็นต้องทำให้ทุกอย่างชัดเจนในคราวเดียว ค่อย ๆ ให้คนที่ใช่เดินเข้ามาในแสงจันทร์ก็ได้ การถูกมองเห็นตรงนี้ไม่ได้แปลว่าต้องอธิบายตัวเอง แค่ยอมให้ตัวเองมีความลึกก็พอ"
+          "th": "มุมที่แอบอยากให้เขาได้เห็นคือโลกภายในที่ช่างฝันและรับรู้ได้ไวของคุณ วิธีที่คุณสัมผัสสิ่งที่คนอื่นมองข้าม และเก็บทั้งมหาสมุทรไว้ใต้ผิวน้ำที่สงบนิ่ง คุณไม่จำเป็นต้องทำให้ทุกอย่างชัดเจนในคราวเดียว ค่อย ๆ ให้คนที่ใช่เดินเข้ามาในแสงจันทร์ก็ได้ การถูกมองเห็นตรงนี้ไม่ได้แปลว่าต้องอธิบายตัวเอง แค่ยอมให้ตัวเองลึกก็พอ"
         }
       },
       "reversed": {
@@ -648,7 +648,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is your whole story — including the parts you grew through, not just the polished ending. Your history isn't evidence against you; it's how you became someone with depth and compassion. Letting a person see where you've been, without the verdict attached, is how you offer them the real, redeemed you.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือเรื่องราวทั้งหมดของคุณ รวมถึงส่วนที่คุณเติบโตผ่านมัน ไม่ใช่แค่ตอนจบที่ขัดเกลามาอย่างดี ประวัติของคุณไม่ใช่หลักฐานเอาผิดคุณ แต่คือวิธีที่คุณกลายเป็นคนที่มีความลึกและความเข้าอกเข้าใจ การยอมให้ใครได้เห็นว่าคุณเคยผ่านอะไรมา โดยไม่แปะคำตัดสินไว้ คือการที่คุณมอบตัวคุณจริง ๆ ที่ได้รับการไถ่แล้วให้เขา"
+          "th": "มุมที่อยากให้เขาได้เห็นคือเรื่องราวทั้งหมดของคุณ รวมถึงส่วนที่คุณเติบโตผ่านมัน ไม่ใช่แค่ตอนจบที่ขัดเกลามาอย่างดี ประวัติของคุณไม่ใช่หลักฐานเอาผิดคุณ แต่คือวิธีที่คุณกลายเป็นคนที่ลึกและความเข้าอกเข้าใจ การยอมให้ใครได้เห็นว่าคุณเคยผ่านอะไรมา โดยไม่แปะคำตัดสินไว้ คือการที่คุณมอบตัวคุณจริง ๆ ที่ได้รับการไถ่แล้วให้เขา"
         }
       },
       "reversed": {
@@ -918,7 +918,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the you that emerges when things finally slow down, the one with depth, attention, a steady kind of presence. Beneath the rush is someone who longs to linger, to be unhurried with the right person. You can let a partner see that you're willing to stay still long enough to truly arrive.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือ ตัวคุณที่ปรากฏออกมาเมื่อทุกอย่างได้ช้าลงในที่สุด คนที่มีความลึก มีสมาธิ มีการอยู่ตรงนั้นอย่างมั่นคง ใต้ความรีบเร่งคือคนที่โหยหาจะได้อยู่นาน ๆ ได้ไม่ต้องรีบกับคนที่ใช่ คุณยอมให้เขาเห็นได้ว่า คุณเต็มใจจะอยู่นิ่งนานพอที่จะมาถึงเขาจริง ๆ"
+          "th": "มุมที่อยากให้เขาได้เห็นคือ ตัวคุณที่ปรากฏออกมาเมื่อทุกอย่างได้ช้าลงในที่สุด คนที่ลึก มีสมาธิ มีการอยู่ตรงนั้นอย่างมั่นคง ใต้ความรีบเร่งคือคนที่โหยหาจะได้อยู่นาน ๆ ได้ไม่ต้องรีบกับคนที่ใช่ คุณยอมให้เขาเห็นได้ว่า คุณเต็มใจจะอยู่นิ่งนานพอที่จะมาถึงเขาจริง ๆ"
         }
       },
       "reversed": {
@@ -948,7 +948,7 @@
         },
         "the_offering": {
           "en": "What quietly wants to be seen is your resilience, not the polished kind, but the worn and honest kind that kept going anyway. There is something tender in letting someone witness that you are still here, still hoping, after everything. You might let them see that your caution is itself a form of caring deeply.",
-          "th": "สิ่งที่อยากให้เขาได้เห็นอย่างเงียบๆ คือความเข้มแข็งของคุณ ไม่ใช่แบบที่ขัดเงาสวยงาม แต่แบบที่บอบช้ำและจริงใจ ที่ยังเดินต่อมาได้ มีความอ่อนโยนบางอย่างในการให้ใครสักคนได้เห็นว่าคุณยังอยู่ตรงนี้ ยังมีหวัง หลังจากทุกอย่างที่ผ่านมา ลองให้เขาเห็นว่าความระมัดระวังของคุณ ก็คือรูปแบบหนึ่งของการรักอย่างลึกซึ้ง"
+          "th": "สิ่งที่อยากให้เขาได้เห็นอย่างเงียบๆ คือความเข้มแข็งของคุณ ไม่ใช่แบบที่ขัดเงาสวยงาม แต่แบบที่บอบช้ำและจริงใจ ที่ยังเดินต่อมาได้ อ่อนโยนบางอย่างในการให้ใครสักคนได้เห็นว่าคุณยังอยู่ตรงนี้ ยังมีหวัง หลังจากทุกอย่างที่ผ่านมา ลองให้เขาเห็นว่าความระมัดระวังของคุณ ก็คือรูปแบบหนึ่งของการรักอย่างลึกซึ้ง"
         }
       },
       "reversed": {
@@ -978,7 +978,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the moment you let your hands open and admit you are tired. There is intimacy in saying I cannot do all of this alone, and I do not want to. Letting someone carry even one small thing with you is its own quiet kind of love.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือช่วงเวลาที่คุณยอมคลายมือ และยอมรับว่าเหนื่อยแล้ว มีความใกล้ชิดในการพูดว่าฉันทำทั้งหมดนี้คนเดียวไม่ไหว และฉันก็ไม่อยากทำคนเดียว การให้ใครสักคนช่วยแบกแม้เพียงสิ่งเล็กๆ ไปด้วยกัน ก็คือความรักรูปแบบหนึ่งที่เงียบงาม"
+          "th": "มุมที่อยากให้เขาได้เห็นคือช่วงเวลาที่คุณยอมคลายมือ และยอมรับว่าเหนื่อยแล้ว ใกล้ชิดในการพูดว่าฉันทำทั้งหมดนี้คนเดียวไม่ไหว และฉันก็ไม่อยากทำคนเดียว การให้ใครสักคนช่วยแบกแม้เพียงสิ่งเล็กๆ ไปด้วยกัน ก็คือความรักรูปแบบหนึ่งที่เงียบงาม"
         }
       },
       "reversed": {
@@ -1038,7 +1038,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the part of you that would actually love to stay, to let your passion settle into something lasting. There is courage in showing someone that beneath the adventure is a heart that wants a home. Let them see that you can be both fire and warmth.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือส่วนของคุณที่จริงๆ แล้วอยากจะอยู่ต่อ อยากให้ความหลงใหลของตัวเองลงหลักปักฐานในบางสิ่งที่ยั่งยืน มีความกล้าหาญในการแสดงให้ใครสักคนเห็นว่า ใต้การผจญภัยนั้นคือหัวใจที่อยากมีบ้าน ลองให้เขาได้เห็นว่าคุณเป็นได้ทั้งเปลวไฟและความอบอุ่น"
+          "th": "มุมที่อยากให้เขาได้เห็นคือส่วนของคุณที่จริงๆ แล้วอยากจะอยู่ต่อ อยากให้ความหลงใหลของตัวเองลงหลักปักฐานในบางสิ่งที่ยั่งยืน กล้าหาญในการแสดงให้ใครสักคนเห็นว่า ใต้การผจญภัยนั้นคือหัวใจที่อยากมีบ้าน ลองให้เขาได้เห็นว่าคุณเป็นได้ทั้งเปลวไฟและความอบอุ่น"
         }
       },
       "reversed": {
@@ -1098,7 +1098,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the human behind the leader, the one who has questions and longings of his own. There is real intimacy in letting someone see you uncertain, in trusting them with the doubts you usually carry alone. Let them know that you do not need to be the strong one with them.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือคนธรรมดาที่อยู่หลังผู้นำ คนที่ก็มีคำถามและความปรารถนาเป็นของตัวเอง มีความใกล้ชิดที่แท้จริงในการให้ใครสักคนได้เห็นคุณในยามไม่แน่ใจ ในการไว้ใจเขาด้วยความลังเลที่คุณมักแบกไว้คนเดียว ลองให้เขารู้ว่าคุณไม่จำเป็นต้องเป็นคนเข้มแข็งเมื่ออยู่กับเขา"
+          "th": "มุมที่อยากให้เขาได้เห็นคือคนธรรมดาที่อยู่หลังผู้นำ คนที่ก็มีคำถามและความปรารถนาเป็นของตัวเอง ใกล้ชิดที่แท้จริงในการให้ใครสักคนได้เห็นคุณในยามไม่แน่ใจ ในการไว้ใจเขาด้วยความลังเลที่คุณมักแบกไว้คนเดียว ลองให้เขารู้ว่าคุณไม่จำเป็นต้องเป็นคนเข้มแข็งเมื่ออยู่กับเขา"
         }
       },
       "reversed": {
@@ -1412,7 +1412,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is your willingness to hope again, gently, for real closeness rather than a perfect one. You can let a partner see that you still believe in belonging even after it has wavered. There is quiet bravery in offering a hope that has been bruised and chosen anyway.",
-          "th": "สิ่งที่อยากให้เขาเห็นคือความเต็มใจที่จะหวังอีกครั้งอย่างนุ่มนวล ถึงความใกล้ชิดที่จริง ไม่ใช่ที่สมบูรณ์แบบ ลองให้คนที่เข้ามาเห็นว่าคุณยังเชื่อในการเป็นส่วนหนึ่ง แม้มันเคยสั่นคลอน มีความกล้าหาญเงียบๆ ในการยื่นความหวังที่เคยช้ำมา แล้วยังเลือกจะหวังต่อ"
+          "th": "สิ่งที่อยากให้เขาเห็นคือความเต็มใจที่จะหวังอีกครั้งอย่างนุ่มนวล ถึงความใกล้ชิดที่จริง ไม่ใช่ที่สมบูรณ์แบบ ลองให้คนที่เข้ามาเห็นว่าคุณยังเชื่อในการเป็นส่วนหนึ่ง แม้มันเคยสั่นคลอน กล้าหาญเงียบๆ ในการยื่นความหวังที่เคยช้ำมา แล้วยังเลือกจะหวังต่อ"
         }
       }
     },
@@ -1548,7 +1548,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is your honest truth said plainly — not the polished argument, but the simple real thing you actually feel. You might offer one clear, vulnerable sentence instead of three clever ones. There is a clean kind of intimacy in letting someone hear what's true before it's been made impressive.",
-          "th": "มุมที่อยากให้เขาเห็นคือความจริงของคุณที่พูดออกมาตรง ๆ ไม่ใช่ข้อโต้แย้งที่ขัดเงาไว้ แต่เป็นสิ่งจริง ๆ ง่าย ๆ ที่คุณรู้สึก ลองมอบประโยคชัด ๆ ที่เปราะบางสักประโยค แทนที่จะเป็นประโยคฉลาด ๆ สามประโยค มีความใกล้ชิดที่สะอาดอยู่ในการปล่อยให้ใครได้ยินสิ่งที่จริง ก่อนที่มันจะถูกทำให้ดูน่าประทับใจ"
+          "th": "มุมที่อยากให้เขาเห็นคือความจริงของคุณที่พูดออกมาตรง ๆ ไม่ใช่ข้อโต้แย้งที่ขัดเงาไว้ แต่เป็นสิ่งจริง ๆ ง่าย ๆ ที่คุณรู้สึก ลองมอบประโยคชัด ๆ ที่เปราะบางสักประโยค แทนที่จะเป็นประโยคฉลาด ๆ สามประโยค ใกล้ชิดที่สะอาดอยู่ในการปล่อยให้ใครได้ยินสิ่งที่จริง ก่อนที่มันจะถูกทำให้ดูน่าประทับใจ"
         }
       },
       "reversed": {
@@ -1608,7 +1608,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is that you have been hurt and have kept loving anyway — that your scar is not a defect but proof of a heart that stayed open. You might let someone see the tender history rather than only the guarded present. There is a quiet courage in saying 'this once hurt me' and letting yourself be met there.",
-          "th": "มุมที่อยากให้เขาเห็นคือคุณเคยเจ็บแล้วยังเลือกที่จะรักต่อไปอยู่ดี ว่ารอยแผลของคุณไม่ใช่ตำหนิ แต่เป็นหลักฐานของหัวใจที่ยังคงเปิดอยู่ ลองให้ใครได้เห็นประวัติที่อ่อนโยน ไม่ใช่แค่ปัจจุบันที่ตั้งการ์ดไว้ มีความกล้าหาญเงียบ ๆ อยู่ในการพูดว่า 'สิ่งนี้เคยทำร้ายฉัน' แล้วปล่อยให้ตัวเองได้รับการโอบรับตรงนั้น"
+          "th": "มุมที่อยากให้เขาเห็นคือคุณเคยเจ็บแล้วยังเลือกที่จะรักต่อไปอยู่ดี ว่ารอยแผลของคุณไม่ใช่ตำหนิ แต่เป็นหลักฐานของหัวใจที่ยังคงเปิดอยู่ ลองให้ใครได้เห็นประวัติที่อ่อนโยน ไม่ใช่แค่ปัจจุบันที่ตั้งการ์ดไว้ กล้าหาญเงียบ ๆ อยู่ในการพูดว่า 'สิ่งนี้เคยทำร้ายฉัน' แล้วปล่อยให้ตัวเองได้รับการโอบรับตรงนั้น"
         }
       },
       "reversed": {
@@ -1638,7 +1638,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is that you can let someone share your stillness rather than only meeting them when you're 'on.' You might invite another into your quiet — not performing, just resting near them. There is deep intimacy in being still together, and letting yourself be seen at rest is the offering.",
-          "th": "มุมที่อยากให้เขาเห็นคือคุณสามารถปล่อยให้ใครสักคนได้ร่วมอยู่ในความนิ่งของคุณ ไม่ใช่แค่พบเขาตอนที่คุณ 'พร้อมแสดง' ลองชวนใครเข้ามาในความเงียบของคุณ ไม่ต้องแสดงอะไร แค่พักผ่อนอยู่ใกล้ ๆ เขา มีความใกล้ชิดที่ลึกอยู่ในการได้นิ่งด้วยกัน และการปล่อยให้ตัวเองถูกเห็นในยามพักผ่อน คือสิ่งที่อยากมอบให้"
+          "th": "มุมที่อยากให้เขาเห็นคือคุณสามารถปล่อยให้ใครสักคนได้ร่วมอยู่ในความนิ่งของคุณ ไม่ใช่แค่พบเขาตอนที่คุณ 'พร้อมแสดง' ลองชวนใครเข้ามาในความเงียบของคุณ ไม่ต้องแสดงอะไร แค่พักผ่อนอยู่ใกล้ ๆ เขา ใกล้ชิดที่ลึกอยู่ในการได้นิ่งด้วยกัน และการปล่อยให้ตัวเองถูกเห็นในยามพักผ่อน คือสิ่งที่อยากมอบให้"
         }
       },
       "reversed": {
@@ -1728,7 +1728,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the part of you ready to come out from behind the strategy and simply be honest. There is relief waiting in letting one person see the unguarded truth of you. You can offer a little more openness than feels comfortable and discover it was safe after all.",
-          "th": "มุมที่อยากให้เขาเห็นคือส่วนที่พร้อมจะออกมาจากหลังกลยุทธ์ แล้วเป็นแค่คนที่ซื่อตรง มีความโล่งใจรออยู่ในการปล่อยให้คนสักคนเห็นความจริงที่ไม่มีการ์ดของคุณ คุณยื่นความเปิดเผยให้มากกว่าที่รู้สึกสบายใจสักหน่อยได้ แล้วจะพบว่ามันปลอดภัยมาตั้งแต่แรก"
+          "th": "มุมที่อยากให้เขาเห็นคือส่วนที่พร้อมจะออกมาจากหลังกลยุทธ์ แล้วเป็นแค่คนที่ซื่อตรง โล่งใจรออยู่ในการปล่อยให้คนสักคนเห็นความจริงที่ไม่มีการ์ดของคุณ คุณยื่นความเปิดเผยให้มากกว่าที่รู้สึกสบายใจสักหน่อยได้ แล้วจะพบว่ามันปลอดภัยมาตั้งแต่แรก"
         }
       },
       "reversed": {
@@ -1742,7 +1742,7 @@
         },
         "the_offering": {
           "en": "Ready to be seen is your longing to be fully honest, to confess and be known without the careful editing. There is courage in you that wants to put the cards on the table and trust the outcome. Let that truthful self be your offering — it is far more attractive than any curated version.",
-          "th": "มุมที่พร้อมให้เขาเห็นคือความโหยหาที่จะซื่อตรงทั้งหมด ที่จะสารภาพและถูกรู้จักโดยไม่ต้องคอยตัดต่ออย่างระมัดระวัง ในตัวคุณมีความกล้าที่อยากวางไพ่ลงบนโต๊ะแล้วเชื่อมั่นในผลลัพธ์ ปล่อยให้ตัวตนที่ซื่อตรงนั้นเป็นสิ่งที่คุณยื่นให้ มันน่าหลงใหลกว่าเวอร์ชันที่คัดสรรไว้มากนัก"
+          "th": "มุมที่พร้อมให้เขาเห็นคือความโหยหาที่จะซื่อตรงทั้งหมด ที่จะสารภาพและถูกรู้จักโดยไม่ต้องคอยตัดต่ออย่างระมัดระวัง ในตัวคุณกล้าที่อยากวางไพ่ลงบนโต๊ะแล้วเชื่อมั่นในผลลัพธ์ ปล่อยให้ตัวตนที่ซื่อตรงนั้นเป็นสิ่งที่คุณยื่นให้ มันน่าหลงใหลกว่าเวอร์ชันที่คัดสรรไว้มากนัก"
         }
       }
     },
@@ -1802,7 +1802,7 @@
         },
         "the_offering": {
           "en": "Ready to be seen is the part of you that is healing, naming its fears in daylight instead of suffering them alone. There is a quiet bravery in turning toward recovery, and it is beautiful to witness. Let someone see you choosing hope — it is one of the most intimate offerings there is.",
-          "th": "มุมที่พร้อมให้เขาเห็นคือส่วนที่กำลังเยียวยา ที่เอ่ยชื่อความกลัวของมันในแสงกลางวัน แทนการทนทุกข์อยู่ลำพัง มีความกล้าหาญเงียบ ๆ ในการหันหน้าเข้าหาการฟื้นตัว และมันงดงามเมื่อมีคนได้เห็น ปล่อยให้ใครสักคนเห็นคุณเลือกความหวัง มันคือหนึ่งในสิ่งที่ใกล้ชิดที่สุดที่คุณจะยื่นให้ได้"
+          "th": "มุมที่พร้อมให้เขาเห็นคือส่วนที่กำลังเยียวยา ที่เอ่ยชื่อความกลัวของมันในแสงกลางวัน แทนการทนทุกข์อยู่ลำพัง กล้าหาญเงียบ ๆ ในการหันหน้าเข้าหาการฟื้นตัว และมันงดงามเมื่อมีคนได้เห็น ปล่อยให้ใครสักคนเห็นคุณเลือกความหวัง มันคือหนึ่งในสิ่งที่ใกล้ชิดที่สุดที่คุณจะยื่นให้ได้"
         }
       }
     },
@@ -1818,7 +1818,7 @@
         },
         "the_offering": {
           "en": "What wants to be seen is the part of you that has survived and is quietly ready to begin again. There is profound resilience in someone who has been through an ending and still turns toward love. You can offer that hard-won openness — the self that knows things can end, and chooses to be present anyway.",
-          "th": "มุมที่อยากให้เขาเห็นคือส่วนที่รอดมาได้และพร้อมเงียบ ๆ ที่จะเริ่มต้นใหม่ มีความเข้มแข็งที่ลึกซึ้งในคนที่ผ่านการจบลงมาแล้วยังหันหน้าเข้าหาความรัก คุณยื่นความเปิดใจที่ได้มาอย่างยากลำบากนั้นได้ ตัวตนที่รู้ว่าสิ่งต่าง ๆ จบลงได้ แต่ก็ยังเลือกที่จะอยู่ตรงนี้"
+          "th": "มุมที่อยากให้เขาเห็นคือส่วนที่รอดมาได้และพร้อมเงียบ ๆ ที่จะเริ่มต้นใหม่ เข้มแข็งที่ลึกซึ้งในคนที่ผ่านการจบลงมาแล้วยังหันหน้าเข้าหาความรัก คุณยื่นความเปิดใจที่ได้มาอย่างยากลำบากนั้นได้ ตัวตนที่รู้ว่าสิ่งต่าง ๆ จบลงได้ แต่ก็ยังเลือกที่จะอยู่ตรงนี้"
         }
       },
       "reversed": {
@@ -1862,7 +1862,7 @@
         },
         "the_offering": {
           "en": "Beneath the quick tongue is a sincerity that wants to speak plainly for once. What longs to be seen is the version of you that can say what it means without armoring it in wit. Letting one honest, unguarded sentence stand on its own would be a gentle gift — to them, and to the part of you tired of always being clever.",
-          "th": "ใต้ลิ้นที่ว่องไวนั้นมีความจริงใจที่อยากพูดตรง ๆ สักครั้ง สิ่งที่โหยหาให้เขาเห็นคือคุณในแบบที่พูดสิ่งที่หมายความได้โดยไม่ต้องห่อหุ้มด้วยมุกตลก การปล่อยให้ประโยคจริงใจที่ไร้เกราะสักประโยคยืนอยู่ได้ด้วยตัวเอง จะเป็นของขวัญอันอ่อนโยน ทั้งต่อเขา และต่อมุมที่เหนื่อยกับการต้องฉลาดอยู่ตลอดเวลา"
+          "th": "ใต้ลิ้นที่ว่องไวนั้นจริงใจที่อยากพูดตรง ๆ สักครั้ง สิ่งที่โหยหาให้เขาเห็นคือคุณในแบบที่พูดสิ่งที่หมายความได้โดยไม่ต้องห่อหุ้มด้วยมุกตลก การปล่อยให้ประโยคจริงใจที่ไร้เกราะสักประโยคยืนอยู่ได้ด้วยตัวเอง จะเป็นของขวัญอันอ่อนโยน ทั้งต่อเขา และต่อมุมที่เหนื่อยกับการต้องฉลาดอยู่ตลอดเวลา"
         }
       }
     },
@@ -1952,7 +1952,7 @@
         },
         "the_offering": {
           "en": "What longs to be seen is the part of you brave enough to not have it all figured out — to feel first and reason later, just once. There is a tenderness in you that wants to be led by the heart instead of always leading with the mind. Letting someone see you let go of control would reveal a deeper, truer strength than certainty ever could.",
-          "th": "สิ่งที่โหยหาให้เขาเห็นคือมุมในตัวคุณที่กล้าพอจะยอมรับว่ายังไม่เข้าใจทุกอย่าง ที่จะรู้สึกก่อนแล้วค่อยใช้เหตุผลทีหลังสักครั้ง มีความอ่อนโยนในตัวคุณที่อยากถูกนำด้วยหัวใจ แทนที่จะนำด้วยสมองอยู่ตลอด การปล่อยให้ใครได้เห็นคุณวางการควบคุมลง จะเผยความแข็งแกร่งที่ลึกและจริงแท้กว่าความมั่นใจใด ๆ จะให้ได้"
+          "th": "สิ่งที่โหยหาให้เขาเห็นคือมุมในตัวคุณที่กล้าพอจะยอมรับว่ายังไม่เข้าใจทุกอย่าง ที่จะรู้สึกก่อนแล้วค่อยใช้เหตุผลทีหลังสักครั้ง อ่อนโยนในตัวคุณที่อยากถูกนำด้วยหัวใจ แทนที่จะนำด้วยสมองอยู่ตลอด การปล่อยให้ใครได้เห็นคุณวางการควบคุมลง จะเผยความแข็งแกร่งที่ลึกและจริงแท้กว่าความมั่นใจใด ๆ จะให้ได้"
         }
       }
     },
@@ -2012,7 +2012,7 @@
         },
         "the_offering": {
           "en": "What longs to be seen is the part of you ready to be honest about your limits — to let the juggling pause and trust that you will still be wanted. There is relief waiting in being allowed to not have it all balanced. Letting someone see your real, uneven, off-kilter moments would reveal the tender authenticity your constant poise has been hiding.",
-          "th": "สิ่งที่โหยหาให้เขาเห็นคือมุมในตัวคุณที่พร้อมจะซื่อสัตย์เรื่องขีดจำกัดของตัวเอง ที่จะปล่อยให้การโยนรับหยุดพัก แล้วเชื่อว่าคุณจะยังเป็นที่ต้องการอยู่ มีความโล่งใจรออยู่ในการได้รับอนุญาตให้ไม่ต้องสมดุลทุกอย่าง การปล่อยให้ใครได้เห็นช่วงเวลาที่คุณเอนเอียง ไม่เท่ากัน เสียจังหวะจริง ๆ จะเผยความจริงแท้อันอ่อนโยนที่ความสง่างามตลอดเวลาของคุณซ่อนไว้"
+          "th": "สิ่งที่โหยหาให้เขาเห็นคือมุมในตัวคุณที่พร้อมจะซื่อสัตย์เรื่องขีดจำกัดของตัวเอง ที่จะปล่อยให้การโยนรับหยุดพัก แล้วเชื่อว่าคุณจะยังเป็นที่ต้องการอยู่ โล่งใจรออยู่ในการได้รับอนุญาตให้ไม่ต้องสมดุลทุกอย่าง การปล่อยให้ใครได้เห็นช่วงเวลาที่คุณเอนเอียง ไม่เท่ากัน เสียจังหวะจริง ๆ จะเผยความจริงแท้อันอ่อนโยนที่ความสง่างามตลอดเวลาของคุณซ่อนไว้"
         }
       }
     },
@@ -2072,7 +2072,7 @@
         },
         "the_offering": {
           "en": "What longs to be seen is your readiness to loosen the fist—to let love flow both ways without keeping score. There's relief waiting in that release. You can show someone that you're learning to receive, not just to hold.",
-          "th": "มุมที่อยากให้เขาได้เห็นคือความพร้อมที่จะคลายกำปั้นนั้นออก ปล่อยให้ความรักไหลไปมาทั้งสองทางโดยไม่ต้องคอยนับ มีความโล่งใจรออยู่ในการปล่อยวางนั้น ลองให้เขาเห็นว่าคุณกำลังเรียนรู้ที่จะรับ ไม่ใช่แค่กำไว้"
+          "th": "มุมที่อยากให้เขาได้เห็นคือความพร้อมที่จะคลายกำปั้นนั้นออก ปล่อยให้ความรักไหลไปมาทั้งสองทางโดยไม่ต้องคอยนับ โล่งใจรออยู่ในการปล่อยวางนั้น ลองให้เขาเห็นว่าคุณกำลังเรียนรู้ที่จะรับ ไม่ใช่แค่กำไว้"
         }
       }
     },
@@ -2354,7 +2354,7 @@
         },
         "the_fear": {
           "en": "Beneath the command is a fear that your value lies in what you can provide, not in who you are—that without the strength and the offerings, you'd be unworthy. So you keep proving, keep providing, keep control. The armor guards a vulnerability that fears it would lose respect the moment it showed.",
-          "th": "ใต้ความเป็นผู้นำคือความกลัวว่าคุณค่าของคุณอยู่ที่สิ่งที่คุณจัดหาได้ ไม่ใช่ที่ตัวคุณเป็นใคร กลัวว่าถ้าไม่มีความเข้มแข็งและสิ่งที่มอบให้ คุณก็คงไม่คู่ควร คุณจึงพิสูจน์ตัวเรื่อยไป จัดหาเรื่อยไป และคุมไว้เรื่อยไป เกราะนั้นปกป้องความเปราะบางที่กลัวว่าจะเสียความเคารพในวินาทีที่มันเผยออกมา"
+          "th": "ใต้ความเป็นผู้นำคือความกลัวว่าคุณค่าของคุณอยู่ที่สิ่งที่คุณจัดหาได้ ไม่ใช่ที่ตัวคุณเป็นใคร กลัวว่าถ้าไม่เข้มแข็งและสิ่งที่มอบให้ คุณก็คงไม่คู่ควร คุณจึงพิสูจน์ตัวเรื่อยไป จัดหาเรื่อยไป และคุมไว้เรื่อยไป เกราะนั้นปกป้องความเปราะบางที่กลัวว่าจะเสียความเคารพในวินาทีที่มันเผยออกมา"
         },
         "the_offering": {
           "en": "What wants to be seen is the part of you that doesn't need to be the provider to be worthy—the man behind the management, who also needs softness and rest. Letting someone see you set down the weight is its own quiet power. Being supported, not just supportive, is the intimacy your strength has been guarding.",
