@@ -1,0 +1,455 @@
+{
+  "month": "2026-07",
+  "month_label": {
+    "en": "July 2026",
+    "th": "กรกฎาคม 2026"
+  },
+  "spread": {
+    "card_count": 3,
+    "positions": [
+      {
+        "key": "heart_now",
+        "label": {
+          "en": "Where your heart stands now",
+          "th": "หัวใจคุณตอนนี้"
+        }
+      },
+      {
+        "key": "whats_moving",
+        "label": {
+          "en": "What love is moving toward",
+          "th": "สิ่งที่ความรักกำลังเคลื่อนเข้าหา"
+        }
+      },
+      {
+        "key": "guidance",
+        "label": {
+          "en": "The cards’ guidance this month",
+          "th": "คำแนะนำของไพ่สำหรับเดือนนี้"
+        }
+      }
+    ]
+  },
+  "signs": {
+    "aries": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "06-the-hierophant",
+          "reversed": false,
+          "reading": {
+            "en": "Your fire usually chases the spark and burns past anything slow. Right now your heart wants something with roots, a real commitment, someone who shares what you believe and won't flinch when you go all in. Love finds you on familiar ground this month: a class, a circle, people who already know your name. The instant ignition you crave matters less than someone who'll still be standing there once the heat cools.",
+            "th": "ปกติคุณวิ่งไล่หาประกายและเบื่อทุกอย่างที่ช้า แต่ตอนนี้ใจคุณโหยหาอะไรที่มีรากลึกกว่านั้น ความผูกพันจริงจัง คนที่เชื่อในสิ่งเดียวกับคุณและไม่ถอยเมื่อคุณทุ่มสุดตัว เดือนนี้ความรักมาหาคุณจากที่คุ้นเคย ในคลาสเรียน ในกลุ่มกิจกรรม คนที่รู้จักชื่อคุณอยู่แล้ว ประกายที่จุดติดทันทีสำคัญน้อยกว่าคนที่ยังอยู่ตรงนั้นตอนที่ไฟเริ่มมอด"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "53-three-of-swords",
+          "reversed": false,
+          "reading": {
+            "en": "What's ahead asks something your nature resists: stillness. There's a wound you sped past instead of letting heal, and it has caught up with you. You move on by moving fast, new person, new chase, anything but sitting with the ache. That tactic fails this month. The grief wants to be felt, not outrun. Let it finish, and you walk into what's next without dragging the old cut behind you.",
+            "th": "สิ่งที่ความรักกำลังเคลื่อนเข้าหา ขอในสิ่งที่ใจคุณต้านมาตลอด นั่นคือการหยุดนิ่ง มีแผลหนึ่งที่คุณวิ่งหนีผ่านมันไปแทนที่จะปล่อยให้หาย แล้วตอนนี้มันตามคุณมาทัน คุณมูฟออนด้วยการเร่งความเร็ว คนใหม่ การไล่ล่าครั้งใหม่ อะไรก็ได้ที่ไม่ใช่การนั่งอยู่กับความเจ็บ วิธีนี้ใช้ไม่ได้ในเดือนนี้ ความเศร้าอยากถูกรู้สึก ไม่ใช่ถูกวิ่งหนี ปล่อยให้มันจบ แล้วคุณจะก้าวเข้าหาสิ่งใหม่โดยไม่ต้องลากแผลเก่าตามไปด้วย"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "40-four-of-cups",
+          "reversed": false,
+          "reading": {
+            "en": "Guidance for you is plain: stop swiping past the steady ones. Your hunger for the spark makes ordinary feel like nothing, so good people get a no before they finish a sentence. Someone unremarkable at first glance is being offered to you right now, and your boredom is about to wave them off. Slow your verdict. Give the quiet one three real conversations before you decide they bore you. The match you want rarely arrives loud.",
+            "th": "คำแนะนำสำหรับคุณตรงไปตรงมา หยุดปัดคนที่มั่นคงทิ้งได้แล้ว ความหิวประกายของคุณทำให้คนธรรมดากลายเป็นไม่มีอะไรน่าสนใจ คนดีๆ เลยโดนปฏิเสธก่อนจะพูดจบประโยค คนที่ดูเรียบๆ ไม่มีอะไรเด่นกำลังเข้ามาหาคุณตอนนี้ และความเบื่อของคุณกำลังจะโบกมือไล่เขาไป ช้าลงกับการตัดสินสักหน่อย ให้โอกาสคนเงียบๆ คนนั้นได้คุยกันจริงจังสักสามครั้งก่อนสรุปว่าเขาน่าเบื่อ คนที่ใช่มักไม่ได้มาแบบเสียงดัง"
+          }
+        }
+      ],
+      "summary": {
+        "en": "This July, Aries, your fire wants something that lasts, not another quick spark, but an old wound you never let heal and a habit of dismissing good people too fast stand between you and it. Slow down, and love opens.",
+        "th": "เดือนกรกฎาคมนี้ ไฟในตัวคุณโหยหาความรักที่มั่นคงและอยู่ได้นาน ไม่ใช่แค่ประกายวูบวาบเหมือนเคย แต่แผลเก่าที่คุณไม่เคยปล่อยให้หายดี กับนิสัยปัดคนดีๆ ทิ้งเร็วเกินไป กำลังขวางทางคุณอยู่ ช้าลงสักนิด แล้วความรักจะเปิดทางให้เอง"
+      }
+    },
+    "taurus": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "76-knight-of-pentacles",
+          "reversed": true,
+          "reading": {
+            "en": "Your heart has settled into a groove so familiar it stopped feeling like comfort and started feeling like a cage. The Knight of Pentacles reversed catches the taurus you become when security curdles into inertia: too stubborn to go out, too tired to try, raising your standards just to dodge the effort of meeting someone. You call it being selective. Deep down you know it's a rut.",
+            "th": "หัวใจของคุณจมอยู่ในร่องเดิมจนความสบายกลายเป็นกรงขัง อัศวินเหรียญกลับหัวเผยด้านที่ราศีพฤษภเป็นเมื่อความมั่นคงแปรเป็นความนิ่งเฉย ดื้อเกินกว่าจะออกไปเจอใคร เหนื่อยเกินกว่าจะลอง ตั้งสเปคสูงขึ้นเพียงเพื่อเลี่ยงความยุ่งยากในการรู้จักคนใหม่ คุณเรียกมันว่าการเลือก แต่ลึกๆ คุณรู้ดีว่ามันคือการย่ำอยู่กับที่"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "20-the-sun",
+          "reversed": true,
+          "reading": {
+            "en": "Joy is trying to reach you, and you keep dimming it yourself. The Sun reversed shows love moving toward you slowly, snagged on the perfect checklist a taurus clings to and the private belief that it won't work out anyway. Warmth is already near, smaller and plainer than your standards demand. Loosen the grip on flawless, and the simple, real thing waiting in your blind spot finally gets through.",
+            "th": "ความสุขพยายามจะเข้าถึงคุณ แต่คุณกลับหรี่มันลงเองทุกครั้ง ดวงอาทิตย์กลับหัวบอกว่าความรักกำลังเคลื่อนเข้ามาช้าๆ ติดอยู่ที่เช็กลิสต์ความสมบูรณ์แบบที่ราศีพฤษภยึดไว้ และความเชื่อเงียบๆ ว่ายังไงก็คงไม่เวิร์ก ความอบอุ่นอยู่ใกล้แล้ว เพียงเล็กและธรรมดากว่าที่มาตรฐานของคุณเรียกร้อง คลายมือจากคำว่าไร้ที่ติ แล้วสิ่งจริงแท้ที่รออยู่ในมุมอับสายตาจะได้เข้ามาสักที"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "54-four-of-swords",
+          "reversed": false,
+          "reading": {
+            "en": "Stop forcing love this month and rest instead. The Four of Swords lands as permission the security-loving taurus rarely grants yourself: retreat, breathe, let the tiredness drain out before you invite anyone in. You don't need a new person to feel whole right now; you need quiet. Spend July tending your own ground. The loyalty you pour so freely into others, turn it inward first, and you'll meet the next one from fullness instead of fatigue.",
+            "th": "เดือนนี้หยุดฝืนเรื่องความรักแล้วหันมาพักก่อน สี่ดาบมาในฐานะการอนุญาตที่ราศีพฤษภผู้รักความมั่นคงแทบไม่เคยให้ตัวเอง ถอยออกมา หายใจ ปล่อยให้ความเหนื่อยล้าระบายออกก่อนจะเปิดใจให้ใคร ตอนนี้คุณไม่ต้องมีใครใหม่เพื่อจะรู้สึกเต็ม คุณต้องการความสงบ ใช้กรกฎาคมดูแลพื้นที่ในใจตัวเอง ความซื่อสัตย์ที่คุณมอบให้คนอื่นง่ายดาย ลองหันมามอบให้ตัวเองก่อน แล้วคุณจะได้เจอคนต่อไปจากความเต็มเปี่ยม ไม่ใช่จากความอ่อนล้า"
+          }
+        }
+      ],
+      "summary": {
+        "en": "This July, taurus, your love life is parked in a comfortable rut you refuse to leave. Stubbornness and a quiet pessimism have walled off new warmth, and the month asks one thing of you: rest, soften, and stop guarding the gate so tightly before love can move.",
+        "th": "กรกฎาคมนี้ หัวใจของคุณจอดนิ่งอยู่ในความเคยชินที่ไม่ยอมขยับ ความดื้อรั้นและการมองโลกในแง่ร้ายเงียบๆ ปิดประตูรักใหม่เอาไว้ เดือนนี้ขอเพียงสิ่งเดียวจากคุณ พักใจ อ่อนโยนกับตัวเอง แล้วเลิกเฝ้ายามหน้าประตูแน่นเกินไป ความรักจึงจะเคลื่อนเข้ามาได้"
+      }
+    },
+    "gemini": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "58-eight-of-swords",
+          "reversed": true,
+          "reading": {
+            "en": "For weeks your thoughts circled the same cage, replaying every reason love wouldn't work. That cage was never locked. This month you see the open side and walk through it. The fear that kept you isolated loses its grip, and your restless mind turns curious instead of suspicious. You become someone honesty can actually reach. Single or partnered, the version of you stepping forward is lighter, sharper, ready to be known.",
+            "th": "หลายสัปดาห์ที่ผ่านมาความคิดคุณวนอยู่ในกรงเดิม คอยหาเหตุผลว่าทำไมรักครั้งนี้ถึงไปไม่รอด แต่กรงนั้นไม่เคยถูกล็อก เดือนนี้คุณมองเห็นช่องที่เปิดอยู่แล้วก้าวออกมา ความกลัวที่กักคุณไว้คนเดียวเริ่มหมดฤทธิ์ ใจที่เคยกระวนกระวายและคอยระแวงกลับกลายเป็นความอยากรู้อยากเปิดรับ คุณกลายเป็นคนที่ความจริงใจเดินเข้าถึงได้ ไม่ว่าโสดหรือมีคู่ ตัวคุณที่ก้าวออกมาเบาขึ้น คมขึ้น และพร้อมให้ใครสักคนได้รู้จัก"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "19-the-moon",
+          "reversed": false,
+          "reading": {
+            "en": "Love is moving into fog, and your quick mind will hate that. Mixed signals, a magnetic stranger, a message that reads three ways, you'll want to analyze each one into the ground. Don't. The Moon answers to instinct, not logic, and yours runs sharper than your reasoning right now. Someone intriguing is near, but intrigue and truth aren't twins. Feel which one this is before your clever theories decide for you.",
+            "th": "ความรักกำลังเคลื่อนเข้าสู่หมอก และสมองที่ไวของคุณจะทนกับมันไม่ค่อยได้ สัญญาณที่ก้ำกึ่ง คนแปลกหน้าที่มีเสน่ห์ดึงดูด ข้อความหนึ่งที่อ่านได้ตั้งสามแบบ คุณจะอยากแกะมันออกให้หมดทุกชั้น อย่าทำแบบนั้น พระจันทร์ฟังเสียงสัญชาตญาณ ไม่ฟังตรรกะ ตอนนี้เซนส์ของคุณคมกว่าเหตุผล มีคนน่าสนใจอยู่ใกล้ๆ แต่ความน่าสนใจกับความจริงไม่ใช่สิ่งเดียวกัน รู้สึกให้ออกว่านี่คืออันไหน ก่อนที่ทฤษฎีในหัวจะตัดสินแทนคุณ"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "31-nine-of-wands",
+          "reversed": false,
+          "reading": {
+            "en": "You've taken hits, and you built a wall high enough to prove it. Keeping watch is wise, you've earned that caution. But a Gemini behind a wall talks to everyone and lets no one in, and that gets lonely fast. Guard the door this month without sealing it. Let the right person past one stone at a time. You're tired, not finished, and the connection you're protecting yourself for sits closer than your defenses admit.",
+            "th": "คุณเจ็บมาเยอะ และก่อกำแพงสูงพอจะพิสูจน์ว่ามันเคยเกิดขึ้นจริง การตั้งการ์ดไว้เป็นเรื่องฉลาด คุณมีสิทธิ์ระวังตัว แต่คนราศีเมถุนที่อยู่หลังกำแพงมักคุยกับทุกคนแต่ไม่ให้ใครเข้าถึงใจจริง แล้วมันเหงาเร็วกว่าที่คิด เดือนนี้เฝ้าประตูไว้ได้ แต่อย่าปิดตาย ให้คนที่ใช่ผ่านเข้ามาทีละก้อนอิฐ คุณแค่เหนื่อย ไม่ใช่หมดแรง ความสัมพันธ์ที่คุณกำลังปกป้องตัวเองเพื่อมัน อยู่ใกล้กว่าที่กำแพงของคุณยอมรับ"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July loosens the knot your own mind tied, Gemini. You step out of an old fear into clearer air, then meet signals that refuse to add up. Stop debating and feel. The wall you raised has done its work, let love test it.",
+        "th": "กรกฎาคมนี้ปมที่ความคิดคุณผูกไว้เองกำลังคลายออก คุณกำลังเดินออกจากความกลัวเก่าไปสู่อากาศที่โล่งขึ้น แล้วจะเจอสัญญาณที่คิดยังไงก็ไม่ลงตัว หยุดวิเคราะห์แล้วใช้ใจรู้สึก กำแพงที่คุณก่อไว้ทำหน้าที่ของมันจบแล้ว ถึงเวลาให้ความรักได้ลองของ"
+      }
+    },
+    "cancer": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "04-the-empress",
+          "reversed": false,
+          "reading": {
+            "en": "The Empress sits in your heart and she is glowing. That soft, nurturing fullness Cancer carries, the part of you that feeds, holds, makes a home of your arms, is radiating outward instead of pouring into someone undeserving. You don't need to chase. Tend yourself the way you tend everyone else, and your warmth becomes the thing people lean toward. Right now you are most lovable exactly when you stop earning love and simply rest in being it.",
+            "th": "จักรพรรดินีนั่งอยู่กลางใจคุณ และเธอกำลังเปล่งประกาย ความอ่อนโยนที่คอยโอบอุ้มดูแลซึ่งเป็นตัวตนของราศีกรกฎ กำลังฉายออกมารอบตัว แทนที่จะทุ่มเทให้คนที่ไม่คู่ควร ตอนนี้คุณไม่ต้องวิ่งไล่ตามใคร แค่ดูแลหัวใจตัวเองให้ดีเหมือนที่คุณดูแลคนอื่นเสมอ ความอบอุ่นนั้นจะกลายเป็นสิ่งที่ดึงคนเข้าหา คุณน่ารักที่สุดในวันที่คุณหยุดพยายามไขว่คว้าความรัก แล้วปล่อยให้ตัวเองเป็นความรักนั้นเอง"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "14-death",
+          "reversed": false,
+          "reading": {
+            "en": "Death is walking toward your love life, and Cancer always flinches at goodbyes, you hold the past in your body, keep old letters, replay who someone used to be. This month love can only arrive once you bury what's already gone: the ghost of an ex, the type you keep reaching for, the version of romance that hurt you. Let it end clean. What grows in that cleared ground is steadier and truer than anything you're gripping out of memory.",
+            "th": "ไพ่ความตายกำลังเดินเข้าหาเรื่องรักของคุณ และราศีกรกฎมักหวั่นไหวกับการบอกลาเสมอ คุณเก็บอดีตไว้ในใจ เก็บความทรงจำเก่า ย้อนนึกถึงคนคนหนึ่งในวันที่เขายังดี เดือนนี้ความรักใหม่จะเข้ามาได้ก็ต่อเมื่อคุณฝังสิ่งที่จากไปแล้วให้สนิท ทั้งเงาของคนเก่า สเปกเดิมที่คุณยังเผลอไขว่คว้า และรักแบบที่เคยทำคุณเจ็บ ปล่อยให้มันจบลงอย่างหมดจด สิ่งที่งอกขึ้นบนพื้นที่ว่างนั้นจะมั่นคงและจริงแท้กว่าสิ่งที่คุณกอดไว้เพราะความอาลัย"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "59-nine-of-swords",
+          "reversed": false,
+          "reading": {
+            "en": "Here is the warning, Cancer: the Nine of Swords is the 3 a.m. spiral your sensitive heart knows too well. You read silence as rejection, decode every unanswered message, and retreat into your shell before anyone has actually pulled away. That fear isn't protecting you, it's the thing sabotaging the very closeness you crave. The dread is louder than the truth. Trust the slow build, leave the unsent worst-case alone, and let someone reach you before you decide they won't.",
+            "th": "นี่คือคำเตือนสำหรับราศีกรกฎ ไพ่เก้าดาบคือความคิดวนเวียนตอนตีสามที่หัวใจอ่อนไหวของคุณรู้จักดีเกินไป คุณตีความความเงียบเป็นการถูกปฏิเสธ คิดวิเคราะห์ทุกข้อความที่ยังไม่ได้ตอบ แล้วถอยกลับเข้ากระดองก่อนที่ใครจะเดินจากไปจริงๆ ความกลัวนั้นไม่ได้ปกป้องคุณ แต่มันกำลังทำลายความใกล้ชิดที่คุณโหยหา เสียงในหัวดังกว่าความจริงเสมอ เชื่อใจในความสัมพันธ์ที่ค่อยๆ ก่อตัว วางเรื่องเลวร้ายที่คุณคิดไปเองลง แล้วเปิดโอกาสให้ใครสักคนเข้าถึงคุณ ก่อนที่คุณจะตัดสินไปเองว่าเขาจะไม่มา"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July asks you to bloom while an old version of you finally dies off. Your warmth is magnetic this month, Cancer, and love moves toward you the moment you stop the midnight worry that keeps you hiding in your shell.",
+        "th": "กรกฎาคมนี้ดวงรักของราศีกรกฎคือการเบ่งบาน พร้อมกับปล่อยตัวเองในแบบเก่าให้ตายจากไป เสน่ห์ของคุณกำลังส่งประกาย และความรักจะเคลื่อนเข้าหาทันทีที่คุณเลิกกังวลจนต้องหลบกลับเข้ากระดอง"
+      }
+    },
+    "leo": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "60-ten-of-swords",
+          "reversed": false,
+          "reading": {
+            "en": "Your heart sits at rock bottom, and a Leo feels every blow with the volume turned all the way up. Someone wounded the pride you wear like a crown, and pretending it didn't gut you only delays the dawn. This is the final blow, not an ongoing one, the worst has already landed. Stop performing strength for an audience and let yourself grieve. The sun always rises again, and so do you.",
+            "th": "หัวใจคุณกำลังอยู่ที่จุดต่ำสุด และคนสิงห์อย่างคุณรู้สึกทุกความเจ็บชัดกว่าใคร มีบางคนทำร้ายศักดิ์ศรีที่คุณเทิดไว้เหมือนมงกุฎ การฝืนยิ้มว่าไม่เป็นไรมีแต่จะยืดความมืดให้นานออกไป ไพ่ใบนี้คือความเจ็บครั้งสุดท้าย ไม่ใช่จุดเริ่มของความเจ็บใหม่ สิ่งที่หนักที่สุดผ่านไปแล้ว เลิกแสดงความเข้มแข็งให้คนอื่นดู แล้วปล่อยให้ตัวเองได้เศร้าจริงๆ พระอาทิตย์ขึ้นเสมอ และคุณก็เช่นกัน"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "24-two-of-wands",
+          "reversed": false,
+          "reading": {
+            "en": "Love is steering you toward a wider map than the one you've been pacing. The Two of Wands hands you a vision, and Leo was never built for small, safe circles. Someone outside your usual type, your usual city, even your usual language could light you up the way the familiar never did. Stop waiting to be discovered on your own balcony and choose where you point your heart. The expansion is real if you decide to walk toward it.",
+            "th": "ความรักกำลังพาคุณไปสู่แผนที่ที่กว้างกว่าเดิม ไพ่สองไม้เท้ายื่นวิสัยทัศน์ให้คุณ และคนสิงห์ไม่เคยถูกสร้างมาเพื่ออยู่ในวงแคบๆ ที่ปลอดภัย คนที่ไม่ใช่สเปคเดิม ไม่ใช่เมืองเดิม หรือแม้แต่คนละภาษา อาจจุดประกายในตัวคุณแบบที่คนคุ้นเคยไม่เคยทำได้ เลิกยืนรอให้คนมาค้นพบคุณอยู่บนระเบียงของตัวเอง แล้วเลือกเองว่าจะหันใจไปทางไหน การขยายขอบเขตนี้เป็นจริงได้ ถ้าคุณตัดสินใจก้าวไปหามัน"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "15-temperance",
+          "reversed": true,
+          "reading": {
+            "en": "Here's where your own fire becomes the warning. Temperance reversed points to an inner temperature running too hot: emotions swinging wide, patience worn thin, the urge to rush a new connection before the old one has healed. A Leo in a hurry gives too much too fast and calls it love. Cool your own flame first. Find your balance before you blend it with anyone else's, and the right person meets a whole you, not a leaking one.",
+            "th": "ตรงนี้คือจุดที่ไฟในตัวคุณกลายเป็นคำเตือน ไพ่ความพอประมาณกลับหัวชี้ว่าอุณหภูมิข้างในคุณกำลังร้อนเกินไป อารมณ์เหวี่ยงขึ้นลง ความอดทนเหลือน้อย และอยากรีบมีใครคนใหม่ทั้งที่แผลเก่ายังไม่หาย คนสิงห์ที่ใจร้อนมักเทใจให้มากเกินไปเร็วเกินไป แล้วเรียกมันว่าความรัก ดับไฟในตัวเองให้นิ่งก่อน หาสมดุลใจให้เจอก่อนจะเอาไปผสมกับใจของใคร แล้วคนที่ใช่จะได้เจอคุณที่เต็มทั้งดวง ไม่ใช่คนที่กำลังรั่วไหล"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July asks you, Leo, to rise from a love that wounded your pride and dare to dream wider. A painful release clears the stage and a bolder vision beckons. Only your impatience could scorch what's coming.",
+        "th": "เดือนกรกฎาคมนี้คือช่วงที่คุณต้องลุกขึ้นจากความรักที่ทำร้ายศักดิ์ศรีของคุณ แล้วกล้าฝันให้กว้างกว่าเดิม ความเจ็บครั้งสุดท้ายกำลังเคลียร์ทางให้ภาพรักที่ใหญ่ขึ้น เหลือเพียงความใจร้อนของคุณเท่านั้นที่อาจเผามันทิ้ง"
+      }
+    },
+    "virgo": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "32-ten-of-wands",
+          "reversed": true,
+          "reading": {
+            "en": "You've been loving the way you always do, by carrying everything, fixing what isn't yours to fix, proving your worth through what you do for others. Right now that hand is cramped shut. Ten of Wands reversed catches you at the moment the load finally slips, and that's mercy, not failure. Your heart isn't cold this month; it's exhausted. Set down the old hurt and the over-functioning before you ask anyone in.",
+            "th": "คุณรักในแบบที่คุณเป็นเสมอ คือแบกทุกอย่างไว้เอง คอยซ่อมในสิ่งที่ไม่ใช่หน้าที่ของคุณ พิสูจน์คุณค่าผ่านสิ่งที่ทำเพื่อคนอื่น ตอนนี้มือนั้นกำแน่นจนเมื่อยล้า ไพ่สิบไม้เท้ากลับหัวมาถึงในจังหวะที่ภาระหลุดจากมือพอดี นั่นคือความเมตตา ไม่ใช่ความล้มเหลว หัวใจคุณเดือนนี้ไม่ได้เย็นชา แค่หมดแรง วางความเจ็บเก่าและนิสัยแบกเกินตัวลงก่อน แล้วค่อยเปิดประตูให้ใครเข้ามา"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "02-the-magician",
+          "reversed": false,
+          "reading": {
+            "en": "What's moving toward you rewards the one thing you do better than anyone: knowing exactly what you want and why. The Magician hands back the tools you already own, your discernment, your focus, your quiet competence, and makes them magnetic. Stop auditing yourself for flaws. The same precise mind that picks apart your worth can name the love you actually want and call it in. Decide clearly, and it answers.",
+            "th": "สิ่งที่ความรักกำลังเคลื่อนเข้าหา ให้รางวัลกับสิ่งที่คุณทำได้ดีกว่าใคร นั่นคือการรู้ชัดว่าตัวเองต้องการอะไรและเพราะอะไร นักมายากลยื่นเครื่องมือที่คุณมีอยู่แล้วกลับมาให้ ทั้งสายตาที่คมกริบ ความโฟกัส และความเก่งเงียบๆ แล้วเปลี่ยนมันเป็นเสน่ห์ หยุดตรวจหาข้อบกพร่องในตัวเอง สมองที่ชอบแยกแยะคุณค่าตัวเองนั่นแหละ ใช้เรียกความรักที่คุณอยากได้จริงๆ เข้ามาได้ ตัดสินใจให้ชัด แล้วมันจะตอบกลับ"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "22-the-world",
+          "reversed": false,
+          "reading": {
+            "en": "The guidance is the gentlest order you will ever resist: be whole on your own first. The World shows you already complete, not waiting to be fixed, not earning your place. The partner worth having arrives once you stop standing guard behind your usefulness and let yourself simply be enough. Say yes to the trip, the new room, the unfamiliar door this month. Wholeness travels, and so does the love that recognizes it.",
+            "th": "คำแนะนำของไพ่คือคำสั่งที่อ่อนโยนที่สุดที่คุณมักต่อต้าน นั่นคือจงเต็มในตัวเองก่อน ไพ่โลกแสดงให้เห็นว่าคุณสมบูรณ์อยู่แล้ว ไม่ต้องรอใครมาซ่อม ไม่ต้องพิสูจน์ว่าตัวเองมีที่ยืน คนที่ใช่จะมาถึงเมื่อคุณเลิกตั้งการ์ดอยู่หลังความมีประโยชน์ของตัวเอง แล้วยอมให้ตัวเองเป็นแค่คนที่ดีพอ เดือนนี้ตอบรับการเดินทาง ที่ใหม่ และประตูที่ไม่คุ้นเคย ความเต็มเปี่ยมเดินทางได้ และรักที่มองเห็นมันก็เช่นกัน"
+          }
+        }
+      ],
+      "summary": {
+        "en": "This July your love life turns on one act: setting down the load you've been carrying alone. Once your hands are free, your own clarity turns magnetic, and wholeness, not effort, draws the right person close.",
+        "th": "เดือนกรกฎาคมนี้ ความรักของคุณเริ่มต้นที่การวางภาระที่แบกไว้คนเดียวลงก่อน เมื่อมือคุณว่าง ความชัดเจนในตัวคุณจะกลายเป็นแม่เหล็ก คนที่ใช่ถูกดึงเข้ามาด้วยความเต็มเปี่ยมในใจ ไม่ใช่ด้วยความพยายาม"
+      }
+    },
+    "libra": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "41-five-of-cups",
+          "reversed": true,
+          "reading": {
+            "en": "You've spent long enough facing the cups that spilled, Libra, replaying what a past love took from you. That gaze is finally turning. The grief that kept you tethered to someone already gone is loosening, and behind it stands a hope you'd stopped letting yourself feel. Your heart isn't broken now, it's mending, and it's ready to want again without flinching every time someone gets close.",
+            "th": "คุณจ้องมองถ้วยที่หกไปนานพอแล้ว ราศีตุลย์ เฝ้าย้ำว่าความรักครั้งก่อนพรากอะไรไปจากคุณบ้าง ตอนนี้สายตานั้นกำลังหันกลับ ความเศร้าที่ผูกคุณไว้กับคนที่จากไปแล้วเริ่มคลายลง และข้างหลังมันมีความหวังที่คุณเคยไม่กล้าให้ตัวเองรู้สึก หัวใจคุณไม่ได้แตกสลาย มันกำลังสมานและพร้อมจะรักอีกครั้งโดยไม่ต้องสะดุ้งกลัวทุกครั้งที่มีใครเข้ามาใกล้"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "16-the-devil",
+          "reversed": true,
+          "reading": {
+            "en": "What's moving toward you is a clarity you've spent years avoiding. You know how easily you bend yourself to keep the peace, stay attached past the point it serves you, call dependence devotion. That chain is coming undone. You're beginning to see a person's red flags before you talk yourself out of them, and to weigh your own worth without an apology. Love arrives free this month, but only once you reclaim the version of you that you used to hand away.",
+            "th": "สิ่งที่กำลังเคลื่อนเข้ามาคือความกระจ่างที่คุณหลบเลี่ยงมานานหลายปี คุณรู้ดีว่าตัวเองยอมงอเพื่อรักษาความสงบง่ายแค่ไหน ยอมผูกใจไว้เกินจุดที่มันดีต่อคุณ เรียกการพึ่งพิงว่าความทุ่มเท โซ่เส้นนั้นกำลังหลุดออก คุณเริ่มมองเห็นสัญญาณอันตรายของใครคนหนึ่งก่อนจะหาเหตุผลกลบมันให้ตัวเอง และเริ่มชั่งคุณค่าตัวเองโดยไม่ต้องขอโทษใคร ความรักจะเดินเข้าหาคุณแบบอิสระในเดือนนี้ ต่อเมื่อคุณทวงตัวตนที่เคยยกให้คนอื่นกลับคืนมา"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "72-eight-of-pentacles",
+          "reversed": false,
+          "reading": {
+            "en": "Pour into yourself the care you've always poured into partners. You're a craftsperson now and the work is you, your steadiness, your boundaries, the slow art of choosing what you want without abandoning it to please someone. Keep at it patiently, detail by detail. This dedication becomes its own magnetism. Someone who builds love the way you do, brick by patient brick, is drawn to exactly the person you're becoming.",
+            "th": "จงทุ่มเทดูแลตัวเองด้วยใจแบบเดียวกับที่คุณเคยทุ่มให้คนรักมาตลอด ตอนนี้คุณคือช่างฝีมือ และงานชิ้นนั้นคือตัวคุณเอง ทั้งความมั่นคง ขอบเขตของใจ และศิลปะของการเลือกสิ่งที่ตัวเองต้องการโดยไม่ยอมทิ้งมันไปเพื่อเอาใจใคร ค่อยๆ ฝึกไปทีละรายละเอียด ความตั้งใจนี้เองจะกลายเป็นเสน่ห์ คนที่สร้างความรักแบบเดียวกับคุณ ทีละก้อนอิฐอย่างอดทน จะถูกดึงดูดเข้าหาตัวตนที่คุณกำลังเป็นพอดี"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July's love theme for Libra is coming home to yourself. The grief you've carried is lifting, you're seeing a relationship's true shape clearly, and steady self-investment is quietly drawing in someone who values constancy over a thrill.",
+        "th": "ความรักของราศีตุลย์เดือนกรกฎาคมคือการกลับมาหาตัวเอง ความเศร้าที่แบกไว้กำลังจางลง คุณมองเห็นความจริงของความสัมพันธ์ชัดขึ้น และการตั้งใจดูแลตัวเองอย่างสม่ำเสมอกำลังดึงคนที่มั่นคงเข้ามาเงียบๆ"
+      }
+    },
+    "scorpio": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "70-six-of-pentacles",
+          "reversed": true,
+          "reading": {
+            "en": "Your heart pours everything into the one you choose, that is Scorpio's gift and your blind spot. Right now the scales tip wrong. Someone takes your devotion and hands back something thin, and the part of you braced for betrayal already senses it. Stop measuring love by how much you give. The person worth your intensity matches it, never drains it. Guard the depth you keep spending on someone who only collects.",
+            "th": "หัวใจของคุณทุ่มหมดใจให้คนที่เลือกแล้ว นั่นคือเสน่ห์ของราศีพิจิก แต่ก็เป็นจุดบอดของคุณเหมือนกัน ตอนนี้ตาชั่งมันเอียงผิดด้าน มีคนรับความทุ่มเทของคุณไปเต็มๆ แต่ให้กลับมาแค่บางๆ และส่วนลึกที่คอยระวังการหักหลังก็รู้สึกได้แล้ว เลิกวัดความรักจากว่าคุณให้ไปมากแค่ไหน คนที่คู่ควรกับความเข้มข้นของคุณจะให้กลับมาเท่ากัน ไม่ใช่ดูดมันไปจนหมด รักษาความลึกซึ้งที่คุณเทให้คนที่เอาแต่รับไว้บ้าง"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "51-ace-of-swords",
+          "reversed": false,
+          "reading": {
+            "en": "Love is sharpening toward truth, and nothing wins Scorpio's respect faster than someone who tells it straight. A bond built on real talk and unflinching honesty is moving in, or the clarity rises inside you, sharp enough to name exactly what you want and cut loose what you don't. Drop the testing and the silent reading of their every move. Say the true thing out loud. That blade of honesty is where the merging you crave actually begins.",
+            "th": "ความรักกำลังคมขึ้นเข้าหาความจริง และไม่มีอะไรที่ทำให้ราศีพิจิกเคารพได้เร็วเท่าคนที่พูดกันแบบไม่อ้อมค้อม ความสัมพันธ์ที่คุยกันด้วยเหตุผลและความจริงใจแบบไม่หลบสายตากำลังเคลื่อนเข้ามา หรือความชัดเจนกำลังผุดขึ้นในตัวคุณเอง คมพอจะบอกได้ว่าต้องการอะไร และตัดคนที่ไม่ใช่ทิ้งไป เลิกคอยทดสอบใจเขา เลิกแอบจับสังเกตทุกความเคลื่อนไหว พูดสิ่งที่จริงออกมาตรงๆ ดาบแห่งความจริงนั้นแหละคือจุดเริ่มของการหลอมรวมที่คุณโหยหา"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "29-seven-of-wands",
+          "reversed": true,
+          "reading": {
+            "en": "Lower your guard before it hardens to stone. You have been defending a heart that got burned, fighting to prove your worth or bracing for the betrayal you swear is coming. That vigilance is draining you dry. This month, step down off the wall. You do not owe anyone an audition to be loved, and you do not have to fight for attention. Rest the part of you that stays clenched for impact. A guarded Scorpio repels the very closeness it wants most.",
+            "th": "ลดกำแพงลงก่อนที่มันจะแข็งเป็นหิน คุณคอยปกป้องหัวใจที่เคยเจ็บมา สู้เพื่อพิสูจน์คุณค่าของตัวเอง หรือตั้งท่ารับการหักหลังที่คุณมั่นใจว่ามันต้องมา ความระแวงนั้นกำลังดูดพลังคุณจนแห้ง เดือนนี้ลงมาจากกำแพงเสียบ้าง คุณไม่ต้องออดิชั่นเพื่อให้ใครรัก และไม่ต้องสู้เพื่อแย่งความสนใจจากใคร พักส่วนที่เกร็งรอรับแรงกระแทกมาตลอดให้หายเหนื่อย ราศีพิจิกที่ตั้งกำแพงสูงเกินไปจะผลักความใกล้ชิดที่ตัวเองโหยหาที่สุดออกไปเอง"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July asks Scorpio to stop guarding love like a debt to be collected. An imbalanced bond exposes itself, honesty becomes your sharpest magnet, and the real move is laying down the armor you've worn since the last betrayal.",
+        "th": "เดือนกรกฎาคมนี้ราศีพิจิกต้องเลิกเฝ้าระวังความรักราวกับหนี้ที่ต้องทวงคืน ความสัมพันธ์ที่ไม่สมดุลจะเผยตัวออกมา ความจริงใจจะกลายเป็นแม่เหล็กที่คมที่สุดของคุณ และก้าวที่แท้จริงคือการวางเกราะที่สวมมาตั้งแต่ครั้งที่ถูกหักหลังครั้งล่าสุด"
+      }
+    },
+    "sagittarius": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "34-knight-of-wands",
+          "reversed": false,
+          "reading": {
+            "en": "Right now your heart runs on pure momentum. The Knight of Wands is your element, bold and restless and already halfway out the door toward whatever excites you. Someone with real chemistry is moving toward you fast, and you love the chase as much as the catch. Just know a fire lit this quickly needs feeding, or your famous impatience will mistake one quiet week for the end.",
+            "th": "ตอนนี้หัวใจคุณวิ่งด้วยแรงล้วนๆ อัศวินไม้เท้าคือธาตุแท้ของคุณ กล้า ไม่อยู่นิ่ง พร้อมพุ่งไปหาอะไรที่ตื่นเต้นอยู่ตลอด มีคนเคมีตรงกำลังพุ่งเข้าหาคุณเร็วมาก และคุณก็หลงเกมไล่ล่าพอๆ กับตอนได้มาครอง แต่ไฟที่ติดเร็วแบบนี้ต้องการเชื้อเพลิง ไม่อย่างนั้นความใจร้อนของคุณจะเข้าใจผิดว่าสัปดาห์ที่เงียบลงคือจุดจบ"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "73-nine-of-pentacles",
+          "reversed": false,
+          "reading": {
+            "en": "Love is moving toward a version of you that needs no one and chooses someone anyway. The Nine of Pentacles is the life you built solo, rich and free, the exact independence you guard like treasure. What comes will not cage that. The right person walks into your already-full life and makes it better, respecting the space you refuse to surrender. Your standards, not your loneliness, are clearing this path.",
+            "th": "ความรักกำลังเคลื่อนเข้าหาตัวคุณในเวอร์ชันที่ไม่ต้องพึ่งใคร แต่เลือกจะมีใครสักคน เก้าเหรียญคือชีวิตที่คุณสร้างเองคนเดียว มั่งคั่งและอิสระ คืออิสรภาพที่คุณหวงยิ่งกว่าสมบัติ สิ่งที่กำลังมาจะไม่ขังอิสระนั้น คนที่ใช่จะเดินเข้ามาในชีวิตที่เต็มอยู่แล้วของคุณแล้วทำให้มันดีขึ้น เคารพพื้นที่ที่คุณไม่ยอมยกให้ใคร มาตรฐานของคุณต่างหากที่กำลังเปิดทาง ไม่ใช่ความเหงา"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "49-queen-of-cups",
+          "reversed": false,
+          "reading": {
+            "en": "Here is the guidance: aim that brutal honesty of yours inward for once. The Queen of Cups asks the sign forever racing toward the horizon to sit still long enough to actually feel. Your intuition runs sharp this month, so use it to tell apart someone who loves you from someone who only needs healing from you. Going deep will not tie you down. It is the one adventure your restless heart keeps skipping.",
+            "th": "คำแนะนำของเดือนนี้คือ หันความซื่อตรงแบบไม่ไว้หน้าของคุณเข้าหาตัวเองบ้าง ราชินีถ้วยขอให้คนที่เอาแต่วิ่งหาเส้นขอบฟ้าอย่างคุณ นั่งนิ่งพอที่จะรู้สึกจริงๆ สัญชาตญาณคุณเดือนนี้คมมาก ใช้มันแยกให้ออกระหว่างคนที่รักคุณจริงกับคนที่แค่ต้องการให้คุณเยียวยา การลงลึกไม่ได้ผูกมัดคุณ มันคือการผจญภัยอย่างเดียวที่หัวใจไม่อยู่นิ่งของคุณชอบข้ามไป"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July hands you fire and freedom in the same breath, Sagittarius. Passion arrives fast, your independent life looks enviably full, and the real growth comes from letting your heart go as deep as it loves to go wide.",
+        "th": "เดือนกรกฎาคมนี้ความรักของคุณมาพร้อมไฟและอิสระในเวลาเดียวกัน คนราศีธนู เสน่ห์ร้อนแรงดึงคนเข้ามาเร็ว ชีวิตอิสระของคุณก็เต็มและน่าอิจฉา แต่การเติบโตจริงอยู่ที่การปล่อยให้ใจลึกได้เท่าที่มันชอบกว้าง"
+      }
+    },
+    "capricorn": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "45-nine-of-cups",
+          "reversed": true,
+          "reading": {
+            "en": "Capricorn measures love the way you measure everything: by what's built, what holds, what looks solid from the outside. Right now your heart carries a relationship or an image that checks every box and still leaves you cold. The reversal points to the gap between looking content and being content. You've mistaken a partner who fits the plan for one who actually reaches you. What you want isn't more impressive, it's real.",
+            "th": "ชาวมังกรวัดความรักเหมือนที่วัดทุกอย่างในชีวิต ดูที่ความมั่นคง ดูว่าอะไรยืนระยะได้ ดูว่าอะไรดูดีเมื่อมองจากข้างนอก ตอนนี้ในใจคุณมีความสัมพันธ์หรือภาพบางอย่างที่ครบทุกข้อ แต่กลับไม่อุ่นใจ ไพ่กลับหัวชี้ตรงช่องว่างระหว่างการดูเหมือนมีความสุข กับการมีความสุขจริง คุณเผลอเลือกคนที่ลงล็อกกับแผนชีวิต แทนที่จะเป็นคนที่เข้าถึงใจคุณได้จริง สิ่งที่คุณต้องการไม่ใช่คนที่ดูดีกว่าเดิม แต่เป็นคนที่จริงใจกับคุณ"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "56-six-of-swords",
+          "reversed": true,
+          "reading": {
+            "en": "Love is trying to move you somewhere calmer, and you keep rowing back to the shore you already know. A Capricorn loyalty doesn't switch off when a relationship ends; you stay committed to what you invested in, even when it costs you. This reversal names the ex, the old wound, the half-closed chapter you carry into every new room. Nothing new docks while you're still moored to the past. Finish it before you set out again.",
+            "th": "ความรักกำลังพยายามพาคุณไปสู่ที่ที่สงบกว่าเดิม แต่คุณเอาแต่พายเรือกลับเข้าฝั่งเดิมที่คุ้นเคย ความภักดีของชาวมังกรไม่ได้ดับลงตอนความสัมพันธ์จบ คุณยังผูกใจกับสิ่งที่ลงทุนไปแล้ว แม้มันจะทำให้คุณเจ็บก็ตาม ไพ่กลับหัวใบนี้ชี้ตรงไปที่คนเก่า แผลใจเดิม บทที่ยังปิดไม่ลง ที่คุณแบกติดตัวเข้าไปในทุกความสัมพันธ์ใหม่ ตราบใดที่คุณยังจอดอยู่กับอดีต ไม่มีรักใหม่เทียบท่าเข้ามาได้ เคลียร์ให้จบก่อนออกเดินทางครั้งใหม่"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "65-ace-of-pentacles",
+          "reversed": false,
+          "reading": {
+            "en": "Here is the offer the month has been building toward: something real, slow, and yours to keep. The Ace puts a grounded beginning in your hands, a person who shows up consistently, who wants to build rather than perform. This is the love a Capricorn actually trusts, proven in small reliable acts instead of grand gestures. Don't test it for flash or chase what merely flatters you. Choose who shares your values and is willing to stay. Stability isn't a consolation prize; for you it's the whole point.",
+            "th": "นี่คือสิ่งที่ทั้งเดือนกำลังก่อร่างมาให้คุณ ของจริง ที่ค่อยเป็นค่อยไป และเป็นของคุณได้นาน เอซเหรียญวางจุดเริ่มต้นที่มั่นคงไว้ในมือคุณ คนที่ปรากฏตัวสม่ำเสมอ คนที่อยากสร้างอนาคต ไม่ใช่แค่แสดงให้ดูดี นี่คือรักแบบที่ชาวมังกรไว้ใจได้จริง รักที่พิสูจน์ผ่านการกระทำเล็กๆ ที่เชื่อถือได้ ไม่ใช่คำหวานหรือความหวือหวา อย่าไล่ตามคนที่แค่ป้อยอคุณ เลือกคนที่มีค่านิยมตรงกับคุณ และพร้อมจะอยู่ต่อ ความมั่นคงไม่ใช่รางวัลปลอบใจ สำหรับคุณมันคือหัวใจของทุกอย่าง"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July asks Capricorn to stop confusing impressive with real love. A hollow attachment and an unfinished past are blocking what matters, yet a grounded, lasting beginning is on offer the moment you release what only looks good and close what you left open.",
+        "th": "กรกฎาคมนี้ไพ่บอกชาวมังกรให้เลิกหลงสิ่งที่ดูดีแต่เปลือก ความสัมพันธ์ที่กลวงข้างในกับอดีตที่ยังปิดไม่ลงกำลังกั้นรักแท้เอาไว้ แต่จุดเริ่มต้นที่มั่นคงและยั่งยืนกำลังรอคุณอยู่ ทันทีที่คุณปล่อยของที่ดูดีแค่ภายนอก แล้วเคลียร์เรื่องเก่าให้จบ"
+      }
+    },
+    "aquarius": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "42-six-of-cups",
+          "reversed": false,
+          "reading": {
+            "en": "You guard your heart behind friendship and clever distance, Aquarius, yet right now something soft has slipped past the wall. A face from before, or a new person who feels like you've known them for years, is warming the part of you that fears being needed too much. This familiarity doesn't threaten your freedom. It feels like coming home to someone who already understands how your mind works, which is the rarest thing a person can offer you.",
+            "th": "คุณกั้นหัวใจไว้ด้วยมิตรภาพและระยะห่างที่คิดมาอย่างดี แต่ตอนนี้มีบางอย่างที่อ่อนโยนเล็ดลอดผ่านกำแพงเข้ามา คนจากอดีต หรือคนใหม่ที่ให้ความรู้สึกราวกับรู้จักกันมาหลายปี กำลังทำให้ส่วนที่คุณกลัวการถูกผูกมัดค่อยๆ อุ่นขึ้น ความคุ้นเคยนี้ไม่ได้คุกคามอิสระของคุณ มันเหมือนการกลับบ้านไปหาคนที่เข้าใจวิธีคิดของคุณอยู่แล้ว ซึ่งเป็นสิ่งที่หาได้ยากที่สุดสำหรับคุณ"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "37-ace-of-cups",
+          "reversed": false,
+          "reading": {
+            "en": "Love is moving toward a clean emotional beginning, and your usual aloofness is melting at the edges. This month you give off open, magnetic warmth, the kind that pulls in someone who connects to your heart instead of just your ideas. For the cerebral Aquarius who lives in the head, this is the rare invitation to feel first and analyze later. Let the cup fill. A genuine person is being drawn to exactly this version of you.",
+            "th": "ความรักกำลังเคลื่อนเข้าหาจุดเริ่มต้นใหม่ที่สดใส ความเย็นชาที่คุณมักสวมไว้กำลังละลายที่ขอบ เดือนนี้คุณเปล่งพลังอบอุ่นที่เข้าถึงง่าย ดึงดูดคนที่เชื่อมกับหัวใจของคุณ ไม่ใช่แค่ความคิด สำหรับคนราศีกุมภ์ที่ใช้ชีวิตอยู่ในหัวตลอดเวลา นี่คือโอกาสหายากที่จะรู้สึกก่อนแล้วค่อยวิเคราะห์ทีหลัง ปล่อยให้ถ้วยใจเติมเต็ม มีคนจริงใจที่ถูกดึงดูดเข้าหาคุณในเวอร์ชันนี้พอดี"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "71-seven-of-pentacles",
+          "reversed": true,
+          "reading": {
+            "en": "Here is where you keep tripping, Aquarius: pouring patience into ground that will never bloom. You've stayed loyal to a stalled connection or an unavailable person out of stubborn principle, and the return keeps disappointing you. Stop watering a dead stump. Your independence becomes a strength only when you aim it at someone who actually reaches back. Walk away from the wasted effort, and the real opening this month finally has room to land.",
+            "th": "จุดที่คุณสะดุดซ้ำๆ คือการทุ่มความอดทนลงในดินที่ไม่มีวันออกดอก คุณยังภักดีกับความสัมพันธ์ที่หยุดนิ่งหรือคนที่ไม่เห็นค่า เพราะความดื้อรั้นในหลักการของตัวเอง และผลตอบแทนก็ทำให้ผิดหวังครั้งแล้วครั้งเล่า หยุดรดน้ำต้นไม้ที่ตายแล้ว อิสระของคุณจะเป็นพลังก็ต่อเมื่อคุณเล็งมันไปที่คนที่เอื้อมมือกลับมาหาจริงๆ เดินออกมาจากความพยายามที่สูญเปล่า แล้วโอกาสจริงของเดือนนี้จะมีที่ว่างให้ลงจอด"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July hands Aquarius a tender homecoming. Someone familiar reawakens your guarded heart, a fresh emotional current rises to meet you, and you're asked to stop pouring effort into one dead connection. Love opens this month the moment you let the wrong investment die.",
+        "th": "กรกฎาคมนี้ความอบอุ่นเก่าๆ หวนกลับมาเคาะหัวใจที่คุณคอยปิดไว้ คนคุ้นเคยหรือคนใหม่ที่เหมือนรู้จักกันมานานปลุกความรู้สึกในตัวคุณ จุดเริ่มต้นทางใจกำลังก่อตัว แต่ความรักจะเปิดทางก็ต่อเมื่อคุณยอมปล่อยมือจากความพยายามที่ตายไปแล้ว"
+      }
+    },
+    "pisces": {
+      "cards": [
+        {
+          "position_key": "heart_now",
+          "id": "67-three-of-pentacles",
+          "reversed": false,
+          "reading": {
+            "en": "Normally you fall for a feeling, an aura, a rescue fantasy. This month your heart stands on solid ground. Attraction grows where you build something with someone, a project, a craft, a skill you share. Your competence is the magnet now, not your willingness to dissolve into another person. Let someone admire what you can do before they ever see how much you can give. Mastery is your love language this July.",
+            "th": "ปกติมีนตกหลุมรักจากความรู้สึก จากภาพในหัวที่อยากโอบอุ้มใครสักคน แต่เดือนนี้หัวใจคุณยืนอยู่บนพื้นที่มั่นคง ความรักก่อตัวตรงที่คุณได้ลงมือทำอะไรร่วมกับใครสักคน งานหรือกิจกรรมที่ใช้ทักษะร่วมกัน เสน่ห์ของคุณตอนนี้คือความเก่งและความตั้งใจ ไม่ใช่การยอมละลายตัวเองเข้าไปในคนอื่น ปล่อยให้เขาเห็นว่าคุณทำอะไรเป็นก่อนที่จะเห็นว่าคุณให้ได้มากแค่ไหน เดือนนี้ความเชี่ยวชาญคือภาษารักของคุณ"
+          }
+        },
+        {
+          "position_key": "whats_moving",
+          "id": "64-king-of-swords",
+          "reversed": true,
+          "reading": {
+            "en": "You give everything and trust the feeling, which is exactly what a cold, controlling person hunts for. Where love is heading this month carries a warning. Someone sharp-tongued and quick to criticize may try to turn your softness into a leash. Your dissolving boundaries are not generosity here, they're an open door. The warmth you crave will never come from someone who corrects you. Name the line you won't cross before anyone makes you cross it.",
+            "th": "คุณให้ทั้งใจและเชื่อในความรู้สึกของตัวเอง ซึ่งเป็นจุดที่คนเย็นชาชอบควบคุมจ้องมองหา สิ่งที่ความรักกำลังเคลื่อนเข้าหาเดือนนี้มีคำเตือนติดมาด้วย ระวังคนปากร้าย ชอบตำหนิ ที่พร้อมเปลี่ยนความอ่อนโยนของคุณให้กลายเป็นเชือกล่าม การที่คุณไม่มีเส้นแบ่งไม่ใช่ความใจกว้างในกรณีนี้ แต่คือประตูที่เปิดทิ้งไว้ ความอบอุ่นที่คุณโหยหาไม่มีทางมาจากคนที่คอยจับผิดคุณ ขีดเส้นที่คุณจะไม่ยอมข้ามไว้ก่อนที่จะมีใครลากคุณข้ามมันไป"
+          }
+        },
+        {
+          "position_key": "guidance",
+          "id": "30-eight-of-wands",
+          "reversed": false,
+          "reading": {
+            "en": "Love arrives at speed this month. A sudden message, an instant spark, a romance that moves before your dreamy heart finishes building its story. The temptation for you is to fall into the fantasy headlong. Ride the momentum, answer the flirt, let yourself be caught off guard, but keep your eyes open as you go. Fast is fine. Blind is not. Let the rush carry you toward something real, not something you painted yourself.",
+            "th": "เดือนนี้ความรักมาเร็ว ข้อความที่โผล่มาแบบไม่ทันตั้งตัว ประกายที่จุดติดทันที ความสัมพันธ์ที่ขยับก่อนที่หัวใจช่างฝันของคุณจะปั้นเรื่องในหัวเสร็จ สำหรับมีนสิ่งล่อใจคือการกระโดดเข้าไปในจินตนาการเต็มตัว รับจังหวะนั้นไว้ ตอบกลับคนที่เข้ามาจีบ ปล่อยให้ตัวเองได้ตื่นเต้น แต่ลืมตาไว้ขณะที่ก้าวไป เร็วได้ แต่อย่าหลับตา ปล่อยให้ความรู้สึกพานี้พาคุณไปสู่อะไรที่จริง ไม่ใช่อะไรที่คุณวาดขึ้นเอง"
+          }
+        }
+      ],
+      "summary": {
+        "en": "July hands you love built on substance, not fantasy. Your charm shows up where you're skilled and steady, yet a cold, controlling figure circles your soft edges. Move fast when the sparks fly, but keep your boundaries intact.",
+        "th": "เดือนกรกฎาคมความรักของคุณตั้งต้นจากเนื้อแท้ ไม่ใช่ความเพ้อฝัน เสน่ห์มาจากความเก่งและความมั่นคง แต่ระวังคนเย็นชาชอบบงการที่จ้องเข้ามาตรงจุดอ่อนของคุณ จังหวะมาเร็วให้รับไว้ แต่อย่ายอมทิ้งเส้นแบ่งของตัวเอง"
+      }
+    }
+  }
+}
