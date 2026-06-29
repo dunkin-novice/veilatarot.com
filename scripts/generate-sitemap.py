@@ -32,6 +32,10 @@ for root, dirs, files in os.walk(project_dir):
             changefreq = 'daily'
         elif 'love-readings' in rel_path:
             priority = '0.7'
+        elif 'zodiac-love-tarot' in rel_path:
+            # Monthly-refreshed pillar — keep changefreq monthly to signal freshness.
+            priority = '0.7'
+            changefreq = 'monthly'
         elif rel_path.startswith('th/'):
             priority = '0.6'
             
