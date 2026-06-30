@@ -69,6 +69,8 @@
 
 <script src="/assets/analytics.js" defer></script>
 
+<!-- SEO Lab Test 001 (Entity Author Weight): the Person #person node + WebSite "author" ref below ARE the experimental variable.
+     Unified by @id with the scenario subject pages. Do NOT remove when rewriting the homepage schema. See Brain/Research/SEO Lab/Veila Lab - Test 001.md -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,6 +91,7 @@
       "description": "A quiet, bilingual tarot practice for love, career, and life's big questions.",
       "inLanguage": ["en-US", "th-TH"],
       "publisher": { "@id": "https://veilatarot.com/#org" },
+      "author": { "@id": "https://veilatarot.com/#person" },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -106,6 +109,17 @@
         { "@type": "ListItem", "position": 1, "name": "Love Tarot", "url": "https://veilatarot.com/love-readings/" },
         { "@type": "ListItem", "position": 2, "name": "Career Tarot", "url": "https://veilatarot.com/career/" },
         { "@type": "ListItem", "position": 3, "name": "Celtic Cross Reading", "url": "https://veilatarot.com/celtic-cross-reading/" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://veilatarot.com/#person",
+      "name": "Veila Tarot Expert",
+      "url": "https://veilatarot.com/th/about/",
+      "jobTitle": "Tarot Reader & Hermit",
+      "description": "Specializing in the Celtic Cross spread and bilingual tarot reflection.",
+      "sameAs": [
+        "https://veilatarot.com/th/about/"
       ]
     }
   ]
