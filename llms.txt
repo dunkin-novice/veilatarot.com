@@ -6,7 +6,7 @@ Every page listed below exists in English at the path shown; most have a Thai tw
 
 ## Reading apps (interactive, in-browser)
 
-- [Celtic Cross Reading](https://veilatarot.com/): 10-card Celtic Cross draw, EN/TH toggle (Thai at /th/)
+- [Celtic Cross Reading](https://veilatarot.com/celtic-cross-reading/): 10-card Celtic Cross draw, EN/TH toggle (Thai at /th/celtic-cross-reading/)
 - [Quick Love Reading](https://veilatarot.com/quick-love-reading/): 3-card love draw with 100+ selectable questions
 - [Quick Career Reading](https://veilatarot.com/career/reading/): 3-card career draw
 
@@ -15,6 +15,8 @@ Every page listed below exists in English at the path shown; most have a Thai tw
 - [Love readings hub](https://veilatarot.com/love-readings/): 49 written 3-card readings for specific love questions (English)
 - [Example — Will they come back?](https://veilatarot.com/love-readings/will-they-come-back/)
 - [Example — Does he miss me?](https://veilatarot.com/love-readings/does-he-miss-me/)
+- [Love questions hub (EN)](https://veilatarot.com/scenarios/): 137 English love/relationship question pages, each paired with a Thai twin
+- [Example — Will I marry this person?](https://veilatarot.com/scenarios/will-i-marry-this-person/)
 - [Thai love questions hub](https://veilatarot.com/th/scenarios/): 148 Thai-language love/relationship question pages
 - [Example (TH) — เขาจะกลับมาไหม](https://veilatarot.com/th/scenarios/will-he-come-back/)
 
@@ -37,12 +39,19 @@ Every page listed below exists in English at the path shown; most have a Thai tw
 - [Example card — The Lovers](https://veilatarot.com/cards/the-lovers/)
 - [Example card (TH) — คนรัก](https://veilatarot.com/th/cards/the-lovers/)
 
-## Guides
+## Daily
 
+- [Daily tarot card](https://veilatarot.com/daily-tarot-card/): one-card daily pull plus a written collective 3-card reading published each morning (Bangkok time)
+
+## Guides & about
+
+- [Guides hub](https://veilatarot.com/guides/)
 - [The Celtic Cross spread](https://veilatarot.com/celtic-cross-tarot/)
 - [How to ask a tarot question](https://veilatarot.com/guides/how-to-ask-a-tarot-question/)
 - [Tarot spreads for relationships](https://veilatarot.com/guides/tarot-spreads-for-relationships/)
+- [Thai guides hub — วิธีดูไพ่ยิปซี](https://veilatarot.com/th/guides/)
 - [Yes/No tarot](https://veilatarot.com/yes-no-tarot/)
+- [About Veila](https://veilatarot.com/about/)
 
 ## Full index
 
