@@ -14,11 +14,12 @@
 #   4. regenerates sitemap.xml and feed.xml,
 #   5. commits and pushes to main.
 #
-# FALLBACK: if the direct push to main is rejected (e.g. branch protection —
-# this repo has historically deployed via squash-PRs), the workflow pushes a
-# work branch and opens a PR with `gh pr create` instead. NOTE: if branch
-# protection also blocks automated merges, that fallback PR still needs a
-# human (or agent) to merge it — the data is staged, not live, until then.
+# PUBLISH PATH (verified 2026-07-02): main is governed by a repo ruleset —
+# pull_request required, 0 approving reviews, squash allowed, linear history.
+# Direct pushes to main are therefore always rejected, so the workflow pushes
+# a work branch, opens a PR, and immediately squash-merges it itself with
+# GITHUB_TOKEN (allowed because the ruleset requires no approvals). Only if
+# that self-merge fails does it leave the PR open for a human/agent.
 #
 # CAVEAT: pushes made with the default GITHUB_TOKEN do not trigger other
 # GitHub Actions workflows. The legacy GitHub Pages build is a special case
@@ -99,17 +100,22 @@ jobs:
           git commit -m "chore(daily-reading): publish collective reading for ${DATE}" \
                      -m "Automated by .github/workflows/daily-reading-publish.yml"
 
-          if git push origin HEAD:main; then
-            echo "Pushed directly to main."
+          if git push origin HEAD:main 2>/dev/null; then
+            echo "Pushed directly to main (ruleset must have been relaxed)."
+            exit 0
+          fi
+
+          echo "Direct push rejected by the main ruleset (expected) — PR + self-merge."
+          WORK_BRANCH="daily-reading-publish/${DATE}-${GITHUB_RUN_ID}"
+          git branch "${WORK_BRANCH}"
+          git push origin "${WORK_BRANCH}"
+          PR_URL=$(gh pr create \
+            --base main \
+            --head "${WORK_BRANCH}" \
+            --title "chore(daily-reading): publish collective reading for ${DATE}" \
+            --body "Automated PR from the daily-reading-publish workflow. The workflow squash-merges this itself (ruleset requires a PR but 0 approvals); if it is still open, the self-merge failed and it needs a manual squash-merge.")
+          if gh pr merge "${PR_URL}" --squash --delete-branch; then
+            echo "Self-merged ${PR_URL} — reading is live once Pages rebuilds."
           else
-            echo "Direct push to main rejected (branch protection?) — opening a PR instead."
-            WORK_BRANCH="daily-reading-publish/${DATE}-${GITHUB_RUN_ID}"
-            git branch "${WORK_BRANCH}"
-            git push origin "${WORK_BRANCH}"
-            gh pr create \
-              --base main \
-              --head "${WORK_BRANCH}" \
-              --title "chore(daily-reading): publish collective reading for ${DATE}" \
-              --body "Automated fallback PR from the daily-reading-publish workflow (direct push to main was rejected). If automation cannot merge this, a human/agent must squash-merge it for the reading to go live."
-            echo "::warning::Direct push blocked; opened fallback PR from ${WORK_BRANCH}. It still needs a merge."
+            echo "::warning::Self-merge failed; ${PR_URL} is open and needs a human/agent squash-merge."
           fi
