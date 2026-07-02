@@ -24,6 +24,7 @@ Re-run anytime cards.json changes:
 import json
 import re
 import shutil
+import sys
 from html import escape
 from pathlib import Path
 
@@ -2208,6 +2209,30 @@ def build_sitemap(card_slugs):
 # ---------------------------------------------------------------------------
 
 def main():
+    # Ownership guard (2026-07-02): this script's templates are only current
+    # for CARDS + the 9 HUB_SLUGS pages. Everything else it can emit is now
+    # owned elsewhere and a full run would REGRESS live pages:
+    #   th/scenarios/        -> build-quick-love-seo-pages.mjs (+ EN twin script)
+    #   th/zodiac-love-tarot -> build-zodiac-love-tarot.mjs
+    #   all-tarot-pages      -> hand-maintained (zodiac + EN scenarios sections)
+    #   feed.xml             -> generate-feed.mjs
+    #   sitemap.xml          -> generate-sitemap.py
+    #   tarot-love-readings/ + career-tarot-reading/ (EN+TH) -> repurposed BY
+    #       HAND 2026-06-26 as funnel articles (career CTAs); this template
+    #       is stale for them and a regen REVERTS the funnel. Excluded below.
+    cards_only = '--cards-only' in sys.argv
+    force_full = '--force-full' in sys.argv
+    if not cards_only and not force_full:
+        print(__doc__)
+        print('REFUSING to run without an explicit mode:')
+        print('  --cards-only   regenerate cards + card hubs only (SAFE, the normal mode)')
+        print('  --force-full   legacy full rebuild — REGRESSES scenarios/zodiac/'
+              'all-tarot-pages/feed.xml/sitemap.xml (stale templates). Sandbox only.')
+        sys.exit(1)
+    if force_full:
+        print('WARNING: --force-full rebuilds scenario/zodiac/all-tarot-pages/feed/'
+              'sitemap from STALE templates. Never run this in the live tree.')
+
     deck = sorted(DECK, key=lambda c: c['id'])
     n = len(deck)
 
@@ -2215,7 +2240,11 @@ def main():
     for path in [ROOT / 'cards', ROOT / 'th' / 'cards']:
         if path.exists():
             shutil.rmtree(path)
-    for slug in HUB_SLUGS + ['all-tarot-pages']:
+    hand_repurposed = {'tarot-love-readings', 'career-tarot-reading'}
+    safe_hub_slugs = [s for s in HUB_SLUGS if s not in hand_repurposed]
+    hub_slugs_to_build = safe_hub_slugs if cards_only else HUB_SLUGS
+    cleanup_slugs = hub_slugs_to_build if cards_only else HUB_SLUGS + ['all-tarot-pages']
+    for slug in cleanup_slugs:
         for path in [ROOT / slug, ROOT / 'th' / slug]:
             if path.exists():
                 shutil.rmtree(path)
@@ -2236,12 +2265,21 @@ def main():
             )
 
     # Hubs
-    print(f'Hubs:  writing {len(HUB_SLUGS)} × 2 = {len(HUB_SLUGS) * 2} pages...')
-    for slug in HUB_SLUGS:
+    print(f'Hubs:  writing {len(hub_slugs_to_build)} × 2 = {len(hub_slugs_to_build) * 2} pages...')
+    for slug in hub_slugs_to_build:
         for lang in LANGS:
             out_dir = (ROOT if lang == 'en' else ROOT / 'th') / slug
             out_dir.mkdir(parents=True, exist_ok=True)
             (out_dir / 'index.html').write_text(render_hub(slug, lang), encoding='utf-8')
+
+    if cards_only:
+        print(f'  cards: {n * 2}')
+        print(f'  hubs:  {len(hub_slugs_to_build) * 2} '
+              f'(skipped hand-repurposed: {", ".join(sorted(hand_repurposed))})')
+        print('--cards-only: skipped scenarios/zodiac/all-tarot-pages/feed.xml/'
+              'sitemap.xml (owned elsewhere). Re-run generate-sitemap.py + '
+              'generate-feed.mjs + generate-llms-full.mjs if card titles/descriptions changed.')
+        return
 
     # TH emotional scenario pages
     scenarios_dir = ROOT / 'th' / 'scenarios'
