@@ -44,18 +44,30 @@ function jsonLd(value) {
   return JSON.stringify(value, null, 2).replaceAll('</script', '<\\/script').replaceAll('<!--', '<\\!--')
 }
 
+// Keep meta/og/twitter descriptions ≤165 chars (search snippet limit);
+// the full summary still appears in the page body and JSON-LD.
+function metaTrim(value, max = 165) {
+  const s = String(value ?? '')
+  if (s.length <= max) return s
+  let cut = s.slice(0, max - 1)
+  const sp = cut.lastIndexOf(' ')
+  if (sp > 80) cut = cut.slice(0, sp)
+  return cut.replace(/[\s,;:·—–-]+$/u, '') + '…'
+}
+
 const SIGN_BY = Object.fromEntries(SIGNS.map((s) => [s.slug, s]))
 
 // shared <head>; pageType = 'article' | 'website'
 function head({ title, description, canonical, enUrl, thUrl, lang, schemas }) {
   const en = lang === 'en'
+  const metaDescription = metaTrim(description)
   return `<!DOCTYPE html>
 <html lang="${en ? 'en' : 'th'}">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${escapeHtml(title)}</title>
-<meta name="description" content="${escapeHtml(description)}" />
+<meta name="description" content="${escapeHtml(metaDescription)}" />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0c" />
@@ -70,7 +82,7 @@ function head({ title, description, canonical, enUrl, thUrl, lang, schemas }) {
 <meta property="og:type" content="${schemas.some((s) => s['@type'] === 'Article') ? 'article' : 'website'}" />
 <meta property="og:site_name" content="Veila" />
 <meta property="og:title" content="${escapeHtml(title)}" />
-<meta property="og:description" content="${escapeHtml(description)}" />
+<meta property="og:description" content="${escapeHtml(metaDescription)}" />
 <meta property="og:url" content="${canonical}" />
 <meta property="og:image" content="${siteUrl}/og.png" />
 <meta property="og:image:width" content="1200" />
@@ -80,7 +92,7 @@ function head({ title, description, canonical, enUrl, thUrl, lang, schemas }) {
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${escapeHtml(title)}" />
-<meta name="twitter:description" content="${escapeHtml(description)}" />
+<meta name="twitter:description" content="${escapeHtml(metaDescription)}" />
 <meta name="twitter:image" content="${siteUrl}/og.png" />
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -126,6 +138,7 @@ ${schemas.map((s) => `<script type="application/ld+json">${jsonLd(s)}</script>`)
   gtag('config', 'G-NQWWZ3HT2S');
 </script>
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/chrome.js" defer></script>
 </head>`
 }
 

@@ -35,6 +35,17 @@ function jsonLd(value) {
     .replaceAll('<!--', '<\\!--')
 }
 
+// Keep meta/og/twitter descriptions ≤165 chars (search snippet limit);
+// the full lede still appears in the page body and JSON-LD.
+function metaTrim(value, max = 165) {
+  const s = String(value ?? '')
+  if (s.length <= max) return s
+  let cut = s.slice(0, max - 1)
+  const sp = cut.lastIndexOf(' ')
+  if (sp > 80) cut = cut.slice(0, sp)
+  return cut.replace(/[\s,;:·—–-]+$/u, '') + '…'
+}
+
 function readQuestions() {
   const code = fs.readFileSync(questionsFile, 'utf8')
   const context = { module: { exports: {} } }
@@ -143,8 +154,9 @@ function generatePage(q, lang, all) {
 
   const title = en
     ? `${q.en} — Career Tarot, 3-Card Reading | Veila`
-    : `${q.th} — ดูดวงการงาน ไพ่ 3 ใบ | Veila`
+    : `${q.th} — ดูดวงการงาน ไพ่ยิปซี 3 ใบ | Veila`
   const description = lede[lang][q.pillar](qText)
+  const metaDescription = metaTrim(description)
   const eyebrow = pillarLabel[lang][q.pillar]
   const sibs = siblings(q, all)
 
@@ -223,7 +235,7 @@ function generatePage(q, lang, all) {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${escapeHtml(title)}</title>
-<meta name="description" content="${escapeHtml(description)}" />
+<meta name="description" content="${escapeHtml(metaDescription)}" />
 <meta name="author" content="Veila Tarot" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#0a0a0c" />
@@ -238,7 +250,7 @@ function generatePage(q, lang, all) {
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Veila" />
 <meta property="og:title" content="${escapeHtml(title)}" />
-<meta property="og:description" content="${escapeHtml(description)}" />
+<meta property="og:description" content="${escapeHtml(metaDescription)}" />
 <meta property="og:url" content="${canonical}" />
 <meta property="og:image" content="${siteUrl}/og.png" />
 <meta property="og:image:width" content="1200" />
@@ -248,7 +260,7 @@ function generatePage(q, lang, all) {
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${escapeHtml(title)}" />
-<meta name="twitter:description" content="${escapeHtml(description)}" />
+<meta name="twitter:description" content="${escapeHtml(metaDescription)}" />
 <meta name="twitter:image" content="${siteUrl}/og.png" />
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

@@ -11,14 +11,15 @@
     var isTh = path.indexOf('/th/') === 0;
 
     var L = isTh
-      ? { love: 'ความรัก', career: 'การงาน', health: 'สุขภาพ', neu: 'ใหม่', soon: 'เร็ว ๆ นี้',
-          loveHref: '/th/love-tarot/', careerHref: '/th/career/' }
-      : { love: 'Love', career: 'Career', health: 'Health', neu: 'New', soon: 'Soon',
-          loveHref: '/love-readings/', careerHref: '/career/' };
+      ? { love: 'ความรัก', career: 'การงาน', zodiac: '12 ราศี', health: 'สุขภาพ', neu: 'ใหม่', soon: 'เร็ว ๆ นี้',
+          loveHref: '/th/love-tarot/', careerHref: '/th/career/', zodiacHref: '/th/zodiac-love-tarot/' }
+      : { love: 'Love', career: 'Career', zodiac: 'Zodiac', health: 'Health', neu: 'New', soon: 'Soon',
+          loveHref: '/love-readings/', careerHref: '/career/', zodiacHref: '/zodiac-love-tarot/' };
 
     // active vertical by path keyword
     var active = '';
-    if (/love|relationship|heart/.test(path)) active = 'love';
+    if (/zodiac|horoscope/.test(path)) active = 'zodiac';
+    else if (/love|relationship|heart/.test(path)) active = 'love';
     else if (/career|money|job|work/.test(path)) active = 'career';
 
     var nav = document.createElement('nav');
@@ -28,6 +29,7 @@
       '<a href="' + L.loveHref + '"' + (active === 'love' ? ' aria-current="page"' : '') + '>' + L.love + '</a>' +
       '<a href="' + L.careerHref + '"' + (active === 'career' ? ' aria-current="page"' : '') + '>' +
         L.career + ' <span class="tag">' + L.neu + '</span></a>' +
+      '<a href="' + L.zodiacHref + '"' + (active === 'zodiac' ? ' aria-current="page"' : '') + '>' + L.zodiac + '</a>' +
       '<span class="vn-soon">' + L.health + ' <span class="tag">' + L.soon + '</span></span>';
 
     header.insertAdjacentElement('afterend', nav);

@@ -78,10 +78,10 @@ def build_tdict(questions):
         "navHealth": 'Health <span class="tag">Soon</span>',
         "tagNew": "New", "tagSoon": "Soon",
         "eyebrow": "Career & money tarot",
-        "headline": "The question your<br>work keeps <em>asking of you.</em>",
-        "subhead": "A quiet, reflective tarot reading for crossroads, money, and the path of your work — eighteen questions, in English and Thai. For reflection, not prediction.",
+        "headline": "The question your <br>work keeps <em>asking of you.</em>",
+        "subhead": "A quiet, reflective tarot reading for crossroads, money, and the path of your work — twenty-three questions, in English and Thai. For reflection, not prediction.",
         "ctaStart": "Begin a Career Reading", "ctaBack": "All verticals",
-        "listEyebrow": "Eighteen questions to sit with",
+        "listEyebrow": "Twenty-three questions to sit with",
         "aeoLabel": "Career Tarot Summary / บทสรุปไพ่การงาน",
         "footerOverview": "Overview", "footerReading": "Career Reading",
         "footerLoveOverview": "Love readings", "footerQuickLove": "Quick Love Reading",
@@ -98,9 +98,9 @@ def build_tdict(questions):
         "tagNew": "ใหม่", "tagSoon": "เร็ว ๆ นี้",
         "eyebrow": "ไพ่ทาโรต์เรื่องงานและเงิน",
         "headline": "คำถามที่งานของคุณ<br><em>ถามคุณอยู่เสมอ</em>",
-        "subhead": "บทอ่านไพ่ทาโรต์อย่างสงบ สำหรับทางแยก เรื่องเงิน และเส้นทางการงานของคุณ — สิบแปดคำถาม ทั้งภาษาไทยและอังกฤษ เพื่อการทบทวนใจ ไม่ใช่การทำนาย",
+        "subhead": "บทอ่านไพ่ทาโรต์อย่างสงบ สำหรับทางแยก เรื่องเงิน และเส้นทางการงานของคุณ — 23 คำถาม ทั้งภาษาไทยและอังกฤษ เพื่อการทบทวนใจ ไม่ใช่การทำนาย",
         "ctaStart": "เริ่มดูไพ่การงาน", "ctaBack": "ดูทุกหมวด",
-        "listEyebrow": "สิบแปดคำถามให้ใคร่ครวญ",
+        "listEyebrow": "23 คำถามให้ใคร่ครวญ",
         "aeoLabel": "บทสรุปไพ่การงาน / Career Tarot Summary",
         "footerOverview": "ภาพรวม", "footerReading": "ดูไพ่การงาน",
         "footerLoveOverview": "บทอ่านความรัก", "footerQuickLove": "ดูไพ่ความรักแบบเร็ว",
@@ -125,13 +125,13 @@ AEO_EN = ("Veila's Career tarot is a quiet, bilingual 3-card reading for the "
           "turning points of work — whether to take a job or leave it, whether "
           "you're valued or underpaid, what's blocking your growth, and what "
           "your real calling is. Money is read as direction — rising, "
-          "tightening, opening — never as amounts or dates. Eighteen questions, "
-          "each drawn from the 78 Rider–Waite–Smith cards, for reflection, not "
-          "prediction.")
+          "tightening, opening — never as amounts or dates. Twenty-three "
+          "questions, each drawn from the 78 Rider–Waite–Smith cards, for "
+          "reflection, not prediction.")
 AEO_TH = ("ไพ่การงานของ Veila คือบทอ่านไพ่ 3 ใบสองภาษาอย่างสงบ สำหรับจังหวะสำคัญ"
           "ของการทำงาน — จะรับงานหรือลาออก ถูกเห็นค่าหรือถูกจ่ายน้อย อะไรขวาง"
           "การเติบโต และเส้นทางที่ใช่ของคุณคืออะไร เรื่องเงินถูกอ่านเป็นทิศทาง — "
-          "กำลังขยับขึ้น ตึงตัว หรือเปิดออก ไม่ใช่จำนวนเงินหรือวันเวลา สิบแปดคำถาม "
+          "กำลังขยับขึ้น ตึงตัว หรือเปิดออก ไม่ใช่จำนวนเงินหรือวันเวลา 23 คำถาม "
           "แต่ละคำถามทอจากไพ่ Rider–Waite–Smith ทั้ง 78 ใบ เพื่อการใคร่ครวญ ไม่ใช่การทำนาย")
 
 LOCALES = {
@@ -447,7 +447,7 @@ def build_jsonld(questions, lc):
                 "name": "Career & Money Tarot",
                 "isPartOf": {"@id": "https://veilatarot.com/#website"},
                 "inLanguage": "th-TH" if lc["lang"] == "th" else "en-US",
-                "description": "A bilingual 3-card career tarot reading for work, money, and the path ahead. Eighteen questions, for reflection not prediction.",
+                "description": "A bilingual 3-card career tarot reading for work, money, and the path ahead. Twenty-three questions, for reflection not prediction.",
             },
             {
                 "@type": "ItemList",
@@ -466,12 +466,12 @@ def main():
     en_dict, th_dict = build_tdict(questions)
 
     titles = {
-        "en": "Career & Money Tarot — 18 Readings for Work & the Path Ahead | Veila",
-        "th": "ไพ่การงานและการเงิน — 18 บทอ่านสำหรับงานและเส้นทางข้างหน้า | Veila",
+        "en": "Career & Money Tarot — 23 Readings for Work & the Path Ahead | Veila",
+        "th": "ดูดวงการงาน ไพ่ยิปซี — 23 บทอ่านเรื่องงานและการเงิน | Veila",
     }
     metas = {
-        "en": "A quiet, bilingual 3-card career tarot reading for crossroads, money, and the path of your work. Eighteen questions in English and Thai. For reflection, not prediction.",
-        "th": "บทอ่านไพ่ทาโรต์การงาน 3 ใบสองภาษาอย่างสงบ สำหรับทางแยก เรื่องเงิน และเส้นทางการงาน สิบแปดคำถามทั้งไทยและอังกฤษ เพื่อการใคร่ครวญ ไม่ใช่การทำนาย",
+        "en": "A quiet, bilingual 3-card career tarot reading for crossroads, money, and the path of your work. Twenty-three questions in English and Thai.",
+        "th": "ดูดวงการงานด้วยไพ่ยิปซี 3 ใบ สองภาษาอย่างสงบ สำหรับทางแยก เรื่องเงิน และเส้นทางการงาน 23 คำถามทั้งไทยและอังกฤษ เพื่อการใคร่ครวญ ไม่ใช่การทำนาย",
     }
 
     for code, lc in LOCALES.items():

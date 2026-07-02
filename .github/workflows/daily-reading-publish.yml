@@ -1,0 +1,115 @@
+# Daily reading publish
+#
+# The scheduled cloud task pushes one branch per day (daily-reading/<date>,
+# older runs used daily-reading-<date>) containing a single new file
+# data/daily-readings/<date>.json. Historically those branches were never
+# merged, so the data never reached production.
+#
+# This workflow closes the loop: when such a branch is pushed, it
+#   1. checks out main,
+#   2. copies any daily-readings JSONs that exist on the pushed branch but
+#      not on main,
+#   3. runs scripts/build-daily-reading.mjs (injects the latest reading into
+#      /daily-tarot-card/ between the DAILY-READING markers),
+#   4. regenerates sitemap.xml and feed.xml,
+#   5. commits and pushes to main.
+#
+# FALLBACK: if the direct push to main is rejected (e.g. branch protection —
+# this repo has historically deployed via squash-PRs), the workflow pushes a
+# work branch and opens a PR with `gh pr create` instead. NOTE: if branch
+# protection also blocks automated merges, that fallback PR still needs a
+# human (or agent) to merge it — the data is staged, not live, until then.
+#
+# CAVEAT: pushes made with the default GITHUB_TOKEN do not trigger other
+# GitHub Actions workflows. The legacy GitHub Pages build is a special case
+# and still deploys, but if the site ever moves to an Actions-based Pages
+# deploy, switch this workflow to a PAT or deploy key.
+
+name: Daily reading publish
+
+on:
+  push:
+    branches:
+      - 'daily-reading/**'   # current cloud-task naming: daily-reading/<date>
+      - 'daily-reading-*'    # older naming: daily-reading-<date>
+  workflow_dispatch: {}      # manual re-run (rebuilds from whatever JSONs are on main)
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: daily-reading-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Copy new daily-reading JSONs from the pushed branch
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          git fetch origin "${GITHUB_REF_NAME}"
+          mkdir -p data/daily-readings
+          # Files under data/daily-readings/ that differ between main and the
+          # pushed branch (three-dot: changes on the branch side only).
+          for f in $(git diff --name-only HEAD...FETCH_HEAD -- 'data/daily-readings/*.json'); do
+            echo "Landing $f from ${GITHUB_REF_NAME}"
+            git show "FETCH_HEAD:$f" > "$f"
+            # Fail loudly on malformed JSON rather than publishing it.
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f"
+          done
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Inject latest reading into /daily-tarot-card/
+        run: node scripts/build-daily-reading.mjs
+
+      - name: Regenerate sitemap
+        run: python3 scripts/generate-sitemap.py
+
+      - name: Regenerate feed
+        run: node scripts/generate-feed.mjs
+
+      - name: Commit and push to main (PR fallback if protected)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/daily-readings daily-tarot-card/index.html sitemap.xml feed.xml
+          if git diff --cached --quiet; then
+            echo "Nothing to publish — main already up to date."
+            exit 0
+          fi
+
+          DATE="$(ls data/daily-readings/*.json | sed -E 's|.*/([0-9-]+)\.json|\1|' | sort | tail -1)"
+          git commit -m "chore(daily-reading): publish collective reading for ${DATE}" \
+                     -m "Automated by .github/workflows/daily-reading-publish.yml"
+
+          if git push origin HEAD:main; then
+            echo "Pushed directly to main."
+          else
+            echo "Direct push to main rejected (branch protection?) — opening a PR instead."
+            WORK_BRANCH="daily-reading-publish/${DATE}-${GITHUB_RUN_ID}"
+            git branch "${WORK_BRANCH}"
+            git push origin "${WORK_BRANCH}"
+            gh pr create \
+              --base main \
+              --head "${WORK_BRANCH}" \
+              --title "chore(daily-reading): publish collective reading for ${DATE}" \
+              --body "Automated fallback PR from the daily-reading-publish workflow (direct push to main was rejected). If automation cannot merge this, a human/agent must squash-merge it for the reading to go live."
+            echo "::warning::Direct push blocked; opened fallback PR from ${WORK_BRANCH}. It still needs a merge."
+          fi
