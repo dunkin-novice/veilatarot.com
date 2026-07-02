@@ -33,6 +33,7 @@ DECK = json.loads(DECK_PATH.read_text(encoding='utf-8'))
 
 BUILD_DATE = '2026-06-17'
 SCENARIO_MIGRATION_DATE = '2026-06-23'
+CARD_CONTENT_UPDATE_DATE = '2026-07-02'  # FAQ expansion + schema cleanup (SEO/AEO audit)
 LANGS = ('en', 'th')
 
 def aeo_block(title_en, title_th, desc_en, desc_th, lang):
@@ -46,21 +47,9 @@ def aeo_block(title_en, title_th, desc_en, desc_th, lang):
     <p style="font-family:var(--sans); font-size:16px; line-height:1.5; color:var(--ivory-dim); margin-top:10px;">{escape(desc_th)}</p>
   </section>'''
 
-def medical_schema(url, name, desc, entity_code, entity_name):
-    """2026 YMYL trust signal."""
-    return {
-        "@type": "MedicalWebPage",
-        "url": url,
-        "name": name,
-        "description": desc,
-        "lastReviewed": BUILD_DATE,
-        "aspect": "Psychology/Guidance",
-        "mainEntity": {
-            "@type": "CategoryCode",
-            "codeValue": entity_code,
-            "name": entity_name
-        }
-    }
+# NOTE (2026-07-02): the former medical_schema() / MedicalWebPage block was
+# removed site-wide — tarot pages are not medical content, and the schema was
+# flagged as abuse in the SEO/AEO audit. Do not reintroduce it.
 
 # ---------------------------------------------------------------------------
 # DATA STRUCTURES
@@ -1060,22 +1049,126 @@ def render_scenario_links_th(card):
   </aside>'''
 
 
+def _clip_sentences(text, max_words=80):
+    """Trim text at a sentence boundary so it never exceeds max_words.
+
+    Always keeps at least one full sentence — never cuts mid-sentence.
+    """
+    text = (text or '').strip()
+    if not text:
+        return text
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    out = []
+    words = 0
+    for s in sentences:
+        n = len(s.split())
+        if out and words + n > max_words:
+            break
+        out.append(s)
+        words += n
+    return ' '.join(out)
+
+
+def _en_name_ref(name):
+    """'The Fool' -> 'The Fool'; 'Ace of Cups' -> 'the Ace of Cups'."""
+    return name if name.lower().startswith('the ') else f'the {name}'
+
+
+def _keyword_phrase(keywords):
+    """'A, B, C' -> 'a, b, and c' for use inside an English sentence."""
+    parts = [k.strip().lower() for k in (keywords or '').split(',') if k.strip()]
+    if not parts:
+        return ''
+    if len(parts) == 1:
+        return parts[0]
+    return ', '.join(parts[:-1]) + ', and ' + parts[-1]
+
+
+def _yes_no_lean(card):
+    if card['id'] in TOPICAL_CARD_IDS['yes']:
+        return 'yes'
+    if card['id'] in TOPICAL_CARD_IDS['no']:
+        return 'no'
+    return None
+
+
 def render_card_faq_jsonld(card, lang):
+    """FAQPage JSON-LD (4-5 Q&As), assembled strictly from cards.json content.
+
+    Every answer is complete sentences — no substring truncation.
+    """
     name = card['name'][lang]
-    up_text = (card.get('upright') or {}).get('standalone', {}).get(lang, '')
-    rev_text = (card.get('reversed') or {}).get('standalone', {}).get(lang, '')
-    
+    up = card.get('upright') or {}
+    rev = card.get('reversed') or {}
+    up_text = (up.get('standalone') or {}).get(lang, '') or ''
+    rev_text = (rev.get('standalone') or {}).get(lang, '') or ''
+    up_love = (up.get('love') or {}).get(lang, '') or ''
+    rev_love = (rev.get('love') or {}).get(lang, '') or ''
+    up_career = (up.get('career') or {}).get(lang, '') or ''
+    up_kw = (up.get('keywords') or {}).get(lang, '') or ''
+    rev_kw = (rev.get('keywords') or {}).get(lang, '') or ''
+    lean = _yes_no_lean(card)
+
     if lang == 'th':
+        rev_love_joined = f"{up_love} หากไพ่ออกมากลับหัว {rev_love}".strip()
         questions = [
-            (f"ไพ่ {name} หมายถึงอะไรในเรื่องความรัก?", f"ไพ่ {name} ในตำแหน่งตั้งตรงมักสื่อถึง {up_text[:120]}..."),
-            (f"ไพ่ {name} กลับหัวหมายความว่าอย่างไร?", f"เมื่อไพ่ {name} ปรากฏในลักษณะกลับหัว อาจหมายถึง {rev_text[:120]}...")
+            (f"ไพ่ {name} หมายถึงอะไร?",
+             f"ในตำแหน่งตั้งตรง ไพ่ {name} สื่อถึง {up_kw} {up_text}"),
+            (f"ไพ่ {name} ความหมายด้านความรักคืออะไร?",
+             rev_love_joined),
+            (f"ไพ่ {name} กลับหัวหมายความว่าอย่างไร?",
+             f"ไพ่ {name} กลับหัวสื่อถึง {rev_kw} {rev_text}"),
+            (f"ไพ่ {name} บอกอะไรเกี่ยวกับการงาน?",
+             up_career),
         ]
+        if lean == 'yes':
+            questions.append((
+                f"ไพ่ {name} เป็นไพ่ใช่หรือไม่ใช่ (Yes/No)?",
+                f"ในการเปิดไพ่แบบใช่/ไม่ใช่ ไพ่ {name} มักถูกอ่านว่าเอนไปทาง \"ใช่\" "
+                f"คู่มือไพ่ใช่/ไม่ใช่ของ Veila จัดไพ่ใบนี้ไว้ในกลุ่มไพ่ที่เอนไปทางใช่ "
+                f"สอดคล้องกับคีย์เวิร์ดตั้งตรงอย่าง {up_kw}"
+            ))
+        elif lean == 'no':
+            questions.append((
+                f"ไพ่ {name} เป็นไพ่ใช่หรือไม่ใช่ (Yes/No)?",
+                f"ในการเปิดไพ่แบบใช่/ไม่ใช่ ไพ่ {name} มักถูกอ่านว่าเอนไปทาง \"ไม่ใช่\" "
+                f"คู่มือไพ่ใช่/ไม่ใช่ของ Veila จัดไพ่ใบนี้ไว้ในกลุ่มไพ่ที่เอนไปทางไม่ใช่ "
+                f"สอดคล้องกับคีย์เวิร์ดตั้งตรงอย่าง {up_kw}"
+            ))
     else:
+        ref = _en_name_ref(name)
+        up_kw_phrase = _keyword_phrase(up_kw)
+        rev_kw_phrase = _keyword_phrase(rev_kw)
+        love_answer = up_love
+        if rev_love:
+            love_answer = _clip_sentences(
+                f"{up_love} If the card lands reversed, {rev_love[0].lower() + rev_love[1:]}"
+            )
         questions = [
-            (f"What does the {name} tarot card mean for love?", f"The {name} card in an upright position generally signifies {up_text[:120]}..."),
-            (f"What does {name} reversed mean?", f"When the {name} appears reversed, it can indicate {rev_text[:120]}...")
+            (f"What does {ref} tarot card mean?",
+             _clip_sentences(f"Upright, {name} speaks to {up_kw_phrase}. {up_text}")),
+            (f"What does {ref} mean in a love reading?",
+             love_answer),
+            (f"What does {ref} reversed mean?",
+             _clip_sentences(f"Reversed, {name} points to {rev_kw_phrase}. {rev_text}")),
+            (f"What does {ref} mean for career and work?",
+             _clip_sentences(up_career)),
         ]
-        
+        if lean == 'yes':
+            questions.append((
+                f"Is {name} a yes or no card?",
+                f"In a yes-or-no reading, {name} is generally read as a yes. "
+                f"Veila's yes/no tarot guide lists it among the cards that lean yes, "
+                f"in line with its upright themes of {up_kw_phrase}."
+            ))
+        elif lean == 'no':
+            questions.append((
+                f"Is {name} a yes or no card?",
+                f"In a yes-or-no reading, {name} is generally read as a no. "
+                f"Veila's yes/no tarot guide lists it among the cards that lean no, "
+                f"in line with its upright themes of {up_kw_phrase}."
+            ))
+
     faq_entities = []
     for q, a in questions:
         faq_entities.append({
@@ -1132,6 +1225,7 @@ def render_card(card, prev_card, next_card, lang):
     prev_name = prev_card['name'][lang]
     next_name = next_card['name'][lang]
 
+    link_app = '/th/celtic-cross-reading/' if lang == 'th' else '/celtic-cross-reading/'
     link_celtic = '/th/celtic-cross-tarot/' if lang == 'th' else '/celtic-cross-tarot/'
     link_daily = '/th/daily-tarot-card/' if lang == 'th' else '/daily-tarot-card/'
 
@@ -1143,7 +1237,8 @@ def render_card(card, prev_card, next_card, lang):
         "image": "https://veilatarot.com/og.png",
         "inLanguage": 'en-US' if lang == 'en' else 'th-TH',
         "datePublished": BUILD_DATE,
-        "dateModified": BUILD_DATE,
+        "dateModified": CARD_CONTENT_UPDATE_DATE,
+        "author": {"@id": "https://veilatarot.com/#person"},
         "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
         "mainEntityOfPage": page_url
     }
@@ -1151,14 +1246,13 @@ def render_card(card, prev_card, next_card, lang):
     breadcrumb_html = render_breadcrumb_html(crumbs)
     crumbs_jsonld = breadcrumb_jsonld(crumbs)
     faq_jsonld = render_card_faq_jsonld(card, lang)
-    med_jsonld = medical_schema(page_url, title, desc, card['id'], name)
     related_html = render_related_cards_module(card, lang)
     explore_html = render_explore_related_readings(card, lang)
 
     head = render_head_block(
         title=title, desc=desc, canonical=canonical,
         en_path=en_path, th_path=th_path, lang=lang,
-        extra_jsonld=[article_jsonld, crumbs_jsonld, faq_jsonld, med_jsonld],
+        extra_jsonld=[article_jsonld, crumbs_jsonld, faq_jsonld],
         include_share=True,
     )
 
@@ -1318,7 +1412,7 @@ def render_card(card, prev_card, next_card, lang):
 {share_section_html}
 
   <div class="cta-row">
-    <a href="/" class="cta-btn">{escape(t['cta_main'])}</a>
+    <a href="{link_app}" class="cta-btn">{escape(t['cta_main'])}</a>
     <a href="{link_celtic}" class="cta-btn ghost">{escape(t['cta_about'])}</a>
     <a href="{link_daily}" class="cta-btn ghost">{escape(t['cta_daily'])}</a>
   </div>
@@ -1328,6 +1422,7 @@ def render_card(card, prev_card, next_card, lang):
 
 {share_inline_script}
 
+<script src="/assets/chrome.js" defer></script>
 </body>
 </html>
 '''
@@ -1659,11 +1754,10 @@ def render_hub(slug, lang):
         "publisher": {"@type": "Organization", "name": "Veila", "url": "https://veilatarot.com/"},
         "mainEntityOfPage": f"https://veilatarot.com{canonical}"
     }
-    med_jsonld = medical_schema(f"https://veilatarot.com{canonical}", meta['title'], meta['desc'], slug, meta['title'])
     head = render_head_block(
         title=meta['title'], desc=meta['desc'],
         canonical=canonical, en_path=en_path, th_path=th_path, lang=lang,
-        extra_jsonld=[article_jsonld, crumbs_jsonld, med_jsonld]
+        extra_jsonld=[article_jsonld, crumbs_jsonld]
     )
 
     # Body content
@@ -1750,16 +1844,16 @@ def render_hub(slug, lang):
         cta_main = 'Begin a Celtic Cross Reading'
         cta_about = 'About the Spread'
         cta_daily = 'Daily Card'
-        celtic_href, daily_href = '/celtic-cross-tarot/', '/daily-tarot-card/'
+        app_href, celtic_href, daily_href = '/celtic-cross-reading/', '/celtic-cross-tarot/', '/daily-tarot-card/'
     else:
         cta_main = 'เริ่มอ่านเซลติกครอส'
         cta_about = 'เกี่ยวกับผังการอ่าน'
         cta_daily = 'ไพ่ประจำวัน'
-        celtic_href, daily_href = '/th/celtic-cross-tarot/', '/th/daily-tarot-card/'
+        app_href, celtic_href, daily_href = '/th/celtic-cross-reading/', '/th/celtic-cross-tarot/', '/th/daily-tarot-card/'
 
     cta_html = f'''
   <div class="cta-row">
-    <a href="/" class="cta-btn">{escape(cta_main)}</a>
+    <a href="{app_href}" class="cta-btn">{escape(cta_main)}</a>
     <a href="{celtic_href}" class="cta-btn ghost">{escape(cta_about)}</a>
     <a href="{daily_href}" class="cta-btn ghost">{escape(cta_daily)}</a>
   </div>'''
@@ -1779,6 +1873,7 @@ def render_hub(slug, lang):
 
 {render_footer(lang)}
 
+<script src="/assets/chrome.js" defer></script>
 </body>
 </html>
 '''

@@ -87,20 +87,6 @@
       ]
     },
     {
-      "@type": "MedicalWebPage",
-      "@id": "https://veilatarot.com/celtic-cross-reading/#medical",
-      "url": "https://veilatarot.com/celtic-cross-reading/",
-      "name": "Psychological Reflection through Tarot - Veila",
-      "description": "A quiet, bilingual Celtic Cross tarot reading for mental clarity and self-awareness.",
-      "lastReviewed": "2026-06-17",
-      "aspect": "Psychology/Self-Awareness",
-      "mainEntity": {
-        "@type": "CategoryCode",
-        "codeValue": "CelticCross",
-        "name": "Celtic Cross Tarot Reading"
-      }
-    },
-    {
       "@type": "WebSite",
       "@id": "https://veilatarot.com/#website",
       "url": "https://veilatarot.com/",
@@ -1339,7 +1325,7 @@ html[lang="th"] .cta-pair .cta-sub {
 
 <noscript>
   <div style="max-width:640px;margin:80px auto;padding:0 24px;text-align:center;font-family:'Cormorant Garamond',Garamond,serif;color:#ebe4d4;">
-    <h1 style="font-weight:300;font-size:56px;line-height:1;margin-bottom:18px;letter-spacing:-0.01em;">Veila</h1>
+    <div style="font-weight:300;font-size:56px;line-height:1;margin-bottom:18px;letter-spacing:-0.01em;">Veila</div>
     <p style="font-style:italic;color:#b9b3a4;font-size:18px;line-height:1.55;margin-bottom:24px;">A quiet, considered Celtic Cross tarot reading. Ten cards drawn from a 78-card Rider–Waite deck, each unfolding a position-specific reading.</p>
     <p style="font-size:14px;color:#6c6a63;letter-spacing:0.04em;">The ten Celtic Cross positions: Present, Challenge, Past, Future, Above (conscious aim), Below (subconscious), Self (your stance), External Influences, Hopes &amp; Fears, and Outcome.</p>
     <p style="font-size:13px;color:#6c6a63;margin-top:32px;">This experience requires JavaScript. Please enable JavaScript to begin a reading.</p>
@@ -2281,7 +2267,7 @@ function loadDeck() {
   const original = begin.textContent;
   begin.disabled = true;
   begin.textContent = T[lang].loadingDeck;
-  return fetch('./cards.json', { cache: 'force-cache' })
+  return fetch('/cards.json', { cache: 'force-cache' })
     .then((r) => r.json())
     .then((data) => {
       DECK = data;

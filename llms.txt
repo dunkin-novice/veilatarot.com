@@ -1,16 +1,50 @@
-# VeilaTarot — Thai Tarot & Astrology Guidance
+# Veila Tarot (veilatarot.com)
 
-The leading destination for localized Tarot readings, daily horoscopes, and spiritual insights in Thailand.
+> Bilingual (English / Thai) tarot reading site. Free in-browser card readings plus written reading pages for love, career, and monthly zodiac love themes, and meaning pages for all 78 tarot cards. Framed as reflection, not fortune-telling. No account, no payment.
 
-## Core Capabilities
-- **Tarot Readings**: Real-time interpretations for Love, Career, and General guidance.
-- **Localized Interpretations**: Specifically tailored for the Thai cultural context.
-- **Zodiac Insights**: Daily and weekly forecasts.
+Every page listed below exists in English at the path shown; most have a Thai twin under /th/ with the same slug.
 
-## Primary Entities
-- **Tarot Cards**: 78 cards with unique Thai-localized meanings.
-- **Zodiac Signs**: 12 signs with specific focus on Thai astrology.
+## Reading apps (interactive, in-browser)
 
-## Contact & Links
-- Website: https://veilatarot.com
-- Partner: https://meowbti.com
+- [Celtic Cross Reading](https://veilatarot.com/): 10-card Celtic Cross draw, EN/TH toggle (Thai at /th/)
+- [Quick Love Reading](https://veilatarot.com/quick-love-reading/): 3-card love draw with 100+ selectable questions
+- [Quick Career Reading](https://veilatarot.com/career/reading/): 3-card career draw
+
+## Love readings
+
+- [Love readings hub](https://veilatarot.com/love-readings/): 49 written 3-card readings for specific love questions (English)
+- [Example — Will they come back?](https://veilatarot.com/love-readings/will-they-come-back/)
+- [Example — Does he miss me?](https://veilatarot.com/love-readings/does-he-miss-me/)
+- [Thai love questions hub](https://veilatarot.com/th/scenarios/): 148 Thai-language love/relationship question pages
+- [Example (TH) — เขาจะกลับมาไหม](https://veilatarot.com/th/scenarios/will-he-come-back/)
+
+## Career readings
+
+- [Career hub](https://veilatarot.com/career/): 23 written career/money question readings, each with a Thai twin under /th/career/
+- [Example — Should I quit?](https://veilatarot.com/career/should-i-quit/)
+- [Example — Will money improve?](https://veilatarot.com/career/will-money-improve/)
+
+## Zodiac love tarot (updated monthly)
+
+- [Zodiac Love Tarot hub](https://veilatarot.com/zodiac-love-tarot/): a fresh 3-card love reading per zodiac sign each month, all 12 signs
+- [Example — Aries](https://veilatarot.com/zodiac-love-tarot/aries/)
+- [Thai hub — ดูดวงความรักตามราศี](https://veilatarot.com/th/zodiac-love-tarot/)
+
+## Card meanings (78 cards, EN + TH)
+
+- [Major Arcana index](https://veilatarot.com/major-arcana/)
+- [Minor Arcana index](https://veilatarot.com/minor-arcana/)
+- [Example card — The Lovers](https://veilatarot.com/cards/the-lovers/)
+- [Example card (TH) — คนรัก](https://veilatarot.com/th/cards/the-lovers/)
+
+## Guides
+
+- [The Celtic Cross spread](https://veilatarot.com/celtic-cross-tarot/)
+- [How to ask a tarot question](https://veilatarot.com/guides/how-to-ask-a-tarot-question/)
+- [Tarot spreads for relationships](https://veilatarot.com/guides/tarot-spreads-for-relationships/)
+- [Yes/No tarot](https://veilatarot.com/yes-no-tarot/)
+
+## Full index
+
+- [All pages with titles and descriptions](https://veilatarot.com/llms-full.txt)
+- [Human-readable site index](https://veilatarot.com/all-tarot-pages/)
