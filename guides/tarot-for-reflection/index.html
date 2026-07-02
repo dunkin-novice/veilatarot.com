@@ -75,7 +75,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://veilatarot.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://veilatarot.com/guides/tarot-for-reflection/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://veilatarot.com/guides/" },
     { "@type": "ListItem", "position": 3, "name": "Tarot for Reflection", "item": "https://veilatarot.com/guides/tarot-for-reflection/" }
   ]
 }
@@ -154,6 +154,8 @@ html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans 
 <main class="article">
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/" data-i18n="bcHome">Home</a>
+    <span class="bc-sep">›</span>
+    <a href="/guides/" data-i18n="bcGuides">Guides</a>
     <span class="bc-sep">›</span>
     <span class="bc-current" data-i18n="bcCurrent">Tarot for Reflection</span>
   </nav>
@@ -332,6 +334,8 @@ html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans 
   <div class="last-updated" data-i18n="footerLastUpdated">Last updated · 19 May 2026</div>
   <div class="last-reviewed" data-i18n="footerLastReviewed">Last reviewed for clarity and emotional accuracy · May 2026</div>
   <nav class="footer-nav">
+    <a href="/guides/" data-i18n="navGuides">All Guides</a>
+    <span class="sep">·</span>
     <a href="/quick-love-reading/" data-i18n="navQlr">Quick Love Reading</a>
     <span class="sep">·</span>
     <a href="/celtic-cross-tarot/" data-i18n="navCc">Celtic Cross</a>
@@ -345,7 +349,7 @@ html[lang="th"] .last-reviewed { letter-spacing: 0; font-family: "IBM Plex Sans 
 const T = {
   en: {
     brandSub: 'A Tarot Practice',
-    bcHome: 'Home', bcCurrent: 'Tarot for Reflection',
+    bcHome: 'Home', bcGuides: 'Guides', bcCurrent: 'Tarot for Reflection',
     eyebrow: 'A practice, not a prediction tool',
     qrLabel: 'Quick reflection',
     qrBody: 'Reflective tarot is a way of using the cards as a mirror for feeling rather than as a forecast. This guide explains what reflective tarot is for, what it is not for, and how to read the cards when you do not want the reading to tell you the future — only to help you sit with the present more honestly.',
@@ -404,12 +408,12 @@ const T = {
     ctaSecondary: 'How to ask a tarot question',
     footerLastUpdated: 'Last updated · 19 May 2026',
     footerLastReviewed: 'Last reviewed for clarity and emotional accuracy · May 2026',
-    navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
+    navGuides: 'All Guides', navQlr: 'Quick Love Reading', navCc: 'Celtic Cross', navAll: 'All Pages',
     footerCopy: 'veilatarot.com · © MMXXVI'
   },
   th: {
     brandSub: 'การฝึกอ่านไพ่ทาโรต์',
-    bcHome: 'หน้าแรก', bcCurrent: 'ไพ่ทาโรต์เพื่อใคร่ครวญ',
+    bcHome: 'หน้าแรก', bcGuides: 'คู่มือ', bcCurrent: 'ไพ่ทาโรต์เพื่อใคร่ครวญ',
     eyebrow: 'การฝึก ไม่ใช่เครื่องมือทำนาย',
     qrLabel: 'ใคร่ครวญสั้นๆ',
     qrBody: 'ไพ่ทาโรต์เพื่อใคร่ครวญ เป็นวิธีใช้ไพ่เป็นกระจกสำหรับความรู้สึก ไม่ใช่การพยากรณ์ คู่มือนี้อธิบายว่าไพ่ทาโรต์ชวนใคร่ครวญมีไว้เพื่ออะไร ไม่ใช่เพื่ออะไร และจะอ่านไพ่ยังไงเมื่อไม่อยากให้บทอ่านบอกอนาคต — แค่ช่วยให้นั่งกับปัจจุบันได้ซื่อตรงขึ้น',
@@ -468,7 +472,7 @@ const T = {
     ctaSecondary: 'วิธีถามคำถามไพ่ทาโรต์',
     footerLastUpdated: 'ปรับปรุงล่าสุด · 19 พฤษภาคม 2026',
     footerLastReviewed: 'ทบทวนล่าสุดเพื่อความชัดเจนและความซื่อตรงทางอารมณ์ · พฤษภาคม 2026',
-    navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
+    navGuides: 'คู่มือทั้งหมด', navQlr: 'บทอ่านไพ่ความรัก', navCc: 'เซลติกครอส', navAll: 'หน้าทั้งหมด',
     footerCopy: 'veilatarot.com · © MMXXVI'
   }
 };
